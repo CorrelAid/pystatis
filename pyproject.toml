@@ -1,19 +1,19 @@
 [tool.poetry]
 authors = [
+    "Michael Aydinbas <michael.aydinbas@gmail.com>",
     "Ariz Weber <ariz.weber@protonmail.com>",
     "CorrelAid <info@correlaid.org>",
     "Daniel Pleus <danielpleus@gmail.com>",
     "Felix Schmitz <felix.schmitz@philosophy-economics.de>",
     "Frederik Hering <jobs.fhering@gmail.com>",
-    "Marco Hübner <marco_huebner1@gmx.de>",
-    "Michael Aydinbas <michael.aydinbas@gmail.com>",
+    "Marco Hübner <marco_huebner1@gmx.de>"
 ]
 maintainers = [
     "Michael Aydinbas <michael.aydinbas@gmail.com>"
 ]
 description = "Python wrapper for GENESIS web service interface (API) of the Federal Statistical Office."
 name = "pystatis"
-version = "0.1.0"
+version = "0.1.1"
 readme = "README.md"
 repository = ""
 classifiers = [

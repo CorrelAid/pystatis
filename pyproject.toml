@@ -1,0 +1,72 @@
+[tool.poetry]
+authors = [
+    "Ariz Weber <ariz.weber@protonmail.com>",
+    "CorrelAid <info@correlaid.org>",
+    "Daniel Pleus <danielpleus@gmail.com>",
+    "Felix Schmitz <felix.schmitz@philosophy-economics.de>",
+    "Frederik Hering <jobs.fhering@gmail.com>",
+    "Marco Hübner <marco_huebner1@gmx.de>",
+    "Michael Aydinbas <michael.aydinbas@gmail.com>",
+]
+maintainers = [
+    "Michael Aydinbas <michael.aydinbas@gmail.com>"
+]
+description = "Python wrapper for GENESIS web service interface (API) of the Federal Statistical Office."
+name = "pystatis"
+version = "0.1.0"
+readme = "README.md"
+repository = ""
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: MacOS",
+    "Operating System :: Microsoft",
+    "Operating System :: POSIX",
+    "Operating System :: Unix",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+requests = "^2.27.1"
+pandas = "^1.4.3"
+tabulate = "^0.8.10"
+
+[tool.poetry.dev-dependencies]
+bandit = "^1.7.4"
+black = "^22.3.0"
+flake8-docstrings = "^1.6.0"
+isort = "^5.10.1"
+mypy = "^0.942"
+pre-commit = "^2.18.1"
+pylint = "^2.13.4"
+pytest = "^7.1.1"
+pytest-cov = "^3.0.0"
+safety = "^2.0.0"
+flake8 = "^4.0.1"
+jupyter = "^1.0.0"
+pytest-mock = "^3.8.2"
+
+[tool.black]
+line-length = 80
+target-version = ['py39']
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=1.0.0"]
+
+[tool.pytest.ini_options]
+addopts = "-s -v"
+log_cli = false
+
+[tool.isort]
+profile = "black"
+line_length = 80

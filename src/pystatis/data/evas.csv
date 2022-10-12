@@ -1,0 +1,306 @@
+﻿EVAS ;Beschreibung
+1;Gebiet, Bevölkerung, Erwerbstätigkeit, Wahlen
+2;Bildung, Sozialleistungen, Gesundheit, Rechtspflege
+3;Wohnen, Umwelt
+4;Wirtschaftsbereiche
+5;Außenhandel, Unternehmen, Handwerk
+6;Preise, Verdienste, Einkommen und Verbrauch
+7;Öffentliche Finanzen, Steuern und Personal im öffentlichen Dienst
+8;Gesamtrechnungen
+9;Sonderbereich - interne Zwecke
+9;Sonderbereiche
+10;Sonderbereich - Leitmaterialien
+11;Gebiet
+12;Bevölkerung
+13;Erwerbstätigkeit
+14;Wahlen
+19;Andere (für Länder- oder Bundeszwecke) - Gebiet, Bevölkerung, Erwerbstätigkeit, Wahlen
+21;Bildung und Kultur, Forschung und Entwicklung
+22;Öffentliche Sozialleistungen
+23;Gesundheitswesen
+24;Rechtspflege
+29;Andere (für Länder- oder Bundeszwecke) - Bildung, Sozialleistungen, Gesundheit, Rechtspflege
+31;Gebäude und Wohnen
+32;Umwelt
+33;Flächennutzung
+39;Andere (für Länder- oder Bundeszwecke) - Wohnen, Umwelt
+41;Land- und Forstwirtschaft, Fischerei
+42;Produzierendes Gewerbe: Bereich Verarbeitendes Gewerbe, Bergbau und Gewinnung von Steinen und Erden
+43;Produzierendes Gewerbe: Bereich Energieversorgung, Wasserversorgung, Abwasser- und Abfallentsorgung, Beseitigung von Umweltverschmutzungen
+44;Produzierendes Gewerbe: Bereich Baugewerbe
+45;Handel (einschl. Instandhaltung und Reparatur von Kfz), Gastgewerbe, Tourismus
+46;Transport und Verkehr
+47;Finanz- und andere Dienstleistungen
+48;Wirtschaftsbereichsübergreifende Ergebnisse
+49;Andere (für Länder- oder Bundeszwecke) - Wirtschaftsbereiche
+51;Außenhandel
+52;Unternehmen und Arbeitsstätten
+53;Handwerk und handwerksähnliches Gewerbe
+59;Andere (für Länder- oder Bundeszwecke) - Außenhandel, Unternehmen, Handwerk
+61;Preise
+62;Verdienste, Arbeitskosten
+63;Freiwillige Erhebungen zu Einkommen, Ausgaben und Lebensbedingungen privater Haushalte
+69;Andere (für Länder- oder Bundeszwecke) - Preise, Verdienste, Einkommen und Verbrauch
+71;Öffentliche Finanzen
+72;Öffentliche Fonds, Einrichtungen und Unternehmen mit eigenem Rechnungswesen - (Stillgelegt am 01.05.2015)
+73;Steuern
+74;Personal im öffentlichen Dienst
+75;Berichtskreismanagement (BKM)
+79;Andere (für Länder- oder Bundeszwecke) - Öffentliche Finanzen, Steuern und Personal im öffentlichen Dienst
+81;VGR des Bundes
+82;VGR der Länder
+83;Zahlungsbilanz, Auslandsvermögen
+84;Geld, Zinsen, Währungen
+85;UGR
+86;UGR der Länder
+87;Sozioökonomisches Berichtssystem
+88;Gesundheitsökonomische Gesamtrechnung (GGR) der Länder
+89;Andere (für Länder- oder Bundeszwecke) - Gesamtrechnungen
+90;Sonderbereich - interne Zwecke
+91;Auslandsstatistische Informationen
+92;Forschung und Entwicklung
+93;Weiterentwicklung der Haushaltsstatistiken
+94;EVAS-Nummern für die Altdateninventur
+95;Bereichsübergreifende Statistiken, Register o.ä.
+99;Andere (für Länder- oder Bundeszwecke) - Sonderbereiche
+111;Gebietsstand
+119;Sonstiges im Bereich Gebiet
+121;Volkszählungen
+122;Mikrozensus
+123;Haushaltspanel
+124;Bevölkerungsstand, -vorausberechnung
+125;Einbürgerungen, Ausländer
+126;Natürliche Bevölkerungsbewegungen
+127;Wanderungen
+129;Sonstiges im Bereich Bevölkerung
+131;Beschäftigte
+132;Arbeitsmarkt
+133;Erwerbstätige
+139;Sonstiges im Bereich Erwerbstätigkeit
+141;Bundestagswahlen
+142;Europawahlen
+143;Landtagswahlen
+144;Kommunalwahlen
+145;Volksentscheide
+149;Sonstiges im Bereich Wahlen
+191;Länderstatistiken im Bereich Gebiet
+192;Länderstatistiken im Bereich Bevölkerung
+193;Länderstatistiken im Bereich Erwerbstätigkeiten
+194;Länderstatistiken im Bereich Wahlen
+199;Geschäftsstatistiken des Statistischen Bundesamtes im Bereich - Gebiet, Bevölkerung, Erwerbstätigkeit, Wahlen
+211;Allgemeinbildende und berufliche Schulen
+212;Berufsbildung
+213;Hochschulen
+214;Ausbildungsförderung
+215;Weiterbildung
+216;Kultur
+217;Bildungsberichterstattung
+218;Forschung und Entwicklung
+219;Sonstiges im Bereich Bildung und Kultur, Forschung und Entwicklung
+221;Sozialhilfe
+222;Asylbewerberleistungen
+223;Wohngeld
+224;Pflege
+225;Kinder- und Jugendhilfe
+226;Sozialversicherungen
+227;Behinderte, Kriegsopfer
+228;Sozialberichterstattung und Statistiken nach dem Prostituiertenschutzgesetz
+229;Sonstiges im Bereich öffentliche Sozialleistungen
+231;Krankenhausstatistik
+232;Todesursachen
+233;Schwangerschaftsabbrüche
+234;Meldepflichtige Krankheiten
+235;Berufe des Gesundheitswesens
+236;Gesundheitsbezogene Rechensysteme
+237;Ambulante Diagnosestatistik
+239;Sonstiges im Bereich Gesundheitswesen
+241;Gerichte und Personal der Rechtspflege
+242;Justizgeschäftsstatistiken
+243;Strafverfolgung und -vollzug
+244;Bewährungshilfe
+249;Sonstiges im Bereich Rechtspflege
+291;Länderstatistiken im Bereich Bildung und Kultur, Forschung und Entwicklung
+292;Länderstatistiken im Bereich öffentliche Sozialleistungen
+293;Länderstatistiken im Bereich Gesundheitswesen
+294;Länderstatistiken im Bereich Rechtspflege
+299;Geschäftsstatistiken des Statistischen Bundesamtes im Bereich Bildung, Sozialleistungen, Gesundheit und Rechtspflege
+311;Bautätigkeit
+312;Gebäude und Wohnungen
+313;Finanzierung des Wohnungsbaus
+319;Sonstiges im Bereich Gebäude und Wohnen
+321;Abfallwirtschaft
+322;Wasserversorgung und Abwasserentsorgung
+323;Wassergefährdende Stoffe
+324;Klimawirksame Stoffe
+325;Umweltschutzausgaben und -produkte
+329;Sonstiges im Bereich Umwelt
+331;Flächenerhebungen
+339;Sonstiges im Bereich Flächennutzung
+391;Länderstatistiken im Bereich Gebäude und Wohnen
+392;Länderstatistiken im Bereich Umwelt
+393;Länderstatistiken im Bereich Flächennutzung
+399;Geschäftsstatistiken des Statistischen Bundesamtes im Bereich Wohnen, Umwelt
+411;Struktur der land- und forstwirtschaftlichen Betriebe
+412;Bodennutzung und Ernte
+413;Viehbestand und tierische Erzeugung
+414;Ernährungswirtschaft
+419;Sonstiges im Bereich Land- und Forstwirtschaft, Fischerei
+421;Konjunkturerhebungen im Bereich Verarbeitendes Gewerbe, Bergbau und Gewinnung von Steinen und Erden
+422;Strukturerhebungen im Bereich Verarbeitendes Gewerbe, Bergbau und Gewinnung von Steinen und Erden
+423;Fachstatistiken einzelner Zweige im Bereich Verarbeitendes Gewerbe, Bergbau und Gewinnung von Steinen und Erden
+429;Sonstiges im Bereich Verarbeitendes Gewerbe, Bergbau und Gewinnung von Steinen und Erden
+431;Konjunkturerhebungen im Bereich Energie- und Wasserversorgung
+432;Strukturerhebungen im Bereich Energieversorgung, Wasserversorgung, Abwasser- und Abfallentsorgung, Beseitigung von Umweltverschmutzungen
+433;Fachstatistiken im Bereich Energie- und Wasserversorgung: Elektrizität- und Gasversorgung
+434;Fachstatistiken im Bereich Energie- und Wasserversorgung: Wärmeversorgung
+435;Übrige Fachstatistiken im Bereich Energie- und Wasserversorgung
+439;Sonstiges im Bereich Energie- und Wasserversorgung
+441;Konjunkturerhebungen im Bereich Baugewerbe
+442;Strukturerhebungen im Bereich Baugewerbe
+449;Sonstiges im Bereich Baugewerbe
+451;Handels- und Gaststättenzählung
+452;Konjunkturstatistiken im Bereich Handel (einschl. Instandhaltung und Reparatur von Kfz), Gastgewerbe
+453;Strukturstatistiken im Bereich Handel (einschl. Instandhaltung und Reparatur von Kfz), Gastgewerbe
+454;Fachstatistiken in einzelnen Zweigen des Bereichs Handel (einschl. Instandhaltung und Reparatur von Kfz), Gastgewerbe, Tourismus
+456;Kfz-Handel, Instandhaltung
+459;Sonstiges im Bereich Handel (einschl. Instandhaltung und Reparatur von Kfz), Gastgewerbe, Tourismus
+461;Eisenbahnverkehr und Straßenpersonenverkehr
+462;Straßenverkehr (ohne Personenbeförderung)
+463;Binnen- und Seeschifffahrt
+464;Luftverkehr
+465;Nachrichtenübermittlung
+469;Sonstiges im Bereich Transport und Verkehr
+471;Wertpapiermärkte
+472;Kreditinstitute
+473;Versicherungen
+474;Dienstleistungen
+479;Sonstiges im Bereich Finanz- und andere Dienstleistungen
+481;Strukturstatistiken der Unternehmen
+482;Flexibles Modul der strukturellen Unternehmensstatistik
+491;Länderstatistiken im Bereich Land- und Forstwirtschaft, Fischerei
+492;Länderstatistiken im Bereich Produzierendes Gewerbe: Bereich Verarbeitendes Gewerbe, Bergbau und Gewinnung von Steinen und Erden
+493;Länderstatistiken im Bereich Produzierendes Gewerbe: Bereich Energie- und Wasserversorgung
+494;Länderstatistiken im Bereich Produzierendes Gewerbe: Bereich Baugewerbe
+495;Länderstatistiken im Bereich Handel sowie Instandhaltung und Reparatur von Kfz und Gebrauchsgütern, Gastgewerbe, Tourismus
+496;Länderstatistiken im Bereich Verkehr und Nachrichtenübermittlung
+497;Länderstatistiken im Bereich Finanz- und andere Dienstleistungen
+499;Geschäftsstatistiken des Statistischen Bundesamtes im Bereich Wirtschaftsbereiche
+511;Intrahandel
+512;Extrahandel
+519;Sonstiges im Bereich Außenhandel
+521;Unternehmensregister
+522;Arbeitsstätten
+523;Gewerbeanzeigen, -aufsicht
+524;Insolvenzen
+525;Kostenstrukturen
+529;Sonstiges im Bereich Unternehmen und Arbeitsstätten
+531;Handwerkszählungen
+532;Handwerksberichterstattungen
+539;Sonstiges im Bereich Handwerk und handwerksähnliches Gewerbe
+591;Länderstatistiken im Bereich Außenhandel
+592;Länderstatistiken im Bereich Unternehmen und Arbeitsstätten
+593;Länderstatistiken im Bereich Handwerk und handwerksähnliches Gewerbe
+599;Geschäftsstatistiken des Bundes im Bereich Außenhandel, Unternehmen, Handwerk
+611;Verbraucherpreise
+612;Agrarpreise, Erzeugerpreise gewerblicher Produkte, Großhandelspreise, Baupreise
+613;Preise für Dienstleistungen
+614;Außenhandelspreise
+615;Bodenmarkt
+616;Preisvergleiche mit dem Ausland
+619;Sonstiges im Bereich Preise
+621;Verdienststrukturen
+622;Tarifverdienste
+623;Laufende Verdiensterhebungen
+624;Arbeitskosten
+629;Sonstiges im Bereich Verdienste, Arbeitskosten
+631;Laufende Wirtschaftsrechnungen
+632;Einkommens- und Verbrauchsstichproben
+633;Dauerstichprobe befragungsbereiter Haushalte
+634;Gemeinschaftsstatistik über Einkommen und Lebensbedingungen (EU-SILC)
+635;Überschuldungsstatistik
+639;Sonstiges im Bereich Wirtschaftsrechnungen privater Haushalte
+691;Länderstatistiken im Bereich Preise
+692;Länderstatistiken im Bereich Löhne und Gehälter, Arbeitskosten
+693;Länderstatistiken im Bereich Freiwillige Erhebungen zu Einkommen, Ausgaben und Lebensbedingungen privater Haushalte
+699;Geschäftsstatistiken des Bundes im Bereich Preise, Verdienste, Einkommen und Verbrauch
+711;Haushaltsansätze
+712;Steuerhaushalt
+713;Schulden
+714;Finanzvermögen
+715;Vierteljährliche Kassenergebnisse
+716;Vierteljahresdaten der kaufmännisch buchenden öffentlichen Fonds, Einrichtungen und Unternehmen
+717;Rechnungsergebnisse
+718;Jahresabschlüsse der kaufmännisch buchenden öffentlichen Fonds, Einrichtungen und Unternehmen
+719;Sonstiges im Bereich Öffentliche Finanzen
+721;Jahres- und Vierteljahresabschlüsse - (Stillgelegt am 01.05.2015)
+722;Schulden - (Stillgelegt am 01.05.2015)
+723;Vermögen - (Stillgelegt am 01.05.2015)
+729;Sonstiges im Bereich Öffentliche Fonds, Einrichtungen und Unternehmen mit eigenem Rechnungswesen - (Stillgelegt am 01.05.2015)
+731;Lohn- und Einkommensteuer
+732;Körperschaftsteuer
+733;Umsatzsteuer
+734;Verbrauchsteuern - (Stillgelegt am 01.01.2015)
+735;Gewerbesteuern
+736;Steuern vom Vermögen
+737;Steuerverteilung
+739;Sonstiges im Bereich Steuern
+741;Personalstand
+742;Versorgungsempfänger
+749;Sonstiges im Bereich Personal im öffentlichen Dienst
+751;Berichtskreismanagement Finanz- und Personalstatistiken
+791;Länderstatistiken im Bereich Öffentliche Finanzen
+792;Länderstatistiken im Bereich Öffentliche Fonds, Einrichtungen und Unternehmen mit eigenem Rechnungswesen - (Stillgelegt am 01.01.2015)
+793;Länderstatistiken im Bereich Steuern
+794;Länderstatistiken im Bereich Personal im öffentlichen Dienst
+799;Geschäftsstatistiken des Bundes im Bereich Öffentliche Finanzen, Steuern und Personal im öffentlichen Dienst
+811;Entstehung und Verwendung des Inlandsprodukts
+812;Verteilung und Umverteilung des Nationaleinkommens
+813;Einnahmen und Ausgaben des Staats
+814;Außenwirtschaft
+815;Input-Output-Rechnung
+816;Vermögensrechnung
+817;Satellitensysteme
+819;Sonstiges im Bereich VGR des Bundes
+821;Entstehungsrechnung
+822;Verteilungsrechnung Inländerkonzept
+823;Verteilungsrechnung Inlandskonzept
+824;Umverteilungsrechnung
+825;Verwendungsrechnung
+826;VGR-Bezugszahlen
+827;Kreisberechnungen
+829;Sonstiges im Bereich VGR der Länder
+831;Zahlungsbilanz
+832;Auslandsvermögen
+839;Sonstiges im Bereich Zahlungsbilanz, Auslandsvermögen
+841;Bankstatistische Gesamtrechnungen
+842;Statistiken der Deutschen Bundesbank
+843;Zinsen und Währungen
+849;Sonstiges im Bereich Geld, Zinsen, Währungen
+851;Material- und Energieflussrechnungen
+852;Nutzung von Fläche und Raum
+853;Umweltzustand
+854;Maßnahmen des Umweltschutzes
+855;Vermeidungskosten
+859;Sonstiges im Bereich UGR
+861;Material- und Energieflussrechungen
+862;Nutzung von Fläche und Raum
+863;Umweltzustand
+864;Maßnahmen des Umweltschutzes
+865;Vermeidungskosten
+869;Sonstiges im Bereich UGR der Länder
+871;Sozioökonomisches Berichtssystem
+892;Länderstatistiken im Bereich VGR der Länder
+893;Länderstatistiken im Bereich Zahlungsbilanz, Auslandsvermögen
+894;Länderstatistiken im Bereich Geld, Zinsen, Währungen
+895;Länderstatistiken im Bereich UGR
+899;Geschäftsstatistiken des Bundes im Bereich Gesamtrechnungen
+921;Ausgaben und Einnahmen für Wissenschaft und Forschung
+922;Nationale und internationale Berichterstattung über Forschung und Entwicklung
+929;Sonstiges im Bereich Forschung und Entwicklung
+931;Test der Teilnahmebereitschaft
+941;EVAS-Nummern für die Altdateninventur
+951;Register
+991;Länderstatistiken im Bereich Auslandsstatistische Informationen
+992;Länderstatistiken im Bereich Forschung und Entwicklung
+993;Indikatoren zur nachhaltigen Entwicklung
+999;Geschäftsstatistiken des Bundes in Sonderbereichen

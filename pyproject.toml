@@ -13,9 +13,9 @@ maintainers = [
 ]
 description = "Python wrapper for GENESIS web service interface (API) of the Federal Statistical Office."
 name = "pystatis"
-version = "0.1.1"
+version = "0.1.2"
 readme = "README.md"
-repository = ""
+repository = "https://github.com/CorrelAid/pystatis/tree/v0.1.0"
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Science/Research",

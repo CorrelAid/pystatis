@@ -60,7 +60,7 @@ logincheck()
 
 If you can see a response like this, your setup is complete and you can start downloading data.
 
-For more details, please study the provided sample notebook for [cache](./nb/cache.ipynb).
+For more details, please study the provided sample notebook for [cache](https://github.com/CorrelAid/pystatis/blob/main/nb/cache.ipynb).
 
 ## How to use
 
@@ -90,7 +90,7 @@ results.tables.get_code([1,2,3]) # Gets the table codes, e.g. for downloading th
 results.tables.get_metadata([1,2]) # Gets the metadata for the table
 ```
 
-A complete overview of all use cases is provided in the [sample notebook.](/nb/find.py)
+A complete overview of all use cases is provided in the sample notebook for [find](https://github.com/CorrelAid/pystatis/blob/main/nb/find.ipynb).
 
 ### Download data
 
@@ -116,7 +116,7 @@ c.get_data()  # Only now the data is either fetched from GENESIS or loaded from 
 c.data  # a pandas data frame
 ```
 
-For more details, please study the provided sample notebook for [tables](./nb/table.ipynb) and [cubes](./nb/cube.ipynb).
+For more details, please study the provided sample notebook for [tables](https://github.com/CorrelAid/pystatis/blob/main/nb/table.ipynb) and [cubes](https://github.com/CorrelAid/pystatis/blob/main/nb/cube.ipynb).
 
 ### Clear Cache
 

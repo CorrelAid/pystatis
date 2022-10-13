@@ -15,7 +15,7 @@ from pystatis.helloworld import logincheck, whoami
 from pystatis.profile import change_password, remove_result
 from pystatis.table import Table
 
-__version__ = "0.1.3"
+__version__ = "0.1.4"
 
 __all__ = [
     "change_password",

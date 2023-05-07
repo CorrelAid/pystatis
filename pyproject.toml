@@ -54,6 +54,7 @@ safety = "^2.0.0"
 flake8 = "^4.0.1"
 jupyter = "^1.0.0"
 pytest-mock = "^3.8.2"
+Sphinx = "^7.0.0"
 
 [tool.black]
 line-length = 80

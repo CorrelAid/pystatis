@@ -1,4 +1,4 @@
-How to use
+Usage
 ==========
 
 The GENESIS data model

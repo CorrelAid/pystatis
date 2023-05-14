@@ -6,8 +6,10 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
+import pystatis
+
 project = 'pystatis'
-copyright = '2023, Michael Aydinbas'
+copyright = '2022, Michael Aydinbas'
 authors = [
     "Michael Aydinbas <michael.aydinbas@gmail.com>",
     "Ariz Weber <ariz.weber@protonmail.com>",
@@ -20,11 +22,16 @@ authors = [
 maintainers = [
     "Michael Aydinbas <michael.aydinbas@gmail.com>"
 ]
+release = pystatis.__version__
+version = release
+
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ['sphinx.ext.autodoc']
+extensions = ['sphinx.ext.autodoc',
+              'sphinx.ext.autosummary',  # used to generate overview tables
+]
 
 templates_path = ['_templates']
 exclude_patterns = []
@@ -34,5 +41,10 @@ exclude_patterns = []
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'alabaster'
+html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
+
+html_title = "pystatis"
+html_short_title = "pystatis documentation"
+html_logo = "_static/pystatis_logo.png"
+html_favicon = "_static/pystatis_logo.ico"

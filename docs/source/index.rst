@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to pystatis's documentation!
+pystatis
 ====================================
 
 ```pystatis``` is a Python wrapper for the GENESIS web service interface (API). It simplifies accessing the data from the German statistical federal office.
@@ -19,17 +19,20 @@ The main features are:
 
 To learn more about GENESIS refer to the official documentation `here <https://www.destatis.de/EN/Service/OpenData/api-webservice.html>`_.
 
-Contents
---------
-
 .. toctree::
    :maxdepth: 2
+   :caption: Contents
 
-   Home <self>
    install
    start
    use
    roadmap
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Modules
+
+   pystatis
 
 Indices and tables
 ------------------

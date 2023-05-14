@@ -1,8 +1,7 @@
 pystatis package
 ================
 
-Submodules
-----------
+Below you find all pystatis submodules.
 
 pystatis.cache module
 ---------------------

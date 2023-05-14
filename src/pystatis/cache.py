@@ -24,7 +24,7 @@ def cache_data(
     """Compress and archive data within the configured cache directory.
 
     Data will be stored in a zip file within the cache directory.
-    The folder structure will be `<name>/<endpoint>/<method>/<hash(params)>.
+    The folder structure will be `<name>/<endpoint>/<method>/<hash(params)>`.
     This allows to cache different results for different params.
 
     Args:

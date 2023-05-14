@@ -1,15 +1,20 @@
 import json
 import logging
+from pathlib import Path
 
 import pytest
 import requests
 
+from pystatis.config import load_config
 from pystatis.custom_exceptions import DestatisStatusError
 from pystatis.http_helper import (
     _check_invalid_destatis_status_code,
     _check_invalid_status_code,
     get_data_from_endpoint,
+    get_data_from_resultfile,
     get_job_id_from_response,
+    load_data,
+    start_job,
 )
 
 
@@ -192,3 +197,129 @@ def test_get_job_id_from_response_with_no_json():
     response._content = "Der Bearbeitungsauftrag wurde erstellt. Die Tabelle kann in Kürze als Ergebnis mit folgendem Namen abgerufen werden: 42153-0001_001597503 (Mindestens ein Parameter enthält ungültige Werte. Er wurde angepasst, um den Service starten zu können.: stand".encode()
     job_id = get_job_id_from_response(response)
     assert job_id == ""
+
+
+def test_load_data_from_cache(mocker):
+    # Setup
+    config = load_config()
+    cache_dir = Path(config["DATA"]["cache_dir"])
+    name = "dummy_name"
+    params = {"name": name}
+    data = "test data"
+    _hit_in_cash = mocker.patch(
+        "pystatis.http_helper.hit_in_cash", return_value=True
+    )
+    _read_from_cache = mocker.patch(
+        "pystatis.http_helper.read_from_cache", return_value=data
+    )
+
+    # Execution
+    result = load_data("data", "", params)
+
+    # Assertion
+    assert result == data
+    _hit_in_cash.assert_called_once_with(cache_dir, name, params)
+    _read_from_cache.assert_called_once_with(cache_dir, name, params)
+
+
+def test_start_job(mocker, caplog):
+    caplog.set_level(logging.WARNING)
+
+    mocker.patch(
+        "pystatis.http_helper.get_data_from_endpoint",
+        return_value=_generic_request_status(),
+    )
+
+    response = start_job(endpoint="dummy", method="dummy", params={})
+
+    assert (
+        "Die Tabelle ist zu groß, um direkt abgerufen zu werden. Es wird eine Verarbeitung im Hintergrund gestartet."
+        in caplog.text
+    )
+    assert response._content == _generic_request_status()._content
+
+
+def test_get_data_from_resultfile(mocker):
+    response_job_in_progress = requests.Response()
+    response_job_in_progress._content = (
+        """{"List": [{"State": "Fertig"}]}""".encode()
+    )
+    response_finished_job = requests.Response()
+    response_finished_job._content = """data_dummy""".encode()
+    mocker.patch(
+        "pystatis.http_helper.get_data_from_endpoint",
+        side_effect=[response_job_in_progress, response_finished_job],
+    )
+
+    raw_data = get_data_from_resultfile("")
+
+    assert raw_data == "data_dummy"
+
+
+def test_load_data_data_endpoint(mocker):
+    mocker.patch(
+        "pystatis.http_helper.get_data_from_endpoint",
+        return_value=_generic_request_status(),
+    )
+    # avoid caching
+    mocker.patch("pystatis.http_helper.cache_data", return_value=None)
+
+    data = load_data(endpoint="data", method="", params={})
+
+    assert isinstance(data, str)
+    assert data == _generic_request_status().text
+
+
+def test_load_data_data_endpoint_data_no_status_code(mocker):
+    response = requests.Response()
+    response._content = """{"Status": {"Content": "Content"}}""".encode()
+    mocker.patch(
+        "pystatis.http_helper.get_data_from_endpoint", return_value=response
+    )
+    # avoid caching
+    mocker.patch("pystatis.http_helper.cache_data", return_value=None)
+
+    data = load_data(endpoint="data", method="", params={})
+
+    assert isinstance(data, str)
+    assert data == response.text
+
+
+def test_load_data_data_endpoint_job(mocker):
+    mocker.patch(
+        "pystatis.http_helper.get_data_from_endpoint",
+        return_value=_generic_request_status(code=98),
+    )
+    start_job_response = requests.Response()
+    start_job_response._content = """{"Status": {"Content": "Der Bearbeitungsauftrag wurde erstellt."}}""".encode()
+    mocker.patch(
+        "pystatis.http_helper.start_job", return_value=start_job_response
+    )
+    mocker.patch(
+        "pystatis.http_helper.get_data_from_resultfile",
+        return_value="dummy_data",
+    )
+    # avoid caching
+    mocker.patch("pystatis.http_helper.cache_data", return_value=None)
+
+    data = load_data(endpoint="data", method="", params={"name": "11111-0001"})
+
+    assert isinstance(data, str)
+    assert data == "dummy_data"
+
+
+def test_load_data_other_endpoints(mocker):
+    mocker.patch(
+        "pystatis.http_helper.get_data_from_endpoint",
+        return_value=_generic_request_status(),
+    )
+
+    for as_json in [True, False]:
+        data = load_data(endpoint="", method="", params={}, as_json=as_json)
+
+        if as_json:
+            assert isinstance(data, dict)
+            assert data == _generic_request_status().json()
+        else:
+            assert isinstance(data, str)
+            assert data == _generic_request_status().text

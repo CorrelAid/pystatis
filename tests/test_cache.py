@@ -65,6 +65,17 @@ def test_cache_data(cache_dir, params):
     assert data_dir.exists() and len(list(data_dir.glob("*.zip"))) == 1
 
 
+def test_cache_data_no_name(cache_dir, params):
+    assert len(list((cache_dir / "data").glob("*"))) == 0
+
+    test_data = "test"
+    cache_data(cache_dir, None, params, test_data)
+
+    data_dir = _build_file_path(cache_dir, "test-cache-data", params)
+
+    assert not data_dir.exists()
+
+
 def test_read_from_cache(cache_dir, params):
     test_data = "test read from cache"
     cache_data(
@@ -78,7 +89,15 @@ def test_read_from_cache(cache_dir, params):
     assert data == test_data
 
 
+def test_read_from_cache_no_name(cache_dir, params):
+    data = read_from_cache(cache_dir, None, params)
+
+    assert data == ""
+
+
 def test_hit_cache(cache_dir, params):
+    assert not hit_in_cash(cache_dir, None, params)
+
     assert not hit_in_cash(cache_dir, "test-hit-cache", params)
     cache_data(cache_dir, "test-hit-cache", params, "test")
     assert hit_in_cash(cache_dir, "test-hit-cache", params)

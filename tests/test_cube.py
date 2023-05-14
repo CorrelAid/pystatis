@@ -4,7 +4,7 @@ from pathlib import Path
 import numpy as np
 import pytest
 
-from pystatis.cube import assign_correct_types, parse_cube, rename_axes
+from pystatis.cube import Cube, assign_correct_types, parse_cube, rename_axes
 
 
 @pytest.fixture
@@ -164,3 +164,62 @@ def test_rename_axes(cube, test_cols, test_types):
 
     for col, expected_type in zip(test_cols, test_types):
         assert issubclass(cube["QEI"][col].dtype.type, expected_type)
+
+
+@pytest.mark.parametrize(
+    "raw_data, expected_shape, test_cols, test_types",
+    [
+        (
+            "hard_cube",
+            (19185, 13),
+            [
+                "ELG002_WERT",
+                "ELG003_WERT",
+            ],
+            [np.integer, np.integer],
+        ),
+        (
+            "easy_cube",
+            (42403, 10),
+            [
+                "BEVSTD_WERT",
+            ],
+            [np.integer],
+        ),
+    ],
+    indirect=["raw_data"],
+)
+def test_get_data(
+    mocker,
+    raw_data,
+    expected_shape,
+    test_cols,
+    test_types,
+):
+    # mock load_data API calls
+    metadata_dict = {"metadata": "json_response_dict"}
+    mocker.patch(
+        "pystatis.cube.load_data", side_effect=[raw_data, metadata_dict]
+    )
+
+    # create instance with dummy name
+    cube_class = Cube(name="dummy_name")
+
+    # run get data function
+    cube_class.get_data()
+
+    # general variables
+    assert cube_class.name == "dummy_name"
+    assert cube_class.raw_data == raw_data
+
+    # cube and data
+    assert isinstance(cube_class.cube, dict)
+    assert len(cube_class.cube) == raw_data.count("K;")
+
+    for col, expected_type in zip(test_cols, test_types):
+        assert issubclass(cube_class.cube["QEI"][col].dtype.type, expected_type)
+
+    assert cube_class.data.shape == expected_shape
+
+    # metadata
+    assert cube_class.metadata == metadata_dict

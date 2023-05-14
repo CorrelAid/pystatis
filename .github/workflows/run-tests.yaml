@@ -100,4 +100,5 @@ jobs:
     - name: Build documentation
       run: |
         cd docs
-        poetry run make clean && make html
+        poetry run make clean
+        poetry run make html

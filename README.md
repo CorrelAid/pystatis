@@ -156,7 +156,7 @@ Contributions to this project are highly appreciated! You can either contact the
 
 To contribute to this project, please follow these steps:
 
-1. Install [poetry](https://python-poetry.org/docs/). We recommend installing `poetry` via [pipx](https://pypa.github.io/pipx/) which gives you a global `poetry` command in an isolated virtual environment.
+1. Install [poetry](https://python-poetry.org/docs/).
 2. Clone the repository via git.
 3. Change into the project root directory.
 4. Run `poetry install` to create the virtual environment within `poetry`'s cache folder (run `poetry env info` to see the details of this new virtual environment). `poetry` has installed all dependencies for you, as well as the package itself.

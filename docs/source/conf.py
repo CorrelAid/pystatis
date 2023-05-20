@@ -6,8 +6,6 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-import pystatis
-
 project = "pystatis"
 copyright = "2022, Michael Aydinbas"
 authors = [
@@ -20,7 +18,7 @@ authors = [
     "Marco Hübner <marco_huebner1@gmx.de>",
 ]
 maintainers = ["Michael Aydinbas <michael.aydinbas@gmail.com>"]
-release = pystatis.__version__
+release = "0.1.4"  # hard-coded, since pre-commit hook fails to import pystatis
 version = release
 
 

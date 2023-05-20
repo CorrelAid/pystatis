@@ -104,8 +104,7 @@ def rename_axes(
 
     Args:
         cube (dict): A dictionary holding the cube data as returned by `parse_cube()`.
-        rename_classifying_variables (bool, optional): If True, rename classifying variables.
-        Defaults to True.
+        rename_classifying_variables (bool, optional): If True, rename classifying variables. Defaults to True.
         rename_time_variable (bool, optional): If True, rename the time variable. Defaults to True.
 
     Returns:

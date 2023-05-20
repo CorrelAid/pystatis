@@ -27,6 +27,7 @@ To learn more about GENESIS refer to the official documentation `here <https://w
    start
    use
    roadmap
+   contribute
 
 .. toctree::
    :maxdepth: 2

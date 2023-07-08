@@ -1,11 +1,12 @@
 import json
 import logging
+import re
 from pathlib import Path
 
 import pytest
 import requests
 
-from pystatis.config import load_config
+from pystatis.config import init_config, load_config
 from pystatis.custom_exceptions import DestatisStatusError
 from pystatis.http_helper import (
     _check_invalid_destatis_status_code,
@@ -16,6 +17,18 @@ from pystatis.http_helper import (
     load_data,
     start_job,
 )
+
+
+@pytest.fixture()
+def pre_init_config(tmp_path_factory):
+    # remove white-space and non-latin characters (issue fo some user names)
+    temp_dir = str(tmp_path_factory.mktemp(".pystatis"))
+    temp_dir = re.sub(r"[^\x00-\x7f]", r"", temp_dir.replace(" ", ""))
+
+    # requierd due to possibility of missing init
+    init_config("myuser", "mypw", temp_dir)
+
+    return load_config()
 
 
 def _generic_request_status(
@@ -199,9 +212,9 @@ def test_get_job_id_from_response_with_no_json():
     assert job_id == ""
 
 
-def test_load_data_from_cache(mocker):
+def test_load_data_from_cache(mocker, pre_init_config):
     # Setup
-    config = load_config()
+    config = pre_init_config
     cache_dir = Path(config["DATA"]["cache_dir"])
     name = "dummy_name"
     params = {"name": name}
@@ -256,7 +269,11 @@ def test_get_data_from_resultfile(mocker):
     assert raw_data == "data_dummy"
 
 
-def test_load_data_data_endpoint(mocker):
+def test_load_data_data_endpoint(mocker, pre_init_config):
+    # avoid missing init
+    mocker.patch(
+        "pystatis.http_helper.load_config", return_value=pre_init_config
+    )
     mocker.patch(
         "pystatis.http_helper.get_data_from_endpoint",
         return_value=_generic_request_status(),
@@ -270,7 +287,11 @@ def test_load_data_data_endpoint(mocker):
     assert data == _generic_request_status().text
 
 
-def test_load_data_data_endpoint_data_no_status_code(mocker):
+def test_load_data_data_endpoint_data_no_status_code(mocker, pre_init_config):
+    # avoid missing init
+    mocker.patch(
+        "pystatis.http_helper.load_config", return_value=pre_init_config
+    )
     response = requests.Response()
     response._content = """{"Status": {"Content": "Content"}}""".encode()
     mocker.patch(
@@ -285,7 +306,11 @@ def test_load_data_data_endpoint_data_no_status_code(mocker):
     assert data == response.text
 
 
-def test_load_data_data_endpoint_job(mocker):
+def test_load_data_data_endpoint_job(mocker, pre_init_config):
+    # avoid missing init
+    mocker.patch(
+        "pystatis.http_helper.load_config", return_value=pre_init_config
+    )
     mocker.patch(
         "pystatis.http_helper.get_data_from_endpoint",
         return_value=_generic_request_status(code=98),
@@ -308,7 +333,11 @@ def test_load_data_data_endpoint_job(mocker):
     assert data == "dummy_data"
 
 
-def test_load_data_other_endpoints(mocker):
+def test_load_data_other_endpoints(mocker, pre_init_config):
+    # avoid missing init
+    mocker.patch(
+        "pystatis.http_helper.load_config", return_value=pre_init_config
+    )
     mocker.patch(
         "pystatis.http_helper.get_data_from_endpoint",
         return_value=_generic_request_status(),

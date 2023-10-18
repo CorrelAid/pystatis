@@ -157,16 +157,18 @@ Contributions to this project are highly appreciated! You can either contact the
 
 To contribute to this project, please follow these steps:
 
-1. Install [poetry](https://python-poetry.org/docs/). We recommend installing `poetry` via [pipx](https://pypa.github.io/pipx/) which gives you a global `poetry` command in an isolated virtual environment.
-2. Clone the repository via git.
-3. Change into the project root directory.
-4. Run `poetry install` to create the virtual environment within `poetry`'s cache folder (run `poetry env info` to see the details of this new virtual environment). `poetry` has installed all dependencies for you, as well as the package itself.
-5. Install pre-commit: `poetry run pre-commit install`. This will activate the pre-commit hooks that will run prior every commit to ensure code quality.
-6. Do your changes.
-7. Run `poetry run pytest` to see if all existing tests still run through. It is important to use `poetry run` to call `pytest` so that `poetry` uses the created virtual environment and not the system's default Python interpreter. Alternatively, you can run `poetry shell` to let `poetry` activate the virtual environment for the current session. Afterwards, you can run `pytest` as usual without any prefix. You can leave the poetry shell with the `exit` command.
-8. Add new tests depending on your changes.
-9. Run `poetry run pytest` again to make sure your tests are also passed.
-10. Commit and push your changes.
-11. Create a PR.
+1. Create a new virtual environment, for example with [conda](https://docs.conda.io/en/latest/) or the standard [venv](https://docs.python.org/3/library/venv.html) and make sure your Python version matches the minimum version for this project.
+2. Install [poetry](https://python-poetry.org/docs/) inside your venv. You can do so either with `conda install poetry` or `pip install poetry`, depending on your package manager.
+3. Clone the repository via git.
+4. Change into the project root directory.
+5. Run `poetry install` to create the virtual environment within `poetry`'s cache folder (run `poetry env info` to see the details of this new virtual environment). `poetry` has installed all dependencies for you, as well as the package `pystatis` itself.
+6. Install pre-commit: `poetry run pre-commit install`. This will activate the pre-commit hooks that will run prior every commit to ensure code quality.
+7. Do your changes.
+8. Run `poetry run pytest` to see if all existing tests still run through. It is important to use `poetry run` to call `pytest` so that `poetry` uses the created virtual environment and not the system's default Python interpreter. Alternatively, you can run `poetry shell` to let `poetry` activate the virtual environment for the current session. Afterwards, you can run `pytest` as usual without any prefix. You can leave the poetry shell with the `exit` command.
+9. Add new tests depending on your changes.
+10. Run `poetry run pytest` again to make sure your tests are also passed.
+11. Commit your changes. This will trigger all pre-commit hooks as defined in `.pre-commit-config.yaml`. If any of these pre-hooks fails, your commit is declined and you have to fix the issues first.
+12. Push your changes.
+13. Create a PR.
 
 To learn more about `poetry`, see [Dependency Management With Python Poetry](https://realpython.com/dependency-management-python-poetry/#command-reference) by realpython.com.

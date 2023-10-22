@@ -37,27 +37,27 @@ classifiers = [
 [tool.poetry.dependencies]
 python = "^3.9"
 requests = "^2.27.1"
-pandas = "^1.4.3"
+pandas = "^2.0"
 tabulate = "^0.8.10"
 
 [tool.poetry.dev-dependencies]
 bandit = "^1.7.4"
-black = "^22.3.0"
+black = "^23.0"
 flake8-docstrings = "^1.6.0"
 isort = "^5.10.1"
-mypy = "^0.942"
-pre-commit = "^2.18.1"
-pylint = "^2.13.4"
+mypy = "^1.0"
+pre-commit = "^3.0"
+pylint = "^3.0"
 pytest = "^7.1.1"
-pytest-cov = "^3.0.0"
+pytest-cov = "^4.0"
 safety = "^2.0.0"
-flake8 = "^4.0.1"
+flake8 = "^6.0"
 jupyter = "^1.0.0"
 pytest-mock = "^3.8.2"
 
 [tool.black]
 line-length = 80
-target-version = ['py39']
+target-version = ['py310']
 
 [build-system]
 build-backend = "poetry.core.masonry.api"

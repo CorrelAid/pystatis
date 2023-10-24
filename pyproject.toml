@@ -38,7 +38,6 @@ classifiers = [
 python = "^3.9"
 requests = "^2.27.1"
 pandas = "^2.0"
-pandas = "^2.0"
 tabulate = "^0.8.10"
 
 [tool.poetry.group.dev]
@@ -47,17 +46,12 @@ optional = true
 [tool.poetry.group.dev.dependencies]
 bandit = "^1.7.4"
 black = "^23.0"
-black = "^23.0"
 flake8-docstrings = "^1.6.0"
 isort = "^5.10.1"
 mypy = "^1.0"
 pre-commit = "^3.0"
 pylint = "^3.0"
-mypy = "^1.0"
-pre-commit = "^3.0"
-pylint = "^3.0"
 pytest = "^7.1.1"
-pytest-cov = "^4.0"
 pytest-cov = "^4.0"
 safety = "^2.0.0"
 flake8 = "^3.0"
@@ -66,7 +60,6 @@ pytest-mock = "^3.8.2"
 
 [tool.black]
 line-length = 80
-target-version = ['py310']
 target-version = ['py310']
 
 [build-system]

@@ -22,6 +22,7 @@ jobs:
       fail-fast: false
       matrix:
         python-version: ["3.9", "3.10"]
+        poetry-version: [1.6.1]
         os: [ubuntu-22.04, macOS-latest, windows-latest]
 
     steps:
@@ -33,10 +34,10 @@ jobs:
     - name: Run poetry image
       uses: abatilo/actions-poetry@v2.0.0
       with:
-          poetry-version: 1.6.1
+          poetry-version: ${{ matrix.poetry-version }}
     - name: Install dependencies
       run: |
-        poetry install
+        poetry install --with dev
     - name: Run tests
       run: |
         poetry run pytest --cov=pystatis tests
@@ -44,8 +45,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: [3.10.13]
-        poetry-version: [1.6.1]
+        python-version: ${{ matrix.python-version }}
+        poetry-version: ${{ matrix.poetry-version }}
         os: [ubuntu-latest]
     runs-on: ${{ matrix.os }}
     steps:
@@ -58,7 +59,7 @@ jobs:
         with:
           poetry-version: ${{ matrix.poetry-version }}
       - name: Install dependencies
-        run: poetry install
+        run: poetry install --with dev
       - name: Run black
         run: poetry run black . --check
       - name: Run isort

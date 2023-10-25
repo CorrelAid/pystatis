@@ -157,18 +157,27 @@ Contributions to this project are highly appreciated! You can either contact the
 
 To contribute to this project, please follow these steps:
 
-1. Create a new virtual environment, for example with [conda](https://docs.conda.io/en/latest/) or the standard [venv](https://docs.python.org/3/library/venv.html) and make sure your Python version matches the minimum version for this project.
-2. Install [poetry](https://python-poetry.org/docs/) inside your venv. You can do so either with `conda install poetry` or `pip install poetry`, depending on your package manager.
-3. Clone the repository via git.
-4. Change into the project root directory.
-5. Run `poetry install` to create the virtual environment within `poetry`'s cache folder (run `poetry env info` to see the details of this new virtual environment). Run `poetry install --with dev` to receive all additional developer dependencies. `poetry` has installed all dependencies for you, as well as the package `pystatis` itself.
-6. Install pre-commit: `poetry run pre-commit install`. This will activate the pre-commit hooks that will run prior every commit to ensure code quality.
-7. Do your changes.
-8. Run `poetry run pytest` to see if all existing tests still run through. It is important to use `poetry run` to call `pytest` so that `poetry` uses the created virtual environment and not the system's default Python interpreter. Alternatively, you can run `poetry shell` to let `poetry` activate the virtual environment for the current session. Afterwards, you can run `pytest` as usual without any prefix. You can leave the poetry shell with the `exit` command.
-9. Add new tests depending on your changes.
-10. Run `poetry run pytest` again to make sure your tests are also passed.
-11. Commit your changes. This will trigger all pre-commit hooks as defined in `.pre-commit-config.yaml`. If any of these pre-hooks fails, your commit is declined and you have to fix the issues first.
-12. Push your changes.
-13. Create a PR.
+### Dev env setup
+
+1. Install [miniforge](https://github.com/conda-forge/miniforge).
+2. Create a new virtual environment using `conda`: Run `conda create -n pystatis python=3.11`. You can choose another Python version as long as it is supported by this package, see the pyproject.toml for supported Python versions.
+3. Install [poetry](https://python-poetry.org/docs/) inside your conda environment: Run `conda install poetry`.
+4. Clone the repository via git.
+5. Change into the project root directory.
+6. Run `poetry install` to install all dependencies into the current conda environment (run `poetry env info` to see the details of the current environment). Run `poetry install --with dev` to receive all additional developer dependencies. `poetry` has installed all dependencies for you, as well as the package `pystatis` itself.
+7. Install pre-commit: Run `poetry run pre-commit install`. This will activate the pre-commit hooks that will run prior every commit to ensure code quality.
+
+### Workflow
+
+1. Check out the `dev` branch and make sure it is up to date by running `git pull`.
+2. Create a new branch by running `git checkout -b <new-branch>` or `git switch -c <new-branch>`. If possible, add an issue number to the branch name.
+3. Do your changes.
+4. Run `poetry run pytest` to see if all existing tests still run through. It is important to use `poetry run` to call `pytest` so that `poetry` uses the created virtual environment and not the system's default Python interpreter. Alternatively, you can run `poetry shell` to let `poetry` activate the virtual environment for the current session. Afterwards, you can run `pytest` as usual without any prefix. You can leave the poetry shell with the `exit` command.
+5. Add new tests depending on your changes.
+6. Run `poetry run pytest` again to make sure your tests are also passed.
+7. Commit your changes. This will trigger all pre-commit hooks as defined in `.pre-commit-config.yaml`. If any of these pre-hooks fails, your commit is declined and you have to fix the issues first.
+8. Before you create a PR make sure that you have the latest changes from dev. Run `git switch dev`, run `git pull`, switch back to your branch with `git switch -` and either do a `git rebase -i dev` or `git merge dev` to get the latest changes in your current working branch. Solve all merge conflicts.
+9. Push your final changes.
+10. Create a new PR, always against `dev` as target.
 
 To learn more about `poetry`, see [Dependency Management With Python Poetry](https://realpython.com/dependency-management-python-poetry/#command-reference) by realpython.com.

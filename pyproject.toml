@@ -57,6 +57,7 @@ safety = "^2.0.0"
 flake8 = "^3.0"
 jupyter = "^1.0.0"
 pytest-mock = "^3.8.2"
+python-dotenv = "^1.0.0"
 
 [tool.black]
 line-length = 80

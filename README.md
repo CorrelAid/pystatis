@@ -153,7 +153,7 @@ Contributions to this project are highly appreciated! You can either contact the
 4. Push to remote (`git push origin feature/<descriptive-name>`)
 5. Open a Pull Request to be merged with dev
 
-## Developer information
+## Contributor information
 
 To contribute to this project, please follow these steps:
 

@@ -17,7 +17,7 @@ logger = logging.getLogger(__name__)
 
 DEFAULT_CONFIG_DIR = str(Path().home() / f".{PKG_NAME}")
 CUSTOM_CONFIG_PATH = ""
-SUPPORTED_DB = ["GENESIS", "ZENSUS"]
+SUPPORTED_DB = ["genesis", "zensus"]
 
 
 def init_config(config_dir: str = DEFAULT_CONFIG_DIR) -> None:
@@ -46,8 +46,8 @@ def setup_credentials() -> None:
     config = load_config()
 
     for db in get_supported_db():
-        config[db]["username"] = get_user_input("username", db)
-        config[db]["password"] = get_user_input("password", db)
+        config[db]["username"] = get_user_input(db, "username")
+        config[db]["password"] = get_user_input(db, "password")
 
     write_config(config)
 
@@ -58,10 +58,12 @@ def setup_credentials() -> None:
 
 
 def build_config_file() -> Path:
+    """Build the path to the config file."""
     return Path(CUSTOM_CONFIG_PATH) / "config.ini"
 
 
 def get_user_input(db: str, field: str) -> str:
+    """Get user input for the given database and field."""
     env_var = os.environ.get(f"PYSTATIS_{db.upper()}_API_{field.upper()}")
 
     if env_var is not None:
@@ -74,6 +76,7 @@ def get_user_input(db: str, field: str) -> str:
 
 
 def load_config(config_file: Path | None = None) -> ConfigParser:
+    """Load a config from a file."""
     if config_file is None:
         config_file = build_config_file()
 
@@ -91,6 +94,7 @@ def load_config(config_file: Path | None = None) -> ConfigParser:
 
 
 def write_config(config: ConfigParser, config_file: Path | None = None) -> None:
+    """Write a config to a file."""
     if config_file is None:
         config_file = build_config_file()
 
@@ -102,6 +106,7 @@ def write_config(config: ConfigParser, config_file: Path | None = None) -> None:
 
 
 def create_default_config() -> ConfigParser:
+    """Create a default config parser with empty credentials."""
     config = ConfigParser()
 
     config["SETTINGS"] = {
@@ -109,14 +114,14 @@ def create_default_config() -> ConfigParser:
         "supported_db": ",".join(SUPPORTED_DB),
     }
 
-    config["GENESIS"] = {
+    config["genesis"] = {
         "base_url": "https://www-genesis.destatis.de/genesisWS/rest/2020/",
         "username": "",
         "password": "",
         "doku": "https://www-genesis.destatis.de/genesis/misc/GENESIS-Webservices_Einfuehrung.pdf",
     }
 
-    config["ZENSUS"] = {
+    config["zensus"] = {
         "base_url": "https://ergebnisse2011.zensus2022.de/api/rest/2020/",
         "username": "",
         "password": "",
@@ -133,7 +138,18 @@ def create_default_config() -> ConfigParser:
 
 
 def get_supported_db() -> list[str]:
+    """Get a list of supported database names."""
     return SUPPORTED_DB
+
+
+def delete_config() -> None:
+    """Delete the config file."""
+    config_file = build_config_file()
+
+    if config_file.exists():
+        config_file.unlink()
+
+    logger.info("Config was deleted. Path: %s.", config_file)
 
 
 init_config()

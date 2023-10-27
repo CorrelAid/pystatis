@@ -4,7 +4,7 @@ import logging
 import pytest
 import requests
 
-from pystatis.custom_exceptions import DestatisStatusError
+from pystatis.exception import DestatisStatusError
 from pystatis.http_helper import (
     _check_invalid_destatis_status_code,
     _check_invalid_status_code,

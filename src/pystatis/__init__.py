@@ -8,11 +8,10 @@ print("Version:", pstat.__version__)
 ```
 """
 from pystatis.cache import clear_cache
-from pystatis.config import init_config
+from pystatis.config import setup_credentials
 from pystatis.cube import Cube
 from pystatis.find import Find
 from pystatis.helloworld import logincheck, whoami
-from pystatis.profile import change_password, remove_result
 from pystatis.table import Table
 
 __version__ = "0.1.4"
@@ -22,9 +21,9 @@ __all__ = [
     "clear_cache",
     "Cube",
     "Find",
-    "init_config",
     "logincheck",
     "remove_result",
+    "setup_credentials",
     "Table",
     "whoami",
 ]

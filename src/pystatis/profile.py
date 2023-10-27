@@ -3,11 +3,7 @@
 import logging
 from typing import cast
 
-from pystatis.config import (
-    _write_config,
-    get_config_path_from_settings,
-    load_config,
-)
+from pystatis.config import _write_config, load_config
 from pystatis.http_helper import load_data
 
 logger = logging.getLogger(__name__)

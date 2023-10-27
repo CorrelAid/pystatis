@@ -15,7 +15,7 @@ from pystatis.cache import (
     read_from_cache,
 )
 from pystatis.config import load_config
-from pystatis.custom_exceptions import DestatisStatusError
+from pystatis.exception import DestatisStatusError
 
 logger = logging.getLogger(__name__)
 

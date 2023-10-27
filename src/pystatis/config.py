@@ -1,13 +1,12 @@
-"""Module for handling settings.ini and config.ini files.
+"""Module for handling `config.ini` files.
 
-This package stores core information in the settings.ini, which is stored under the user home directory.
-The parent directory for the settings.ini is called after the package name.
-The settings.ini gets automatically created by importing this package, if it does not exist already.
-The config.ini is stored in a directory that is configured in the settings.ini via `config_dir`.
-The config.ini holds all revelant information about the usage of GENESIS API like credentials.
-If there is no config.ini in the given config_dir, a default config will be created with empty credentials.
+This package stores core information in the `config.ini`, which is stored under the user home directory, unless the user specifies otherwise.
+The parent directory for the `config.ini` is called after the package name by default.
+The `config.ini` holds all relevant information about all supported databases like user credentials.
+If there is no `config.ini` in the given `config_dir`, a default config will be created with empty credentials. Subsequent calls to other `pystatis` functions will throw an error until the user has filled in the credentials.
 """
 import logging
+import os
 from configparser import ConfigParser
 from pathlib import Path
 
@@ -15,79 +14,46 @@ PKG_NAME = __name__.split(".", maxsplit=1)[0]
 
 logger = logging.getLogger(__name__)
 
-DEFAULT_CONFIG_DIR = Path().home() / f".{PKG_NAME}"
-DEFAULT_SETTINGS_FILE = DEFAULT_CONFIG_DIR / "settings.ini"
+DEFAULT_CONFIG_DIR = str(Path().home() / f".{PKG_NAME}")
+CUSTOM_CONFIG_PATH = ""
 
 
-def create_settings() -> None:
-    """Create a settings.ini file within the default config folder in the user home directory."""
-    if not DEFAULT_SETTINGS_FILE.exists():
-        default_settings = ConfigParser()
-        default_settings["SETTINGS"] = {"config_dir": str(DEFAULT_CONFIG_DIR)}
-
-        _write_config(default_settings, DEFAULT_SETTINGS_FILE)
-        logger.info(
-            "Settings file was created. Path: %s.", DEFAULT_SETTINGS_FILE
-        )
-
-
-def load_settings() -> ConfigParser:
-    """Load the config from settings.ini.
-
-    Returns:
-        ConfigParser: Sections and key-value pairs from settings.ini.
-    """
-    settings_file = DEFAULT_SETTINGS_FILE
-
-    settings = ConfigParser()
-    settings.read(settings_file)
-
-    return settings
-
-
-def get_config_path_from_settings() -> Path:
-    """Return full local path to config.ini.
-
-    Returns:
-        Path: Path to config_dir / config.ini.
-    """
-    settings = load_settings()
-    return Path(settings.get("SETTINGS", "config_dir")) / "config.ini"
-
-
-def init_config(
-    username: str, password: str, config_dir: Path = DEFAULT_CONFIG_DIR
-) -> None:
+def init_config(config_dir: str = DEFAULT_CONFIG_DIR) -> None:
     """One-time function to be called for new users to create a new config.ini with default values.
 
     Stores username and password for the GENESIS API, among other settings.
 
     Args:
-        username (str): username used to login to GENESIS-Online.
-        password (str): password used to login to GENESIS-Online.
         config_dir (Path, optional): Path to the root config directory. Defaults to the user home directory.
     """
-    default_settings = load_settings()
-    default_settings["SETTINGS"]["config_dir"] = str(config_dir)
+    global CUSTOM_CONFIG_PATH
 
-    _write_config(default_settings, DEFAULT_SETTINGS_FILE)
-    logger.info(
-        "Settings file updated: config_dir set to %s. Path: %s.",
-        config_dir,
-        DEFAULT_SETTINGS_FILE,
+    CUSTOM_CONFIG_PATH = (
+        config_dir if config_dir != DEFAULT_CONFIG_DIR else DEFAULT_CONFIG_DIR
     )
-
-    config_file = get_config_path_from_settings()
+    # TODO: As described in the module docstrings, we should support loading existing config files when config_dir is given by the user (and even in the default dir!) This would require another parameter like `overwrite` or `force` to indicate that the user wants to overwrite the existing config file.
     config = _create_default_config()
-    config["GENESIS API"]["username"] = username
-    config["GENESIS API"]["password"] = password
-    _write_config(config, config_file)
 
-    cache_dir = Path(config["DATA"]["cache_dir"])
-    if not cache_dir.exists():
-        cache_dir.mkdir()
+    _write_config(config, build_config_file())
 
-    logger.info("New config was created. Path: %s.", config_file)
+    logger.info("New config was created. Path: %s.", config_dir)
+
+
+def setup_credentials() -> None:
+    """_summary_"""
+    config = _load_config(build_config_file())
+
+    config["GENESIS API"]["username"] = get_user_input("username", "GENESIS")
+    config["GENESIS API"]["password"] = get_user_input("password", "GENESIS")
+    config["ZENSUS API"]["username"] = get_user_input("username", "ZENSUS")
+    config["ZENSUS API"]["password"] = get_user_input("password", "ZENSUS")
+
+    _write_config(config, build_config_file())
+
+    logger.info(
+        "Config was updated with latest credentials. Path: %s.",
+        build_config_file(),
+    )
 
 
 def load_config() -> ConfigParser:
@@ -96,21 +62,37 @@ def load_config() -> ConfigParser:
     Returns:
         ConfigParser: Sections and key-value pairs from config.ini.
     """
-    config_file = get_config_path_from_settings()
-    config = _load_config(config_file)
+    config = _load_config(build_config_file())
 
-    if config.has_section("GENESIS API"):
-        if not config.get("GENESIS API", "username") or not config.get(
-            "GENESIS API", "password"
-        ):
-            logger.critical(
-                "Username and/or password are missing! "
-                "Please make sure to fill in your username and password for GENESIS API. "
-                "Path: %s.",
-                config_file,
-            )
+    # TODO: move to new set_db function
+    # if config.has_section("GENESIS API"):
+    #     if not config.get("GENESIS API", "username") or not config.get(
+    #         "GENESIS API", "password"
+    #     ):
+    #         logger.critical(
+    #             "Username and/or password are missing! "
+    #             "Please make sure to fill in your username and password for GENESIS API, if you want to use that database "
+    #             "Path: %s.",
+    #             build_config_file(),
+    #         )
 
     return config
+
+
+def build_config_file() -> Path:
+    return Path(CUSTOM_CONFIG_PATH) / "config.ini"
+
+
+def get_user_input(db: str, field: str) -> str:
+    env_var = os.environ.get(f"PYSTATIS_{db.upper()}_API_{field.upper()}")
+
+    if env_var is not None:
+        return env_var
+
+    user_input = input(f"Please enter your {field} for the database {db}:")
+    print("You entered: " + user_input)
+
+    return user_input
 
 
 def _write_config(config: ConfigParser, config_file: Path) -> None:
@@ -137,7 +119,9 @@ def _load_config(config_file: Path) -> ConfigParser:
 
 def _create_default_config() -> ConfigParser:
     config = ConfigParser()
-    settings = load_settings()
+
+    config["SETTINGS"] = {"active_db": ""}
+
     config["GENESIS API"] = {
         "base_url": "https://www-genesis.destatis.de/genesisWS/rest/2020/",
         "username": "",
@@ -145,11 +129,20 @@ def _create_default_config() -> ConfigParser:
         "doku": "https://www-genesis.destatis.de/genesis/misc/GENESIS-Webservices_Einfuehrung.pdf",
     }
 
-    config["DATA"] = {
-        "cache_dir": str(Path(settings["SETTINGS"]["config_dir"]) / "data")
+    config["ZENSUS API"] = {
+        "base_url": "https://ergebnisse2011.zensus2022.de/api/rest/2020/",
+        "username": "",
+        "password": "",
+        "doku": "https://ergebnisse2011.zensus2022.de/datenbank/misc/ZENSUS-Webservices_Einfuehrung.pdf",
     }
+
+    config["DATA"] = {"cache_dir": str(Path(CUSTOM_CONFIG_PATH) / "data")}
+
+    cache_dir = Path(config["DATA"]["cache_dir"])
+    if not cache_dir.exists():
+        cache_dir.mkdir()
 
     return config
 
 
-create_settings()
+init_config()

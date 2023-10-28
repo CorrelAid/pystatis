@@ -99,7 +99,7 @@ jobs:
             poetry-version: $POETRY_VERSION
       - name: Install dependencies
         run: |
-          poetry install
+          poetry install --with dev
       - name: Build documentation
         run: |
           cd docs

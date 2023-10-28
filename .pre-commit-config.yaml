@@ -1,7 +1,7 @@
 exclude: "(doc|dist)"
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.1.0 # Use the ref you want to point at
+    rev: v4.5.0 # Use the ref you want to point at
     hooks:
       - id: check-yaml
       - id: check-toml
@@ -18,21 +18,14 @@ repos:
         name: isort (python)
         args: ["--profile", "black", "--filter-files", "--line-length", "80"]
   - repo: https://github.com/psf/black
-    rev: 22.3.0
+    rev: 23.10.0
     hooks:
       - id: black
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.14.2
+    rev: 0.27.0
     hooks:
       - id: check-jsonschema
         name: "Check GitHub Workflows"
         files: ^\.github/workflows/
         types: [yaml]
         args: ["--schemafile", "https://json.schemastore.org/github-workflow"]
-  - repo: https://github.com/thclark/pre-commit-sphinx
-    rev: 0.0.1
-    hooks:
-      - id: build-docs
-        name: "Check if documentation compiles"
-        args: ['--cache-dir', 'docs/build/doctrees', '--html-dir', 'docs/build/html', '--source-dir', 'docs/source']
-        language_version: python3

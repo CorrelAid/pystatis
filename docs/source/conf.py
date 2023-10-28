@@ -27,7 +27,6 @@ version = release
 
 extensions = [
     "myst_parser",
-    # "sphinx_mdinclude",
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",  # used to generate overview tables
 ]

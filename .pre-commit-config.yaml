@@ -36,3 +36,4 @@ repos:
         name: "Check if documentation compiles"
         args: ['--cache-dir', 'docs/build/doctrees', '--html-dir', 'docs/build/html', '--source-dir', 'docs/source']
         language_version: python3
+        additional_dependencies: [myst-parser]

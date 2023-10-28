@@ -11,13 +11,7 @@ from pystatis.cache import (
     normalize_name,
     read_from_cache,
 )
-from pystatis.config import (
-    DEFAULT_SETTINGS_FILE,
-    _write_config,
-    init_config,
-    load_config,
-    load_settings,
-)
+from pystatis.config import get_cache_dir, init_config
 
 
 @pytest.fixture()
@@ -26,19 +20,9 @@ def cache_dir(tmp_path_factory):
     temp_dir = str(tmp_path_factory.mktemp(".pystatis"))
     temp_dir = re.sub(r"[^\x00-\x7f]", r"", temp_dir.replace(" ", ""))
 
-    init_config("myuser", "mypw", temp_dir)
+    init_config(temp_dir)
 
-    config = load_config()
-    cache_dir = Path(config["DATA"]["cache_dir"])
-
-    return cache_dir
-
-
-@pytest.fixture(autouse=True)
-def restore_settings():
-    old_settings = load_settings()
-    yield
-    _write_config(old_settings, DEFAULT_SETTINGS_FILE)
+    return get_cache_dir()
 
 
 @pytest.fixture(scope="module")
@@ -55,7 +39,7 @@ def test_build_file_path(cache_dir, params):
 
 
 def test_cache_data(cache_dir, params):
-    assert len(list((cache_dir / "data").glob("*"))) == 0
+    assert len(list((Path(cache_dir) / "data").glob("*"))) == 0
 
     test_data = "test"
     cache_data(cache_dir, "test-cache-data", params, test_data)

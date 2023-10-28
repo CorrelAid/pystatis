@@ -6,17 +6,19 @@ import re
 import shutil
 import zipfile
 from datetime import date
+from operator import attrgetter
 from pathlib import Path
 from typing import Optional
 
-from pystatis.config import load_config
+from pystatis.config import get_cache_dir
 
 logger = logging.getLogger(__name__)
+
 JOB_ID_PATTERN = r"\d+"
 
 
 def cache_data(
-    cache_dir: Path,
+    cache_dir: str,
     name: Optional[str],
     params: dict,
     data: str,
@@ -28,10 +30,8 @@ def cache_data(
     This allows to cache different results for different params.
 
     Args:
-        cache_dir (Path): The cash directory as configured in the config.
+        cache_dir (str): The cash directory as configured in the config.
         name (str): The unique identifier in GENESIS-Online.
-        endpoint (str): The endpoint for this data request.
-        method (str): The method for this data request.
         params (dict): The dictionary holding the params for this data request.
         data (str): The actual raw text data as returned by GENESIS-Online.
     """
@@ -73,8 +73,6 @@ def read_from_cache(
     Args:
         cache_dir (Path): The cash directory as configured in the config.
         name (str): The unique identifier in GENESIS-Online.
-        endpoint (str): The endpoint for this data request.
-        method (str): The method for this data request.
         params (dict): The dictionary holding the params for this data request.
 
     Returns:
@@ -85,11 +83,11 @@ def read_from_cache(
 
     data_dir = _build_file_path(cache_dir, name, params)
 
-    versions = sorted(
+    latest_version = sorted(
         data_dir.glob("*"),
-        key=lambda path: int(path.stem),
-    )
-    file_name = versions[-1].name
+        key=attrgetter("stem"),
+    )[-1]
+    file_name = latest_version.name
     file_path = data_dir / file_name
     with zipfile.ZipFile(file_path, "r") as myzip:
         with myzip.open(file_name.replace(".zip", ".txt")) as file:
@@ -98,15 +96,13 @@ def read_from_cache(
     return data
 
 
-def _build_file_path(cache_dir: Path, name: str, params: dict) -> Path:
+def _build_file_path(cache_dir: str, name: str, params: dict) -> Path:
     """Builds a unique cache directory name from name and hashed params dictionary.
 
-    The way this method works is that it creates a path under cache dir that is unique
-        because the name is a unique EVAS identifier number in Destatis and the hash
-        is (close enough) unique to a given dictionary with query parameter values.
+    The way this method works is that it creates a path under cache dir that is unique because the name is a unique EVAS identifier number in Destatis and the hash is (close enough) unique to a given dictionary with query parameter values.
 
     Args:
-        cache_dir (Path): The root cache directory as configured in the config.ini.
+        cache_dir (str): The root cache directory as configured in the config.ini.
         name (str): The unique identifier for an object in Destatis.
         params (dict): The query parameters for a given call to the Destatis API.
 
@@ -120,7 +116,7 @@ def _build_file_path(cache_dir: Path, name: str, params: dict) -> Path:
         del params_["job"]
     params_hash = hashlib.blake2s(digest_size=10, usedforsecurity=False)
     params_hash.update(json.dumps(params_).encode("UTF-8"))
-    data_dir = cache_dir / name / params_hash.hexdigest()
+    data_dir = Path(cache_dir) / name / params_hash.hexdigest()
 
     return data_dir
 
@@ -141,17 +137,15 @@ def normalize_name(name: str) -> str:
 
 
 def hit_in_cash(
-    cache_dir: Path,
+    cache_dir: str,
     name: Optional[str],
     params: dict,
 ) -> bool:
     """Check if data is already cached.
 
     Args:
-        cache_dir (Path): The cash directory as configured in the config.
+        cache_dir (str): The cash directory as configured in the config.
         name (str): The unique identifier in GENESIS-Online.
-        endpoint (str): The endpoint for this data request.
-        method (str): The method for this data request.
         params (dict): The dictionary holding the params for this data request.
 
     Returns:
@@ -170,8 +164,7 @@ def clear_cache(name: Optional[str] = None) -> None:
     Args:
         name (str, optional): Unique name to be deleted from cached data.
     """
-    config = load_config()
-    cache_dir = Path(config["DATA"]["cache_dir"])
+    cache_dir = Path(get_cache_dir())
 
     # remove specified file (directory) from the data cache
     # or clear complete cache (remove childs, preserve base)

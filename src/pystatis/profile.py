@@ -3,7 +3,7 @@
 import logging
 from typing import cast
 
-from pystatis.config import _write_config, load_config
+from pystatis.db import set_db_pw
 from pystatis.http_helper import load_data
 
 logger = logging.getLogger(__name__)
@@ -19,19 +19,19 @@ def change_password(new_password: str) -> str:
     Returns:
         str: text response from Destatis
     """
+    global config
+
     params = {
         "new": new_password,
         "repeat": new_password,
     }
 
-    # load config.ini beforehand, to ensure passwords are changed at the same time
-    config = load_config()
     try:
         config["GENESIS API"]["password"]
     except KeyError as e:
         raise KeyError(
             "Password not found in config! Please make sure \
-            init_config() was run properly & your user data is set correctly!",
+            setup_credentials() was run properly & your user data is set correctly!",
         ) from e
 
     # change remote password
@@ -39,8 +39,7 @@ def change_password(new_password: str) -> str:
         endpoint="profile", method="password", params=params
     )
     # change local password
-    config["GENESIS API"]["password"] = new_password
-    _write_config(config, get_config_path_from_settings())
+    set_db_pw(new_password)
 
     logger.info("Password changed successfully!")
 

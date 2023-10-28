@@ -14,9 +14,10 @@ from pathlib import Path
 PKG_NAME = __name__.split(".", maxsplit=1)[0]
 
 logger = logging.getLogger(__name__)
+config = None
 
 DEFAULT_CONFIG_DIR = str(Path().home() / f".{PKG_NAME}")
-CUSTOM_CONFIG_PATH = DEFAULT_CONFIG_DIR
+CUSTOM_CONFIG_DIR = DEFAULT_CONFIG_DIR
 SUPPORTED_DB = ["genesis", "zensus"]
 
 
@@ -28,11 +29,11 @@ def init_config(config_dir: str = DEFAULT_CONFIG_DIR) -> None:
     Args:
         config_dir (str, optional): Path to the root config directory. Defaults to the user home directory.
     """
-    global CUSTOM_CONFIG_PATH
+    global CUSTOM_CONFIG_DIR, config
 
-    CUSTOM_CONFIG_PATH = config_dir
+    CUSTOM_CONFIG_DIR = config_dir
 
-    if not build_config_file().exists():
+    if not _build_config_file_path().exists():
         config = create_default_config()
         write_config(config)
 
@@ -41,26 +42,26 @@ def init_config(config_dir: str = DEFAULT_CONFIG_DIR) -> None:
 
 def setup_credentials() -> None:
     """Setup credentials for all supported databases."""
-    config = load_config()
+    global config
 
     for db in get_supported_db():
-        config[db]["username"] = get_user_input(db, "username")
-        config[db]["password"] = get_user_input(db, "password")
+        config[db]["username"] = _get_user_input(db, "username")
+        config[db]["password"] = _get_user_input(db, "password")
 
     write_config(config)
 
     logger.info(
         "Config was updated with latest credentials. Path: %s.",
-        build_config_file(),
+        _build_config_file_path(),
     )
 
 
-def build_config_file() -> Path:
+def _build_config_file_path() -> Path:
     """Build the path to the config file."""
-    return Path(CUSTOM_CONFIG_PATH) / "config.ini"
+    return Path(CUSTOM_CONFIG_DIR) / "config.ini"
 
 
-def get_user_input(db: str, field: str) -> str:
+def _get_user_input(db: str, field: str) -> str:
     """Get user input for the given database and field."""
     env_var = os.environ.get(f"PYSTATIS_{db.upper()}_API_{field.upper()}")
 
@@ -76,7 +77,7 @@ def get_user_input(db: str, field: str) -> str:
 def load_config(config_file: Path | None = None) -> ConfigParser:
     """Load a config from a file."""
     if config_file is None:
-        config_file = build_config_file()
+        config_file = _build_config_file_path()
 
     config = ConfigParser()
     successful_reads = config.read(config_file)
@@ -94,7 +95,7 @@ def load_config(config_file: Path | None = None) -> ConfigParser:
 def write_config(config: ConfigParser, config_file: Path | None = None) -> None:
     """Write a config to a file."""
     if config_file is None:
-        config_file = build_config_file()
+        config_file = _build_config_file_path()
 
     if not config_file.parent.exists():
         config_file.parent.mkdir(parents=True)
@@ -126,7 +127,7 @@ def create_default_config() -> ConfigParser:
         "doku": "https://ergebnisse2011.zensus2022.de/datenbank/misc/ZENSUS-Webservices_Einfuehrung.pdf",
     }
 
-    config["DATA"] = {"cache_dir": str(Path(CUSTOM_CONFIG_PATH) / "data")}
+    config["DATA"] = {"cache_dir": str(Path(CUSTOM_CONFIG_DIR) / "data")}
 
     cache_dir = Path(config["DATA"]["cache_dir"])
     if not cache_dir.exists():
@@ -140,9 +141,14 @@ def get_supported_db() -> list[str]:
     return SUPPORTED_DB
 
 
+def get_cache_dir() -> str:
+    """Get the cache directory."""
+    return config["DATA"]["cache_dir"]
+
+
 def delete_config() -> None:
     """Delete the config file."""
-    config_file = build_config_file()
+    config_file = _build_config_file_path()
 
     if config_file.exists():
         config_file.unlink()
@@ -151,3 +157,4 @@ def delete_config() -> None:
 
 
 init_config()
+config = load_config()

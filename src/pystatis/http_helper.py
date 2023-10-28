@@ -14,7 +14,8 @@ from pystatis.cache import (
     normalize_name,
     read_from_cache,
 )
-from pystatis.config import load_config
+from pystatis.config import get_cache_dir
+from pystatis.db import get_db_settings
 from pystatis.exception import DestatisStatusError
 
 logger = logging.getLogger(__name__)
@@ -39,8 +40,7 @@ def load_data(
     Returns:
         Union[str, dict]: The data as raw text or JSON dict.
     """
-    config = load_config()
-    cache_dir = Path(config["DATA"]["cache_dir"])
+    cache_dir = Path(get_cache_dir())
     name = params.get("name")
 
     if name is not None:
@@ -94,15 +94,15 @@ def get_data_from_endpoint(
     Returns:
         requests.Response: the response object holding the response from calling the Destatis endpoint.
     """
-    config = load_config()
-    url = f"{config['GENESIS API']['base_url']}{endpoint}/{method}"
+    db_host, db_user, db_pw = get_db_settings()
+    url = f"{db_host}{endpoint}/{method}"
 
     # params is used to calculate hash for caching so don't alter params dict here!
     params_ = params.copy()
     params_.update(
         {
-            "username": config["GENESIS API"]["username"],
-            "password": config["GENESIS API"]["password"],
+            "username": db_user,
+            "password": db_pw,
         }
     )
 

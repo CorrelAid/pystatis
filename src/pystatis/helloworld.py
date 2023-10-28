@@ -31,11 +31,12 @@ def logincheck() -> str:
     Returns:
         str: text logincheck response from Destatis
     """
-    url = f"{db.get_db_host()}" + "helloworld/logincheck"
+    db_host, db_user, db_pw = db.get_db_settings()
+    url = f"{db_host}helloworld/logincheck"
 
     params = {
-        "username": db.get_db_user(),
-        "password": db.get_db_pw(),
+        "username": db_user,
+        "password": db_pw,
     }
 
     response = requests.get(url, params=params, timeout=(1, 15))

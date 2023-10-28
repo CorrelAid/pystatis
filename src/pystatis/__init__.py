@@ -7,6 +7,14 @@ import pystatis as pstat
 print("Version:", pstat.__version__)
 ```
 """
+import pystatis.cache
+import pystatis.config
+import pystatis.cube
+import pystatis.db
+import pystatis.find
+import pystatis.helloworld
+import pystatis.profile
+import pystatis.table
 from pystatis.cache import clear_cache
 from pystatis.config import setup_credentials
 from pystatis.cube import Cube

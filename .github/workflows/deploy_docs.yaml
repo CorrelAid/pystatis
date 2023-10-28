@@ -29,7 +29,8 @@ jobs:
       - name: Build docs
         run: |
           cd docs
-          make html
+          poetry run make clean
+          poetry run make html
       - name: Deploy docs
         uses: peaceiris/actions-gh-pages@v3
         with:

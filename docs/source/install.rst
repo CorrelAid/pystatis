@@ -1,16 +1,7 @@
 Installation
 ============
 
-You can install the package via
-
-.. code-block:: bash
-    
-    $ pip install pystatis
-
-If everything worked out correctly, you should be able to import ``pystatis`` like this
-
-.. code-block:: python
-
-    import pystatis as pystat
-
-    print("Version:", pystat.__version__)
+.. include:: ../../README.md
+    :parser: myst_parser.sphinx_
+    :start-after: ## Installation
+    :end-before: ## Get started

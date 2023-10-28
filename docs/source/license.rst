@@ -1,7 +1,7 @@
-Usage
+License
 ==========
 
 .. include:: ../../README.md
     :parser: myst_parser.sphinx_
-    :start-after: ## How to use
-    :end-before: ## License
+    :start-after: ## License
+    :end-before: ## Roadmap

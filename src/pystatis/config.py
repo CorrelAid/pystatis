@@ -16,7 +16,7 @@ PKG_NAME = __name__.split(".", maxsplit=1)[0]
 logger = logging.getLogger(__name__)
 
 DEFAULT_CONFIG_DIR = str(Path().home() / f".{PKG_NAME}")
-CUSTOM_CONFIG_PATH = ""
+CUSTOM_CONFIG_PATH = DEFAULT_CONFIG_DIR
 SUPPORTED_DB = ["genesis", "zensus"]
 
 
@@ -30,9 +30,7 @@ def init_config(config_dir: str = DEFAULT_CONFIG_DIR) -> None:
     """
     global CUSTOM_CONFIG_PATH
 
-    CUSTOM_CONFIG_PATH = (
-        config_dir if config_dir != DEFAULT_CONFIG_DIR else DEFAULT_CONFIG_DIR
-    )
+    CUSTOM_CONFIG_PATH = config_dir
 
     if not build_config_file().exists():
         config = create_default_config()

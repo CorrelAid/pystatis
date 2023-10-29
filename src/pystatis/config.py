@@ -107,6 +107,10 @@ def write_config(config_file: Path | None = None) -> None:
     if not config_file.parent.exists():
         config_file.parent.mkdir(parents=True)
 
+    cache_dir = Path(get_cache_dir())
+    if not cache_dir.exists():
+        cache_dir.mkdir()
+
     with open(config_file, "w", encoding="utf-8") as fp:
         config.write(fp)
 
@@ -134,11 +138,8 @@ def create_default_config() -> ConfigParser:
         "doku": "https://ergebnisse2011.zensus2022.de/datenbank/misc/ZENSUS-Webservices_Einfuehrung.pdf",
     }
 
-    config["DATA"] = {"cache_dir": str(Path(CUSTOM_CONFIG_DIR) / "data")}
-
-    cache_dir = Path(config["DATA"]["cache_dir"])
-    if not cache_dir.exists():
-        cache_dir.mkdir()
+    cache_dir = Path(CUSTOM_CONFIG_DIR) / "data"
+    config["DATA"] = {"cache_dir": str(cache_dir)}
 
     return config
 

@@ -15,7 +15,7 @@ from pystatis.config import get_cache_dir, init_config
 
 
 @pytest.fixture()
-def cache_dir(tmp_path_factory):
+def cache_dir(tmp_path_factory) -> str:
     # remove white-space and non-latin characters (issue fo some user names)
     temp_dir = str(tmp_path_factory.mktemp(".pystatis"))
     temp_dir = re.sub(r"[^\x00-\x7f]", r"", temp_dir.replace(" ", ""))

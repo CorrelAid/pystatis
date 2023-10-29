@@ -35,9 +35,16 @@ def init_config(config_dir: str = DEFAULT_CONFIG_DIR) -> None:
 
     if not _build_config_file_path().exists():
         config = create_default_config()
-        write_config(config)
+        write_config()
 
-        logger.info("New config was created. Path: %s.", config_dir)
+        logger.info(
+            "New config was created. Path: %s.", _build_config_file_path()
+        )
+    else:
+        config = load_config(_build_config_file_path())
+        logger.info(
+            "Existing config was loaded. Path: %s.", _build_config_file_path()
+        )
 
 
 def setup_credentials() -> None:
@@ -48,7 +55,7 @@ def setup_credentials() -> None:
         config[db]["username"] = _get_user_input(db, "username")
         config[db]["password"] = _get_user_input(db, "password")
 
-    write_config(config)
+    write_config()
 
     logger.info(
         "Config was updated with latest credentials. Path: %s.",
@@ -92,7 +99,7 @@ def load_config(config_file: Path | None = None) -> ConfigParser:
     return config
 
 
-def write_config(config: ConfigParser, config_file: Path | None = None) -> None:
+def write_config(config_file: Path | None = None) -> None:
     """Write a config to a file."""
     if config_file is None:
         config_file = _build_config_file_path()
@@ -157,4 +164,3 @@ def delete_config() -> None:
 
 
 init_config()
-config = load_config()

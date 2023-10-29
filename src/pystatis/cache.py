@@ -10,7 +10,7 @@ from operator import attrgetter
 from pathlib import Path
 from typing import Optional
 
-from pystatis.config import get_cache_dir
+from pystatis import config
 
 logger = logging.getLogger(__name__)
 
@@ -164,7 +164,7 @@ def clear_cache(name: Optional[str] = None) -> None:
     Args:
         name (str, optional): Unique name to be deleted from cached data.
     """
-    cache_dir = Path(get_cache_dir())
+    cache_dir = Path(config.get_cache_dir())
 
     # remove specified file (directory) from the data cache
     # or clear complete cache (remove childs, preserve base)

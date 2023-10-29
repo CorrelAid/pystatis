@@ -1,6 +1,6 @@
 import logging
 
-from pystatis.config import config, get_supported_db, write_config
+from pystatis import config
 from pystatis.exception import PystatisConfigError
 
 logger = logging.getLogger(__name__)
@@ -8,13 +8,13 @@ logger = logging.getLogger(__name__)
 
 def set_db(name: str) -> None:
     """Set the active database."""
-    if name.lower() not in get_supported_db():
+    if name.lower() not in config.get_supported_db():
         raise ValueError(
-            f"Database {name} not supported! Please choose one of {', '.join(get_supported_db())}"
+            f"Database {name} not supported! Please choose one of {', '.join(config.get_supported_db())}"
         )
-    config["SETTINGS"]["active_db"] = name.lower()
+    config.config["SETTINGS"]["active_db"] = name.lower()
 
-    if not config[name]["username"] or not config[name]["password"]:
+    if not get_db_user() or not get_db_pw():
         logger.critical(
             "No credentials for %s found. Please run `setup_credentials()`.",
             name,
@@ -23,7 +23,7 @@ def set_db(name: str) -> None:
 
 def get_db() -> str:
     """Get the active database."""
-    active_db = config["SETTINGS"]["active_db"]
+    active_db = config.config["SETTINGS"]["active_db"]
 
     if not active_db:
         raise PystatisConfigError(
@@ -34,20 +34,20 @@ def get_db() -> str:
 
 
 def get_db_host() -> str:
-    return config[get_db()]["base_url"]
+    return config.config[get_db()]["base_url"]
 
 
 def get_db_user() -> str:
-    return config[get_db()]["username"]
+    return config.config[get_db()]["username"]
 
 
 def get_db_pw() -> str:
-    return config[get_db()]["password"]
+    return config.config[get_db()]["password"]
 
 
 def set_db_pw(new_pw: str) -> None:
-    config[get_db()]["password"] = new_pw
-    write_config(config)
+    config.config[get_db()]["password"] = new_pw
+    config.write_config()
 
 
 def get_db_settings() -> tuple[str, str, str]:

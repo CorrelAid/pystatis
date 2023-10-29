@@ -8,14 +8,13 @@ from typing import Union
 
 import requests
 
+from pystatis import config, db
 from pystatis.cache import (
     cache_data,
     hit_in_cash,
     normalize_name,
     read_from_cache,
 )
-from pystatis.config import get_cache_dir
-from pystatis import db
 from pystatis.exception import DestatisStatusError
 
 logger = logging.getLogger(__name__)
@@ -40,7 +39,7 @@ def load_data(
     Returns:
         Union[str, dict]: The data as raw text or JSON dict.
     """
-    cache_dir = Path(get_cache_dir())
+    cache_dir = Path(config.get_cache_dir())
     name = params.get("name")
 
     if name is not None:

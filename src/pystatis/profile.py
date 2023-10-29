@@ -3,7 +3,7 @@
 import logging
 from typing import cast
 
-from pystatis.db import set_db_pw
+from pystatis import db, config
 from pystatis.http_helper import load_data
 
 logger = logging.getLogger(__name__)
@@ -26,20 +26,12 @@ def change_password(new_password: str) -> str:
         "repeat": new_password,
     }
 
-    try:
-        config["GENESIS API"]["password"]
-    except KeyError as e:
-        raise KeyError(
-            "Password not found in config! Please make sure \
-            setup_credentials() was run properly & your user data is set correctly!",
-        ) from e
-
     # change remote password
     response_text = load_data(
         endpoint="profile", method="password", params=params
     )
     # change local password
-    set_db_pw(new_password)
+    db.set_db_pw(new_password)
 
     logger.info("Password changed successfully!")
 

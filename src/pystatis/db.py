@@ -1,6 +1,7 @@
 import logging
 
 from pystatis.config import config, get_supported_db, write_config
+from pystatis.exception import PystatisConfigError
 
 logger = logging.getLogger(__name__)
 
@@ -13,17 +14,20 @@ def set_db(name: str) -> None:
         )
     config["SETTINGS"]["active_db"] = name.lower()
 
+    if not config[name]["username"] or not config[name]["password"]:
+        logger.critical(
+            "No credentials for %s found. Please run `setup_credentials()`.",
+            name,
+        )
+
 
 def get_db() -> str:
     """Get the active database."""
     active_db = config["SETTINGS"]["active_db"]
-    if not active_db:
-        logger.critical("No active database set! Please run `set_db()`.")
 
-    if not config[active_db]["username"] or not config[active_db]["password"]:
-        logger.critical(
-            "No credentials for %s found. Please run `setup_credentials()`.",
-            active_db,
+    if not active_db:
+        raise PystatisConfigError(
+            "No active database set! Please run `set_db()`."
         )
 
     return active_db

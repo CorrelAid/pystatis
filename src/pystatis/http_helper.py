@@ -15,7 +15,7 @@ from pystatis.cache import (
     read_from_cache,
 )
 from pystatis.config import get_cache_dir
-from pystatis.db import get_db_settings
+from pystatis import db
 from pystatis.exception import DestatisStatusError
 
 logger = logging.getLogger(__name__)
@@ -94,7 +94,7 @@ def get_data_from_endpoint(
     Returns:
         requests.Response: the response object holding the response from calling the Destatis endpoint.
     """
-    db_host, db_user, db_pw = get_db_settings()
+    db_host, db_user, db_pw = db.get_db_settings()
     url = f"{db_host}{endpoint}/{method}"
 
     # params is used to calculate hash for caching so don't alter params dict here!

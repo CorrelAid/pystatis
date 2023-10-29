@@ -2,9 +2,9 @@ import re
 
 import pytest
 
-from pystatis.profile import change_password, remove_result
-from pystatis.config import init_config, load_config
 from pystatis import db
+from pystatis.config import init_config, load_config
+from pystatis.profile import change_password, remove_result
 from tests.test_http_helper import _generic_request_status
 
 

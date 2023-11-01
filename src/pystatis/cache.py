@@ -99,7 +99,9 @@ def read_from_cache(
 def _build_file_path(cache_dir: str, name: str, params: dict) -> Path:
     """Builds a unique cache directory name from name and hashed params dictionary.
 
-    The way this method works is that it creates a path under cache dir that is unique because the name is a unique EVAS identifier number in Destatis and the hash is (close enough) unique to a given dictionary with query parameter values.
+    The way this method works is that it creates a path under cache dir that is unique
+    because the name is a unique EVAS identifier number in Destatis and the hash is
+    (close enough) unique to a given dictionary with query parameter values.
 
     Args:
         cache_dir (str): The root cache directory as configured in the config.ini.

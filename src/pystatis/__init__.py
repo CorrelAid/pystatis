@@ -18,12 +18,10 @@ from pystatis.table import Table
 __version__ = "0.1.4"
 
 __all__ = [
-    "change_password",
     "clear_cache",
     "Cube",
     "Find",
     "logincheck",
-    "remove_result",
     "set_db",
     "setup_credentials",
     "Table",

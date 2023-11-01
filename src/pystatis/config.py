@@ -1,10 +1,12 @@
 """Module for handling `config.ini` files.
 
-This package stores core information in the `config.ini`, which is stored under the user home directory, unless the user specifies otherwise.
-The parent directory for the `config.ini` is called after the package name by default.
-The `config.ini` holds all relevant information about all supported databases like user credentials.
-If there is no `config.ini` in the given `config_dir`, a default config will be created with empty credentials. Subsequent calls to other `pystatis` functions will throw an error until the user has filled in the credentials.
-`init_config` is executed automatically when the package is imported for the first time. It can be called manually to change the default config directory.
+This package stores core information in the `config.ini`, which is stored under the user home directory, unless the
+user specifies otherwise. The parent directory for the `config.ini` is called after the package name by default. The
+`config.ini` holds all relevant information about all supported databases like user credentials. If there is no
+`config.ini` in the given `config_dir`, a default config will be created with empty credentials. Subsequent calls to
+other `pystatis` functions will throw an error until the user has filled in the credentials. `init_config` is executed
+automatically when the package is imported for the first time. It can be called manually to change the default config
+directory.
 """
 import logging
 import os

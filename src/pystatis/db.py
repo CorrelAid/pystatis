@@ -1,3 +1,4 @@
+"""Module provides functions to set the active database and get active database properties."""
 import logging
 
 from pystatis import config

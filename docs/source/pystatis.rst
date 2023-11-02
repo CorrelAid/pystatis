@@ -75,8 +75,9 @@ pystatis.table module
    :undoc-members:
    :show-inheritance:
 
-Module contents
----------------
+.. NOTE: duplicate objects warning seems to be unfixable https://github.com/sphinx-doc/sphinx/issues/8664
+Overall Module contents
+=======================
 
 .. automodule:: pystatis
    :members:

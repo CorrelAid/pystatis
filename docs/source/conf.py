@@ -46,4 +46,4 @@ html_title = "pystatis"
 html_short_title = "pystatis documentation"
 html_logo = "_static/pystatis_logo.png"
 html_favicon = "_static/pystatis_logo.ico"
-autodoc_typehints = 'description'
+autodoc_typehints = "description"

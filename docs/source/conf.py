@@ -29,6 +29,7 @@ extensions = [
     "myst_parser",
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",  # used to generate overview tables
+    "sphinx.ext.napoleon",  # used for google-style docstrings
 ]
 
 templates_path = ["_templates"]
@@ -45,3 +46,4 @@ html_title = "pystatis"
 html_short_title = "pystatis documentation"
 html_logo = "_static/pystatis_logo.png"
 html_favicon = "_static/pystatis_logo.ico"
+autodoc_typehints = 'description'

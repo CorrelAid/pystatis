@@ -27,7 +27,7 @@ def config_dir(tmp_path_factory):
 
 
 @pytest.fixture(autouse=True)
-def restore_settings():
+def restore_settings():  # TODO: Unused?
     old_settings = load_settings()
     yield
     _write_config(old_settings, DEFAULT_SETTINGS_FILE)

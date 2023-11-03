@@ -1,5 +1,7 @@
 # ``pystatis``
 
+![Tests and Code Quality](https://github.com/CorrelAid/pystatis/actions/workflows/tun-tests.yaml/badge.svg?event=push)
+
 ```pystatis``` is a Python wrapper for the GENESIS web service interface (API). It simplifies accessing the data from the German statistical federal office.
 
 The main features are:

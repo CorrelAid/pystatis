@@ -13,7 +13,7 @@ def set_db(name: str) -> None:
         raise ValueError(
             f"Database {name} not supported! Please choose one of {', '.join(config.get_supported_db())}"
         )
-    config.config["SETTINGS"]["active_db"] = name.lower()
+    config.config.set("settings", "active_db", name.lower())
 
     if not get_db_user() or not get_db_pw():
         logger.critical(
@@ -24,7 +24,7 @@ def set_db(name: str) -> None:
 
 def get_db() -> str:
     """Get the active database."""
-    active_db = config.config["SETTINGS"]["active_db"]
+    active_db = config.config.get("settings", "active_db")
 
     if not active_db:
         raise PystatisConfigError(

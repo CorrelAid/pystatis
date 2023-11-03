@@ -6,7 +6,8 @@ from pathlib import Path
 import pytest
 import requests
 
-from pystatis.config import init_config, load_config
+import pystatis.config
+from pystatis.config import create_settings, init_config, load_config
 from pystatis.custom_exceptions import DestatisStatusError
 from pystatis.http_helper import (
     _check_invalid_destatis_status_code,
@@ -20,12 +21,21 @@ from pystatis.http_helper import (
 
 
 @pytest.fixture()
-def pre_init_config(tmp_path_factory):
+def pre_init_config(mocker, tmp_path_factory):
     # remove white-space and non-latin characters (issue fo some user names)
     temp_dir = str(tmp_path_factory.mktemp(".pystatis"))
     temp_dir = re.sub(r"[^\x00-\x7f]", r"", temp_dir.replace(" ", ""))
 
-    # requierd due to possibility of missing init
+    # patch config dir and settings file to avoid overwriting existing config
+    mocker.patch.object(pystatis.config, "DEFAULT_CONFIG_DIR", temp_dir)
+    mocker.patch.object(
+        pystatis.config,
+        "DEFAULT_SETTINGS_FILE",
+        Path(temp_dir) / "settings.ini",
+    )
+
+    # required due to possibility of missing init
+    create_settings()
     init_config("myuser", "mypw", temp_dir)
 
     return load_config()

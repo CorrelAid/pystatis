@@ -12,7 +12,8 @@ def config_() -> RawConfigParser:
     old_config = config.load_config()
     config.delete_config()
     yield config.config
-    config.write_config(old_config)
+    config.config = old_config
+    config.write_config()
 
 
 @pytest.mark.parametrize("name", ["genesis", "zensus", "regio"])

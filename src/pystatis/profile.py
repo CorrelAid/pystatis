@@ -3,7 +3,7 @@
 import logging
 from typing import cast
 
-from pystatis import config, db
+from pystatis import db
 from pystatis.http_helper import load_data
 
 logger = logging.getLogger(__name__)
@@ -19,8 +19,6 @@ def change_password(new_password: str) -> str:
     Returns:
         str: text response from Destatis
     """
-    global config
-
     params = {
         "new": new_password,
         "repeat": new_password,

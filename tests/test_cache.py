@@ -20,7 +20,8 @@ def config_() -> RawConfigParser:
     old_config = config.load_config()
     config.delete_config()
     yield config.config
-    config.write_config(old_config)
+    config.config = old_config
+    config.write_config()
 
 
 @pytest.fixture()
@@ -29,7 +30,7 @@ def cache_dir(config_) -> str:
     config_.set(
         "data",
         "cache_dir",
-        (Path(config.DEFAULT_CONFIG_DIR) / "test-cache-dir").as_posix(),
+        str(Path(config.DEFAULT_CONFIG_DIR) / "test-cache-dir"),
     )
     cache_dir = config.get_cache_dir()
     yield cache_dir

@@ -1,6 +1,6 @@
 import copy
 import os
-from configparser import RawConfigParser
+from configparser import ConfigParser
 from pathlib import Path
 
 import pytest
@@ -9,11 +9,12 @@ from pystatis import config
 
 
 @pytest.fixture()
-def config_() -> RawConfigParser:
+def config_() -> ConfigParser:
     old_config = config.load_config()
     config.delete_config()
     yield config.config
-    config.write_config(old_config)
+    config.config = old_config
+    config.write_config()
 
 
 def test_config_path():
@@ -27,7 +28,7 @@ def test_config_path():
 
 
 def test_init_config_is_run_on_import(config_):
-    assert isinstance(config_, RawConfigParser)
+    assert isinstance(config_, ConfigParser)
     assert config._build_config_file_path().exists()
     assert Path(config.get_cache_dir()).exists()
 

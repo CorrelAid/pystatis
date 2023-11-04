@@ -1,15 +1,26 @@
 """Module for handling `config.ini` files.
 
-This package stores core information in the `config.ini`, which is stored under the user home directory.
-The user can change the default config directory by setting the environment variable `PYSTATIS_CONFIG_DIR` or pass a custom directory to the `init_config` function.
-The current config directory is always stored in the `settings.ini` file, which is located under the default config directory, which the user can not change.
-If the user does not specify a custom config directory, the default config directory is used, which is `~/.pystatis` on Linux and `%APPDATA%/.pystatis` on Windows.
-The `config.ini` holds all relevant information about all supported databases like user credentials.
-When the package is loaded for the first time, a default config will be created with empty credentials. Subsequent calls to other `pystatis` functions will throw an error until the user has filled in the credentials.
+This package stores core information in the `config.ini`,
+    which is stored under the user home directory.
+The user can change the default config directory
+    by setting the environment variable `PYSTATIS_CONFIG_DIR`
+    or pass a custom directory to the `init_config` function.
+The current config directory is always stored in the `settings.ini` file,
+    which is located under the default config directory,
+    which the user can not change.
+If the user does not specify a custom config directory,
+    the default config directory is used,
+    which is `~/.pystatis` on Linux and `%USERHOME%/.pystatis` on Windows.
+The `config.ini` holds all relevant information
+    about all supported databases like user credentials.
+When the package is loaded for the first time,
+    a default config will be created with empty credentials.
+    Subsequent calls to other `pystatis` functions will throw an error
+    until the user has filled in the credentials.
 """
 import logging
 import os
-from configparser import RawConfigParser
+from configparser import ConfigParser
 from pathlib import Path
 
 PKG_NAME = __name__.split(".", maxsplit=1)[0]
@@ -17,7 +28,7 @@ DEFAULT_CONFIG_DIR = str(Path().home() / f".{PKG_NAME}")
 SUPPORTED_DB = ["genesis", "zensus", "regio"]
 
 logger = logging.getLogger(__name__)
-config = None
+config = ConfigParser(interpolation=None)
 
 
 def init_config() -> None:
@@ -28,13 +39,15 @@ def init_config() -> None:
     Args:
         config_dir (str, optional): Path to the root config directory. Defaults to the user home directory.
     """
-    global config
-
     if not config_exists():
-        config = create_default_config()
-        write_config(config)
+        create_default_config()
+        write_config()
     else:
-        config = load_config()
+        loaded_config = load_config()
+        for section in loaded_config.sections():
+            config.add_section(section)
+            for option in loaded_config.options(section):
+                config.set(section, option, loaded_config.get(section, option))
 
 
 def config_exists() -> bool:
@@ -45,13 +58,11 @@ def config_exists() -> bool:
 
 def setup_credentials() -> None:
     """Setup credentials for all supported databases."""
-    global config
-
     for db in get_supported_db():
-        config[db]["username"] = _get_user_input(db, "username")
-        config[db]["password"] = _get_user_input(db, "password")
+        config.set(db, "username", _get_user_input(db, "username"))
+        config.set(db, "password", _get_user_input(db, "password"))
 
-    write_config(config)
+    write_config()
 
     logger.info(
         "Config was updated with latest credentials. Path: %s.",
@@ -77,12 +88,12 @@ def _get_user_input(db: str, field: str) -> str:
     return user_input
 
 
-def load_config(config_file: Path | None = None) -> RawConfigParser:
+def load_config(config_file: Path | None = None) -> ConfigParser:
     """Load a config from a file."""
     if config_file is None:
         config_file = _build_config_file_path()
 
-    config = RawConfigParser()
+    config = ConfigParser(interpolation=None)
     successful_reads = config.read(config_file)
 
     if not successful_reads:
@@ -95,10 +106,9 @@ def load_config(config_file: Path | None = None) -> RawConfigParser:
     return config
 
 
-def write_config(config: RawConfigParser, config_file: Path = None) -> None:
+def write_config() -> None:
     """Write a config to a file."""
-    if config_file is None:
-        config_file = _build_config_file_path()
+    config_file = _build_config_file_path()
 
     if not config_file.parent.exists():
         config_file.parent.mkdir(parents=True)
@@ -111,10 +121,8 @@ def write_config(config: RawConfigParser, config_file: Path = None) -> None:
         config.write(fp)
 
 
-def create_default_config() -> RawConfigParser:
+def create_default_config() -> ConfigParser:
     """Create a default config parser with empty credentials."""
-    config = RawConfigParser()
-
     config.add_section("settings")
     config.set("settings", "active_db", "")
     config.set("settings", "supported_db", ",".join(SUPPORTED_DB))
@@ -163,9 +171,7 @@ def create_default_config() -> RawConfigParser:
 
     config.add_section("data")
     cache_dir = Path(DEFAULT_CONFIG_DIR) / "data"
-    config.set("data", "cache_dir", cache_dir.as_posix())
-
-    return config
+    config.set("data", "cache_dir", str(cache_dir))
 
 
 def get_supported_db() -> list[str]:
@@ -183,6 +189,9 @@ def delete_config() -> None:
     if config_exists():
         config_file = _build_config_file_path()
         config_file.unlink()
+
+        for section in config.sections():
+            config.remove_section(section)
         init_config()
 
         logger.info("Config was deleted. Path: %s.", config_file)

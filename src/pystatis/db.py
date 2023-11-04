@@ -8,7 +8,11 @@ logger = logging.getLogger(__name__)
 
 
 def set_db(name: str) -> None:
-    """Set the active database."""
+    """Set the active database.
+
+    Args:
+        name (str): Name of the database. Must be one of the supported databases. See `pystatis.config.get_supported_db()`.
+    """
     if name.lower() not in config.get_supported_db():
         raise ValueError(
             f"Database {name} not supported! Please choose one of {', '.join(config.get_supported_db())}"
@@ -48,7 +52,7 @@ def get_db_pw() -> str:
 
 def set_db_pw(new_pw: str) -> None:
     config.config.set(get_db(), "password", new_pw)
-    config.write_config(config.config)
+    config.write_config()
 
 
 def get_db_settings() -> tuple[str, str, str]:

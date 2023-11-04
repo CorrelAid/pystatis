@@ -4,10 +4,11 @@ on:
   push:
     branches:
       - main
-  # TODO: discuss whether to leave this in and whether to also include dev
+      - dev
   pull_request:
     branches:
-    - main
+      - main
+      - dev
   workflow_dispatch:
 
 jobs:
@@ -32,9 +33,22 @@ jobs:
           cd docs
           poetry run make clean
           poetry run make html
-      - name: Deploy docs
+      # create distinguished subdirectories for each branch
+      # NOTE: force_orphan will delete all files in the branch (thus main & dev could not be concurrently deployed)
+      - name: Deploy docs main
         uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main' || (github.event_name == 'pull_request' && github.head_ref == 'main')
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_dir: ./docs/build/html
-          publish_branch: gh-pages  # gh-pages is default, but can be changed
+          publish_branch: gh-pages
+          keep_files: true
+      - name: Deploy docs dev
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/dev' || (github.event_name == 'pull_request' && github.head_ref == 'dev')
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_dir: ./docs/build/html
+          destination_dir: dev
+          publish_branch: gh-pages
+          keep_files: true

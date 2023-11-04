@@ -11,20 +11,30 @@ on:
       - dev
   workflow_dispatch:
 
+env:
+  POETRY_VERSION: 1.6.1
+  
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        # only support specific python version, as guidelines differ beween (minor) versions
+        python-version: ["3.10.13"]
+        os: [ubuntu-latest]
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Set up Python
         uses: actions/setup-python@v3
         with:
-          python-version: 3.10
+          python-version: ${{ matrix.python-version }}
       - name: Run poetry image
         uses: abatilo/actions-poetry@v2.0.0
         with:
-            poetry-version: 1.6.1
+            poetry-version: $POETRY_VERSION
       - name: Install dependencies
         run: |
           poetry install --with dev

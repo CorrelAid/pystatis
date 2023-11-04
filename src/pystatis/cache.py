@@ -64,14 +64,14 @@ def cache_data(
 
 
 def read_from_cache(
-    cache_dir: Path,
+    cache_dir: str,
     name: Optional[str],
     params: dict,
 ) -> str:
     """Read and return compressed data from cache.
 
     Args:
-        cache_dir (Path): The cash directory as configured in the config.
+        cache_dir (str): The cash directory as configured in the config.
         name (str): The unique identifier in GENESIS-Online.
         params (dict): The dictionary holding the params for this data request.
 

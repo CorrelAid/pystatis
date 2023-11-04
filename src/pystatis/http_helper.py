@@ -39,7 +39,7 @@ def load_data(
     Returns:
         Union[str, dict]: The data as raw text or JSON dict.
     """
-    cache_dir = Path(config.get_cache_dir())
+    cache_dir = config.get_cache_dir()
     name = params.get("name")
 
     if name is not None:

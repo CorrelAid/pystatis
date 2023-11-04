@@ -121,7 +121,7 @@ def write_config() -> None:
         config.write(fp)
 
 
-def create_default_config() -> ConfigParser:
+def create_default_config() -> None:
     """Create a default config parser with empty credentials."""
     config.add_section("settings")
     config.set("settings", "active_db", "")

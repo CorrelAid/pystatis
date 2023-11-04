@@ -11,7 +11,8 @@ def set_db(name: str) -> None:
     """Set the active database.
 
     Args:
-        name (str): Name of the database. Must be one of the supported databases. See `pystatis.config.get_supported_db()`.
+        name (str): Name of the database. Must be one of the supported databases.
+        See `pystatis.config.get_supported_db()`.
     """
     if name.lower() not in config.get_supported_db():
         raise ValueError(

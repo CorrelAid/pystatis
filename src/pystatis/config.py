@@ -93,8 +93,8 @@ def load_config(config_file: Path | None = None) -> ConfigParser:
     if config_file is None:
         config_file = _build_config_file_path()
 
-    config = ConfigParser(interpolation=None)
-    successful_reads = config.read(config_file)
+    loaded_config = ConfigParser(interpolation=None)
+    successful_reads = loaded_config.read(config_file)
 
     if not successful_reads:
         logger.critical(
@@ -103,7 +103,7 @@ def load_config(config_file: Path | None = None) -> ConfigParser:
             config_file,
         )
 
-    return config
+    return loaded_config
 
 
 def write_config() -> None:

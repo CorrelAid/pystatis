@@ -8,12 +8,10 @@ authors = [
     "Frederik Hering <jobs.fhering@gmail.com>",
     "Marco Hübner <marco_huebner1@gmx.de>"
 ]
-maintainers = [
-    "Michael Aydinbas <michael.aydinbas@gmail.com>"
-]
+maintainers = ["Michael Aydinbas <michael.aydinbas@gmail.com>"]
 description = "Python wrapper for GENESIS web service interface (API) of the Federal Statistical Office."
 name = "pystatis"
-version = "0.1.4"
+version = "0.1.5"
 readme = "README.md"
 repository = "https://github.com/CorrelAid/pystatis/tree/v0.1.0"
 classifiers = [
@@ -26,16 +24,15 @@ classifiers = [
     "Operating System :: Unix",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3 :: Only",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
     "Topic :: Scientific/Engineering",
     "Topic :: Scientific/Engineering :: Information Analysis",
     "Topic :: Software Development :: Libraries :: Python Modules"
 ]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.10"
 requests = "^2.27.1"
 pandas = "^2.0"
 tabulate = "^0.8.10"

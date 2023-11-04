@@ -4,7 +4,7 @@ import logging
 import pytest
 import requests
 
-from pystatis.custom_exceptions import DestatisStatusError
+from pystatis.exception import DestatisStatusError
 from pystatis.http_helper import (
     _check_invalid_destatis_status_code,
     _check_invalid_status_code,
@@ -63,14 +63,7 @@ def test_get_response_from_endpoint(mocker):
         "pystatis.http_helper.requests", return_value=_generic_request_status()
     )
     mocker.patch(
-        "pystatis.http_helper.load_config",
-        return_value={
-            "GENESIS API": {
-                "base_url": "mocked_url",
-                "username": "JaneDoe",
-                "password": "password",
-            }
-        },
+        "pystatis.db.get_db_settings", return_value=("host", "user", "pw")
     )
 
     get_data_from_endpoint(endpoint="endpoint", method="method", params={})

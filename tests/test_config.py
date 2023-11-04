@@ -1,6 +1,5 @@
 import copy
 import os
-
 from configparser import RawConfigParser
 from pathlib import Path
 

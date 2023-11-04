@@ -1,6 +1,7 @@
+import shutil
 from configparser import RawConfigParser
 from pathlib import Path
-import shutil
+
 import pytest
 
 from pystatis import config

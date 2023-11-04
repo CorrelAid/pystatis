@@ -1,9 +1,9 @@
 import re
+from configparser import RawConfigParser
 
 import pytest
-from configparser import RawConfigParser
-from pystatis import db
-from pystatis import config
+
+from pystatis import config, db
 from pystatis.profile import change_password, remove_result
 from tests.test_http_helper import _generic_request_status
 

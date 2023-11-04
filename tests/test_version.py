@@ -1,5 +1,6 @@
-from pystatis import __version__
 import subprocess
+
+from pystatis import __version__
 
 
 def test_version():

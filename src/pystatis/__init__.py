@@ -15,7 +15,7 @@ from pystatis.find import Find
 from pystatis.helloworld import logincheck, whoami
 from pystatis.table import Table
 
-__version__ = "0.1.4"
+__version__ = "0.1.5"
 
 __all__ = [
     "clear_cache",

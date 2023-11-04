@@ -1,7 +1,7 @@
-import logging
+import copy
 import os
-import re
-from configparser import ConfigParser
+
+from configparser import RawConfigParser
 from pathlib import Path
 
 import pytest
@@ -10,63 +10,54 @@ from pystatis import config
 
 
 @pytest.fixture()
-def config_dir(tmp_path_factory) -> str:
-    # remove white-space and non-latin characters (issue fo some user names)
-    temp_dir = str(tmp_path_factory.mktemp(".pystatis"))
-    temp_dir = re.sub(r"[^\x00-\x7f]", r"", temp_dir.replace(" ", ""))
+def config_() -> RawConfigParser:
+    old_config = config.load_config()
+    config.delete_config()
+    yield config.config
+    config.write_config(old_config)
 
-    return temp_dir
+
+def test_config_path():
+    assert (
+        config._build_config_file_path()
+        == Path(config.DEFAULT_CONFIG_DIR) / "config.ini"
+    )
+    assert config.get_cache_dir() == str(
+        Path(config.DEFAULT_CONFIG_DIR) / "data"
+    )
 
 
-def test_init_config_is_run_on_import():
-    assert isinstance(config.config, ConfigParser)
+def test_init_config_is_run_on_import(config_):
+    assert isinstance(config_, RawConfigParser)
     assert config._build_config_file_path().exists()
-
-
-def test_custom_config_dir(config_dir, caplog):
-    caplog.clear()
-    caplog.set_level(logging.INFO)
-
-    config.init_config(config_dir)
-
-    assert len(caplog.records) == 1
-    assert caplog.records[0].levelname == "INFO"
-    assert "New config was created" in caplog.text
     assert Path(config.get_cache_dir()).exists()
-    assert config._build_config_file_path().exists()
-
-    assert isinstance(config.config, ConfigParser)
-    assert len(config.config.sections()) > 0
-    assert config.get_cache_dir() == str(Path(config_dir) / "data")
-    assert len(list((Path(config.get_cache_dir())).glob("*"))) == 0
 
 
-def test_load_config(config_dir):
-    config.init_config(config_dir)
-
-    assert config.config.has_section("SETTINGS")
-    assert config.config.has_option("SETTINGS", "active_db")
-    assert config.config.has_option("SETTINGS", "supported_db")
-    assert config.config.has_section("DATA")
-    assert config.config.has_option("DATA", "cache_dir")
+def test_load_config(config_):
+    assert config_.has_section("settings")
+    assert config_.has_option("settings", "active_db")
+    assert config_.has_option("settings", "supported_db")
+    assert config_.has_section("data")
+    assert config_.has_option("data", "cache_dir")
 
     for section in config.get_supported_db():
-        assert config.config.has_section(section)
+        assert config_.has_section(section)
 
-        assert config.config.options(section) == [
+        assert config_.options(section) == [
             "base_url",
             "username",
             "password",
             "doku",
         ]
 
-        assert config.config[section]["username"] == ""
-        assert config.config[section]["password"] == ""
+        assert config_.get(section, "username") == ""
+        assert config_.get(section, "password") == ""
 
 
-def test_missing_file(config_dir, caplog):
-    config.init_config(config_dir)
-    (Path(config_dir) / "config.ini").unlink()
+def test_missing_file(config_, caplog):
+    (Path(config.DEFAULT_CONFIG_DIR) / "config.ini").unlink()
+
+    assert not config.config_exists()
 
     caplog.clear()
 
@@ -77,17 +68,7 @@ def test_missing_file(config_dir, caplog):
         assert record.levelname == "CRITICAL"
 
 
-def test_delete_config(config_dir):
-    config.init_config(config_dir)
-
-    assert config._build_config_file_path().exists()
-    config.delete_config()
-    assert not config._build_config_file_path().exists()
-
-
-def test_setup_credentials(config_dir):
-    config.init_config(config_dir)
-
+def test_setup_credentials(config_):
     for db in config.get_supported_db():
         for field in ["username", "password"]:
             if field == "username":
@@ -102,5 +83,11 @@ def test_setup_credentials(config_dir):
     config.setup_credentials()
 
     for db in config.get_supported_db():
-        assert config.config[db]["username"] == "test"
-        assert config.config[db]["password"] == "test123!"
+        assert config_[db]["username"] == "test"
+        assert config_[db]["password"] == "test123!"
+
+
+def test_supported_db():
+    db = config.get_supported_db()
+    assert isinstance(db, list)
+    assert isinstance(db[0], str)

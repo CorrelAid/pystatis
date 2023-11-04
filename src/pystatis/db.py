@@ -47,8 +47,8 @@ def get_db_pw() -> str:
 
 
 def set_db_pw(new_pw: str) -> None:
-    config.config[get_db()]["password"] = new_pw
-    config.write_config()
+    config.config.set(get_db(), "password", new_pw)
+    config.write_config(config.config)
 
 
 def get_db_settings() -> tuple[str, str, str]:

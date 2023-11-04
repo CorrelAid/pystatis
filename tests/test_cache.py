@@ -1,8 +1,9 @@
-import re
+from configparser import RawConfigParser
 from pathlib import Path
-
+import shutil
 import pytest
 
+from pystatis import config
 from pystatis.cache import (
     _build_file_path,
     cache_data,
@@ -11,18 +12,30 @@ from pystatis.cache import (
     normalize_name,
     read_from_cache,
 )
-from pystatis.config import get_cache_dir, init_config
 
 
 @pytest.fixture()
-def cache_dir(tmp_path_factory) -> str:
-    # remove white-space and non-latin characters (issue fo some user names)
-    temp_dir = str(tmp_path_factory.mktemp(".pystatis"))
-    temp_dir = re.sub(r"[^\x00-\x7f]", r"", temp_dir.replace(" ", ""))
+def config_() -> RawConfigParser:
+    old_config = config.load_config()
+    config.delete_config()
+    yield config.config
+    config.write_config(old_config)
 
-    init_config(temp_dir)
 
-    return get_cache_dir()
+@pytest.fixture()
+def cache_dir(config_) -> str:
+    old_cache_dir = config.get_cache_dir()
+    config_.set(
+        "data",
+        "cache_dir",
+        (Path(config.DEFAULT_CONFIG_DIR) / "test-cache-dir").as_posix(),
+    )
+    cache_dir = config.get_cache_dir()
+    yield cache_dir
+    config_.set("data", "cache_dir", old_cache_dir)
+    if Path(cache_dir).exists():
+        # delete cache dir
+        shutil.rmtree(cache_dir)
 
 
 @pytest.fixture(scope="module")
@@ -39,7 +52,7 @@ def test_build_file_path(cache_dir, params):
 
 
 def test_cache_data(cache_dir, params):
-    assert len(list((Path(cache_dir) / "data").glob("*"))) == 0
+    assert len(list(Path(cache_dir).glob("*"))) == 0
 
     test_data = "test"
     cache_data(cache_dir, "test-cache-data", params, test_data)

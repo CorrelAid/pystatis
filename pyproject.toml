@@ -8,12 +8,10 @@ authors = [
     "Frederik Hering <jobs.fhering@gmail.com>",
     "Marco Hübner <marco_huebner1@gmx.de>"
 ]
-maintainers = [
-    "Michael Aydinbas <michael.aydinbas@gmail.com>"
-]
+maintainers = ["Michael Aydinbas <michael.aydinbas@gmail.com>"]
 description = "Python wrapper for GENESIS web service interface (API) of the Federal Statistical Office."
 name = "pystatis"
-version = "0.1.4"
+version = "0.1.5"
 readme = "README.md"
 repository = "https://github.com/CorrelAid/pystatis/tree/v0.1.0"
 classifiers = [

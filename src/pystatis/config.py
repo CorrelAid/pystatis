@@ -185,7 +185,7 @@ def delete_config() -> None:
         config_file.unlink()
         init_config()
 
-    logger.info("Config was deleted. Path: %s.", config_file)
+        logger.info("Config was deleted. Path: %s.", config_file)
 
 
 init_config()

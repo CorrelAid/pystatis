@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  # TODO: discuss whether to leave this in and whether to also include dev
   pull_request:
     branches:
     - main
@@ -34,6 +35,6 @@ jobs:
       - name: Deploy docs
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_dir: ./docs/build/html
           publish_branch: gh-pages  # gh-pages is default, but can be changed

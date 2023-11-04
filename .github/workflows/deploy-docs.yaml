@@ -47,7 +47,7 @@ jobs:
       # NOTE: force_orphan will delete all files in the branch (thus main & dev could not be concurrently deployed)
       - name: Deploy docs main
         uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main' || (github.event_name == 'pull_request' && github.head_ref == 'main')
+        if: github.ref == 'refs/heads/main' || (github.event_name == 'pull_request' && github.base_ref == 'main')
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_dir: ./docs/build/html
@@ -55,7 +55,7 @@ jobs:
           keep_files: true
       - name: Deploy docs dev
         uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/dev' || (github.event_name == 'pull_request' && github.head_ref == 'dev')
+        if: github.ref == 'refs/heads/dev' || (github.event_name == 'pull_request' && github.base_ref == 'dev')
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_dir: ./docs/build/html

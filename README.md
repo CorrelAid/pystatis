@@ -1,11 +1,16 @@
 # ``pystatis``
 
-```pystatis``` is a Python wrapper for the GENESIS web service interface (API). It simplifies accessing the data from the German statistical federal office.
+```pystatis``` is a Python wrapper for the different GENESIS web service interfaces (API). Currently we are supporting the following databases:
+
+- [GENESIS-Online](https://www-genesis.destatis.de/genesis/online)
+- [Regionaldatenbank](https://www.regionalstatistik.de/genesis/online)
+- [Zensus Datenbank](https://ergebnisse2011.zensus2022.de/datenbank/online/)
 
 The main features are:
 
-- **Simplified access** to the API. No more need to write cumbersome API calls.
-- **Credential management** removes need to manually add credentials.
+- **Simplified access** to all supported API. No more need to write cumbersome API calls or switch between databases.
+- **Credential management** removes the need to manually add credentials. We handle all your credentials for you.
+- **Database management** handles different databases and lets you switch easily between them.
 - **Integrated workflow** enables an end-to-end process from finding the relevant data to download it.
 - **Pandas support** instead of manually parsing results.
 - **Caching** to enable productive work despite strict query limits.
@@ -18,49 +23,34 @@ To learn more about GENESIS refer to the official documentation [here](https://w
 You can install the package via
 
 ```bash
-$ pip install pystatis
+pip install pystatis
 ```
 
-If everything worked out correctly, you should be able to import ``pystatis`` like this
+If everything worked out correctly, you should be able to import `pystatis` like this
 
 ```python
-import pystatis as pystat
+import pystatis
 
-print("Version:", pystat.__version__)
+print("Version:", pystatis.__version__)
 ```
 
-## Get started
+## Getting started
 
-To be able to use the web service/API of GENESIS-Online, you have to be a registered user. You can create your user [here](https://www-genesis.destatis.de/genesis/online?Menu=Anmeldung).
+To be able to use the web service/API of either GENESIS-Online, Regionaldatenbank or Zensus, you have to be a registered user. You can create your user [here](https://www-genesis.destatis.de/genesis/online?Menu=Anmeldung), [here](https://www.regionalstatistik.de/genesis/online?Menu=Registrierung#abreadcrumb), or [here](https://ergebnisse2011.zensus2022.de/datenbank/online?Menu=Registrierung#abreadcrumb).
 
-Once you have a registered user, you can use your username and password as credentials for authentication against the GENESIS-Online API.
+Once you have a registered user, you can use your username and password as credentials for authentication against the web service/API.
 
-To avoid entering your credentials each time you use ``pystatis``, your credentials will be stored locally with the `init_config()` helper function. This function accepts both a `username` and `password` argument and stores your credentials in a configuration file named `config.ini` that is stored under `<user home>/.pystatis/config.ini` by default. You can change this path with the optional `config_dir` argument.
+You can use `pystatis` with only one of the supported database or with all, it is simply about providing the right credentials. `pystatis` will only use databases for which you have provided credentials.
 
-So before you can use ``pystatis`` you have to execute the following code **once**:
+Please follow this [guide](./nb/00_Setup.ipynb) to set up `pystatis` correctly.
 
-```python
-from pystatis import init_config
+All APIs provide a `helloworld` endpoint that can be used to check your credentials.
 
-init_config(username="myusername", password="mypassword")
-```
+Please follow this [guide](./nb/01_Databases.ipynb) to see how to set the desired database and check your login credentials.
 
-After executing this code you should have a new `config.ini` file under the `<user home>/.pystatis` directory.
+If everything worked out, your setup is complete and you can start downloading data.
 
-Each time ``pystatis`` is communicating with GENESIS-Online via the API, it is automatically using the stored credentials in this `config.ini`, so you don't have to specify them again. In case of updated credentials, you can either run `init_config()` again or update the values directly in the `config.ini` file.
-
-GENESIS-Online provides a `helloworld` endpoint that can be used to check your credentials:
-
-```python
-from pystatis import logincheck
-
-logincheck()
->>> '{"Status":"Sie wurden erfolgreich an- und abgemeldet!","Username":"ASFJ582LJ"}'
-```
-
-If you can see a response like this, your setup is complete and you can start downloading data.
-
-For more details, please study the provided sample notebook for [cache](https://github.com/CorrelAid/pystatis/blob/main/nb/cache.ipynb).
+For more details, please study the provided sample [notebooks](./nb/).
 
 ## How to use
 
@@ -76,7 +66,7 @@ This package currently supports retrieving the following data types:
 
 ### Find the right data
 
-``pystatis`` offers the `Find` class to search for any piece of information with GENESIS. Behind the scene it's using the `find` endpoint.
+`pystatis` offers the `Find` class to search for any piece of information with GENESIS. Behind the scene it's using the `find` endpoint.
 
 Example:
 

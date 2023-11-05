@@ -110,3 +110,4 @@ jobs:
         with:
           name: docs
           path: docs/build/html/*
+          retention-days: 5

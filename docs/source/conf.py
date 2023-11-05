@@ -20,7 +20,11 @@ authors = [
     "Marco Hübner <marco_huebner1@gmx.de>",
 ]
 maintainers = ["Michael Aydinbas <michael.aydinbas@gmail.com>"]
-release = subprocess.check_output(["poetry", "version"], text=True).strip().split()[-1]
+release = (
+    subprocess.check_output(["poetry", "version"], text=True)
+    .strip()
+    .split()[-1]
+)
 version = release
 
 

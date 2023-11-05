@@ -51,7 +51,6 @@ jobs:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_dir: ./docs/build/html
           publish_branch: gh-pages
-          keep_files: true
       - name: Deploy docs dev
         uses: peaceiris/actions-gh-pages@v3
         if: github.ref == 'refs/heads/dev' || (github.event_name == 'pull_request' && github.base_ref == 'dev')
@@ -60,4 +59,3 @@ jobs:
           publish_dir: ./docs/build/html
           destination_dir: dev
           publish_branch: gh-pages
-          keep_files: true

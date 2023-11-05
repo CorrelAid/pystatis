@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Get started &mdash; pystatis</title>
+  <title>Getting started &mdash; pystatis</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     <link rel="shortcut icon" href="_static/pystatis_logo.ico"/>
@@ -50,7 +50,7 @@
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Get started</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="use.html">Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contribute.html">Developer Information</a></li>
@@ -76,7 +76,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Get started</li>
+      <li class="breadcrumb-item active">Getting started</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/start.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -86,8 +86,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="get-started">
-<h1>Get started<a class="headerlink" href="#get-started" title="Link to this heading"></a></h1>
+  <section id="getting-started">
+<h1>Getting started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h1>
+<p>To be able to use the web service/API of either GENESIS-Online, Regionaldatenbank or Zensus, you have to be a registered user. You can create your user <a class="reference external" href="https://www-genesis.destatis.de/genesis/online?Menu=Anmeldung">here</a>, <a class="reference external" href="https://www.regionalstatistik.de/genesis/online?Menu=Registrierung#abreadcrumb">here</a>, or <a class="reference external" href="https://ergebnisse2011.zensus2022.de/datenbank/online?Menu=Registrierung#abreadcrumb">here</a>.</p>
+<p>Once you have a registered user, you can use your username and password as credentials for authentication against the web service/API.</p>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">pystatis</span></code> with only one of the supported database or with all, it is simply about providing the right credentials. <code class="docutils literal notranslate"><span class="pre">pystatis</span></code> will only use databases for which you have provided credentials.</p>
+<p>Please follow this <a class="reference internal" href="#./nb/00_Setup.ipynb"><span class="xref myst">guide</span></a> to set up <code class="docutils literal notranslate"><span class="pre">pystatis</span></code> correctly.</p>
+<p>All APIs provide a <code class="docutils literal notranslate"><span class="pre">helloworld</span></code> endpoint that can be used to check your credentials.</p>
+<p>Please follow this <a class="reference internal" href="#./nb/01_Databases.ipynb"><span class="xref myst">guide</span></a> to see how to set the desired database and check your login credentials.</p>
+<p>If everything worked out, your setup is complete and you can start downloading data.</p>
+<p>For more details, please study the provided sample <a class="reference internal" href="#./nb/"><span class="xref myst">notebooks</span></a>.</p>
 </section>
 
 

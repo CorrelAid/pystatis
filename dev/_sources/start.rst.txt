@@ -1,7 +1,7 @@
-Get started
-===========
+Getting started
+===============
 
 .. include:: ../../README.md
     :parser: myst_parser.sphinx_
-    :start-after: ## Get started
+    :start-after: ## Getting started
     :end-before: ## How to use

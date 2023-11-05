@@ -121,13 +121,15 @@ clear_cache()  # deletes the complete cache
 
 ### Full documentation
 
-The full documentation currently is not hosted online and has to be build locally. This can is achieved by running
+The full documentation of the main and dev branches are hosted via [GitHub Pages (main)](https://correlaid.github.io/pystatis/) and [GitHub Pages (dev)](https://correlaid.github.io/pystatis/dev/). It can also be built locally by running
 
 ```bash
-cd docs && make html
+cd docs && make clean && make html
 ```
 
-from the project root directory. Besides providing parsed docstrings of the individual package modules, the full documentation currently mirrors most of the readme, like installation and usage. More information on how to use sphinx is provided [here](https://docs.readthedocs.io/en/stable/intro/getting-started-with-sphinx.html).
+from the project root directory. Besides providing parsed docstrings of the individual package modules, the full documentation currently mirrors most of the readme, like installation and usage. The mirroring crucially relies on the names of the section headers in the ReadMe, so change them with care!
+
+More information on how to use sphinx is provided [here](https://docs.readthedocs.io/en/stable/intro/getting-started-with-sphinx.html).
 
 ## License
 
@@ -137,7 +139,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 A few ideas we should implement in the maybe-near future:
 
-- Host the documentation online, e.g. on [readthedocs](https://readthedocs.org/)
 - Improve Table parsing. Right now, the parsing is really simple and we should align the cube and table format so that the data frame for tables is more convenient to use.
 - Mechanism to download data that is newer than the cached version. Right now, once data is cached, it is always retrieved from cache no matter if there is a newer version online. However, this could be quite challenging as the GENESIS API is really bad in providing a good and consistent field for the last update datetime.
 - Improve Table and Cube metadata so the user can look up the variables contained in the dataset and for each variable the values that this variable can have.

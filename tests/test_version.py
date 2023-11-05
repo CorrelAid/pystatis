@@ -1,5 +1,6 @@
 import subprocess
 
+from docs.source.conf import release
 from pystatis import __version__
 
 
@@ -10,3 +11,7 @@ def test_version():
         .strip()
         .split()[-1]
     )
+
+
+def test_docs_version():
+    assert __version__ == release

@@ -1,0 +1,63 @@
+name: Deploy docs
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    branches:
+      - main
+      - dev
+  workflow_dispatch:
+
+env:
+  POETRY_VERSION: 1.6.1
+  
+jobs:
+  build-and-deploy:
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10"]
+        os: [ubuntu-latest]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run poetry image
+        uses: abatilo/actions-poetry@v2.0.0
+        with:
+            poetry-version: $POETRY_VERSION
+      - name: Install dependencies
+        run: |
+          poetry install --with dev
+      - name: Build docs
+        run: |
+          cd docs
+          poetry run make clean
+          poetry run make html
+      # create distinguished subdirectories for each branch
+      # NOTE: force_orphan will delete all files in the branch (thus main & dev could not be concurrently deployed)
+      - name: Deploy docs main
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main' || (github.event_name == 'pull_request' && github.base_ref == 'main')
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_dir: ./docs/build/html
+          publish_branch: gh-pages
+          keep_files: true
+      - name: Deploy docs dev
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/dev' || (github.event_name == 'pull_request' && github.base_ref == 'dev')
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_dir: ./docs/build/html
+          destination_dir: dev
+          publish_branch: gh-pages
+          keep_files: true

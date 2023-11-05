@@ -44,13 +44,15 @@ jobs:
         run: |
           poetry run pytest --cov=pystatis tests
   code-quality:
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
     strategy:
       fail-fast: false
       matrix:
         # only support specific python version, as guidelines differ beween (minor) versions
         python-version: ["3.11.6"]
         os: [ubuntu-latest]
-    runs-on: ${{ matrix.os }}
+
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v2
@@ -76,3 +78,35 @@ jobs:
         run: poetry run safety check
       - name: Run mypy
         run: poetry run mypy src
+  sphinx-documentation:
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10"]
+        os: [ubuntu-latest]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v3
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run poetry image
+        uses: abatilo/actions-poetry@v2.0.0
+        with:
+            poetry-version: $POETRY_VERSION
+      - name: Install dependencies
+        run: |
+          poetry install --with dev
+      - name: Build documentation
+        run: |
+          cd docs
+          poetry run make clean
+          poetry run make html
+      - name: Upload documentation as artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: docs
+          path: docs/build/html/*

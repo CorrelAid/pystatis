@@ -1,3 +1,5 @@
+import subprocess
+
 # Configuration file for the Sphinx documentation builder.
 #
 # For the full list of built-in configuration values, see the documentation:
@@ -18,7 +20,7 @@ authors = [
     "Marco Hübner <marco_huebner1@gmx.de>",
 ]
 maintainers = ["Michael Aydinbas <michael.aydinbas@gmail.com>"]
-release = "0.1.4"  # hard-coded, since pre-commit hook fails to import pystatis
+release = subprocess.check_output(["poetry", "version"], text=True).strip().split()[-1]
 version = release
 
 

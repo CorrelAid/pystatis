@@ -1,0 +1,325 @@
+Code,Content,Cubes,Information
+11111,Feststellung des Gebietsstands,3,true
+12111,Zensus,24,true
+12211,Mikrozensus,483,true
+12231,IKT-Nutzung in privaten Haushalten,42,true
+12241,Einkommen und Lebensbedingungen (EU-SILC),7,true
+12251,Arbeitsmarktstatistik des Mikrozensus,68,false
+12411,Fortschreibung des Bevölkerungsstandes,28,true
+12421,Bevölkerungsvorausberechnungen,16,true
+12511,Einbürgerungsstatistik,70,true
+12521,Ausländerstatistik,98,true
+12531,Statistik über Schutzsuchende,78,true
+12611,Statistik der Eheschließungen,7,true
+12612,Statistik der Geburten,37,true
+12613,Statistik der Sterbefälle,17,true
+12621,Sterbetafeln,3,true
+12631,Statistik rechtskräftiger Urteile in Ehesachen,6,true
+12651,Begründung von Lebenspartnerschaften,3,true
+12661,Aufhebung von Lebenspartnerschaften,4,true
+12711,Wanderungsstatistik,46,true
+13111,Statistik d. sozialversicherungspfl. Beschäftigten,13,true
+13211,Arbeitsmarktstatistik der Bundesagentur für Arbeit,16,true
+13231,Erwerbslosenstatistik nach dem ILO-Konzept,4,true
+13311,Länderberechnung Erwerbstätige,4,true
+13321,Erwerbstätigenrechnung in der VGR (national),3,true
+14111,Allgemeine Bundestagswahlstatistik,4,true
+14121,Repräsentative Bundestagswahlstatistik,10,true
+14211,Allgemeine Europawahlstatistik,2,true
+14221,Repräsentative Europawahlstatistik,4,true
+21111,Statistik der allgemeinbildenden Schulen,96,true
+21121,Statistik der beruflichen Schulen,36,true
+21211,Berufsbildungsstatistik,48,true
+21231,Erhebung n. §17 BerufsqualifikationsfeststellungsG,6,true
+21241,Pflegeausbildungsstatistik,18,true
+21311,Statistik der Studenten,48,true
+21321,Statistik der Prüfungen,5,true
+21331,Statistik der Gasthörer,2,true
+21341,Statistik des Hochschulpersonals,3,true
+21351,Statistik der Habilitationen,6,true
+21352,Statistik der Promovierenden,28,true
+21353,Statistik der Hochschulräte,2,true
+21354,Statistik der Berufsakademien,10,true
+21371,Hochschulfinanzstatistik,8,true
+21381,Hochschulstatistische Kennzahlen,11,false
+21411,Statistik der Bundesausbildungsförderung (BAföG),4,true
+21421,Statistik der Aufstiegsfortbildungsförderung,30,true
+21431,Förderung nach dem Stipendienprogramm-Gesetz,37,true
+21521,Europ. Erheb. über betriebl. Weiterbildung (CVTS),15,true
+21611,Kulturstatistik,24,true
+21621,Berichterstattung über öffentliche Kulturausgaben,6,true
+21711,Bildungsberichterstattung für nationale Zwecke,13,false
+21721,Bildungsberichterstattung f. internationale Zwecke,3,true
+21811,"Ausgaben, Einnahmen, Personal öff. Forschungseinr.",47,true
+21821,Berichterstattung über Forschung und Entwicklung,5,false
+22111,Statistik d. Ausgaben u. Einnahmen der Sozialhilfe,36,true
+22121,Statistik d. Empfänger v. Hilfe z. Lebensunterhalt,26,true
+22125,Empf. v.Lstg. für Bildung u.Teilhabe (3.K.SGB XII),6,true
+22131,Statistik d. Empfänger v. Leist.(5.-9.Kap.SGB XII),20,true
+22151,Grundsicherung im Alter und bei Erwerbsminderung,98,true
+22161,Statistik der Empf. v.Eingliederungshilfe (SGB IX),24,true
+22162,Stat.d.Ausg.u.Einn.d.Eingliederungshilfe (SGB IX),3,true
+22211,Ausgaben und Einnahmen für Asylbewerberleistungen,12,true
+22221,Statistik der Empfänger von Asylbewerberleistungen,91,true
+22231,Stat.d. Empfänger von besonderen Asylbewerberlstg.,6,true
+22251,Empfänger v.Lstg. f. Bildung u. Teilhabe (AsylbLG),7,true
+22311,Wohngeld zum 31.12.,23,true
+22411,Statistik über ambulante Pflegeeinrichtungen,21,true
+22412,Statistik über stationäre Pflegeeinrichtungen,23,true
+22421,Statistik über d. Empfänger v.Pflegegeldleistungen,19,true
+22512,Statistik der Betreuung einzelner junger Menschen,2,true
+22517,Statistik der erzieherischen Hilfen,12,true
+22518,Stat. ü. d. Schutzauftrag bei Kindeswohlgefährdung,26,true
+22521,Statistik der Adoptionen,22,true
+22522,"Statistik der Pflegeerlaubnis, Vormundschaften etc",13,true
+22523,Statistik der vorläufigen Schutzmaßnahmen,31,true
+22531,Statistik der Angebote der Jugendarbeit,6,true
+22541,Kinder und tätige Personen in Tageseinrichtungen,67,true
+22542,Statistik der Einricht. der Kinder- u. Jugendhilfe,4,true
+22543,Kinder und tätige Personen in Kindertagespflege,29,true
+22545,Pers. in Großtagespflegestellen u. betreute Kinder,6,true
+22551,Ausgaben und Einnahmen der Kinder- und Jugendhilfe,20,true
+22611,Statistik der gesetzlichen Rentenversicherung,3,true
+22621,Statistik der gesetzlichen Krankenversicherung,2,true
+22631,Statistik der gesetzlichen Unfallversicherung,2,true
+22711,Statistik der schwerbehinderten Menschen,3,true
+22731,Statistik der Kriegsopferfürsorge,2,true
+22911,Statistik über Kindergeld,2,true
+22922,Statistik zum Elterngeld,98,true
+22923,Statistik zum Betreuungsgeld,3,true
+22971,Statistik untergebrachter wohnungsloser Personen,107,true
+23111,Grunddaten der Krankenhäuser,2,true
+23112,Grunddaten der Vorsorge- oder Rehabilitationseinr.,2,true
+23121,Kostennachweis der Krankenhäuser,2,true
+23131,Diagnosen der Krankenhauspatienten,70,true
+23132,Diagnosen der Vorsorge- oder Reha.einr.patienten,28,true
+23141,Fallpauschalenbezogene Krankenhausstatistik (DRG),88,true
+23211,Todesursachenstatistik,2,true
+23311,Statistik der Schwangerschaftsabbrüche,2,true
+23611,Gesundheitsausgabenrechnung,16,true
+23621,Gesundheitspersonalrechnung,40,true
+23631,Krankheitskostenrechnung,18,true
+24111,Statistik der Zahl der Gerichte,1,true
+24211,Statistik bei den Staats- und Amtsanwaltschaften,6,true
+24221,Statistik über Straf- und Bußgeldverfahren,6,true
+24231,Statistik über Zivilsachen,4,true
+24241,Statistik über Familiensachen,6,true
+24251,Statistik in der Verwaltungsgerichtsbarkeit,4,true
+24261,Statistik in der Finanzgerichtsbarkeit,4,true
+24271,Statistik in der Sozialgerichtsbarkeit,2,true
+24281,Statistik in der Arbeitsgerichtsbarkeit,2,true
+24311,Strafverfolgungsstatistik,2,true
+24321,Strafvollzugsstatistik,3,true
+24911,Polizeiliche Kriminalstatistik,2,true
+31111,Statistik der Baugenehmigungen,8,true
+31121,Statistik der Baufertigstellungen,4,true
+31131,Statistik des Bauüberhangs,8,true
+31141,Statistik des Bauabgangs,8,true
+31231,Fortschreibung Wohngebäude- und Wohnungsbestand,25,true
+32111,Erhebung der Abfallentsorgung,8,true
+32121,Erhebung der öffentlich-rechtl. Abfallentsorgung,5,true
+32131,Erh. d. Einsammlung v. Transport- u.Umverpackungen,6,true
+32136,Erhebung über zurückgenommene Verkaufsverpackungen,10,true
+32141,"Aufbereitung,Verwertung v. Bau- u. Abbruchabfällen",7,true
+32151,Erhebung der gefährlichen Abfälle,12,true
+32161,Erhebung über die Abfallerzeugung,6,true
+32211,Erhebung der öffentlichen Wasserversorgung,4,true
+32212,Erhebung der öffentlichen Abwasserentsorgung,2,true
+32213,Erhebung der öffentlichen Abwasserbehandlung,4,true
+32214,Erhebung der öff. Abwasserentsorgung - Klärschlamm,1,true
+32221,"Erh. nichtöff. Wasserversorgung,Abwasserentsorgung",12,true
+32251,Wassereigenversorgung u.-entsorgung priv.Haushalte,1,true
+32311,Erhebung d. Unfälle mit wassergefährdenden Stoffen,38,true
+32331,Erh. der Anlagen zum Umgang mit wassergef. Stoffen,40,true
+32511,Erhebung der Investitionen für den Umweltschutz,8,true
+32521,Erh. der laufenden Aufwendungen f.d. Umweltschutz,11,true
+32531,Erh. der Güter und Leistungen für den Umweltschutz,12,true
+33111,Flächenerhebung nach Art der tatsächlichen Nutzung,10,true
+41122,Repräsentative Agrarstrukturerhebung (ASE b. 2007),40,true
+41141,Landwirtschaftszählung: Haupterhebung,176,true
+41145,Landwirtschaftszählung: Gartenbau,22,true
+41161,Strukturerhebung der Forstbetriebe,9,true
+41213,Allgemeine Zierpflanzenerhebung,25,true
+41214,Erhebung über Speisepilze,2,true
+41215,Gemüseerhebung,12,true
+41221,Baumschulerhebung,4,true
+41231,Baumobstanbauerhebung,12,true
+41232,Erhebung über Strauchbeeren,14,true
+41241,Ernte-u.Betriebsbericht: Feldfrüchte und Grünland,4,true
+41243,Ernte- und Betriebsbericht: Baumobst,6,true
+41244,Ernte- und Betriebsbericht: Reben und Weinmost,18,true
+41252,Rebflächenerhebung (Weinbaukataster),9,true
+41253,Erhebung der Weinernte,18,true
+41254,Erhebung der Weinerzeugung,12,true
+41255,Erhebung der Weinbestände,34,true
+41261,Holzeinschlagsstatistik (forstl. Erzeugerbetriebe),40,true
+41271,Bodennutzungshaupterhebung,17,true
+41311,Allg. und Repräs. Erhebung über die Viehbestände,6,true
+41312,Viehbestandserhebung Rinder,18,true
+41313,Viehbestandserhebung Schweine,10,true
+41314,Viehbestandserhebung Schafe,6,true
+41321,Geflügelstatistik: Erhebung in Brütereien,10,true
+41322,Geflügelstatistik: Erh. in Geflügelschlachtereien,16,true
+41323,Geflügelstatistik: Untern. mit Legehennenhaltung,14,true
+41331,Schlachtungs- und Schlachtgewichtsstatistik,4,true
+41362,Erhebung über die Erzeugung in Aquakulturbetrieben,10,true
+41363,Preiserhebung in Aquakulturbetrieben,1,false
+42111,Monatsbericht im Verarbeitenden Gewerbe,28,true
+42113,Reichweiten des Auftragsbestandes im Verarb. Gew.,4,true
+42121,Monatliche Produktionserhebung im Verarb. Gewerbe,1,true
+42131,Vierteljährliche Produktionserhebung i.Verarb.Gew.,18,true
+42151,Indizes des Auftragseingangs im Verarb. Gewerbe,5,true
+42152,Indizes des Umsatzes im Verarbeitenden Gewerbe,4,true
+42153,Indizes der Produktion im Verarbeitenden Gewerbe,4,true
+42154,Indizes der Arbeitsproduktivität im Verarb.Gewerbe,2,true
+42155,Indizes des Auftragsbestandes im Verarb. Gewerbe,4,true
+42191,Indizes aus der Lkw-Mauterhebung,4,false
+42231,"Investitionserhebung im Verarb. Gewerbe, Bergbau",9,true
+42241,Material- und Wareneingang im Verarb. Gewerbe,10,true
+42251,"Kostenstrukturerhebung im Verarb. Gewerbe, Bergbau",12,true
+42252,Strukturerhebung für kl. Unternehmen i.Verarb.Gew.,2,true
+42271,Jahresbericht für Betriebe im Verarb. Gewerbe,14,true
+42311,Eisen- und Stahlstatistik,10,true
+42321,Düngemittelstatistik,12,true
+42341,Holzbearbeitungsstatistik,4,true
+43111,Monatsbericht: Energie- und Wasserversorgung,6,true
+43211,Investitionserhebung: Energie- u. Wasserversorgung,1,true
+43213,Invest. d.Erdgas-/Erdölgas-Untern.in Gasversorgung,1,true
+43221,Kostenstrukturerhebung: Energie-u.Wasserversorgung,1,true
+43311,Monatserhebung ü. Elektrizitäts- u. Wärmeerzeugung,4,true
+43312,Erh. ü.Stromein- u.-ausspeisung bei Netzbetreibern,4,true
+43321,Monatserhebung über die Gasversorgung,1,true
+43331,Erhebung über Stromabsatz und Erlöse,1,true
+43341,Erhebung über Gasabsatz und Erlöse,2,true
+43351,Erh.ü. Elektrizitäts- u.Wärmeerzeug. i.Verarb.Gew.,8,true
+43381,"Erh. über Gewinnung, Verwendung, Abgabe v. Klärgas",1,true
+43391,Erhebung über die Abgabe von Flüssiggas,1,true
+43411,Erhebung über Erzeugung und Verwendung von Wärme,1,true
+43421,Erhebung über Geothermie,1,true
+43511,Erhebung über die Einfuhr von Kohle,2,true
+43521,Erhebung über Biotreibstoffe,1,true
+43531,Energieverwendung der Betriebe im Verarb. Gewerbe,5,true
+44111,Monatsbericht im Bauhauptgewerbe,12,true
+44131,Vierteljahreserhebung im Ausbaugewerbe,1,true
+44141,Statistik über den Auftragsbestand im Bauhauptgew.,2,true
+44151,Konjunkturstatistik im Bauhauptgewerbe,1,true
+44152,Konjunkturstatistik im Ausbaugewerbe,2,true
+44211,Investitionserhebung im Baugewerbe,4,true
+44231,Ergänzungserhebung im Bauhauptgewerbe,1,true
+44241,Jährl. Erhebung im Ausbaugewerbe u.bei Bauträgern,1,true
+44252,Strukturerhebung f.kleine Unternehmen i.Baugewerbe,1,true
+44253,Kostenstrukturerhebung im Baugewerbe,2,true
+45211,Monatsstatistik Großhandel und Handelsvermittlung,17,true
+45212,Monatsstatistik im Einzelhandel,17,true
+45213,Monatsstatistik im Gastgewerbe,17,true
+45214,"Monatsstatistik im Kfz-Handel,Instandh.,Reparatur",17,true
+45341,Jahresstatistik im Handel,16,true
+45342,Jahresstatistik im Gastgewerbe,8,true
+45412,Monatserhebung im Tourismus,17,true
+45413,Statistik über die touristische Nachfrage,10,true
+46131,Güterverkehrsstatistik der Eisenbahn,25,true
+46132,Jährliche Güterverkehrsstatistik der Eisenbahn,7,true
+46161,Schieneninfrastrukturstatistik,4,true
+46181,Personenverkehr mit Bussen und Bahnen,11,true
+46231,Straßengüterverkehrsstatistik,4,true
+46241,Statistik der Straßenverkehrsunfälle,19,true
+46251,Statistik des Kraftfahrzeug- und Anhängerbestandes,20,true
+46271,Statistik der Straßen des überörtlichen Verkehrs,1,true
+46311,Unternehmensstatistik der Binnenschifffahrt,5,true
+46321,Güterverkehrsstatistik der Binnenschifffahrt,27,true
+46331,Seeverkehrsstatistik,32,true
+46411,Unternehmensstatistik im Luftverkehr,4,true
+46421,Verkehrsleistungsstatistik im Luftverkehr,27,true
+46911,Rohrfernleitungsstatistik,1,true
+47311,"Statistik d.Versicherungen,Pensionskassen u.-fonds",1,true
+47414,Konjunkturstatistik im Dienstleistungsbereich,10,true
+47415,Strukturerhebung im Dienstleistungsbereich,161,true
+48112,Bereichsübergreifende Unternehmensstatistik,5,true
+48121,Statistik für kleine und mittlere Unternehmen,16,true
+48131,Statistik über auslandskontrollierte Unternehmen,4,true
+49911,Fleischuntersuchungsstatistik,21,true
+51000,Außenhandel,79,true
+52111,Unternehmensregister-System (URS),18,true
+52311,Gewerbeanzeigenstatistik,2,true
+52411,Statistik über beantragte Insolvenzverfahren,49,true
+52551,Kostenstrukturstatistik in sonstigen DL-Bereichen,15,true
+52571,Kostenstrukturstatistik im medizinischen Bereich,7,true
+52911,Nutzung v.Informations-u.Kommunikationstech.i.Unt.,4,true
+53111,Handwerkszählung,19,true
+53211,Vierteljährliche Handwerksberichterstattung,8,true
+61111,Verbraucherpreisindex für Deutschland,22,true
+61121,Harmonisierter Verbraucherpreisindex,12,true
+61131,Index der Einzelhandelspreise,2,false
+61211,Index der Erzeugerpreise landwirtschaftl. Produkte,3,true
+61221,Index der Einkaufspreise landwirt. Betriebsmittel,3,true
+61231,Erzeugerpreisindex der Produkte des Holzeinschlags,3,true
+61241,Index der Erzeugerpreise gewerblicher Produkte,18,true
+61243,Durchschnittspreise für Strom und Gas,21,true
+61261,Preisindizes für die Bauwirtschaft,16,true
+61262,Preisindizes für Wohnimmobilien,4,false
+61281,Index der Großhandelsverkaufspreise,6,true
+61311,Erzeugerpreisindizes für Dienstleistungen,22,false
+61351,"Verbraucherpreisindizes Verkehr, Post, Telekomm.",22,true
+61411,Index der Einfuhrpreise,18,true
+61421,Index der Ausfuhrpreise,18,true
+61511,Statistik der Kaufwerte für Bauland,65,true
+61521,Kaufwerte für landwirtschaftliche Grundstücke,14,true
+61611,Internationaler Vergleich der Verbraucherpreise,2,true
+62111,Verdienststrukturerhebung,56,true
+62221,Vj. Index der Tarifverdienste und Arbeitszeiten,4,true
+62231,Monatl. Index der Tarifverdienste u. Arbeitszeiten,2,true
+62311,Verdiensterhebung in der Landwirtschaft,4,true
+62321,Vierteljährliche Verdiensterhebung,8,true
+62361,Verdiensterhebung,146,true
+62411,Arbeitskostenerhebung,24,true
+62421,Arbeitskostenindex,2,true
+62431,Jahresschätzung Arbeitskosten,1,true
+63111,Laufende Wirtschaftsrechnungen: Allgemeine Angaben,26,true
+63121,Laufende Wirtschaftsrechnungen: Haushaltsbuch,26,true
+63211,Einkommens- u.Verbrauchsstichproben: Allg. Angaben,8,true
+63221,Einkommens- u.Verbrauchsstichproben: Haushaltsbuch,12,true
+63231,Einkommens- u.Verbrauchsstichproben: Feinanschr.,8,true
+63511,Überschuldungsstatistik,105,true
+71141,Rechnungsergebnisse d.öffentlichen Gesamthaushalts,10,true
+71211,Statistik über das Steueraufkommen,10,true
+71231,Realsteuervergleich,8,true
+71311,Vierteljährl. Schulden d. öffentl. Gesamthaushalts,18,true
+71321,Jährliche Schulden d. öffentlichen Gesamthaushalts,21,true
+71329,"Jährl. Schulden der sonst. öff. Fonds, Einr., Unt.",8,true
+71411,Finanzvermögen des öffentlichen Gesamthaushalts,17,true
+71811,"Jahresabschlüsse kfm. b. Extrahh., sonst. öff. FEU",72,true
+73111,Lohn- und Einkommensteuerstatistik,15,true
+73121,"Statistik ü. Personengesellschaften,Gemeinschaften",10,true
+73141,Statistik der Rentenbezugsmitteilungen,4,true
+73151,Lohnsteuerstatistik (Anmeldungen),8,true
+73211,Körperschaftsteuerstatistik,5,true
+73311,Umsatzsteuerstatistik (Voranmeldungen),36,true
+73321,Umsatzsteuerstatistik (Veranlagungen),30,true
+73411,Tabaksteuerstatistik,6,true
+73421,Biersteuerstatistik,2,true
+73423,Schaumweinsteuerstatistik,1,true
+73431,Energiesteuerstatistik,1,true
+73432,Stromsteuerstatistik,1,true
+73441,Alkoholsteuerstatistik,1,true
+73511,Gewerbesteuerstatistik,8,true
+73611,Erbschaft- und Schenkungsteuerstatistik,10,true
+73991,Geschäftsstatistik zur Luftverkehrsteuer,2,true
+74111,Personalstandstatistik des öffentlichen Dienstes,20,false
+74211,Versorgungsempfängerstatistik,48,true
+79994,Vergabestatistik,102,true
+81000,Volkswirtschaftliche Gesamtrechnungen des Bundes,69,true
+81511,Input-Output-Rechnung,6,true
+81711,Satellitensysteme,13,false
+82111,VGR der Länder: Entstehungsrechnung,4,true
+82411,VGR der Länder: Umverteilungsrechnung,2,true
+85111,Luftemissionsrechnung,13,true
+85131,Einzelne Materialien,7,true
+85141,Wassergesamtrechnung,2,false
+85211,Bodennutzung,2,true
+85221,Ausmaß der Ökosysteme,8,true
+85411,Ausgaben und Anlagevermögen für den Umweltschutz,3,true
+85421,Umweltbezogene Steuern und Gebühren,4,true
+91111,Nachhaltige Entwicklung in Deutschland,2,true
+91211,Wissenschafts- und Technologieindikatoren,2,true
+91311,Kulturindikatoren,2,true
+99911,Internationale Indikatoren,13,false

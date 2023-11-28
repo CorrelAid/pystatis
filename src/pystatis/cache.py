@@ -14,7 +14,7 @@ from pystatis import config
 
 logger = logging.getLogger(__name__)
 
-JOB_ID_PATTERN = r"\d+"
+JOB_ID_PATTERN = r"_\d+"
 
 
 def cache_data(
@@ -132,7 +132,7 @@ def normalize_name(name: str) -> str:
     Returns:
         str: The unique identifier without the optional job id.
     """
-    if len(re.findall(JOB_ID_PATTERN, name)) == 3:
+    if re.findall(JOB_ID_PATTERN, name):
         name = name.split("_")[0]
 
     return name

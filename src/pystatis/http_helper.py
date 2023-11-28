@@ -18,8 +18,8 @@ from pystatis.exception import DestatisStatusError
 
 logger = logging.getLogger(__name__)
 
-JOB_ID_PATTERN = re.compile(r"\d+-\d+_\d+")
-JOB_TIMEOUT = 60
+JOB_ID_PATTERN = re.compile(r"(?<=:\s).*_\d+")
+JOB_TIMEOUT = 3000
 
 
 def load_data(
@@ -81,7 +81,7 @@ def get_data_from_endpoint(
     endpoint: str, method: str, params: dict
 ) -> requests.Response:
     """
-    Wrapper method which constructs an url for querying data from Destatis and
+    Wrapper method which constructs a url for querying data from Destatis and
     sends a GET request.
 
     Args:
@@ -92,7 +92,18 @@ def get_data_from_endpoint(
     Returns:
         requests.Response: the response object holding the response from calling the Destatis endpoint.
     """
-    db_host, db_user, db_pw = db.get_db_settings()
+    
+    # Determine database by matching regex to item code
+    name = params.get("name", params.get("selection", ""))
+    use_db = ""
+
+    if name is not None:
+        use_db = db.match_db(name)
+    
+    if not use_db:
+        use_db = _get_db_from_user_input()
+        
+    db_host, db_user, db_pw = db.get_db_settings(use_db)
     url = f"{db_host}{endpoint}/{method}"
 
     # params is used to calculate hash for caching so don't alter params dict here!
@@ -104,7 +115,7 @@ def get_data_from_endpoint(
         }
     )
 
-    response = requests.get(url, params=params_, timeout=(5, 15))
+    response = requests.get(url, params=params_, timeout=(5, 60))
 
     response.encoding = "UTF-8"
     _check_invalid_status_code(response)
@@ -138,7 +149,7 @@ def start_job(endpoint: str, method: str, params: dict) -> requests.Response:
 
 
 def get_job_id_from_response(response: requests.Response) -> str:
-    """Get the job ID of a successful started job.
+    """Get the job ID of a successfully started job.
 
     Args:
         response (requests.Response): Response from endpoint request with job set equal to true.
@@ -188,6 +199,7 @@ def get_data_from_resultfile(job_id: str) -> str:
 
         time.sleep(5)
     else:
+        print("Time out exceeded! Aborting...")
         return ""
 
     params = {
@@ -297,3 +309,21 @@ def _check_destatis_status(destatis_status: dict) -> None:
         logger.info(
             "Code %d: %s", destatis_status_code, destatis_status_content
         )
+
+def _get_db_from_user_input() -> str:
+    """Prompt user to select the database they want to interact with."""
+
+    
+    user_input = input("Please select the database you wish to interact with:\n" \
+                    "GENESIS-online [1], Zensus Datenbank [2], Regionalstatistik [3]")
+    
+    user_input = int(user_input) if user_input.isdigit() else 0
+    
+    if user_input not in [1,2,3]:
+        raise ValueError(
+            "Invalid input. Please enter the number corresponding to the database (1, 2, or 3)."
+        )
+    
+    db_name = config.get_supported_db()[user_input-1]
+
+    return db_name

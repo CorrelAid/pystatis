@@ -14,7 +14,7 @@ def whoami() -> str:
     Returns:
         str: text test response from Destatis
     """
-    url = f"{db.get_db_host()}" + "helloworld/whoami"
+    url = f"{db.get_db_host('genesis')}" + "helloworld/whoami"
 
     response = requests.get(url, timeout=(1, 15))
 
@@ -23,15 +23,18 @@ def whoami() -> str:
     return str(response.text)
 
 
-def logincheck() -> str:
+def logincheck(db_name: str) -> str:
     """
     Wrapper method which constructs an URL for testing the Destatis API
     logincheck method, which tests the login credentials (from the config.ini).
 
+    Args:
+        db_name (str): Name of the database to login to
+
     Returns:
         str: text logincheck response from Destatis
     """
-    db_host, db_user, db_pw = db.get_db_settings()
+    db_host, db_user, db_pw = db.get_db_settings(db_name)
     url = f"{db_host}helloworld/logincheck"
 
     params = {

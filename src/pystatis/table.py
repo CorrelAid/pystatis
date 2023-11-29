@@ -58,9 +58,9 @@ def format_table(data: pd.DataFrame,
     
     Returns:
         pd.DataFrame: Formatted dataframe that omits all CODE columns and gives 
-        infromative columns names.
+        informative columns names.
     """
-    time_name, = data["Zeit_Label"].unique() # Time label (usually Jahr) 
+    time_name, = data["Zeit_Label"].unique()
     time_values = data["Zeit"]
 
     merkmal_labels = data.filter(like="Merkmal_Label").columns

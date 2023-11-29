@@ -41,9 +41,40 @@ class Table:
         self.raw_data = raw_data
         data_str = StringIO(raw_data)
         self.data = pd.read_csv(data_str, sep=";")
+        self.nice_data = format_table(self.data)
 
         metadata = load_data(
             endpoint="metadata", method="table", params=params, as_json=True
         )
         assert isinstance(metadata, dict)  # nosec assert_used
         self.metadata = metadata
+
+def format_table(data: pd.DataFrame, 
+                ) -> pd.DataFrame:
+    """Format the raw data into a more readable table
+    
+    Args:
+        data (pd.DataFrame): A pandas dataframe created with get_data()
+    
+    Returns:
+        pd.DataFrame: Formatted dataframe that omits all CODE columns and gives 
+        infromative columns names.
+    """
+    time_name, = data["Zeit_Label"].unique() # Time label (usually Jahr) 
+    time_values = data["Zeit"]
+
+    merkmal_labels = data.filter(like="Merkmal_Label").columns
+    indep_names = [data[name].unique()[0] for name in merkmal_labels] # list of column names from Merkmal_Label
+
+    auspraegung_labels = data.filter(like="Auspraegung_Label").columns
+    indep_values = [data[name] for name in auspraegung_labels] # list of data from Ausgepragung_Label
+
+    dep_values = data.loc[:,auspraegung_labels[-1]:].iloc[:,1:] # get all columns after last Auspraegung column
+    dep_names = [" ".join(name.split('_')[1:]) 
+                    for name in dep_values.columns] # splits strings in column names for readability
+
+    nice_dict = {time_name:time_values, 
+                    **dict(zip(indep_names, indep_values)), 
+                    **dict(zip(dep_names, dep_values.values.T))}
+    nice_data = pd.DataFrame(nice_dict)
+    return nice_data

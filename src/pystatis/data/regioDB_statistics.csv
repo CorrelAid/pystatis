@@ -1,0 +1,102 @@
+Code,Content,Cubes,Information
+11111,Feststellung des Gebietsstandes,9,true
+12111,Zensus 2011,245,true
+12211,Grundprogramm des Mikrozensus,85,true
+12411,Fortschreibung des Bevölkerungsstandes,112,true
+12511,Einbürgerungsstatistik,32,true
+12531,Statistik zu Schutzsuchenden,16,true
+12611,Statistik der Eheschließungen,32,true
+12612,Statistik der Geburten,63,true
+12613,Statistik der Sterbefälle,59,true
+12631,Statistik rechtskräftiger Urteile in Ehesachen,12,true
+12711,Wanderungsstatistik,33,true
+13111,Statistik der sozialversicherungspflichtig Beschäftigten,94,true
+13211,Arbeitsmarktstatistik der Bundesagentur für Arbeit,42,true
+13312,Erwerbstätigenrechnung der Länder,4,true
+14111,Allgemeine Bundestagswahlstatistik,10,true
+14211,Allgemeine Europawahlstatistik,10,true
+14331,Landtagswahlen: Schleswig-Holstein,8,false
+14332,Landtagswahlen: Hamburg,6,false
+14333,Landtagswahlen: Niedersachsen,8,false
+14334,Landtagswahlen: Bremen,6,false
+14335,Landtagswahlen: Nordrhein-Westfalen,8,false
+14336,Landtagswahlen: Hessen,8,false
+14337,Landtagswahlen: Rheinland-Pfalz,8,true
+14338,Landtagswahlen: Baden-Württemberg,8,true
+14339,Landtagswahlen: Bayern,8,false
+14340,Landtagswahlen: Saarland,8,false
+14341,Landtagswahlen: Berlin,8,false
+14342,Landtagswahlen: Brandenburg,8,false
+14343,Landtagswahlen: Mecklenburg-Vorpommern,8,false
+14344,Landtagswahlen: Sachsen,8,false
+14345,Landtagswahlen: Sachsen-Anhalt,8,true
+14346,Landtagswahlen: Thüringen,8,false
+19321,Pendlerrechnung der Länder,15,true
+21111,Statistik der allgemeinbildenden Schulen,32,true
+21121,Statistik der beruflichen Schulen,40,true
+21311,Statistik der Studenten,4,false
+21321,Statistik der Prüfungen,4,false
+22121,Statistik der Empfänger von Hilfe zum Lebensunterhalt,36,true
+22131,Statistik der Empfänger von Leistungen nach dem 5. bis 9. Kapitel SGB XII,24,true
+22151,Empfänger von Grundsicherung im Alter und bei Erwerbsminderung,60,true
+22161,Statistik der Empfänger von Eingliederungshilfe nach dem SGB IX,16,true
+22221,Statistik der Empfänger von Leistungen nach dem Asylbewerberleistungsgesetz,16,true
+22311,Wohngeld zum 31.12.,16,true
+22411,Pflegestatistik (Pflegeeinricht./Pflegebedürftige),24,true
+22541,Statistik der Kinder und tätigen Personen in Tageseinrichtungen,21,true
+22542,Statistik der Einrichtung der Kinder- u. Jugendhilfe,12,true
+22543,Statistik der Kinder und tätigen Personen in öffentlich geförderter Kindertagespflege,52,true
+22811,Sozialberichterstattung in der amtlichen Statistik,28,true
+22922,Statistik zum Elterngeld,16,true
+23111,Grunddaten der Krankenhäuser,20,true
+23112,Grunddaten der Vorsorge- oder Rehabilitationseinrichtungen ,20,true
+23131,Diagnosen der Krankenhauspatienten,12,true
+23211,Todesursachenstatistik,12,true
+31111,Statistik der Baugenehmigungen,45,true
+31121,Statistik der Baufertigstellungen,45,true
+31211,Gebäude- und Wohnungszählung 2011 (Zensus),40,true
+31231,Fortschreibung des Wohngebäude- und Wohnungsbestandes ,35,true
+32111,Erhebung der Abfallentsorgung,20,true
+32121,Erhebung der öffentlich-rechtlichen Abfallentsorgung,8,true
+32151,"Erhebung der gefährlichen Abfälle, über die Nachweise zu  führen sind ",8,true
+32211,Erhebung der öffentlichen Wasserversorgung,16,true
+32212,Erhebung der öffentlichen Abwasserentsorgung,8,true
+32213,Erhebung der öffentlichen Abwasserbehandlung,20,true
+32214,Erhebung der öffentlichen Abwasserentsorgung - Klärschlamm,8,true
+32221,Erhebung der nichtöffentlichen Wasserversorgung und Abwasserentsorgung,28,true
+32231,Wasserversorg./ Abwasserbeseit. im Verarb. Gewerbe,28,true
+32271,Erhebung der Wasser- und Abwasserentgelte,5,true
+33111,Flächenerhebung nach Art der tatsächlichen Nutzung,45,true
+41120,Allgemeine Agrarstrukturerhebung (bis 2007),64,true
+41141,Agrarstrukturerhebung / Landwirtschaftszählung,44,true
+41241,Ernte- und Betriebsberichterstattungen (EBE),4,true
+41312,Erhebung über die Rinderbestände,4,true
+42111,Verarbeitendes Gewerbe - Jahre ab 2009 mit WZ 2008,17,true
+42111A,Verarbeitendes Gewerbe - Jahre bis 2008 mit WZ93,28,true
+42231,"Investitionserh. i. Bereich Verarbeitendes Gewerbe, Bergbau u.d Gewinnung v. Steinen u. Erden",4,true
+43531,Jahreserhebung ü. die Energieverwendung der Betriebe im Verarbeitendem Gewerbe,4,true
+44231,Ergänzungserhebung im Bauhauptgewerbe,4,true
+44241,Jährliche Erhebung im Ausbaugewerbe und bei Bauträgern,4,true
+45412,Monatserhebung im Tourismus,13,true
+46241,Statistik der Straßenverkehrsunfälle,5,true
+46251,Statistik des Kraftfahrzeug- und Anhängerbestandes,48,true
+52111,Unternehmensregister-System (URS),89,true
+52311,Gewerbeanzeigenstatistik,32,true
+52411,Statistik über beantragte Insolvenzverfahren,20,true
+53111,Handwerkszählung,3,true
+61511,Kaufwerte für Bauland,8,true
+71231,Realsteuervergleich,10,true
+71327, Jährliche Schulden der Kernhaushalte der Gemeinden/Gemeindeverbände,16,true
+71517,"Vierteljährliche Kassenergebnisse, Sektor Kommunen",41,true
+73111,Lohn- und Einkommensteuerstatistik,13,true
+73311,Umsatzsteuerstatistik (Voranmeldungen),8,true
+73321,Umsatzsteuerstatistik (Veranlagungen),4,true
+73511,Gewerbesteuerstatistik,4,true
+74111,Personalstandstatistik des öffentlichen Dienstes,144,true
+82111,VGR der Länder: Entstehungsrechnung,8,true
+82411,VGR der Länder: Umverteilungsrechnung,4,true
+88111,Gesundheitsausgabenrechnung der Länder (GARdL),4,true
+88121,Gesundheitspersonalrechnung der Länder (GPRdL),12,true
+88131,Wertschöpfungs-Erwerbstätigen-Ansatz der Länder (WSE),4,true
+99221,de-domains,4,true
+99910,Regionalatlas Deutschland,208,true

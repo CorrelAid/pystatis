@@ -2,7 +2,7 @@
 
 import requests
 
-from pystatis.config import load_config
+from pystatis import db
 from pystatis.http_helper import _check_invalid_status_code
 
 
@@ -14,8 +14,7 @@ def whoami() -> str:
     Returns:
         str: text test response from Destatis
     """
-    config = load_config()
-    url = f"{config['GENESIS API']['base_url']}" + "helloworld/whoami"
+    url = f"{db.get_db_host()}" + "helloworld/whoami"
 
     response = requests.get(url, timeout=(1, 15))
 
@@ -32,12 +31,12 @@ def logincheck() -> str:
     Returns:
         str: text logincheck response from Destatis
     """
-    config = load_config()
-    url = f"{config['GENESIS API']['base_url']}" + "helloworld/logincheck"
+    db_host, db_user, db_pw = db.get_db_settings()
+    url = f"{db_host}helloworld/logincheck"
 
     params = {
-        "username": config["GENESIS API"]["username"],
-        "password": config["GENESIS API"]["password"],
+        "username": db_user,
+        "password": db_pw,
     }
 
     response = requests.get(url, params=params, timeout=(1, 15))

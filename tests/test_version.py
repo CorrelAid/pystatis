@@ -1,9 +1,12 @@
-# from docs.source.conf import release
+import subprocess
+
 from pystatis import __version__
 
 
-def test_docs_version():
-    # version hard-coded in docs, since pre-commit hook fails to import pystatis#
-    # TODO: test against conf file release variable, as soon as Sphinx is merged
-    # assert __version__ == release
-    assert True
+def test_version():
+    assert (
+        __version__
+        == subprocess.check_output(["poetry", "version"], text=True)
+        .strip()
+        .split()[-1]
+    )

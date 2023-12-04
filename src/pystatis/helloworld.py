@@ -25,7 +25,7 @@ def whoami() -> str:
 
 def logincheck(db_name: str) -> str:
     """
-    Wrapper method which constructs an URL for testing the Destatis API
+    Wrapper method which constructs a URL for testing the Destatis API
     logincheck method, which tests the login credentials (from the config.ini).
 
     Args:

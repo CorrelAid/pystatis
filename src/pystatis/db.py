@@ -8,39 +8,6 @@ from pystatis.exception import PystatisConfigError
 
 logger = logging.getLogger(__name__)
 
-
-def set_db(name: str) -> None:
-    """Set the active database.
-
-    Args:
-        name (str): Name of the database. Must be one of the supported databases.
-        See `pystatis.config.get_supported_db()`.
-    """
-    if name.lower() not in config.get_supported_db():
-        raise ValueError(
-            f"Database {name} not supported! Please choose one of {', '.join(config.get_supported_db())}"
-        )
-    config.config.set("settings", "active_db", name.lower())
-
-    if not get_db_user() or not get_db_pw():
-        logger.critical(
-            "No credentials for %s found. Please run `setup_credentials()`.",
-            name,
-        )
-
-
-def get_db() -> str:
-    """Get the active database."""
-    active_db = config.config.get("settings", "active_db")
-
-    if not active_db:
-        raise PystatisConfigError(
-            "No active database set! Please run `set_db()`."
-        )
-
-    return active_db
-
-
 def match_db(name: str) -> str:
     """Match item code to database.
     
@@ -56,17 +23,25 @@ def match_db(name: str) -> str:
     # Strip optional leading * and trailing job id
     name = normalize_name(name).lstrip("*")
 
+    # Get list of matching dbs
     db_match = [idb for idb, irx in zip(supported_dbs, regex_db) if re.match(irx, name)]
 
     if db_match:
-        # Return the first match for now (only cubes should have more than one match as they
-        # can be found in GENESIS-online and RegioDB. Needs to be adjusted for advanced  
-        # functionality, e.g. checking available credentials).
-        db_name = db_match[0]
+        # If more than one db matches it must be a Cube (provided all regexing works as intended).
+        # --> Choose db based on available credentials.
+        if len(db_match) > 1:
+            for check_db in db_match:
+                if get_db_user(check_db) and get_db_pw(check_db):
+                    return check_db
+            else:
+                raise PystatisConfigError(
+                    "You lack the necessary credentials to access this item. " \
+                    "Please run setup_credentials()."
+                )
+        else:
+            return db_match[0]
     else:
-        db_name = ""
-
-    return db_name
+        return ""
 
 
 def get_db_host(db_name: str) -> str:

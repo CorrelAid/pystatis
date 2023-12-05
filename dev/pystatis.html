@@ -71,6 +71,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#pystatis.config.create_default_config"><code class="docutils literal notranslate"><span class="pre">create_default_config()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pystatis.config.delete_config"><code class="docutils literal notranslate"><span class="pre">delete_config()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pystatis.config.get_cache_dir"><code class="docutils literal notranslate"><span class="pre">get_cache_dir()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pystatis.config.get_regex"><code class="docutils literal notranslate"><span class="pre">get_regex()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pystatis.config.get_supported_db"><code class="docutils literal notranslate"><span class="pre">get_supported_db()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pystatis.config.init_config"><code class="docutils literal notranslate"><span class="pre">init_config()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pystatis.config.load_config"><code class="docutils literal notranslate"><span class="pre">load_config()</span></code></a></li>
@@ -163,7 +164,6 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#pystatis.clear_cache"><code class="docutils literal notranslate"><span class="pre">clear_cache()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#pystatis.logincheck"><code class="docutils literal notranslate"><span class="pre">logincheck()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#pystatis.set_db"><code class="docutils literal notranslate"><span class="pre">set_db()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#pystatis.setup_credentials"><code class="docutils literal notranslate"><span class="pre">setup_credentials()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#pystatis.whoami"><code class="docutils literal notranslate"><span class="pre">whoami()</span></code></a></li>
 </ul>
@@ -358,6 +358,17 @@ until the user has filled in the credentials.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pystatis.config.get_regex">
+<span class="sig-prename descclassname"><span class="pre">pystatis.config.</span></span><span class="sig-name descname"><span class="pre">get_regex</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.config.get_regex" title="Link to this definition"></a></dt>
+<dd><p>Get a list of regex patterns matching item codes in the supported databases.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[str]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -728,15 +739,18 @@ until the user has filled in the credentials.</p>
 <p>Module provides wrapper for HelloWorld GENESIS REST-API functions.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="pystatis.helloworld.logincheck">
-<span class="sig-prename descclassname"><span class="pre">pystatis.helloworld.</span></span><span class="sig-name descname"><span class="pre">logincheck</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.helloworld.logincheck" title="Link to this definition"></a></dt>
-<dd><p>Wrapper method which constructs an URL for testing the Destatis API
+<span class="sig-prename descclassname"><span class="pre">pystatis.helloworld.</span></span><span class="sig-name descname"><span class="pre">logincheck</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.helloworld.logincheck" title="Link to this definition"></a></dt>
+<dd><p>Wrapper method which constructs a URL for testing the Destatis API
 logincheck method, which tests the login credentials (from the config.ini).</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>text logincheck response from Destatis</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>db_name</strong> (<em>str</em>) – Name of the database to login to</p>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>str</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>text logincheck response from Destatis</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
 </dd>
 </dl>
 </dd></dl>
@@ -763,7 +777,7 @@ whoami method, which returns host name and IP address.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="pystatis.http_helper.get_data_from_endpoint">
 <span class="sig-prename descclassname"><span class="pre">pystatis.http_helper.</span></span><span class="sig-name descname"><span class="pre">get_data_from_endpoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.http_helper.get_data_from_endpoint" title="Link to this definition"></a></dt>
-<dd><p>Wrapper method which constructs an url for querying data from Destatis and
+<dd><p>Wrapper method which constructs a url for querying data from Destatis and
 sends a GET request.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -802,7 +816,7 @@ sends a GET request.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="pystatis.http_helper.get_job_id_from_response">
 <span class="sig-prename descclassname"><span class="pre">pystatis.http_helper.</span></span><span class="sig-name descname"><span class="pre">get_job_id_from_response</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.http_helper.get_job_id_from_response" title="Link to this definition"></a></dt>
-<dd><p>Get the job ID of a successful started job.</p>
+<dd><p>Get the job ID of a successfully started job.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>response</strong> (<em>requests.Response</em>) – Response from endpoint request with job set equal to true.</p>
@@ -866,11 +880,14 @@ sends a GET request.</p>
 <p>Module provides wrapper for Profile GENESIS REST-API functions.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="pystatis.profile.change_password">
-<span class="sig-prename descclassname"><span class="pre">pystatis.profile.</span></span><span class="sig-name descname"><span class="pre">change_password</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_password</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.profile.change_password" title="Link to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">pystatis.profile.</span></span><span class="sig-name descname"><span class="pre">change_password</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_password</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.profile.change_password" title="Link to this definition"></a></dt>
 <dd><p>Changes Genesis REST-API password and updates local config.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>new_password</strong> (<em>str</em>) – New password for the Genesis REST-API</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>new_password</strong> (<em>str</em>) – New password for the Genesis REST-API</p></li>
+<li><p><strong>db_name</strong> (<em>str</em>) – Database for which the password should be changed (genesis, zensus, regio)</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>text response from Destatis</p>
@@ -1120,32 +1137,18 @@ Should only apply for manually saved data, visible in ‘Meine Tabellen’ in th
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pystatis.logincheck">
-<span class="sig-prename descclassname"><span class="pre">pystatis.</span></span><span class="sig-name descname"><span class="pre">logincheck</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.logincheck" title="Link to this definition"></a></dt>
-<dd><p>Wrapper method which constructs an URL for testing the Destatis API
+<span class="sig-prename descclassname"><span class="pre">pystatis.</span></span><span class="sig-name descname"><span class="pre">logincheck</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.logincheck" title="Link to this definition"></a></dt>
+<dd><p>Wrapper method which constructs a URL for testing the Destatis API
 logincheck method, which tests the login credentials (from the config.ini).</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>text logincheck response from Destatis</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>str</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="pystatis.set_db">
-<span class="sig-prename descclassname"><span class="pre">pystatis.</span></span><span class="sig-name descname"><span class="pre">set_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.set_db" title="Link to this definition"></a></dt>
-<dd><p>Set the active database.</p>
-<dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>name</strong> (<em>str</em>) – Name of the database. Must be one of the supported databases.</p></li>
-<li><p><strong>pystatis.config.get_supported_db</strong><strong>(</strong><strong>)</strong><strong>.</strong> (<em>See</em>) – </p></li>
-</ul>
+<dd class="field-odd"><p><strong>db_name</strong> (<em>str</em>) – Name of the database to login to</p>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>None</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>text logincheck response from Destatis</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
 </dd>
 </dl>
 </dd></dl>

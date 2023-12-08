@@ -83,12 +83,12 @@ def parse_cube(data: str) -> dict:
         data_block.append(line_content)
 
     # the last data block has no header after it so we have to do it here
-    # for cubes with more than one variable in DQI, we have to repeat the last four columns
+    # for cubes with more than one variable in DQI, we have to repeat the last two columns
     if header:
-        last_four_columns = header[-4:]
-        header = header[:-4]
+        last_two_columns = header[-2:]
+        header = header[:-2]
         for var in cube["DQI"]["NAME"]:
-            header.extend([f"{var}_{col}" for col in last_four_columns])
+            header.extend([f"{var}_{col}" for col in last_two_columns])
 
     cube[header_type] = pd.DataFrame(data_block, columns=header)
 
@@ -119,7 +119,7 @@ def rename_axes(
         old_cols.extend(
             [col for col in cube["QEI"].columns if col.startswith("FACH-SCHL")]
         )
-        new_cols.extend(cube["DQA"].sort_values("RHF-ACHSE")["NAME"].to_list())
+        new_cols.extend(cube["DQA"]["NAME"].to_list())
 
     if rename_time_variable:
         old_cols.append("ZI-WERT")

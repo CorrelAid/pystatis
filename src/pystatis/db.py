@@ -8,14 +8,15 @@ from pystatis.exception import PystatisConfigError
 
 logger = logging.getLogger(__name__)
 
+
 def match_db(name: str) -> str:
     """Match item code to database.
-    
+
     Args:
         name (str): Query parameter 'name' corresponding to item code.
 
-    Returns: 
-        db_name (str): Name of matching database. 
+    Returns:
+        (str): Name of matching database.
     """
     supported_dbs = config.get_supported_db()
     regex_db = config.get_regex()
@@ -24,7 +25,9 @@ def match_db(name: str) -> str:
     name = normalize_name(name).lstrip("*")
 
     # Get list of matching dbs
-    db_match = [idb for idb, irx in zip(supported_dbs, regex_db) if re.match(irx, name)]
+    db_match = [
+        idb for idb, irx in zip(supported_dbs, regex_db) if re.match(irx, name)
+    ]
 
     if db_match:
         # If more than one db matches it must be a Cube (provided all regexing works as intended).
@@ -33,11 +36,11 @@ def match_db(name: str) -> str:
             for check_db in db_match:
                 if get_db_user(check_db) and get_db_pw(check_db):
                     return check_db
-            else:
-                raise PystatisConfigError(
-                    "You lack the necessary credentials to access this item. " \
-                    "Please run setup_credentials()."
-                )
+
+            raise PystatisConfigError(
+                "You lack the necessary credentials to access this item. "
+                "Please run setup_credentials()."
+            )
         else:
             return db_match[0]
     else:

@@ -111,7 +111,7 @@ def get_data_from_endpoint(
 
     if not db_name:
         raise ValueError(
-            "Could not determine the database for this request. Please specify a database using the `db` parameter or make sure that the `params` dictionary has a key 'name' with a proper object number."
+            "Could not determine the database for this request. Please specify a database using the `db_name` parameter or make sure that the `params` dictionary has a key 'name' with a proper object number."
         )
 
     db_host, db_user, db_pw = db.get_db_settings(db_name)
@@ -322,23 +322,3 @@ def _check_destatis_status(destatis_status: dict) -> None:
         logger.info(
             "Code %d: %s", destatis_status_code, destatis_status_content
         )
-
-
-def _get_db_from_user_input() -> str:
-    """Prompt user to select the database they want to interact with."""
-
-    user_input = input(
-        "Please select the database you wish to interact with:\n"
-        "GENESIS-online [1], Zensus Datenbank [2], Regionalstatistik [3]"
-    )
-
-    user_input = int(user_input) if user_input.isdigit() else 0
-
-    if user_input not in [1, 2, 3]:
-        raise ValueError(
-            "Invalid input. Please enter the number corresponding to the database (1, 2, or 3)."
-        )
-
-    db_name = config.get_supported_db()[user_input - 1]
-
-    return db_name

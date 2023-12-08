@@ -71,7 +71,7 @@ class Find:
                     f"# Number of tables: {len(self.tables.df)}",
                     "# Preview:",
                     self.tables.df.iloc[: self.top_n_preview].to_markdown(),
-                    f"{'-' * 40}"
+                    f"{'-' * 40}",
                     f"# Number of statistics: {len(self.statistics.df)}",
                     "# Preview:",
                     self.statistics.df.iloc[: self.top_n_preview].to_markdown(),
@@ -120,7 +120,7 @@ class Find:
         response_dict = response[category.capitalize()]
         response_df = pd.DataFrame(response_dict).replace("\n", " ", regex=True)
 
-        return Results(response_df, category)
+        return Results(response_df, category, db_name=self.db_name)
 
 
 class Results:

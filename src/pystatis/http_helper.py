@@ -74,7 +74,7 @@ def load_data(
 
             cache_data(cache_dir, name, params, data)
     else:
-        response = get_data_from_endpoint(endpoint, method, params)
+        response = get_data_from_endpoint(endpoint, method, params, db_name)
         data = response.text
 
     if as_json:

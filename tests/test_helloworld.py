@@ -23,6 +23,6 @@ def test_logincheck(mocker):
         "pystatis.db.get_db_settings", return_value=("host", "user", "pw")
     )
 
-    response = logincheck()
+    response = logincheck("genesis")
 
     assert response == str(_generic_request_status().text)

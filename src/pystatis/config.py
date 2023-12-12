@@ -20,16 +20,18 @@ When the package is loaded for the first time,
 """
 import logging
 import os
+import re
 from configparser import ConfigParser
 from pathlib import Path
 
 PKG_NAME = __name__.split(".", maxsplit=1)[0]
 DEFAULT_CONFIG_DIR = str(Path().home() / f".{PKG_NAME}")
 SUPPORTED_DB = ["genesis", "zensus", "regio"]
-REGEX_DB = ["^((\d{5}-\d{4})|([0-9A-Z]{10}))$", 
-            "^\d{4}[A-Z]-\d{4}$", 
-            "^((\d{5}-.{1,2}($|-.*$))|(A.*$)|([0-9A-Z]{10}))"]
-
+REGEX_DB = {
+    "genesis": re.compile("^((\d{5}-\d{4})|([0-9A-Z]{10}))$"),
+    "zensus": re.compile("^\d{4}[A-Z]-\d{4}$"),
+    "regio": re.compile("^((\d{5}-.{1,2}($|-.*$))|(A.*$)|([0-9A-Z]{10}$))")
+}
 
 logger = logging.getLogger(__name__)
 config = ConfigParser(interpolation=None)
@@ -180,6 +182,7 @@ def create_default_config() -> None:
 def get_supported_db() -> list[str]:
     """Get a list of supported database names."""
     return SUPPORTED_DB
+
 
 def get_db_identifiers() -> list[str]:
     """Get a list of regex patterns matching item codes in the supported databases."""

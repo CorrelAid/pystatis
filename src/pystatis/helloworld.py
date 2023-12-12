@@ -6,15 +6,18 @@ from pystatis import db
 from pystatis.http_helper import _check_invalid_status_code
 
 
-def whoami() -> str:
+def whoami(db_name: str) -> str:
     """
-    Wrapper method which constructs an URL for testing the Destatis API
+    Wrapper method which constructs a URL for testing the Destatis API
     whoami method, which returns host name and IP address.
+
+    Args:
+        db_name (str): Name of the database to test
 
     Returns:
         str: text test response from Destatis
     """
-    url = f"{db.get_db_host('genesis')}" + "helloworld/whoami"
+    url = f"{db.get_db_host(db_name)}" + "helloworld/whoami"
 
     response = requests.get(url, timeout=(1, 15))
 

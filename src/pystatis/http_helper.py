@@ -95,15 +95,15 @@ def get_data_from_endpoint(
     
     # Determine database by matching regex to item code
     name = params.get("name", params.get("selection", ""))
-    use_db = ""
+    db_name = ""
 
     if name is not None:
-        use_db = db.match_db(name)
+        db_name = db.identify_db(name)
     
-    if not use_db:
-        use_db = _get_db_from_user_input()
+    if not db_name:
+        db_name = _get_db_from_user_input()
         
-    db_host, db_user, db_pw = db.get_db_settings(use_db)
+    db_host, db_user, db_pw = db.get_db_settings(db_name)
     url = f"{db_host}{endpoint}/{method}"
 
     # params is used to calculate hash for caching so don't alter params dict here!

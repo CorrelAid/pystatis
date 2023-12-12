@@ -30,6 +30,7 @@ REGEX_DB = ["^((\d{5}-\d{4})|([0-9A-Z]{10}))$",
             "^\d{4}[A-Z]-\d{4}$", 
             "^((\d{5}-.{1,2}($|-.*$))|(A.*$)|([0-9A-Z]{10}))"]
 
+
 logger = logging.getLogger(__name__)
 config = ConfigParser(interpolation=None)
 
@@ -128,7 +129,6 @@ def create_default_config() -> None:
     """Create a default config parser with empty credentials."""
     config.add_section("settings")
     config.set("settings", "supported_db", ",".join(SUPPORTED_DB))
-    config.set("settings", "regex_db", ";".join(REGEX_DB))
 
     config.add_section("genesis")
     config.set(
@@ -181,7 +181,7 @@ def get_supported_db() -> list[str]:
     """Get a list of supported database names."""
     return SUPPORTED_DB
 
-def get_regex() -> list[str]:
+def get_db_identifiers() -> list[str]:
     """Get a list of regex patterns matching item codes in the supported databases."""
     return REGEX_DB
 

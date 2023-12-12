@@ -8,17 +8,17 @@ from pystatis.exception import PystatisConfigError
 
 logger = logging.getLogger(__name__)
 
-def match_db(name: str) -> str:
-    """Match item code to database.
+def identify_db(name: str) -> str:
+    """Identify the required database by matching the item code to the database regex.
     
     Args:
-        name (str): Query parameter 'name' corresponding to item code.
+        name (str): Query parameter 'name' corresponding to the item code.
 
     Returns: 
         db_name (str): Name of matching database. 
     """
     supported_dbs = config.get_supported_db()
-    regex_db = config.get_regex()
+    regex_db = config.get_db_identifiers()
 
     # Strip optional leading * and trailing job id
     name = normalize_name(name).lstrip("*")
@@ -30,12 +30,13 @@ def match_db(name: str) -> str:
         # If more than one db matches it must be a Cube (provided all regexing works as intended).
         # --> Choose db based on available credentials.
         if len(db_match) > 1:
-            for check_db in db_match:
-                if get_db_user(check_db) and get_db_pw(check_db):
-                    return check_db
+            for db_name in db_match:
+                if get_db_user(db_name) and get_db_pw(db_name):
+                    return db_name
             else:
                 raise PystatisConfigError(
-                    "You lack the necessary credentials to access this item. " \
+                    "Missing credentials! " \
+                    "To access this item you need access to either GENESIS-online or Regionalstatistik. " \
                     "Please run setup_credentials()."
                 )
         else:

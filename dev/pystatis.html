@@ -71,7 +71,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#pystatis.config.create_default_config"><code class="docutils literal notranslate"><span class="pre">create_default_config()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pystatis.config.delete_config"><code class="docutils literal notranslate"><span class="pre">delete_config()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pystatis.config.get_cache_dir"><code class="docutils literal notranslate"><span class="pre">get_cache_dir()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#pystatis.config.get_regex"><code class="docutils literal notranslate"><span class="pre">get_regex()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pystatis.config.get_db_identifiers"><code class="docutils literal notranslate"><span class="pre">get_db_identifiers()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pystatis.config.get_supported_db"><code class="docutils literal notranslate"><span class="pre">get_supported_db()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pystatis.config.init_config"><code class="docutils literal notranslate"><span class="pre">init_config()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pystatis.config.load_config"><code class="docutils literal notranslate"><span class="pre">load_config()</span></code></a></li>
@@ -366,8 +366,8 @@ until the user has filled in the credentials.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="pystatis.config.get_regex">
-<span class="sig-prename descclassname"><span class="pre">pystatis.config.</span></span><span class="sig-name descname"><span class="pre">get_regex</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.config.get_regex" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="pystatis.config.get_db_identifiers">
+<span class="sig-prename descclassname"><span class="pre">pystatis.config.</span></span><span class="sig-name descname"><span class="pre">get_db_identifiers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.config.get_db_identifiers" title="Link to this definition"></a></dt>
 <dd><p>Get a list of regex patterns matching item codes in the supported databases.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -780,15 +780,18 @@ logincheck method, which tests the login credentials (from the config.ini).</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pystatis.helloworld.whoami">
-<span class="sig-prename descclassname"><span class="pre">pystatis.helloworld.</span></span><span class="sig-name descname"><span class="pre">whoami</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.helloworld.whoami" title="Link to this definition"></a></dt>
-<dd><p>Wrapper method which constructs an URL for testing the Destatis API
+<span class="sig-prename descclassname"><span class="pre">pystatis.helloworld.</span></span><span class="sig-name descname"><span class="pre">whoami</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.helloworld.whoami" title="Link to this definition"></a></dt>
+<dd><p>Wrapper method which constructs a URL for testing the Destatis API
 whoami method, which returns host name and IP address.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>text test response from Destatis</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>db_name</strong> (<em>str</em>) – Name of the database to test</p>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>str</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>text test response from Destatis</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1211,15 +1214,18 @@ logincheck method, which tests the login credentials (from the config.ini).</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pystatis.whoami">
-<span class="sig-prename descclassname"><span class="pre">pystatis.</span></span><span class="sig-name descname"><span class="pre">whoami</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.whoami" title="Link to this definition"></a></dt>
-<dd><p>Wrapper method which constructs an URL for testing the Destatis API
+<span class="sig-prename descclassname"><span class="pre">pystatis.</span></span><span class="sig-name descname"><span class="pre">whoami</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.whoami" title="Link to this definition"></a></dt>
+<dd><p>Wrapper method which constructs a URL for testing the Destatis API
 whoami method, which returns host name and IP address.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>text test response from Destatis</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>db_name</strong> (<em>str</em>) – Name of the database to test</p>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>str</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>text test response from Destatis</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
 </dd>
 </dl>
 </dd></dl>

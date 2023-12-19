@@ -6,14 +6,15 @@ from pystatis.cache import normalize_name
 
 logger = logging.getLogger(__name__)
 
+
 def identify_db(name: str) -> str:
     """Identify the required database by matching the item code to the database regex.
-    
+
     Args:
         name (str): Query parameter 'name' corresponding to the item code.
 
-    Returns: 
-        db_name (str): Name of matching database. 
+    Returns:
+        db_name (str): Name of matching database.
     """
     regex_db = config.get_db_identifiers()
 
@@ -51,13 +52,11 @@ def get_db_settings(db_name: str) -> tuple[str, str, str]:
 def check_db_credentials(db_name: str) -> bool:
     """
     Checks if a username and password is stored for the specified database.
-    
+
     Args:
         db_name: Name of database to check credentials for.
-        
-    Returns: 
+
+    Returns:
         TRUE if credentials were found, FALSE otherwise.
     """
     return get_db_user(db_name) and get_db_pw(db_name)
-
-

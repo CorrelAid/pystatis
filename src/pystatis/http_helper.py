@@ -118,8 +118,8 @@ def get_data_from_endpoint(
                         break
                 else:
                     raise PystatisConfigError(
-                        "Missing credentials!\n" \
-                        f"To access this item you need to be a registered user of: {db_match} \n" \
+                        "Missing credentials!\n"
+                        f"To access this item you need to be a registered user of: {db_match} \n"
                         "Please run setup_credentials()."
                     )
 
@@ -336,4 +336,3 @@ def _check_destatis_status(destatis_status: dict) -> None:
         logger.info(
             "Code %d: %s", destatis_status_code, destatis_status_content
         )
-

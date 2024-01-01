@@ -18,6 +18,7 @@ When the package is loaded for the first time,
     Subsequent calls to other `pystatis` functions will throw an error
     until the user has filled in the credentials.
 """
+import configparser
 import logging
 import os
 from configparser import ConfigParser
@@ -123,55 +124,70 @@ def write_config() -> None:
 
 def create_default_config() -> None:
     """Create a default config parser with empty credentials."""
-    config.add_section("settings")
-    config.set("settings", "active_db", "")
-    config.set("settings", "supported_db", ",".join(SUPPORTED_DB))
+    try:
+        config.add_section("settings")
+        config.set("settings", "active_db", "")
+        config.set("settings", "supported_db", ",".join(SUPPORTED_DB))
+    except configparser.DuplicateSectionError:
+        pass
 
-    config.add_section("genesis")
-    config.set(
-        "genesis",
-        "base_url",
-        "https://www-genesis.destatis.de/genesisWS/rest/2020/",
-    )
-    config.set("genesis", "username", "")
-    config.set("genesis", "password", "")
-    config.set(
-        "genesis",
-        "doku",
-        "https://www-genesis.destatis.de/genesis/misc/GENESIS-Webservices_Einfuehrung.pdf",
-    )
+    try:
+        config.add_section("genesis")
+        config.set(
+            "genesis",
+            "base_url",
+            "https://www-genesis.destatis.de/genesisWS/rest/2020/",
+        )
+        config.set("genesis", "username", "")
+        config.set("genesis", "password", "")
+        config.set(
+            "genesis",
+            "doku",
+            "https://www-genesis.destatis.de/genesis/misc/GENESIS-Webservices_Einfuehrung.pdf",
+        )
+    except configparser.DuplicateSectionError:
+        pass
 
-    config.add_section("zensus")
-    config.set(
-        "zensus",
-        "base_url",
-        "https://ergebnisse2011.zensus2022.de/api/rest/2020/",
-    )
-    config.set("zensus", "username", "")
-    config.set("zensus", "password", "")
-    config.set(
-        "zensus",
-        "doku",
-        "https://ergebnisse2011.zensus2022.de/datenbank/misc/ZENSUS-Webservices_Einfuehrung.pdf",
-    )
+    try:
+        config.add_section("zensus")
+        config.set(
+            "zensus",
+            "base_url",
+            "https://ergebnisse2011.zensus2022.de/api/rest/2020/",
+        )
+        config.set("zensus", "username", "")
+        config.set("zensus", "password", "")
+        config.set(
+            "zensus",
+            "doku",
+            "https://ergebnisse2011.zensus2022.de/datenbank/misc/ZENSUS-Webservices_Einfuehrung.pdf",
+        )
+    except configparser.DuplicateSectionError:
+        pass
 
-    config.add_section("regio")
-    config.set(
-        "regio",
-        "base_url",
-        "https://www.regionalstatistik.de/genesisws/rest/2020/",
-    )
-    config.set("regio", "username", "")
-    config.set("regio", "password", "")
-    config.set(
-        "regio",
-        "doku",
-        "https://www.regionalstatistik.de/genesis/misc/GENESIS-Webservices_Einfuehrung.pdf",
-    )
+    try:
+        config.add_section("regio")
+        config.set(
+            "regio",
+            "base_url",
+            "https://www.regionalstatistik.de/genesisws/rest/2020/",
+        )
+        config.set("regio", "username", "")
+        config.set("regio", "password", "")
+        config.set(
+            "regio",
+            "doku",
+            "https://www.regionalstatistik.de/genesis/misc/GENESIS-Webservices_Einfuehrung.pdf",
+        )
+    except configparser.DuplicateSectionError:
+        pass
 
-    config.add_section("data")
-    cache_dir = Path(DEFAULT_CONFIG_DIR) / "data"
-    config.set("data", "cache_dir", str(cache_dir))
+    try:
+        config.add_section("data")
+        cache_dir = Path(DEFAULT_CONFIG_DIR) / "data"
+        config.set("data", "cache_dir", str(cache_dir))
+    except configparser.DuplicateSectionError:
+        pass
 
 
 def get_supported_db() -> list[str]:

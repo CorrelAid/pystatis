@@ -122,7 +122,7 @@ class Results:
                     [
                         f"{self.category.upper()} {code} - {ix}",
                         "Name:",
-                        response["Object"]["Content"],
+                        structure_dict["Content"],
                         f"{'-' * 20}",
                         "Content:",
                         "\n".join(
@@ -149,6 +149,9 @@ class Results:
                         f"{'-' * 40}",
                     ]
                 )
+
+            else:
+                raise ValueError(self.category, " is not a valid value!")
 
             print(output)
 
@@ -232,7 +235,7 @@ class Find:
                     f"# Number of tables: {len(self.tables.df)}",
                     "# Preview:",
                     self.tables.df.iloc[: self.top_n_preview].to_markdown(),
-                    f"{'-' * 40}"
+                    f"{'-' * 40}",
                     f"# Number of statistics: {len(self.statistics.df)}",
                     "# Preview:",
                     self.statistics.df.iloc[: self.top_n_preview].to_markdown(),

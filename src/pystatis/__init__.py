@@ -7,6 +7,8 @@ import pystatis as pstat
 print("Version:", pstat.__version__)
 ```
 """
+import importlib.metadata
+
 from pystatis.cache import clear_cache
 from pystatis.config import setup_credentials
 from pystatis.cube import Cube
@@ -15,7 +17,7 @@ from pystatis.find import Find
 from pystatis.helloworld import logincheck, whoami
 from pystatis.table import Table
 
-__version__ = "0.1.5"
+__version__ = importlib.metadata.version("pystatis")
 
 __all__ = [
     "clear_cache",

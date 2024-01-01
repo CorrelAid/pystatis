@@ -52,7 +52,7 @@ def cube(request, easy_cube, hard_cube):
     [
         (
             "hard_cube",
-            (19185, 13),
+            (22393, 9),
             "22922KJ114",
             "22922",
             ["KREISE", "GES", "ERW122", "ELGAT2"],
@@ -61,7 +61,7 @@ def cube(request, easy_cube, hard_cube):
         ),
         (
             "easy_cube",
-            (42403, 10),
+            (43567, 8),
             "12411BJ001",
             "12411",
             ["DINSG", "NAT", "GES", "FAMST8", "ALT013"],
@@ -171,7 +171,7 @@ def test_rename_axes(cube, test_cols, test_types):
     [
         (
             "hard_cube",
-            (19185, 13),
+            (22393, 9),
             [
                 "ELG002_WERT",
                 "ELG003_WERT",
@@ -180,7 +180,7 @@ def test_rename_axes(cube, test_cols, test_types):
         ),
         (
             "easy_cube",
-            (42403, 10),
+            (43567, 8),
             [
                 "BEVSTD_WERT",
             ],

@@ -14,7 +14,7 @@ def identify_db(name: str) -> str:
         name (str): Query parameter 'name' corresponding to the item code.
 
     Returns:
-        db_name (str): Name of matching database.
+        db_match (list[str]): List of matching databases.
     """
     regex_db = config.get_db_identifiers()
 

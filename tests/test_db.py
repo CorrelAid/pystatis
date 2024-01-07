@@ -37,17 +37,25 @@ def test_set_db_pw(config_):
         ("21111-01-03-4-B", "regio"),
     ],
 )
-def test_match_db(config_, name, expected_db):
-    assert db.match_db(name) == expected_db
+def test_identify_db(config_, name, expected_db):
+    assert db.identify_db(name)[0] == expected_db
 
 
-def test_match_db_with_multiple_matches(config_):
+def test_identify_db_with_multiple_matches(config_):
     config_.set("genesis", "username", "test")
     config_.set("genesis", "password", "test")
-    assert db.match_db("1234567890") == "genesis"
+    db_match = db.identify_db("1234567890")
+    for db_name in db_match:
+        if db.check_db_credentials(db_name):
+            break
+    assert db_name == "genesis"
 
     config_.set("genesis", "username", "")
     config_.set("genesis", "password", "")
     config_.set("regio", "username", "test")
     config_.set("regio", "password", "test")
-    assert db.match_db("1234567890") == "regio"
+    db_match = db.identify_db("1234567890")
+    for db_name in db_match:
+        if db.check_db_credentials(db_name):
+            break
+    assert db_name == "regio"

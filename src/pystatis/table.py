@@ -22,13 +22,14 @@ class Table:
         self.data = pd.DataFrame()
         self.metadata: dict = {}
 
-    def get_data(self, area: str = "all", **kwargs):
+    def get_data(self, area: str = "all", prettify: bool = True, **kwargs):
         """Downloads raw data and metadata from GENESIS-Online.
 
         Additional keyword arguments are passed on to the GENESIS-Online GET request for tablefile.
 
         Args:
             area (str, optional): Area to search for the object in GENESIS-Online. Defaults to "all".
+            prettify (bool, optional): Reformats the table into a readable format. Defaults to True.
         """
         params = {"name": self.name, "area": area, "format": "ffcsv"}
 
@@ -41,7 +42,8 @@ class Table:
         self.raw_data = raw_data
         data_str = StringIO(raw_data)
         self.data = pd.read_csv(data_str, sep=";")
-        self.nice_data = format_table(self.data)
+        if prettify:
+            self.data = self.prettify_table(self.data)
 
         metadata = load_data(
             endpoint="metadata", method="table", params=params, as_json=True
@@ -49,32 +51,33 @@ class Table:
         assert isinstance(metadata, dict)  # nosec assert_used
         self.metadata = metadata
 
-def format_table(data: pd.DataFrame, 
-                ) -> pd.DataFrame:
-    """Format the raw data into a more readable table
-    
-    Args:
-        data (pd.DataFrame): A pandas dataframe created with get_data()
-    
-    Returns:
-        pd.DataFrame: Formatted dataframe that omits all CODE columns and gives 
-        informative columns names.
-    """
-    time_name, = data["Zeit_Label"].unique()
-    time_values = data["Zeit"]
+    @staticmethod
+    def prettify_table(data: pd.DataFrame) -> pd.DataFrame:
+        """Reformat the data into a more readable table
 
-    merkmal_labels = data.filter(like="Merkmal_Label").columns
-    indep_names = [data[name].unique()[0] for name in merkmal_labels] # list of column names from Merkmal_Label
+        Args:
+            data (pd.DataFrame): A pandas dataframe created from raw_data
 
-    auspraegung_labels = data.filter(like="Auspraegung_Label").columns
-    indep_values = [data[name] for name in auspraegung_labels] # list of data from Ausgepragung_Label
+        Returns:
+            pd.DataFrame: Formatted dataframe that omits all unnecessary Code columns
+            and includes informative columns names
+        """
+        # Extracts time column with name from first element of Zeit_Label column
+        time = pd.DataFrame({data["Zeit_Label"].iloc[0]: data["Zeit"]})
 
-    dep_values = data.loc[:,auspraegung_labels[-1]:].iloc[:,1:] # get all columns after last Auspraegung column
-    dep_names = [" ".join(name.split('_')[1:]) 
-                    for name in dep_values.columns] # splits strings in column names for readability
+        # Extracts new column names from first values of the Merkmal_Label columns
+        # and assigns these to the relevant attribute columns (Auspraegung_Label)
+        attributes = data.filter(like="Auspraegung_Label")
+        attributes.columns = data.filter(like="Merkmal_Label").iloc[0].tolist()
 
-    nice_dict = {time_name:time_values, 
-                    **dict(zip(indep_names, indep_values)), 
-                    **dict(zip(dep_names, dep_values.values.T))}
-    nice_data = pd.DataFrame(nice_dict)
-    return nice_data
+        # Selects all columns containing the values
+        values = data.filter(like="__")
+
+        # Given a name like BEV036__Bevoelkerung_in_Hauptwohnsitzhaushalten__1000
+        # extracts the readable label and omit both the code and the unit
+        values.columns = [
+            " ".join(name.split("_")[1:-1]) for name in values.columns
+        ]
+
+        pretty_data = pd.concat([time, attributes, values], axis=1)
+        return pretty_data

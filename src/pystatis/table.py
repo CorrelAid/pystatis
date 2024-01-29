@@ -39,9 +39,11 @@ class Table:
             endpoint="data", method="tablefile", params=params, as_json=False
         )
         assert isinstance(raw_data, str)  # nosec assert_used
+
         self.raw_data = raw_data
         data_str = StringIO(raw_data)
         self.data = pd.read_csv(data_str, sep=";")
+
         if prettify:
             self.data = self.prettify_table(self.data)
 
@@ -49,6 +51,7 @@ class Table:
             endpoint="metadata", method="table", params=params, as_json=True
         )
         assert isinstance(metadata, dict)  # nosec assert_used
+
         self.metadata = metadata
 
     @staticmethod
@@ -75,9 +78,7 @@ class Table:
 
         # Given a name like BEV036__Bevoelkerung_in_Hauptwohnsitzhaushalten__1000
         # extracts the readable label and omit both the code and the unit
-        values.columns = [
-            " ".join(name.split("_")[1:-1]) for name in values.columns
-        ]
+        values.columns = [name.split("__")[1] for name in values.columns]
 
         pretty_data = pd.concat([time, attributes, values], axis=1)
         return pretty_data

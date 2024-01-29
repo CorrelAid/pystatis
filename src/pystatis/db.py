@@ -1,5 +1,6 @@
 """Module provides functions to set the active database and get active database properties."""
 import logging
+import re
 
 from pystatis import config
 from pystatis.cache import normalize_name
@@ -7,7 +8,7 @@ from pystatis.cache import normalize_name
 logger = logging.getLogger(__name__)
 
 
-def identify_db(name: str) -> str:
+def identify_db(name: str) -> list[str]:
     """Identify the required database by matching the item code to the database regex.
 
     Args:
@@ -59,4 +60,4 @@ def check_db_credentials(db_name: str) -> bool:
     Returns:
         TRUE if credentials were found, FALSE otherwise.
     """
-    return get_db_user(db_name) and get_db_pw(db_name)
+    return get_db_user(db_name) != "" and get_db_pw(db_name) != ""

@@ -184,7 +184,7 @@ def get_supported_db() -> list[str]:
     return SUPPORTED_DB
 
 
-def get_db_identifiers() -> list[str]:
+def get_db_identifiers() -> dict[str, re.Pattern[str]]:
     """Get a list of regex patterns matching item codes in the supported databases."""
     return REGEX_DB
 

@@ -134,7 +134,6 @@
 <li class="toctree-l2"><a class="reference internal" href="#module-pystatis.table">pystatis.table module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#pystatis.table.Table"><code class="docutils literal notranslate"><span class="pre">Table</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#pystatis.table.Table.get_data"><code class="docutils literal notranslate"><span class="pre">Table.get_data()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#pystatis.table.Table.prettify_table"><code class="docutils literal notranslate"><span class="pre">Table.prettify_table()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -160,7 +159,6 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#pystatis.Table"><code class="docutils literal notranslate"><span class="pre">Table</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#pystatis.Table.get_data"><code class="docutils literal notranslate"><span class="pre">Table.get_data()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#pystatis.Table.prettify_table"><code class="docutils literal notranslate"><span class="pre">Table.prettify_table()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#pystatis.clear_cache"><code class="docutils literal notranslate"><span class="pre">clear_cache()</span></code></a></li>
@@ -925,33 +923,12 @@ Should only apply for manually saved data, visible in ‘Meine Tabellen’ in th
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pystatis.table.Table.get_data">
-<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">area</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prettify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.table.Table.get_data" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">area</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.table.Table.get_data" title="Link to this definition"></a></dt>
 <dd><p>Downloads raw data and metadata from GENESIS-Online.</p>
 <p>Additional keyword arguments are passed on to the GENESIS-Online GET request for tablefile.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>area</strong> (<em>str</em><em>, </em><em>optional</em>) – Area to search for the object in GENESIS-Online. Defaults to “all”.</p></li>
-<li><p><strong>prettify</strong> (<em>bool</em><em>, </em><em>optional</em>) – Reformats the table into a readable format. Defaults to True.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pystatis.table.Table.prettify_table">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">prettify_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.table.Table.prettify_table" title="Link to this definition"></a></dt>
-<dd><p>Reformat the data into a more readable table</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>data</strong> (<em>pd.DataFrame</em>) – A pandas dataframe created from raw_data</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Formatted dataframe that omits all unnecessary Code columns
-and includes informative columns names</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>pd.DataFrame</p>
+<dd class="field-odd"><p><strong>area</strong> (<em>str</em><em>, </em><em>optional</em>) – Area to search for the object in GENESIS-Online. Defaults to “all”.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1115,33 +1092,12 @@ and includes informative columns names</p>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pystatis.Table.get_data">
-<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">area</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prettify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.Table.get_data" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">area</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.Table.get_data" title="Link to this definition"></a></dt>
 <dd><p>Downloads raw data and metadata from GENESIS-Online.</p>
 <p>Additional keyword arguments are passed on to the GENESIS-Online GET request for tablefile.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>area</strong> (<em>str</em><em>, </em><em>optional</em>) – Area to search for the object in GENESIS-Online. Defaults to “all”.</p></li>
-<li><p><strong>prettify</strong> (<em>bool</em><em>, </em><em>optional</em>) – Reformats the table into a readable format. Defaults to True.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pystatis.Table.prettify_table">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">prettify_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.Table.prettify_table" title="Link to this definition"></a></dt>
-<dd><p>Reformat the data into a more readable table</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>data</strong> (<em>pd.DataFrame</em>) – A pandas dataframe created from raw_data</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Formatted dataframe that omits all unnecessary Code columns
-and includes informative columns names</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>pd.DataFrame</p>
+<dd class="field-odd"><p><strong>area</strong> (<em>str</em><em>, </em><em>optional</em>) – Area to search for the object in GENESIS-Online. Defaults to “all”.</p>
 </dd>
 </dl>
 </dd></dl>

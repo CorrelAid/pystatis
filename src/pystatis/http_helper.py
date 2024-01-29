@@ -113,8 +113,9 @@ def get_data_from_endpoint(
             # If more than one db matches it must be a Cube (provided all regexing works as intended).
             # --> Choose db based on available credentials.
             if db_match:
-                for db_name_ in db_match:
-                    if db.check_db_credentials(db_name_):
+                for name in db_match:
+                    if db.check_db_credentials(name):
+                        db_name = name
                         break
                 else:
                     raise PystatisConfigError(

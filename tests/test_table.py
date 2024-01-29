@@ -24,7 +24,7 @@ EASY_TABLE = """Statistik_Code;Statistik_Label;Zeit_Code;Zeit_Label;Zeit;1_Merkm
 
 
 def test_get_data(mocker):
-    mocker.patch("pystatis.http_helper.load_data", return_value=EASY_TABLE)
+    mocker.patch("pystatis.table.load_data", return_value=EASY_TABLE)
     table = pystatis.Table(name="11111-0001")
     table.get_data(prettify=False)
     assert table.data.shape == (17, 10)
@@ -35,7 +35,7 @@ def test_get_data(mocker):
 
 
 def test_prettify(mocker):
-    mocker.patch("pystatis.http_helper.load_data", return_value=EASY_TABLE)
+    mocker.patch("pystatis.table.load_data", return_value=EASY_TABLE)
     table = pystatis.Table(name="11111-0001")
     table.get_data(prettify=True)
     assert table.data.shape == (17, 3)

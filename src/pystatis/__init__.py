@@ -10,7 +10,6 @@ print("Version:", pstat.__version__)
 from pystatis.cache import clear_cache
 from pystatis.config import setup_credentials
 from pystatis.cube import Cube
-from pystatis.db import set_db
 from pystatis.find import Find
 from pystatis.helloworld import logincheck, whoami
 from pystatis.table import Table
@@ -22,7 +21,6 @@ __all__ = [
     "Cube",
     "Find",
     "logincheck",
-    "set_db",
     "setup_credentials",
     "Table",
     "whoami",

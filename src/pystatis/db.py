@@ -2,60 +2,61 @@
 import logging
 
 from pystatis import config
-from pystatis.exception import PystatisConfigError
+from pystatis.cache import normalize_name
 
 logger = logging.getLogger(__name__)
 
 
-def set_db(name: str) -> None:
-    """Set the active database.
+def identify_db(name: str) -> list[str]:
+    """Identify the required database by matching the item code to the database regex.
 
     Args:
-        name (str): Name of the database. Must be one of the supported databases.
-        See `pystatis.config.get_supported_db()`.
+        name (str): Query parameter 'name' corresponding to the item code.
+
+    Returns:
+        db_match (list[str]): List of matching databases.
     """
-    if name.lower() not in config.get_supported_db():
-        raise ValueError(
-            f"Database {name} not supported! Please choose one of {', '.join(config.get_supported_db())}"
-        )
-    config.config.set("settings", "active_db", name.lower())
+    regex_db = config.get_db_identifiers()
 
-    if not get_db_user() or not get_db_pw():
-        logger.critical(
-            "No credentials for %s found. Please run `setup_credentials()`.",
-            name,
-        )
+    # Strip optional leading * and trailing job id
+    name = normalize_name(name).lstrip("*")
+
+    # Get list of matching dbs
+    db_match = [db_name for db_name, reg in regex_db.items() if reg.match(name)]
+
+    return db_match
 
 
-def get_db() -> str:
-    """Get the active database."""
-    active_db = config.config.get("settings", "active_db")
-
-    if not active_db:
-        raise PystatisConfigError(
-            "No active database set! Please run `set_db()`."
-        )
-
-    return active_db
+def get_db_host(db_name: str) -> str:
+    return config.config[db_name]["base_url"]
 
 
-def get_db_host() -> str:
-    return config.config[get_db()]["base_url"]
+def get_db_user(db_name: str) -> str:
+    return config.config[db_name]["username"]
 
 
-def get_db_user() -> str:
-    return config.config[get_db()]["username"]
+def get_db_pw(db_name: str) -> str:
+    return config.config[db_name]["password"]
 
 
-def get_db_pw() -> str:
-    return config.config[get_db()]["password"]
-
-
-def set_db_pw(new_pw: str) -> None:
-    config.config.set(get_db(), "password", new_pw)
+def set_db_pw(db_name: str, new_pw: str) -> None:
+    config.config.set(db_name, "password", new_pw)
     config.write_config()
 
 
-def get_db_settings() -> tuple[str, str, str]:
-    """Get the active database settings (host, user, password)."""
-    return get_db_host(), get_db_user(), get_db_pw()
+def get_db_settings(db_name: str) -> tuple[str, str, str]:
+    """Get database settings (host, user, password)."""
+    return get_db_host(db_name), get_db_user(db_name), get_db_pw(db_name)
+
+
+def check_db_credentials(db_name: str) -> bool:
+    """
+    Checks if a username and password is stored for the specified database.
+
+    Args:
+        db_name: Name of database to check credentials for.
+
+    Returns:
+        TRUE if credentials were found, FALSE otherwise.
+    """
+    return get_db_user(db_name) != "" and get_db_pw(db_name) != ""

@@ -1,5 +1,5 @@
 import logging
-from configparser import RawConfigParser
+from configparser import ConfigParser
 
 import pytest
 
@@ -8,7 +8,7 @@ from pystatis.exception import PystatisConfigError
 
 
 @pytest.fixture()
-def config_() -> RawConfigParser:
+def config_() -> ConfigParser:
     old_config = config.load_config()
     config.delete_config()
     yield config.config
@@ -16,40 +16,46 @@ def config_() -> RawConfigParser:
     config.write_config()
 
 
-@pytest.mark.parametrize("name", ["genesis", "zensus", "regio"])
-def test_set_db(config_, name: str):
-    db.set_db(name)
-
-    assert db.get_db() == name
-
-
-def test_set_db_with_invalid_name():
-    with pytest.raises(ValueError):
-        db.set_db("invalid_db_name")
-
-
-def test_set_db_without_credentials(config_, caplog):
-    caplog.clear()
-    caplog.set_level(logging.CRITICAL)
-
-    db.set_db("genesis")
-
-    assert len(caplog.records) == 1
-    assert caplog.records[0].levelname == "CRITICAL"
-    assert (
-        caplog.records[0].message
-        == "No credentials for genesis found. Please run `setup_credentials()`."
-    )
-
-
-def test_get_db_without_set_db(config_):
-    with pytest.raises(PystatisConfigError):
-        db.get_db()
-
-
 def test_get_db_settings(config_):
-    db.set_db("genesis")
-    settings = db.get_db_settings()
+    settings = db.get_db_settings("genesis")
     assert isinstance(settings, tuple)
     assert len(settings) == 3
     assert all(isinstance(setting, str) for setting in settings)
+
+
+def test_set_db_pw(config_):
+    db.set_db_pw("genesis", "test_pw")
+    assert db.get_db_pw("genesis") == "test_pw"
+
+
+@pytest.mark.parametrize(
+    "name, expected_db",
+    [
+        ("12345-6789", "genesis"),
+        ("1234A-6789", "zensus"),
+        ("21111-01-03-4", "regio"),
+        ("21111-01-03-4-B", "regio"),
+    ],
+)
+def test_identify_db(config_, name, expected_db):
+    assert db.identify_db(name)[0] == expected_db
+
+
+def test_identify_db_with_multiple_matches(config_):
+    config_.set("genesis", "username", "test")
+    config_.set("genesis", "password", "test")
+    db_match = db.identify_db("1234567890")
+    for db_name in db_match:
+        if db.check_db_credentials(db_name):
+            break
+    assert db_name == "genesis"
+
+    config_.set("genesis", "username", "")
+    config_.set("genesis", "password", "")
+    config_.set("regio", "username", "test")
+    config_.set("regio", "password", "test")
+    db_match = db.identify_db("1234567890")
+    for db_name in db_match:
+        if db.check_db_credentials(db_name):
+            break
+    assert db_name == "regio"

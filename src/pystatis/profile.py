@@ -9,12 +9,13 @@ from pystatis.http_helper import load_data
 logger = logging.getLogger(__name__)
 
 
-def change_password(new_password: str) -> str:
+def change_password(db_name: str, new_password: str) -> str:
     """
     Changes Genesis REST-API password and updates local config.
 
     Args:
         new_password (str): New password for the Genesis REST-API
+        db_name (str): Database for which the password should be changed (genesis, zensus, regio)
 
     Returns:
         str: text response from Destatis
@@ -26,10 +27,10 @@ def change_password(new_password: str) -> str:
 
     # change remote password
     response_text = load_data(
-        endpoint="profile", method="password", params=params
+        endpoint="profile", method="password", params=params, db_name=db_name
     )
     # change local password
-    db.set_db_pw(new_password)
+    db.set_db_pw(db_name, new_password)
 
     logger.info("Password changed successfully!")
 

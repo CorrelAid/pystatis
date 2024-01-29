@@ -25,6 +25,8 @@ class Find:
         summary(): Prints summary of all results.
     """
 
+    # pylint: disable=too-many-instance-attributes
+
     def __init__(
         self, query: str, db_name: str, top_n_preview: int = 5
     ) -> None:
@@ -171,7 +173,9 @@ class Results:
         Returns the code for a given list of tables.
 
         Args:
-            row_numbers (list): A list that contains the row numbers from the results objects. This is not the object code.
+            row_numbers (list): A list that contains the row
+                numbers from the results objects. This is not the
+                object code.
 
         Returns:
             table codes (list): Contains the corresponding tables codes.
@@ -185,7 +189,9 @@ class Results:
         Prints meta data for a given list of tables.
 
         Args:
-            row_numbers (list): A list that contains the row_numbers from the results objects. This is not the object code.
+            row_numbers (list): A list that contains the
+                row_numbers from the results objects.
+                This is not the object code.
         """
         codes = self.df.iloc[row_numbers]["Code"]
 

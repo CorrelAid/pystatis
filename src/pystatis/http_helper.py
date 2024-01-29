@@ -113,8 +113,8 @@ def get_data_from_endpoint(
             # If more than one db matches it must be a Cube (provided all regexing works as intended).
             # --> Choose db based on available credentials.
             if db_match:
-                for db_name in db_match:
-                    if db.check_db_credentials(db_name):
+                for db_name_ in db_match:
+                    if db.check_db_credentials(db_name_):
                         break
                 else:
                     raise PystatisConfigError(
@@ -125,7 +125,10 @@ def get_data_from_endpoint(
 
     if not db_name:
         raise ValueError(
-            "Could not determine the database for this request. Please specify a database using the `db_name` parameter or make sure that the `params` dictionary has a key 'name' with a proper object number."
+            "Could not determine the database for this request. "
+            "Please specify a database using the `db_name` parameter "
+            "or make sure that the `params` dictionary has a key 'name' "
+            "with a proper object number."
         )
 
     db_host, db_user, db_pw = db.get_db_settings(db_name)

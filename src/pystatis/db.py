@@ -1,6 +1,5 @@
 """Module provides functions to set the active database and get active database properties."""
 import logging
-import re
 
 from pystatis import config
 from pystatis.cache import normalize_name

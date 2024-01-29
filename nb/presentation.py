@@ -14,6 +14,8 @@
 # ---
 
 # %%
+from pprint import pprint
+
 import pystatis
 
 # %% [markdown]
@@ -38,7 +40,26 @@ import pystatis
 # ### Table
 
 # %%
-t = pystatis.Table(name="12111-01-01-5-B")
+t = pystatis.Table(name="32111-01-01-4")
 
 # %%
 t.get_data()
+
+# %%
+t.data
+
+# %%
+t.raw_data.splitlines()
+
+# %%
+pprint(t.metadata)
+
+# %%
+t = pystatis.Table(name="12111-01-01-5-B")
+
+# %%
+# runs for roughly 2 minutes
+t.get_data()  # GENESIS starts a backghround job and we wait 3000 seconds -> no action required
+
+# %%
+t.data  # 122058 x 18 columns

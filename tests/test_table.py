@@ -23,8 +23,19 @@ EASY_TABLE = """Statistik_Code;Statistik_Label;Zeit_Code;Zeit_Label;Zeit;1_Merkm
 11111;Feststellung des Gebietsstands;STAG;Stichtag;31.12.2022;DLAND;Bundesländer;;Insgesamt;357595,99"""
 
 
-def test_get_data(mocker):
-    mocker.patch("pystatis.table.load_data", return_value=EASY_TABLE)
+def mocked_load_data(endpoint, method, params, as_json):
+    if endpoint == "data" and method == "tablefile":
+        return EASY_TABLE
+    elif endpoint == "metadata" and method == "table":
+        return {"metadata": "table"}
+    else:
+        raise NotImplementedError
+
+
+def test_get_data(monkeypatch):
+    # patch pystatis.table.load_data with parameter endpoint="data"
+    # and method="tablefile" to return EASY_TABLE
+    monkeypatch.setattr(pystatis.table, "load_data", mocked_load_data)
     table = pystatis.Table(name="11111-0001")
     table.get_data(prettify=False)
     assert table.data.shape == (17, 10)
@@ -34,8 +45,8 @@ def test_get_data(mocker):
     assert table.raw_data != ""
 
 
-def test_prettify(mocker):
-    mocker.patch("pystatis.table.load_data", return_value=EASY_TABLE)
+def test_prettify(monkeypatch):
+    monkeypatch.setattr(pystatis.table, "load_data", mocked_load_data)
     table = pystatis.Table(name="11111-0001")
     table.get_data(prettify=True)
     assert table.data.shape == (17, 3)

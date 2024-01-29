@@ -38,6 +38,7 @@ class Table:
         raw_data = load_data(
             endpoint="data", method="tablefile", params=params, as_json=False
         )
+        assert isinstance(raw_data, str)  # nosec assert_used
 
         self.raw_data = raw_data
         data_str = StringIO(raw_data)
@@ -49,6 +50,7 @@ class Table:
         metadata = load_data(
             endpoint="metadata", method="table", params=params, as_json=True
         )
+        assert isinstance(metadata, dict)  # nosec assert_used
 
         self.metadata = metadata
 

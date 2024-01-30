@@ -42,7 +42,7 @@ import pystatis
 # - Statistics: statistics is the larger collections of tables on the topic, finds the ones with keyword in title
 # - Variables: variables are the values (DE: Merkmal) in columns of the tables, find ones with keyword in label
 #
-# Returns the titles of relevant tables/statistics/variables and their [EVAS](https://www.destatis.de/DE/Service/Bibliothek/Abloesung-Fachserien/uebersicht-fs.html) number – useful tool to look these up (EVAS is necessary for the Table method) 
+# Returns the titles of relevant tables/statistics/variables and their [EVAS](https://www.destatis.de/DE/Service/Bibliothek/Abloesung-Fachserien/uebersicht-fs.html) number – useful tool to look these up (EVAS is necessary for the Table method)
 #
 # 1. call Find using a keyword `query=<keyword>` and specifying a database `db_name=<genesis|zensus|regio>`
 # 2. actually query the API and print the results using `.run()`
@@ -68,7 +68,7 @@ results.tables
 # Add .df to convert to a dataframe for easier handling.
 
 # %%
-results.tables.df 
+results.tables.df
 
 # %% [markdown]
 # We can then access the relevant codes with `.get_code`. Doing this returns a list which may be useful to run in the Table method.
@@ -83,7 +83,7 @@ results.tables.get_code()
 results.tables.get_metadata()
 
 # %% [markdown]
-# The `pystatis.Find` is a useful search tool to browse the database by any keyword. It is quicker than downloading a table and does not need the EVAS number to run. 
+# The `pystatis.Find` is a useful search tool to browse the database by any keyword. It is quicker than downloading a table and does not need the EVAS number to run.
 #
 # Use this to identify the tables of interest and to look up their EVAS as to use in the further analysis with a `pystatis.Table` method.
 
@@ -133,7 +133,7 @@ pprint(t.metadata)
 
 # %%
 # GENESIS
-t = pystatis.Table(name="71321-0001")
+t = pystatis.Table(name="43311-0001")
 t.get_data()
 t.data
 
@@ -147,4 +147,13 @@ t.data
 # Zensus
 t = pystatis.Table(name="2000S-1006")
 t.get_data()
+t.data
+
+# %% [markdown]
+# The `get_data()` method supports all parameters that you can pass to the API, like `startyear`, `endyear` or `timeslicec`
+
+# %%
+# GENESIS
+t = pystatis.Table(name="43311-0001")
+t.get_data(startyear=2000)
 t.data

@@ -102,9 +102,24 @@ class Table:
         return pretty_data
 
     @staticmethod
-    def parse_zensus_table(data: pd.DateFrame) -> pd.DataFrame:
-        pass
+    def parse_zensus_table(data: pd.DataFrame) -> pd.DataFrame:
+        # Extracts time column with name from first element of Zeit_Label column
+        time = pd.DataFrame({data["time_label"].iloc[0]: data["time"]})
+
+        # Extracts new column names from first values of the Merkmal_Label columns
+        # and assigns these to the relevant attribute columns (Auspraegung_Label)
+        attributes = data.filter(like="variable_attribute_label")
+        attributes.columns = (
+            data.filter(regex=r"\d+_variable_label").iloc[0].tolist()
+        )
+
+        values = pd.DataFrame(
+            {data["value_variable_label"].iloc[0]: data["value"]}
+        )
+
+        pretty_data = pd.concat([time, attributes, values], axis=1)
+        return pretty_data
 
     @staticmethod
-    def parse_regio_table(data: pd.DateFrame) -> pd.DataFrame:
+    def parse_regio_table(data: pd.DataFrame) -> pd.DataFrame:
         pass

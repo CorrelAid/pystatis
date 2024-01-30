@@ -1,10 +1,8 @@
-import logging
 from configparser import ConfigParser
 
 import pytest
 
 from pystatis import config, db
-from pystatis.exception import PystatisConfigError
 
 
 @pytest.fixture()

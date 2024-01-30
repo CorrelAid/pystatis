@@ -36,7 +36,56 @@ import pystatis
 # %% [markdown]
 # ### Find
 
+# %% [markdown]
+# `pystatis.Find` allows a user to use a keyword to browse the data available on the chosen database. Finds 3 different objects:
+# - Tables: the tables containing the relevant keyword in title
+# - Statistics: statistics is the larger collections of tables on the topic, finds the ones with keyword in title
+# - Variables: variables are the values (DE: Merkmal) in columns of the tables, find ones with keyword in label
+#
+# Returns the titles of relevant tables/statistics/variables and their [EVAS](https://www.destatis.de/DE/Service/Bibliothek/Abloesung-Fachserien/uebersicht-fs.html) number – useful tool to look these up (EVAS is necessary for the Table method) 
+#
+# 1. call Find using a keyword `query=<keyword>` and specifying a database `db_name=<genesis|zensus|regio>`
+# 2. actually query the API and print the results using `.run()`
+# 3. access the various objects, their EVAS numbers, or preview using metadata
+
 # %%
+results = pystatis.Find(query="Abfall", db_name="regio")
+results.run()
+
+# %% [markdown]
+# To print a summary without querying (which is faster), run .summary()
+
+# %%
+results.summary()
+
+# %% [markdown]
+# If interested in specific object, can run `results.tables`, `results.statistics`, or `results.variables` directly.
+
+# %%
+results.tables
+
+# %% [markdown]
+# Add .df to convert to a dataframe for easier handling.
+
+# %%
+results.tables.df 
+
+# %% [markdown]
+# We can then access the relevant codes with `.get_code`. Doing this returns a list which may be useful to run in the Table method.
+
+# %%
+results.tables.get_code()
+
+# %% [markdown]
+# To then check that the object has the relevant data, we can preview the columns using the `.meta_data()` method.
+
+# %%
+results.tables.get_metadata()
+
+# %% [markdown]
+# The `pystatis.Find` is a useful search tool to browse the database by any keyword. It is quicker than downloading a table and does not need the EVAS number to run. 
+#
+# Use this to identify the tables of interest and to look up their EVAS as to use in the further analysis with a `pystatis.Table` method.
 
 # %% [markdown]
 # ### Table

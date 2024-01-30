@@ -3,7 +3,7 @@ from io import StringIO
 
 import pandas as pd
 
-import pystatis.db as db
+from pystatis import db
 from pystatis.http_helper import load_data
 
 
@@ -58,18 +58,18 @@ class Table:
         self.metadata = metadata
 
     @staticmethod
-    def prettify_table(data: pd.DataFrame, db: str) -> pd.DataFrame:
+    def prettify_table(data: pd.DataFrame, db_name: str) -> pd.DataFrame:
         """Reformat the data into a more readable table
 
         Args:
             data (pd.DataFrame): A pandas dataframe created from raw_data
-            db (str): The name of the database.
+            db_name (str): The name of the database.
 
         Returns:
             pd.DataFrame: Formatted dataframe that omits all unnecessary Code columns
             and includes informative columns names
         """
-        match db:
+        match db_name:
             case "genesis":
                 pretty_data = Table.parse_genesis_table(data)
             case "zensus":
@@ -83,6 +83,7 @@ class Table:
 
     @staticmethod
     def parse_genesis_table(data: pd.DataFrame) -> pd.DataFrame:
+        """Parse GENESIS table ffcsv format into a more readable format"""
         # Extracts time column with name from first element of Zeit_Label column
         time = pd.DataFrame({data["Zeit_Label"].iloc[0]: data["Zeit"]})
 
@@ -103,6 +104,7 @@ class Table:
 
     @staticmethod
     def parse_zensus_table(data: pd.DataFrame) -> pd.DataFrame:
+        """Parse Zensus table ffcsv format into a more readable format"""
         # Extracts time column with name from first element of Zeit_Label column
         time = pd.DataFrame({data["time_label"].iloc[0]: data["time"]})
 
@@ -122,4 +124,5 @@ class Table:
 
     @staticmethod
     def parse_regio_table(data: pd.DataFrame) -> pd.DataFrame:
+        """Parse Regionalstatistik table ffcsv format into a more readable format"""
         pass

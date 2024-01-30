@@ -133,7 +133,7 @@ pprint(t.metadata)
 
 # %%
 # GENESIS
-t = pystatis.Table(name="71321-0001")
+t = pystatis.Table(name="43311-0001")
 t.get_data()
 t.data
 
@@ -147,4 +147,13 @@ t.data
 # Zensus
 t = pystatis.Table(name="2000S-1006")
 t.get_data()
+t.data
+
+# %% [markdown]
+# The `get_data()` method supports all parameters that you can pass to the API, like `startyear`, `endyear` or `timeslicec`
+
+# %%
+# GENESIS
+t = pystatis.Table(name="43311-0001")
+t.get_data(startyear=2000)
 t.data

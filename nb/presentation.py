@@ -36,11 +36,36 @@ import pystatis
 # %% [markdown]
 # ### Find
 
+# %%
+
 # %% [markdown]
 # ### Table
 
+# %% [markdown]
+# `pystatis.Table` offers a simple Interface to get any table via its "name" ([EVAS](https://www.destatis.de/DE/Service/Bibliothek/Abloesung-Fachserien/uebersicht-fs.html) number).
+#
+# 1. Create a new Table instance by passing `name=<EVAS>`
+# 2. Download the actual data with `.get_data(prettify=<True|False>)`
+# 3. Access data via either `.raw_data` or `.data`, metadata via `.metadata`
+
 # %%
-t = pystatis.Table(name="32111-01-01-4")
+# GENESIS - https://www-genesis.destatis.de/genesis//online?operation=table&code=31231-0001&bypass=true&levelindex=1&levelid=1706599948340#abreadcrumb
+t = pystatis.Table(name="31231-0001")  #
+
+# %% [markdown]
+# Per default, `prettify` is set to `True` and will return a more readable format. Here we show the original format first.
+
+# %%
+t.get_data(prettify=False)
+
+# %%
+t.raw_data.splitlines()
+
+# %%
+t.data
+
+# %% [markdown]
+# As you can see, the original format has a lot of redundant information and columns with metadata like the codes for the different variables. Let's rerun `get_data` with `prettify=True`.
 
 # %%
 t.get_data()
@@ -48,18 +73,29 @@ t.get_data()
 # %%
 t.data
 
-# %%
-t.raw_data.splitlines()
+# %% [markdown]
+# You can also access the metadata as returned by the Catalogue endpoint.
 
 # %%
 pprint(t.metadata)
 
-# %%
-t = pystatis.Table(name="12111-01-01-5-B")
+# %% [markdown]
+# You can use any EVAS number from the supported databases like GENESIS, Regionalstatistik or Zensus. The library identifies the database for you so you don't have to care about this.
 
 # %%
-# runs for roughly 2 minutes
-t.get_data()  # GENESIS starts a backghround job and we wait 3000 seconds -> no action required
+# GENESIS
+t = pystatis.Table(name="71321-0001")
+t.get_data()
+t.data
 
 # %%
-t.data  # 122058 x 18 columns
+# Regionalstatistik
+t = pystatis.Table(name="71327-01-05-4")
+t.get_data()
+t.data
+
+# %%
+# Zensus
+t = pystatis.Table(name="2000S-1006")
+t.get_data()
+t.data

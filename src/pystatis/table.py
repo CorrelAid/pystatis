@@ -3,6 +3,7 @@ from io import StringIO
 
 import pandas as pd
 
+import pystatis.db as db
 from pystatis.http_helper import load_data
 
 
@@ -45,7 +46,9 @@ class Table:
         self.data = pd.read_csv(data_str, sep=";")
 
         if prettify:
-            self.data = self.prettify_table(self.data)
+            self.data = self.prettify_table(
+                self.data, db.identify_db(self.name)[0]
+            )
 
         metadata = load_data(
             endpoint="metadata", method="table", params=params, as_json=True
@@ -55,16 +58,31 @@ class Table:
         self.metadata = metadata
 
     @staticmethod
-    def prettify_table(data: pd.DataFrame) -> pd.DataFrame:
+    def prettify_table(data: pd.DataFrame, db: str) -> pd.DataFrame:
         """Reformat the data into a more readable table
 
         Args:
             data (pd.DataFrame): A pandas dataframe created from raw_data
+            db (str): The name of the database.
 
         Returns:
             pd.DataFrame: Formatted dataframe that omits all unnecessary Code columns
             and includes informative columns names
         """
+        match db:
+            case "genesis":
+                pretty_data = Table.parse_genesis_table(data)
+            case "zensus":
+                pretty_data = Table.parse_zensus_table(data)
+            case "regio":
+                pretty_data = Table.parse_regio_table(data)
+            case _:
+                pretty_data = data
+
+        return pretty_data
+
+    @staticmethod
+    def parse_genesis_table(data: pd.DataFrame) -> pd.DataFrame:
         # Extracts time column with name from first element of Zeit_Label column
         time = pd.DataFrame({data["Zeit_Label"].iloc[0]: data["Zeit"]})
 
@@ -82,3 +100,11 @@ class Table:
 
         pretty_data = pd.concat([time, attributes, values], axis=1)
         return pretty_data
+
+    @staticmethod
+    def parse_zensus_table(data: pd.DateFrame) -> pd.DataFrame:
+        pass
+
+    @staticmethod
+    def parse_regio_table(data: pd.DateFrame) -> pd.DataFrame:
+        pass

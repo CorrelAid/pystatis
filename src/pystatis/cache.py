@@ -14,7 +14,7 @@ from pystatis import config
 
 logger = logging.getLogger(__name__)
 
-JOB_ID_PATTERN = r"\d+"
+JOB_ID_PATTERN = r"_\d+"
 
 
 def cache_data(
@@ -26,7 +26,7 @@ def cache_data(
     """Compress and archive data within the configured cache directory.
 
     Data will be stored in a zip file within the cache directory.
-    The folder structure will be `<name>/<endpoint>/<method>/<hash(params)>.
+    The folder structure will be `<name>/<endpoint>/<method>/<hash(params)>`.
     This allows to cache different results for different params.
 
     Args:
@@ -132,7 +132,7 @@ def normalize_name(name: str) -> str:
     Returns:
         str: The unique identifier without the optional job id.
     """
-    if len(re.findall(JOB_ID_PATTERN, name)) == 3:
+    if re.findall(JOB_ID_PATTERN, name):
         name = name.split("_")[0]
 
     return name

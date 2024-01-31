@@ -14,26 +14,33 @@ from pystatis.cache import (
     normalize_name,
     read_from_cache,
 )
-from pystatis.exception import DestatisStatusError
+from pystatis.exception import DestatisStatusError, PystatisConfigError
 
 logger = logging.getLogger(__name__)
 
-JOB_ID_PATTERN = re.compile(r"\d+-\d+_\d+")
-JOB_TIMEOUT = 60
+JOB_ID_PATTERN = re.compile(r"(?<=:\s).*_\d+")
+JOB_TIMEOUT = 3000
 
 
 def load_data(
-    endpoint: str, method: str, params: dict, as_json: bool = False
+    endpoint: str,
+    method: str,
+    params: dict,
+    as_json: bool = False,
+    db_name: str | None = None,
 ) -> Union[str, dict]:
     """Load data identified by endpoint, method and params.
 
     Either load data from cache (previous download) or from Destatis.
+    If no database is given, params has to have a valid value for "name" key.
 
     Args:
         endpoint (str): The endpoint for this data request.
         method (str): The method for this data request.
         params (dict): The dictionary holding the params for this data request.
         as_json (bool, optional): If True, result will be parsed as JSON. Defaults to False.
+        db_name (str, optional): The database to use for this data request.
+            One of "genesis", "zensus", "regio". Defaults to None.
 
     Returns:
         Union[str, dict]: The data as raw text or JSON dict.
@@ -48,7 +55,7 @@ def load_data(
         if hit_in_cash(cache_dir, name, params):
             data = read_from_cache(cache_dir, name, params)
         else:
-            response = get_data_from_endpoint(endpoint, method, params)
+            response = get_data_from_endpoint(endpoint, method, params, db_name)
             data = response.text
 
             # status code 98 means that the table is too big
@@ -63,11 +70,11 @@ def load_data(
             if response_status_code == 98:
                 job_response = start_job(endpoint, method, params)
                 job_id = get_job_id_from_response(job_response)
-                data = get_data_from_resultfile(job_id)
+                data = get_data_from_resultfile(job_id, db_name)
 
             cache_data(cache_dir, name, params, data)
     else:
-        response = get_data_from_endpoint(endpoint, method, params)
+        response = get_data_from_endpoint(endpoint, method, params, db_name)
         data = response.text
 
     if as_json:
@@ -78,21 +85,54 @@ def load_data(
 
 
 def get_data_from_endpoint(
-    endpoint: str, method: str, params: dict
+    endpoint: str, method: str, params: dict, db_name: str | None = None
 ) -> requests.Response:
     """
-    Wrapper method which constructs an url for querying data from Destatis and
+    Wrapper method which constructs a url for querying data from Destatis and
     sends a GET request.
 
     Args:
         endpoint (str): Destatis endpoint (eg. data, catalogue, ..)
         method (str): Destatis method (eg. cube, tablefile, ...)
         params (dict): dictionary of query parameters
+        db_name (str, optional): The database to use for this data request.
+            One of "genesis", "zensus", "regio". Defaults to None.
 
     Returns:
         requests.Response: the response object holding the response from calling the Destatis endpoint.
     """
-    db_host, db_user, db_pw = db.get_db_settings()
+
+    # Determine database by matching regex to item code
+    if db_name is None:
+        name = params.get("name", params.get("selection", ""))
+
+        if name is not None:
+            db_match = db.identify_db(name)
+
+            # Check credentials (Note: we might want to do this also for explicitly specified db_names?)
+            # If more than one db matches it must be a Cube (provided all regexing works as intended).
+            # --> Choose db based on available credentials.
+            if db_match:
+                for name in db_match:
+                    if db.check_db_credentials(name):
+                        db_name = name
+                        break
+                else:
+                    raise PystatisConfigError(
+                        "Missing credentials!\n"
+                        f"To access this item you need to be a registered user of: {db_match} \n"
+                        "Please run setup_credentials()."
+                    )
+
+    if not db_name:
+        raise ValueError(
+            "Could not determine the database for this request. "
+            "Please specify a database using the `db_name` parameter "
+            "or make sure that the `params` dictionary has a key 'name' "
+            "with a proper object number."
+        )
+
+    db_host, db_user, db_pw = db.get_db_settings(db_name)
     url = f"{db_host}{endpoint}/{method}"
 
     # params is used to calculate hash for caching so don't alter params dict here!
@@ -104,7 +144,7 @@ def get_data_from_endpoint(
         }
     )
 
-    response = requests.get(url, params=params_, timeout=(5, 15))
+    response = requests.get(url, params=params_, timeout=(5, 60))
 
     response.encoding = "UTF-8"
     _check_invalid_status_code(response)
@@ -138,7 +178,7 @@ def start_job(endpoint: str, method: str, params: dict) -> requests.Response:
 
 
 def get_job_id_from_response(response: requests.Response) -> str:
-    """Get the job ID of a successful started job.
+    """Get the job ID of a successfully started job.
 
     Args:
         response (requests.Response): Response from endpoint request with job set equal to true.
@@ -159,11 +199,13 @@ def get_job_id_from_response(response: requests.Response) -> str:
     return job_id
 
 
-def get_data_from_resultfile(job_id: str) -> str:
+def get_data_from_resultfile(job_id: str, db_name: str | None = None) -> str:
     """Get data from a job once it is finished or when the timeout is reached.
 
     Args:
         job_id (str): Job ID generated by Destatis API.
+        db_name (str, optional): The database to use for this data request.
+            One of "genesis", "zensus", "regio". Defaults to None.
 
     Returns:
         str: The raw data of the table file as returned by Destatis.
@@ -179,7 +221,7 @@ def get_data_from_resultfile(job_id: str) -> str:
 
     while (time.perf_counter() - time_) < JOB_TIMEOUT:
         response = get_data_from_endpoint(
-            endpoint="catalogue", method="jobs", params=params
+            endpoint="catalogue", method="jobs", params=params, db_name=db_name
         )
 
         jobs = response.json().get("List")
@@ -188,6 +230,7 @@ def get_data_from_resultfile(job_id: str) -> str:
 
         time.sleep(5)
     else:
+        print("Time out exceeded! Aborting...")
         return ""
 
     params = {
@@ -197,7 +240,7 @@ def get_data_from_resultfile(job_id: str) -> str:
         "format": "ffcsv",
     }
     response = get_data_from_endpoint(
-        endpoint="data", method="resultfile", params=params
+        endpoint="data", method="resultfile", params=params, db_name=db_name
     )
     return str(response.text)
 

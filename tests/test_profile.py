@@ -26,8 +26,7 @@ def test_change_password(mocker, config_):
         return_value=_generic_request_status(),
     )
 
-    db.set_db("genesis")
-    response = change_password("new_password")
+    response = change_password("genesis", "new_password")
 
     assert config_.get("genesis", "password") == "new_password"
 

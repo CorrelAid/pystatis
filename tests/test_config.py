@@ -1,4 +1,3 @@
-import copy
 import os
 from configparser import ConfigParser
 from pathlib import Path
@@ -35,7 +34,6 @@ def test_init_config_is_run_on_import(config_):
 
 def test_load_config(config_):
     assert config_.has_section("settings")
-    assert config_.has_option("settings", "active_db")
     assert config_.has_option("settings", "supported_db")
     assert config_.has_section("data")
     assert config_.has_option("data", "cache_dir")

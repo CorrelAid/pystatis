@@ -9,7 +9,7 @@ def test_whoami(mocker):
     )
     mocker.patch("pystatis.db.get_db_host", return_value="genesis")
 
-    response = whoami()
+    response = whoami("genesis")
 
     assert response == str(_generic_request_status().text)
 
@@ -23,6 +23,6 @@ def test_logincheck(mocker):
         "pystatis.db.get_db_settings", return_value=("host", "user", "pw")
     )
 
-    response = logincheck()
+    response = logincheck("genesis")
 
     assert response == str(_generic_request_status().text)

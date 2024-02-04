@@ -19,6 +19,25 @@ from pprint import pprint
 import pystatis
 
 # %% [markdown]
+# # CorrelAid
+#
+# https://www.correlaid.org/en/about/
+#
+# ## Our Mission
+#
+# CorrelAid is a **non-profit community of data science enthusiasts** who want to change the world using data science. We dedicate our work to the humans, initiatives and organizations that strive to make the world a better place.
+#
+# We value open knowledge management and transparency in our work wherever possible while complying with GDPR regulations and following strong principles of data ethics.
+#
+# ## Our Work
+#
+# Our work is based on three pillars:
+#
+# 1. **Using data**: We enable data analysts and scientists to apply their knowledge for the common good and social organizations to increase their impact on society by **conducting pro-bono data for good (Data4Good) projects** and providing consulting on data topics.
+# 2. **Education**: We strongly believe in sharing our knowledge. It is not for nothing that we have chosen "education" as our association's official purpose. This is why we offer numerous education formats for nonprofits and volunteers. In addition, we share our knowledge, code, and materials publicly.
+# 3. **Community**: Our community is the basis of our work. We unite data scientists of different backgrounds and experience levels. We organize ourselves both online and on-site within our CorrelAidX local groups.
+
+# %% [markdown]
 # # Pystatis presentation
 #
 # `pystatis` is a small Python library to conveniently wrap the different GENESIS web services (APIs) in a centralized and user-friendly manner.
@@ -51,12 +70,6 @@ import pystatis
 # %%
 results = pystatis.Find(query="Abfall", db_name="regio")
 results.run()
-
-# %% [markdown]
-# After running `.run()` for the first time, we can also print a summary, using `.summary()`
-
-# %%
-results.summary()
 
 # %% [markdown]
 # If interested in specific object, can run `results.tables`, `results.statistics`, or `results.variables` directly.
@@ -142,7 +155,7 @@ t.data
 
 # %%
 # Regionalstatistik
-t = pystatis.Table(name="71327-01-05-4")
+t = pystatis.Table(name="21311-01-01-4")
 t.get_data()
 t.data
 
@@ -162,6 +175,13 @@ t.get_data(startyear=2000)
 t.data
 
 # %% [markdown]
+# ## Advanced features
+#
+# - Caching
+# - Handling background jobs
+# - Cubes
+
+# %% [markdown]
 # ## Jonas
 
 # %% [markdown]
@@ -170,13 +190,11 @@ t.data
 # - regional differences (at the level of federal states)
 
 # %%
-# Should we add this to poetry?
-# conda install geopandas
-# conda install matplotlib
-
-import geopandas
+# # !pip install geopandas
+# # !pip install matplotlib
 
 # %%
+import geopandas
 import pandas as pd
 from matplotlib import pyplot as plt
 
@@ -269,7 +287,7 @@ plt.legend()
 
 # %%
 
-path_to_data = "vg2500_12-31.utm32s.shape/vg2500/VG2500_LAN.shp"
+path_to_data = "./data/VG2500_LAN.shp"
 gdf = geopandas.read_file(path_to_data)
 
 

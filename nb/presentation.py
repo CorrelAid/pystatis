@@ -182,7 +182,7 @@ t.data
 # - Cubes
 
 # %% [markdown]
-# ## Jonas
+# ## Geo-visualization
 
 # %% [markdown]
 # Case study: international students in Germany
@@ -221,6 +221,9 @@ students.data["Kreise und kreisfreie Städte_Code"] = students.data[
     "Kreise und kreisfreie Städte_Code"
 ].apply(lambda x: "0" + x if len(x) <= 1 else x)
 students.data["Kreise und kreisfreie Städte_Code"]
+
+# %% [markdown]
+# ### Dataframe
 
 # %%
 students.data
@@ -307,23 +310,11 @@ gdf.AGS = gdf.AGS.astype(str)
 # ### merge with geodataframe and plot
 
 # %%
+fig = plt.figure(figsize=(10, 5))
+
+ax1 = fig.add_subplot(131)
 year = 2015
-
-gdf_merged = pd.merge(
-    left=gdf,
-    right=ratio_international[ratio_international.year == year],
-    left_on="AGS",
-    right_on="Kreise und kreisfreie Städte_Code",
-)
-gdf_merged.ratio_international
-
-# %%
-gdf_merged.plot(
-    "ratio_international", legend=True, missing_kwds={"color": "lightgrey"}
-)
-
-# %%
-ear = 2018
+plt.title(str(year))
 gdf_merged = pd.merge(
     left=gdf,
     right=ratio_international[ratio_international.year == year],
@@ -332,11 +323,21 @@ gdf_merged = pd.merge(
 )
 gdf_merged.ratio_international
 gdf_merged.plot(
-    "ratio_international", legend=True, missing_kwds={"color": "lightgrey"}
+    "ratio_international",
+    ax=ax1,
+    legend=True,
+    missing_kwds={"color": "lightgrey"},
+    legend_kwds={
+        "label": "ratio of int. students",
+        "orientation": "horizontal",
+    },
+    vmin=0.08,
+    vmax=0.23,
 )
 
-# %%
-ear = 2021
+ax2 = fig.add_subplot(132)
+year = 2018
+plt.title(str(year))
 gdf_merged = pd.merge(
     left=gdf,
     right=ratio_international[ratio_international.year == year],
@@ -345,7 +346,39 @@ gdf_merged = pd.merge(
 )
 gdf_merged.ratio_international
 gdf_merged.plot(
-    "ratio_international", legend=True, missing_kwds={"color": "lightgrey"}
+    "ratio_international",
+    ax=ax2,
+    legend=True,
+    missing_kwds={"color": "lightgrey"},
+    legend_kwds={
+        "label": "ratio of int. students",
+        "orientation": "horizontal",
+    },
+    vmin=0.08,
+    vmax=0.23,
+)
+
+ax3 = fig.add_subplot(133)
+year = 2021
+plt.title(str(year))
+gdf_merged = pd.merge(
+    left=gdf,
+    right=ratio_international[ratio_international.year == year],
+    left_on="AGS",
+    right_on="Kreise und kreisfreie Städte_Code",
+)
+gdf_merged.ratio_international
+gdf_merged.plot(
+    "ratio_international",
+    ax=ax3,
+    legend=True,
+    missing_kwds={"color": "lightgrey"},
+    legend_kwds={
+        "label": "ratio of int. students",
+        "orientation": "horizontal",
+    },
+    vmin=0.08,
+    vmax=0.23,
 )
 
 # %% [markdown]

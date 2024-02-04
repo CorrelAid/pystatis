@@ -43,7 +43,9 @@ class Table:
 
         self.raw_data = raw_data
         data_str = StringIO(raw_data)
-        self.data = pd.read_csv(data_str, sep=";")
+        self.data = pd.read_csv(
+            data_str, sep=";", na_values=["...", ".", "-", "/", "x"]
+        )
 
         if prettify:
             self.data = self.prettify_table(
@@ -133,6 +135,12 @@ class Table:
         attributes = data.filter(like="Auspraegung_Label")
         attributes.columns = data.filter(like="Merkmal_Label").iloc[0].tolist()
 
+        # Extracts new column names from first values of the Merkmal_Label columns
+        # and assigns these to the relevant code columns (Auspraegung_Code)
+        codes = data.filter(like="Auspraegung_Code")
+        codes.columns = data.filter(like="Merkmal_Label").iloc[0].tolist()
+        codes.columns = [code + "_Code" for code in codes.columns]
+
         # Selects all columns containing the values
         values = data.filter(like="__")
 
@@ -140,5 +148,5 @@ class Table:
         # extracts the readable label and omit both the code and the unit
         values.columns = [name.split("__")[1] for name in values.columns]
 
-        pretty_data = pd.concat([time, attributes, values], axis=1)
+        pretty_data = pd.concat([time, attributes, codes, values], axis=1)
         return pretty_data

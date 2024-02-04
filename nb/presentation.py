@@ -61,6 +61,9 @@ results.summary()
 # %% [markdown]
 # If interested in specific object, can run `results.tables`, `results.statistics`, or `results.variables` directly.
 
+# %% [markdown]
+#
+
 # %%
 results.tables
 
@@ -162,7 +165,170 @@ t.data
 # ## Jonas
 
 # %% [markdown]
-#
+# Case study: international students in Germany
+# - time evolution
+# - regional differences (at the level of federal states)
+
+# %%
+# Should we add this to poetry?
+# conda install geopandas
+# conda install matplotlib
+
+import geopandas
+
+# %%
+import pandas as pd
+from matplotlib import pyplot as plt
+
+# %% [markdown]
+# ### load data from Regionalstatistik
+
+# %%
+students = pystatis.Table(name="21311-01-01-4")
+
+# %%
+students.get_data(startyear=2015)
+
+# %% [markdown]
+# ### set proper column types
+
+# %%
+students.data["Kreise und kreisfreie Städte_Code"] = students.data[
+    "Kreise und kreisfreie Städte_Code"
+].astype(str)
+students.data["Kreise und kreisfreie Städte_Code"]
+
+# %%
+students.data["Kreise und kreisfreie Städte_Code"] = students.data[
+    "Kreise und kreisfreie Städte_Code"
+].apply(lambda x: "0" + x if len(x) <= 1 else x)
+students.data["Kreise und kreisfreie Städte_Code"]
+
+# %%
+students.data
+
+# %% [markdown]
+# ### determine ratio of international students per year and region
+
+# %%
+ratio_international = (
+    students.data[
+        (students.data.Geschlecht == "Insgesamt")
+        & (students.data["Fächergruppe (mit Insgesamt)"] == "Insgesamt")
+    ]
+    .groupby(
+        by=[
+            "Kreise und kreisfreie Städte",
+            "Kreise und kreisfreie Städte_Code",
+            "Semester",
+        ]
+    )["Studierende_(im_Kreisgebiet)"]
+    .apply(lambda x: x.iloc[1] / x.iloc[0] if x.count() == 3 else None)
+)
+ratio_international.rename("ratio_international", inplace=True)
+
+ratio_international = pd.DataFrame(ratio_international)
+ratio_international["year"] = [
+    int(semester[3:7])
+    for semester in ratio_international.index.get_level_values(2)
+]
+
+ratio_international
+
+# %%
+ratio_international[ratio_international.index.get_level_values(0) == "  Bayern"]
+
+# %% [markdown]
+# ## plot time evolution
+
+# %%
+for region in [
+    "Deutschland",
+    "  Baden-Württemberg",
+    "  Bayern",
+    "  Nordrhein-Westfalen",
+    "  Thüringen",
+    "  Sachsen",
+    "  Niedersachsen",
+    "  Schleswig-Holstein",
+    "  Berlin",
+]:
+    plt.plot(
+        ratio_international[
+            ratio_international.index.get_level_values(0) == region
+        ].year,
+        ratio_international[
+            ratio_international.index.get_level_values(0) == region
+        ].ratio_international,
+        label=region,
+    )
+plt.legend()
+
+# %% [markdown]
+# ### load shape file
+
+# %%
+
+path_to_data = "vg2500_12-31.utm32s.shape/vg2500/VG2500_LAN.shp"
+gdf = geopandas.read_file(path_to_data)
+
+
+# %%
+gdf.loc[:, "area"] = gdf.area
+
+# %%
+gdf.plot("area", legend=True)
+
+# %%
+gdf.GEN
+
+# %%
+gdf.AGS = gdf.AGS.astype(str)
+
+# %% [markdown]
+# ### merge with geodataframe and plot
+
+# %%
+year = 2015
+
+gdf_merged = pd.merge(
+    left=gdf,
+    right=ratio_international[ratio_international.year == year],
+    left_on="AGS",
+    right_on="Kreise und kreisfreie Städte_Code",
+)
+gdf_merged.ratio_international
+
+# %%
+gdf_merged.plot(
+    "ratio_international", legend=True, missing_kwds={"color": "lightgrey"}
+)
+
+# %%
+ear = 2018
+gdf_merged = pd.merge(
+    left=gdf,
+    right=ratio_international[ratio_international.year == year],
+    left_on="AGS",
+    right_on="Kreise und kreisfreie Städte_Code",
+)
+gdf_merged.ratio_international
+gdf_merged.plot(
+    "ratio_international", legend=True, missing_kwds={"color": "lightgrey"}
+)
+
+# %%
+ear = 2021
+gdf_merged = pd.merge(
+    left=gdf,
+    right=ratio_international[ratio_international.year == year],
+    left_on="AGS",
+    right_on="Kreise und kreisfreie Städte_Code",
+)
+gdf_merged.ratio_international
+gdf_merged.plot(
+    "ratio_international", legend=True, missing_kwds={"color": "lightgrey"}
+)
 
 # %% [markdown]
 # ## Outlook

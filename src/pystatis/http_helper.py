@@ -1,4 +1,5 @@
 """Wrapper module for the data endpoint."""
+
 import json
 import logging
 import re
@@ -28,7 +29,7 @@ def load_data(
     params: dict,
     as_json: bool = False,
     db_name: str | None = None,
-) -> Union[str, dict]:
+) -> str:
     """Load data identified by endpoint, method and params.
 
     Either load data from cache (previous download) or from Destatis.
@@ -43,7 +44,7 @@ def load_data(
             One of "genesis", "zensus", "regio". Defaults to None.
 
     Returns:
-        Union[str, dict]: The data as raw text or JSON dict.
+        str: The response content as bytes data.
     """
     cache_dir = config.get_cache_dir()
     name = params.get("name")
@@ -56,7 +57,10 @@ def load_data(
             data = read_from_cache(cache_dir, name, params)
         else:
             response = get_data_from_endpoint(endpoint, method, params, db_name)
-            data = response.text
+            content_type = response.headers.get(
+                "Content-Type", "text/csv"
+            ).split("/")[-1]
+            data = response.content
 
             # status code 98 means that the table is too big
             # we have to start a job and wait for it to be ready
@@ -72,10 +76,14 @@ def load_data(
                 job_id = get_job_id_from_response(job_response)
                 data = get_data_from_resultfile(job_id, db_name)
 
-            cache_data(cache_dir, name, params, data)
+            cache_data(cache_dir, name, params, data, content_type)
+
+            # bytes response in case of zip content type cannot be directly decoded, so we have to load the zip first!
+            if content_type == "zip":
+                data = read_from_cache(cache_dir, name, params)
     else:
         response = get_data_from_endpoint(endpoint, method, params, db_name)
-        data = response.text
+        data = response.content
 
     if as_json:
         parsed_data: dict = json.loads(data)

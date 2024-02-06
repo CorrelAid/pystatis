@@ -18,6 +18,9 @@ from pprint import pprint
 
 import pystatis
 
+# %%
+pystatis.clear_cache()
+
 # %% [markdown]
 # # CorrelAid
 #
@@ -385,7 +388,9 @@ gdf_merged.plot(
 # ## Outlook
 
 # %% [markdown]
-# - `quality=on`
+# - `quality=on` -> handle the different quality identifiers
+# - `Find` to work across all databases -> search for and find results over all supported databases with a single query
+# - `LLM`? -> ideation: provide some kind of interface that allows to talk with GENESIS via a LLM like ChatGPT
 
 # %% [markdown]
 #

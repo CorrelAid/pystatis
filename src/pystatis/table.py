@@ -1,4 +1,5 @@
 """Module contains business logic related to destatis tables."""
+
 from io import StringIO
 
 import pandas as pd
@@ -39,12 +40,13 @@ class Table:
         raw_data = load_data(
             endpoint="data", method="tablefile", params=params, as_json=False
         )
-        assert isinstance(raw_data, str)  # nosec assert_used
+        assert isinstance(raw_data, bytes)  # nosec assert_used
+        raw_data = raw_data.decode("utf-8-sig")
 
         self.raw_data = raw_data
-        data_str = StringIO(raw_data)
+        data_buffer = StringIO(raw_data)
         self.data = pd.read_csv(
-            data_str, sep=";", na_values=["...", ".", "-", "/", "x"]
+            data_buffer, sep=";", na_values=["...", ".", "-", "/", "x"]
         )
 
         if prettify:

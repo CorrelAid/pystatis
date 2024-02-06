@@ -1,4 +1,5 @@
 """Module provides functions/decorators to cache downloaded data as well as remove cached data."""
+
 import hashlib
 import json
 import logging
@@ -21,7 +22,8 @@ def cache_data(
     cache_dir: str,
     name: Optional[str],
     params: dict,
-    data: str,
+    data: bytes,
+    content_type: str,
 ) -> None:
     """Compress and archive data within the configured cache directory.
 
@@ -33,33 +35,38 @@ def cache_data(
         cache_dir (str): The cash directory as configured in the config.
         name (str): The unique identifier in GENESIS-Online.
         params (dict): The dictionary holding the params for this data request.
-        data (str): The actual raw text data as returned by GENESIS-Online.
+        data (bytes): The raw bytes content of the response from GENESIS-Online.
+        content_type (str): The content type of the data, e.g. "csv" or "zip".
     """
     # pylint: disable=too-many-arguments
     if name is None:
         return
 
     data_dir = _build_file_path(cache_dir, name, params)
-    file_name = f"{str(date.today()).replace('-', '')}.txt"
-
-    # create parent dirs, if necessary
+    file_name = f"{str(date.today()).replace('-', '')}.{content_type}"
     file_path = data_dir / file_name
     file_path.parent.mkdir(parents=True, exist_ok=True)
 
-    # we have to first save the content to a text file, before we can add it to a
-    #   compressed archive, and finally have to delete the file so only the archive remains
-    with open(file_path, "w", encoding="utf-8") as file:
-        file.write(data)
+    if content_type == "csv":
+        # we have to first save the content to a text file, before we can add it to a
+        #   compressed archive, and finally have to delete the file so only the archive remains
+        with open(file_path, "wb") as file:
+            file.write(data)
 
-    with zipfile.ZipFile(
-        str(file_path).replace(".txt", ".zip"),
-        "w",
-        compression=zipfile.ZIP_DEFLATED,
-        compresslevel=9,
-    ) as myzip:
-        myzip.write(file_path, arcname=file_name)
+        with zipfile.ZipFile(
+            str(file_path).replace(f".{content_type}", ".zip"),
+            "w",
+            compression=zipfile.ZIP_DEFLATED,
+            compresslevel=9,
+        ) as myzip:
+            myzip.write(file_path, arcname=file_name)
 
-    file_path.unlink()
+        file_path.unlink()
+
+    elif content_type == "zip":
+        with open(file_path, "wb") as file:
+            file.write(data)
+
     logger.info("Data was successfully cached under %s.", file_path)
 
 
@@ -67,7 +74,7 @@ def read_from_cache(
     cache_dir: str,
     name: Optional[str],
     params: dict,
-) -> str:
+) -> bytes:
     """Read and return compressed data from cache.
 
     Args:
@@ -76,7 +83,7 @@ def read_from_cache(
         params (dict): The dictionary holding the params for this data request.
 
     Returns:
-        str: The uncompressed raw text data.
+        bytes: The uncompressed raw text data as bytes.
     """
     if name is None:
         return ""
@@ -89,9 +96,9 @@ def read_from_cache(
     )[-1]
     file_name = latest_version.name
     file_path = data_dir / file_name
-    with zipfile.ZipFile(file_path, "r") as myzip:
-        with myzip.open(file_name.replace(".zip", ".txt")) as file:
-            data = file.read().decode()
+    with zipfile.ZipFile(file_path, "r") as zip:
+        single_file = zip.filelist[0].filename
+        data = zip.read(single_file)
 
     return data
 

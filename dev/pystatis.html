@@ -213,7 +213,7 @@
 <p>Module provides functions/decorators to cache downloaded data as well as remove cached data.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="pystatis.cache.cache_data">
-<span class="sig-prename descclassname"><span class="pre">pystatis.cache.</span></span><span class="sig-name descname"><span class="pre">cache_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cache_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.cache.cache_data" title="Link to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">pystatis.cache.</span></span><span class="sig-name descname"><span class="pre">cache_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cache_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content_type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.cache.cache_data" title="Link to this definition"></a></dt>
 <dd><p>Compress and archive data within the configured cache directory.</p>
 <p>Data will be stored in a zip file within the cache directory.
 The folder structure will be <cite>&lt;name&gt;/&lt;endpoint&gt;/&lt;method&gt;/&lt;hash(params)&gt;</cite>.
@@ -224,7 +224,8 @@ This allows to cache different results for different params.</p>
 <li><p><strong>cache_dir</strong> (<em>str</em>) – The cash directory as configured in the config.</p></li>
 <li><p><strong>name</strong> (<em>str</em>) – The unique identifier in GENESIS-Online.</p></li>
 <li><p><strong>params</strong> (<em>dict</em>) – The dictionary holding the params for this data request.</p></li>
-<li><p><strong>data</strong> (<em>str</em>) – The actual raw text data as returned by GENESIS-Online.</p></li>
+<li><p><strong>data</strong> (<em>bytes</em>) – The raw bytes content of the response from GENESIS-Online.</p></li>
+<li><p><strong>content_type</strong> (<em>str</em>) – The content type of the data, e.g. “csv” or “zip”.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
@@ -298,10 +299,10 @@ This allows to cache different results for different params.</p>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The uncompressed raw text data.</p>
+<dd class="field-even"><p>The uncompressed raw text data as bytes.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>str</p>
+<dd class="field-odd"><p>bytes</p>
 </dd>
 </dl>
 </dd></dl>
@@ -892,10 +893,10 @@ One of “genesis”, “zensus”, “regio”. Defaults to None.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The data as raw text or JSON dict.</p>
+<dd class="field-even"><p>The response content as bytes data.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Union[str, dict]</p>
+<dd class="field-odd"><p>str</p>
 </dd>
 </dl>
 </dd></dl>

@@ -13,7 +13,8 @@ description = "Python wrapper for GENESIS web service interface (API) of the Fed
 name = "pystatis"
 version = "0.2.0"
 readme = "README.md"
-repository = "https://github.com/CorrelAid/pystatis/tree/v0.1.0"
+repository = "https://github.com/CorrelAid/pystatis"
+documentation = "https://correlaid.github.io/pystatis/"
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Science/Research",

@@ -96,9 +96,9 @@ def read_from_cache(
     )[-1]
     file_name = latest_version.name
     file_path = data_dir / file_name
-    with zipfile.ZipFile(file_path, "r") as zip:
-        single_file = zip.filelist[0].filename
-        data = zip.read(single_file)
+    with zipfile.ZipFile(file_path, "r") as zipfile_:
+        single_file = zipfile_.filelist[0].filename
+        data = zipfile_.read(single_file)
 
     return data
 

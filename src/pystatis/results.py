@@ -1,3 +1,5 @@
+"""Helper class for find endpoint to get the codes and metadata of the results."""
+
 import json
 
 import pandas as pd

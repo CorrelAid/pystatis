@@ -1,6 +1,8 @@
+import json
+
 import pandas as pd
 
-import pystatis.data
+from pystatis.http_helper import load_data
 
 
 class Results:
@@ -175,13 +177,13 @@ class Results:
             "name": code,
         }
 
-        response = pystatis.data.load_data(
+        response = load_data(
             endpoint="metadata",
             method=category,
             params=params,
-            as_json=True,
             db_name=db_name,
         )
+        response = json.loads(response)
         assert isinstance(response, dict)  # nosec assert_used
 
         return response

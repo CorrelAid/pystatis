@@ -1,5 +1,6 @@
 """Module contains business logic related to destatis tables."""
 
+import json
 from io import StringIO
 
 import pandas as pd
@@ -57,6 +58,7 @@ class Table:
         metadata = load_data(
             endpoint="metadata", method="table", params=params, as_json=True
         )
+        metadata = json.loads(metadata)
         assert isinstance(metadata, dict)  # nosec assert_used
 
         self.metadata = metadata

@@ -3,10 +3,12 @@
 Basic usage:
 
 ```python
-import pystatis as pstat
-print("Version:", pstat.__version__)
+import pystatis
+
+print("Version:", pystatis.__version__)
 ```
 """
+
 from pystatis.cache import clear_cache
 from pystatis.config import setup_credentials
 from pystatis.cube import Cube

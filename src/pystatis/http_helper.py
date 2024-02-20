@@ -4,7 +4,6 @@ import json
 import logging
 import re
 import time
-from typing import Union
 
 import requests
 
@@ -27,9 +26,8 @@ def load_data(
     endpoint: str,
     method: str,
     params: dict,
-    as_json: bool = False,
     db_name: str | None = None,
-) -> str:
+) -> bytes:
     """Load data identified by endpoint, method and params.
 
     Either load data from cache (previous download) or from Destatis.
@@ -39,12 +37,11 @@ def load_data(
         endpoint (str): The endpoint for this data request.
         method (str): The method for this data request.
         params (dict): The dictionary holding the params for this data request.
-        as_json (bool, optional): If True, result will be parsed as JSON. Defaults to False.
         db_name (str, optional): The database to use for this data request.
             One of "genesis", "zensus", "regio". Defaults to None.
 
     Returns:
-        str: The response content as bytes data.
+        bytes: The response content as bytes data.
     """
     cache_dir = config.get_cache_dir()
     name = params.get("name")
@@ -85,11 +82,7 @@ def load_data(
         response = get_data_from_endpoint(endpoint, method, params, db_name)
         data = response.content
 
-    if as_json:
-        parsed_data: dict = json.loads(data)
-        return parsed_data
-    else:
-        return data
+    return data
 
 
 def get_data_from_endpoint(
@@ -207,7 +200,7 @@ def get_job_id_from_response(response: requests.Response) -> str:
     return job_id
 
 
-def get_data_from_resultfile(job_id: str, db_name: str | None = None) -> str:
+def get_data_from_resultfile(job_id: str, db_name: str | None = None) -> bytes:
     """Get data from a job once it is finished or when the timeout is reached.
 
     Args:
@@ -216,7 +209,7 @@ def get_data_from_resultfile(job_id: str, db_name: str | None = None) -> str:
             One of "genesis", "zensus", "regio". Defaults to None.
 
     Returns:
-        str: The raw data of the table file as returned by Destatis.
+        bytes: The raw data of the table file as returned by Destatis.
     """
     params = {
         "selection": "*" + job_id,
@@ -250,7 +243,7 @@ def get_data_from_resultfile(job_id: str, db_name: str | None = None) -> str:
     response = get_data_from_endpoint(
         endpoint="data", method="resultfile", params=params, db_name=db_name
     )
-    return str(response.text)
+    return response.content
 
 
 def _check_invalid_status_code(response: requests.Response) -> None:

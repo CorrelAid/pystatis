@@ -56,8 +56,8 @@ def test_build_file_path(cache_dir, params):
 def test_cache_data(cache_dir, params):
     assert len(list(Path(cache_dir).glob("*"))) == 0
 
-    test_data = "test"
-    cache_data(cache_dir, "test-cache-data", params, test_data)
+    test_data = "test".encode()
+    cache_data(cache_dir, "test-cache-data", params, test_data, "csv")
 
     data_dir = _build_file_path(cache_dir, "test-cache-data", params)
 
@@ -65,13 +65,8 @@ def test_cache_data(cache_dir, params):
 
 
 def test_read_from_cache(cache_dir, params):
-    test_data = "test read from cache"
-    cache_data(
-        cache_dir,
-        "test-read-cache",
-        params,
-        test_data,
-    )
+    test_data = "test read from cache".encode()
+    cache_data(cache_dir, "test-read-cache", params, test_data, "csv")
     data = read_from_cache(cache_dir, "test-read-cache", params)
 
     assert data == test_data
@@ -79,7 +74,7 @@ def test_read_from_cache(cache_dir, params):
 
 def test_hit_cache(cache_dir, params):
     assert not hit_in_cash(cache_dir, "test-hit-cache", params)
-    cache_data(cache_dir, "test-hit-cache", params, "test")
+    cache_data(cache_dir, "test-hit-cache", params, "test".encode(), "csv")
     assert hit_in_cash(cache_dir, "test-hit-cache", params)
 
 
@@ -93,7 +88,7 @@ def test_change_in_params(cache_dir, params):
 
     name = "test-change-in-params"
     assert not hit_in_cash(cache_dir, name, params_)
-    cache_data(cache_dir, name, params_, "test")
+    cache_data(cache_dir, name, params_, "test".encode(), "csv")
     assert hit_in_cash(cache_dir, name, params_)
 
     params_.update({"new-param": 2})
@@ -104,7 +99,7 @@ def test_ignore_jobs_in_params(cache_dir, params):
     params_ = params.copy()
 
     name = "test-ignore-jobs"
-    cache_data(cache_dir, name, params_, "test")
+    cache_data(cache_dir, name, params_, "test".encode(), "csv")
 
     params_.update({"job": True})
     assert hit_in_cash(cache_dir, name, params_)
@@ -115,7 +110,7 @@ def test_ignore_jobs_in_params(cache_dir, params):
 
 def test_clean_cache(cache_dir, params):
     name = "test-clean-cache"
-    cache_data(cache_dir, name, params, "test")
+    cache_data(cache_dir, name, params, "test".encode(), "csv")
 
     data_dir = _build_file_path(cache_dir, name, params)
     cached_data_file = list(data_dir.glob("*.zip"))[0]

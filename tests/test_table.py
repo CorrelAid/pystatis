@@ -1,5 +1,6 @@
+import json
+
 import pandas as pd
-import pytest
 
 import pystatis
 
@@ -25,9 +26,9 @@ EASY_TABLE = """Statistik_Code;Statistik_Label;Zeit_Code;Zeit_Label;Zeit;1_Merkm
 
 def mocked_load_data(endpoint, method, params, as_json):
     if endpoint == "data" and method == "tablefile":
-        return EASY_TABLE
+        return EASY_TABLE.encode()
     elif endpoint == "metadata" and method == "table":
-        return {"metadata": "table"}
+        return json.dumps({"metadata": "table"}).encode()
     else:
         raise NotImplementedError
 

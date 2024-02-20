@@ -24,7 +24,7 @@ EASY_TABLE = """Statistik_Code;Statistik_Label;Zeit_Code;Zeit_Label;Zeit;1_Merkm
 11111;Feststellung des Gebietsstands;STAG;Stichtag;31.12.2022;DLAND;Bundesländer;;Insgesamt;357595,99"""
 
 
-def mocked_load_data(endpoint, method, params, as_json):
+def mocked_load_data(endpoint, method, params):
     if endpoint == "data" and method == "tablefile":
         return EASY_TABLE.encode()
     elif endpoint == "metadata" and method == "table":

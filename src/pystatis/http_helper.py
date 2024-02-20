@@ -94,7 +94,7 @@ def get_data_from_endpoint(
 
     Args:
         endpoint (str): Destatis endpoint (eg. data, catalogue, ..)
-        method (str): Destatis method (eg. cube, tablefile, ...)
+        method (str): Destatis method (eg. tablefile, ...)
         params (dict): dictionary of query parameters
         db_name (str, optional): The database to use for this data request.
             One of "genesis", "zensus", "regio". Defaults to None.
@@ -159,7 +159,7 @@ def start_job(endpoint: str, method: str, params: dict) -> requests.Response:
 
     Args:
         endpoint (str): Destatis endpoint (eg. data, catalogue, ..)
-        method (str): Destatis method (eg. cube, tablefile, ...)
+        method (str): Destatis method (eg. tablefile, ...)
         params (dict): dictionary of query parameters
 
     Returns:

@@ -65,8 +65,7 @@ The Genesis data structure consists of multiple elements as summarized in the im
 
 This package currently supports retrieving the following data types:
 
-- Cubes: Multi-dimensional data objects
-- Tables: Derivatives of cubes that are already packaged into logical units
+- Tables: Main statistical objects provided by the Genesis databases.
 
 ### Find the right data
 
@@ -88,7 +87,7 @@ A complete overview of all use cases is provided in the example notebook for [fi
 
 ### Download data
 
-Data can be downloaded in to forms: as tables and as cubes. Both interfaces have been aligned to be as close as possible to each other.
+At the moment, the package only supports the download of Tables.
 
 Example for downloading a Table:
 
@@ -100,21 +99,11 @@ t.get_data()  # Only now the data is either fetched from GENESIS or loaded from 
 t.data  #prettified data stored as pandas data frame
 ```
 
-Example for downloading a Cube:
-
-```python
-from pystatis import Cube
-
-c = Cube(name="22922KJ1141")  # data is not yet downloaded
-c.get_data()  # Only now the data is either fetched from GENESIS or loaded from cache. If the data is downloaded from online, it will be also cached, so next time the data is loaded from cache.
-c.data  # a pandas data frame
-```
-
-For more details, please study the provided sample notebook for [tables](https://github.com/CorrelAid/pystatis/blob/main/nb/table.ipynb) and [cubes](https://github.com/CorrelAid/pystatis/blob/main/nb/cube.ipynb).
+For more details, please study the provided sample notebook for [tables](https://github.com/CorrelAid/pystatis/blob/main/nb/table.ipynb).
 
 ### Clear Cache
 
-When a cube or table is queried, it will be put into cache automatically. The cache can be cleared using the following function:
+When a table is queried, it will be put into cache automatically. The cache can be cleared using the following function:
 
 ```python
 from pystatis import clear_cache
@@ -144,7 +133,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 A few ideas we should implement in the maybe-near future:
 
 - Mechanism to download data that is newer than the cached version. Right now, once data is cached, it is always retrieved from cache no matter if there is a newer version online. However, this could be quite challenging as the GENESIS API is really bad in providing a good and consistent field for the last update datetime.
-- Improve Table and Cube metadata so the user can look up the variables contained in the dataset and for each variable the values that this variable can have.
+- Improve Table metadata so the user can look up the variables contained in the dataset and for each variable the values that this variable can have.
 - Understand and support time series.
 
 ## How to contribute?

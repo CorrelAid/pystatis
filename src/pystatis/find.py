@@ -1,5 +1,7 @@
 """Implements find endpoint to retrieve results based on query"""
 
+import json
+
 import pandas as pd
 
 from pystatis.http_helper import load_data
@@ -117,9 +119,9 @@ class Find:
             endpoint="find",
             method="find",
             params=params,
-            as_json=True,
             db_name=self.db_name,
         )
+        response = json.loads(response)
         assert isinstance(response, dict)  # nosec assert_used
         response_dict = response[category.capitalize()]
         response_df = pd.DataFrame(response_dict).replace("\n", " ", regex=True)

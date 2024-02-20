@@ -182,7 +182,6 @@ t.data
 #
 # - Caching
 # - Handling background jobs
-# - Cubes
 
 # %% [markdown]
 # ## Geo-visualization

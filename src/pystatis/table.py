@@ -38,9 +38,7 @@ class Table:
 
         params |= kwargs
 
-        raw_data = load_data(
-            endpoint="data", method="tablefile", params=params, as_json=False
-        )
+        raw_data = load_data(endpoint="data", method="tablefile", params=params)
         assert isinstance(raw_data, bytes)  # nosec assert_used
         raw_data = raw_data.decode("utf-8-sig")
 
@@ -55,9 +53,7 @@ class Table:
                 self.data, db.identify_db(self.name)[0]
             )
 
-        metadata = load_data(
-            endpoint="metadata", method="table", params=params, as_json=True
-        )
+        metadata = load_data(endpoint="metadata", method="table", params=params)
         metadata = json.loads(metadata)
         assert isinstance(metadata, dict)  # nosec assert_used
 

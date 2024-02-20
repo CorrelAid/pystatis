@@ -19,14 +19,6 @@ pystatis.config module
    :undoc-members:
    :show-inheritance:
 
-pystatis.cube module
---------------------
-
-.. automodule:: pystatis.cube
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 pystatis.custom\_exceptions module
 ----------------------------------
 

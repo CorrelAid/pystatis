@@ -104,16 +104,6 @@
 <li class="toctree-l4"><a class="reference internal" href="#id1"><code class="docutils literal notranslate"><span class="pre">Find.summary()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#pystatis.find.Results"><code class="docutils literal notranslate"><span class="pre">Results</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#pystatis.find.Results.df"><code class="docutils literal notranslate"><span class="pre">Results.df</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#pystatis.find.Results.category"><code class="docutils literal notranslate"><span class="pre">Results.category</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#pystatis.find.Results.db_name"><code class="docutils literal notranslate"><span class="pre">Results.db_name</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#pystatis.find.Results.get_code"><code class="docutils literal notranslate"><span class="pre">Results.get_code()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#pystatis.find.Results.get_metadata"><code class="docutils literal notranslate"><span class="pre">Results.get_metadata()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id2"><code class="docutils literal notranslate"><span class="pre">Results.get_code()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id3"><code class="docutils literal notranslate"><span class="pre">Results.get_metadata()</span></code></a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#module-pystatis.helloworld">pystatis.helloworld module</a><ul>
@@ -161,8 +151,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#pystatis.Find.cubes"><code class="docutils literal notranslate"><span class="pre">Find.cubes</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pystatis.Find.run"><code class="docutils literal notranslate"><span class="pre">Find.run()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pystatis.Find.summary"><code class="docutils literal notranslate"><span class="pre">Find.summary()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4"><code class="docutils literal notranslate"><span class="pre">Find.run()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5"><code class="docutils literal notranslate"><span class="pre">Find.summary()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10"><code class="docutils literal notranslate"><span class="pre">Find.run()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11"><code class="docutils literal notranslate"><span class="pre">Find.summary()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#pystatis.Table"><code class="docutils literal notranslate"><span class="pre">Table</span></code></a><ul>
@@ -586,7 +576,7 @@ One of “genesis”, “zensus”, “regio”.</p>
 <dd><p>Statistics that match with the query.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#pystatis.find.Results" title="pystatis.find.Results">Results</a></p>
+<dd class="field-odd"><p>Results</p>
 </dd>
 </dl>
 </dd></dl>
@@ -597,7 +587,7 @@ One of “genesis”, “zensus”, “regio”.</p>
 <dd><p>Tables that match with the query.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#pystatis.find.Results" title="pystatis.find.Results">Results</a></p>
+<dd class="field-odd"><p>Results</p>
 </dd>
 </dl>
 </dd></dl>
@@ -608,7 +598,7 @@ One of “genesis”, “zensus”, “regio”.</p>
 <dd><p>Variables that match with the query.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#pystatis.find.Results" title="pystatis.find.Results">Results</a></p>
+<dd class="field-odd"><p>Results</p>
 </dd>
 </dl>
 </dd></dl>
@@ -619,7 +609,7 @@ One of “genesis”, “zensus”, “regio”.</p>
 <dd><p>Cubes that match with the query.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#pystatis.find.Results" title="pystatis.find.Results">Results</a></p>
+<dd class="field-odd"><p>Results</p>
 </dd>
 </dl>
 </dd></dl>
@@ -650,119 +640,6 @@ One of “genesis”, “zensus”, “regio”.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>summary_string</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="pystatis.find.Results">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pystatis.find.</span></span><span class="sig-name descname"><span class="pre">Results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">result</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">category</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.find.Results" title="Link to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>A class representing the result object of variables, statistics, cubes and tables.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>result</strong> (<em>DataFrame</em>) – </p></li>
-<li><p><strong>category</strong> (<em>str</em>) – </p></li>
-<li><p><strong>db_name</strong> (<em>str</em>) – </p></li>
-</ul>
-</dd>
-</dl>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="pystatis.find.Results.df">
-<span class="sig-name descname"><span class="pre">df</span></span><a class="headerlink" href="#pystatis.find.Results.df" title="Link to this definition"></a></dt>
-<dd><p>The DataFrame that contains the data.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>pd.DataFrame</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="pystatis.find.Results.category">
-<span class="sig-name descname"><span class="pre">category</span></span><a class="headerlink" href="#pystatis.find.Results.category" title="Link to this definition"></a></dt>
-<dd><p>Category (plural) of the result. E.g. “tables”, “cubes”.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>str</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="pystatis.find.Results.db_name">
-<span class="sig-name descname"><span class="pre">db_name</span></span><a class="headerlink" href="#pystatis.find.Results.db_name" title="Link to this definition"></a></dt>
-<dd><p>The database that is used for the query.
-One of “genesis”, “zensus”, “regio”.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>str</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pystatis.find.Results.get_code">
-<span class="sig-name descname"><span class="pre">get_code</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.find.Results.get_code" title="Link to this definition"></a></dt>
-<dd><p>Gets code based on the index of the object.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>row_numbers</strong> (<em>list</em>) – </p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>list</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pystatis.find.Results.get_metadata">
-<span class="sig-name descname"><span class="pre">get_metadata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.find.Results.get_metadata" title="Link to this definition"></a></dt>
-<dd><p>Gets metadata based on the index of the object.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>row_numbers</strong> (<em>list</em>) – </p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="id2">
-<span class="sig-name descname"><span class="pre">get_code</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row_numbers</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id2" title="Link to this definition"></a></dt>
-<dd><p>Returns the code for a given list of tables.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>row_numbers</strong> (<em>list</em>) – A list that contains the row
-numbers from the results objects. This is not the
-object code.</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Contains the corresponding tables codes.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>table codes (list)</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="id3">
-<span class="sig-name descname"><span class="pre">get_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row_numbers</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id3" title="Link to this definition"></a></dt>
-<dd><p>Prints meta data for a given list of tables.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>row_numbers</strong> (<em>list</em>) – A list that contains the
-row_numbers from the results objects.
-This is not the object code.</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -853,7 +730,7 @@ One of “genesis”, “zensus”, “regio”. Defaults to None.</p></li>
 <dd class="field-even"><p>The raw data of the table file as returned by Destatis.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>str</p>
+<dd class="field-odd"><p>bytes</p>
 </dd>
 </dl>
 </dd></dl>
@@ -877,7 +754,7 @@ One of “genesis”, “zensus”, “regio”. Defaults to None.</p></li>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pystatis.http_helper.load_data">
-<span class="sig-prename descclassname"><span class="pre">pystatis.http_helper.</span></span><span class="sig-name descname"><span class="pre">load_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">as_json</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.http_helper.load_data" title="Link to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">pystatis.http_helper.</span></span><span class="sig-name descname"><span class="pre">load_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.http_helper.load_data" title="Link to this definition"></a></dt>
 <dd><p>Load data identified by endpoint, method and params.</p>
 <p>Either load data from cache (previous download) or from Destatis.
 If no database is given, params has to have a valid value for “name” key.</p>
@@ -887,7 +764,6 @@ If no database is given, params has to have a valid value for “name” key.</p
 <li><p><strong>endpoint</strong> (<em>str</em>) – The endpoint for this data request.</p></li>
 <li><p><strong>method</strong> (<em>str</em>) – The method for this data request.</p></li>
 <li><p><strong>params</strong> (<em>dict</em>) – The dictionary holding the params for this data request.</p></li>
-<li><p><strong>as_json</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, result will be parsed as JSON. Defaults to False.</p></li>
 <li><p><strong>db_name</strong> (<em>str</em><em>, </em><em>optional</em>) – The database to use for this data request.
 One of “genesis”, “zensus”, “regio”. Defaults to None.</p></li>
 </ul>
@@ -896,7 +772,7 @@ One of “genesis”, “zensus”, “regio”. Defaults to None.</p></li>
 <dd class="field-even"><p>The response content as bytes data.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>str</p>
+<dd class="field-odd"><p>bytes</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1072,10 +948,10 @@ and includes informative columns names</p>
 <span id="overall-module-contents"></span><h1>Overall Module contents<a class="headerlink" href="#module-pystatis" title="Link to this heading"></a></h1>
 <p>pystatis is a Python wrapper for the GENESIS web service interface (API).</p>
 <p>Basic usage:</p>
-<p><code class="docutils literal notranslate"><span class="pre">`python</span>
-<span class="pre">import</span> <span class="pre">pystatis</span> <span class="pre">as</span> <span class="pre">pstat</span>
-<span class="pre">print(&quot;Version:&quot;,</span> <span class="pre">pstat.__version__)</span>
-<span class="pre">`</span></code></p>
+<p><a href="#id2"><span class="problematic" id="id3">``</span></a><a href="#id4"><span class="problematic" id="id5">`</span></a>python
+import pystatis</p>
+<p>print(“Version:”, pystatis.__version__)
+<a href="#id6"><span class="problematic" id="id7">``</span></a><a href="#id8"><span class="problematic" id="id9">`</span></a></p>
 <dl class="py class">
 <dt class="sig sig-object py" id="pystatis.Cube">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pystatis.</span></span><span class="sig-name descname"><span class="pre">Cube</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.Cube" title="Link to this definition"></a></dt>
@@ -1149,7 +1025,7 @@ One of “genesis”, “zensus”, “regio”.</p>
 <dd><p>Statistics that match with the query.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#pystatis.find.Results" title="pystatis.find.Results">Results</a></p>
+<dd class="field-odd"><p>Results</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1160,7 +1036,7 @@ One of “genesis”, “zensus”, “regio”.</p>
 <dd><p>Tables that match with the query.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#pystatis.find.Results" title="pystatis.find.Results">Results</a></p>
+<dd class="field-odd"><p>Results</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1171,7 +1047,7 @@ One of “genesis”, “zensus”, “regio”.</p>
 <dd><p>Variables that match with the query.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#pystatis.find.Results" title="pystatis.find.Results">Results</a></p>
+<dd class="field-odd"><p>Results</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1182,7 +1058,7 @@ One of “genesis”, “zensus”, “regio”.</p>
 <dd><p>Cubes that match with the query.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#pystatis.find.Results" title="pystatis.find.Results">Results</a></p>
+<dd class="field-odd"><p>Results</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1200,13 +1076,13 @@ One of “genesis”, “zensus”, “regio”.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id4">
-<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id4" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id10">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id10" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id5">
-<span class="sig-name descname"><span class="pre">summary</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id5" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id11">
+<span class="sig-name descname"><span class="pre">summary</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id11" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>String that contains summary statistics.</p>

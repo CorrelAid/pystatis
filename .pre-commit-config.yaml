@@ -9,7 +9,6 @@ repos:
       - id: mixed-line-ending
       - id: trailing-whitespace
         args: [--markdown-linebreak-ext=md]
-      - id: check-added-large-files
       - id: check-merge-conflict
   - repo: https://github.com/pycqa/isort
     rev: 5.12.0
@@ -29,3 +28,19 @@ repos:
         files: ^\.github/workflows/
         types: [yaml]
         args: ["--schemafile", "https://json.schemastore.org/github-workflow"]
+  - repo: https://github.com/thclark/pre-commit-sphinx
+    rev: 0.0.1
+    hooks:
+      - id: build-docs
+        name: "Check if documentation compiles"
+        args:
+          [
+            "--cache-dir",
+            "docs/build/doctrees",
+            "--html-dir",
+            "docs/build/html",
+            "--source-dir",
+            "docs/source",
+          ]
+        language_version: python3
+        additional_dependencies: [myst-parser]

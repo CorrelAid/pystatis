@@ -3,22 +3,19 @@
 import logging
 from typing import cast
 
-from pystatis.config import (
-    _write_config,
-    get_config_path_from_settings,
-    load_config,
-)
+from pystatis import db
 from pystatis.http_helper import load_data
 
 logger = logging.getLogger(__name__)
 
 
-def change_password(new_password: str) -> str:
+def change_password(db_name: str, new_password: str) -> str:
     """
     Changes Genesis REST-API password and updates local config.
 
     Args:
         new_password (str): New password for the Genesis REST-API
+        db_name (str): Database for which the password should be changed (genesis, zensus, regio)
 
     Returns:
         str: text response from Destatis
@@ -28,23 +25,12 @@ def change_password(new_password: str) -> str:
         "repeat": new_password,
     }
 
-    # load config.ini beforehand, to ensure passwords are changed at the same time
-    config = load_config()
-    try:
-        config["GENESIS API"]["password"]
-    except KeyError as e:
-        raise KeyError(
-            "Password not found in config! Please make sure \
-            init_config() was run properly & your user data is set correctly!",
-        ) from e
-
     # change remote password
     response_text = load_data(
-        endpoint="profile", method="password", params=params
+        endpoint="profile", method="password", params=params, db_name=db_name
     )
     # change local password
-    config["GENESIS API"]["password"] = new_password
-    _write_config(config, get_config_path_from_settings())
+    db.set_db_pw(db_name, new_password)
 
     logger.info("Password changed successfully!")
 

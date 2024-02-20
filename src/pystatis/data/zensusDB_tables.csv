@@ -1,0 +1,1587 @@
+Code,Content,Time
+1000A-0001,Personen: Amtliche Einwohnerzahl und Fläche (Gemeinden),09.05.2011 - 09.05.2011
+1000A-1001,Personen: Alter (10er-Jahresgruppen),09.05.2011 - 09.05.2011
+1000A-1002,Personen: Alter (11 Altersklassen),09.05.2011 - 09.05.2011
+1000A-1003,Personen: Alter (5 Altersklassen),09.05.2011 - 09.05.2011
+1000A-1004,Personen: Alter (5er-Jahresgruppen),09.05.2011 - 09.05.2011
+1000A-1005,Personen: Alter (Infrastrukturelle Jahresgruppen),09.05.2011 - 09.05.2011
+1000A-1006,Personen: Alter (Jahresschritte),09.05.2011 - 09.05.2011
+1000A-1007,Personen: Alter (Marktforschungsrelevante Jahresgruppen),09.05.2011 - 09.05.2011
+1000A-1008,Personen: Art des Haushalts,09.05.2011 - 09.05.2011
+1000A-1009,Personen: Familienstand (ausführlich),09.05.2011 - 09.05.2011
+1000A-1010,Personen: Familienstand,09.05.2011 - 09.05.2011
+1000A-1011,Personen: Geburtsland (Gruppen),09.05.2011 - 09.05.2011
+1000A-1012,Personen: Geburtsländer,09.05.2011 - 09.05.2011
+1000A-1013,Personen: Geschlecht,09.05.2011 - 09.05.2011
+1000A-1014,Personen: Religion,09.05.2011 - 09.05.2011
+1000A-1015,Personen: Staatsangehörigkeit,09.05.2011 - 09.05.2011
+1000A-1016,Personen: Staatsangehörigkeit (Ausgewählte Länder),09.05.2011 - 09.05.2011
+1000A-1017,Personen: Staatsangehörigkeit (Gruppen),09.05.2011 - 09.05.2011
+1000A-1018,Personen: Staatsangehörigkeit (Kontinente),09.05.2011 - 09.05.2011
+1000A-1019,Personen: Staatsangehörigkeit (Länder),09.05.2011 - 09.05.2011
+1000A-1020,Personen: Art der Wohnungsnutzung,09.05.2011 - 09.05.2011
+1000A-1021,Personen: Art des Gebäudes,09.05.2011 - 09.05.2011
+1000A-1022,Personen: Ausstattung der Wohnung,09.05.2011 - 09.05.2011
+1000A-1023,Personen: Baujahr (Jahrzehnte),09.05.2011 - 09.05.2011
+1000A-1024,Personen: Eigentumsform des Gebäudes,09.05.2011 - 09.05.2011
+1000A-1025,Personen: Eigentumsverhältnisse der Wohnung,09.05.2011 - 09.05.2011
+1000A-1026,Personen: Fläche der Wohnung (10 m²-Intervalle),09.05.2011 - 09.05.2011
+1000A-1027,Personen: Fläche der Wohnung (20 m²-Intervalle),09.05.2011 - 09.05.2011
+1000A-1028,Personen: Gebäudetyp (Bauweise),09.05.2011 - 09.05.2011
+1000A-1029,Personen: Gebäudetyp (Größe),09.05.2011 - 09.05.2011
+1000A-1030,Personen: Größe des privaten Haushalts,09.05.2011 - 09.05.2011
+1000A-1031,Personen: Räume,09.05.2011 - 09.05.2011
+1000A-1032,Personen: Seniorenstatus eines privaten Haushalts,09.05.2011 - 09.05.2011
+1000A-1033,Personen: Typ des privaten Haushalts (nach Familien),09.05.2011 - 09.05.2011
+1000A-1034,Personen: Typ des privaten Haushalts (nach Kindern),09.05.2011 - 09.05.2011
+1000A-1035,Personen: Typ des privaten Haushalts (nach Lebensform),09.05.2011 - 09.05.2011
+1000A-1036,Personen: Wohnungen im Gebäude,09.05.2011 - 09.05.2011
+1000A-1037,Personen: Wohnungen im Gebäude (3 Klassen),09.05.2011 - 09.05.2011
+1000A-1038,Personen: Größe der Kernfamilie,09.05.2011 - 09.05.2011
+1000A-1039,Personen: Typ der Kernfamilie (nach Familien),09.05.2011 - 09.05.2011
+1000A-1040,Personen: Typ der Kernfamilie (nach Lebensform),09.05.2011 - 09.05.2011
+1000A-2001,Personen: Alter (10er-Jahresgruppen/11 Altersklassen) - Familienstand/Religion/Staatsangehörigkeit (Ausgewählte Länder/Gruppen),09.05.2011 - 09.05.2011
+1000A-2002,Personen: Alter (10er-Jahresgruppen)/Staatsangehörigkeit (Ausgewählte Länder) - Art des Haushalts,09.05.2011 - 09.05.2011
+1000A-2003,Personen: Alter (11 Altersklassen)/Geschlecht - Staatsangehörigkeit (Kontinente),09.05.2011 - 09.05.2011
+1000A-2004,"Personen: Alter (5 Altersklassen) -
+Familienstand/Familienstand (ausführlich)/Geburtsland
+(Gruppen)/Religion",09.05.2011 - 09.05.2011
+1000A-2005,"Personen: Alter (5er-Jahresgruppen) - Familienstand
+(ausführlich)/Familienstand",09.05.2011 - 09.05.2011
+1000A-2006,"Personen: Alter (5er-Jahresgruppen) -
+Staatsangehörigkeit/Religion",09.05.2011 - 09.05.2011
+1000A-2007,Personen: Alter (Jahresschritte) - Staatsangehörigkeit,09.05.2011 - 09.05.2011
+1000A-2008,"Personen: Alter (Jahresschritte) - Staatsangehörigkeit
+(Kontinente/Länder)/Geburtsländer",09.05.2011 - 09.05.2011
+1000A-2009,"Personen: Alter (Marktforschungsrelevante Altersgruppen) -
+Familienstand (ausführlich)/Geschlecht",09.05.2011 - 09.05.2011
+1000A-2010,"Personen: Familienstand - Staatsangehörigkeit (Ausgewählte
+Länder/Gruppen)/Religion",09.05.2011 - 09.05.2011
+1000A-2011,"Personen: Familienstand (ausführlich)  - Staatsangehörigkeit
+(Ausgew. Länder)/Religion",09.05.2011 - 09.05.2011
+1000A-2012,"Personen: Geschlecht - Alter/Familienstand/Art des
+Haushalts/Religion",09.05.2011 - 09.05.2011
+1000A-2013,Personen: Geschlecht - Geburtsland (Gruppen),09.05.2011 - 09.05.2011
+1000A-2014,"Personen: Geschlecht - Geburtsländer/Staatsangehörigkeit
+(Länder)",09.05.2011 - 09.05.2011
+1000A-2015,Personen: Staatsangehörigkeit (Ausgewählte Länder) - Geschlecht/Religion,09.05.2011 - 09.05.2011
+1000A-2016,Personen: Staatsangehörigkeit (Gruppen) - Alter (5 Altersklassen/Infrastruktur. Altersgruppen)/Geschlecht/Religion,09.05.2011 - 09.05.2011
+1000A-2017,"Personen: Staatsangehörigkeit (Gruppen) - Familienstand
+(ausführlich)",09.05.2011 - 09.05.2011
+1000A-2022,"Personen: Alter/Familienstand/Geschlecht - Art der
+Wohnungsnutzung",09.05.2011 - 09.05.2011
+1000A-2023,"Personen: Alter (10er-Jahresgruppen) - Größe des privaten
+Haushalts",09.05.2011 - 09.05.2011
+1000A-2024,"Personen: Alter/Familienstand (ausführlich) - Typ des
+privaten Haushalts (nach Familien/Lebensform)",09.05.2011 - 09.05.2011
+1000A-2025,"Personen: Alter (11 Altersklassen)/Geschlecht - Ausstattung
+der Wohnung/Gebäudetyp (Größe)/Größe des privaten Haushalts",09.05.2011 - 09.05.2011
+1000A-2026,"Personen: Alter (5 Altersklassen) - Typ des privaten
+Haushalts (nach Lebensform)",09.05.2011 - 09.05.2011
+1000A-2027,"Personen: Alter (5er-Jahresgruppen)/Familienstand
+(ausführlich)/Geschlecht/Größe des privaten Haushalts/Art
+des Haushalts - Seniorenstatus eines privaten Haushalts",09.05.2011 - 09.05.2011
+1000A-2028,"Personen: Alter (5er-Jahresgruppen) - Größe des privaten
+Haushalts",09.05.2011 - 09.05.2011
+1000A-2029,"Personen: Alter (11 Altersklassen)/Geschlecht/Größe des
+privaten Haushalts - Typ des privaten Haushalts (nach
+Familien/Lebensform)",09.05.2011 - 09.05.2011
+1000A-2030,"Personen: Alter (Marktforschungsrelevante
+Altersgruppen)/Geschlecht - Typ des privaten Haushalts (nach
+Kindern)",09.05.2011 - 09.05.2011
+1000A-2031,"Personen: Familienstand - Gebäudetyp (Bauweise)/Gebäudetyp
+(Größe)",09.05.2011 - 09.05.2011
+1000A-2032,"Personen: Familienstand/Staatsangehörigkeit (Ausgewählte
+Länder) - Typ des privaten Haushalts (nach Lebensform)",09.05.2011 - 09.05.2011
+1000A-2033,"Personen: Familienstand (ausführlich) - Baujahr
+(Jahrzehnte)/Eigentumsform des Gebäudes/Wohnungen im Gebäude",09.05.2011 - 09.05.2011
+1000A-2034,Personen: Religion - Seniorenstatus eines privaten Haushalts,09.05.2011 - 09.05.2011
+1000A-2035,"Personen: Staatsangehörigkeit (Gruppen) - Typ des privaten
+Haushalts (nach Familien)",09.05.2011 - 09.05.2011
+1000A-2036,"Personen: Staatsangehörigkeit (Kontinente) - Größe des
+privaten Haushalts",09.05.2011 - 09.05.2011
+1000A-2037,"Personen: Baujahr (Jahrzehnte)/Fläche der Wohnung (10
+m²-Intervalle)/Wohnungen im Gebäude (3 Klassen) - Art des
+Gebäudes",09.05.2011 - 09.05.2011
+1000A-2038,"Personen: Baujahr (Jahrzehnte)/Eigentumsform des
+Gebäudes/Wohnungen im Gebäude - Gebäudetyp (Bauweise)",09.05.2011 - 09.05.2011
+1000A-2039,Personen: Baujahr (Jahrzehnte)/Eigentumsform des Gebäudes - Wohnungen im Gebäude,09.05.2011 - 09.05.2011
+1000A-2040,Personen: Baujahr (Jahrzehnte) - Eigentumsform des Gebäudes/Fläche der Wohnung (10 m²-Intervalle),09.05.2011 - 09.05.2011
+1000A-2041,"Personen: Fläche der Wohnung (20 m²-Intervalle)/Räume -
+Größe des privaten Haushalts",09.05.2011 - 09.05.2011
+1000A-2042,"Personen: Alter (5 Altersklassen) - Typ der Kernfamilie
+(nach Lebensform)",09.05.2011 - 09.05.2011
+1000A-2043,"Personen: Alter (10er-Jahresgruppen)/Größe des privaten
+Haushalts - Typ der Kernfamilie (nach Familien)",09.05.2011 - 09.05.2011
+1000A-2044,"Personen: Alter (5er-Jahresgruppen)/Familienstand - Größe
+der Kernfamilie/Typ der Kernfamilie (nach Lebensform)",09.05.2011 - 09.05.2011
+1000A-2045,"Personen: Alter (Marktforschungsrelevante Altersgruppen) -
+Typ der Kernfamilie (nach Lebensform)",09.05.2011 - 09.05.2011
+1000A-2046,"Personen: Geschlecht - Typ der Kernfamilie (nach
+Familien/Lebensform)",09.05.2011 - 09.05.2011
+1000A-2047,"Personen: Geschlecht/Typ der Kernfamilie (nach Lebensform) -
+Größe der Kernfamilie",09.05.2011 - 09.05.2011
+1000A-2048,"Personen: Staatsangehörigkeit (Gruppen) - Typ der
+Kernfamilie (nach Familien)",09.05.2011 - 09.05.2011
+1000A-2049,"Personen: Größe der Kernfamilie - Typ der Kernfamilie (nach
+Familien)",09.05.2011 - 09.05.2011
+1000A-3001,"Personen: Alter/Familienstand/Religion - Staatsangehörigkeit
+(Gruppen) - Geschlecht",09.05.2011 - 09.05.2011
+1000A-3002,Personen: Alter - Familienstand/Religion - Geschlecht,09.05.2011 - 09.05.2011
+1000A-3003,"Personen: Alter (11 Altersklassen) - Staatsangehörigkeit
+(Ausgewählte Länder) - Geschlecht",09.05.2011 - 09.05.2011
+1000A-3004,"Personen: Alter (10er-Jahresgruppen)/Staatsangehörigkeit
+(Ausgewählte Länder) - Art des Haushalts - Geschlecht",09.05.2011 - 09.05.2011
+1000A-3005,"Personen: Alter/Staatsangehörigkeit (Ausgewählte Länder) -
+Religion - Geschlecht",09.05.2011 - 09.05.2011
+1000A-3006,"Personen: Alter (10er-Jahresgruppen)/Geschlecht -
+Familienstand - Staatsangehörigkeit (Ausgewählte Länder)",09.05.2011 - 09.05.2011
+1000A-3007,"Personen: Alter (10er-Jahresgruppen) -
+Familienstand/Staatsangehörigkeit (Ausgewählte Länder) -
+Geschlecht",09.05.2011 - 09.05.2011
+1000A-3008,"Personen: Alter (11 Altersklassen) - Staatsangehörigkeit  -
+Geschlecht",09.05.2011 - 09.05.2011
+1000A-3009,"Personen: Alter (10er-Jahresgruppen) - Familienstand
+(ausführlich)  - Geschlecht",09.05.2011 - 09.05.2011
+1000A-3010,"Personen: Alter (Jahresschritte) -
+Geburtsländer/Staatsangehörigkeit  - Geschlecht",09.05.2011 - 09.05.2011
+1000A-3011,"Personen: Alter (5er-Jahresgruppen) - Familienstand -
+Geschlecht",09.05.2011 - 09.05.2011
+1000A-3012,"Personen: Alter (Marktforschungsrelevante Altersgruppen) -
+Familienstand (ausführlich) - Geschlecht",09.05.2011 - 09.05.2011
+1000A-3013,"Personen: Familienstand - Religion -
+Geschlecht/Staatsangehörigkeit (Ausgewählte Länder)",09.05.2011 - 09.05.2011
+1000A-3014,"Personen: Familienstand (ausführlich) - Staatsangehörigkeit
+(Gruppen) - Religion",09.05.2011 - 09.05.2011
+1000A-3015,"Personen: Alter (10er-Jahresgruppen) - Familienstand - Art
+der Wohnungsnutzung",09.05.2011 - 09.05.2011
+1000A-3016,"Personen: Alter (11 Altersklassen) - Größe des privaten
+Haushalts - Typ des privaten Haushalts (nach
+Familien/Lebensform)",09.05.2011 - 09.05.2011
+1000A-3017,"Personen: Alter (11 Altersklassen) - Geschlecht - Art der
+Wohnungsnutzung/Ausstattung der Wohnung/Gebäudetyp (Größe)",09.05.2011 - 09.05.2011
+1000A-3018,Personen: Alter (5er-Jahresgruppen)/Art des Haushalts/Familienstand (ausführlich)/Größe des privaten Haushalts - Geschlecht - Seniorenstatus eines privaten Haushalts,09.05.2011 - 09.05.2011
+1000A-3019,"Personen: Alter (5 Altersklassen) - Geschlecht - Typ des
+privaten Haushalts (nach Lebensform)",09.05.2011 - 09.05.2011
+1000A-3020,"Personen: Alter (5er-Jahresgruppen)/Geschlecht - Religion -
+Seniorenstatus eines privaten Haushalts",09.05.2011 - 09.05.2011
+1000A-3021,"Personen: Alter (10er-Jahresgruppen) - Geschlecht - Größe
+des privaten Haushalts/Typ des privaten Haushalts (nach
+Familien/Lebensformen)",09.05.2011 - 09.05.2011
+1000A-3022,"Personen: Alter (10er-Jahresgruppen)/Geschlecht - Größe des
+privaten Haushalts - Typ des privaten Haushalts (nach
+Familien)",09.05.2011 - 09.05.2011
+1000A-3023,"Personen: Alter (10er-Jahresgruppen)/Geschlecht -
+Staatsangehörigeit (Ausgewählte Länder) - Typ des privaten
+Haushalts (nach Lebensform)",09.05.2011 - 09.05.2011
+1000A-3024,"Personen: Alter (11 Altersklassen)/Geschlecht -
+Staatsangehörigeit (Kontinente) - Größe des privaten
+Haushalts",09.05.2011 - 09.05.2011
+1000A-3025,"Personen: Alter (11 Altersklassen) -  Geschlecht - Größe des
+privaten Haushalts",09.05.2011 - 09.05.2011
+1000A-3026,"Personen: Alter (5er-Jahresgruppen)/Geschlecht -
+Familienstand (ausführlich) - Typ des privaten Haushalts
+(nach Familien)",09.05.2011 - 09.05.2011
+1000A-3027,"Personen: Alter (5er-Jahresgruppen) - Geschlecht - Typ des
+privaten Haushalts (nach Familien/Lebensformen)",09.05.2011 - 09.05.2011
+1000A-3028,"Personen: Alter (5er-Jahresgruppen)/Geschlecht -
+Familienstand - Typ des privaten Haushalts (nach
+Lebensformen)",09.05.2011 - 09.05.2011
+1000A-3029,"Personen: Alter (Marktforschungsrelevante
+Altersgruppen)/Geschlecht - Familienstand (ausführlich) -
+Typ des privaten Haushalts (nach Lebensformen)",09.05.2011 - 09.05.2011
+1000A-3030,"Personen: Alter (Marktforschungsrelevante Altersgruppen) -
+Geschlecht - Typ des privaten Haushalts",09.05.2011 - 09.05.2011
+1000A-3031,"Personen: Geschlecht - Staatsangehörigkeit (Gruppen) - Typ
+des privaten Haushalts (nach Familien)",09.05.2011 - 09.05.2011
+1000A-3032,"Personen: Familienstand (ausführlich) - Baujahr (Jahrzehnte)
+- Eigentumsform des Gebäudes/Wohnungen im Gebäude",09.05.2011 - 09.05.2011
+1000A-3033,"Personen: Familienstand (ausführlich) - Eigentumsform des
+Gebäudes - Wohnungen im Gebäude",09.05.2011 - 09.05.2011
+1000A-3034,"Personen: Baujahr (Jahrzehnte) - Eigentumsform des Gebäudes
+- Wohnungen im Gebäude/Gebäudetyp (Bauweise)",09.05.2011 - 09.05.2011
+1000A-3035,"Personen: Baujahr (Jahrzehnte)/Eigentumsform des Gebäudes -
+Gebäudetyp (Bauweise) - Wohnungen im Gebäude",09.05.2011 - 09.05.2011
+1000A-3036,"Personen: Baujahr (Jahrzehnte) - Wohnungen im Gebäude (3
+Klassen)/Fläche der Wohnung (10²-Intervalle) - Art des
+Gebäudes",09.05.2011 - 09.05.2011
+1000A-3037,"Personen: Alter (10er-Jahresgruppen)/Geschlecht - Größe des
+privaten Haushalts - Typ der Kernfamilie (nach Familien)",09.05.2011 - 09.05.2011
+1000A-3038,"Personen: Alter (10er-Jahresgruppen) - Geschlecht - Typ der
+Kernfamilie (nach Familien)",09.05.2011 - 09.05.2011
+1000A-3039,"Personen: Alter (5 Altersklassen) - Geschlecht - Typ der
+Kernfamilie (nach Lebensform)",09.05.2011 - 09.05.2011
+1000A-3040,"Personen: Alter (5er-Jahresgruppen) -
+Familienstand/Geschlecht - Größe der Kernfamilie/Typ der
+Kernfamilie (nach Lebensform)",09.05.2011 - 09.05.2011
+1000A-3041,"Personen: Alter (5er-Jahresgruppen)/Geschlecht/
+Familienstand - Größe der Kernfamilie - Typ der Kernfamilie
+(nach Lebensform)",09.05.2011 - 09.05.2011
+1000A-3042,"Personen: Alter (5er-Jahresgruppen) - Familienstand
+(ausführlich) - Typ der Kernfamilie (nach Lebensform)",09.05.2011 - 09.05.2011
+1000A-3043,"Personen: Alter (Marktforschungsrelevante Altersgruppen) -
+Familienstand (ausführlich)/Geschlecht - Typ der Kernfamilie
+(nach Lebensform)",09.05.2011 - 09.05.2011
+1000A-3044,"Personen: Geschlecht - Familienstand - Größe der
+Kernfamilie/Typ der Kernfamilie (nach Lebensform)",09.05.2011 - 09.05.2011
+1000A-3045,"Personen: Geschlecht - Staatsangehörigkeit (Gruppen) - Typ
+der Kernfamilie (nach Familien)",09.05.2011 - 09.05.2011
+1000A-4001,"Personen: Alter (10er-Jahresgruppen) - Geschlecht -
+Familienstand - Staatsangehörigkeit (Ausgewählte Länder)",09.05.2011 - 09.05.2011
+1000A-4002,"Personen: Alter (10er-Jahresgruppen) - Geschlecht - Größe
+des privaten Haushalts - Typ des privaten Haushalts (nach
+Familien)",09.05.2011 - 09.05.2011
+1000A-4003,"Personen: Alter (10er-Jahresgruppen) - Geschlecht -
+Staatsangehörigkeit (Ausgewählte Länder) - Typ des privaten
+Haushalts (nach Lebensform)",09.05.2011 - 09.05.2011
+1000A-4004,Personen: Alter (11 Altersklassen) - Geschlecht - Staatsangehörigkeit (Kontinente) - Größe des privaten Haushalts,09.05.2011 - 09.05.2011
+1000A-4005,"Personen: Alter (5er-Jahresgruppen) - Geschlecht -
+Familienstand - Typ des privaten Haushalts (nach Lebensform)",09.05.2011 - 09.05.2011
+1000A-4006,"Personen: Alter (5er-Jahresgruppen) - Geschlecht -
+Familienstand (ausführlich) - Typ des privaten Haushalts
+(nach Familien)",09.05.2011 - 09.05.2011
+1000A-4007,"Personen: Alter (5er-Jahresgruppen) - Geschlecht - Religion
+- Seniorenstatus eines privaten Haushalts",09.05.2011 - 09.05.2011
+1000A-4008,"Personen: Alter (Marktforschungsrelevante Altersgruppen) -
+Geschlecht - Familienstand (ausführlich) - Typ des privaten
+Haushalts (nach Lebensform)",09.05.2011 - 09.05.2011
+1000A-4009,"Personen: Familienstand (ausführlich) - Baujahr (Jahrzehnte)
+- Eigentumsform des Gebäudes - Wohnungen im Gebäude",09.05.2011 - 09.05.2011
+1000A-4010,"Personen: Eigentumsform des Gebäudes - Baujahr (Jahrzehnte)
+- Gebäudetyp (Bauweise) - Wohnungen im Gebäude",09.05.2011 - 09.05.2011
+1000A-4011,"Personen: Alter (10er-Jahresgruppen) - Geschlecht - Größe
+des privaten Haushalts - Typ der Kernfamilie (nach Familien)",09.05.2011 - 09.05.2011
+1000A-4012,"Personen: Alter (5er-Jahresgruppen) - Geschlecht -
+Familienstand - Größe der Kernfamilie",09.05.2011 - 09.05.2011
+1000A-4013,"Personen: Alter (5er-Jahresgruppen)/Geschlecht -
+Familienstand - Größe der Kernfamilie - Typ der Kernfamilie
+(nach Lebensform)",09.05.2011 - 09.05.2011
+1000A-4014,"Personen: Alter (5er-Jahresgruppen) - Geschlecht -
+Familienstand/Größe der Kernfamilie - Typ der Kernfamilie
+(nach Lebensform)",09.05.2011 - 09.05.2011
+1000A-4015,"Personen: Alter (5er-Jahresgruppen) - Geschlecht -
+Familienstand (ausführlich) - Typ der Kernfamilie (nach
+Lebensform)",09.05.2011 - 09.05.2011
+1000A-4016,"Personen: Alter (Marktforschungsrelevante Altersgruppen) -
+Geschlecht - Familienstand (ausführlich) - Typ der
+Kernfamilie (nach Lebensform)",09.05.2011 - 09.05.2011
+1000A-5001,Personen: Alter (5er-Jahresgruppen) - Familienstand - Geschlecht - Größe der Kernfamilie - Typ der Kernfamilie (nach Lebensform),09.05.2011 - 09.05.2011
+2000S-1001,Personen: Art der Auspendler,09.05.2011 - 09.05.2011
+2000S-1002,Personen: Art der Einpendler,09.05.2011 - 09.05.2011
+2000S-1003,Personen: Beruf (KldB 2010),09.05.2011 - 09.05.2011
+2000S-1004,Personen: Beruf (Hauptgruppen ISCO-08),09.05.2011 - 09.05.2011
+2000S-1005,Personen: Höchster beruflicher Abschluss (ausführlich),09.05.2011 - 09.05.2011
+2000S-1006,Personen: Höchster Schulabschluss,09.05.2011 - 09.05.2011
+2000S-1007,Schüler: Klassenstufen,09.05.2011 - 09.05.2011
+2000S-1008,Schüler: Schulform,09.05.2011 - 09.05.2011
+2000S-1009,Personen: Migrationshintergrund,09.05.2011 - 09.05.2011
+2000S-1010,Personen: Migrationshintergrund und -erfahrung,09.05.2011 - 09.05.2011
+2000S-1011,Personen: Migrationserfahrung (Zuzugsjahr),09.05.2011 - 09.05.2011
+2000S-1012,Personen: Migrationserfahrung (Zuzugsjahrzehnt),09.05.2011 - 09.05.2011
+2000S-1013,Personen: Migrationshintergrund (Aufenthaltsdauer),09.05.2011 - 09.05.2011
+2000S-1014,Personen: Migrationshintergrund (Länder),09.05.2011 - 09.05.2011
+2000S-1015,Personen: Migrationshintergrund (Kontinente),09.05.2011 - 09.05.2011
+2000S-1016,Personen: Erwerbsstatus,09.05.2011 - 09.05.2011
+2000S-1017,Personen: Erwerbsstatus (ausführlich),09.05.2011 - 09.05.2011
+2000S-1018,Personen: Stellung im Beruf,09.05.2011 - 09.05.2011
+2000S-1019,Personen: Wirt.zweig Wirtschafts(unter)bereiche,09.05.2011 - 09.05.2011
+2000S-1020,Personen: Wirtschaftszweig,09.05.2011 - 09.05.2011
+2000S-1021,Personen: Wirtschaftszweig (Abschnitte),09.05.2011 - 09.05.2011
+2000S-1022,Personen: Religion (ausführlich),09.05.2011 - 09.05.2011
+2000S-2001,"Personen: Erwerbsstatus - Alter
+(5er-Jahresgruppen)/Geschlecht",09.05.2011 - 09.05.2011
+2000S-2002,"Personen: Erwerbsstatus - Alter (10er-Jahresgruppen/11
+Altersklassen)/Migrationshintergrund/Staatsangehörigkeit
+(Ausgewählte Länder)",09.05.2011 - 09.05.2011
+2000S-2003,"Personen: Erwerbsstatus - Gebäudetyp (Größe)/Größe des
+privaten Haushalts/Typ des privaten Haushalts (nach
+Familien)",09.05.2011 - 09.05.2011
+2000S-2004,"Personen: Erwerbsstatus - Größe der Kernfamilie/Typ der
+Kernfamilie (nach Familien)",09.05.2011 - 09.05.2011
+2000S-2005,"Personen: Erwerbsstatus (ausführlich) - Alter
+(10er-Jahresgruppen)/Geschlecht/Migrationshintergrund und
+-erfahrung",09.05.2011 - 09.05.2011
+2000S-2006,"Personen: Erwerbsstatus (ausführlich) - Alter
+(5er-Jahresgruppen)/Familienstand
+(ausführlich)/Staatsangehörigkeit",09.05.2011 - 09.05.2011
+2000S-2007,"Personen: Erwerbsstatus (ausführlich) - Typ des privaten
+Haushalts (nach Familien)",09.05.2011 - 09.05.2011
+2000S-2008,"Personen: Erwerbsstatus (ausführlich)/Religion (ausführlich)
+- Größe der Kernfamilie/Typ der Kernfamilie (nach
+Familien)/Typ der Kernfamilie (nach Lebensform)",09.05.2011 - 09.05.2011
+2000S-2009,"Personen: Migrationshintergrund - Alter
+(5er-Jahresgruppen)/Staatsangehörigkeit",09.05.2011 - 09.05.2011
+2000S-2010,"Personen: Migrationshintergrund - Alter (11
+Altersklassen)/Geschlecht/Staatsangehörigkeit",09.05.2011 - 09.05.2011
+2000S-2011,Personen: Migrationshintergrund - Alter (10er-Jahresgruppen)/Erwerbsstatus-/Familienstand-/Religion (ausführlich),09.05.2011 - 09.05.2011
+2000S-2012,"Personen: Migrationshintergrund - Größe des privaten
+Haushalts/Typ des privaten Haushalts (nach Familien)",09.05.2011 - 09.05.2011
+2000S-2013,"Personen: Migrationshintergrund - Typ der Kernfamilie (nach
+Familien)/Typ der Kernfamilie (nach Lebensform)",09.05.2011 - 09.05.2011
+2000S-2014,Personen: Migrationshintergrund und -erfahrung - Alter/Erwerbsstatus/Familienstand (ausführlich)/Geschlecht/Staatsangehörigkeit (Ausgew. Länder),09.05.2011 - 09.05.2011
+2000S-2015,"Personen: Migrationshintergrund und -erfahrung - Alter
+(Jahresschritte)",09.05.2011 - 09.05.2011
+2000S-2016,"Personen: Migrationshintergrund und -erfahrung -
+Eigentumsverhältnisse der Wohnung/Typ des
+privaten Haushalts (nach Familien)",09.05.2011 - 09.05.2011
+2000S-2017,Personen: Migrationshintergrund und -erfahrung - Art der Wohnungsnutzung/Austattung der Wohnung/Fläche/Gebäudetyp/Haushaltsgröße/Haushaltstyp/Räume,09.05.2011 - 09.05.2011
+2000S-2018,"Personen: Migrationshintergrund und -erfahrung - Art des
+Gebäudes/Baujahr (Jahrzehnte)/Eigentumsform des
+Gebäudes/Gebäudetyp (Bauweise)/Wohnungen im Gebäude",09.05.2011 - 09.05.2011
+2000S-2019,"Personen: Migrationshintergrund und -erfahrung - Typ der
+Kernfamilie (nach Familien)",09.05.2011 - 09.05.2011
+2000S-2020,"Personen: Religion (ausführlich) -
+Alter/Familienstand/Geschlecht/Staatsangehörigkeit",09.05.2011 - 09.05.2011
+2000S-2021,"Personen: Religion (ausführlich) - Alter/Erwerbsstatus
+(ausführlich)/Staatsangehörigkeit (Kontinente)",09.05.2011 - 09.05.2011
+2000S-2022,"Personen: Religion (ausführlich) - Typ des privaten
+Haushalts (nach Familien)",09.05.2011 - 09.05.2011
+2000S-2023,Personen: Höchster beruflicher Abschluss - Alter/Erwerbsstatus (ausführlich)/Geschlecht/Migrationshintergrund/Religion (ausführlich),09.05.2011 - 09.05.2011
+2000S-2024,"Personen: Höchster beruflicher Abschluss - Art des
+Gebäudes/Baujahr (Jahrzehnte)/Fläche der Wohnung (10
+m²-Intervalle)",09.05.2011 - 09.05.2011
+2000S-2025,"Personen: Höchster beruflicher Abschluss - Typ der
+Kernfamilie (nach Familien)",09.05.2011 - 09.05.2011
+2000S-2026,"Personen: Höchster beruflicher Abschluss (ausführlich) -
+Alter/Familienstand/Geschlecht/Migrationshintergrund und
+-erfahrung/Religion (ausführlich)/Staatsangehörigkeit",09.05.2011 - 09.05.2011
+2000S-2027,"Personen: Höchster beruflicher Abschluss (ausführlich) -
+Alter/Erwerbsstatus (ausführlich)/Familienstand
+(ausführlich)/Religion",09.05.2011 - 09.05.2011
+2000S-2028,"Personen: Höchster beruflicher Abschluss
+(ausführlich)/Höchster Schulabschluss - Staatsangehörigkeit
+(Gruppen)",09.05.2011 - 09.05.2011
+2000S-2029,"Personen: Höchster beruflicher Abschluss (ausführlich) - Art
+der Wohnungsnutzung/Gebäudetyp (Bauweise)/Gebäudetyp (Größe)",09.05.2011 - 09.05.2011
+2000S-2030,"Personen: Höchster beruflicher Abschluss (ausführlich) -
+Größe des privaten Haushalts/Typ des privaten Haushalts
+(nach Familien)",09.05.2011 - 09.05.2011
+2000S-2031,"Personen: Höchster beruflicher Abschluss (ausführlich) - Typ
+des privaten Haushalts (nach Lebensform)",09.05.2011 - 09.05.2011
+2000S-2032,"Personen: Höchster beruflicher Abschluss (ausführlich) -
+Größe der Kernfamilie/Typ der Kernfamilie (nach Familien)",09.05.2011 - 09.05.2011
+2000S-2033,"Personen: Höchster beruflicher Abschluss (ausführlich) - Typ
+der Kernfamilie (nach Lebensform)",09.05.2011 - 09.05.2011
+2000S-2034,"Personen: Höchster Schulabschluss -
+Alter/Familienstand/Geschlecht/Migrationshintergrund und
+-erfahrung/Staatsangehörigkeit (Ausgewählte Länder)",09.05.2011 - 09.05.2011
+2000S-2035,Personen: Höchster Schulabschluss - Religion (ausführlich),09.05.2011 - 09.05.2011
+2000S-2036,"Personen: Höchster Schulabschluss - Familienstand
+(ausführlich)/Höchster beruflicher Abschluss (ausführlich)",09.05.2011 - 09.05.2011
+2000S-2037,"Personen: Höchster Schulabschluss - Alter
+(5er-Jahresgruppen)/Erwerbsstatus (ausführlich)/Höchster
+beruflicher Abschluss/Religion",09.05.2011 - 09.05.2011
+2000S-2038,"Personen: Höchster Schulabschluss - Art der
+Wohnungsnutzung/Gebäudetyp (Bauweise)",09.05.2011 - 09.05.2011
+2000S-2039,"Personen: Höchster Schulabschluss - Typ der Kernfamilie
+(nach Lebensform)",09.05.2011 - 09.05.2011
+2000S-2040,"Personen: Art der Einpendler -
+Alter/Familienstand/Geschlecht/Höchster beruflicher
+Abschluss/Migrationshintergrund und -erfahrung/Religion",09.05.2011 - 09.05.2011
+2000S-2041,"Personen: Art der Einpendler - Wirt.zweig
+Wirtschafts(unter)bereiche",09.05.2011 - 09.05.2011
+2000S-2042,"Personen: Art der Einpendler - Alter
+(10er-Jahresgruppen)/Beruf (Bereiche KldB 2010)",09.05.2011 - 09.05.2011
+2000S-2043,"Personen: Art der Einpendler - Stellung im
+Beruf/Wirtschaftszweige (Abschnitte)",09.05.2011 - 09.05.2011
+2000S-2044,"Personen: Art der Auspendler -
+Alter/Familienstand/Geschlecht/Höchster beruflicher
+Abschluss/Migrationshintergrund und -erfahrung/Religion",09.05.2011 - 09.05.2011
+2000S-2045,"Personen: Art der Auspendler - Wirt.zweig
+Wirtschafts(unter)bereiche",09.05.2011 - 09.05.2011
+2000S-2046,Personen: Art der Auspendler - Alter (10er-Jahresgruppen),09.05.2011 - 09.05.2011
+2000S-2047,"Personen: Art der Auspendler - Beruf (Bereiche KldB
+2010)/Stellung im Beruf/Wirtschaftszweige (Abschnitte)",09.05.2011 - 09.05.2011
+2000S-2048,"Personen: Beruf (Bereiche KldB 2010) - Familienstand
+(ausführlich)/Geschlecht/Migrationshintergrund und
+-erfahrung/Staatsangehörigkeit (Ausgewählte Länder)",09.05.2011 - 09.05.2011
+2000S-2049,"Personen: Beruf (Bereiche KldB 2010) - Alter/Höchster
+beruflicher Abschluss/Höchster
+Schulabschluss/Religion/Stellung im Beruf",09.05.2011 - 09.05.2011
+2000S-2050,"Personen: Beruf (Bereiche KldB 2010) - Typ des privaten
+Haushalts (nach Lebensform)",09.05.2011 - 09.05.2011
+2000S-2051,"Personen: Beruf (Bereiche KldB 2010) - Typ der Kernfamilie
+(nach Lebensform)",09.05.2011 - 09.05.2011
+2000S-2052,"Personen: Beruf (Hauptgruppen ISCO-08) - Geschlecht/Höchster
+beruflicher Abschluss (ausführlich)/Höchster Schulabschluss",09.05.2011 - 09.05.2011
+2000S-2053,Personen: Beruf (Hauptgruppen ISCO-08) - Alter/Erwerbsstatus/Familienstand/Religion/Staatsangehörigkeit (Ausgewählte Länder)/Stellung im Beruf/Wirtschaftszweig,09.05.2011 - 09.05.2011
+2000S-2054,"Personen: Beruf (Hauptgruppen ISCO-08) - Typ der Kernfamilie
+(nach Lebensform)",09.05.2011 - 09.05.2011
+2000S-2055,"Personen: Beruf (Hauptgruppen ISCO-08) -
+Migrationshintergrund (ausgew. Länder)",09.05.2011 - 09.05.2011
+2000S-2056,"Personen: Beruf (Hauptgruppen KldB 2010) - Alter
+(10er-Jahresgruppen)/Geschlecht",09.05.2011 - 09.05.2011
+2000S-2057,"Personen: Beruf (Hauptgruppen KldB 2010) -
+Migrationshintergrund und -erfahrung/Wirtschaftszweige
+(Abschnitte)",09.05.2011 - 09.05.2011
+2000S-2058,"Personen: Stellung im Beruf - Höchster beruflicher Abschluss
+(ausführlich)/Höchster Schulabschluss",09.05.2011 - 09.05.2011
+2000S-2059,"Personen: Stellung im Beruf - Alter
+(10er-Jahresgruppen)/Geschlecht/Staatsangehörigkeit
+(Ausgewählte Länder)/Migrationshintergrund und -erfahrung",09.05.2011 - 09.05.2011
+2000S-2060,"Personen: Stellung im Beruf - Alter (11
+Altersklassen)/Erwerbsstatus/Familienstand
+(ausführlich)/Migrationshintergrund/Religion (ausführlich)",09.05.2011 - 09.05.2011
+2000S-2061,Personen: Stellung im Beruf - Alter (Marktforschungsrelevante Altersgruppen)/Erwerbsstatus/Religion/Staatsangehörigkeit (Kontinente)/Wirtschaftszweig (Abschnitte),09.05.2011 - 09.05.2011
+2000S-2062,"Personen: Stellung im Beruf - Typ des privaten Haushalts
+(nach Familien)/Typ des privaten Haushalts (nach Kindern)",09.05.2011 - 09.05.2011
+2000S-2063,"Personen: Stellung im Beruf - Typ der Kernfamilie (nach
+Lebensform)",09.05.2011 - 09.05.2011
+2000S-2064,"Personen: Stellung im Beruf/Wirtschaftszweig (Abschnitte) -
+Migrationshintergrund (ausgew. Länder)/Migrationshintergrund
+(Kontinente)",09.05.2011 - 09.05.2011
+2000S-2065,Personen: Wirtschaftszweig - Geschlecht/Religion (ausführlich)/Höchster berufl. Abschluss (ausführlich)/Staatsangehörigkeit (Gruppen),09.05.2011 - 09.05.2011
+2000S-2066,"Personen: Wirtschaftszweig - Art des Gebäudes/Baujahr
+(Jahrzehnte)/Fläche der Wohnung (10 m²-Intervalle)",09.05.2011 - 09.05.2011
+2000S-2067,"Personen: Wirtschaftszweig (Abschnitte) - Alter (11
+Altersklassen)/Geschlecht/Migrationshintergrund und
+-erfahrung",09.05.2011 - 09.05.2011
+2000S-2068,Personen: Wirtschaftszweige (Abschnitte) - Alter (Alter (10er-Jahresgruppen)/Familienstand/Höchster beruflicher Abschluss/Religion/Staatsangehörigkeit (Kontinente),09.05.2011 - 09.05.2011
+2000S-2069,"Personen: Wirtschaftszweig (Abschnitte) - Größe des privaten
+Haushalts/Typ des privaten Haushalts (nach Lebensform)",09.05.2011 - 09.05.2011
+2000S-2070,"Personen: Wirtschaftszweige (Abschnitte)/Wirt.zweig
+Wirtschafts(unter)bereiche - Migrationserfahrung
+(Zuzugsjahrzehnt)",09.05.2011 - 09.05.2011
+2000S-2071,"Personen: Wirt.zweig Wirtschafts(unter)bereiche -
+Alter/Familienstand/Geschlecht/Staatsangehörigkeit
+(Ausgewählte Länder)/Migrationshintergrund und -erfahrung",09.05.2011 - 09.05.2011
+2000S-2072,"Personen: Wirt.zweig Wirtschafts(unter)bereiche - Beruf
+(Bereiche KldB 2010)/Höchster beruflicher Abschluss/Höchster
+Schulabschluss/Religion/Stellung im Beruf",09.05.2011 - 09.05.2011
+2000S-2073,"Personen: Wirt.zweig Wirtschafts(unter)bereiche - Typ des
+privaten Haushalts (nach Lebensform)",09.05.2011 - 09.05.2011
+2000S-2074,"Personen: Wirt.zweig Wirtschafts(unter)bereiche - Typ der
+Kernfamilie (nach Lebensform)",09.05.2011 - 09.05.2011
+2000S-2075,Personen: Migrationshintergrund (Ausgewählte Länder) - Alter/Familienstand/Geschlecht/Migrationshintergrund und -erfahrung/Staatsangehörigkeit (Ausgewählte Länder),09.05.2011 - 09.05.2011
+2000S-2076,"Personen: Migrationshintergrund (ausgew. Länder) -
+Erwerbsstatus/Religion (ausführlich)",09.05.2011 - 09.05.2011
+2000S-2077,"Personen: Migrationshintergrund (ausgew. Länder) - Alter
+(5er-Jahresgruppen)/Alter (Marktforschungsrelevante
+Altersgruppen)/Aufenthaltsdauer",09.05.2011 - 09.05.2011
+2000S-2078,"Personen: Migrationshintergrund (ausgew. Länder/Kontinente)
+- Ausstattung/Fläche der Wohnung/Größe des privaten
+Haushalts/Räume/Typ des privaten Haushalts (nach Familien)",09.05.2011 - 09.05.2011
+2000S-2079,"Personen: Migrationshintergrund (ausgew. Länder) - Höchster
+beruflicher Abschluss (ausführlich)",09.05.2011 - 09.05.2011
+2000S-2080,Personen: Migrationshintergrund (Kontinente) - Alter/Erwerbsstatus/Familienstand (ausführlich)/ Geschlecht/Religion (ausführlich)/Staatsangehörigkeit (Ausgewählte Länder),09.05.2011 - 09.05.2011
+2000S-2081,"Personen: Migrationshintergrund (Kontinente) - Alter
+(Marktforschungsrelevante
+Altersgruppen)/Migrationshintergrund (Aufenthaltsdauer)",09.05.2011 - 09.05.2011
+2000S-2082,"Personen: Migrationshintergrund (Länder) - Alter
+(Jahresschritte)/Geschlecht",09.05.2011 - 09.05.2011
+2000S-2083,"Personen: Migrationshintergrund (Länder) -
+Migrationshintergrund und -erfahrung",09.05.2011 - 09.05.2011
+2000S-2084,"Personen: Migrationshintergrund (Länder) -
+Eigentumsverhältnisse der Wohnung",09.05.2011 - 09.05.2011
+2000S-2085,"Personen: Migrationshintergrund (Aufenthaltsdauer) - Alter
+(10er-Jahresgruppen)/Familienstand
+(ausf.)/Geschlecht/Migrationshintergrund und -erfahrung",09.05.2011 - 09.05.2011
+2000S-2086,"Personen: Migrationshintergrund (Aufenthaltsdauer) - Alter
+(Jahresschritte)",09.05.2011 - 09.05.2011
+2000S-2087,Personen: Migrationshintergrund (Aufenthaltsdauer) - Alter (Marktforschungsrelevante Altersgruppen)/Migrationshintergrund (Ausgewählte Länder/Kontinente),09.05.2011 - 09.05.2011
+2000S-2088,"Personen: Migrationshintergrund (Aufenthaltsdauer) - Typ des
+privaten Haushalts (nach Familien)",09.05.2011 - 09.05.2011
+2000S-2089,"Personen: Migrationserfahrung (Zuzugsjahr) -
+Geschlecht/Migrationshintergrund (Länder)",09.05.2011 - 09.05.2011
+2000S-2090,Personen: Migrationserfahrung (Zuzugsjahrzehnt) - Alter/Familienstand/Geschlecht/ Migrationshintergrund und -erfahrung/Staatsangehörigkeit (Ausgewählte Länder),09.05.2011 - 09.05.2011
+2000S-2091,"Personen: Migrationserfahrung (Zuzugsjahrzehnt) - Typ des
+privaten Haushalts (nach Lebensform)",09.05.2011 - 09.05.2011
+2000S-2092,"Schüler: Klassenstufen - Geschlecht/Migrationshintergrund
+und -erfahrung",09.05.2011 - 09.05.2011
+2000S-2093,"Schüler: Klassenstufen - Migrationshintergrund
+(Aufenthaltsdauer)",09.05.2011 - 09.05.2011
+2000S-2094,Schüler: Schulform - Alter (Infrastrukturrelevante Altersgruppen)/Geschlecht/Klassenstufen/Migrationshintergrund und -erfahrung,09.05.2011 - 09.05.2011
+2000S-2095,"Schüler: Schulform - Migrationshintergrund (ausgew.
+Länder)/Migrationshintergrund (Aufenthaltsdauer)",09.05.2011 - 09.05.2011
+2000S-3001,"Personen: Erwerbsstatus - Alter
+(5er-Jahresgruppen)/Migrationshintergrund und -erfahrung -
+Geschlecht",09.05.2011 - 09.05.2011
+2000S-3002,"Personen: Erwerbsstatus - Alter/Staatsangehörigkeit
+(Ausgewählte Länder) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-3003,"Personen: Erwerbsstatus - Migrationshintergrund -
+Staatsangehörigkeit (Ausgewählte Länder)",09.05.2011 - 09.05.2011
+2000S-3004,"Personen: Erwerbsstatus - Alter (11
+Altersklassen)/Migrationshintergrund und -erfahrung -
+Gebäudetyp (Größe)",09.05.2011 - 09.05.2011
+2000S-3005,"Personen: Erwerbsstatus/Migrationshintergrund - Größe des
+privaten Haushalts - Typ des privaten Haushalts (nach
+Familien)",09.05.2011 - 09.05.2011
+2000S-3006,"Personen: Erwerbsstatus - Größe der Kernfamilie - Typ der
+Kernfamilie (nach Familien)",09.05.2011 - 09.05.2011
+2000S-3007,"Personen: Erwerbsstatus (ausführlich) -
+Migrationshintergrund und -erfahrung - Geschlecht/Alter
+(10er-Jahresgruppen)",09.05.2011 - 09.05.2011
+2000S-3008,"Personen: Erwerbsstatus (ausführlich)/Migrationshintergrund
+- Familienstand (ausführlich) - Alter (5er-Jahresgruppen)",09.05.2011 - 09.05.2011
+2000S-3009,"Personen: Erwerbsstatus (ausführlich) - Alter
+(5er-Jahresgruppen)/Familienstand (ausführlich)/Religion
+(ausführlich)/Staatangehörigkeit - Geschlecht",09.05.2011 - 09.05.2011
+2000S-3010,Personen: Erwerbsstatus (ausführlich) - Alter/Migrationshintergrund/Staatsangehörigkeit -  Religion (ausführlich),09.05.2011 - 09.05.2011
+2000S-3011,"Personen: Erwerbsstatus (ausführlich) - Geschlecht - Typ des
+privaten Haushalts (nach Familien)",09.05.2011 - 09.05.2011
+2000S-3012,"Personen: Erwerbsstatus (ausführlich) - Familienstand
+(ausführlich) - Größe der Kernfamilie",09.05.2011 - 09.05.2011
+2000S-3013,"Personen: Erwerbsstatus (ausführlich) - Geschlecht/Religion
+(ausführlich) - Größe der Kernfamilie/Typ der Kernfamilie
+(nach Lebensform)",09.05.2011 - 09.05.2011
+2000S-3014,"Personen: Erwerbsstatus (ausführlich) - Religion
+(ausführlich)/Migrationshintergrund - Typ der Kernfamilie
+(nach Familien)",09.05.2011 - 09.05.2011
+2000S-3015,"Personen: Migrationshintergrund - Alter (5er-Jahresgruppen)
+- Staatsangehörigkeit",09.05.2011 - 09.05.2011
+2000S-3016,"Personen: Migrationshintergrund - Alter (11 Altersklassen) -
+Geschlecht",09.05.2011 - 09.05.2011
+2000S-3017,"Personen: Migrationshintergrund - Alter (11
+Altersklassen)/Geschlecht - Staatsangehörigkeit",09.05.2011 - 09.05.2011
+2000S-3018,"Personen: Migrationshintergrund - Alter
+(5er-Jahresgruppen)/Familienstand (ausführlich) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-3019,Personen: Migrationshintergrund - Alter (10er-Jahresgruppen) - Erwerbsstatus (ausführlich)/Religion (ausführlich),09.05.2011 - 09.05.2011
+2000S-3020,"Personen: Migrationshintergrund - Alter (11 Altersklassen) -
+Größe des privaten Haushalts/Typ des privaten Haushalts
+(nach Familien)",09.05.2011 - 09.05.2011
+2000S-3021,"Personen: Migrationshintergrund - Alter
+(5er-Jahresgruppen)/Familienstand (ausführlich)/Geschlecht -
+Typ des privaten Haushalts (nach Familien)",09.05.2011 - 09.05.2011
+2000S-3022,"Personen: Migrationshintergrund - Religion (ausführlich) -
+Typ der Kernfamilie (nach Familien)",09.05.2011 - 09.05.2011
+2000S-3023,Personen: Migrationshintergrund/Religion (ausf.) - Alter (5er-Jahresgruppen)/Familienstand (ausf.)/Geschlecht - Typ der Kernfamilie (nach Familien),09.05.2011 - 09.05.2011
+2000S-3024,"Personen: Migrationshintergrund und -erfahrung - Alter
+(10er-Jahresgruppen) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-3025,"Personen: Migrationshintergrund und -erfahrung - Alter
+(10er-Jahresgruppen)/Familienstand (ausführlich)/Geschlecht
+- Religion/Staatsangehörigkeit (Ausgewählte Länder)",09.05.2011 - 09.05.2011
+2000S-3026,Personen: Migrationshintergrund und -erfahrung - Alter (10er-Jahresgruppen) - Familienstand (ausführlich),09.05.2011 - 09.05.2011
+2000S-3027,Personen: Migrationshintergrund und -erfahrung - Alter (11 Altersklassen) - Erwerbsstatus/Familienstand/Religion (ausf.)/Staatsangehörigkeit (Ausgew. Länder)/Geschlecht,09.05.2011 - 09.05.2011
+2000S-3028,"Personen: Migrationshintergrund und -erfahrung - Alter
+(Jahresschritte)/Familienstand (ausführlich) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-3029,"Personen: Migrationshintergrund und -erfahrung - Alter (11
+Altersklassen) - Typ des privaten Haushalts (nach Familien)",09.05.2011 - 09.05.2011
+2000S-3030,Personen: Migrationshintergrund und -erfahrung - Alter - Art der Wohnungsnutzung/Ausstattung der Wohnung/Gebäudetyp (Größe)/Größe des priv. Haushalts/Typ des priv. Haushalts,09.05.2011 - 09.05.2011
+2000S-3031,"Personen: Migrationshintergrund und -erfahrung - Geschlecht
+- Art der Wohnungsnutzung/Ausstattung der Wohnung/Gebäudetyp
+(Größe)",09.05.2011 - 09.05.2011
+2000S-3032,"Personen: Migrationshintergrund und -erfahrung - Größe des
+privaten Haushalts - Fläche der Wohnung (20
+m²-Intervalle)/Typ des privaten Haushalts/Räume",09.05.2011 - 09.05.2011
+2000S-3033,"Personen: Migrationshintergrund und -erfahrung - Baujahr
+(Jahrzehnte)/Wohnungen im Gebäude (3 Klassen) - Art des
+Gebäudes",09.05.2011 - 09.05.2011
+2000S-3034,"Personen: Migrationshintergrund und -erfahrung - Baujahr
+(Jahrzehnte) - Eigentumsform des Gebäudes/Gebäudetyp
+(Bauweise)/Wohnungen im Gebäude",09.05.2011 - 09.05.2011
+2000S-3035,"Personen: Migrationshintergrund und -erfahrung -
+Eigentumsform des Gebäudes - Gebäudetyp (Bauweise)/Wohnungen
+im Gebäude",09.05.2011 - 09.05.2011
+2000S-3036,"Personen: Migrationshintergrund und -erfahrung - Gebäudetyp
+(Bauweise) - Wohnungen im Gebäude",09.05.2011 - 09.05.2011
+2000S-3037,"Personen: Migrationshintergrund und -erfahrung - Geschlecht
+- Typ der Kernfamilie (nach Familien)",09.05.2011 - 09.05.2011
+2000S-3038,"Personen: Religion (ausführlich) - Familienstand -
+Staatsangehörigkeit (Ausgewählte Länder)",09.05.2011 - 09.05.2011
+2000S-3039,"Personen: Religion (ausführlich) -
+Alter/Familienstand/Staatsangehörigkeit - Geschlecht",09.05.2011 - 09.05.2011
+2000S-3040,"Personen: Religion (ausführlich) - Familienstand
+(ausführlich)/Migrationshintergrund und -erfahrung -
+Staatsangehörigkeit (Ausgewählte Länder)",09.05.2011 - 09.05.2011
+2000S-3041,"Personen: Religion (ausführlich) - Alter/Staatsangehörigkeit
+(Kontinente) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-3042,Personen: Religion (ausführlich) - Alter/Erwerbsstatus (ausführlich) - Familienstand (ausführlich),09.05.2011 - 09.05.2011
+2000S-3043,"Personen: Religion (ausführlich) - Erwerbsstatus
+(ausführlich)/Geschlecht - Typ des privaten Haushalts (nach
+Familien)",09.05.2011 - 09.05.2011
+2000S-3044,"Personen: Religion (ausführlich) - Familienstand
+(ausführlich)/Geschlecht - Größe der Kernfamilie",09.05.2011 - 09.05.2011
+2000S-3045,"Personen: Höchster beruflicher Abschluss - Alter
+(5er-Jahresgruppen)/Erwerbsstatus (ausführlich) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-3046,Personen: Höchster beruflicher Abschluss - Alter/Höchster Schulabschluss/Migrationshintergrund/Religion (ausführlich) - Erwerbsstatus (ausführlich),09.05.2011 - 09.05.2011
+2000S-3047,"Personen: Höchster beruflicher Abschluss - Höchster
+Schulabschluss - Alter (5er-Jahresgruppen)",09.05.2011 - 09.05.2011
+2000S-3048,Personen: Höchster beruflicher Abschluss - Alter (10er-Jahresgruppen) - Migrationshintergrund,09.05.2011 - 09.05.2011
+2000S-3049,"Personen: Höchster beruflicher Abschluss - Alter
+(10er-Jahresgruppen)/Migrationshintergrund - Religion
+(ausführlich)",09.05.2011 - 09.05.2011
+2000S-3050,"Personen: Höchster beruflicher Abschluss - Baujahr
+(Jahrzehnte)/Fläche der Wohnung (10 m²-Intervalle) - Art des
+Gebäudes",09.05.2011 - 09.05.2011
+2000S-3051,"Personen: Höchster beruflicher Abschluss - Fläche der
+Wohnung (10 m²-Intervalle) - Baujahr (Jahrzehnte)",09.05.2011 - 09.05.2011
+2000S-3052,"Personen: Höchster beruflicher Abschluss - Erwerbsstatus
+(ausführlich)/Migrationshintergrund/Religion (ausführlich) -
+Typ der Kernfamilie (nach Familien)",09.05.2011 - 09.05.2011
+2000S-3053,"Personen: Höchster beruflicher Abschluss (ausführlich) -
+Alter (10er-Jahresgruppen)/Religion (ausführlich) -
+Migrationshintergrund und -erfahrung",09.05.2011 - 09.05.2011
+2000S-3054,Höchster beruflicher Abschluss (ausführlich) - Alter/Migrationshintergrund und -erfahrung/ Staatsangehörigkeit (Ausgewählte Länder) - Geschlecht,09.05.2011 - 09.05.2011
+2000S-3055,"Personen: Höchster beruflicher Abschluss
+(ausführlich)/Höchster Schulabschluss - Religion
+(ausführlich) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-3056,"Personen: Höchster beruflicher Abschluss (ausführlich) -
+Alter (5er-Jahresgruppen)/Familienstand/Staatsangehörigkeit
+(Gruppen) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-3057,Höchster beruflicher Abschluss (ausführlich) - Alter/Geschlecht/Familienstand/Höchster Schulabschluss/Religion/Staatsangehörigkeit (Ausgew. Länder) - Erwerbsstatus (ausf.),09.05.2011 - 09.05.2011
+2000S-3058,Personen: Höchster beruflicher Abschluss (ausführlich) - Alter (5er-Jahresgruppen) - Familienstand,09.05.2011 - 09.05.2011
+2000S-3059,"Personen: Höchster beruflicher Abschluss
+(ausführlich)/Höchster Schulabschluss - Familienstand
+(ausführlich) - Religion/Staatsangehörigkeit (Gruppen)",09.05.2011 - 09.05.2011
+2000S-3060,Personen: Höchster beruflicher Abschluss (ausführlich) - Höchster Schulabschluss - Alter/Familienstand/Geschlecht/Religion/Staatsangehörigkeit (Gruppen),09.05.2011 - 09.05.2011
+2000S-3061,"Personen: Höchster beruflicher Abschluss
+(ausführlich)/Höchster Schulabschluss - Religion -
+Staatsangehörigkeit (Gruppen)",09.05.2011 - 09.05.2011
+2000S-3062,"Personen: Höchster beruflicher Abschluss (ausführlich) -
+Religion (ausführlich) - Staatsangehörigkeit",09.05.2011 - 09.05.2011
+2000S-3063,"Personen: Höchster beruflicher Abschluss (ausführlich) -
+Familienstand - Art der Wohnungsnutzung/Gebäudetyp
+(Bauweise)/Gebäudetyp (Größe)",09.05.2011 - 09.05.2011
+2000S-3064,"Personen: Höchster beruflicher Abschluss (ausführlich) -
+Größe des privaten Haushalts - Typ des privaten Haushalts
+(Familien)",09.05.2011 - 09.05.2011
+2000S-3065,"Personen: Höchster beruflicher Abschluss (ausführlich) -
+Alter (5er-Jahresgruppen)/Familienstand/Geschlecht - Typ des
+privaten Haushalts (nach Lebensform)",09.05.2011 - 09.05.2011
+2000S-3066,"Personen: Höchster beruflicher Abschluss (ausführlich) -
+Größe der Kernfamilie - Typ der Kernfamilie (nach Familien)",09.05.2011 - 09.05.2011
+2000S-3067,"Personen: Höchster beruflicher Abschluss (ausführlich) -
+Geschlecht - Typ der Kernfamilie (nach Lebensform)",09.05.2011 - 09.05.2011
+2000S-3068,"Personen: Höchster beruflicher Abschluss (ausführlich) -
+Erwerbsstatus (ausführlich)/Religion (ausführlich) - Typ der
+Kernfamilie (nach Lebensform)",09.05.2011 - 09.05.2011
+2000S-3069,"Personen: Höchster Schulabschluss - Alter (11 Altersklassen)
+- Migrationshintergrund und -erfahrung",09.05.2011 - 09.05.2011
+2000S-3070,Personen: Höchster Schulabschluss - Alter (10er Jahresgruppen)/Migrationshintergrund und -erfahrung/Staatsangehörigkeit (Ausgew. Länder) - Geschlecht,09.05.2011 - 09.05.2011
+2000S-3071,"Personen: Höchster Schulabschluss - Alter
+(10er-Jahresgruppen) - Migrationshintergrund und -erfahrung",09.05.2011 - 09.05.2011
+2000S-3072,"Personen: Höchster Schulabschluss - Alter
+(5er-Jahresgruppen)/Familienstand (ausführlich)/Höchster
+beruflicher Abschluss - Geschlecht",09.05.2011 - 09.05.2011
+2000S-3073,Personen: Höchster Schulabschluss - Alter (5er-Jahresgruppen)/Geschlecht/Religion (ausführlich) - Erwerbsstatus (ausführlich),09.05.2011 - 09.05.2011
+2000S-3074,Personen: Höchster Schulabschluss - Alter (10er-Jahresgruppen)/Migrationshintergrund und -erfahrung - Familienstand (ausführlich),09.05.2011 - 09.05.2011
+2000S-3075,"Personen: Höchster Schulabschluss - Familienstand - Art der
+Wohnungsnutzung/Gebäudetyp (Bauweise)",09.05.2011 - 09.05.2011
+2000S-3076,"Personen: Höchster Schulabschluss - Geschlecht - Typ der
+Kernfamilie (nach Lebensform)",09.05.2011 - 09.05.2011
+2000S-3077,"Personen: Art der Einpendler - Alter (11
+Altersklassen)/Familienstand (ausführlich) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-3078,Personen: Art der Einpendler - Höchster beruflicher Abschluss (ausf.) - Geschlecht/Alter/Migrationshintergrund und -erfahrung/Religion (ausf.),09.05.2011 - 09.05.2011
+2000S-3079,"Personen: Art der Einpendler - Religion (ausführlich) -
+Geschlecht/Familienstand (ausführlich)/Migrationshintergrund
+und -erfahrung",09.05.2011 - 09.05.2011
+2000S-3080,"Personen: Art der Einpendler - Wirt.zweig
+Wirtschafts(unter)bereiche - Familienstand (ausführlich)",09.05.2011 - 09.05.2011
+2000S-3081,"Personen: Art der Einpendler - Alter (10er-Jahresgruppen) -
+Geschlecht",09.05.2011 - 09.05.2011
+2000S-3082,"Personen: Art der Einpendler - Beruf (Bereiche KldB
+2010)/Wirt.zweig Wirtschafts(unter)bereiche - Alter
+(10er-Jahresgruppen)/Geschlecht",09.05.2011 - 09.05.2011
+2000S-3083,"Personen: Art der Einpendler - Wirt.zweig
+Wirtschafts(unter)bereiche - Beruf (Bereiche KldB 2010)",09.05.2011 - 09.05.2011
+2000S-3084,"Personen: Art der Einpendler - Stellung im
+Beruf/Wirtschaftszweige (Abschnitte) - Geschlecht/Höchster
+beruflicher Abschluss (ausführlich)",09.05.2011 - 09.05.2011
+2000S-3085,"Personen: Art der Einpendler - Stellung im Beruf -
+Wirtschaftszweige (Abschnitte)",09.05.2011 - 09.05.2011
+2000S-3086,"Personen: Art der Auspendler - Alter (11
+Altersklassen)/Familienstand (ausführlich)/Höchster
+beruflicher Abschluss (ausführlich) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-3087,Personen: Art der Auspendler - Höchster beruflicher Abschluss (ausf.) - Alter (11 Altersklassen)/Migrationshintergrund und -erfahrung/Religion (ausf.),09.05.2011 - 09.05.2011
+2000S-3088,"Personen: Art der Auspendler - Religion (ausführlich) -
+Geschlecht/Familienstand (ausführlich)/Migrationshintergrund
+und -erfahrung",09.05.2011 - 09.05.2011
+2000S-3089,"Personen: Art der Auspendler - Wirt.zweig
+Wirtschafts(unter)bereiche - Familienstand (ausführlich)",09.05.2011 - 09.05.2011
+2000S-3090,"Personen: Art der Auspendler - Alter (10er-Jahresgruppen) -
+Geschlecht",09.05.2011 - 09.05.2011
+2000S-3091,"Personen: Art der Auspendler - Beruf (Bereiche KldB
+2010)/Wirt.zweig Wirtschafts(unter)bereiche - Alter
+(10er-Jahresgruppen)/Geschlecht",09.05.2011 - 09.05.2011
+2000S-3092,"Personen: Art der Auspendler - Wirt.zweig
+Wirtschafts(unter)bereiche - Beruf (Bereiche KldB 2010)",09.05.2011 - 09.05.2011
+2000S-3093,"Personen: Art der Auspendler - Stellung im
+Beruf/Wirtschaftszweig (Abschnitte) - Höchster beruflicher
+Abschluss (ausführlich)/Geschlecht",09.05.2011 - 09.05.2011
+2000S-3094,"Personen: Art der Auspendler - Stellung im Beruf -
+Wirtschaftszweige (Abschnitte)",09.05.2011 - 09.05.2011
+2000S-3095,"Personen: Beruf (Bereiche KldB 2010) - Familienstand
+(ausführlich) - Migrationshintergrund und -erfahrung",09.05.2011 - 09.05.2011
+2000S-3096,"Personen: Beruf (Bereiche KldB 2010) - Staatsangehörigkeit
+(Ausgewählte Länder) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-3097,Personen: Beruf (Bereiche KldB 2010) - Alter/Höchster beruflicher Abschluss (ausf.)/Höchster Schulabschluss/Religion (ausführlich)/Stellung im Beruf - Geschlecht,09.05.2011 - 09.05.2011
+2000S-3098,"Personen: Beruf (Bereiche KldB 2010) - Höchster beruflicher
+Abschluss (ausführlich) - Höchster Schulabschluss",09.05.2011 - 09.05.2011
+2000S-3099,"Personen: Beruf (Bereiche KldB 2010) - Stellung im Beruf -
+Höchster beruflicher Abschluss (ausführlich)/Höchster
+Schulabschluss/Religion",09.05.2011 - 09.05.2011
+2000S-3100,"Personen: Beruf (Bereiche KldB 2010) - Wirt.zweig
+Wirtschafts(unter)bereiche - Alter/Geschlecht/Höchster
+berufl. Abschluss (ausf.)/Höchster Schulabschluss/Religion",09.05.2011 - 09.05.2011
+2000S-3101,"Personen: Beruf (Bereiche KldB 2010) - Alter
+(10er-Jahresgruppen)/Geschlecht/Wirt.zweig (Unter)bereiche -
+Typ des priv. Haushalts (Lebensform)",09.05.2011 - 09.05.2011
+2000S-3102,"Personen: Beruf (Bereiche KldB 2010) - Geschlecht/Höchster
+beruflicher Abschluss (ausf.)/Wirt.zweig (Unter)bereiche -
+Typ der Kernfamilie (Lebensform)",09.05.2011 - 09.05.2011
+2000S-3103,"Personen: Beruf (Hauptgruppen ISCO-08) - Höchster
+beruflicher Abschluss (ausführlich)/Höchster Schulabschluss
+- Geschlecht",09.05.2011 - 09.05.2011
+2000S-3104,"Personen: Beruf (Hauptgruppen ISCO-08) - Alter/Erwerbsstatus
+(ausführlich)/Familienstand/Religion/Staatsangehörigkeit/Ste
+llung im Beruf/Wirtschaftszweige (Abschnitte) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-3105,"Personen: Beruf (Hauptgruppen ISCO-08) - Erwerbsstatus
+(ausführlich) - Höchster beruflicher Abschluss
+(ausführlich)/Stellung im Beruf",09.05.2011 - 09.05.2011
+2000S-3106,"Personen: Beruf (Hauptgruppen ISCO-08) - Familienstand -
+Alter (10er-Jahresgruppen)/Wirtschaftszweige (Abschnitte)",09.05.2011 - 09.05.2011
+2000S-3107,"Personen: Beruf (Hauptgruppen ISCO-08) - Religion -
+Staatsangehörigkeit (Ausgewählte Länder)",09.05.2011 - 09.05.2011
+2000S-3108,"Personen: Beruf (Hauptgruppen ISCO-08) - Stellung im Beruf -
+Höchster beruflicher Abschluss
+(ausf.)/Religion/Staatsangehörigkeit (Ausgew. Länder)",09.05.2011 - 09.05.2011
+2000S-3109,"Personen: Beruf (Hauptgruppen ISCO-08) - Wirtschaftszweige
+(Abschnitte) - Alter (10er-Jahresgruppen)",09.05.2011 - 09.05.2011
+2000S-3110,"Personen: Beruf (Hauptgruppen ISCO-08) - Geschlecht/Höchster
+Schulabschluss - Typ der Kernfamilie (nach Lebensform)",09.05.2011 - 09.05.2011
+2000S-3111,"Personen: Beruf (Hauptgruppen KldB 2010) - Alter
+(10er-Jahresgruppen) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-3112,"Personen: Beruf (Hauptgruppen KldB 2010) -
+Migrationshintergrund und -erfahrung/Wirtschaftszweige
+(Abschnitte) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-3113,"Personen: Beruf (Hauptgruppen KldB 2010) -
+Migrationshintergrund und -erfahrung - Wirtschaftszweige
+(Abschnitte)",09.05.2011 - 09.05.2011
+2000S-3114,"Personen: Stellung im Beruf - Alter
+(10er-Jahresgruppen)/Familienstand (ausführlich) -
+Migrationshintergrund und -erfahrung",09.05.2011 - 09.05.2011
+2000S-3115,"Personen: Stellung im Beruf - Alter
+(10er-Jahresgruppen)/Staatsangehörigkeit (Ausgewählte
+Länder) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-3116,"Personen: Stellung im Beruf - Migrationshintergrund -
+Erwerbsstatus",09.05.2011 - 09.05.2011
+2000S-3117,"Personen: Stellung im Beruf - Alter (11
+Altersklassen)/Migrationshintergrund und -erfahrung/Religion
+(ausführlich) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-3118,"Personen: Stellung im Beruf - Alter (11 Altersklassen) -
+Migrationshintergrund und -erfahrung",09.05.2011 - 09.05.2011
+2000S-3119,"Personen: Stellung im Beruf -
+Erwerbsstatus/Migrationshintergrund - Staatsangehörigkeit
+(Ausgewählte Länder)",09.05.2011 - 09.05.2011
+2000S-3120,"Personen: Stellung im Beruf - Höchster beruflicher Abschluss
+(ausführlich)/Höchster Schulabschluss - Geschlecht",09.05.2011 - 09.05.2011
+2000S-3121,"Personen: Stellung im Beruf - Wirtschafts(unter)ber. - Beruf
+(Ber. KldB 2010)/Geschlecht/Höchster berufl. Abschl.
+(ausf.)/Höchster Schulabschl./Religion (ausf.)",09.05.2011 - 09.05.2011
+2000S-3122,"Personen: Stellung im Beruf - Alter/Erwerbsstatus
+(ausführlich)/Religion/Staatsangehörigkeit
+(Kontinente)/Wirtschaftszweige (Abschnitte) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-3123,"Personen: Stellung im Beruf - Erwerbsstatus (ausführlich) -
+Höchster beruflicher Abschluss (ausführlich)/Religion
+(ausführlich)/Staatsangehörigkeit (Kontinente)",09.05.2011 - 09.05.2011
+2000S-3124,"Personen: Stellung im Beruf - Religion - Staatsangehörigkeit
+(Ausgewählte Länder)",09.05.2011 - 09.05.2011
+2000S-3125,"Personen: Stellung im Beruf - Religion (ausführlich) -
+Staatsangehörigkeit (Kontinente)",09.05.2011 - 09.05.2011
+2000S-3126,"Personen: Stellung im Beruf - Wirtschaftszweig (Abschnitte)
+- Höchster beruflicher Abschluss (ausführlich)",09.05.2011 - 09.05.2011
+2000S-3127,"Personen: Stellung im Beruf - Erwerbsstatus
+(ausführlich)/Geschlecht/Religion (ausführlich) - Typ des
+privaten Haushalts (nach Familien)",09.05.2011 - 09.05.2011
+2000S-3128,"Personen: Stellung im Beruf - Alter
+(Marktforschungsrelevante Altersgruppen)/Geschlecht - Typ
+des privaten Haushalts (nach Kindern)",09.05.2011 - 09.05.2011
+2000S-3129,"Personen: Stellung im Beruf - Geschlecht - Typ der
+Kernfamilie (nach Lebensform)",09.05.2011 - 09.05.2011
+2000S-3130,"Personen: Wirt.zweig Wirtschafts(unter)bereiche -
+Familienstand (ausführlich) - Migrationshintergrund und
+-erfahrung",09.05.2011 - 09.05.2011
+2000S-3131,"Personen: Wirt.zweig Wirtschafts(unter)bereiche - Alter
+(10er-Jahresgruppen)/Staatsangehörigkeit (Ausgewählte
+Länder) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-3132,"Personen: Wirt.zweig Wirtschafts(unter)bereiche - Alter
+(10er-Jahresgruppen) -  Staatsangehörigkeit (Ausgewählte
+Länder)",09.05.2011 - 09.05.2011
+2000S-3133,"Personen: Wirt.zweig Wirtschafts(unter)bereiche - Höchster
+beruflicher Abschluss (ausführlich)/Höchster
+Schulabschluss/Religion (ausführlich) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-3134,"Personen: Wirt.zweig Wirtschafts(unter)bereiche - Höchster
+beruflicher Abschluss (ausführlich) - Höchster
+Schulabschluss",09.05.2011 - 09.05.2011
+2000S-3135,"Personen: Wirt.zweig Wirtschafts(unter)bereiche - Alter
+(10er-Jahresgruppen)/Geschlecht/Staatsangehörigkeit
+(Ausgew. Länder) - Typ des privaten Haushalts (Lebensform)",09.05.2011 - 09.05.2011
+2000S-3136,"Personen: Wirt.zweig Wirtschafts(unter)bereiche - Höchster
+beruflicher Abschluss (ausführlich)/Geschlecht - Typ der
+Kernfamilie (nach Lebensform)",09.05.2011 - 09.05.2011
+2000S-3137,"Personen: Wirtschaftszweige - Höchster beruflicher Abschluss
+(ausführlich)/Religion (ausführlich)/Staatsangehörigkeit
+(Gruppen) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-3138,"Personen: Wirtschaftszweige - Religion
+(ausführlich)/Staatsangehörigkeit (Gruppen) - Höchster
+beruflicher Abschluss (ausführlich)",09.05.2011 - 09.05.2011
+2000S-3139,"Personen: Wirtschaftszweige - Religion (ausführlich) -
+Staatsangehörigkeit (Gruppen)",09.05.2011 - 09.05.2011
+2000S-3140,"Personen: Wirtschaftszweige - Baujahr (Jahrzehnte)/Fläche
+der Wohnung (10 m²-Intervalle) - Art des Gebäudes",09.05.2011 - 09.05.2011
+2000S-3141,"Personen: Wirtschaftszweige - Baujahr (Jahrzehnte) - Fläche
+der Wohnung (10 m²-Intervalle)",09.05.2011 - 09.05.2011
+2000S-3142,"Personen: Wirtschaftszweige - Höchster beruflicher Abschluss
+- Art des Gebäudes/Baujahr (Jahrzehnte)/Fläche der Wohnung
+(10 m²-Intervalle)",09.05.2011 - 09.05.2011
+2000S-3143,"Personen: Wirtschaftszweige (Abschnitte) - Alter (11
+Altersklassen)/Migrationshintergrund und -erfahrung -
+Geschlecht",09.05.2011 - 09.05.2011
+2000S-3144,"Personen: Wirtschaftszweige (Abschnitte) - Alter (11
+Altersklassen) - Migrationshintergrund und -erfahrung",09.05.2011 - 09.05.2011
+2000S-3145,"Personen: Wirtschaftszweige (Abschnitte) -
+Familienstand/Religion (ausführlich) - Alter
+(10er-Jahresgruppen)",09.05.2011 - 09.05.2011
+2000S-3146,"Personen: Wirtschaftszweige (Abschnitte) - Familienstand
+(ausführlich) - Religion (ausführlich)",09.05.2011 - 09.05.2011
+2000S-3147,Personen: Wirtschaftszweig (Abschnitte) - Alter (10er-Jahresgruppen)/Familienstand/Höchster berufl. Abschluss (ausf.)/Religion (ausf.)/Staatangehörigkeit (Kontinente) - Geschlecht,09.05.2011 - 09.05.2011
+2000S-3148,"Personen: Wirtschaftszweige (Abschnitte) - Alter (11
+Altersklassen) - Staatangehörigkeit (Kontinente)",09.05.2011 - 09.05.2011
+2000S-3149,"Personen: Wirtschaftszweige (Abschnitte) - Alter (11
+Altersklassen)/Geschlecht/Staatangehörigkeit (Kontinente) -
+Größe des privaten Haushalts",09.05.2011 - 09.05.2011
+2000S-3150,"Personen: Wirtschaftszweige (Abschnitte) - Alter
+(10er-Jahresgruppen)/Geschlecht - Typ des privaten Haushalts
+(nach Lebensform)",09.05.2011 - 09.05.2011
+2000S-3151,"Personen: Beruf (Hauptgruppen ISCO-08) -
+Migrationshintergrund (Ausgewählte Länder) -
+Geschlecht/Höchster beruflicher Abschluss (ausführlich)",09.05.2011 - 09.05.2011
+2000S-3152,"Personen: Stellung im Beruf/Wirtschaftszweige (Abschnitte) -
+Migrationshintergrund - Alter (11 Altersklassen)/Geschlecht",09.05.2011 - 09.05.2011
+2000S-3153,"Personen: Wirt.zweig (Wirtschafts(unter)bereiche/Abschnitte)
+- Migrationserfahrung (Zuzugsjahrzehnt) - Alter
+(10er-Jahresgruppen)/Geschlecht",09.05.2011 - 09.05.2011
+2000S-3154,"Personen: Wirt.zweig (Wirtschafts(unter)bereiche/Abschnitte)
+- Migrationserfahrung (Zuzugsjahrzehnt) - Typ des privaten
+Haushalts (nach Lebensform)",09.05.2011 - 09.05.2011
+2000S-3155,"Personen: Migrationshintergrund (Ausgewählte Länder) - Alter
+(10er-Jahresgruppen) - Geschlecht/Migrationshintergrund und
+-erfahrung/Staatsangehörigkeit (Ausgewählte Länder)",09.05.2011 - 09.05.2011
+2000S-3156,Personen: Migrationshintergrund (Ausgewählte Länder) - Alter (11 Altersklassen)/Familienstand - Migrationshintergrund und -erfahrung,09.05.2011 - 09.05.2011
+2000S-3157,"Personen: Migrationshintergrund - Alter (11 Altersklassen) -
+Erwerbsstatus/Familienstand (ausführl.)/Geschlecht/Religion
+(ausführl.)/Staatsangehörigkeit (Ausgew. Länder)",09.05.2011 - 09.05.2011
+2000S-3158,Personen: Migrationshintergrund - Erwerbsstatus/Familienstand (ausführlich)/Religion (ausführlich)/Staatsangehörigkeit (Ausgew. Länder) - Geschlecht,09.05.2011 - 09.05.2011
+2000S-3159,"Personen: Migrationshintergrund (Ausgewählte Länder) -
+Erwerbsstatus - Staatsangehörigkeit (Ausgewählte Länder)",09.05.2011 - 09.05.2011
+2000S-3160,"Personen: Migrationshintergrund - Alter
+(Marktforschungsrelevante Altersgruppen) -
+Migrationshintergrund (Aufenthaltsdauer)",09.05.2011 - 09.05.2011
+2000S-3161,Personen: Migrationshintergrund (Ausgew. Länder/Kontinente) - Alter (Marktforschungsrel. Altersgruppen)/Aufenthaltsdauer - Familienstand (ausf.)/Geschlecht,09.05.2011 - 09.05.2011
+2000S-3162,"Personen: Migrationshintergrund (Ausgewählte Länder) - Alter
+(5er-Jahresgruppen) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-3163,"Personen: Migrationshintergrund  - Alter (11
+Altersklassen)/Geschlecht - Ausstattung der Wohnung",09.05.2011 - 09.05.2011
+2000S-3164,"Personen: Migrationshintergrund  - Alter (11
+Altersklassen)/Fläche der Wohnung (20 m²-Intervalle)/Räume -
+Größe des privaten Haushalts",09.05.2011 - 09.05.2011
+2000S-3165,"Personen: Migrationshintergrund  - Alter (11
+Altersklassen)/Größe des privaten Haushalts - Typ des
+privaten Haushalts (nach Familien)",09.05.2011 - 09.05.2011
+2000S-3166,Personen: Migrationshintergrund (Ausgew. Länder) - Alter (Marktforschungsrel. Altersgruppen)/Aufenthaltsdauer/Geschlecht - Typ des privaten Haushalts (nach Familien),09.05.2011 - 09.05.2011
+2000S-3167,"Personen: Migrationshintergrund (Ausgewählte Länder) -
+Höchster beruflicher Abschluss (ausführlich) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-3168,"Personen: Migrationshintergrund (Aufenthaltsdauer) -
+Migrationshintergrund und -erfahrung - Alter
+(10er-Jahresgruppen)/Familienstand (ausführlich)",09.05.2011 - 09.05.2011
+2000S-3169,"Personen: Migrationshintergrund (Aufenthaltsdauer) -
+Geschlecht - Alter (Jahresschritte)",09.05.2011 - 09.05.2011
+2000S-3170,"Personen: Migrationshintergrund (Aufenthaltsdauer) - Alter
+(Marktforschungsrelevante Altersgruppen) - Familienstand
+(ausführlich)/Geschlecht",09.05.2011 - 09.05.2011
+2000S-3171,"Personen: Migrationshintergrund (Aufenthaltsdauer) -
+Geschlecht - Familienstand (ausführlich)",09.05.2011 - 09.05.2011
+2000S-3172,"Personen: Migrationshintergrund (Aufenthaltsdauer) - Alter
+(Marktforschungsrelevante Altersgruppen)/Geschlecht - Typ
+des privaten Haushalts (nach Familien)",09.05.2011 - 09.05.2011
+2000S-3173,"Personen: Migrationshintergrund (Länder) - Alter
+(Jahresschritte) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-3174,"Personen: Migrationshintergrund (Länder) -
+Migrationserfahrung (Zuzugsjahr) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-3175,"Personen: Migrationshintergrund (Länder) -
+Migrationshintergrund und -erfahrung - Eigentumsverhältnisse
+der Wohnung",09.05.2011 - 09.05.2011
+2000S-3176,"Personen: Migrationserfahrung (Zuzugsjahrzehnt) - Alter
+(10er-Jahresgruppen)/Staatsangehörigkeit (Ausgewählte
+Länder) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-3177,"Personen: Migrationserfahrung (Zuzugsjahrzehnt) -
+Migrationshintergrund und -erfahrung - Alter
+(10er-Jahresgruppen)/Familienstand (ausführlich)",09.05.2011 - 09.05.2011
+2000S-3178,"Personen: Migrationserfahrung (Zuzugsjahrzehnt) - Alter
+(10er-Jahresgruppen)/Geschlecht - Typ des privaten Haushalts
+(nach Lebensform)",09.05.2011 - 09.05.2011
+2000S-3179,Schüler: Schulform - Klassenstufen - Geschlecht,09.05.2011 - 09.05.2011
+2000S-3180,"Schüler: Schulform - Klassenstufen/Geschlecht -
+Migrationshintergrund und -erfahrung",09.05.2011 - 09.05.2011
+2000S-3181,"Schüler: Klassenstufen - Geschlecht - Migrationshintergrund
+und -erfahrung",09.05.2011 - 09.05.2011
+2000S-3182,"Schüler: Migrationshintergrund (Aufenthaltsdauer) -
+Schulform - Klassenstufen",09.05.2011 - 09.05.2011
+2000S-3183,"Schüler: Migrationshintergrund (Aufenthaltsdauer) -
+Schulform/Klassenstufen - Geschlecht",09.05.2011 - 09.05.2011
+2000S-3184,"Schüler: Migrationshintergrund (Ausgewählte Länder) - Alter
+(Infrastrukturrelevante Altersgruppen) - Schulform",09.05.2011 - 09.05.2011
+2000S-4001,"Personen: Erwerbsstatus (ausführlich) - Familienstand
+(ausführlich) - Alter (5er-Jahresgruppen) -
+Geschlecht/Religion (ausführlich)",09.05.2011 - 09.05.2011
+2000S-4002,Personen: Erwerbsstatus (ausführlich) - Religion (ausführlich) - Alter (5er-Jahresgruppen)/Staatsangehörigkeit/Familienstand (ausführlich) - Geschlecht,09.05.2011 - 09.05.2011
+2000S-4003,"Personen: Erwerbsstatus (ausführlich) - Religion
+(ausführlich) - Alter (10er-Jahresgruppen) -
+Migrationshintergrund",09.05.2011 - 09.05.2011
+2000S-4004,"Personen: Erwerbsstatus (ausführlich) - Religion
+(ausführlich) - Geschlecht - Typ des privaten Haushalts
+(nach Familien)",09.05.2011 - 09.05.2011
+2000S-4005,"Personen: Erwerbsstatus (ausführlich) - Religion
+(ausführlich) - Familienstand (ausführlich) - Größe der
+Kernfamilie",09.05.2011 - 09.05.2011
+2000S-4006,"Personen: Erwerbsstatus (ausführlich) - Familienstand
+(ausführlich)/Religion (ausführlich) - Geschlecht - Größe
+der Kernfamilie",09.05.2011 - 09.05.2011
+2000S-4007,"Personen: Erwerbsstatus (ausführlich) - Religion
+(ausführlich) - Geschlecht - Typ der Kernfamilie (nach
+Lebensform)",09.05.2011 - 09.05.2011
+2000S-4008,"Personen: Erwerbsstatus (ausführlich) - Religion
+(ausführlich) - Migrationshintergrund - Typ der Kernfamilie
+(nach Familien)",09.05.2011 - 09.05.2011
+2000S-4009,"Personen: Migrationshintergrund - Alter (11 Altersklassen) -
+Staatsangehörigkeit (Kontinente/Gruppen) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-4010,"Personen: Migrationshintergrund - Familienstand
+(ausführlich) - Alter (5er-Jahresgruppen) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-4011,"Personen: Migrationshintergrund - Alter (11 Altersklassen) -
+Größe des privaten Haushalts - Typ des privaten Haushalts
+(nach Familien)",09.05.2011 - 09.05.2011
+2000S-4012,"Personen: Migrationshintergrund - Familienstand
+(ausführlich) - Alter (5er-Jahresgruppen) - Typ des privaten
+Haushalts (nach Familien)",09.05.2011 - 09.05.2011
+2000S-4013,"Personen: Migrationshintergrund - Familienstand
+(ausführlich)/Alter (5er-Jahresgruppen) - Geschlecht - Typ
+des privaten Haushalts (nach Familien)",09.05.2011 - 09.05.2011
+2000S-4014,"Personen: Migrationshintergrund - Familienstand
+(ausführlich)/Alter (5er-Jahresgruppen) - Geschlecht - Typ
+der Kernfamilie (nach Lebensform)",09.05.2011 - 09.05.2011
+2000S-4015,"Personen: Migrationshintergrund - Familienstand
+(ausführlich) - Alter (5er-Jahresgruppen) - Typ der
+Kernfamilie (nach Lebensform)",09.05.2011 - 09.05.2011
+2000S-4016,Personen: Migrationshintergrund und -erfahrung - Erwerbsstatus/Familienstand (ausführlich)/Religion (ausführlich)/Staatsangehörigkeit (Ausgewählte Länder) - Alter - Geschlecht,09.05.2011 - 09.05.2011
+2000S-4017,"Personen: Migrationshintergrund und -erfahrung -
+Familienstand (ausführlich) - Religion (ausführlich) -
+Staatsangehörigkeit (Ausgewählte Länder)",09.05.2011 - 09.05.2011
+2000S-4018,"Personen: Migrationshintergrund und -erfahrung -
+Familienstand (ausführlich) - Alter (10er-Jahresgruppen) -
+Geschlecht",09.05.2011 - 09.05.2011
+2000S-4019,"Personen: Migrationshintergrund und -erfahrung - Alter (11
+Altersklassen) - Geschlecht - Art der
+Wohnungsnutzung/Ausstattung der Wohnung/Gebäudetyp (Größe)",09.05.2011 - 09.05.2011
+2000S-4020,"Personen: Migrationshintergrund und -erfahrung - Alter (11
+Altersklassen) - Erwerbsstatus - Gebäudetyp (Größe)",09.05.2011 - 09.05.2011
+2000S-4021,"Personen: Migrationshintergrund und -erfahrung - Alter (11
+Altersklassen) - Größe des privaten Haushalts - Typ des
+privaten Haushalts (Familien/Lebensform)",09.05.2011 - 09.05.2011
+2000S-4022,"Personen: Migrationshintergrund und -erfahrung - Baujahr
+(Jahrzehnte) - Eigentumsform des Gebäudes - Gebäudetyp
+(Bauweise)",09.05.2011 - 09.05.2011
+2000S-4023,"Personen: Migrationshintergrund und -erfahrung - Baujahr
+(Jahrzehnte) - Eigentumsform des Gebäudes/Gebäudetyp
+(Bauweise) - Wohnungen im Gebäude",09.05.2011 - 09.05.2011
+2000S-4024,"Personen: Migrationshintergrund und -erfahrung - Baujahr
+(Jahrzehnte) - Wohnungen im Gebäude (3 Klassen) - Art des
+Gebäudes",09.05.2011 - 09.05.2011
+2000S-4025,"Personen: Migrationshintergrund und -erfahrung -
+Eigentumsform des Gebäudes - Gebäudetyp (Bauweise) -
+Wohnungen im Gebäude",09.05.2011 - 09.05.2011
+2000S-4026,Personen: Religion (ausführlich) - Familienstand (ausführlich) - Alter (10er-Jahresgruppe/5er-Jahresgruppen/Marktforschungsrelevant e Altersgruppen) - Geschlecht,09.05.2011 - 09.05.2011
+2000S-4027,"Personen: Religion (ausführlich) - Alter (5er-Jahresgruppen)
+- Geschlecht - Typ der Kernfamilie (nach Lebensform)",09.05.2011 - 09.05.2011
+2000S-4028,"Personen: Religion (ausführlich) - Familienstand
+(ausführlich) - Alter (5er-Jahresgruppen) - Typ der
+Kernfamilie (nach Lebensform)",09.05.2011 - 09.05.2011
+2000S-4029,"Personen: Religion (ausführlich) - Familienstand
+(ausführlich) - Geschlecht - Typ der Kernfamilie (nach
+Lebensform)/Größe der Kernfamilie",09.05.2011 - 09.05.2011
+2000S-4030,"Personen: Höchster beruflicher Abschluss - Höchster
+Schulabschluss - Erwerbsstatus (ausführlich)/Alter
+(5er-Jahresgruppen) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-4031,"Personen: Höchster beruflicher Abschluss - Höchster
+Schulabschluss/Geschlecht - Erwerbsstatus (ausführlich) -
+Alter (5er-Jahresgruppen)",09.05.2011 - 09.05.2011
+2000S-4032,"Personen: Höchster beruflicher Abschluss - Erwerbsstatus
+(ausführlich)/Migrationshintergrund - Alter
+(10er-Jahresgruppen) - Religion (ausführlich)",09.05.2011 - 09.05.2011
+2000S-4033,"Personen: Höchster beruflicher Abschluss - Erwerbsstatus
+(ausführlich) - Alter (10er-Jahresgruppen)/Religion
+(ausführlich) - Migrationshintergrund",09.05.2011 - 09.05.2011
+2000S-4034,"Personen: Höchster beruflicher Abschluss - Baujahr
+(Jahrzehnte) - Art des Gebäudes - Fläche der Wohnung (10
+m²-Intervalle)",09.05.2011 - 09.05.2011
+2000S-4035,"Personen: Höchster beruflicher Abschluss - Erwerbsstatus
+(ausführlich) - Religion (ausführlich)/Migrationshintergrund
+- Typ der Kernfamilie (nach Familien)",09.05.2011 - 09.05.2011
+2000S-4036,"Personen: Höchster beruflicher Abschluss -
+Migrationshintergrund - Religion (ausführlich) - Typ der
+Kernfamilie (nach Familien)",09.05.2011 - 09.05.2011
+2000S-4037,Personen: Höchster beruflicher Abschluss (ausführlich)/Höchster Schulabschluss - Erwerbsstatus (ausführlich) - Alter (5er-Jahresgruppen)/Religion (ausführlich) - Geschlecht,09.05.2011 - 09.05.2011
+2000S-4038,Personen: Höchster beruflicher Abschluss (ausführlich) - Erwerbsstatus (ausführlich) - Familienstand (ausführlich)/Staatsangehörigkeit (Ausgewählte Länder) - Geschlecht/Religion,09.05.2011 - 09.05.2011
+2000S-4039,"Personen: Höchster beruflicher Abschluss (ausführlich) -
+Familienstand - Alter (5er-Jahresgruppen) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-4040,"Personen: Höchster Schulabschluss/Höchster beruflicher
+Abschluss (ausführlich) - Familienstand (ausführlich) -
+Religion - Staatsangehörigkeit (Gruppen)",09.05.2011 - 09.05.2011
+2000S-4041,"Personen: Höchster Schulabschluss/Höchster beruflicher
+Abschluss (ausführlich) - Familienstand (ausführlich) -
+Religion (ausführlich) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-4042,"Personen: Höchster beruflicher Abschluss (ausführlich) -
+Höchster Schulabschluss - Alter/Erwerbsstatus
+(ausf.)/Familienstand (ausf.)/Religion (ausf.) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-4043,Personen: Höchster beruflicher Abschluss (ausführlich) - Höchster Schulabschluss - Familienstand (ausführlich) - Religion/Religion (ausführlich)/Staatsangehörigkeit (Gruppen),09.05.2011 - 09.05.2011
+2000S-4044,"Personen: Höchster beruflicher Abschluss (ausführlich) -
+Höchster Schulabschluss - Erwerbsstatus (ausführlich) -
+Religion (ausführlich)",09.05.2011 - 09.05.2011
+2000S-4045,"Personen: Höchster beruflicher Abschluss (ausführlich) -
+Höchster Schulabschluss - Religion - Staatsangehörigkeit
+(Gruppen)",09.05.2011 - 09.05.2011
+2000S-4046,"Personen: Höchster beruflicher Abschluss (ausführlich) -
+Religion (ausführlich) - Staatsangehörigkeit (Ausgewählte
+Länder/Gruppen) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-4047,"Personen: Höchster beruflicher Abschluss (ausführlich) -
+Alter (5er-Jahresgruppen)/Familienstand - Geschlecht - Typ
+des privaten Haushalts (nach Lebensform)",09.05.2011 - 09.05.2011
+2000S-4048,"Personen: Höchster beruflicher Abschluss (ausführlich) -
+Familienstand - Alter (5er-Jahresgruppen) - Typ des privaten
+Haushalts (nach Lebensform)",09.05.2011 - 09.05.2011
+2000S-4049,"Personen: Höchster beruflicher Abschluss (ausführlich) -
+Religion (ausführlich)/Erwerbsstatus (ausführlich) -
+Geschlecht - Typ der Kernfamilie (nach Lebensform)",09.05.2011 - 09.05.2011
+2000S-4050,"Personen: Höchster beruflicher Abschluss (ausführlich) -
+Erwerbsstatus (ausführlich) - Religion (ausführlich) - Typ
+der Kernfamilie (nach Lebensform)",09.05.2011 - 09.05.2011
+2000S-4051,"Personen: Höchster Schulabschluss - Alter
+(10er-Jahresgruppen)/Familienstand (ausführlich) -
+Geschlecht - Migrationshintergrund und -erfahrung",09.05.2011 - 09.05.2011
+2000S-4052,"Personen: Höchster Schulabschluss - Familienstand
+(ausführlich) - Alter (10er-Jahresgruppen) -
+Geschlecht/Migrationshintergrund und -erfahrung",09.05.2011 - 09.05.2011
+2000S-4053,"Personen: Art der Einpendler - Höchster beruflicher
+Abschluss (ausführlich) - Alter (11 Altersklassen) -
+Geschlecht",09.05.2011 - 09.05.2011
+2000S-4054,"Personen: Art der Einpendler - Höchster beruflicher
+Abschluss (ausführlich) - Religion (ausführlich) -
+Migrationshintergrund und -erfahrung",09.05.2011 - 09.05.2011
+2000S-4055,"Personen: Art der Einpendler - Religion (ausführlich) -
+Familienstand (ausführlich) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-4056,"Personen: Art der Einpendler - Beruf (Bereiche KldB 2010) -
+Alter (10er-Jahresgruppen)/Wirt.zweig
+Wirtschafts(unter)bereiche - Geschlecht",09.05.2011 - 09.05.2011
+2000S-4057,"Personen: Art der Einpendler - Wirt.zweig
+Wirtschafts(unter)bereiche - Beruf (Bereiche KldB
+2010)/Geschlecht - Alter (10er-Jahresgruppen)",09.05.2011 - 09.05.2011
+2000S-4058,"Personen: Art der Einpendler - Stellung im Beruf - Höchster
+beruflicher Abschluss (ausführlich)/Wirtschaftszweig
+(Abschnitte) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-4059,"Personen: Art der Einpendler - Höchster beruflicher
+Abschluss (ausführlich) - Wirtschaftszweig (Abschnitte) -
+Stellung im Beruf/Geschlecht",09.05.2011 - 09.05.2011
+2000S-4060,"Personen: Art der Auspendler - Höchster beruflicher
+Abschluss (ausführlich) - Alter (11 Altersklassen) -
+Geschlecht",09.05.2011 - 09.05.2011
+2000S-4061,"Personen: Art der Auspendler - Höchster beruflicher
+Abschluss (ausführlich) - Religion (ausführlich) -
+Migrationshintergrund und -erfahrung",09.05.2011 - 09.05.2011
+2000S-4062,"Personen: Art der Auspendler - Religion (ausführlich) -
+Familienstand (ausführlich) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-4063,"Personen: Art der Auspendler - Beruf (Bereiche KldB 2010) -
+Alter (10er-Jahresgruppen) - Wirt.zweig
+Wirtschafts(unter)bereiche/Geschlecht",09.05.2011 - 09.05.2011
+2000S-4064,"Personen: Art der Auspendler - Beruf (Bereiche KldB
+2010)/Alter (10er-Jahresgruppen) - Wirt.zweig
+Wirtschafts(unter)bereiche - Geschlecht",09.05.2011 - 09.05.2011
+2000S-4065,"Personen: Art der Auspendler - Stellung im Beruf - Höchster
+beruflicher Abschluss (ausführlich)/Wirtschaftszweige
+(Abschnitte) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-4066,"Personen: Art der Auspendler - Höchster beruflicher
+Abschluss (ausführlich) - Wirtschaftszweige (Abschnitte) -
+Stellung im Beruf/Geschlecht",09.05.2011 - 09.05.2011
+2000S-4067,"Personen: Beruf (Bereiche KldB 2010) - Stellung im Beruf -
+Höchster beruflicher Abschluss (ausführlich)/Höchster
+Schulabschluss/Religion (ausführlich) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-4068,Personen: Beruf (KldB 2010) - Stellung im Beruf - Wirt.zweig (Unter)bereiche - Geschlecht/Höchster Schulabschluss/Höchster berufl. Abschluss (ausf.)/Religion (ausf.),09.05.2011 - 09.05.2011
+2000S-4069,"Personen: Beruf (KldB 2010) - Wirt.zweig (Unter)bereiche -
+Alter (10er-Jahresgruppen)/Höchster berufl. Abschluss
+(ausf.)/Höchster Schulabsch./Religion (ausf.) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-4070,"Personen: Beruf (Bereiche KldB 2010) - Höchster beruflicher
+Abschluss (ausführlich) - Höchster Schulabschluss -
+Wirt.zweig Wirtschafts(unter)bereiche/Geschlecht",09.05.2011 - 09.05.2011
+2000S-4071,"Personen: Beruf (Bereiche KldB 2010) - Alter
+(10er-Jahresgruppen) - Geschlecht - Typ des privaten
+Haushalts (nach Lebensform)",09.05.2011 - 09.05.2011
+2000S-4072,"Personen: Beruf (Bereiche KldB 2010) - Wirt.zweig
+(Unter)bereiche - Alter (10er-Jahresgruppen)/Geschlecht -
+Typ des privaten Haushalts (Lebensform)",09.05.2011 - 09.05.2011
+2000S-4073,"Personen: Beruf (Bereiche KldB 2010) - Höchster berufl.
+Abschluss (ausführlich) - Geschlecht/Wirt.zweig
+(Unter)bereiche - Typ der Kernfamilie (Lebensform)",09.05.2011 - 09.05.2011
+2000S-4074,"Personen: Beruf (Bereiche KldB 2010) - Wirt.zweig
+Wirtschafts(unter)bereiche - Geschlecht - Typ der
+Kernfamilie (nach Lebensform)",09.05.2011 - 09.05.2011
+2000S-4075,"Personen: Beruf (Hauptgruppen ISCO-08) - Erwerbsstatus
+(ausführlich) - Höchster beruflicher Abschluss
+(ausführlich)/Stellung im Beruf - Geschlecht",09.05.2011 - 09.05.2011
+2000S-4076,"Personen: Beruf (Hauptgruppen ISCO-08) - Erwerbsstatus
+(ausführlich) - Stellung im Beruf - Höchster beruflicher
+Abschluss (ausführlich)",09.05.2011 - 09.05.2011
+2000S-4077,"Personen: Beruf (Hauptgruppen ISCO-08) - Familienstand -
+Alter (10er-Jahresgruppen)/Wirtschaftszweige (Abschnitte) -
+Geschlecht",09.05.2011 - 09.05.2011
+2000S-4078,"Personen: Beruf (Hauptgruppen ISCO-08)/Stellung im Beruf -
+Religion - Staatsangehörigkeit (Ausgewählte Länder) -
+Geschlecht",09.05.2011 - 09.05.2011
+2000S-4079,"Personen: Beruf (Hauptgruppen ISCO-08) - Stellung im Beruf -
+Staatsangehörigkeit (Ausgewählte Länder) - Religion",09.05.2011 - 09.05.2011
+2000S-4080,Personen: Beruf (Hauptgruppen ISCO-08) - Stellung im Beruf - Höchster beruflicher Abschluss (ausführlich)/Religion/Staatsangehörigkeit (Ausgewählte Länder) - Geschlecht,09.05.2011 - 09.05.2011
+2000S-4081,"Personen: Beruf (Hauptgruppen ISCO-08) - Wirtschaftszweige
+(Abschnitte) - Alter (10er-Jahresgruppen) -
+Familienstand/Geschlecht",09.05.2011 - 09.05.2011
+2000S-4082,"Personen: Beruf (Hauptgruppen ISCO-08) - Höchster
+Schulabschluss - Geschlecht - Typ der Kernfamilie (nach
+Lebensform)",09.05.2011 - 09.05.2011
+2000S-4083,"Personen: Beruf (Hauptgruppen KldB 2010) -
+Migrationshintergrund und -erfahrung - Wirtschaftszweige
+(Abschnitte) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-4084,"Personen: Stellung im Beruf/Wirtschaftszweige (Abschnitte) -
+Alter (11 Altersklassen) - Geschlecht -
+Migrationshintergrund und -erfahrung",09.05.2011 - 09.05.2011
+2000S-4085,"Personen: Stellung im Beruf - Erwerbsstatus -
+Staatsangehörigkeit (Ausgewählte Länder) -
+Migrationshintergrund",09.05.2011 - 09.05.2011
+2000S-4086,"Personen: Stellung im Beruf - Wirt.zweig (Unter)bereiche -
+Höchster berufl. Abschluss (ausführlich)/Höchster
+Schulabschluss/Religion (ausführlich) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-4087,"Personen: Stellung im Beruf - Erwerbsstatus
+(ausführlich)/Wirtschaftszweige (Abschnitte) - Höchster
+beruflicher Abschluss (ausführlich) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-4088,"Personen: Stellung im Beruf - Religion (ausführlich) -
+Erwerbsstatus (ausführlich)/Staatsangehörigkeit (Kontinente)
+- Geschlecht",09.05.2011 - 09.05.2011
+2000S-4089,"Personen: Stellung im Beruf - Erwerbsstatus (ausführlich) -
+Staatsangehörigkeit (Kontinente) - Geschlecht/Religion
+(ausführlich)",09.05.2011 - 09.05.2011
+2000S-4090,"Personen: Stellung im Beruf - Erwerbsstatus (ausführlich) -
+Geschlecht/Religion (ausführlich) - Typ des privaten
+Haushalts (nach Familien)",09.05.2011 - 09.05.2011
+2000S-4091,"Personen: Stellung im Beruf - Religion (ausführlich) -
+Geschlecht - Typ des privaten Haushalts (nach Familien)",09.05.2011 - 09.05.2011
+2000S-4092,"Personen: Stellung im Beruf - Alter
+(Marktforschungsrelevante Altersgruppen) - Geschlecht - Typ
+des privaten Haushalts (nach Kindern)",09.05.2011 - 09.05.2011
+2000S-4093,"Personen: Wirt.zweig Wirtschafts(unter)bereiche - Höchster
+beruflicher Abschluss (ausführlich) - Höchster
+Schulabschluss - Geschlecht",09.05.2011 - 09.05.2011
+2000S-4094,"Personen: Wirt.zweig Wirtschafts(unter)bereiche - Alter
+(10er-Jahresgruppen) - Staatsangehörigkeit (Ausgewählte
+Länder) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-4095,"Personen: Wirt.zweig ((Unter)bereiche/Abschnitte) - Alter
+(10er-Jahresgruppen) - Geschlecht - Typ des privaten
+Haushalts (Lebensform)",09.05.2011 - 09.05.2011
+2000S-4096,"Personen: Wirt.zweig ((Unter)bereiche/Abschnitte) -
+Geschlecht/Alter (10er-Jahresgruppen) - Staatsangehörigkeit
+(Ausgew. Länder) - Typ des privaten Haushalts (Lebensform)",09.05.2011 - 09.05.2011
+2000S-4097,"Personen: Wirt.zweig Wirtschafts(unter)bereiche - Höchster
+beruflicher Abschluss (ausführlich) - Geschlecht - Typ der
+Kernfamilie (nach Lebensform)",09.05.2011 - 09.05.2011
+2000S-4098,"Personen: Wirtschaftszweig - Höchster beruflicher Abschluss
+(ausführlich) - Religion (ausführlich) -
+Geschlecht/Staatsangehörigkeit (Gruppen)",09.05.2011 - 09.05.2011
+2000S-4099,"Personen: Wirtschaftszweige - Höchster beruflicher Abschluss
+(ausführlich)/Religion (ausführlich) - Staatsangehörigkeit
+(Gruppen) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-4100,"Personen: Wirtschaftszweige - Höchster beruflicher Abschluss
+- Baujahr (Jahrzehnte) - Art des Gebäudes/Fläche der Wohnung
+(10 m²-Intervalle)",09.05.2011 - 09.05.2011
+2000S-4101,"Personen: Wirtschaftszweige - Höchster beruflicher
+Abschluss/Baujahr (Jahrzehnte) - Fläche der Wohnung (10
+m²-Intervalle) - Art des Gebäudes",09.05.2011 - 09.05.2011
+2000S-4102,"Personen: Wirtschaftszweige (Abschnitte) - Alter (11
+Altersklassen) - Geschlecht - Staatsangehörigkeit
+(Kontinente)",09.05.2011 - 09.05.2011
+2000S-4103,"Personen: Wirtschaftszweige (Abschnitte) -
+Familienstand/Familienstand (ausführlich)/Religion
+(ausführlich) - Alter (10er-Jahresgruppen) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-4104,"Personen: Wirtschaftszweige (Abschnitte) - Familienstand
+(ausführlich) - Religion (ausführlich) - Alter
+(10er-Jahresgruppen)/Geschlecht",09.05.2011 - 09.05.2011
+2000S-4105,"Personen: Wirtschaftszweige (Abschnitte) - Alter (11
+Altersklassen) - Staatsangehörigkeit (Kontinente) - Größe
+des privaten Haushalts",09.05.2011 - 09.05.2011
+2000S-4106,"Personen: Wirtschaftszweige (Abschnitte) - Alter (11
+Altersklassen)/Staatsangehörigkeit (Kontinente) - Geschlecht
+- Größe des privaten Haushalts",09.05.2011 - 09.05.2011
+2000S-4107,"Personen: Beruf (Hauptgruppen ISCO-08) -
+Migrationshintergrund (Ausgew. Länder) - Höchster
+beruflicher Abschluss (ausführlich) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-4108,"Personen: Stellung im Beruf/Wirtschaftszweige (Abschnitte) -
+Migrationshintergrund (Ausgew. Länder/Kontinente) - Alter
+(11 Altersklassen) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-4109,"Personen: Wirt.zweig ((Unter)bereiche/Abschnitte) -
+Migrationserfahrung (Zuzugsjahrzehnt) - Alter
+(10er-Jahresgruppen) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-4110,"Personen: Wirt.zweig ((Unter)bereiche/Abschnitte) -
+Mig.erfahrung (Zuzugsjahrzehnt) - Alter
+(10er-Jahresgruppen)/Geschlecht - Typ des privaten Haushalts",09.05.2011 - 09.05.2011
+2000S-4111,"Personen: Migrationshintergrund (Ausgew. Länder/Kontinente)
+- Aufenthaltsdauer - Alter (Marktforschungsrelevante
+Altersgruppen) - Geschlecht/Familienstand (ausführlich)",09.05.2011 - 09.05.2011
+2000S-4112,"Personen: Migrationshintergrund (Ausgew. Länder/Kontinente)
+- Alter (11 Altersklassen) - Erwerbsstatus/Familienstand
+(ausf.)/Religion (ausf.)/Staatsangehörigkeit - Geschlecht",09.05.2011 - 09.05.2011
+2000S-4113,Personen: Migrationshintergrund (Ausgew. Länder/Kontinente) - Alter (Marktforschungsrelevante Altersgruppen)/Aufenthaltsdauer - Familienstand (ausführlich) - Geschlecht,09.05.2011 - 09.05.2011
+2000S-4114,"Personen: Migrationshintergrund (Ausgew. Länder) -
+Staatsangehörigkeit (Ausgewählte Länder) - Erwerbsstatus -
+Geschlecht",09.05.2011 - 09.05.2011
+2000S-4115,"Personen: Migrationshintergrund (Ausgew. Länder/Kontinente)
+- Alter (11 Altersklassen) - Geschlecht - Ausstattung der
+Wohnung",09.05.2011 - 09.05.2011
+2000S-4116,"Personen: Migrationshintergrund (Ausgew. Länder/Kontinente)
+- Alter (11 Altersklassen) - Größe des privaten Haushalts -
+Typ des privaten Haushalts (nach Familien)",09.05.2011 - 09.05.2011
+2000S-4117,Personen: Migrationshintergrund (Ausgew. Länder) - Alter (Marktforschungsrelevante Altersgruppen) - Aufenthaltsdauer/Geschlecht - Typ des privaten Haushalts (nach Familien),09.05.2011 - 09.05.2011
+2000S-4118,"Personen: Migrationshintergrund (Ausgew. Länder) -
+Aufenthaltsdauer - Geschlecht - Typ des privaten Haushalts
+(nach Familien)",09.05.2011 - 09.05.2011
+2000S-4119,"Personen: Aufenthaltsdauer - Alter (Marktforschungsrelevante
+Altersgruppen) - Familienstand (ausführlich) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-4120,"Personen: Aufenthaltsdauer - Alter (Marktforschungsrelevante
+Altersgruppen) - Geschlecht - Typ des privaten Haushalts
+(nach Familien)",09.05.2011 - 09.05.2011
+2000S-4121,"Personen: Migrationserfahrung (Zuzugsjahrzehnt) - Alter
+(10er-Jahresgruppen) - Geschlecht - Typ des privaten
+Haushalts (nach Lebensform)",09.05.2011 - 09.05.2011
+2000S-4122,"Schüler: Schulform - Klassenstufen - Geschlecht -
+Migrationshintergrund und -erfahrung",09.05.2011 - 09.05.2011
+2000S-4123,"Schüler: Aufenthaltsdauer - Schulform - Klassenstufen -
+Geschlecht",09.05.2011 - 09.05.2011
+2000S-5001,"Personen: Erwerbsstatus (ausführlich) - Familienstand
+(ausführlich) - Religion (ausführlich) - Alter
+(5er-Jahresgruppen) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-5002,"Personen: Erwerbsstatus (ausführlich) - Familienstand
+(ausführlich) - Religion (ausführlich) - Geschlecht - Größe
+der Kernfamilie",09.05.2011 - 09.05.2011
+2000S-5003,"Personen: Migrationshintergrund - Familienstand
+(ausführlich) - Alter (5er-Jahresgruppen) - Geschlecht - Typ
+des privaten Haushalts (nach Familien)",09.05.2011 - 09.05.2011
+2000S-5004,"Personen: Migrationshintergrund/Religion (ausführlich) -
+Familienstand (ausführlich) - Alter (5er-Jahresgruppen) -
+Geschlecht - Typ der Kernfamilie (nach Lebensform)",09.05.2011 - 09.05.2011
+2000S-5005,"Personen: Migrationshintergrund und -erfahrung - Baujahr
+(Jahrzehnte) - Eigentumsform des Gebäudes - Gebäudetyp
+(Bauweise) - Wohnungen im Gebäude",09.05.2011 - 09.05.2011
+2000S-5006,"Personen: Höchster beruflicher Abschluss - Höchster
+Schulabschluss - Erwerbsstatus (ausführlich) - Alter
+(5er-Jahresgruppen) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-5007,"Personen: Höchster beruflicher Abschluss - Erwerbsstatus
+(ausführlich) - Religion (ausführlich) - Alter
+(10er-Jahresgruppen) - Migrationshintergrund",09.05.2011 - 09.05.2011
+2000S-5008,"Personen: Höchster beruflicher Abschluss - Erwerbsstatus
+(ausführlich) - Religion (ausführlich) -
+Migrationshintergrund - Typ der Kernfamilie (nach Familien)",09.05.2011 - 09.05.2011
+2000S-5009,"Personen: Höchster beruflicher Abschluss (ausführlich) -
+Erwerbsstatus (ausführlich) - Religion - Staatsangehörigkeit
+(Ausgewählte Länder)/Familienstand -  Geschlecht",09.05.2011 - 09.05.2011
+2000S-5010,"Personen: Höchster beruflicher Abschluss (ausführlich) -
+Höchster Schulabschluss - Familienstand (ausführlich) -
+Religion - Staatsangehörigkeit (Gruppen)",09.05.2011 - 09.05.2011
+2000S-5011,Personen: Höchster beruflicher Abschluss (ausführlich) - Höchster Schulabschluss - Erwerbsstatus (ausführlich)/Familienstand (ausführlich) - Religion (ausführlich) - Geschlecht,09.05.2011 - 09.05.2011
+2000S-5012,"Personen: Höchster beruflicher Abschluss (ausführlich) -
+Familienstand - Alter (5er-Jahresgruppen) - Geschlecht - Typ
+des privaten Haushalts (nach Lebensform)",09.05.2011 - 09.05.2011
+2000S-5013,"Personen: Höchster beruflicher Abschluss (ausführlich) -
+Erwerbsstatus (ausführlich) - Religion (ausführlich) -
+Geschlecht - Typ der Kernfamilie (nach Lebensform)",09.05.2011 - 09.05.2011
+2000S-5014,"Personen: Höchster Schulabschluss - Familienstand
+(ausführlich) - Alter (10er-Jahresgruppen) - Geschlecht -
+Migrationshintergrund und -erfahrung",09.05.2011 - 09.05.2011
+2000S-5015,"Personen: Art der Einpendlern - Beruf (Bereiche KldB 2010) -
+Wirt.zweig Wirtschafts(unter)bereiche - Alter
+(10er-Jahresgruppen) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-5016,"Personen: Art der Einpendlern - Stellung im Beruf -
+Wirtschaftszweige (Abschnitte) - Höchster beruflicher
+Abschluss (ausführlich) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-5017,"Personen: Art der Auspendler - Beruf (Bereiche KldB 2010) -
+Wirt.zweig Wirtschafts(unter)bereiche - Alter
+(10er-Jahresgruppen) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-5018,"Personen: Art der Auspendler - Stellung im Beruf -
+Wirtschaftszweige (Abschnitte) - Höchster beruflicher
+Abschluss (ausführlich) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-5019,"Personen: Beruf (KldB 2010) - Stellung im Beruf - Wirt.zweig
+(Unter)bereiche - Geschlecht - Religion (ausf.)/Höchster
+berufl. Abschluss (ausf.)/Höchster Schulabschl.",09.05.2011 - 09.05.2011
+2000S-5020,"Personen: Beruf (Bereiche KldB 2010) - Wirt.zweig
+(Unter)bereiche - Geschlecht - Höchster berufl. Abschluss
+(ausführlich) - Höchster Schulabschluss",09.05.2011 - 09.05.2011
+2000S-5021,"Personen: Beruf (Ber. KldB 2010)/Staatsangeh.(ausgew.
+Länder) - Wirtschafts(unter)ber. - Alter (10er-Jahresgr.) -
+Geschlecht - Haushaltstyp (Lebensform)",09.05.2011 - 09.05.2011
+2000S-5022,Personen: Beruf (Bereiche KldB 2010) - Wirt.zweig (Unter)bereiche - Höchster berufl. Abschluss (ausführlich) - Geschlecht - Typ der Kernfamilie (Lebensform),09.05.2011 - 09.05.2011
+2000S-5023,"Personen: Beruf (Hauptgruppen ISCO-08) - Erwerbsstatus
+(ausführlich) - Stellung im Beruf - Höchster beruflicher
+Abschluss (ausführlich) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-5024,"Personen: Beruf (Hauptgruppen ISCO-08) - Stellung im Beruf -
+Religion - Staatsangehörigkeit (Ausgewählte Länder) -
+Geschlecht",09.05.2011 - 09.05.2011
+2000S-5025,"Personen: Beruf (Hauptgruppen ISCO-08) - Wirtschaftszweige
+(Abschnitte) - Familienstand - Alter (10er-Jahresgruppen) -
+Geschlecht",09.05.2011 - 09.05.2011
+2000S-5026,"Personen: Stellung im Beruf - Erwerbsstatus (ausführlich) -
+Religion (ausführlich) - Staatsangehörigkeit (Kontinente) -
+Geschlecht",09.05.2011 - 09.05.2011
+2000S-5027,"Personen: Stellung im Beruf - Erwerbsstatus (ausführlich) -
+Religion (ausführlich) - Geschlecht - Typ des privaten
+Haushalts (nach Familien)",09.05.2011 - 09.05.2011
+2000S-5028,"Personen: Wirtschaftszweig - Höchster beruflicher Abschluss
+(ausführlich) - Religion (ausführlich) - Staatsangehörigkeit
+(Gruppen) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-5029,"Personen: Wirtschaftszweig - Höchster beruflicher Abschluss
+- Baujahr (Jahrzehnte) - Fläche der Wohnung (10
+m²-Intervalle) - Art des Gebäudes",09.05.2011 - 09.05.2011
+2000S-5030,"Personen: Wirtschaftszweig (Abschnitte) - Familienstand
+(ausführlich) - Religion (ausführlich) - Alter
+(10er-Jahresgruppen) - Geschlecht",09.05.2011 - 09.05.2011
+2000S-5031,"Personen: Wirtschaftszweige (Abschnitte) - Alter (11
+Altersklassen) - Geschlecht - Staatsangehörigkeit
+(Kontinente) - Größe des privaten Haushalts",09.05.2011 - 09.05.2011
+2000S-5032,"Personen: Wirt.zweig ((Unter)bereiche/Abschnitte) -
+Mig.erfahrung (Zuzugsjahrzehnt) - Alter (10er-Jahresgruppen)
+- Geschlecht - Typ des priv. Haushalts (Lebensform)",09.05.2011 - 09.05.2011
+2000S-5033,Personen: Migrationshintergrund (Ausgewählte Länder/Kontinente) - Aufenthaltsdauer - Alter (Marktforschungsrelevante Altersgruppen) - Familienstand (ausführlich) - Geschlecht,09.05.2011 - 09.05.2011
+2000S-5034,Personen: Migrationshintergrund (Ausgewählte Länder) - Aufenthaltsdauer - Alter (Marktforschungsrelevante Altersgruppen) - Geschlecht - Typ des privaten Haushalts (nach Familien),09.05.2011 - 09.05.2011
+3000G-1001,Gebäude: Art des Gebäudes,09.05.2011 - 09.05.2011
+3000G-1002,Gebäude: Baujahr (Jahrzehnte),09.05.2011 - 09.05.2011
+3000G-1003,Gebäude: Baujahr (Mikrozensus-Klassen),09.05.2011 - 09.05.2011
+3000G-1004,Gebäude: Baujahr (Jahrzwanzigste),09.05.2011 - 09.05.2011
+3000G-1005,Gebäude: Eigentumsform des Gebäudes,09.05.2011 - 09.05.2011
+3000G-1006,Gebäude: Gebäudetyp (Bauweise),09.05.2011 - 09.05.2011
+3000G-1007,Gebäude: Gebäudetyp (Größe),09.05.2011 - 09.05.2011
+3000G-1008,Gebäude: Heizungsart,09.05.2011 - 09.05.2011
+3000G-1009,Gebäude: Wohnungen im Gebäude,09.05.2011 - 09.05.2011
+3000G-1010,Gebäude: Wohnungen im Gebäude (3 Klassen),09.05.2011 - 09.05.2011
+3000G-2001,Gebäude: Art des Gebäudes - Baujahr/Eigentumsform/Gebäudetyp/Heizungsart/Wohnungen im Gebäude (3 Klassen),09.05.2011 - 09.05.2011
+3000G-2002,"Gebäude: Art des Gebäudes/Baujahr
+(Mikrozensus-Klassen)/Heizungsart - Gebäudetyp (Größe)",09.05.2011 - 09.05.2011
+3000G-2003,"Gebäude: Baujahr (Jahrzwanzigste) -
+Eigentumsform/Heizungsart/Wohnungen im Gebäude",09.05.2011 - 09.05.2011
+3000G-2004,"Gebäude: Baujahr (Mikrozensus-Klassen) -
+Eigentumsform/Gebäudetyp (Bauweise)/Heizungsart/Wohnungen
+im Gebäude",09.05.2011 - 09.05.2011
+3000G-2005,"Gebäude: Eigentumsform/Gebäudetyp (Bauweise)/Heizungsart -
+Wohnungen im Gebäude",09.05.2011 - 09.05.2011
+3000G-2006,Gebäude: Heizungsart - Wohnungen im Gebäude (3 Klassen),09.05.2011 - 09.05.2011
+3000G-2007,Gebäude: Art des Gebäudes - Wohnungen im Gebäude,09.05.2011 - 09.05.2011
+3000G-3001,"Gebäude: Baujahr (Jahrzwanzigste) - Heizungsart/Wohnungen im
+Gebäude (3 Klassen) - Art des Gebäudes",09.05.2011 - 09.05.2011
+3000G-3002,"Gebäude: Baujahr (Jahrzwanzigste) - Gebäudetyp (Bauweise) -
+Wohnungen im Gebäude",09.05.2011 - 09.05.2011
+3000G-3003,"Gebäude: Baujahr (Mikrozensus-Klassen) -
+Eigentumsform/Gebäudetyp (Bauweise)/Heizungsart/Wohnungen im
+Gebäude -  Art des Gebäudes",09.05.2011 - 09.05.2011
+3000G-3004,"Gebäude: Baujahr (Mikrozensus-Klassen)/Heizungsart -
+Gebäudetyp (Größe) - Art des Gebäudes",09.05.2011 - 09.05.2011
+3000G-3005,"Gebäude: Eigentumsform/Gebäudetyp (Bauweise)/Heizungsart -
+Wohnungen im Gebäude - Art des Gebäudes",09.05.2011 - 09.05.2011
+3000G-4001,"Gebäude: Baujahr (Jahrzwanzigste) - Heizungsart - Wohnungen
+im Gebäude (3 Klassen) - Art des Gebäudes",09.05.2011 - 09.05.2011
+3000G-4002,"Gebäude: Baujahr (Mikrozensus-Klassen) - Gebäudetyp
+(Bauweise) - Wohnungen im Gebäude - Art des Gebäudes",09.05.2011 - 09.05.2011
+3000G-4003,"Gebäude: Baujahr (Mikrozensus-Klassen) - Gebäudetyp (Größe)
+- Heizungsart - Art des Gebäudes",09.05.2011 - 09.05.2011
+4000W-0001,Wohnungskennzahlen (Leerstands- und Eigentümerquote),09.05.2011 - 09.05.2011
+4000W-1001,Wohnungen: Art des Gebäudes,09.05.2011 - 09.05.2011
+4000W-1002,Wohnungen: Baujahr (Jahrzehnte),09.05.2011 - 09.05.2011
+4000W-1003,Wohnungen: Baujahr (Mikrozensus-Klassen),09.05.2011 - 09.05.2011
+4000W-1004,Wohnungen: Baujahr (Jahrzwanzigste),09.05.2011 - 09.05.2011
+4000W-1005,Wohnungen: Eigentumsform des Gebäudes,09.05.2011 - 09.05.2011
+4000W-1006,Wohnungen: Gebäudetyp (Bauweise),09.05.2011 - 09.05.2011
+4000W-1007,Wohnungen: Heizungsart,09.05.2011 - 09.05.2011
+4000W-1008,Wohnungen: Wohnungen im Gebäude,09.05.2011 - 09.05.2011
+4000W-1009,Wohnungen: Wohnungen im Gebäude (3 Klassen),09.05.2011 - 09.05.2011
+4000W-1010,Wohnungen: Ausstattung der Wohnung,09.05.2011 - 09.05.2011
+4000W-1011,Wohnungen: Eigentumsverhältnisse der Wohnung,09.05.2011 - 09.05.2011
+4000W-1012,Wohnungen: Fläche der Wohnung (10 m²-Intervalle),09.05.2011 - 09.05.2011
+4000W-1013,Wohnungen: Fläche der Wohnung (20 m²-Intervalle),09.05.2011 - 09.05.2011
+4000W-1014,Wohnungen: Art der Wohnungsnutzung,09.05.2011 - 09.05.2011
+4000W-1015,Wohnungen: Räume,09.05.2011 - 09.05.2011
+4000W-1016,Wohnungen: Größe des privaten Haushalts,09.05.2011 - 09.05.2011
+4000W-1017,Wohnungen: Typ des privaten Haushalts (nach Familien),09.05.2011 - 09.05.2011
+4000W-2001,Wohnungen: Art der Wohnungsnutzung - Art des Gebäudes/Baujahr/Eigentumsform/Gebäudetyp/Wohnungen im Geb./Heizungsart/Ausstattung/Eigentumsverhältnisse/Fläche/Räume,09.05.2011 - 09.05.2011
+4000W-2002,Wohnungen: Art der Wohnungsnutzung/Ausstattung der Wohnung/Art des Gebäudes/Baujahr (Mikrozensus-Klassen)/Räume/ Wohnungen im Gebäude - Fläche der Wohnung (10 m²-Intervalle),09.05.2011 - 09.05.2011
+4000W-2003,"Wohnungen: Ausstattung der Wohnung/Eigentumsverhältnisse der
+Wohnung/Fläche der Wohnung (20 m²-Intervalle)/Räume - Art
+des Gebäudes/Baujahr (Mikrozensus-Klassen)",09.05.2011 - 09.05.2011
+4000W-2004,Wohnungen: Ausstattung der Wohnung/Räume - Baujahr (Jahrzwanzigste),09.05.2011 - 09.05.2011
+4000W-2006,"Wohnungen: Ausstattung der Wohnung - Fläche der Wohnung (20
+m²-Intervalle)/Heizungsart/Wohnungen im Gebäude",09.05.2011 - 09.05.2011
+4000W-2007,Wohnungen: Ausstattung der Wohnung - Räume,09.05.2011 - 09.05.2011
+4000W-2008,Wohnungen: Baujahr (Mikrozensus-Klassen)/Eigentumsform des Gebäudes/Fläche der Wohnung (20 m²-Intervalle)/Räume - Wohnungen im Gebäude (3 Klassen),09.05.2011 - 09.05.2011
+4000W-2009,"Wohnungen: Baujahr/Eigentumsform des
+Gebäudes/Gebäudetyp/Heizungsart/Wohnungen im Gebäude - Art
+des Gebäudes",09.05.2011 - 09.05.2011
+4000W-2010,"Wohnungen: Fläche der Wohnung (20 m²-Intervalle) -
+Räume/Wohnungen im Gebäude (3 Klassen)",09.05.2011 - 09.05.2011
+4000W-2011,Wohnungen: Räume - Wohnungen im Gebäude (3 Klassen),09.05.2011 - 09.05.2011
+4000W-2012,Wohnungen: Haushaltsgröße - Haushaltstyp,09.05.2011 - 09.05.2011
+4000W-2013,"Wohnungen: Haushaltsgröße - Art der
+Wohnungsnutzung/Ausstattung der Wohnung/Fläche/Räume",09.05.2011 - 09.05.2011
+4000W-2014,Wohnungen: Haushaltstyp - Art der Wohnungsnutzung/Fläche (10m²-Intervalle),09.05.2011 - 09.05.2011
+4000W-2015,Wohnungen: Haushaltsgröße/-typ - Baujahr (Jahrzehnte),09.05.2011 - 09.05.2011
+4000W-2016,"Wohnungen: Haushaltsgröße/-typ - Art des Gebäudes/Wohnungen
+im Gebäude",09.05.2011 - 09.05.2011
+4000W-3001,Wohnungen: Art der Wohnungsnutzung - Ausstattung/Baujahr/Eigentumsform/Eigentumsverhältnisse/Fläche/Gebäudetyp/ Heizungsart/Räume/Wohnungen im Gebäude - Art des Gebäudes,09.05.2011 - 09.05.2011
+4000W-3002,"Wohnungen: Art der Wohnungsnutzung - Ausstattung der Wohnung
+- Fläche der Wohnung/Heizungsart/Wohnungen im Gebäude",09.05.2011 - 09.05.2011
+4000W-3003,"Wohnungen: Art der Wohnungsnutzung - Ausstattung der Wohnung
+- Baujahr (Jahrzwanzigste)/Räume",09.05.2011 - 09.05.2011
+4000W-3004,"Wohnungen: Art der Wohnungsnutzung/Ausstattung der Wohnung -
+Baujahr (Jahrzwanzigste) - Art des Gebäudes/Räume",09.05.2011 - 09.05.2011
+4000W-3005,Wohnungen: Art der Wohnungsnutzung - Baujahr (Mikrozensus-Klassen) - Fläche der Wohnung (10m² Intervalle)/Wohnungen im Gebäude,09.05.2011 - 09.05.2011
+4000W-3006,"Wohnungen: Art der Wohnungsnutzung/Ausstattung der Wohnung -
+Fläche der Wohnung (10 m²-Intervalle) - Art des Gebäudes",09.05.2011 - 09.05.2011
+4000W-3007,"Wohnungen: Art der Wohnungsnutzung - Fläche der Wohnung -
+Räume/Wohnungen im Gebäude",09.05.2011 - 09.05.2011
+4000W-3008,"Wohnungen: Art der Wohnungsnutzung - Eigentumsform des
+Gebäudes/Räume - Wohnungen im Gebäude",09.05.2011 - 09.05.2011
+4000W-3009,Wohnungen: Ausstattung der Wohnung - Fläche (20m²-Intervalle)/Wohnungen im Gebäude - Art des Gebäudes,09.05.2011 - 09.05.2011
+4000W-3010,"Wohnungen: Ausstattung der Wohnung - Fläche der Wohnung (10
+m²-Intervalle) - Wohnungen im Gebäude",09.05.2011 - 09.05.2011
+4000W-3011,Wohnungen: Ausstattung der Wohnung/Fläche der Wohnung (20m²-Intervalle)/Eigentumsverhältnisse/Räume - Baujahr (Mikrozensus-Klassen) - Art des Gebäudes,09.05.2011 - 09.05.2011
+4000W-3012,Wohnungen: Ausstattung der Wohnung/Baujahr (Mikrozensus-Klassen) - Räume - Art des Gebäudes,09.05.2011 - 09.05.2011
+4000W-3013,Wohnungen: Fläche der Wohnung (10 m²-Intervalle) - Baujahr (Mikrozensus-Klassen)/Räume - Art des Gebäudes/Wohnungen im Gebäude,09.05.2011 - 09.05.2011
+4000W-3014,Wohnungen: Baujahr (Mikrozensus-Klassen)/Fläche/Räume - Wohnungen im Gebäude - Art des Gebäudes,09.05.2011 - 09.05.2011
+4000W-3015,"Wohnungen: Fläche der Wohnung (20 m²-Intervalle) - Wohnungen
+im Gebäude (3 Klassen) - Art des Gebäudes/Räume",09.05.2011 - 09.05.2011
+4000W-3016,Wohnungen: Räume - Fläche der Wohnung (20m²-Intervalle)/Wohnungen im Gebäude - Art des Gebäudes,09.05.2011 - 09.05.2011
+4000W-3017,Wohnungen: Haushaltsgröße - Art der Wohnungsnutzung - Ausstattung der Wohnung/Fläche der Wohnung (20m²-Intervalle)/Räume,09.05.2011 - 09.05.2011
+4000W-3018,"Wohnungen: Haushaltsgröße - Ausstattung der Wohnung/Räume -
+Fläche der Wohnung (20 m²-Intervalle)",09.05.2011 - 09.05.2011
+4000W-3019,"Wohnungen: Haushaltsgröße - Haushaltstyp - Art der
+Wohnungsnutzung",09.05.2011 - 09.05.2011
+4000W-3020,"Wohnungen: Haushaltstyp - Art der Wohnungsnutzung - Fläche
+der Wohnung (10 m²-Intervalle)",09.05.2011 - 09.05.2011
+4000W-3021,"Wohnungen: Haushaltsgröße/-typ - Art der Wohnungsnutzung -
+Art des Gebäudes/Wohnungen im Gebäude",09.05.2011 - 09.05.2011
+4000W-3022,Wohnungen: Haushaltsgröße/-typ - Art der Wohnungsnutzung - Baujahr (Jahrzehnte),09.05.2011 - 09.05.2011
+4000W-3023,"Wohnungen: Haushaltsgröße - Ausstattung der Wohnung/Fläche
+(20m²-Intervalle)/Räume/Wohnungen im Gebäude - Art des
+Gebäudes",09.05.2011 - 09.05.2011
+4000W-3024,"Wohnungen: Haushaltsgröße - Fläche der Wohnung (20
+m²-Intervalle) - Wohnungen im Gebäude",09.05.2011 - 09.05.2011
+4000W-3025,"Wohnungen: Haushaltsgröße - Haushaltstyp - Baujahr
+(Jahrzehnte)",09.05.2011 - 09.05.2011
+4000W-3026,Wohnungen: Haushaltstyp - Fläche der Wohnung (10m²-Intervalle)/Wohnungen im Gebäude - Art des Gebäudes,09.05.2011 - 09.05.2011
+4000W-3027,"Wohnungen: Haushaltstyp - Fläche der Wohnung (10
+m²-Intervalle) - Wohnungen im Gebäude",09.05.2011 - 09.05.2011
+4000W-4001,"Wohnungen: Art der Wohnungsnutzung - Fläche - Ausstattung
+der Wohnung/Räume/Wohnungen im Gebäude - Art des Gebäudes",09.05.2011 - 09.05.2011
+4000W-4002,"Wohnungen: Art der Wohnungsnutzung - Ausstattung der
+Wohnung/Räume - Fläche (10m²-Intervalle) - Wohnungen im
+Gebäude",09.05.2011 - 09.05.2011
+4000W-4003,"Wohnungen: Art der Wohnungsnutzung/Fläche (10m²-Intervalle)
+- Ausstattung der Wohnung/Räume/Baujahr(Mikrozensus-Klassen)
+- Wohnungen im Gebäude - Art des Gebäudes",09.05.2011 - 09.05.2011
+4000W-4004,Wohnungen: Art der Wohnungsnutzung - Fläche (10m²-Intervalle) - Baujahr (Mikrozensus-Klassen) - Art des Gebäudes/Wohnungen im Gebäude,09.05.2011 - 09.05.2011
+4000W-4005,"Wohnungen: Fläche der Wohnung (20 m²-Intervalle) - Wohnungen
+im Gebäude (3 Klassen) - Räume - Art des Gebäudes",09.05.2011 - 09.05.2011
+4000W-4006,"Wohnungen: Art der Wohnungsnutzung/Räume - Ausstattung der
+Wohnung - Baujahr (Jahrzwanzigste) - Art des Gebäudes",09.05.2011 - 09.05.2011
+4000W-4007,"Wohnungen: Art der Wohnungsnutzung - Ausstattung der Wohnung
+- Räume - Art des Gebäudes/Baujahr (Jahrzwanzigste)",09.05.2011 - 09.05.2011
+4000W-4008,"Wohnungen: Art der Wohnungsnutzung - Räume - Baujahr
+(Jahrzwanzigste) - Art des Gebäudes",09.05.2011 - 09.05.2011
+4000W-4009,"Wohnungen: Haushaltsgröße - Art der Wohnungsnutzung -
+Austattung der Wohnung/Räume/Wohnungen im Gebäude - Art des
+Gebäudes/Fläche (20m²-Intervalle)",09.05.2011 - 09.05.2011
+4000W-4010,"Wohnungen: Haushaltsgröße - Fläche der Wohnung (20
+m²-Intervalle) - Nutzung/Austattung/Räume/Wohnungen im
+Gebäude - Art des Gebäudes",09.05.2011 - 09.05.2011
+4000W-4011,"Wohnungen: Haushaltsgröße - Haushaltstyp - Art der
+Wohnungsnutzung - Baujahr (Jahrzehnte)",09.05.2011 - 09.05.2011
+4000W-4012,"Wohnungen: Haushaltstyp - Art der Wohnungsnutzung - Fläche
+der Wohnung (10 m²-Intervalle) - Art des Gebäudes/Wohnungen
+im Gebäude",09.05.2011 - 09.05.2011
+4000W-4013,Wohnungen: Haushaltstyp - Art der Wohnungsnutzung/Fläche der Wohnung (10m²-Intervalle) - Wohnungen im Gebäude - Art des Gebäudes,09.05.2011 - 09.05.2011
+4000W-5001,"Wohnungen: Art der Wohnungsnutzung - Ausstattung der Wohnung
+- Räume - Baujahr (Jahrzwanzigste) - Art des Gebäudes",09.05.2011 - 09.05.2011
+4000W-5002,Wohnungen: Art der Wohnungsnutzung - Fläche der Wohnung (10 m²-Intervalle) - Ausstattung/Räume/Baujahr (Mikrozensus-Klassen) - Wohnungen im Gebäude - Art des Gebäudes,09.05.2011 - 09.05.2011
+4000W-5003,"Wohnungen: Haushaltsgröße - Art der Wohnungsnutzung -
+Ausstattung/Räume/Wohnungen im Gebäude - Fläche der Wohnung
+(20 m²-Intervalle) - Art des Gebäudes",09.05.2011 - 09.05.2011
+4000W-5004,"Wohnungen: Haushaltstyp - Art der Wohnungsnutzung - Fläche
+der Wohnung (10 m²-Intervalle) - Wohnungen im Gebäude - Art
+des Gebäudes",09.05.2011 - 09.05.2011
+5000H-1001,Haushalte: Art des Gebäudes,09.05.2011 - 09.05.2011
+5000H-1002,Haushalte: Baujahr (Jahrzwanzigste),09.05.2011 - 09.05.2011
+5000H-1003,Haushalte: Eigentumsform des Gebäudes,09.05.2011 - 09.05.2011
+5000H-1004,Haushalte: Größe des privaten Haushalts,09.05.2011 - 09.05.2011
+5000H-1005,Haushalte: Heizungsart,09.05.2011 - 09.05.2011
+5000H-1006,Haushalte: Seniorenstatus eines privaten Haushalts,09.05.2011 - 09.05.2011
+5000H-1007,Haushalte: Typ des privaten Haushalts (nach Familien),09.05.2011 - 09.05.2011
+5000H-1008,Haushalte: Typ des privaten Haushalts (nach Lebensform),09.05.2011 - 09.05.2011
+5000H-1009,Haushalte: Ausstattung der Wohnung,09.05.2011 - 09.05.2011
+5000H-1010,Haushalte: Fläche der Wohnung (20 m²-Intervalle),09.05.2011 - 09.05.2011
+5000H-1011,Haushalte: Räume,09.05.2011 - 09.05.2011
+5000H-1012,Haushalte: Art der Wohnungsnutzung,09.05.2011 - 09.05.2011
+5000H-2001,"Haushalte: Größe des privaten Haushalts - Art des
+Gebäudes/Baujahr (Jahrzwanzigste)",09.05.2011 - 09.05.2011
+5000H-2002,"Haushalte: Typ des privaten Haushalts (nach Familien) - Art
+des Gebäudes",09.05.2011 - 09.05.2011
+5000H-2003,"Haushalte: Typ des privaten Haushalts (nach Familien) -
+Größe des privaten Haushalts",09.05.2011 - 09.05.2011
+5000H-2004,Haushalte: Eigentumsform des Gebäudes - Heizungsart,09.05.2011 - 09.05.2011
+5000H-2005,"Haushalte: Größe des privaten Haushalts - Ausstattung der
+Wohnung/Fläche der Wohnung (20 m²-Intervalle)/Räume",09.05.2011 - 09.05.2011
+5000H-2006,"Haushalte: Seniorenstatus eines privaten Haushalts - Fläche
+der Wohnung (20 m²-Intervalle)/Räume",09.05.2011 - 09.05.2011
+5000H-2007,"Haushalte: Typ des privaten Haushalts (nach Familien) -
+Ausstattung der Wohnung/Fläche der Wohnung (20
+m²-Intervalle)/Räume",09.05.2011 - 09.05.2011
+5000H-2008,"Haushalte: Räume - Ausstattung der Wohnung/Fläche
+der Wohnung (20 m²-Intervalle)",09.05.2011 - 09.05.2011
+5000H-2009,"Haushalte: Fläche der Wohnung (20 m²-Intervalle) - Art des
+Gebäudes",09.05.2011 - 09.05.2011
+5000H-2010,"Haushalte: Art der Wohnungsnutzung - Art des Gebäudes/Fläche
+der Wohnung (20 m²-Intervalle)",09.05.2011 - 09.05.2011
+5000H-2011,"Haushalte: Art der Wohnungsnutzung - Größe des privaten
+Haushalts/Seniorenstatus eines privaten Haushalts/Typ des
+privaten Haushalts (nach Familien)",09.05.2011 - 09.05.2011
+5000H-3001,"Haushalte: Größe des privaten Haushalts - Typ des privaten
+Haushalts (nach Familien) - Art des Gebäudes",09.05.2011 - 09.05.2011
+5000H-3002,"Haushalte: Größe des privaten Haushalts - Typ des privaten
+Haushalts (nach Familien) - Ausstattung der Wohnung/Fläche
+der Wohnung (20 m²-Intervalle)/Zahl der Räume",09.05.2011 - 09.05.2011
+5000H-3003,"Haushalte: Seniorenstatus eines privaten Haushalts - Fläche
+der Wohnung (20 m²-Intervalle) - Räume",09.05.2011 - 09.05.2011
+5000H-3004,"Haushalte: Typ des privaten Haushalts (nach Familien) -
+Fläche der Wohnung (20 m²-Intervalle) - Art des Gebäudes",09.05.2011 - 09.05.2011
+5000H-3005,"Haushalte: Art der Wohnungsnutzung - Größe des privaten
+Haushalts - Typ des privaten Haushalts (nach Familien)",09.05.2011 - 09.05.2011
+5000H-3006,"Haushalte: Art der Wohnungsnutzung - Typ des privaten
+Haushalts (nach Familien) - Fläche der Wohnung (20
+m²-Intervalle)",09.05.2011 - 09.05.2011
+5000H-3007,"Haushalte: Art der Wohnungsnutzung - Größe des privaten
+Haushalts/Typ des privaten Haushalts (nach Familien)/Fläche
+der Wohnung (20 m²-Intervalle) - Art des Gebäudes",09.05.2011 - 09.05.2011
+5000H-4001,Haushalte: Art der Wohnungsnutzung - Typ des priv. Haushalts (nach Familien) - Größe des privaten Haushalts/Fläche der Wohnung (20 m²-Intervalle) - Art des Gebäudes,09.05.2011 - 09.05.2011
+6000F-1001,Familien: Größe der Kernfamilie,09.05.2011 - 09.05.2011
+6000F-1002,Familien: Typ der Kernfamilie (nach Familien),09.05.2011 - 09.05.2011
+6000F-1003,Familien: Typ der Kernfamilie (nach Lebensform),09.05.2011 - 09.05.2011
+6000F-1004,Familien: Größe des privaten Haushalts,09.05.2011 - 09.05.2011
+6000F-1005,Familien: Seniorenstatus eines privaten Haushalts,09.05.2011 - 09.05.2011
+6000F-1006,Familien: Typ des privaten Haushalts (nach Familien),09.05.2011 - 09.05.2011
+6000F-1007,Familien: Ausstattung der Wohnung,09.05.2011 - 09.05.2011
+6000F-1008,Familien: Fläche der Wohnung (20 m²-Intervalle),09.05.2011 - 09.05.2011
+6000F-1009,Familien: Räume,09.05.2011 - 09.05.2011
+6000F-2001,"Familien: Größe der Kernfamilie - Größe des privaten
+Haushalts/Typ der Kernfamilie",09.05.2011 - 09.05.2011
+6000F-2002,Familien: Größe des privaten Haushalts - Seniorenstatus / Typ des privaten Haushalts (nach Familien),09.05.2011 - 09.05.2011
+6000F-2003,"Familien: Typ des privaten Haushalts (nach Familien) -
+Seniorenstatus eines privaten Haushalts",09.05.2011 - 09.05.2011
+6000F-2004,Familien: Größe der Kernfamilie/Typ der Kernfamilie (nach Familien) - Ausstattung der Wohnung/Fläche der Wohnung (20 m² Intervalle)/Räume,09.05.2011 - 09.05.2011
+6000F-3001,"Familien: Größe des privaten Haushalts - Seniorenstatus -
+Typ des privaten Haushalts (nach Familien)",09.05.2011 - 09.05.2011
+6000F-3002,Familien: Größe der Kernfamilie - Typ der Kernfamilie (nach Familien) - Ausstattung der Wohnung/Fläche der Wohnung (20m² Intervalle)/Räume,09.05.2011 - 09.05.2011

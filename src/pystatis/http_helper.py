@@ -232,7 +232,7 @@ def get_data_from_resultfile(job_id: str, db_name: str | None = None) -> bytes:
         time.sleep(5)
     else:
         print("Time out exceeded! Aborting...")
-        return ""
+        return bytes()
 
     params = {
         "name": job_id,
@@ -243,6 +243,7 @@ def get_data_from_resultfile(job_id: str, db_name: str | None = None) -> bytes:
     response = get_data_from_endpoint(
         endpoint="data", method="resultfile", params=params, db_name=db_name
     )
+    assert isinstance(response.content, bytes)  # nosec assert_used
     return response.content
 
 

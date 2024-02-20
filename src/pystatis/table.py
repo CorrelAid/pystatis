@@ -38,12 +38,14 @@ class Table:
 
         params |= kwargs
 
-        raw_data = load_data(endpoint="data", method="tablefile", params=params)
-        assert isinstance(raw_data, bytes)  # nosec assert_used
-        raw_data = raw_data.decode("utf-8-sig")
+        raw_data_bytes = load_data(
+            endpoint="data", method="tablefile", params=params
+        )
+        assert isinstance(raw_data_bytes, bytes)  # nosec assert_used
+        raw_data_str = raw_data_bytes.decode("utf-8-sig")
 
-        self.raw_data = raw_data
-        data_buffer = StringIO(raw_data)
+        self.raw_data = raw_data_str
+        data_buffer = StringIO(raw_data_str)
         self.data = pd.read_csv(
             data_buffer, sep=";", na_values=["...", ".", "-", "/", "x"]
         )

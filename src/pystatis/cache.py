@@ -86,7 +86,7 @@ def read_from_cache(
         bytes: The uncompressed raw text data as bytes.
     """
     if name is None:
-        return ""
+        return bytes()
 
     data_dir = _build_file_path(cache_dir, name, params)
 

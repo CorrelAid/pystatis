@@ -14,7 +14,7 @@
   
         <script src="_static/jquery.js?v=5d32c60e"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=59fadc99"></script>
+        <script src="_static/documentation_options.js?v=938c9ccc"></script>
         <script src="_static/doctools.js?v=888ff710"></script>
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -37,7 +37,7 @@
               <img src="_static/pystatis_logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.1.5
+                0.2.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -101,8 +101,7 @@
 <img alt="Structure" src="_images/structure.png" /></p>
 <p>This package currently supports retrieving the following data types:</p>
 <ul class="simple">
-<li><p>Cubes: Multi-dimensional data objects</p></li>
-<li><p>Tables: Derivatives of cubes that are already packaged into logical units</p></li>
+<li><p>Tables: Main statistical objects provided by the Genesis databases.</p></li>
 </ul>
 </section>
 <section id="find-the-right-data">
@@ -118,32 +117,24 @@
 <span class="n">results</span><span class="o">.</span><span class="n">tables</span><span class="o">.</span><span class="n">get_metadata</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># Gets the metadata for the table</span>
 </pre></div>
 </div>
-<p>A complete overview of all use cases is provided in the sample notebook for <a class="reference external" href="https://github.com/CorrelAid/pystatis/blob/main/nb/find.ipynb">find</a>.</p>
+<p>A complete overview of all use cases is provided in the example notebook for <a class="reference external" href="https://github.com/CorrelAid/pystatis/blob/main/nb/find.ipynb">find</a>.</p>
 </section>
 <section id="download-data">
 <h2>Download data<a class="headerlink" href="#download-data" title="Link to this heading"></a></h2>
-<p>Data can be downloaded in to forms: as tables and as cubes. Both interfaces have been aligned to be as close as possible to each other.</p>
+<p>At the moment, the package only supports the download of Tables.</p>
 <p>Example for downloading a Table:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pystatis</span> <span class="kn">import</span> <span class="n">Table</span>
 
 <span class="n">t</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;21311-0001&quot;</span><span class="p">)</span>  <span class="c1"># data is not yet downloaded</span>
 <span class="n">t</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>  <span class="c1"># Only now the data is either fetched from GENESIS or loaded from cache. If the data is downloaded from online, it will be also cached, so next time the data is loaded from cache.</span>
-<span class="n">t</span><span class="o">.</span><span class="n">data</span>  <span class="c1"># a pandas data frame</span>
+<span class="n">t</span><span class="o">.</span><span class="n">data</span>  <span class="c1">#prettified data stored as pandas data frame</span>
 </pre></div>
 </div>
-<p>Example for downloading a Cube:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pystatis</span> <span class="kn">import</span> <span class="n">Cube</span>
-
-<span class="n">c</span> <span class="o">=</span> <span class="n">Cube</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;22922KJ1141&quot;</span><span class="p">)</span>  <span class="c1"># data is not yet downloaded</span>
-<span class="n">c</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>  <span class="c1"># Only now the data is either fetched from GENESIS or loaded from cache. If the data is downloaded from online, it will be also cached, so next time the data is loaded from cache.</span>
-<span class="n">c</span><span class="o">.</span><span class="n">data</span>  <span class="c1"># a pandas data frame</span>
-</pre></div>
-</div>
-<p>For more details, please study the provided sample notebook for <a class="reference external" href="https://github.com/CorrelAid/pystatis/blob/main/nb/table.ipynb">tables</a> and <a class="reference external" href="https://github.com/CorrelAid/pystatis/blob/main/nb/cube.ipynb">cubes</a>.</p>
+<p>For more details, please study the provided sample notebook for <a class="reference external" href="https://github.com/CorrelAid/pystatis/blob/main/nb/table.ipynb">tables</a>.</p>
 </section>
 <section id="clear-cache">
 <h2>Clear Cache<a class="headerlink" href="#clear-cache" title="Link to this heading"></a></h2>
-<p>When a cube or table is queried, it will be put into cache automatically. The cache can be cleared using the following function:</p>
+<p>When a table is queried, it will be put into cache automatically. The cache can be cleared using the following function:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pystatis</span> <span class="kn">import</span> <span class="n">clear_cache</span>
 
 <span class="n">clear_cache</span><span class="p">(</span><span class="s2">&quot;21311-0001&quot;</span><span class="p">)</span>  <span class="c1"># only deletes the data for the object with the specified name</span>

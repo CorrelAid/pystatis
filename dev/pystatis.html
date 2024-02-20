@@ -14,7 +14,7 @@
   
         <script src="_static/jquery.js?v=5d32c60e"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=59fadc99"></script>
+        <script src="_static/documentation_options.js?v=938c9ccc"></script>
         <script src="_static/doctools.js?v=888ff710"></script>
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -36,7 +36,7 @@
               <img src="_static/pystatis_logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.1.5
+                0.2.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -77,16 +77,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#pystatis.config.load_config"><code class="docutils literal notranslate"><span class="pre">load_config()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pystatis.config.setup_credentials"><code class="docutils literal notranslate"><span class="pre">setup_credentials()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pystatis.config.write_config"><code class="docutils literal notranslate"><span class="pre">write_config()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#module-pystatis.cube">pystatis.cube module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#pystatis.cube.Cube"><code class="docutils literal notranslate"><span class="pre">Cube</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#pystatis.cube.Cube.get_data"><code class="docutils literal notranslate"><span class="pre">Cube.get_data()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#pystatis.cube.assign_correct_types"><code class="docutils literal notranslate"><span class="pre">assign_correct_types()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#pystatis.cube.parse_cube"><code class="docutils literal notranslate"><span class="pre">parse_cube()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#pystatis.cube.rename_axes"><code class="docutils literal notranslate"><span class="pre">rename_axes()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#pystatis-custom-exceptions-module">pystatis.custom_exceptions module</a></li>
@@ -138,10 +128,6 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="#module-pystatis">Overall Module contents</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#pystatis.Cube"><code class="docutils literal notranslate"><span class="pre">Cube</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#pystatis.Cube.get_data"><code class="docutils literal notranslate"><span class="pre">Cube.get_data()</span></code></a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="#pystatis.Find"><code class="docutils literal notranslate"><span class="pre">Find</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#pystatis.Find.query"><code class="docutils literal notranslate"><span class="pre">Find.query</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pystatis.Find.db_name"><code class="docutils literal notranslate"><span class="pre">Find.db_name</span></code></a></li>
@@ -438,95 +424,6 @@ until the user has filled in the credentials.</p>
 </dd></dl>
 
 </section>
-<section id="module-pystatis.cube">
-<span id="pystatis-cube-module"></span><h2>pystatis.cube module<a class="headerlink" href="#module-pystatis.cube" title="Link to this heading"></a></h2>
-<p>Module provides functionality to parse cubefile data provided by GENESIS.</p>
-<dl class="py class">
-<dt class="sig sig-object py" id="pystatis.cube.Cube">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pystatis.cube.</span></span><span class="sig-name descname"><span class="pre">Cube</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.cube.Cube" title="Link to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>A wrapper class holding all relevant data and metadata about a given cube.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>name</strong> (<em>str</em>) – The unique identifier of this cube.</p></li>
-<li><p><strong>raw_data</strong> (<em>str</em>) – The raw cubefile data as returned by the /data/cubfile endpoint.</p></li>
-<li><p><strong>data</strong> (<em>pd.DataFrame</em>) – The parsed data as a pandas data frame.</p></li>
-<li><p><strong>cube</strong> (<em>dict</em>) – Metadata as returned by the /data/cubefile endpoint.</p></li>
-<li><p><strong>metadata</strong> (<em>dict</em>) – Metadata as returned by the /metadata/cube endpoint.</p></li>
-</ul>
-</dd>
-</dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="pystatis.cube.Cube.get_data">
-<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">area</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.cube.Cube.get_data" title="Link to this definition"></a></dt>
-<dd><p>Downloads raw data and metadata from GENESIS-Online.</p>
-<p>Additional keyword arguments are passed on to the GENESIS-Online GET request for cubefiles.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>area</strong> (<em>str</em><em>, </em><em>optional</em>) – Area to search for the object in GENESIS-Online. Defaults to “all”.</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="pystatis.cube.assign_correct_types">
-<span class="sig-prename descclassname"><span class="pre">pystatis.cube.</span></span><span class="sig-name descname"><span class="pre">assign_correct_types</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cube</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.cube.assign_correct_types" title="Link to this definition"></a></dt>
-<dd><p>Assign correct value types to column ‘WERT’.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>cube</strong> (<em>dict</em>) – A dictionary holding the cube data as returned by <cite>parse_cube()</cite>.</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Same dict as cube but with changed column types for QEI.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="pystatis.cube.parse_cube">
-<span class="sig-prename descclassname"><span class="pre">pystatis.cube.</span></span><span class="sig-name descname"><span class="pre">parse_cube</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.cube.parse_cube" title="Link to this definition"></a></dt>
-<dd><p>Main function for parsing a cubefile.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>data</strong> (<em>str</em>) – The content of a cubefile as returned by GENESIS.</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A dictionary with each header type as key and the corresponding header block as value.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="pystatis.cube.rename_axes">
-<span class="sig-prename descclassname"><span class="pre">pystatis.cube.</span></span><span class="sig-name descname"><span class="pre">rename_axes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cube</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rename_classifying_variables</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rename_time_variable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.cube.rename_axes" title="Link to this definition"></a></dt>
-<dd><p>Rename the generic axes of a cubefile with the names found in the metadata.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>cube</strong> (<em>dict</em>) – A dictionary holding the cube data as returned by <cite>parse_cube()</cite>.</p></li>
-<li><p><strong>rename_classifying_variables</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, rename classifying variables. Defaults to True.</p></li>
-<li><p><strong>rename_time_variable</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, rename the time variable. Defaults to True.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Same dict as cube but with renamed axes for QEI.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
-</dl>
-</dd></dl>
-
-</section>
 <section id="pystatis-custom-exceptions-module">
 <h2>pystatis.custom_exceptions module<a class="headerlink" href="#pystatis-custom-exceptions-module" title="Link to this heading"></a></h2>
 </section>
@@ -699,7 +596,7 @@ sends a GET request.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>endpoint</strong> (<em>str</em>) – Destatis endpoint (eg. data, catalogue, ..)</p></li>
-<li><p><strong>method</strong> (<em>str</em>) – Destatis method (eg. cube, tablefile, …)</p></li>
+<li><p><strong>method</strong> (<em>str</em>) – Destatis method (eg. tablefile, …)</p></li>
 <li><p><strong>params</strong> (<em>dict</em>) – dictionary of query parameters</p></li>
 <li><p><strong>db_name</strong> (<em>str</em><em>, </em><em>optional</em>) – The database to use for this data request.
 One of “genesis”, “zensus”, “regio”. Defaults to None.</p></li>
@@ -785,7 +682,7 @@ One of “genesis”, “zensus”, “regio”. Defaults to None.</p></li>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>endpoint</strong> (<em>str</em>) – Destatis endpoint (eg. data, catalogue, ..)</p></li>
-<li><p><strong>method</strong> (<em>str</em>) – Destatis method (eg. cube, tablefile, …)</p></li>
+<li><p><strong>method</strong> (<em>str</em>) – Destatis method (eg. tablefile, …)</p></li>
 <li><p><strong>params</strong> (<em>dict</em>) – dictionary of query parameters</p></li>
 </ul>
 </dd>
@@ -952,36 +849,6 @@ and includes informative columns names</p>
 import pystatis</p>
 <p>print(“Version:”, pystatis.__version__)
 <a href="#id6"><span class="problematic" id="id7">``</span></a><a href="#id8"><span class="problematic" id="id9">`</span></a></p>
-<dl class="py class">
-<dt class="sig sig-object py" id="pystatis.Cube">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pystatis.</span></span><span class="sig-name descname"><span class="pre">Cube</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.Cube" title="Link to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>A wrapper class holding all relevant data and metadata about a given cube.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>name</strong> (<em>str</em>) – The unique identifier of this cube.</p></li>
-<li><p><strong>raw_data</strong> (<em>str</em>) – The raw cubefile data as returned by the /data/cubfile endpoint.</p></li>
-<li><p><strong>data</strong> (<em>pd.DataFrame</em>) – The parsed data as a pandas data frame.</p></li>
-<li><p><strong>cube</strong> (<em>dict</em>) – Metadata as returned by the /data/cubefile endpoint.</p></li>
-<li><p><strong>metadata</strong> (<em>dict</em>) – Metadata as returned by the /metadata/cube endpoint.</p></li>
-</ul>
-</dd>
-</dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="pystatis.Cube.get_data">
-<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">area</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.Cube.get_data" title="Link to this definition"></a></dt>
-<dd><p>Downloads raw data and metadata from GENESIS-Online.</p>
-<p>Additional keyword arguments are passed on to the GENESIS-Online GET request for cubefiles.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>area</strong> (<em>str</em><em>, </em><em>optional</em>) – Area to search for the object in GENESIS-Online. Defaults to “all”.</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
 <dl class="py class">
 <dt class="sig sig-object py" id="pystatis.Find">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pystatis.</span></span><span class="sig-name descname"><span class="pre">Find</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top_n_preview</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.Find" title="Link to this definition"></a></dt>

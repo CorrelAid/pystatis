@@ -46,11 +46,15 @@ Please follow this [guide](./nb/00_Setup.ipynb) to set up `pystatis` correctly.
 
 All APIs provide a `helloworld` endpoint that can be used to check your credentials.
 
-Please follow this [guide](./nb/01_Databases.ipynb) to see how to set the desired database and check your login credentials.
+```python
+from pystatis.helloworld import logincheck
+
+logincheck("genesis")
+```
 
 If everything worked out, your setup is complete and you can start downloading data.
 
-For more details, please study the provided sample [notebooks](./nb/).
+For more details, please study the provided examples [notebooks](./nb/).
 
 ## How to use
 
@@ -80,7 +84,7 @@ results.tables.get_code([1,2,3]) # Gets the table codes, e.g. for downloading th
 results.tables.get_metadata([1,2]) # Gets the metadata for the table
 ```
 
-A complete overview of all use cases is provided in the sample notebook for [find](https://github.com/CorrelAid/pystatis/blob/main/nb/find.ipynb).
+A complete overview of all use cases is provided in the example notebook for [find](https://github.com/CorrelAid/pystatis/blob/main/nb/find.ipynb).
 
 ### Download data
 
@@ -93,7 +97,7 @@ from pystatis import Table
 
 t = Table(name="21311-0001")  # data is not yet downloaded
 t.get_data()  # Only now the data is either fetched from GENESIS or loaded from cache. If the data is downloaded from online, it will be also cached, so next time the data is loaded from cache.
-t.data  # a pandas data frame
+t.data  #prettified data stored as pandas data frame
 ```
 
 Example for downloading a Cube:
@@ -139,7 +143,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 A few ideas we should implement in the maybe-near future:
 
-- Improve Table parsing. Right now, the parsing is really simple and we should align the cube and table format so that the data frame for tables is more convenient to use.
 - Mechanism to download data that is newer than the cached version. Right now, once data is cached, it is always retrieved from cache no matter if there is a newer version online. However, this could be quite challenging as the GENESIS API is really bad in providing a good and consistent field for the last update datetime.
 - Improve Table and Cube metadata so the user can look up the variables contained in the dataset and for each variable the values that this variable can have.
 - Understand and support time series.

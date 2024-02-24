@@ -34,9 +34,19 @@ class Table:
             area (str, optional): Area to search for the object in GENESIS-Online. Defaults to "all".
             prettify (bool, optional): Reformats the table into a readable format. Defaults to True.
         """
-        params = {"name": self.name, "area": area, "format": "ffcsv"}
+        params = {
+            "name": self.name,
+            "area": area,
+            "format": "ffcsv",
+            "language": "de",
+        }
 
         params |= kwargs
+
+        if params["language"] not in ["de", "en"]:
+            raise NotImplementedError(
+                f"Language {params['language']} is not supported. Please choose from: ['de', 'en']"
+            )
 
         raw_data_bytes = load_data(
             endpoint="data", method="tablefile", params=params
@@ -46,9 +56,21 @@ class Table:
 
         self.raw_data = raw_data_str
         data_buffer = StringIO(raw_data_str)
-        self.data = pd.read_csv(
-            data_buffer, sep=";", na_values=["...", ".", "-", "/", "x"]
-        )
+
+        if params["language"] == "en":
+            self.data = pd.read_csv(
+                data_buffer,
+                sep=";",
+                na_values=["...", ".", "-", "/", "x"],
+                decimal=".",
+            )
+        else:
+            self.data = pd.read_csv(
+                data_buffer,
+                sep=";",
+                na_values=["...", ".", "-", "/", "x"],
+                decimal=",",
+            )
 
         if prettify:
             self.data = self.prettify_table(

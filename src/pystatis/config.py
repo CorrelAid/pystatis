@@ -32,6 +32,34 @@ REGEX_DB = {
     "zensus": re.compile(r"^\d{4}[A-Z]-\d{4}$"),
     "regio": re.compile(r"^((\d{5}-.{1,2}($|-.*$))|(A.*$)|([0-9A-Z]{10}$))"),
 }
+COLUMN_NAME_DICT = {
+    "genesis": {
+        "de": {
+            "time_label": "Zeit_Label",
+            "time": "Zeit",
+            "variable_code": "Auspraegung_Code",
+            "variable_label": "Merkmal_Label",
+            "variable_level": "Auspraegung_Label",
+        },
+        "en": {
+            "time_label": "time_label",
+            "time": "time",
+            "variable_code": "variable_code.1",
+            "variable_label": "variable_label",
+            "variable_level": "variable_code.2",
+        }
+    },
+    "zensus": {
+        "en": {
+            "time_label": "time_label",
+            "time": "time",
+            "variable_label": "variable_label",
+            "variable_level": "variable_attribute_label",
+            "value_label": "value_variable_label",
+            "value": "value",
+        }
+    }    
+}
 
 logger = logging.getLogger(__name__)
 config = ConfigParser(interpolation=None)

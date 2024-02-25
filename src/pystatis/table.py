@@ -2,10 +2,12 @@
 
 import json
 from io import StringIO
+import re
 
 import pandas as pd
 
 from pystatis import db
+from pystatis.config import COLUMN_NAME_DICT
 from pystatis.http_helper import load_data
 
 
@@ -74,7 +76,7 @@ class Table:
 
         if prettify:
             self.data = self.prettify_table(
-                self.data, db.identify_db(self.name)[0]
+                data=self.data, db_name=db.identify_db(self.name)[0], language=params["language"]
             )
 
         metadata = load_data(endpoint="metadata", method="table", params=params)
@@ -84,7 +86,7 @@ class Table:
         self.metadata = metadata
 
     @staticmethod
-    def prettify_table(data: pd.DataFrame, db_name: str) -> pd.DataFrame:
+    def prettify_table(data: pd.DataFrame, db_name: str, language: str) -> pd.DataFrame:
         """Reformat the data into a more readable table
 
         Args:
@@ -97,80 +99,89 @@ class Table:
         """
         match db_name:
             case "genesis":
-                pretty_data = Table.parse_genesis_table(data)
+                pretty_data = Table.parse_genesis_table(data, language)
             case "zensus":
-                pretty_data = Table.parse_zensus_table(data)
+                pretty_data = Table.parse_zensus_table(data, language)
             case "regio":
-                pretty_data = Table.parse_regio_table(data)
+                pretty_data = Table.parse_regio_table(data, language)
             case _:
                 pretty_data = data
 
         return pretty_data
 
     @staticmethod
-    def parse_genesis_table(data: pd.DataFrame) -> pd.DataFrame:
+    def parse_genesis_table(data: pd.DataFrame, language: str) -> pd.DataFrame:
         """Parse GENESIS table ffcsv format into a more readable format"""
+
+        column_name_dict = COLUMN_NAME_DICT["genesis"][language]
+
         # Extracts time column with name from first element of Zeit_Label column
-        time = pd.DataFrame({data["Zeit_Label"].iloc[0]: data["Zeit"]})
+        time = pd.DataFrame({data[column_name_dict["time_label"]].iloc[-1]: data[column_name_dict["time"]]})
 
         # Extracts new column names from first values of the Merkmal_Label columns
         # and assigns these to the relevant attribute columns (Auspraegung_Label)
-        attributes = data.filter(like="Auspraegung_Label")
-        attributes.columns = data.filter(like="Merkmal_Label").iloc[0].tolist()
+        attributes = data.filter(like=column_name_dict["variable_level"])
+        attributes.columns = data.filter(like=column_name_dict["variable_label"]).iloc[-1].tolist()
 
         # Selects all columns containing the values
         values = data.filter(like="__")
 
         # Given a name like BEV036__Bevoelkerung_in_Hauptwohnsitzhaushalten__1000
         # extracts the readable label and omit both the code and the unit
-        values.columns = [name.split("__")[1] for name in values.columns]
+        values.columns = [re.split(r"_{2,}", name)[1] for name in values.columns]
 
-        pretty_data = pd.concat([time, attributes, values], axis=1)
+        pretty_data = pd.concat([time, attributes, values], axis=1).dropna(axis=0, how="all")
         return pretty_data
 
     @staticmethod
-    def parse_zensus_table(data: pd.DataFrame) -> pd.DataFrame:
+    def parse_zensus_table(data: pd.DataFrame, language: str) -> pd.DataFrame:
         """Parse Zensus table ffcsv format into a more readable format"""
+
+        column_name_dict = COLUMN_NAME_DICT["zensus"]["en"]
+
         # Extracts time column with name from first element of Zeit_Label column
-        time = pd.DataFrame({data["time_label"].iloc[0]: data["time"]})
+        time = pd.DataFrame({data[column_name_dict["time_label"]].iloc[-1]: data[column_name_dict["time"]]})
 
         # Extracts new column names from first values of the Merkmal_Label columns
         # and assigns these to the relevant attribute columns (Auspraegung_Label)
-        attributes = data.filter(like="variable_attribute_label")
+        attributes = data.filter(like=column_name_dict["variable_level"])
         attributes.columns = (
-            data.filter(regex=r"\d+_variable_label").iloc[0].tolist()
+            data.filter(regex=r"\d+_"+column_name_dict["variable_label"]).iloc[-1].tolist()
         )
 
         values = pd.DataFrame(
-            {data["value_variable_label"].iloc[0]: data["value"]}
+            {data[column_name_dict["value_label"]].iloc[-1]: data[column_name_dict["value"]]}
         )
 
-        pretty_data = pd.concat([time, attributes, values], axis=1)
+        pretty_data = pd.concat([time, attributes, values], axis=1).dropna(axis=0, how="all")
         return pretty_data
 
     @staticmethod
-    def parse_regio_table(data: pd.DataFrame) -> pd.DataFrame:
+    def parse_regio_table(data: pd.DataFrame, language: str) -> pd.DataFrame:
         """Parse Regionalstatistik table ffcsv format into a more readable format"""
+
+        column_name_dict = COLUMN_NAME_DICT["genesis"][language]
+
         # Extracts time column with name from first element of Zeit_Label column
-        time = pd.DataFrame({data["Zeit_Label"].iloc[0]: data["Zeit"]})
+        time = pd.DataFrame({data[column_name_dict["time_label"]].iloc[-1]: data[column_name_dict["time"]]})
 
         # Extracts new column names from first values of the Merkmal_Label columns
         # and assigns these to the relevant attribute columns (Auspraegung_Label)
-        attributes = data.filter(like="Auspraegung_Label")
-        attributes.columns = data.filter(like="Merkmal_Label").iloc[0].tolist()
+        attributes = data.filter(like=column_name_dict["variable_level"])
+        attributes.columns = data.filter(like=column_name_dict["variable_label"]).iloc[-1].tolist()
 
         # Extracts new column names from first values of the Merkmal_Label columns
         # and assigns these to the relevant code columns (Auspraegung_Code)
-        codes = data.filter(like="Auspraegung_Code")
-        codes.columns = data.filter(like="Merkmal_Label").iloc[0].tolist()
-        codes.columns = [code + "_Code" for code in codes.columns]
+        codes = data.filter(like=column_name_dict["variable_code"])
+        codes.columns = data.filter(like=column_name_dict["variable_label"]).iloc[-1].tolist()
+        codes.columns = [code + " (Code)" for code in codes.columns]
 
         # Selects all columns containing the values
         values = data.filter(like="__")
 
         # Given a name like BEV036__Bevoelkerung_in_Hauptwohnsitzhaushalten__1000
         # extracts the readable label and omit both the code and the unit
-        values.columns = [name.split("__")[1] for name in values.columns]
+        values.columns = [re.split(r"_{2,}", name)[1] for name in values.columns]
 
-        pretty_data = pd.concat([time, attributes, codes, values], axis=1)
+        pretty_data = pd.concat([time, attributes, codes, values], axis=1).dropna(axis=0, how="all") 
         return pretty_data

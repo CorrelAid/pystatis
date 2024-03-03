@@ -13,7 +13,7 @@ class PystatisConfigError(Exception):
     pass
 
 
-class QueryParameterError(Exception):
+class QueryParameterError(ValueError):
     """Raised when invalid query parameters are passed."""
 
     pass

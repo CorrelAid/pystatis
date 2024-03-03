@@ -37,17 +37,17 @@ COLUMN_NAME_DICT = {
         "de": {
             "time_label": "Zeit_Label",
             "time": "Zeit",
-            "variable_code": "Auspraegung_Code",
             "variable_label": "Merkmal_Label",
             "variable_level": "Auspraegung_Label",
+            "variable_level_code": "Auspraegung_Code",
         },
         "en": {
             "time_label": "time_label",
             "time": "time",
-            "variable_code": "variable_code.1",
             "variable_label": "variable_label",
             "variable_level": "variable_code.2",
-        }
+            "variable_level_code": "variable_code.1",
+        },
     },
     "zensus": {
         "en": {
@@ -58,7 +58,7 @@ COLUMN_NAME_DICT = {
             "value_label": "value_variable_label",
             "value": "value",
         }
-    }    
+    },
 }
 
 logger = logging.getLogger(__name__)

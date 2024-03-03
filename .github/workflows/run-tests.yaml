@@ -1,7 +1,7 @@
 # This workflow will install Python dependencies, run tests and lint with a variety of Python versions
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
 
-name: Run tests
+name: Tests, Code Quality and Documentation
 
 on:
   push:
@@ -18,7 +18,7 @@ env:
   POETRY_VERSION: 1.6.1
 
 jobs:
-  test:
+  test-and-coverage:
     runs-on: ${{ matrix.os }}
     timeout-minutes: 10
     strategy:
@@ -43,6 +43,11 @@ jobs:
       - name: Run tests
         run: |
           poetry run pytest --cov=pystatis tests
+      - name: Update coverage report
+        run: |
+          poetry run coverage run -m pytest
+          poetry run coverage json -o assets/coverage.json
+
   code-quality:
     runs-on: ${{ matrix.os }}
     timeout-minutes: 10
@@ -78,6 +83,7 @@ jobs:
         run: poetry run safety check
       - name: Run mypy
         run: poetry run mypy src
+
   sphinx-documentation:
     runs-on: ${{ matrix.os }}
     timeout-minutes: 10

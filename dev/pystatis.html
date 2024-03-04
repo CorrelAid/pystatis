@@ -761,14 +761,13 @@ Should only apply for manually saved data, visible in ‘Meine Tabellen’ in th
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pystatis.table.Table.get_data">
-<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">area</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'de'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prettify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.table.Table.get_data" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">area</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prettify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.table.Table.get_data" title="Link to this definition"></a></dt>
 <dd><p>Downloads raw data and metadata from GENESIS-Online.</p>
 <p>Additional keyword arguments are passed on to the GENESIS-Online GET request for tablefile.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>area</strong> (<em>str</em><em>, </em><em>optional</em>) – Area to search for the object in GENESIS-Online. Defaults to “all”.</p></li>
-<li><p><strong>language</strong> (<em>str</em><em>, </em><em>optional</em>) – One of “de” (German) or “en” (English). Defaults to “de”.</p></li>
 <li><p><strong>prettify</strong> (<em>bool</em><em>, </em><em>optional</em>) – Reformats the table into a readable format. Defaults to True.</p></li>
 </ul>
 </dd>
@@ -777,14 +776,11 @@ Should only apply for manually saved data, visible in ‘Meine Tabellen’ in th
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pystatis.table.Table.parse_genesis_table">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_genesis_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.table.Table.parse_genesis_table" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_genesis_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.table.Table.parse_genesis_table" title="Link to this definition"></a></dt>
 <dd><p>Parse GENESIS table ffcsv format into a more readable format</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> (<em>DataFrame</em>) – </p></li>
-<li><p><strong>language</strong> (<em>str</em>) – </p></li>
-</ul>
+<dd class="field-odd"><p><strong>data</strong> (<em>DataFrame</em>) – </p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><em>DataFrame</em></p>
@@ -794,14 +790,11 @@ Should only apply for manually saved data, visible in ‘Meine Tabellen’ in th
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pystatis.table.Table.parse_regio_table">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_regio_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.table.Table.parse_regio_table" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_regio_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.table.Table.parse_regio_table" title="Link to this definition"></a></dt>
 <dd><p>Parse Regionalstatistik table ffcsv format into a more readable format</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> (<em>DataFrame</em>) – </p></li>
-<li><p><strong>language</strong> (<em>str</em>) – </p></li>
-</ul>
+<dd class="field-odd"><p><strong>data</strong> (<em>DataFrame</em>) – </p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><em>DataFrame</em></p>
@@ -811,14 +804,11 @@ Should only apply for manually saved data, visible in ‘Meine Tabellen’ in th
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pystatis.table.Table.parse_zensus_table">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_zensus_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.table.Table.parse_zensus_table" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_zensus_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.table.Table.parse_zensus_table" title="Link to this definition"></a></dt>
 <dd><p>Parse Zensus table ffcsv format into a more readable format</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> (<em>DataFrame</em>) – </p></li>
-<li><p><strong>language</strong> (<em>str</em>) – </p></li>
-</ul>
+<dd class="field-odd"><p><strong>data</strong> (<em>DataFrame</em>) – </p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><em>DataFrame</em></p>
@@ -828,14 +818,13 @@ Should only apply for manually saved data, visible in ‘Meine Tabellen’ in th
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pystatis.table.Table.prettify_table">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">prettify_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.table.Table.prettify_table" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">prettify_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.table.Table.prettify_table" title="Link to this definition"></a></dt>
 <dd><p>Reformat the data into a more readable table</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>data</strong> (<em>pd.DataFrame</em>) – A pandas dataframe created from raw_data</p></li>
 <li><p><strong>db_name</strong> (<em>str</em>) – The name of the database.</p></li>
-<li><p><strong>language</strong> (<em>str</em>) – The requested language. One of “de” or “en”.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -990,14 +979,13 @@ One of “genesis”, “zensus”, “regio”.</p>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pystatis.Table.get_data">
-<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">area</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'de'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prettify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.Table.get_data" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">area</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prettify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.Table.get_data" title="Link to this definition"></a></dt>
 <dd><p>Downloads raw data and metadata from GENESIS-Online.</p>
 <p>Additional keyword arguments are passed on to the GENESIS-Online GET request for tablefile.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>area</strong> (<em>str</em><em>, </em><em>optional</em>) – Area to search for the object in GENESIS-Online. Defaults to “all”.</p></li>
-<li><p><strong>language</strong> (<em>str</em><em>, </em><em>optional</em>) – One of “de” (German) or “en” (English). Defaults to “de”.</p></li>
 <li><p><strong>prettify</strong> (<em>bool</em><em>, </em><em>optional</em>) – Reformats the table into a readable format. Defaults to True.</p></li>
 </ul>
 </dd>
@@ -1006,14 +994,11 @@ One of “genesis”, “zensus”, “regio”.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pystatis.Table.parse_genesis_table">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_genesis_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.Table.parse_genesis_table" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_genesis_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.Table.parse_genesis_table" title="Link to this definition"></a></dt>
 <dd><p>Parse GENESIS table ffcsv format into a more readable format</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> (<em>DataFrame</em>) – </p></li>
-<li><p><strong>language</strong> (<em>str</em>) – </p></li>
-</ul>
+<dd class="field-odd"><p><strong>data</strong> (<em>DataFrame</em>) – </p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><em>DataFrame</em></p>
@@ -1023,14 +1008,11 @@ One of “genesis”, “zensus”, “regio”.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pystatis.Table.parse_regio_table">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_regio_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.Table.parse_regio_table" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_regio_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.Table.parse_regio_table" title="Link to this definition"></a></dt>
 <dd><p>Parse Regionalstatistik table ffcsv format into a more readable format</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> (<em>DataFrame</em>) – </p></li>
-<li><p><strong>language</strong> (<em>str</em>) – </p></li>
-</ul>
+<dd class="field-odd"><p><strong>data</strong> (<em>DataFrame</em>) – </p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><em>DataFrame</em></p>
@@ -1040,14 +1022,11 @@ One of “genesis”, “zensus”, “regio”.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pystatis.Table.parse_zensus_table">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_zensus_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.Table.parse_zensus_table" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_zensus_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.Table.parse_zensus_table" title="Link to this definition"></a></dt>
 <dd><p>Parse Zensus table ffcsv format into a more readable format</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> (<em>DataFrame</em>) – </p></li>
-<li><p><strong>language</strong> (<em>str</em>) – </p></li>
-</ul>
+<dd class="field-odd"><p><strong>data</strong> (<em>DataFrame</em>) – </p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><em>DataFrame</em></p>
@@ -1057,14 +1036,13 @@ One of “genesis”, “zensus”, “regio”.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pystatis.Table.prettify_table">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">prettify_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.Table.prettify_table" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">prettify_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.Table.prettify_table" title="Link to this definition"></a></dt>
 <dd><p>Reformat the data into a more readable table</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>data</strong> (<em>pd.DataFrame</em>) – A pandas dataframe created from raw_data</p></li>
 <li><p><strong>db_name</strong> (<em>str</em>) – The name of the database.</p></li>
-<li><p><strong>language</strong> (<em>str</em>) – The requested language. One of “de” or “en”.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>

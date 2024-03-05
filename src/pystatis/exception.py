@@ -11,3 +11,9 @@ class PystatisConfigError(Exception):
     """Raised when pystatis configuration is invalid."""
 
     pass
+
+
+class QueryParameterError(ValueError):
+    """Raised when invalid query parameters are passed."""
+
+    pass

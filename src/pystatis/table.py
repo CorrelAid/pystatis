@@ -1,11 +1,14 @@
 """Module contains business logic related to destatis tables."""
 
 import json
+import re
 from io import StringIO
 
 import pandas as pd
 
 from pystatis import db
+from pystatis.config import COLUMN_NAME_DICT
+from pystatis.exception import QueryParameterError
 from pystatis.http_helper import load_data
 
 
@@ -25,18 +28,36 @@ class Table:
         self.data = pd.DataFrame()
         self.metadata: dict = {}
 
-    def get_data(self, area: str = "all", prettify: bool = True, **kwargs):
+    def get_data(
+        self,
+        area: str = "all",
+        language: str = "de",
+        prettify: bool = True,
+        **kwargs,
+    ):
         """Downloads raw data and metadata from GENESIS-Online.
 
         Additional keyword arguments are passed on to the GENESIS-Online GET request for tablefile.
 
         Args:
             area (str, optional): Area to search for the object in GENESIS-Online. Defaults to "all".
+            language (str, optional): One of "de" (German) or "en" (English). Defaults to "de".
             prettify (bool, optional): Reformats the table into a readable format. Defaults to True.
         """
-        params = {"name": self.name, "area": area, "format": "ffcsv"}
+
+        params = {
+            "name": self.name,
+            "area": area,
+            "format": "ffcsv",
+            "language": language,
+        }
 
         params |= kwargs
+
+        if language not in ["de", "en"]:
+            raise QueryParameterError(
+                f"Language {language} is not supported. Please choose from: ['de', 'en']"
+            )
 
         raw_data_bytes = load_data(
             endpoint="data", method="tablefile", params=params
@@ -46,13 +67,20 @@ class Table:
 
         self.raw_data = raw_data_str
         data_buffer = StringIO(raw_data_str)
+
+        decimal_char = "," if language == "de" else "."
         self.data = pd.read_csv(
-            data_buffer, sep=";", na_values=["...", ".", "-", "/", "x"]
+            data_buffer,
+            sep=";",
+            na_values=["...", ".", "-", "/", "x"],
+            decimal=decimal_char,
         )
 
         if prettify:
             self.data = self.prettify_table(
-                self.data, db.identify_db(self.name)[0]
+                data=self.data,
+                db_name=db.identify_db(self.name)[0],
+                language=language,
             )
 
         metadata = load_data(endpoint="metadata", method="table", params=params)
@@ -62,12 +90,15 @@ class Table:
         self.metadata = metadata
 
     @staticmethod
-    def prettify_table(data: pd.DataFrame, db_name: str) -> pd.DataFrame:
+    def prettify_table(
+        data: pd.DataFrame, db_name: str, language: str
+    ) -> pd.DataFrame:
         """Reformat the data into a more readable table
 
         Args:
             data (pd.DataFrame): A pandas dataframe created from raw_data
             db_name (str): The name of the database.
+            language (str): The requested language. One of "de" or "en".
 
         Returns:
             pd.DataFrame: Formatted dataframe that omits all unnecessary Code columns
@@ -75,80 +106,135 @@ class Table:
         """
         match db_name:
             case "genesis":
-                pretty_data = Table.parse_genesis_table(data)
+                pretty_data = Table.parse_genesis_table(data, language)
             case "zensus":
                 pretty_data = Table.parse_zensus_table(data)
             case "regio":
-                pretty_data = Table.parse_regio_table(data)
+                pretty_data = Table.parse_regio_table(data, language)
             case _:
                 pretty_data = data
 
         return pretty_data
 
     @staticmethod
-    def parse_genesis_table(data: pd.DataFrame) -> pd.DataFrame:
+    def parse_genesis_table(data: pd.DataFrame, language: str) -> pd.DataFrame:
         """Parse GENESIS table ffcsv format into a more readable format"""
-        # Extracts time column with name from first element of Zeit_Label column
-        time = pd.DataFrame({data["Zeit_Label"].iloc[0]: data["Zeit"]})
 
-        # Extracts new column names from first values of the Merkmal_Label columns
-        # and assigns these to the relevant attribute columns (Auspraegung_Label)
-        attributes = data.filter(like="Auspraegung_Label")
-        attributes.columns = data.filter(like="Merkmal_Label").iloc[0].tolist()
+        column_name_dict = COLUMN_NAME_DICT["genesis"][language]
+
+        # Extracts time column with name from last element of Zeit_Label column
+        time = pd.DataFrame(
+            {
+                data[column_name_dict["time_label"]].iloc[-1]: data[
+                    column_name_dict["time"]
+                ]
+            }
+        )
+
+        # Extracts new column names from last values of the variable label columns
+        # and assigns these to the relevant attribute columns (variable level)
+        attributes = data.filter(like=column_name_dict["variable_level"])
+        attributes.columns = (
+            data.filter(like=column_name_dict["variable_label"])
+            .iloc[-1]
+            .tolist()
+        )
 
         # Selects all columns containing the values
         values = data.filter(like="__")
 
         # Given a name like BEV036__Bevoelkerung_in_Hauptwohnsitzhaushalten__1000
-        # extracts the readable label and omit both the code and the unit
-        values.columns = [name.split("__")[1] for name in values.columns]
+        # extracts the readable label and omits both the code and the unit
+        values.columns = [
+            re.split(r"_{2,}", name)[1] for name in values.columns
+        ]
 
-        pretty_data = pd.concat([time, attributes, values], axis=1)
+        pretty_data = pd.concat([time, attributes, values], axis=1).dropna(
+            axis=0, how="all"
+        )
         return pretty_data
 
     @staticmethod
     def parse_zensus_table(data: pd.DataFrame) -> pd.DataFrame:
         """Parse Zensus table ffcsv format into a more readable format"""
-        # Extracts time column with name from first element of Zeit_Label column
-        time = pd.DataFrame({data["time_label"].iloc[0]: data["time"]})
 
-        # Extracts new column names from first values of the Merkmal_Label columns
-        # and assigns these to the relevant attribute columns (Auspraegung_Label)
-        attributes = data.filter(like="variable_attribute_label")
+        column_name_dict = COLUMN_NAME_DICT["zensus"]["en"]
+
+        # Extracts time column with name from last element of Zeit_Label column
+        time = pd.DataFrame(
+            {
+                data[column_name_dict["time_label"]].iloc[-1]: data[
+                    column_name_dict["time"]
+                ]
+            }
+        )
+
+        # Extracts new column names from last values of the variable label columns
+        # and assigns these to the relevant attribute columns (variable level)
+        attributes = data.filter(like=column_name_dict["variable_level"])
         attributes.columns = (
-            data.filter(regex=r"\d+_variable_label").iloc[0].tolist()
+            data.filter(regex=r"\d+_" + column_name_dict["variable_label"])
+            .iloc[-1]
+            .tolist()
         )
 
         values = pd.DataFrame(
-            {data["value_variable_label"].iloc[0]: data["value"]}
+            {
+                data[column_name_dict["value_label"]].iloc[-1]: data[
+                    column_name_dict["value"]
+                ]
+            }
         )
 
-        pretty_data = pd.concat([time, attributes, values], axis=1)
+        pretty_data = pd.concat([time, attributes, values], axis=1).dropna(
+            axis=0, how="all"
+        )
         return pretty_data
 
     @staticmethod
-    def parse_regio_table(data: pd.DataFrame) -> pd.DataFrame:
+    def parse_regio_table(data: pd.DataFrame, language: str) -> pd.DataFrame:
         """Parse Regionalstatistik table ffcsv format into a more readable format"""
-        # Extracts time column with name from first element of Zeit_Label column
-        time = pd.DataFrame({data["Zeit_Label"].iloc[0]: data["Zeit"]})
 
-        # Extracts new column names from first values of the Merkmal_Label columns
-        # and assigns these to the relevant attribute columns (Auspraegung_Label)
-        attributes = data.filter(like="Auspraegung_Label")
-        attributes.columns = data.filter(like="Merkmal_Label").iloc[0].tolist()
+        column_name_dict = COLUMN_NAME_DICT["genesis"][language]
 
-        # Extracts new column names from first values of the Merkmal_Label columns
-        # and assigns these to the relevant code columns (Auspraegung_Code)
-        codes = data.filter(like="Auspraegung_Code")
-        codes.columns = data.filter(like="Merkmal_Label").iloc[0].tolist()
-        codes.columns = [code + "_Code" for code in codes.columns]
+        # Extracts time column with name from last element of Zeit_Label column
+        time = pd.DataFrame(
+            {
+                data[column_name_dict["time_label"]].iloc[-1]: data[
+                    column_name_dict["time"]
+                ]
+            }
+        )
+
+        # Extracts new column names from last values of the variable label columns
+        # and assigns these to the relevant attribute columns (variable level)
+        attributes = data.filter(like=column_name_dict["variable_level"])
+        attributes.columns = (
+            data.filter(like=column_name_dict["variable_label"])
+            .iloc[-1]
+            .tolist()
+        )
+
+        # Extracts new column names from last values of the variable label columns
+        # and assigns these to the relevant code columns (variable_level_code)
+        codes = data.filter(like=column_name_dict["variable_level_code"])
+        codes.columns = (
+            data.filter(like=column_name_dict["variable_label"])
+            .iloc[-1]
+            .tolist()
+        )
+        codes.columns = [code + " (Code)" for code in codes.columns]
 
         # Selects all columns containing the values
         values = data.filter(like="__")
 
         # Given a name like BEV036__Bevoelkerung_in_Hauptwohnsitzhaushalten__1000
         # extracts the readable label and omit both the code and the unit
-        values.columns = [name.split("__")[1] for name in values.columns]
+        values.columns = [
+            re.split(r"_{2,}", name)[1] for name in values.columns
+        ]
 
-        pretty_data = pd.concat([time, attributes, codes, values], axis=1)
+        pretty_data = pd.concat(
+            [time, attributes, codes, values], axis=1
+        ).dropna(axis=0, how="all")
         return pretty_data

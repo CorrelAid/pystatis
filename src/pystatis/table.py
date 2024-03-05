@@ -108,7 +108,7 @@ class Table:
             case "genesis":
                 pretty_data = Table.parse_genesis_table(data, language)
             case "zensus":
-                pretty_data = Table.parse_zensus_table(data, language)
+                pretty_data = Table.parse_zensus_table(data)
             case "regio":
                 pretty_data = Table.parse_regio_table(data, language)
             case _:
@@ -155,7 +155,7 @@ class Table:
         return pretty_data
 
     @staticmethod
-    def parse_zensus_table(data: pd.DataFrame, language: str) -> pd.DataFrame:
+    def parse_zensus_table(data: pd.DataFrame) -> pd.DataFrame:
         """Parse Zensus table ffcsv format into a more readable format"""
 
         column_name_dict = COLUMN_NAME_DICT["zensus"]["en"]

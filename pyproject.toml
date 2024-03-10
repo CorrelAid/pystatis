@@ -43,7 +43,7 @@ optional = true
 
 [tool.poetry.group.dev.dependencies]
 bandit = "^1.7.4"
-black = "^23.0"
+black = "^24.0.0"
 flake8 = "^7.0.0"
 flake8-docstrings = "^1.6.0"
 isort = "^5.10.1"

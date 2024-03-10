@@ -25,18 +25,61 @@ class Table:
         self.data = pd.DataFrame()
         self.metadata: dict = {}
 
-    def get_data(self, area: str = "all", prettify: bool = True, **kwargs):
+    # pylint: disable=too-many-arguments
+    # pylint: disable=too-many-locals
+    def get_data(
+        self,
+        *,
+        prettify: bool = True,
+        area: str = "all",
+        startyear: str = "",
+        endyear: str = "",
+        timeslices: str = "",
+        regionalvariable: str = "",
+        regionalkey: str = "",
+        stand: str = "",
+        language: str = "de",
+        quality: bool = False,
+    ):
         """Downloads raw data and metadata from GENESIS-Online.
 
         Additional keyword arguments are passed on to the GENESIS-Online GET request for tablefile.
 
         Args:
-            area (str, optional): Area to search for the object in GENESIS-Online. Defaults to "all".
             prettify (bool, optional): Reformats the table into a readable format. Defaults to True.
+            area (str, optional): Area to search for the object in GENESIS-Online. Defaults to "all".
+            startyear (str, optional): Data beginning with that year will be returned.
+                Parameter is cumulative to `timeslices`. Supports 4 digits (jjjj) or 4+2 digits (jjjj/jj).
+                Accepts values between "1900" and "2100".
+            endyear (str, optional): Data ending with that year will be returned.
+                Parameter is cumulative to `timeslices`. Supports 4 digits (jjjj) or 4+2 digits (jjjj/jj).
+                Accepts values between "1900" and "2100".
+            timeslices (str, optional): Number of time slices to be returned.
+                This parameter is cumulative to `startyear` and `endyear`.
+            regionalvariable (str, optional): "code" der Regionalklassifikation (RKMerkmal),
+                auf die die Auswahl mittels `regionalkey` angewendet werden soll.
+                Accepts 1-6 characters.
+            regionalkey (str, optional): Übergabe des Amtlichen Gemeindeschlüssel (AGS).
+                Multiple values can be passed as a comma-separated list.
+                Accepts 1-8 characters. "*" can be used as wildcard.
+            stand (str, optional): Provides table only if it is newer.
+                "tt.mm.jjjj hh:mm" or "tt.mm.jjjj". Example: "24.12.2001 19:15".
+            language (str, optional): Messages and data descriptions are supplied in this language.
+            quality (bool, optional): If True, Value-adding quality labels are issued.
         """
-        params = {"name": self.name, "area": area, "format": "ffcsv"}
-
-        params |= kwargs
+        params = {
+            "name": self.name,
+            "area": area,
+            "startyear": startyear,
+            "endyear": endyear,
+            "timeslices": timeslices,
+            "regionalvariable": regionalvariable,
+            "regionalkey": regionalkey,
+            "stand": stand,
+            "language": language,
+            "quality": quality,
+            "format": "ffcsv",
+        }
 
         raw_data_bytes = load_data(
             endpoint="data", method="tablefile", params=params

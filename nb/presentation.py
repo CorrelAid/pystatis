@@ -213,15 +213,13 @@ students.get_data(startyear=2015)
 # ### set proper column types
 
 # %%
-students.data["Kreise und kreisfreie Städte_Code"] = students.data[
-    "Kreise und kreisfreie Städte_Code"
-].astype(str)
+students.data["Kreise und kreisfreie Städte_Code"] = students.data["Kreise und kreisfreie Städte_Code"].astype(str)
 students.data["Kreise und kreisfreie Städte_Code"]
 
 # %%
-students.data["Kreise und kreisfreie Städte_Code"] = students.data[
-    "Kreise und kreisfreie Städte_Code"
-].apply(lambda x: "0" + x if len(x) <= 1 else x)
+students.data["Kreise und kreisfreie Städte_Code"] = students.data["Kreise und kreisfreie Städte_Code"].apply(
+    lambda x: "0" + x if len(x) <= 1 else x
+)
 students.data["Kreise und kreisfreie Städte_Code"]
 
 # %% [markdown]
@@ -236,8 +234,7 @@ students.data
 # %%
 ratio_international = (
     students.data[
-        (students.data.Geschlecht == "Insgesamt")
-        & (students.data["Fächergruppe (mit Insgesamt)"] == "Insgesamt")
+        (students.data.Geschlecht == "Insgesamt") & (students.data["Fächergruppe (mit Insgesamt)"] == "Insgesamt")
     ]
     .groupby(
         by=[
@@ -251,10 +248,7 @@ ratio_international = (
 ratio_international.rename("ratio_international", inplace=True)
 
 ratio_international = pd.DataFrame(ratio_international)
-ratio_international["year"] = [
-    int(semester[3:7])
-    for semester in ratio_international.index.get_level_values(2)
-]
+ratio_international["year"] = [int(semester[3:7]) for semester in ratio_international.index.get_level_values(2)]
 
 ratio_international
 
@@ -277,12 +271,8 @@ for region in [
     "  Berlin",
 ]:
     plt.plot(
-        ratio_international[
-            ratio_international.index.get_level_values(0) == region
-        ].year,
-        ratio_international[
-            ratio_international.index.get_level_values(0) == region
-        ].ratio_international,
+        ratio_international[ratio_international.index.get_level_values(0) == region].year,
+        ratio_international[ratio_international.index.get_level_values(0) == region].ratio_international,
         label=region,
     )
 plt.legend()

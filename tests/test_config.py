@@ -17,13 +17,8 @@ def config_() -> ConfigParser:
 
 
 def test_config_path():
-    assert (
-        config._build_config_file_path()
-        == Path(config.DEFAULT_CONFIG_DIR) / "config.ini"
-    )
-    assert config.get_cache_dir() == str(
-        Path(config.DEFAULT_CONFIG_DIR) / "data"
-    )
+    assert config._build_config_file_path() == Path(config.DEFAULT_CONFIG_DIR) / "config.ini"
+    assert config.get_cache_dir() == str(Path(config.DEFAULT_CONFIG_DIR) / "data")
 
 
 def test_init_config_is_run_on_import(config_):
@@ -70,13 +65,9 @@ def test_setup_credentials(config_):
     for db in config.get_supported_db():
         for field in ["username", "password"]:
             if field == "username":
-                os.environ[
-                    f"PYSTATIS_{db.upper()}_API_{field.upper()}"
-                ] = "test"
+                os.environ[f"PYSTATIS_{db.upper()}_API_{field.upper()}"] = "test"
             else:
-                os.environ[
-                    f"PYSTATIS_{db.upper()}_API_{field.upper()}"
-                ] = "test123!"
+                os.environ[f"PYSTATIS_{db.upper()}_API_{field.upper()}"] = "test123!"
 
     config.setup_credentials()
 

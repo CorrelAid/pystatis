@@ -58,7 +58,7 @@ pytest-cov = "^4.0"
 pytest-mock = "^3.8.2"
 python-dotenv = "^1.0.0"
 requests-toolbelt = "^1.0.0"
-safety = "^2.0.0"
+safety = "^3.0.0"
 sphinx = "^7.0"
 sphinx-rtd-theme = "^2.0.0"
 urllib3 = {extras = ["appengine"], version = "^2.2.1"}

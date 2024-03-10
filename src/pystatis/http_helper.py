@@ -54,9 +54,7 @@ def load_data(
             data = read_from_cache(cache_dir, name, params)
         else:
             response = get_data_from_endpoint(endpoint, method, params, db_name)
-            content_type = response.headers.get(
-                "Content-Type", "text/csv"
-            ).split("/")[-1]
+            content_type = response.headers.get("Content-Type", "text/csv").split("/")[-1]
             data = response.content
 
             # status code 98 means that the table is too big
@@ -85,9 +83,7 @@ def load_data(
     return data
 
 
-def get_data_from_endpoint(
-    endpoint: str, method: str, params: dict, db_name: str | None = None
-) -> requests.Response:
+def get_data_from_endpoint(endpoint: str, method: str, params: dict, db_name: str | None = None) -> requests.Response:
     """
     Wrapper method which constructs a url for querying data from Destatis and
     sends a GET request.
@@ -171,9 +167,7 @@ def start_job(endpoint: str, method: str, params: dict) -> requests.Response:
     params["job"] = "true"
 
     # starting a job
-    response = get_data_from_endpoint(
-        endpoint=endpoint, method=method, params=params
-    )
+    response = get_data_from_endpoint(endpoint=endpoint, method=method, params=params)
 
     return response
 
@@ -221,9 +215,7 @@ def get_data_from_resultfile(job_id: str, db_name: str | None = None) -> bytes:
     time_ = time.perf_counter()
 
     while (time.perf_counter() - time_) < JOB_TIMEOUT:
-        response = get_data_from_endpoint(
-            endpoint="catalogue", method="jobs", params=params, db_name=db_name
-        )
+        response = get_data_from_endpoint(endpoint="catalogue", method="jobs", params=params, db_name=db_name)
 
         jobs = response.json().get("List")
         if len(jobs) > 0 and jobs[0].get("State") == "Fertig":
@@ -240,9 +232,7 @@ def get_data_from_resultfile(job_id: str, db_name: str | None = None) -> bytes:
         "compress": "false",
         "format": "ffcsv",
     }
-    response = get_data_from_endpoint(
-        endpoint="data", method="resultfile", params=params, db_name=db_name
-    )
+    response = get_data_from_endpoint(endpoint="data", method="resultfile", params=params, db_name=db_name)
     assert isinstance(response.content, bytes)  # nosec assert_used
     return response.content
 
@@ -266,9 +256,7 @@ def _check_invalid_status_code(response: requests.Response) -> None:
         content = body.get("Content")
         code = body.get("Code")
         logger.error("Error Code: %s. Content: %s.", code, content)
-        raise requests.exceptions.HTTPError(
-            f"The server returned a {response.status_code} status code."
-        )
+        raise requests.exceptions.HTTPError(f"The server returned a {response.status_code} status code.")
 
 
 def _check_invalid_destatis_status_code(response: requests.Response) -> None:
@@ -332,13 +320,9 @@ def _check_destatis_status(destatis_status: dict) -> None:
             raise DestatisStatusError(destatis_status_content)
 
     # output warnings to user
-    elif (destatis_status_code == 22) or (
-        destatis_status_type in warning_en_de
-    ):
+    elif (destatis_status_code == 22) or (destatis_status_type in warning_en_de):
         logger.warning(destatis_status_content)
 
     # output information to user
     elif destatis_status_type.lower() == "information":
-        logger.info(
-            "Code %d: %s", destatis_status_code, destatis_status_content
-        )
+        logger.info("Code %d: %s", destatis_status_code, destatis_status_content)

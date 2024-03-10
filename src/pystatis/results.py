@@ -22,9 +22,7 @@ class Results:
         get_metadata(): Gets metadata based on the index of the object.
     """
 
-    def __init__(
-        self, result: pd.DataFrame, category: str, db_name: str
-    ) -> None:
+    def __init__(self, result: pd.DataFrame, category: str, db_name: str) -> None:
         """
         Class that contains the results of a find query.
 
@@ -93,17 +91,10 @@ class Results:
                         structure_dict["Head"]["Content"],
                         f"{'-' * 20}",
                         "Columns:",
-                        "\n".join(
-                            [
-                                col["Content"]
-                                for col in structure_dict["Columns"]
-                            ]
-                        ),
+                        "\n".join([col["Content"] for col in structure_dict["Columns"]]),
                         f"{'-' * 20}",
                         "Rows:",
-                        "\n".join(
-                            [row["Content"] for row in structure_dict["Rows"]]
-                        ),
+                        "\n".join([row["Content"] for row in structure_dict["Rows"]]),
                         f"{'-' * 40}",
                     ]
                 )
@@ -118,9 +109,7 @@ class Results:
                         response["Object"]["Content"],
                         f"{'-' * 20}",
                         "Content:",
-                        "\n".join(
-                            [content["Content"] for content in axis_dict]
-                        ),
+                        "\n".join([content["Content"] for content in axis_dict]),
                         f"{'-' * 40}",
                     ]
                 )
@@ -136,10 +125,7 @@ class Results:
                         f"{'-' * 20}",
                         "Content:",
                         "\n".join(
-                            [
-                                f"{structure_dict[content]} {content}"
-                                for content in ["Cubes", "Variables", "Updated"]
-                            ]
+                            [f"{structure_dict[content]} {content}" for content in ["Cubes", "Variables", "Updated"]]
                         ),
                         f"{'-' * 40}",
                     ]

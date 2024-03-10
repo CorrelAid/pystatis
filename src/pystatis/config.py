@@ -104,8 +104,7 @@ def load_config(config_file: Path | None = None) -> ConfigParser:
 
     if not successful_reads:
         logger.critical(
-            "Error while loading the config file. Could not find %s. "
-            "Please make sure to run init_config() first. ",
+            "Error while loading the config file. Could not find %s. " "Please make sure to run init_config() first. ",
             config_file,
         )
 

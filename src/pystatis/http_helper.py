@@ -8,12 +8,7 @@ import time
 import requests
 
 from pystatis import config, db
-from pystatis.cache import (
-    cache_data,
-    hit_in_cash,
-    normalize_name,
-    read_from_cache,
-)
+from pystatis.cache import cache_data, hit_in_cash, normalize_name, read_from_cache
 from pystatis.exception import DestatisStatusError, PystatisConfigError
 
 logger = logging.getLogger(__name__)

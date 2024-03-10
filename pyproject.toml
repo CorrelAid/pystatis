@@ -64,7 +64,7 @@ sphinx-rtd-theme = "^2.0.0"
 urllib3 = {extras = ["appengine"], version = "^2.2.1"}
 
 [tool.black]
-line-length = 80
+line-length = 120
 target-version = ['py310']
 
 [build-system]
@@ -77,4 +77,4 @@ log_cli = false
 
 [tool.isort]
 profile = "black"
-line_length = 80
+line_length = 120

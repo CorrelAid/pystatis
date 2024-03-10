@@ -81,22 +81,16 @@ class Table:
             "format": "ffcsv",
         }
 
-        raw_data_bytes = load_data(
-            endpoint="data", method="tablefile", params=params
-        )
+        raw_data_bytes = load_data(endpoint="data", method="tablefile", params=params)
         assert isinstance(raw_data_bytes, bytes)  # nosec assert_used
         raw_data_str = raw_data_bytes.decode("utf-8-sig")
 
         self.raw_data = raw_data_str
         data_buffer = StringIO(raw_data_str)
-        self.data = pd.read_csv(
-            data_buffer, sep=";", na_values=["...", ".", "-", "/", "x"]
-        )
+        self.data = pd.read_csv(data_buffer, sep=";", na_values=["...", ".", "-", "/", "x"])
 
         if prettify:
-            self.data = self.prettify_table(
-                self.data, db.identify_db(self.name)[0]
-            )
+            self.data = self.prettify_table(self.data, db.identify_db(self.name)[0])
 
         metadata = load_data(endpoint="metadata", method="table", params=params)
         metadata = json.loads(metadata)
@@ -158,13 +152,9 @@ class Table:
         # Extracts new column names from first values of the Merkmal_Label columns
         # and assigns these to the relevant attribute columns (Auspraegung_Label)
         attributes = data.filter(like="variable_attribute_label")
-        attributes.columns = (
-            data.filter(regex=r"\d+_variable_label").iloc[0].tolist()
-        )
+        attributes.columns = data.filter(regex=r"\d+_variable_label").iloc[0].tolist()
 
-        values = pd.DataFrame(
-            {data["value_variable_label"].iloc[0]: data["value"]}
-        )
+        values = pd.DataFrame({data["value_variable_label"].iloc[0]: data["value"]})
 
         pretty_data = pd.concat([time, attributes, values], axis=1)
         return pretty_data

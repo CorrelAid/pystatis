@@ -18,6 +18,7 @@ When the package is loaded for the first time,
     Subsequent calls to other `pystatis` functions will throw an error
     until the user has filled in the credentials.
 """
+
 import logging
 import os
 import re
@@ -104,7 +105,10 @@ def load_config(config_file: Path | None = None) -> ConfigParser:
 
     if not successful_reads:
         logger.critical(
-            "Error while loading the config file. Could not find %s. " "Please make sure to run init_config() first. ",
+            (
+                "Error while loading the config file. Could not find %s. "
+                "Please make sure to run init_config() first. "
+            ),
             config_file,
         )
 

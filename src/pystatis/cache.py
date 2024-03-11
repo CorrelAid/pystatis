@@ -177,9 +177,7 @@ def clear_cache(name: Optional[str] = None) -> None:
 
     # remove specified file (directory) from the data cache
     # or clear complete cache (remove childs, preserve base)
-    file_paths = (
-        [cache_dir / name] if name is not None else list(cache_dir.iterdir())
-    )
+    file_paths = [cache_dir / name] if name is not None else list(cache_dir.iterdir())
 
     for file_path in file_paths:
         # delete if file or symlink, otherwise remove complete tree

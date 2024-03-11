@@ -1,12 +1,11 @@
 [flake8]
 count = true
-docstring-convention = "google"
-exclude = ".git,__pycache__,docs,build,dist,.venv,.github"
+docstring-convention = google
+exclude = "".git,__pycache__,docs,build,dist,.venv,.github"
 filename = "*py"
-ignore = "E4,E501"
+extend-ignore = E4,E501
 max-complexity = 10
-max-line-length = 80
-require-plugins = "flake8-docstrings"
+max-line-length = 120
 show-source = true
 statistics = true
 tee = true

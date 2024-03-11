@@ -19,9 +19,7 @@ def test_logincheck(mocker):
         "pystatis.helloworld.requests.get",
         return_value=_generic_request_status(),
     )
-    mocker.patch(
-        "pystatis.db.get_db_settings", return_value=("host", "user", "pw")
-    )
+    mocker.patch("pystatis.db.get_db_settings", return_value=("host", "user", "pw"))
 
     response = logincheck("genesis")
 

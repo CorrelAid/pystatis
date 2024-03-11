@@ -59,17 +59,11 @@ def test_get_response_from_endpoint(mocker):
     Test once with generic API response, more detailed tests
     of subfunctions and specific cases below.
     """
-    mocker.patch(
-        "pystatis.http_helper.requests", return_value=_generic_request_status()
-    )
-    mocker.patch(
-        "pystatis.db.get_db_settings", return_value=("host", "user", "pw")
-    )
+    mocker.patch("pystatis.http_helper.requests", return_value=_generic_request_status())
+    mocker.patch("pystatis.db.get_db_settings", return_value=("host", "user", "pw"))
     mocker.patch("pystatis.db.check_db_credentials", return_value=True)
 
-    get_data_from_endpoint(
-        endpoint="endpoint", method="method", params={"name": "21111-0001"}
-    )
+    get_data_from_endpoint(endpoint="endpoint", method="method", params={"name": "21111-0001"})
 
 
 def test_check_invalid_status_code_with_error():
@@ -79,12 +73,8 @@ def test_check_invalid_status_code_with_error():
     """
     for status_code in [400, 500]:
         with pytest.raises(requests.exceptions.HTTPError) as e:
-            _check_invalid_status_code(
-                _generic_request_status(status_code=status_code)
-            )
-        assert (
-            str(e.value) == f"The server returned a {status_code} status code."
-        )
+            _check_invalid_status_code(_generic_request_status(status_code=status_code))
+        assert str(e.value) == f"The server returned a {status_code} status code."
 
 
 def test_check_invalid_status_code_without_error():
@@ -123,10 +113,7 @@ def test_check_invalid_destatis_status_code_with_error():
 
     with pytest.raises(DestatisStatusError) as e:
         _check_invalid_destatis_status_code(generic_error_status)
-    assert (
-        str(e.value)
-        == "Error: There is a system error. Please check your query parameters."
-    )
+    assert str(e.value) == "Error: There is a system error. Please check your query parameters."
 
 
 def test_check_invalid_destatis_status_code_with_warning(caplog):

@@ -125,6 +125,7 @@ jobs:
       - name: Prepare files
         # if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
+          set -e
           mkdir -p output/publish
           cp assets/coverage_badge.json output/publish/
           cp -r assets/coverage_report output/publish/
@@ -135,9 +136,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./output
           keep_files: true
-      - name: Delete unwanted file
-        run: |
-          git checkout gh-pages
-          git rm coverage_badge.json
-          git commit -m "Remove accidentally pushed file"
-          git push origin gh-pages

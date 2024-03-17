@@ -51,12 +51,13 @@ jobs:
       fail-fast: false
       matrix:
         # only support specific python version, as guidelines differ beween (minor) versions
-        python-version: ["3.11.6"]
+        python-version: ["3.11.7"]
         os: [ubuntu-latest]
 
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
       - name: Run poetry image
@@ -127,6 +128,7 @@ jobs:
           set -e
           mkdir -p output/publish
           cp assets/coverage_badge.json output/publish/
+          mkdir -p assets/coverage_report
           poetry run coverage html -d assets/coverage_report
           cp -r assets/coverage_report output/publish/
       - name: Upload to GitHub Pages

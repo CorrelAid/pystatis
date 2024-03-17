@@ -117,6 +117,7 @@ jobs:
         run: |
           poetry run coverage run -m pytest
           poetry run coverage json -o assets/coverage.json
+          poetry run coverage html -d assets/coverage_report
           cov=$(jq -r '.totals.percent_covered_display' assets/coverage.json)
           echo "{\"label\":\"Test Coverage\",\"message\":\"${cov}%\",\"schemaVersion\":1,\"color\":\"hsl(120, 100%, 40%)\"}" > assets/coverage_badge.json
       # compromise: Due to versioning issues, only display
@@ -124,11 +125,13 @@ jobs:
       - name: Prepare files
         # if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
-          mkdir publish
-          cp assets/coverage_badge.json publish/
-      - name: Uploade to GitHub Pages#
+          mkdir output/publish
+          cp assets/coverage_badge.json output/publish/
+          cp -r assets/coverage_report output/publish/
+      - name: Upload to GitHub Pages
         # if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./publish
+          publish_dir: ./output
+          keep_files: true

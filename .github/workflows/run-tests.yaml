@@ -18,7 +18,7 @@ env:
   POETRY_VERSION: 1.6.1
 
 jobs:
-  test-and-coverage:
+  test:
     runs-on: ${{ matrix.os }}
     timeout-minutes: 10
     strategy:
@@ -43,16 +43,6 @@ jobs:
       - name: Run tests
         run: |
           poetry run pytest --cov=pystatis tests
-      - name: Update coverage report
-        run: |
-          poetry run coverage run -m pytest
-          poetry run coverage json -o assets/coverage.json
-      - name: Upload documentation as artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: coverage-report
-          path: assets/coverage.json
-          retention-days: 365
 
   code-quality:
     runs-on: ${{ matrix.os }}
@@ -90,7 +80,7 @@ jobs:
       - name: Run mypy
         run: poetry run mypy src
 
-  sphinx-documentation:
+  sphinx-documentation-and-coverage:
     runs-on: ${{ matrix.os }}
     timeout-minutes: 10
     strategy:
@@ -123,3 +113,22 @@ jobs:
           name: docs
           path: docs/build/html/*
           retention-days: 5
+      - name: Generate and filter test coverage report
+        run: |
+          poetry run coverage run -m pytest
+          poetry run coverage json -o assets/coverage.json
+          cov=$(jq -r '.totals.percent_covered_display' assets/coverage.json)
+          echo "{\"label\":\"Test Coverage\",\"message\":\"${cov}%\",\"schemaVersion\":1,\"color\":\"hsl(120, 100%, 40%)\"}" > assets/coverage_badge.json
+      # compromise: Due to versioning issues, only display
+      # coverage (report) for main (on/push/branches/main)
+      - name: Prepare files
+        # if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          mkdir publish
+          cp assets/coverage_badge.json publish/
+      - name: Uploade to GitHub Pages#
+        # if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./publish

@@ -1,7 +1,8 @@
 # ``pystatis``
 
 ![Tests, Code Quality and Documentation](https://github.com/CorrelAid/pystatis/actions/workflows/run-tests.yaml/badge.svg?event=push)
-![Code Coverage](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgithub.com%2FCorrelAid%2Fpystatis%2Factions%2Fartifacts%2Fcoverage-report&query=%24.totals.percent_covered_display&label=Code%20Coverage)
+[![Code Coverage](https://img.shields.io/endpoint?url=https%3A%2F%2Fcorrelaid.github.io%2Fpystatis%2Fpublish%2Fcoverage_badge.json
+)](https://github.com/CorrelAid/pystatis/tree/gh-pages/publish/coverage_report/index.html)
 ![GitHub Pages Documentation](https://github.com/CorrelAid/pystatis/actions/workflows/deploy-docs.yaml/badge.svg?event=push)
 
 ```pystatis``` is a Python wrapper for the different GENESIS web service interfaces (API). Currently we are supporting the following databases:

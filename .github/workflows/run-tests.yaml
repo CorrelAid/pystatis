@@ -117,7 +117,6 @@ jobs:
         run: |
           poetry run coverage run -m pytest
           poetry run coverage json -o assets/coverage.json
-          poetry run coverage html -d assets/coverage_report
           cov=$(jq -r '.totals.percent_covered_display' assets/coverage.json)
           echo "{\"label\":\"Test Coverage\",\"message\":\"${cov}%\",\"schemaVersion\":1,\"color\":\"hsl(120, 100%, 40%)\"}" > assets/coverage_badge.json
       # compromise: Due to versioning issues, only display
@@ -128,6 +127,7 @@ jobs:
           set -e
           mkdir -p output/publish
           cp assets/coverage_badge.json output/publish/
+          poetry run coverage html -d assets/coverage_report
           cp -r assets/coverage_report output/publish/
       - name: Upload to GitHub Pages
         # if: github.event_name == 'push' && github.ref == 'refs/heads/main'

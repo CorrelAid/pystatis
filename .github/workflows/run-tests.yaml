@@ -139,3 +139,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./output
           keep_files: true
+          publish_branch: gh-pages

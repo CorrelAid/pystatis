@@ -130,6 +130,7 @@ jobs:
           cp assets/coverage_badge.json output/publish/
           mkdir -p assets/coverage_report
           poetry run coverage html -d assets/coverage_report
+          mkdir -p output/publish/coverage_report
           cp -r assets/coverage_report output/publish/
       - name: Upload to GitHub Pages
         # if: github.event_name == 'push' && github.ref == 'refs/heads/main'

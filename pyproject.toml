@@ -62,6 +62,7 @@ safety = "^3.0.0"
 sphinx = "^7.0"
 sphinx-rtd-theme = "^2.0.0"
 urllib3 = {extras = ["appengine"], version = "^2.2.1"}
+pytest-vcr = "^1.0.2"
 
 [tool.black]
 line-length = 120

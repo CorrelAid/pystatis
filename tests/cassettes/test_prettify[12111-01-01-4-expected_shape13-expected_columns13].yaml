@@ -1,0 +1,56 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.31.0
+    method: GET
+    uri: https://www.regionalstatistik.de/genesisws/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=12111-01-01-4&quality=False
+  response:
+    body:
+      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"12111-01-01-4\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"12111-01-01-4\",\"Content\":\"Bev\xF6lkerung
+        nach Geschlecht und Nationalit\xE4t\\n- Stichtag 09.05.2011 -\\nregionale
+        Tiefe: Kreise und krfr. St\xE4dte\",\"Time\":{\"From\":\"09.05.2011\",\"To\":\"09.05.2011\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"12111\",\"Content\":\"Zensus
+        2011\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Structure\":[{\"Code\":\"STAG\",\"Content\":\"Stichtag\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"BEVZ20\",\"Content\":\"Bev\xF6lkerung\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":[{\"Code\":\"NAT\",\"Content\":\"Nationalit\xE4t\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":[{\"Code\":\"GES\",\"Content\":\"Geschlecht\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Updated\":\"see parent\"}],\"Updated\":\"see parent\"}],\"Rows\":[{\"Code\":\"KREISE\",\"Content\":\"Kreise
+        und kreisfreie St\xE4dte\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Subtitel\":null,\"Subheading\":null},\"Updated\":\"02.04.2022
+        13:26:11h\"},\"Copyright\":\"\xA9 Statistische \xC4mter des Bundes und der
+        L\xE4nder, Deutschland, 2024.\\nDieses Werk ist lizenziert unter der Datenlizenz
+        Deutschland\\n- Namensnennung - Version 2.0.\"}"
+    headers:
+      Cache-Control:
+      - max-age=172800
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '1533'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Wed, 01 May 2024 21:29:42 GMT
+      Expires:
+      - Fri, 03 May 2024 21:29:21 GMT
+      Keep-Alive:
+      - timeout=15, max=100
+      Server:
+      - webserver
+      Strict-Transport-Security:
+      - max-age=31536000;includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+version: 1

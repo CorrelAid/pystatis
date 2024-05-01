@@ -172,9 +172,9 @@ class Table:
 
         # Extracts new column names from first values of the Merkmal_Label columns
         # and assigns these to the relevant code columns (Auspraegung_Code)
-        codes = data.filter(like="Auspraegung_Code")
-        codes.columns = data.filter(like="Merkmal_Label").iloc[0].tolist()
-        codes.columns = [code + "_Code" for code in codes.columns]
+        # codes = data.filter(like="Auspraegung_Code")
+        # codes.columns = data.filter(like="Merkmal_Label").iloc[0].tolist()
+        # codes.columns = [code + "_Code" for code in codes.columns]
 
         # Selects all columns containing the values
         values = data.filter(like="__")
@@ -183,5 +183,5 @@ class Table:
         # extracts the readable label and omit both the code and the unit
         values.columns = [name.split("__")[1] for name in values.columns]
 
-        pretty_data = pd.concat([time, attributes, codes, values], axis=1)
+        pretty_data = pd.concat([time, attributes, values], axis=1)
         return pretty_data

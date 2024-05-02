@@ -1,0 +1,60 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.31.0
+    method: GET
+    uri: https://www.regionalstatistik.de/genesisws/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=86000U-Z-01&quality=False
+  response:
+    body:
+      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"86000U-Z-01\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"86000U-Z-01\",\"Content\":\"Umweltbezogene
+        Steuern nach Art der Steuern - Jahr -\\nregionale Tiefe: Bundesl\xE4nder\",\"Time\":{\"From\":\"1994\",\"To\":\"2020\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"86000U\",\"Content\":\"Umwelt\xF6konomische
+        Gesamtrechnungen der L\xE4nder - Umweltschutz\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},\"Columns\":[{\"Code\":\"UMWSTE\",\"Content\":\"Umweltbezogene Steuern\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Rows\":[{\"Code\":\"DLANDU\",\"Content\":\"Bundesl\xE4nder\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":[{\"Code\":\"STEU90A\",\"Content\":\"Umweltbezogene
+        Steuern\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"STEU90B\",\"Content\":\"Umweltbezogene Steuern, Index
+        (2010=100)\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"STEU90C\",\"Content\":\"Umweltbezogene Steuern, Anteil
+        an Summe der L\xE4nder\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Updated\":\"see parent\"}],\"Subtitel\":{\"Code\":\"JAHR\",\"Content\":\"Jahr\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},\"Subheading\":null},\"Updated\":\"25.04.2024 07:41:39h\"},\"Copyright\":\"\xA9
+        Statistische \xC4mter des Bundes und der L\xE4nder, Deutschland, 2024.\\nDieses
+        Werk ist lizenziert unter der Datenlizenz Deutschland\\n- Namensnennung -
+        Version 2.0.\"}"
+    headers:
+      Cache-Control:
+      - max-age=172800
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '1749'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Thu, 02 May 2024 20:29:27 GMT
+      Expires:
+      - Sat, 04 May 2024 20:29:26 GMT
+      Keep-Alive:
+      - timeout=15, max=100
+      Server:
+      - webserver
+      Strict-Transport-Security:
+      - max-age=31536000;includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+version: 1

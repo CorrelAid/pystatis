@@ -86,6 +86,10 @@ class Table:
         raw_data_str = raw_data_bytes.decode("utf-8-sig")
 
         self.raw_data = raw_data_str
+        # filter raw_data line by line and exclude all lines that do not start with a 5 digit number
+        raw_data_lines = raw_data_str.splitlines()
+        raw_data_header = raw_data_lines[0]
+        raw_data_str = raw_data_header + "\n" + "\n".join(line for line in raw_data_lines[1:] if line[:5].isdigit())
         data_buffer = StringIO(raw_data_str)
         self.data = pd.read_csv(data_buffer, sep=";", na_values=["...", ".", "-", "/", "x"])
 

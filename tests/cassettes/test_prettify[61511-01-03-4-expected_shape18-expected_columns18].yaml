@@ -1,0 +1,61 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.31.0
+    method: GET
+    uri: https://www.regionalstatistik.de/genesisws/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=61511-01-03-4&quality=False
+  response:
+    body:
+      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"61511-01-03-4\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"61511-01-03-4\",\"Content\":\"Ver\xE4u\xDFerungsf\xE4lle,
+        ver\xE4u\xDFerte Fl\xE4che, Kaufsumme,\\ndurchschnittlicher Kaufwert nach
+        Baulandarten - Jahressumme\\n- regionale Tiefe: Kreise und krfr. St\xE4dte\",\"Time\":{\"From\":\"1995\",\"To\":\"2022\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"61511\",\"Content\":\"Kaufwerte
+        f\xFCr Bauland\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},\"Columns\":[{\"Code\":\"BAUNW2\",\"Content\":\"Baulandverk\xE4ufe\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Rows\":[{\"Code\":\"KREISE\",\"Content\":\"Kreise und kreisfreie
+        St\xE4dte\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":[{\"Code\":\"BAU001\",\"Content\":\"Ver\xE4u\xDFerungsf\xE4lle
+        von Bauland\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"BAU002\",\"Content\":\"Ver\xE4u\xDFerte Baulandfl\xE4che\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"BAU003\",\"Content\":\"Kaufsumme\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"BAU004\",\"Content\":\"Durchschnittlicher Kaufwert je
+        qm\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Updated\":\"see parent\"}],\"Subtitel\":null,\"Subheading\":{\"Code\":\"JAHR\",\"Content\":\"Jahr\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Structure\":null,\"Updated\":\"see
+        parent\"}},\"Updated\":\"10.03.2023 09:47:28h\"},\"Copyright\":\"\xA9 Statistische
+        \xC4mter des Bundes und der L\xE4nder, Deutschland, 2024.\\nDieses Werk ist
+        lizenziert unter der Datenlizenz Deutschland\\n- Namensnennung - Version 2.0.\"}"
+    headers:
+      Cache-Control:
+      - max-age=172800
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '1899'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Thu, 02 May 2024 20:01:09 GMT
+      Expires:
+      - Sat, 04 May 2024 20:01:07 GMT
+      Keep-Alive:
+      - timeout=15, max=100
+      Server:
+      - webserver
+      Strict-Transport-Security:
+      - max-age=31536000;includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+version: 1

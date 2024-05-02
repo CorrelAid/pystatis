@@ -1,0 +1,58 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.31.0
+    method: GET
+    uri: https://www.regionalstatistik.de/genesisws/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=73111-01-01-4&quality=False
+  response:
+    body:
+      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"73111-01-01-4\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"73111-01-01-4\",\"Content\":\"Lohn-
+        und Einkommensteuerpflichtige, Gesamtbetrag der\\nEink\xFCnfte, Lohn- und
+        Einkommensteuer - Jahressumme -\\nregionale Tiefe: Kreise und krfr. St\xE4dte\",\"Time\":{\"From\":\"1992\",\"To\":\"2019\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"73111\",\"Content\":\"Lohn-
+        und Einkommensteuerstatistik\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},\"Columns\":[{\"Code\":\"LSNW01\",\"Content\":\"Lohn- und Einkommensteuerpflichtige\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"EKF002\",\"Content\":\"Gesamtbetrag der Eink\xFCnfte\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"LSNW02\",\"Content\":\"Lohn- und Einkommensteuer\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Rows\":[{\"Code\":\"KREISE\",\"Content\":\"Kreise und kreisfreie
+        St\xE4dte\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Subtitel\":null,\"Subheading\":{\"Code\":\"JAHR\",\"Content\":\"Jahr\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Structure\":null,\"Updated\":\"see
+        parent\"}},\"Updated\":\"17.11.2023 11:58:37h\"},\"Copyright\":\"\xA9 Statistische
+        \xC4mter des Bundes und der L\xE4nder, Deutschland, 2024.\\nDieses Werk ist
+        lizenziert unter der Datenlizenz Deutschland\\n- Namensnennung - Version 2.0.\"}"
+    headers:
+      Cache-Control:
+      - max-age=172800
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '1639'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Thu, 02 May 2024 20:03:54 GMT
+      Expires:
+      - Sat, 04 May 2024 20:03:50 GMT
+      Keep-Alive:
+      - timeout=15, max=100
+      Server:
+      - webserver
+      Strict-Transport-Security:
+      - max-age=31536000;includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+version: 1

@@ -1,0 +1,58 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.31.0
+    method: GET
+    uri: https://www.regionalstatistik.de/genesisws/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=AI-N-01-2-5&quality=False
+  response:
+    body:
+      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"AI-N-01-2-5\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"AI-N-01-2-5\",\"Content\":\"Regionalatlas
+        Deutschland Themenbereich \\\"Nachhaltigkeit\\\" Indikatoren zu \\\"Fl\xE4chennutzung
+        nach ALKIS\\\" (Gemeindeebene ab 2016)\",\"Time\":{\"From\":\"2016\",\"To\":\"2022\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"99910\",\"Content\":\"Regionalatlas
+        Deutschland\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},\"Columns\":[{\"Code\":\"AI0111\",\"Content\":\"Anteil Siedlungs-
+        und Verkehrsfl\xE4che an Gesamtfl\xE4che\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"AI0112\",\"Content\":\"Ver\xE4nderung der Siedlungs-
+        und Verkehrsfl\xE4che\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Rows\":[{\"Code\":\"GEMEIN\",\"Content\":\"Gemeinden\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Subtitel\":null,\"Subheading\":{\"Code\":\"JAHR\",\"Content\":\"Jahr\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Structure\":null,\"Updated\":\"see
+        parent\"}},\"Updated\":\"04.04.2022 08:31:04h\"},\"Copyright\":\"\xA9 Statistische
+        \xC4mter des Bundes und der L\xE4nder, Deutschland, 2024.\\nDieses Werk ist
+        lizenziert unter der Datenlizenz Deutschland\\n- Namensnennung - Version 2.0.\"}"
+    headers:
+      Cache-Control:
+      - max-age=172800
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '1479'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Fri, 03 May 2024 08:34:26 GMT
+      Expires:
+      - Sun, 05 May 2024 08:34:23 GMT
+      Keep-Alive:
+      - timeout=15, max=100
+      Server:
+      - webserver
+      Strict-Transport-Security:
+      - max-age=31536000;includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+version: 1

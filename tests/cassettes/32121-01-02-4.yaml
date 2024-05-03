@@ -1,0 +1,57 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.31.0
+    method: GET
+    uri: https://www.regionalstatistik.de/genesisws/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=32121-01-02-4&quality=False
+  response:
+    body:
+      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"32121-01-02-4\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"32121-01-02-4\",\"Content\":\"Haushaltsabf\xE4lle
+        - Jahr - regionale Tiefe: Kreise und krfr.\\nSt\xE4dte\",\"Time\":{\"From\":\"2004\",\"To\":\"2021\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"32121\",\"Content\":\"Erhebung
+        der \xF6ffentlich-rechtlichen Abfallentsorgung\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},\"Columns\":[{\"Code\":\"AEW009\",\"Content\":\"Aufkommen an Haushaltsabf\xE4llen
+        (oh.Elektroaltger.)\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":[{\"Code\":\"ABFA01\",\"Content\":\"Abfallarten
+        von Haushaltsabf\xE4llen\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Updated\":\"see parent\"}],\"Rows\":[{\"Code\":\"KREISE\",\"Content\":\"Kreise
+        und kreisfreie St\xE4dte\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Subtitel\":null,\"Subheading\":{\"Code\":\"JAHR\",\"Content\":\"Jahr\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Structure\":null,\"Updated\":\"see
+        parent\"}},\"Updated\":\"28.04.2023 08:50:56h\"},\"Copyright\":\"\xA9 Statistische
+        \xC4mter des Bundes und der L\xE4nder, Deutschland, 2024.\\nDieses Werk ist
+        lizenziert unter der Datenlizenz Deutschland\\n- Namensnennung - Version 2.0.\"}"
+    headers:
+      Cache-Control:
+      - max-age=172800
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '1453'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Fri, 03 May 2024 08:34:10 GMT
+      Expires:
+      - Sun, 05 May 2024 08:34:08 GMT
+      Keep-Alive:
+      - timeout=15, max=100
+      Server:
+      - webserver
+      Strict-Transport-Security:
+      - max-age=31536000;includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+version: 1

@@ -1,0 +1,42 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.31.0
+    method: GET
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=13111-0005&quality=False
+  response:
+    body:
+      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"13111-0005\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"13111-0005\",\"Content\":\"Sozialversicherungspflichtig
+        Besch\xE4ftigte am Arbeitsort:\\nBundesl\xE4nder, Stichtag, Geschlecht\",\"Time\":{\"From\":\"31.03.2008\",\"To\":\"30.06.2023\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"13111\",\"Content\":\"Statistik
+        d. sozialversicherungspfl. Besch\xE4ftigten\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Structure\":[{\"Code\":\"ERW065\",\"Content\":\"Sozialvers.pflichtig
+        Besch\xE4ftigte am Arbeitsort\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"STAG\",\"Content\":\"Stichtag\",\"Type\":\"Merkmal\",\"Values\":\"8\",\"Selected\":\"8\",\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Rows\":[{\"Code\":\"GES\",\"Content\":\"Geschlecht\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Subtitel\":{\"Code\":\"DLAND\",\"Content\":\"Bundesl\xE4nder\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},\"Subheading\":null},\"Updated\":\"28.12.2022 17:14:03h\"},\"Copyright\":\"\xA9
+        Statistisches Bundesamt (Destatis), 2024\"}"
+    headers:
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '1319'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Fri, 03 May 2024 08:32:29 GMT
+      Keep-Alive:
+      - timeout=15, max=100
+      Server:
+      - Apache
+    status:
+      code: 200
+      message: '200'
+version: 1

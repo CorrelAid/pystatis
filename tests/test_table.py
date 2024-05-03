@@ -4,7 +4,7 @@ import pytest
 import pystatis
 
 
-@pytest.mark.vcr(filter_query_parameters=["username", "password"])
+@pytest.mark.vcr()
 @pytest.mark.parametrize(
     "table_name, expected_shape",
     [
@@ -29,11 +29,13 @@ import pystatis
         ("61511-01-03-4", (1076, 17)),
         ("73111-01-01-4", (538, 12)),
         ("86000U-Z-01", (2052, 16)),
+        ("AI-N-01-2-5", (13922, 11)),
     ],
 )
 def test_get_data(table_name: str, expected_shape: tuple[int, int]):
     table = pystatis.Table(name=table_name)
     table.get_data(prettify=False)
+
     assert isinstance(table.data, pd.DataFrame)
     assert not table.data.empty
     assert isinstance(table.raw_data, str)
@@ -42,7 +44,7 @@ def test_get_data(table_name: str, expected_shape: tuple[int, int]):
     assert table.data.shape == expected_shape
 
 
-@pytest.mark.vcr(filter_query_parameters=["username", "password"])
+@pytest.mark.vcr()
 @pytest.mark.parametrize(
     "table_name, expected_shape, expected_columns",
     [
@@ -257,6 +259,16 @@ def test_get_data(table_name: str, expected_shape: tuple[int, int]):
                 "Umweltbezogene_Steuern",
                 "Umweltbezogene_Steuern,_Index_(2010=100)",
                 "Umweltbezogene_Steuern,_Anteil_an_Summe_der_Laender",
+            ),
+        ),
+        (
+            "AI-N-01-2-5",
+            (13922, 4),
+            (
+                "Jahr",
+                "Gemeinden",
+                "Anteil_Siedlungs-_und_Verkehrsflaeche_an_Gesamtflaeche",
+                "Veraenderung_der_Siedlungs-_und_Verkehrsflaeche",
             ),
         ),
     ],

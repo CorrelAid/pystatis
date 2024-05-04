@@ -86,10 +86,10 @@ class Table:
         raw_data_str = raw_data_bytes.decode("utf-8-sig")
 
         self.raw_data = raw_data_str
-        # filter raw_data line by line and exclude all lines that do not start with a 5 digit number
+        # filter raw_data line by line and exclude all lines that do not start with a 4 or 5 digit number
         raw_data_lines = raw_data_str.splitlines()
         raw_data_header = raw_data_lines[0]
-        raw_data_str = raw_data_header + "\n" + "\n".join(line for line in raw_data_lines[1:] if line[:5].isdigit())
+        raw_data_str = raw_data_header + "\n" + "\n".join(line for line in raw_data_lines[1:] if line[:4].isdigit())
         data_buffer = StringIO(raw_data_str)
         self.data = pd.read_csv(data_buffer, sep=";", na_values=["...", ".", "-", "/", "x"])
 
@@ -151,17 +151,28 @@ class Table:
     def parse_zensus_table(data: pd.DataFrame) -> pd.DataFrame:
         """Parse Zensus table ffcsv format into a more readable format"""
         # Extracts time column with name from first element of Zeit_Label column
-        time = pd.DataFrame({data["time_label"].iloc[0]: data["time"]})
+        time_label = data.at[0, "time_label"]
 
-        # Extracts new column names from first values of the Merkmal_Label columns
-        # and assigns these to the relevant attribute columns (Auspraegung_Label)
-        attributes = data.filter(like="variable_attribute_label")
-        attributes.columns = data.filter(regex=r"\d+_variable_label").iloc[0].tolist()
+        # add the unit to the column names for the value columns
+        data["value_variable_label"] = data["value_variable_label"].str.cat(data["value_unit"], sep="__")
 
-        values = pd.DataFrame({data["value_variable_label"].iloc[0]: data["value"]})
+        # Zensus database has a new format: there is only one value column
+        # pivot the table to get the values in the right format
+        attribute_labels = data.filter(like="variable_attribute_label").columns.to_list()  # example: names of counties
+        variable_labels = data.filter(regex=r"\d+_variable_label").iloc[0].to_list()  # example: "Gemeinden"
+        pivot_table = data.pivot_table(
+            index=["time", *attribute_labels],
+            columns="value_variable_label",
+            values="value",
+            aggfunc="first",
+        )
 
-        pretty_data = pd.concat([time, attributes, values], axis=1)
-        return pretty_data
+        # rename index and columns with the human readable labels from the data
+        pivot_table.index.names = [time_label, *variable_labels]
+        pivot_table.reset_index(inplace=True)
+        pivot_table.columns.name = None
+
+        return pivot_table
 
     @staticmethod
     def parse_regio_table(data: pd.DataFrame) -> pd.DataFrame:

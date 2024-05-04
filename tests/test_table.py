@@ -30,6 +30,9 @@ import pystatis
         ("73111-01-01-4", (538, 12)),
         ("86000U-Z-01", (2052, 16)),
         ("AI-N-01-2-5", (13922, 11)),
+        ("1000A-0001", (34017, 13)),
+        ("2000S-2003", (110, 21)),
+        ("3000G-1008", (14, 17)),
     ],
 )
 def test_get_data(table_name: str, expected_shape: tuple[int, int]):
@@ -270,6 +273,21 @@ def test_get_data(table_name: str, expected_shape: tuple[int, int]):
                 "Anteil_Siedlungs-_und_Verkehrsflaeche_an_Gesamtflaeche",
                 "Veraenderung_der_Siedlungs-_und_Verkehrsflaeche",
             ),
+        ),
+        (
+            "1000A-0001",
+            (11338, 5),
+            ("Stichtag", "Gemeinden", "Bevölkerungsdichte__Ew/qkm", "Fläche__qkm", "Personen__Anzahl"),
+        ),
+        (
+            "2000S-2003",
+            (110, 5),
+            ("Stichtag", "Deutschland", "Erwerbsstatus", "Gebäudetyp (Größe)", "Personen__Anzahl"),
+        ),
+        (
+            "3000G-1008",
+            (7, 5),
+            ("Stichtag", "Deutschland", "Heizungsart", "Gebäude mit Wohnraum__%", "Gebäude mit Wohnraum__Anzahl"),
         ),
     ],
 )

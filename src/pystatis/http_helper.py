@@ -106,7 +106,7 @@ def get_data_from_endpoint(endpoint: str, method: str, params: dict, db_name: st
             # --> Choose db based on available credentials.
             if db_match:
                 for name in db_match:
-                    if db.check_db_credentials(name):
+                    if db.check_credentials(name):
                         db_name = name
                         break
                 else:
@@ -124,7 +124,7 @@ def get_data_from_endpoint(endpoint: str, method: str, params: dict, db_name: st
             "with a proper object number."
         )
 
-    db_host, db_user, db_pw = db.get_db_settings(db_name)
+    db_host, db_user, db_pw = db.get_settings(db_name)
     url = f"{db_host}{endpoint}/{method}"
 
     # params is used to calculate hash for caching so don't alter params dict here!

@@ -17,7 +17,7 @@ def whoami(db_name: str) -> str:
     Returns:
         str: text test response from Destatis
     """
-    url = f"{db.get_db_host(db_name)}" + "helloworld/whoami"
+    url = f"{db.get_host(db_name)}" + "helloworld/whoami"
 
     response = requests.get(url, timeout=(1, 15))
 
@@ -37,7 +37,7 @@ def logincheck(db_name: str) -> str:
     Returns:
         str: text logincheck response from Destatis
     """
-    db_host, db_user, db_pw = db.get_db_settings(db_name)
+    db_host, db_user, db_pw = db.get_settings(db_name)
     url = f"{db_host}helloworld/logincheck"
 
     params = {

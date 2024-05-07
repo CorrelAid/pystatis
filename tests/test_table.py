@@ -1,3 +1,5 @@
+import os
+
 import pandas as pd
 import pytest
 
@@ -35,7 +37,8 @@ import pystatis
         ("3000G-1008", (14, 17)),
     ],
 )
-def test_get_data(table_name: str, expected_shape: tuple[int, int]):
+def test_get_data(mocker, table_name: str, expected_shape: tuple[int, int]):
+    mocker.patch.object(pystatis.db, "check_db_credentials", return_value=True)
     table = pystatis.Table(name=table_name)
     table.get_data(prettify=False)
 
@@ -291,7 +294,8 @@ def test_get_data(table_name: str, expected_shape: tuple[int, int]):
         ),
     ],
 )
-def test_prettify(table_name, expected_shape: tuple[int, int], expected_columns: tuple[str]):
+def test_prettify(mocker, table_name, expected_shape: tuple[int, int], expected_columns: tuple[str]):
+    mocker.patch.object(pystatis.db, "check_db_credentials", return_value=True)
     table = pystatis.Table(name=table_name)
     table.get_data(prettify=True)
 

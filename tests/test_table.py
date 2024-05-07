@@ -5,6 +5,8 @@ import pytest
 
 import pystatis
 
+pystatis.clear_cache()
+
 
 @pytest.mark.vcr()
 @pytest.mark.parametrize(

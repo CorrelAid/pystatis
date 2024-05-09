@@ -150,29 +150,24 @@ class Table:
     @staticmethod
     def parse_zensus_table(data: pd.DataFrame) -> pd.DataFrame:
         """Parse Zensus table ffcsv format into a more readable format"""
-        # Extracts time column with name from first element of Zeit_Label column
-        time_label = data.at[0, "time_label"]
-
         # add the unit to the column names for the value columns
         data["value_variable_label"] = data["value_variable_label"].str.cat(data["value_unit"], sep="__")
 
-        # Zensus database has a new format: there is only one value column
-        # pivot the table to get the values in the right format
-        attribute_labels = data.filter(like="variable_attribute_label").columns.to_list()  # example: names of counties
-        variable_labels = data.filter(regex=r"\d+_variable_label").iloc[0].to_list()  # example: "Gemeinden"
-        pivot_table = data.pivot_table(
-            index=["time", *attribute_labels],
-            columns="value_variable_label",
-            values="value",
-            aggfunc="first",
-        )
-
-        # rename index and columns with the human readable labels from the data
-        pivot_table.index.names = [time_label, *variable_labels]
+        pivot_table = data.pivot(index=data.columns[:-4].to_list(), columns="value_variable_label", values="value")
+        value_columns = pivot_table.columns.to_list()
         pivot_table.reset_index(inplace=True)
         pivot_table.columns.name = None
 
-        return pivot_table
+        # Extracts time column with name from first element of Zeit_Label column
+        time_label = data["time_label"].iloc[0]
+        time = pd.DataFrame({time_label: pivot_table["time"]})
+
+        attributes = pivot_table.filter(regex=r"\d+_variable_attribute_label")
+        attributes.columns = pivot_table.filter(regex=r"\d+_variable_label").iloc[0].tolist()
+
+        pretty_data = pd.concat([time, attributes, pivot_table[value_columns]], axis=1)
+
+        return pretty_data
 
     @staticmethod
     def parse_regio_table(data: pd.DataFrame) -> pd.DataFrame:

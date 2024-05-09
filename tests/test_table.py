@@ -37,6 +37,7 @@ pystatis.clear_cache()
         ("1000A-0001", (34017, 13)),
         ("2000S-2003", (110, 21)),
         ("3000G-1008", (14, 17)),
+        ("4000W-5003", (4950, 33)),
     ],
 )
 def test_get_data(mocker, table_name: str, expected_shape: tuple[int, int]):
@@ -281,7 +282,7 @@ def test_get_data(mocker, table_name: str, expected_shape: tuple[int, int]):
         ),
         (
             "1000A-0001",
-            (11338, 5),
+            (11339, 5),
             ("Stichtag", "Gemeinden", "Bevölkerungsdichte__Ew/qkm", "Fläche__qkm", "Personen__Anzahl"),
         ),
         (
@@ -293,6 +294,20 @@ def test_get_data(mocker, table_name: str, expected_shape: tuple[int, int]):
             "3000G-1008",
             (7, 5),
             ("Stichtag", "Deutschland", "Heizungsart", "Gebäude mit Wohnraum__%", "Gebäude mit Wohnraum__Anzahl"),
+        ),
+        (
+            "4000W-5003",
+            (4950, 8),
+            (
+                "Stichtag",
+                "Deutschland",
+                "Größe des privaten Haushalts",
+                "Art der Wohnungsnutzung",
+                "Ausstattung der Wohnung",
+                "Fläche der Wohnung (20 m²-Intervalle)",
+                "Art des Gebäudes",
+                "Wohnungen in Gebäuden mit Wohnraum__Anzahl",
+            ),
         ),
     ],
 )

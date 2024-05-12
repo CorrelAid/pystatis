@@ -56,7 +56,7 @@ class Table:
 
         if language not in ["de", "en"]:
             raise QueryParameterError(
-                f"Language {language} is not supported. Please choose from: ['de', 'en']"
+                f"Language {language} is not supported. Please choose from: ['de', 'en']."
             )
 
         raw_data_bytes = load_data(
@@ -133,7 +133,7 @@ class Table:
 
         # Extracts new column names from last values of the variable label columns
         # and assigns these to the relevant attribute columns (variable level)
-        attributes = data.filter(like=column_name_dict["variable_level"])
+        attributes = data.filter(like=column_name_dict["value_label"])
         attributes.columns = (
             data.filter(like=column_name_dict["variable_label"])
             .iloc[-1]
@@ -208,7 +208,7 @@ class Table:
 
         # Extracts new column names from last values of the variable label columns
         # and assigns these to the relevant attribute columns (variable level)
-        attributes = data.filter(like=column_name_dict["variable_level"])
+        attributes = data.filter(like=column_name_dict["value_label"])
         attributes.columns = (
             data.filter(like=column_name_dict["variable_label"])
             .iloc[-1]
@@ -216,8 +216,8 @@ class Table:
         )
 
         # Extracts new column names from last values of the variable label columns
-        # and assigns these to the relevant code columns (variable_level_code)
-        codes = data.filter(like=column_name_dict["variable_level_code"])
+        # and assigns these to the relevant code columns (value_code)
+        codes = data.filter(like=column_name_dict["value_code"])
         codes.columns = (
             data.filter(like=column_name_dict["variable_label"])
             .iloc[-1]

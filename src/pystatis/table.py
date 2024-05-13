@@ -159,7 +159,6 @@ class Table:
         pivot_table.reset_index(inplace=True)
         pivot_table.columns.name = None
 
-        # Extracts time column with name from first element of Zeit_Label column
         time_label = data["time_label"].iloc[0]
         time = pd.DataFrame({time_label: pivot_table["time"]})
 
@@ -181,18 +180,12 @@ class Table:
         attributes = data.filter(like="Auspraegung_Label")
         attributes.columns = data.filter(like="Merkmal_Label").iloc[0].tolist()
 
-        # Extracts new column names from first values of the Merkmal_Label columns
-        # and assigns these to the relevant code columns (Auspraegung_Code)
-        # codes = data.filter(like="Auspraegung_Code")
-        # codes.columns = data.filter(like="Merkmal_Label").iloc[0].tolist()
-        # codes.columns = [code + "_Code" for code in codes.columns]
-
         # Selects all columns containing the values
         values = data.filter(like="__")
 
         # Given a name like BEV036__Bevoelkerung_in_Hauptwohnsitzhaushalten__1000
-        # extracts the readable label and omit both the code and the unit
-        values.columns = [name.split("__")[1] for name in values.columns]
+        # extracts the label and the unit and omit the code
+        values.columns = [name.split("__", maxsplit=1)[1] for name in values.columns]
 
         pretty_data = pd.concat([time, attributes, values], axis=1)
         return pretty_data

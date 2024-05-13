@@ -193,12 +193,12 @@ def test_get_data(mocker, table_name: str, expected_shape: tuple[int, int]):
         (
             "11111-02-01-4",
             (538, 3),
-            ("Stichtag", "Kreise und kreisfreie Städte", "Zahl_der_Gemeinden"),
+            ("Stichtag", "Kreise und kreisfreie Städte", "Zahl_der_Gemeinden__Anzahl"),
         ),
         (
             "12111-01-01-4",
             (4842, 5),
-            ("Stichtag", "Kreise und kreisfreie Städte", "Nationalität", "Geschlecht", "Bevoelkerung"),
+            ("Stichtag", "Kreise und kreisfreie Städte", "Nationalität", "Geschlecht", "Bevoelkerung__Anzahl"),
         ),
         (
             "21311-01-01-4-B",
@@ -209,7 +209,7 @@ def test_get_data(mocker, table_name: str, expected_shape: tuple[int, int]):
                 "Geschlecht",
                 "Nationalität (inkl. insgesamt)",
                 "Fächergruppe (mit Insgesamt)",
-                "Studierende_(im_Kreisgebiet)",
+                "Studierende_(im_Kreisgebiet)__Anzahl",
             ),
         ),
         (
@@ -219,19 +219,19 @@ def test_get_data(mocker, table_name: str, expected_shape: tuple[int, int]):
                 "Jahr",
                 "Kreise und kreisfreie Städte",
                 "Abfallarten von Haushaltsabfällen",
-                "Aufkommen_an_Haushaltsabfaellen_(o.E-altgeraete)",
+                "Aufkommen_an_Haushaltsabfaellen_(o.E-altgeraete)__t",
             ),
         ),
-        ("41312-01-01-4", (5918, 4), ("Stichtag", "Kreise und kreisfreie Städte", "Tierarten", "Tiere")),
+        ("41312-01-01-4", (5918, 4), ("Stichtag", "Kreise und kreisfreie Städte", "Tierarten", "Tiere__Anzahl")),
         (
             "52411-02-01-4",
             (538, 5),
             (
                 "Jahr",
                 "Kreise und kreisfreie Städte",
-                "Insolvenzverfahren_(Unternehmen)",
-                "Arbeitnehmer",
-                "voraussichtliche_Forderungen_(Unternehmen)",
+                "Insolvenzverfahren_(Unternehmen)__MeasureUnitNotFound!",
+                "Arbeitnehmer__Anzahl",
+                "voraussichtliche_Forderungen_(Unternehmen)__Tsd._EUR",
             ),
         ),
         (
@@ -241,10 +241,10 @@ def test_get_data(mocker, table_name: str, expected_shape: tuple[int, int]):
                 "Jahr",
                 "Kreise und kreisfreie Städte",
                 "Baulandverkäufe",
-                "Veraeusserungsfaelle_von_Bauland",
-                "Veraeusserte_Baulandflaeche",
-                "Kaufsumme",
-                "Durchschnittlicher_Kaufwert_je_qm",
+                "Veraeusserungsfaelle_von_Bauland__Anzahl",
+                "Veraeusserte_Baulandflaeche__1000_qm",
+                "Kaufsumme__Tsd._EUR",
+                "Durchschnittlicher_Kaufwert_je_qm__EUR",
             ),
         ),
         (
@@ -253,9 +253,9 @@ def test_get_data(mocker, table_name: str, expected_shape: tuple[int, int]):
             (
                 "Jahr",
                 "Kreise und kreisfreie Städte",
-                "Lohn-_und_Einkommensteuerpflichtige",
-                "Gesamtbetrag_der_Einkuenfte",
-                "Lohn-_und_Einkommensteuer",
+                "Lohn-_und_Einkommensteuerpflichtige__Anzahl",
+                "Gesamtbetrag_der_Einkuenfte__Tsd._EUR",
+                "Lohn-_und_Einkommensteuer__Tsd._EUR",
             ),
         ),
         (
@@ -265,9 +265,9 @@ def test_get_data(mocker, table_name: str, expected_shape: tuple[int, int]):
                 "Jahr",
                 "Bundesländer",
                 "Umweltbezogene Steuern",
-                "Umweltbezogene_Steuern",
-                "Umweltbezogene_Steuern,_Index_(2010=100)",
-                "Umweltbezogene_Steuern,_Anteil_an_Summe_der_Laender",
+                "Umweltbezogene_Steuern__Tsd._EUR",
+                "Umweltbezogene_Steuern,_Index_(2010=100)__2010=100",
+                "Umweltbezogene_Steuern,_Anteil_an_Summe_der_Laender__Prozent",
             ),
         ),
         (
@@ -276,8 +276,8 @@ def test_get_data(mocker, table_name: str, expected_shape: tuple[int, int]):
             (
                 "Jahr",
                 "Gemeinden",
-                "Anteil_Siedlungs-_und_Verkehrsflaeche_an_Gesamtflaeche",
-                "Veraenderung_der_Siedlungs-_und_Verkehrsflaeche",
+                "Anteil_Siedlungs-_und_Verkehrsflaeche_an_Gesamtflaeche__Prozent",
+                "Veraenderung_der_Siedlungs-_und_Verkehrsflaeche__Prozent",
             ),
         ),
         (

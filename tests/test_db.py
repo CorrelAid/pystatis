@@ -15,15 +15,15 @@ def config_() -> ConfigParser:
 
 
 def test_get_db_settings(config_):
-    settings = db.get_db_settings("genesis")
+    settings = db.get_settings("genesis")
     assert isinstance(settings, tuple)
     assert len(settings) == 3
     assert all(isinstance(setting, str) for setting in settings)
 
 
 def test_set_db_pw(config_):
-    db.set_db_pw("genesis", "test_pw")
-    assert db.get_db_pw("genesis") == "test_pw"
+    db.set_pw("genesis", "test_pw")
+    assert db.get_pw("genesis") == "test_pw"
 
 
 @pytest.mark.parametrize(
@@ -44,7 +44,7 @@ def test_identify_db_with_multiple_matches(config_):
     config_.set("genesis", "password", "test")
     db_match = db.identify_db("1234567890")
     for db_name in db_match:
-        if db.check_db_credentials(db_name):
+        if db.check_credentials(db_name):
             break
     assert db_name == "genesis"
 
@@ -54,6 +54,6 @@ def test_identify_db_with_multiple_matches(config_):
     config_.set("regio", "password", "test")
     db_match = db.identify_db("1234567890")
     for db_name in db_match:
-        if db.check_db_credentials(db_name):
+        if db.check_credentials(db_name):
             break
     assert db_name == "regio"

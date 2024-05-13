@@ -86,6 +86,11 @@ class Table:
         raw_data_str = raw_data_bytes.decode("utf-8-sig")
 
         self.raw_data = raw_data_str
+        # sometimes the data contains invalid rows that do not start with the statistics number (always first column)
+        # so we have to do this workaround to get a proper data frame later
+        raw_data_lines = raw_data_str.splitlines(keepends=True)
+        raw_data_header = raw_data_lines[0]
+        raw_data_str = raw_data_header + "".join(line for line in raw_data_lines[1:] if line[:4].isdigit())
         data_buffer = StringIO(raw_data_str)
         self.data = pd.read_csv(data_buffer, sep=";", na_values=["...", ".", "-", "/", "x"])
 
@@ -137,8 +142,8 @@ class Table:
         values = data.filter(like="__")
 
         # Given a name like BEV036__Bevoelkerung_in_Hauptwohnsitzhaushalten__1000
-        # extracts the readable label and omit both the code and the unit
-        values.columns = [name.split("__")[1] for name in values.columns]
+        # extracts the label and the unit and omit the code
+        values.columns = [name.split("__", maxsplit=1)[1] for name in values.columns]
 
         pretty_data = pd.concat([time, attributes, values], axis=1)
         return pretty_data
@@ -146,17 +151,22 @@ class Table:
     @staticmethod
     def parse_zensus_table(data: pd.DataFrame) -> pd.DataFrame:
         """Parse Zensus table ffcsv format into a more readable format"""
-        # Extracts time column with name from first element of Zeit_Label column
-        time = pd.DataFrame({data["time_label"].iloc[0]: data["time"]})
+        # add the unit to the column names for the value columns
+        data["value_variable_label"] = data["value_variable_label"].str.cat(data["value_unit"], sep="__")
 
-        # Extracts new column names from first values of the Merkmal_Label columns
-        # and assigns these to the relevant attribute columns (Auspraegung_Label)
-        attributes = data.filter(like="variable_attribute_label")
-        attributes.columns = data.filter(regex=r"\d+_variable_label").iloc[0].tolist()
+        pivot_table = data.pivot(index=data.columns[:-4].to_list(), columns="value_variable_label", values="value")
+        value_columns = pivot_table.columns.to_list()
+        pivot_table.reset_index(inplace=True)
+        pivot_table.columns.name = None
 
-        values = pd.DataFrame({data["value_variable_label"].iloc[0]: data["value"]})
+        time_label = data["time_label"].iloc[0]
+        time = pd.DataFrame({time_label: pivot_table["time"]})
 
-        pretty_data = pd.concat([time, attributes, values], axis=1)
+        attributes = pivot_table.filter(regex=r"\d+_variable_attribute_label")
+        attributes.columns = pivot_table.filter(regex=r"\d+_variable_label").iloc[0].tolist()
+
+        pretty_data = pd.concat([time, attributes, pivot_table[value_columns]], axis=1)
+
         return pretty_data
 
     @staticmethod
@@ -170,18 +180,12 @@ class Table:
         attributes = data.filter(like="Auspraegung_Label")
         attributes.columns = data.filter(like="Merkmal_Label").iloc[0].tolist()
 
-        # Extracts new column names from first values of the Merkmal_Label columns
-        # and assigns these to the relevant code columns (Auspraegung_Code)
-        codes = data.filter(like="Auspraegung_Code")
-        codes.columns = data.filter(like="Merkmal_Label").iloc[0].tolist()
-        codes.columns = [code + "_Code" for code in codes.columns]
-
         # Selects all columns containing the values
         values = data.filter(like="__")
 
         # Given a name like BEV036__Bevoelkerung_in_Hauptwohnsitzhaushalten__1000
-        # extracts the readable label and omit both the code and the unit
-        values.columns = [name.split("__")[1] for name in values.columns]
+        # extracts the label and the unit and omit the code
+        values.columns = [name.split("__", maxsplit=1)[1] for name in values.columns]
 
-        pretty_data = pd.concat([time, attributes, codes, values], axis=1)
+        pretty_data = pd.concat([time, attributes, values], axis=1)
         return pretty_data

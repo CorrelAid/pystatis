@@ -42,7 +42,7 @@ jobs:
           poetry install --with dev
       - name: Run tests
         run: |
-          poetry run pytest --cov=pystatis tests
+          poetry run pytest --cov=pystatis --vcr-record=none tests
 
   code-quality:
     runs-on: ${{ matrix.os }}
@@ -116,7 +116,7 @@ jobs:
           retention-days: 5
       - name: Generate and filter test coverage report
         run: |
-          poetry run coverage run -m pytest
+          poetry run coverage run -m pytest --vcr-record=none tests
           poetry run coverage json -o assets/coverage.json
           cov=$(jq -r '.totals.percent_covered_display' assets/coverage.json)
           echo "{\"label\":\"Test Coverage\",\"message\":\"${cov}%\",\"schemaVersion\":1,\"color\":\"hsl(120, 100%, 40%)\"}" > assets/coverage_badge.json

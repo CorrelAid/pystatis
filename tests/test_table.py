@@ -198,7 +198,13 @@ def test_get_data(mocker, table_name: str, expected_shape: tuple[int, int]):
         (
             "13111-01-03-4",
             (3228, 5),
-            ("Stichtag", "Kreise und kreisfreie Städte", "Nationalität", "Geschlecht", "Sozialversicherungspfl._Beschaeftigte_(Arbeitsort)__Anzahl"),
+            (
+                "Stichtag",
+                "Kreise und kreisfreie Städte",
+                "Nationalität",
+                "Geschlecht",
+                "Sozialversicherungspfl._Beschaeftigte_(Arbeitsort)__Anzahl",
+            ),
         ),
         (
             "21311-01-01-4-B",

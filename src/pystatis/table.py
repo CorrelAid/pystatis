@@ -85,9 +85,7 @@ class Table:
         }
 
         if language not in ["de", "en"]:
-            raise QueryParameterError(
-                f"Language {language} is not supported. Please choose from: ['de', 'en']."
-            )
+            raise QueryParameterError(f"Language {language} is not supported. Please choose from: ['de', 'en'].")
 
         raw_data_bytes = load_data(endpoint="data", method="tablefile", params=params)
         assert isinstance(raw_data_bytes, bytes)  # nosec assert_used
@@ -123,9 +121,7 @@ class Table:
         self.metadata = metadata
 
     @staticmethod
-    def prettify_table(
-        data: pd.DataFrame, db_name: str, language: str
-    ) -> pd.DataFrame:
+    def prettify_table(data: pd.DataFrame, db_name: str, language: str) -> pd.DataFrame:
         """Reformat the data into a more readable table
 
         Args:
@@ -156,47 +152,39 @@ class Table:
         column_name_dict = COLUMN_NAME_DICT["genesis-regio"][language]
 
         # Extracts time column with name from last element of Zeit_Label column
-        time = pd.DataFrame(
-            {
-                data[column_name_dict["time_label"]].iloc[-1]: data[
-                    column_name_dict["time"]
-                ]
-            }
-        )
+        time = pd.DataFrame({data[column_name_dict["time_label"]].iloc[-1]: data[column_name_dict["time"]]})
 
         # Extracts new column names from last values of the variable label columns
         # and assigns these to the relevant attribute columns (variable level)
         attributes = data.filter(like=column_name_dict["value_label"])
-        attributes.columns = (
-            data.filter(like=column_name_dict["variable_label"])
-            .iloc[-1]
-            .tolist()
-        )
+        attributes.columns = data.filter(like=column_name_dict["variable_label"]).iloc[-1].tolist()
 
         # Selects all columns containing the values
         values = data.filter(like="__")
 
         # Given a name like BEV036__Bevoelkerung_in_Hauptwohnsitzhaushalten__1000
         # extracts the label and the unit and omits the code
-        values.columns = [
-            re.split(r"_{2,}", name, maxsplit=1)[1] for name in values.columns
-        ]
+        values.columns = [re.split(r"_{2,}", name, maxsplit=1)[1] for name in values.columns]
 
-        pretty_data = pd.concat([time, attributes, values], axis=1).dropna(
-            axis=0, how="all"
-        )
+        pretty_data = pd.concat([time, attributes, values], axis=1).dropna(axis=0, how="all")
         return pretty_data
 
     @staticmethod
-    def parse_zensus_table(data: pd.DataFrame,  language: str) -> pd.DataFrame:
+    def parse_zensus_table(data: pd.DataFrame, language: str) -> pd.DataFrame:
         """Parse Zensus table ffcsv format into a more readable format"""
         # TODO: add distinction between languages.
         column_name_dict = COLUMN_NAME_DICT["zensus"][language]
 
         # add the unit to the column names for the value columns
-        data[column_name_dict["value_variable_label"]] = data[column_name_dict["value_variable_label"]].str.cat(data[column_name_dict["value_unit"]], sep="__")
+        data[column_name_dict["value_variable_label"]] = data[column_name_dict["value_variable_label"]].str.cat(
+            data[column_name_dict["value_unit"]], sep="__"
+        )
 
-        pivot_table = data.pivot(index=data.columns[:-4].to_list(), columns=column_name_dict["value_variable_label"], values=column_name_dict["value"])
+        pivot_table = data.pivot(
+            index=data.columns[:-4].to_list(),
+            columns=column_name_dict["value_variable_label"],
+            values=column_name_dict["value"],
+        )
         value_columns = pivot_table.columns.to_list()
         pivot_table.reset_index(inplace=True)
         pivot_table.columns.name = None
@@ -204,8 +192,8 @@ class Table:
         time_label = data[column_name_dict["time_label"]].iloc[0]
         time = pd.DataFrame({time_label: pivot_table[column_name_dict["time"]]})
 
-        attributes = pivot_table.filter(regex=r"\d+_" +column_name_dict["variable_attribute_label"])
-        attributes.columns = pivot_table.filter(regex=r"\d+_" +column_name_dict["variable_label"]).iloc[0].tolist()
+        attributes = pivot_table.filter(regex=r"\d+_" + column_name_dict["variable_attribute_label"])
+        attributes.columns = pivot_table.filter(regex=r"\d+_" + column_name_dict["variable_label"]).iloc[0].tolist()
 
         pretty_data = pd.concat([time, attributes, pivot_table[value_columns]], axis=1)
 
@@ -218,13 +206,7 @@ class Table:
         column_name_dict = COLUMN_NAME_DICT["genesis-regio"][language]
 
         # Extracts time column with name from last element of Zeit_Label column
-        time = pd.DataFrame(
-            {
-                data[column_name_dict["time_label"]].iloc[-1]: data[
-                    column_name_dict["time"]
-                ]
-            }
-        )
+        time = pd.DataFrame({data[column_name_dict["time_label"]].iloc[-1]: data[column_name_dict["time"]]})
 
         # Extracts new column names from first values of the Merkmal_Label columns
         # and assigns these to the relevant attribute columns (Auspraegung_Label)
@@ -236,9 +218,7 @@ class Table:
 
         # Given a name like BEV036__Bevoelkerung_in_Hauptwohnsitzhaushalten__1000
         # extracts the label and the unit and omit the code
-        values.columns = [
-            re.split(r"_{2,}", name, maxsplit=1)[1] for name in values.columns
-        ]
+        values.columns = [re.split(r"_{2,}", name, maxsplit=1)[1] for name in values.columns]
 
         pretty_data = pd.concat([time, attributes, values], axis=1)
         return pretty_data

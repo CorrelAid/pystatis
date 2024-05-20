@@ -70,7 +70,7 @@ COLUMN_NAME_DICT = {
             "value_variable_label": "value_variable_label",
             "value": "value",
             "value_unit": "value_unit",
-        }
+        },
     },
 }
 

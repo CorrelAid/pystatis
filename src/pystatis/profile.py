@@ -26,11 +26,9 @@ def change_password(db_name: str, new_password: str) -> str:
     }
 
     # change remote password
-    response_text = load_data(
-        endpoint="profile", method="password", params=params, db_name=db_name
-    )
+    response_text = load_data(endpoint="profile", method="password", params=params, db_name=db_name)
     # change local password
-    db.set_db_pw(db_name, new_password)
+    db.set_pw(db_name, new_password)
 
     logger.info("Password changed successfully!")
 
@@ -52,8 +50,6 @@ def remove_result(name: str, area: str = "all") -> str:
     params = {"name": name, "area": area, "language": "de"}
 
     # remove 'Ergebnistabelle' with previously defined parameters
-    response_text = load_data(
-        endpoint="profile", method="removeresult", params=params
-    )
+    response_text = load_data(endpoint="profile", method="removeresult", params=params)
 
     return cast(str, response_text)

@@ -18,6 +18,7 @@ When the package is loaded for the first time,
     Subsequent calls to other `pystatis` functions will throw an error
     until the user has filled in the credentials.
 """
+
 import logging
 import os
 import re
@@ -30,7 +31,7 @@ SUPPORTED_DB = ["genesis", "zensus", "regio"]
 REGEX_DB = {
     "genesis": re.compile(r"^((\d{5}-\d{4})|([0-9A-Z]{10}))$"),
     "zensus": re.compile(r"^\d{4}[A-Z]-\d{4}$"),
-    "regio": re.compile(r"^((\d{5}-.{1,2}($|-.*$))|(A.*$)|([0-9A-Z]{10}$))"),
+    "regio": re.compile(r"^((\d{5}-.{1,2}($|-.*$))|(A.*$)|([0-9A-Z]{10}$)|(\d{5}\w-Z-\d{1,2}))"),
 }
 COLUMN_NAME_DICT = {
     "genesis": {
@@ -132,8 +133,10 @@ def load_config(config_file: Path | None = None) -> ConfigParser:
 
     if not successful_reads:
         logger.critical(
-            "Error while loading the config file. Could not find %s. "
-            "Please make sure to run init_config() first. ",
+            (
+                "Error while loading the config file. Could not find %s. "
+                "Please make sure to run init_config() first. "
+            ),
             config_file,
         )
 

@@ -31,9 +31,7 @@ class Find:
 
     # pylint: disable=too-many-instance-attributes
 
-    def __init__(
-        self, query: str, db_name: str, top_n_preview: int = 5
-    ) -> None:
+    def __init__(self, query: str, db_name: str, top_n_preview: int = 5) -> None:
         """Method for retrieving data from find endpoint.
 
         Args:

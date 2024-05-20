@@ -7,7 +7,7 @@ def test_whoami(mocker):
         "pystatis.helloworld.requests.get",
         return_value=_generic_request_status(),
     )
-    mocker.patch("pystatis.db.get_db_host", return_value="genesis")
+    mocker.patch("pystatis.db.get_host", return_value="genesis")
 
     response = whoami("genesis")
 
@@ -19,9 +19,7 @@ def test_logincheck(mocker):
         "pystatis.helloworld.requests.get",
         return_value=_generic_request_status(),
     )
-    mocker.patch(
-        "pystatis.db.get_db_settings", return_value=("host", "user", "pw")
-    )
+    mocker.patch("pystatis.db.get_settings", return_value=("host", "user", "pw"))
 
     response = logincheck("genesis")
 

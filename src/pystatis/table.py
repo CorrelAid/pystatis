@@ -28,44 +28,77 @@ class Table:
         self.data = pd.DataFrame()
         self.metadata: dict = {}
 
+    # pylint: disable=too-many-arguments
+    # pylint: disable=too-many-locals
     def get_data(
         self,
-        area: str = "all",
-        language: str = "de",
+        *,
         prettify: bool = True,
-        **kwargs,
+        area: str = "all",
+        startyear: str = "",
+        endyear: str = "",
+        timeslices: str = "",
+        regionalvariable: str = "",
+        regionalkey: str = "",
+        stand: str = "",
+        language: str = "de",
+        quality: bool = False,
     ):
         """Downloads raw data and metadata from GENESIS-Online.
 
         Additional keyword arguments are passed on to the GENESIS-Online GET request for tablefile.
 
         Args:
-            area (str, optional): Area to search for the object in GENESIS-Online. Defaults to "all".
-            language (str, optional): One of "de" (German) or "en" (English). Defaults to "de".
             prettify (bool, optional): Reformats the table into a readable format. Defaults to True.
+            area (str, optional): Area to search for the object in GENESIS-Online. Defaults to "all".
+            startyear (str, optional): Data beginning with that year will be returned.
+                Parameter is cumulative to `timeslices`. Supports 4 digits (jjjj) or 4+2 digits (jjjj/jj).
+                Accepts values between "1900" and "2100".
+            endyear (str, optional): Data ending with that year will be returned.
+                Parameter is cumulative to `timeslices`. Supports 4 digits (jjjj) or 4+2 digits (jjjj/jj).
+                Accepts values between "1900" and "2100".
+            timeslices (str, optional): Number of time slices to be returned.
+                This parameter is cumulative to `startyear` and `endyear`.
+            regionalvariable (str, optional): "code" der Regionalklassifikation (RKMerkmal),
+                auf die die Auswahl mittels `regionalkey` angewendet werden soll.
+                Accepts 1-6 characters.
+            regionalkey (str, optional): Übergabe des Amtlichen Gemeindeschlüssel (AGS).
+                Multiple values can be passed as a comma-separated list.
+                Accepts 1-8 characters. "*" can be used as wildcard.
+            stand (str, optional): Provides table only if it is newer.
+                "tt.mm.jjjj hh:mm" or "tt.mm.jjjj". Example: "24.12.2001 19:15".
+            language (str, optional): Messages and data descriptions are supplied in this language.
+            quality (bool, optional): If True, Value-adding quality labels are issued.
         """
-
         params = {
             "name": self.name,
             "area": area,
-            "format": "ffcsv",
+            "startyear": startyear,
+            "endyear": endyear,
+            "timeslices": timeslices,
+            "regionalvariable": regionalvariable,
+            "regionalkey": regionalkey,
+            "stand": stand,
             "language": language,
+            "quality": quality,
+            "format": "ffcsv",
         }
-
-        params |= kwargs
 
         if language not in ["de", "en"]:
             raise QueryParameterError(
                 f"Language {language} is not supported. Please choose from: ['de', 'en']."
             )
 
-        raw_data_bytes = load_data(
-            endpoint="data", method="tablefile", params=params
-        )
+        raw_data_bytes = load_data(endpoint="data", method="tablefile", params=params)
         assert isinstance(raw_data_bytes, bytes)  # nosec assert_used
         raw_data_str = raw_data_bytes.decode("utf-8-sig")
 
         self.raw_data = raw_data_str
+        # sometimes the data contains invalid rows that do not start with the statistics number (always first column)
+        # so we have to do this workaround to get a proper data frame later
+        raw_data_lines = raw_data_str.splitlines(keepends=True)
+        raw_data_header = raw_data_lines[0]
+        raw_data_str = raw_data_header + "".join(line for line in raw_data_lines[1:] if line[:4].isdigit())
         data_buffer = StringIO(raw_data_str)
 
         decimal_char = "," if language == "de" else "."
@@ -144,9 +177,9 @@ class Table:
         values = data.filter(like="__")
 
         # Given a name like BEV036__Bevoelkerung_in_Hauptwohnsitzhaushalten__1000
-        # extracts the readable label and omits both the code and the unit
+        # extracts the label and the unit and omits the code
         values.columns = [
-            re.split(r"_{2,}", name)[1] for name in values.columns
+            re.split(r"_{2,}", name, maxsplit=1)[1] for name in values.columns
         ]
 
         pretty_data = pd.concat([time, attributes, values], axis=1).dropna(
@@ -157,38 +190,25 @@ class Table:
     @staticmethod
     def parse_zensus_table(data: pd.DataFrame) -> pd.DataFrame:
         """Parse Zensus table ffcsv format into a more readable format"""
-
+        # TODO: add distinction between languages.
         column_name_dict = COLUMN_NAME_DICT["zensus"]["en"]
 
-        # Extracts time column with name from last element of Zeit_Label column
-        time = pd.DataFrame(
-            {
-                data[column_name_dict["time_label"]].iloc[-1]: data[
-                    column_name_dict["time"]
-                ]
-            }
-        )
+        # add the unit to the column names for the value columns
+        data["value_variable_label"] = data["value_variable_label"].str.cat(data["value_unit"], sep="__")
 
-        # Extracts new column names from last values of the variable label columns
-        # and assigns these to the relevant attribute columns (variable level)
-        attributes = data.filter(like=column_name_dict["variable_level"])
-        attributes.columns = (
-            data.filter(regex=r"\d+_" + column_name_dict["variable_label"])
-            .iloc[-1]
-            .tolist()
-        )
+        pivot_table = data.pivot(index=data.columns[:-4].to_list(), columns="value_variable_label", values="value")
+        value_columns = pivot_table.columns.to_list()
+        pivot_table.reset_index(inplace=True)
+        pivot_table.columns.name = None
 
-        values = pd.DataFrame(
-            {
-                data[column_name_dict["value_label"]].iloc[-1]: data[
-                    column_name_dict["value"]
-                ]
-            }
-        )
+        time_label = data["time_label"].iloc[0]
+        time = pd.DataFrame({time_label: pivot_table["time"]})
 
-        pretty_data = pd.concat([time, attributes, values], axis=1).dropna(
-            axis=0, how="all"
-        )
+        attributes = pivot_table.filter(regex=r"\d+_variable_attribute_label")
+        attributes.columns = pivot_table.filter(regex=r"\d+_variable_label").iloc[0].tolist()
+
+        pretty_data = pd.concat([time, attributes, pivot_table[value_columns]], axis=1)
+
         return pretty_data
 
     @staticmethod
@@ -206,35 +226,21 @@ class Table:
             }
         )
 
-        # Extracts new column names from last values of the variable label columns
-        # and assigns these to the relevant attribute columns (variable level)
-        attributes = data.filter(like=column_name_dict["value_label"])
-        attributes.columns = (
-            data.filter(like=column_name_dict["variable_label"])
-            .iloc[-1]
-            .tolist()
-        )
+        # TODO: add distinction between languages.
 
-        # Extracts new column names from last values of the variable label columns
-        # and assigns these to the relevant code columns (value_code)
-        codes = data.filter(like=column_name_dict["value_code"])
-        codes.columns = (
-            data.filter(like=column_name_dict["variable_label"])
-            .iloc[-1]
-            .tolist()
-        )
-        codes.columns = [code + " (Code)" for code in codes.columns]
+        # Extracts new column names from first values of the Merkmal_Label columns
+        # and assigns these to the relevant attribute columns (Auspraegung_Label)
+        attributes = data.filter(like="Auspraegung_Label")
+        attributes.columns = data.filter(like="Merkmal_Label").iloc[0].tolist()
 
         # Selects all columns containing the values
         values = data.filter(like="__")
 
         # Given a name like BEV036__Bevoelkerung_in_Hauptwohnsitzhaushalten__1000
-        # extracts the readable label and omit both the code and the unit
+        # extracts the label and the unit and omit the code
         values.columns = [
-            re.split(r"_{2,}", name)[1] for name in values.columns
+            re.split(r"_{2,}", name, maxsplit=1)[1] for name in values.columns
         ]
 
-        pretty_data = pd.concat(
-            [time, attributes, codes, values], axis=1
-        ).dropna(axis=0, how="all")
+        pretty_data = pd.concat([time, attributes, values], axis=1)
         return pretty_data

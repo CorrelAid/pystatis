@@ -1,7 +1,7 @@
 # This workflow will install Python dependencies, run tests and lint with a variety of Python versions
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
 
-name: Run tests
+name: Tests, Code Quality and Documentation
 
 on:
   push:
@@ -28,13 +28,13 @@ jobs:
         os: [ubuntu-latest, macOS-latest, windows-latest]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
       - name: Run poetry image
-        uses: abatilo/actions-poetry@v2.0.0
+        uses: abatilo/actions-poetry@v3.0.0
         with:
           poetry-version: $POETRY_VERSION
       - name: Install dependencies
@@ -42,7 +42,8 @@ jobs:
           poetry install --with dev
       - name: Run tests
         run: |
-          poetry run pytest --cov=pystatis tests
+          poetry run pytest --cov=pystatis --vcr-record=none tests
+
   code-quality:
     runs-on: ${{ matrix.os }}
     timeout-minutes: 10
@@ -50,16 +51,17 @@ jobs:
       fail-fast: false
       matrix:
         # only support specific python version, as guidelines differ beween (minor) versions
-        python-version: ["3.11.6"]
+        python-version: ["3.11.7"]
         os: [ubuntu-latest]
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v2
+      - uses: actions/checkout@v4
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
       - name: Run poetry image
-        uses: abatilo/actions-poetry@v2.0.0
+        uses: abatilo/actions-poetry@v3.0.0
         with:
           poetry-version: $POETRY_VERSION
       - name: Install dependencies
@@ -75,10 +77,11 @@ jobs:
       - name: Run bandit
         run: poetry run bandit -r src
       - name: Run safety
-        run: poetry run safety check
+        run: poetry run safety check -i 67599
       - name: Run mypy
         run: poetry run mypy src
-  sphinx-documentation:
+
+  sphinx-documentation-and-coverage:
     runs-on: ${{ matrix.os }}
     timeout-minutes: 10
     strategy:
@@ -88,15 +91,15 @@ jobs:
         os: [ubuntu-latest]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
       - name: Run poetry image
-        uses: abatilo/actions-poetry@v2.0.0
+        uses: abatilo/actions-poetry@v3.0.0
         with:
-            poetry-version: $POETRY_VERSION
+          poetry-version: $POETRY_VERSION
       - name: Install dependencies
         run: |
           poetry install --with dev
@@ -106,8 +109,22 @@ jobs:
           poetry run make clean
           poetry run make html
       - name: Upload documentation as artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: docs
           path: docs/build/html/*
           retention-days: 5
+      - name: Generate and filter test coverage report
+        run: |
+          poetry run coverage run -m pytest --vcr-record=none tests
+          poetry run coverage json -o assets/coverage.json
+          cov=$(jq -r '.totals.percent_covered_display' assets/coverage.json)
+          echo "{\"label\":\"Test Coverage\",\"message\":\"${cov}%\",\"schemaVersion\":1,\"color\":\"hsl(120, 100%, 40%)\"}" > assets/coverage_badge.json
+      # compromise: Due to versioning issues, only display
+      # coverage (report) for main (on/push/branches/main)
+      - name: Prepare files
+        # if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          set -e
+          mkdir -p output/publish
+          cp assets/coverage_badge.json output/publish/

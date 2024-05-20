@@ -34,7 +34,7 @@ REGEX_DB = {
     "regio": re.compile(r"^((\d{5}-.{1,2}($|-.*$))|(A.*$)|([0-9A-Z]{10}$)|(\d{5}\w-Z-\d{1,2}))"),
 }
 COLUMN_NAME_DICT = {
-    "genesis": {
+    "genesis-regio": {
         "de": {
             "time_label": "Zeit_Label",
             "time": "Zeit",
@@ -50,14 +50,26 @@ COLUMN_NAME_DICT = {
             "value_code": "variable_code.1",
         },
     },
+    # Curently, response does not change colum names between languages.
+    # Keep this dictionary for consistency and future proofing.
     "zensus": {
+        "de": {
+            "time_label": "time_label",
+            "time": "time",
+            "variable_label": "variable_label",
+            "variable_attribute_label": "variable_attribute_label",
+            "value_variable_label": "value_variable_label",
+            "value": "value",
+            "value_unit": "value_unit",
+        },
         "en": {
             "time_label": "time_label",
             "time": "time",
             "variable_label": "variable_label",
-            "variable_level": "variable_attribute_label",
-            "value_label": "value_variable_label",
+            "variable_attribute_label": "variable_attribute_label",
+            "value_variable_label": "value_variable_label",
             "value": "value",
+            "value_unit": "value_unit",
         }
     },
 }

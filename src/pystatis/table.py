@@ -172,12 +172,11 @@ class Table:
     @staticmethod
     def parse_zensus_table(data: pd.DataFrame, language: str) -> pd.DataFrame:
         """Parse Zensus table ffcsv format into a more readable format"""
-        # TODO: add distinction between languages.
         column_name_dict = COLUMN_NAME_DICT["zensus"][language]
 
         # add the unit to the column names for the value columns
         data[column_name_dict["value_variable_label"]] = data[column_name_dict["value_variable_label"]].str.cat(
-            data[column_name_dict["value_unit"]], sep="__"
+            data[column_name_dict["value_unit"]].fillna(""), sep="__"
         )
 
         pivot_table = data.pivot(

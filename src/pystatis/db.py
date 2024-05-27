@@ -2,7 +2,7 @@
 
 import logging
 
-from pystatis import config, db
+from pystatis import config
 from pystatis.cache import normalize_name
 from pystatis.exception import PystatisConfigError
 
@@ -29,32 +29,33 @@ def identify_db_matches(name: str) -> list[str]:
     return db_match
 
 
-def identify_db(name: str) -> str:
+def identify_db(table_name: str) -> str:
     """Identify database by matching with the provided item code.
-    This is done by matching the item code to the database regex. If multiple matches exist, use the first with existing credentials.
+    This is done by matching the item code to the database regex. If multiple matches
+    exist, use the first with existing credentials.
     In this case, it must be a Cube (provided all regexing works as intended).
 
     Args:
-        name (str): Query parameter 'name' corresponding to the item code.
+        table_name (str): Query parameter 'name' corresponding to the item code.
 
     Returns:
         db_name (str): Identified database.
     """
-    db_match = db.identify_db_matches(name)
+    db_match = identify_db_matches(table_name)
 
     if db_match:
-        for name in db_match:
-            if db.check_credentials(name):
-                db_name = name
-                break
-        else:
-            raise PystatisConfigError(
-                "Missing credentials!\n"
-                f"To access this item you need to be a registered user of: {db_match} \n"
-                "Please run setup_credentials()."
-            )
+        for db_name in db_match:
+            # Return first hit with existing credentials.
+            if check_credentials(db_name):
+                return db_name
+        raise PystatisConfigError(
+            "Missing credentials!\n"
+            f"To access this item you need to be a registered user of: {db_match} \n"
+            "Please run setup_credentials()."
+        )
 
-    return db_name
+    else:
+        raise ValueError(f"Could not determine the database for the table '{table_name}'.")
 
 
 def get_host(db_name: str) -> str:

@@ -67,8 +67,9 @@ class Table:
                 Accepts 1-8 characters. "*" can be used as wildcard.
             stand (str, optional): Provides table only if it is newer.
                 "tt.mm.jjjj hh:mm" or "tt.mm.jjjj". Example: "24.12.2001 19:15".
-            language (str, optional): Messages and data descriptions are supplied in this language. For GENESIS and Zensus, ['de', 'en'] are supported. For Regionalstatistik, only 'de' is supported.
-            quality (bool, optional): If True, Value-adding quality labels are issued.
+            language (str, optional): Messages and data descriptions are supplied in this language.
+                For GENESIS and Zensus, ['de', 'en'] are supported. For Regionalstatistik, only 'de' is supported.
+                quality (bool, optional): If True, Value-adding quality labels are issued.
         """
         params = {
             "name": self.name,

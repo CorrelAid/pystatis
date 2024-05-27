@@ -69,7 +69,7 @@ class Table:
                 "tt.mm.jjjj hh:mm" or "tt.mm.jjjj". Example: "24.12.2001 19:15".
             language (str, optional): Messages and data descriptions are supplied in this language.
                 For GENESIS and Zensus, ['de', 'en'] are supported. For Regionalstatistik, only 'de' is supported.
-                quality (bool, optional): If True, Value-adding quality labels are issued.
+            quality (bool, optional): If True, Value-adding quality labels are issued.
         """
         params = {
             "name": self.name,
@@ -180,7 +180,7 @@ class Table:
 
         # add the unit to the column names for the value columns
         data[column_name_dict["value_variable_label"]] = data[column_name_dict["value_variable_label"]].str.cat(
-            data[column_name_dict["value_unit"]].fillna(""), sep="__"
+            data[column_name_dict["value_unit"]].fillna("Unkown_Unit"), sep="__"
         )
 
         pivot_table = data.pivot(

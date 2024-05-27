@@ -67,7 +67,7 @@ class Table:
                 Accepts 1-8 characters. "*" can be used as wildcard.
             stand (str, optional): Provides table only if it is newer.
                 "tt.mm.jjjj hh:mm" or "tt.mm.jjjj". Example: "24.12.2001 19:15".
-            language (str, optional): Messages and data descriptions are supplied in this language.
+            language (str, optional): Messages and data descriptions are supplied in this language. For GENESIS and Zensus, ['de', 'en'] are supported. For Regionalstatistik, only 'de' is supported.
             quality (bool, optional): If True, Value-adding quality labels are issued.
         """
         params = {
@@ -84,10 +84,13 @@ class Table:
             "format": "ffcsv",
         }
 
-        if language not in ["de", "en"]:
-            raise QueryParameterError(f"Language {language} is not supported. Please choose from: ['de', 'en'].")
+        db_name = db.identify_db(self.name)
+        if db_name == "regio" and language != "de":
+            raise QueryParameterError(f"Language '{language}' is not supported for Regionalstatistik, only 'de'.")
+        elif language not in ["de", "en"]:
+            raise QueryParameterError(f"Language '{language}' is not supported. Please choose from: ['de', 'en'].")
 
-        raw_data_bytes = load_data(endpoint="data", method="tablefile", params=params)
+        raw_data_bytes = load_data(endpoint="data", method="tablefile", params=params, db_name=db_name)
         assert isinstance(raw_data_bytes, bytes)  # nosec assert_used
         raw_data_str = raw_data_bytes.decode("utf-8-sig")
 
@@ -110,7 +113,7 @@ class Table:
         if prettify:
             self.data = self.prettify_table(
                 data=self.data,
-                db_name=db.identify_db(self.name)[0],
+                db_name=db.identify_db_matches(self.name)[0],
                 language=language,
             )
 
@@ -207,8 +210,8 @@ class Table:
         # Extracts time column with name from last element of Zeit_Label column
         time = pd.DataFrame({data[column_name_dict["time_label"]].iloc[-1]: data[column_name_dict["time"]]})
 
-        # Extracts new column names from first values of the Merkmal_Label columns
-        # and assigns these to the relevant attribute columns (Auspraegung_Label)
+        # Extracts new column names from first values of the variable_label columns
+        # and assigns these to the relevant attribute columns (value_label)
         attributes = data.filter(like=column_name_dict["value_label"])
         attributes.columns = data.filter(like=column_name_dict["variable_label"]).iloc[0].tolist()
 

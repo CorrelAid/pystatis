@@ -9,7 +9,8 @@ import requests
 
 from pystatis import config, db
 from pystatis.cache import cache_data, hit_in_cash, normalize_name, read_from_cache
-from pystatis.exception import DestatisStatusError, PystatisConfigError
+from pystatis.db import identify_db
+from pystatis.exception import DestatisStatusError
 
 logger = logging.getLogger(__name__)
 
@@ -99,22 +100,7 @@ def get_data_from_endpoint(endpoint: str, method: str, params: dict, db_name: st
         name = params.get("name", params.get("selection", ""))
 
         if name is not None:
-            db_match = db.identify_db(name)
-
-            # Check credentials (Note: we might want to do this also for explicitly specified db_names?)
-            # If more than one db matches it must be a Cube (provided all regexing works as intended).
-            # --> Choose db based on available credentials.
-            if db_match:
-                for name in db_match:
-                    if db.check_credentials(name):
-                        db_name = name
-                        break
-                else:
-                    raise PystatisConfigError(
-                        "Missing credentials!\n"
-                        f"To access this item you need to be a registered user of: {db_match} \n"
-                        "Please run setup_credentials()."
-                    )
+            db_name = identify_db(name)
 
     if not db_name:
         raise ValueError(

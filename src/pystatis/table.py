@@ -180,7 +180,7 @@ class Table:
 
         # add the unit to the column names for the value columns
         data[column_name_dict["value_variable_label"]] = data[column_name_dict["value_variable_label"]].str.cat(
-            data[column_name_dict["value_unit"]].fillna("Unkown_Unit"), sep="__"
+            data[column_name_dict["value_unit"]].fillna("Unknown_Unit"), sep="__"
         )
 
         pivot_table = data.pivot(

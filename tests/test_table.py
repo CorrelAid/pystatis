@@ -510,7 +510,13 @@ def test_get_data(mocker, table_name: str, expected_shape: tuple[int, int], lang
         (
             "1000A-0001",
             (11339, 5),
-            ("Reference date", "Municipalities (LAU-2)", "Area__", "Persons__number", "Population density__"),
+            (
+                "Reference date",
+                "Municipalities (LAU-2)",
+                "Area__Unknown_Unit",
+                "Persons__number",
+                "Population density__Unknown_Unit",
+            ),
             "en",
         ),
         (

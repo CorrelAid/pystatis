@@ -36,13 +36,13 @@ def test_set_db_pw(config_):
     ],
 )
 def test_identify_db(config_, name, expected_db):
-    assert db.identify_db(name)[0] == expected_db
+    assert db.identify_db_matches(name)[0] == expected_db
 
 
 def test_identify_db_with_multiple_matches(config_):
     config_.set("genesis", "username", "test")
     config_.set("genesis", "password", "test")
-    db_match = db.identify_db("1234567890")
+    db_match = db.identify_db_matches("1234567890")
     for db_name in db_match:
         if db.check_credentials(db_name):
             break
@@ -52,7 +52,7 @@ def test_identify_db_with_multiple_matches(config_):
     config_.set("genesis", "password", "")
     config_.set("regio", "username", "test")
     config_.set("regio", "password", "test")
-    db_match = db.identify_db("1234567890")
+    db_match = db.identify_db_matches("1234567890")
     for db_name in db_match:
         if db.check_credentials(db_name):
             break

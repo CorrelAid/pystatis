@@ -1,0 +1,99 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.31.0
+    method: GET
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=46181-0001&quality=False
+  response:
+    body:
+      string: "Statistik_Code;Statistik_Label;Zeit_Code;Zeit_Label;Zeit;1_Merkmal_Code;1_Merkmal_Label;1_Auspraegung_Code;1_Auspraegung_Label;2_Merkmal_Code;2_Merkmal_Label;2_Auspraegung_Code;2_Auspraegung_Label;3_Merkmal_Code;3_Merkmal_Label;3_Auspraegung_Code;3_Auspraegung_Label;VER013__Befoerderte_Personen__Anzahl;GUT004__Befoerderungsleistung__Person-km\n46181;Personenverkehr
+        mit Bussen und Bahnen;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;VERAT5;Verkehrsart;VERLINFERNOBUS;Linienfernverkehr
+        mit Omnibussen;VERVZ4;Hauptverkehrsverbindung;HAUPTVKBIN01;Inlandsverkehr;2214225;611399836\n46181;Personenverkehr
+        mit Bussen und Bahnen;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;VERAT5;Verkehrsart;VERLINFERNOBUS;Linienfernverkehr
+        mit Omnibussen;VERVZ4;Hauptverkehrsverbindung;HAUPTVKBIN02;Grenz\xFCberschreitender-,Transit-
+        u. Auslandsverkehr;657680;268831295\n46181;Personenverkehr mit Bussen und
+        Bahnen;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;VERAT5;Verkehrsart;VERLINGFVOBUS;Gelegenheitsfernverkehr
+        mit Omnibussen;VERVZ4;Hauptverkehrsverbindung;HAUPTVKBIN01;Inlandsverkehr;7608833;2222589798\n46181;Personenverkehr
+        mit Bussen und Bahnen;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;VERAT5;Verkehrsart;VERLINGFVOBUS;Gelegenheitsfernverkehr
+        mit Omnibussen;VERVZ4;Hauptverkehrsverbindung;HAUPTVKBIN02;Grenz\xFCberschreitender-,Transit-
+        u. Auslandsverkehr;1376979;717609405\n46181;Personenverkehr mit Bussen und
+        Bahnen;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;VERAT5;Verkehrsart;VERLINFERNOBUS;Linienfernverkehr
+        mit Omnibussen;VERVZ4;Hauptverkehrsverbindung;HAUPTVKBIN01;Inlandsverkehr;5114383;1453772302\n46181;Personenverkehr
+        mit Bussen und Bahnen;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;VERAT5;Verkehrsart;VERLINFERNOBUS;Linienfernverkehr
+        mit Omnibussen;VERVZ4;Hauptverkehrsverbindung;HAUPTVKBIN02;Grenz\xFCberschreitender-,Transit-
+        u. Auslandsverkehr;2573473;1030202565\n46181;Personenverkehr mit Bussen und
+        Bahnen;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;VERAT5;Verkehrsart;VERLINGFVOBUS;Gelegenheitsfernverkehr
+        mit Omnibussen;VERVZ4;Hauptverkehrsverbindung;HAUPTVKBIN01;Inlandsverkehr;16604881;5157500441\n46181;Personenverkehr
+        mit Bussen und Bahnen;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;VERAT5;Verkehrsart;VERLINGFVOBUS;Gelegenheitsfernverkehr
+        mit Omnibussen;VERVZ4;Hauptverkehrsverbindung;HAUPTVKBIN02;Grenz\xFCberschreitender-,Transit-
+        u. Auslandsverkehr;3736147;2159247530\n"
+    headers:
+      Connection:
+      - Keep-Alive
+      Content-Disposition:
+      - attachement;filename=46181-0001_flat.csv
+      Content-Length:
+      - '2486'
+      Content-Type:
+      - text/csv
+      Date:
+      - Mon, 27 May 2024 08:57:45 GMT
+      Keep-Alive:
+      - timeout=15, max=100
+      Server:
+      - Apache
+    status:
+      code: 200
+      message: '200'
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.31.0
+    method: GET
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=46181-0001&quality=False
+  response:
+    body:
+      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"46181-0001\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"46181-0001\",\"Content\":\"Bef\xF6rderte
+        Personen, Bef\xF6rderungsleistung\\n(Personenfernverkehr mit Bussen): Deutschland,
+        Jahre,\\nVerkehrsart, Hauptverkehrsverbindung\",\"Time\":{\"From\":\"2004\",\"To\":\"2022\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"46181\",\"Content\":\"Personenverkehr
+        mit Bussen und Bahnen\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Deutschland
+        insgesamt\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"VER013\",\"Content\":\"Bef\xF6rderte
+        Personen\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"GUT004\",\"Content\":\"Bef\xF6rderungsleistung\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Rows\":[{\"Code\":\"VERAT5\",\"Content\":\"Verkehrsart\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":[{\"Code\":\"VERVZ4\",\"Content\":\"Hauptverkehrsverbindung\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Updated\":\"see parent\"}],\"Subtitel\":{\"Code\":\"JAHR\",\"Content\":\"Jahr\",\"Type\":\"Merkmal\",\"Values\":\"2\",\"Selected\":\"2\",\"Structure\":null,\"Updated\":\"see
+        parent\"},\"Subheading\":null},\"Updated\":\"28.12.2022 17:13:08h\"},\"Copyright\":\"\xA9
+        Statistisches Bundesamt (Destatis), 2024\"}"
+    headers:
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '1590'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Mon, 27 May 2024 08:57:52 GMT
+      Keep-Alive:
+      - timeout=15, max=100
+      Server:
+      - Apache
+    status:
+      code: 200
+      message: '200'
+version: 1

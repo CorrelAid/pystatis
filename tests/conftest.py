@@ -1,5 +1,3 @@
-import sys
-
 import pytest
 
 
@@ -13,16 +11,13 @@ def vcr_config():
 
 @pytest.fixture
 def vcr_cassette_name(request):
-    """Name of the VCR cassette"""
-    f = request.function
-    name = request.node.name
-    mark = f.pytestmark[0]
-    args = mark.args
-    params = args[1]
-
-    if "table_name" in args[0]:
-        param = [param for param in params if param[0] in name][0]
-        table_name = param[0]
-        return table_name
-
-    return name
+    """Name of the VCR cassette, changed to {language}_{table_name}."""
+    test_arguments = request.node.callspec.params
+    if "table_name" in test_arguments:
+        table_name = test_arguments["table_name"]
+        language = test_arguments.get("language", "").upper()
+        return f"{language}_{table_name}"
+    else:
+        # Fallback
+        test_name = request.node.name
+        return test_name

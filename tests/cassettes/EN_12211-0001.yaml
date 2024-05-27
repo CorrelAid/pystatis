@@ -1,0 +1,223 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.31.0
+    method: GET
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile?area=all&format=ffcsv&language=en&name=12211-0001&quality=False
+  response:
+    body:
+      string: 'statistics_code;statistics_label;time_code;time_label;time;1_variable_code;1_variable_label;1_variable_code;1_variable_code;2_variable_code;2_variable_label;2_variable_code;2_variable_code;3_variable_code;3_variable_label;3_variable_code;3_variable_code;BEV036__Population_in_primary_residence_households__1000;ERW041__Persons_in_employment_from_primary_residence_hh.__1000;ERW042__Unemployed_persons_from_primary_residence_hh.__1000;ERW040__Economically_active_population_from_prim.resid.hh.__1000;ERW043__Economically_inactive_population_fr.prim.resid.hh.__1000
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;GESM;Male;ALT068;Age
+        groups;ALT000B15;under 15 years;6174;x;x;x;6174
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;GESM;Male;ALT068;Age
+        groups;ALT015B20;15 to under 20 years;2065;608;59;667;1397
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;GESM;Male;ALT068;Age
+        groups;ALT020B25;20 to under 25 years;2322;1676;105;1780;541
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;GESM;Male;ALT068;Age
+        groups;ALT025B30;25 to under 30 years;2585;2209;96;2305;280
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;GESM;Male;ALT068;Age
+        groups;ALT030B35;30 to under 35 years;2896;2605;93;2698;198
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;GESM;Male;ALT068;Age
+        groups;ALT035B40;35 to under 40 years;2800;2531;86;2617;183
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;GESM;Male;ALT068;Age
+        groups;ALT040B45;40 to under 45 years;2707;2463;69;2532;175
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;GESM;Male;ALT068;Age
+        groups;ALT045B50;45 to under 50 years;2433;2198;61;2259;174
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;GESM;Male;ALT068;Age
+        groups;ALT050B55;50 to under 55 years;2876;2577;62;2639;237
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;GESM;Male;ALT068;Age
+        groups;ALT055B60;55 to under 60 years;3405;2953;65;3018;387
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;GESM;Male;ALT068;Age
+        groups;ALT060B65;60 to under 65 years;3075;2134;63;2197;878
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;GESM;Male;ALT068;Age
+        groups;ALT065B70;65 to under 70 years;2436;583;9;592;1844
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;GESM;Male;ALT068;Age
+        groups;ALT070B75;70 to under 75 years;2014;242;/;243;1771
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;GESM;Male;ALT068;Age
+        groups;ALT075UM;75 years and over;3639;131;/;132;3507
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;GESM;Male;ALT068;Age
+        groups;;Total;41427;22909;773;23682;17745
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;GESW;Female;ALT068;Age
+        groups;ALT000B15;under 15 years;5845;x;x;x;5845
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;GESW;Female;ALT068;Age
+        groups;ALT015B20;15 to under 20 years;1922;511;44;556;1367
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;GESW;Female;ALT068;Age
+        groups;ALT020B25;20 to under 25 years;2165;1474;74;1548;617
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;GESW;Female;ALT068;Age
+        groups;ALT025B30;25 to under 30 years;2379;1876;73;1949;430
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;GESW;Female;ALT068;Age
+        groups;ALT030B35;30 to under 35 years;2742;2151;74;2225;518
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;GESW;Female;ALT068;Age
+        groups;ALT035B40;35 to under 40 years;2714;2145;67;2212;502
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;GESW;Female;ALT068;Age
+        groups;ALT040B45;40 to under 45 years;2692;2212;61;2274;418
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;GESW;Female;ALT068;Age
+        groups;ALT045B50;45 to under 50 years;2460;2079;46;2125;336
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;GESW;Female;ALT068;Age
+        groups;ALT050B55;50 to under 55 years;2898;2419;45;2464;434
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;GESW;Female;ALT068;Age
+        groups;ALT055B60;55 to under 60 years;3418;2720;51;2771;647
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;GESW;Female;ALT068;Age
+        groups;ALT060B65;60 to under 65 years;3170;1949;48;1997;1174
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;GESW;Female;ALT068;Age
+        groups;ALT065B70;65 to under 70 years;2660;446;/;452;2209
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;GESW;Female;ALT068;Age
+        groups;ALT070B75;70 to under 75 years;2337;154;/;155;2182
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;GESW;Female;ALT068;Age
+        groups;ALT075UM;75 years and over;5046;71;/;72;4974
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;GESW;Female;ALT068;Age
+        groups;;Total;42448;20207;589;20796;21652
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;;Total;ALT068;Age
+        groups;ALT000B15;under 15 years;12019;x;x;x;12019
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;;Total;ALT068;Age
+        groups;ALT015B20;15 to under 20 years;3987;1120;103;1223;2764
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;;Total;ALT068;Age
+        groups;ALT020B25;20 to under 25 years;4487;3150;179;3328;1159
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;;Total;ALT068;Age
+        groups;ALT025B30;25 to under 30 years;4963;4085;169;4254;710
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;;Total;ALT068;Age
+        groups;ALT030B35;30 to under 35 years;5638;4756;167;4923;716
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;;Total;ALT068;Age
+        groups;ALT035B40;35 to under 40 years;5513;4676;153;4829;685
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;;Total;ALT068;Age
+        groups;ALT040B45;40 to under 45 years;5399;4675;131;4806;593
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;;Total;ALT068;Age
+        groups;ALT045B50;45 to under 50 years;4893;4277;107;4384;509
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;;Total;ALT068;Age
+        groups;ALT050B55;50 to under 55 years;5774;4996;107;5103;671
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;;Total;ALT068;Age
+        groups;ALT055B60;55 to under 60 years;6823;5673;116;5789;1034
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;;Total;ALT068;Age
+        groups;ALT060B65;60 to under 65 years;6245;4083;111;4194;2051
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;;Total;ALT068;Age
+        groups;ALT065B70;65 to under 70 years;5097;1029;15;1044;4053
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;;Total;ALT068;Age
+        groups;ALT070B75;70 to under 75 years;4351;396;/;398;3953
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;;Total;ALT068;Age
+        groups;ALT075UM;75 years and over;8685;202;/;204;8481
+
+        12211;Microcensus;JAHR;Year;2023;DINSG;Germany;DG;Germany;GES;Sex;;Total;ALT068;Age
+        groups;;Total;83875;43117;1362;44479;39397
+
+        '
+    headers:
+      Connection:
+      - Keep-Alive
+      Content-Disposition:
+      - attachement;filename=12211-0001_flat.csv
+      Content-Length:
+      - '7062'
+      Content-Type:
+      - text/csv
+      Date:
+      - Mon, 27 May 2024 09:02:13 GMT
+      Keep-Alive:
+      - timeout=15, max=100
+      Server:
+      - Apache
+    status:
+      code: 200
+      message: '200'
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.31.0
+    method: GET
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table?area=all&format=ffcsv&language=en&name=12211-0001&quality=False
+  response:
+    body:
+      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"successfull\",\"Type\":\"information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"12211-0001\",\"area\":\"all\",\"language\":\"en\"},\"Object\":{\"Code\":\"12211-0001\",\"Content\":\"Population,
+        persons in employment, unemployed persons, econ.\\nactive population, econ.
+        inactive population from primary\\nresidence households: Germany, years, sex,
+        age groups\",\"Time\":{\"From\":\"2020\",\"To\":\"2023\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"12211\",\"Content\":\"Microcensus\",\"Type\":\"statistic\",\"Values\":null,\"Selected\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Germany\",\"Type\":\"variable\",\"Values\":\"1\",\"Selected\":\"1\",\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"BEV036\",\"Content\":\"Population
+        in primary residence households\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"ERW041\",\"Content\":\"Persons in employment from primary
+        residence hh.\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"ERW042\",\"Content\":\"Unemployed persons from primary
+        residence hh.\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"ERW040\",\"Content\":\"Economically active population
+        from prim.resid.hh.\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"ERW043\",\"Content\":\"Economically inactive population
+        fr.prim.resid.hh.\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Rows\":[{\"Code\":\"GES\",\"Content\":\"Sex\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Structure\":[{\"Code\":\"ALT068\",\"Content\":\"Age
+        groups (under 15 - 75 years and over)\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Updated\":\"see parent\"}],\"Subtitel\":{\"Code\":\"JAHR\",\"Content\":\"Year\",\"Type\":\"variable\",\"Values\":\"1\",\"Selected\":\"1\",\"Structure\":null,\"Updated\":\"see
+        parent\"},\"Subheading\":null},\"Updated\":\"2022-12-28 09:26:09h\"},\"Copyright\":\"\xA9
+        Federal Statistical Office, Wiesbaden 2024\"}"
+    headers:
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '2153'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Mon, 27 May 2024 09:02:17 GMT
+      Keep-Alive:
+      - timeout=15, max=100
+      Server:
+      - Apache
+    status:
+      code: 200
+      message: '200'
+version: 1

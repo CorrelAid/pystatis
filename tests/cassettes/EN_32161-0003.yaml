@@ -1,0 +1,137 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.31.0
+    method: GET
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile?area=all&format=ffcsv&language=en&name=32161-0003&quality=False
+  response:
+    body:
+      string: 'statistics_code;statistics_label;time_code;time_label;time;1_variable_code;1_variable_label;1_variable_code;1_variable_code;2_variable_code;2_variable_label;2_variable_code;2_variable_code;BETR01__Local_units__number;ABF014__Quantity_of_waste_produced__1000_t;ERW012__Persons_employed__1000;ERF001__Coverage_of_local_units__percent;ERF002__Coverage_of_persons_employed__percent
+
+        32161;Survey of waste production;JAHR;Year;2018;DINSG;Germany;DG;Germany;WZ08T1;WZ2008
+        (2-digit codes): Waste production;WZ08-01-03;Agriculture and forestry, fishing;366;423.9;32.9;0.4;14.2
+
+        32161;Survey of waste production;JAHR;Year;2018;DINSG;Germany;DG;Germany;WZ08T1;WZ2008
+        (2-digit codes): Waste production;WZ08-05-02;Mining and quarrying;49;463.3;22.5;2.3;46.0
+
+        32161;Survey of waste production;JAHR;Year;2018;DINSG;Germany;DG;Germany;WZ08T1;WZ2008
+        (2-digit codes): Waste production;WZ08-10-01;Manufacture of food products,
+        beverages, tobacco;1451;6318.3;404.4;4.7;55.7
+
+        32161;Survey of waste production;JAHR;Year;2018;DINSG;Germany;DG;Germany;WZ08T1;WZ2008
+        (2-digit codes): Waste production;WZ08-13-03;Manuf. of textiles, textile prod.,
+        leather prod.;503;229.7;86.7;6.9;70.1
+
+        32161;Survey of waste production;JAHR;Year;2018;DINSG;Germany;DG;Germany;WZ08T1;WZ2008
+        (2-digit codes): Waste production;WZ08-16;Manuf. of wood, products of wood
+        and cork etc.;348;3582.6;57.9;3.6;51.1
+
+        32161;Survey of waste production;JAHR;Year;2018;DINSG;Germany;DG;Germany;WZ08T1;WZ2008
+        (2-digit codes): Waste production;WZ08-17-03;Manufacture of paper products,
+        printing;1039;6552.3;178.0;8.9;71.5
+
+        32161;Survey of waste production;JAHR;Year;2018;DINSG;Germany;DG;Germany;WZ08T1;WZ2008
+        (2-digit codes): Waste production;WZ08-19;Manufacture of coke and refined
+        petroleum products;50;486.5;18.5;37.6;89.4
+
+        32161;Survey of waste production;JAHR;Year;2018;DINSG;Germany;DG;Germany;WZ08T1;WZ2008
+        (2-digit codes): Waste production;WZ08-20-03;Chemical, pharmaceutical, rubber,
+        plastic products;2987;7729.4;752.5;23.7;84.6
+
+        32161;Survey of waste production;JAHR;Year;2018;DINSG;Germany;DG;Germany;WZ08T1;WZ2008
+        (2-digit codes): Waste production;WZ08-23;Manufacture of other non-metallic
+        mineral products;940;3768.9;149.8;9.1;69.3
+
+        32161;Survey of waste production;JAHR;Year;2018;DINSG;Germany;DG;Germany;WZ08T1;WZ2008
+        (2-digit codes): Waste production;WZ08-24-03;Manufacture of basic metals and
+        metal products;1912;12270.4;609.0;4.4;55.3
+
+        32161;Survey of waste production;JAHR;Year;2018;DINSG;Germany;DG;Germany;WZ08T1;WZ2008
+        (2-digit codes): Waste production;WZ08-26-03;Computer, electr. a.optical prod.,
+        motor vehicles;5402;8375.5;2531.1;10.4;79.2
+
+        32161;Survey of waste production;JAHR;Year;2018;DINSG;Germany;DG;Germany;WZ08T1;WZ2008
+        (2-digit codes): Waste production;WZ08-31-02;Manufacture of furniture and
+        other manufacturing;995;547.5;201.0;3.8;57.7
+
+        32161;Survey of waste production;JAHR;Year;2018;DINSG;Germany;DG;Germany;WZ08T1;WZ2008
+        (2-digit codes): Waste production;WZ08-35-01;Electricity, gas, steam, air
+        cond., water supply;526;13554.5;179.4;2.5;64.2
+
+        32161;Survey of waste production;JAHR;Year;2018;DINSG;Germany;DG;Germany;WZ08T1;WZ2008
+        (2-digit codes): Waste production;WZ08-45-04;Services;3377;3613.5;3844.6;0.1;17.5
+
+        '
+    headers:
+      Connection:
+      - Keep-Alive
+      Content-Disposition:
+      - attachement;filename=32161-0003_flat.csv
+      Content-Length:
+      - '3179'
+      Content-Type:
+      - text/csv
+      Date:
+      - Mon, 27 May 2024 09:02:29 GMT
+      Keep-Alive:
+      - timeout=15, max=100
+      Server:
+      - Apache
+    status:
+      code: 200
+      message: '200'
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.31.0
+    method: GET
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table?area=all&format=ffcsv&language=en&name=32161-0003&quality=False
+  response:
+    body:
+      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"successfull\",\"Type\":\"information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"32161-0003\",\"area\":\"all\",\"language\":\"en\"},\"Object\":{\"Code\":\"32161-0003\",\"Content\":\"Local
+        units, quantity of waste produced, persons employed,\\ncoverage of local units,
+        coverage of persons employed:\\nGermany, years, economic activities\",\"Time\":{\"From\":\"2010\",\"To\":\"2018\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"32161\",\"Content\":\"Survey
+        of waste production\",\"Type\":\"statistic\",\"Values\":null,\"Selected\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Germany\",\"Type\":\"variable\",\"Values\":\"1\",\"Selected\":\"1\",\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"BETR01\",\"Content\":\"Local
+        units\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"ABF014\",\"Content\":\"Quantity of waste produced\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"ERW012\",\"Content\":\"Persons employed\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"ERF001\",\"Content\":\"Coverage of local units\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"ERF002\",\"Content\":\"Coverage of persons employed\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Rows\":[{\"Code\":\"WZ08T1\",\"Content\":\"WZ2008 (2-digit codes):
+        Waste production\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Subtitel\":{\"Code\":\"JAHR\",\"Content\":\"Year\",\"Type\":\"variable\",\"Values\":\"1\",\"Selected\":\"1\",\"Structure\":null,\"Updated\":\"see
+        parent\"},\"Subheading\":null},\"Updated\":\"2022-12-28 17:46:57h\"},\"Copyright\":\"\xA9
+        Federal Statistical Office, Wiesbaden 2024\"}"
+    headers:
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '1897'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Mon, 27 May 2024 09:02:31 GMT
+      Keep-Alive:
+      - timeout=15, max=100
+      Server:
+      - Apache
+    status:
+      code: 200
+      message: '200'
+version: 1

@@ -1,0 +1,119 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.31.0
+    method: GET
+    uri: https://ergebnisse2011.zensus2022.de/api/rest/2020/data/tablefile?area=all&format=ffcsv&language=en&name=3000G-1008&quality=False
+  response:
+    body:
+      string: !!binary |
+        UEsDBBQACAgIAGtYu1gAAAAAAAAAAAAAAAAWAAAAMzAwMEctMTAwOF9lbl9mbGF0LmNzds1WzY7a
+        MBC+9yl8qdQeguyQH6I5wZLNVkUgsTmsuCAnmQWrTrJyHFY8Ww99pL5CvST8lJZK25Mv0Xh+P3/2
+        ePLz+49Gcy0aLfJmndcFwsVa8gwlaFFiZzpIZyWw9Y4rwTPZ2y/WndeFgmutRNbqP13Pli7Ivcrq
+        Xmd1b2b9q6UL2nHZYvddt5XQvfh7qSvdIfLDkFKawKQVshDVpoHHdJzAEp9RYZUjKbg2hSljDvUd
+        GkESL6YzBgmqkld7mCYn8WGVjFMG6f4FSf1MtmiIrjbwEH9ZOYv7eA6PZinRIbUiZSu1cFRdl6TR
+        9Q4bCAcBfDTZJ5SyMxryKvSWKGxEgZUWXJLmhedoC2jmDf3Q86FqywyVXehX8TxdjmdwZ0orU/po
+        DKMBtY3pW1iZF/ksiELbCIa01tz0P6VWcXmENYpcN2Cebawdjvo+Xs5hal5gJXJ9NJFPsq42TmHU
+        /K1Ur/4M/sCziN//2ACjLvUC18qjmMwWd19hIuv827njrLrQt2GOAs+zk9XYJI2PY8PMCYX7k0Ng
+        33X+F1zmshGNhlbS/ATz+tR9oiJ6iyTrS74N615VvKKUBxTUvh+Md++BMcrCd7/rvwBQSwcIbsS5
+        2sYBAAAGCwAAUEsBAhQAFAAICAgAa1i7WG7EudrGAQAABgsAABYAAAAAAAAAAAAAAAAAAAAAADMw
+        MDBHLTEwMDhfZW5fZmxhdC5jc3ZQSwUGAAAAAAEAAQBEAAAACgIAAAAA
+    headers:
+      Connection:
+      - Keep-Alive
+      Content-Disposition:
+      - attachment; filename=3000G-1008_en_flat.zip
+      Content-Length:
+      - '612'
+      Content-Type:
+      - application/zip
+      Date:
+      - Mon, 27 May 2024 09:03:19 GMT
+      Keep-Alive:
+      - timeout=10, max=500
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - Apache
+      Set-Cookie:
+      - AL_BALANCE-S=$xc/IApSqkh0AgEnGOEwJpALkzjysvLNqNigKpEJxy0CJQrqkbiC; Path=/;
+        Secure; HttpOnly; SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - User-Agent
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.31.0
+    method: GET
+    uri: https://ergebnisse2011.zensus2022.de/api/rest/2020/metadata/table?area=all&format=ffcsv&language=en&name=3000G-1008&quality=False
+  response:
+    body:
+      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"successfull\",\"Type\":\"information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"3000G-1008\",\"area\":\"all\",\"language\":\"en\"},\"Object\":{\"Code\":\"3000G-1008\",\"Content\":\"Buildings:
+        Type of heating\",\"Time\":{\"From\":\"2011-05-09\",\"To\":\"2011-05-09\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"3000G\",\"Content\":\"Buildings\",\"Type\":\"statistic\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"STAG\",\"Content\":\"Reference
+        date\",\"Type\":\"variable\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"GEODL1\",\"Content\":\"Germany\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"GEB001\",\"Content\":\"Buildings
+        with residential space\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":\"ID0004
+        ,PO0004\",\"Structure\":null,\"Updated\":\"see parent\"}],\"Updated\":\"see
+        parent\"}],\"Rows\":[{\"Code\":\"HZGAT1\",\"Content\":\"Type of heating\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Subtitel\":null,\"Subheading\":null},\"Updated\":\"2022-03-21
+        13:53:13h\"},\"Copyright\":\"\xA9 Statistical Offices of the Federation and
+        the L\xE4nder, Germany, 2024. Licensed under Data licence Germany - attribution
+        - Version 2.0\"}"
+    headers:
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '1397'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Mon, 27 May 2024 09:03:23 GMT
+      Keep-Alive:
+      - timeout=10, max=500
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - Apache
+      Set-Cookie:
+      - AL_BALANCE-S=$xc/GFuaXilJYhRDh5474VSQbp8R_LJWHExbX7qNx7AEpCuFKEg7; Path=/;
+        Secure; HttpOnly; SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - User-Agent
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+version: 1

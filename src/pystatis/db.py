@@ -28,29 +28,29 @@ def identify_db(name: str) -> list[str]:
     return db_match
 
 
-def get_db_host(db_name: str) -> str:
+def get_host(db_name: str) -> str:
     return config.config[db_name]["base_url"]
 
 
-def get_db_user(db_name: str) -> str:
+def get_user(db_name: str) -> str:
     return config.config[db_name]["username"]
 
 
-def get_db_pw(db_name: str) -> str:
+def get_pw(db_name: str) -> str:
     return config.config[db_name]["password"]
 
 
-def set_db_pw(db_name: str, new_pw: str) -> None:
+def set_pw(db_name: str, new_pw: str) -> None:
     config.config.set(db_name, "password", new_pw)
     config.write_config()
 
 
-def get_db_settings(db_name: str) -> tuple[str, str, str]:
+def get_settings(db_name: str) -> tuple[str, str, str]:
     """Get database settings (host, user, password)."""
-    return get_db_host(db_name), get_db_user(db_name), get_db_pw(db_name)
+    return get_host(db_name), get_user(db_name), get_pw(db_name)
 
 
-def check_db_credentials(db_name: str) -> bool:
+def check_credentials(db_name: str) -> bool:
     """
     Checks if a username and password is stored for the specified database.
 
@@ -60,4 +60,4 @@ def check_db_credentials(db_name: str) -> bool:
     Returns:
         TRUE if credentials were found, FALSE otherwise.
     """
-    return get_db_user(db_name) != "" and get_db_pw(db_name) != ""
+    return get_user(db_name) != "" and get_pw(db_name) != ""

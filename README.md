@@ -1,5 +1,10 @@
 # ``pystatis``
 
+![Tests, Code Quality and Documentation](https://github.com/CorrelAid/pystatis/actions/workflows/run-tests.yaml/badge.svg?event=push)
+![Code Coverage](https://img.shields.io/endpoint?url=https%3A%2F%2Fcorrelaid.github.io%2Fpystatis%2Fpublish%2Fcoverage_badge.json
+)
+![GitHub Pages Documentation](https://github.com/CorrelAid/pystatis/actions/workflows/deploy-docs.yaml/badge.svg?event=push)
+
 ```pystatis``` is a Python wrapper for the different GENESIS web service interfaces (API). Currently we are supporting the following databases:
 
 - [GENESIS-Online](https://www-genesis.destatis.de/genesis/online)
@@ -165,12 +170,13 @@ To contribute to this project, please follow these steps:
 1. Check out the `dev` branch and make sure it is up to date by running `git pull`.
 2. Create a new branch by running `git checkout -b <new-branch>` or `git switch -c <new-branch>`. If possible, add an issue number to the branch name.
 3. Do your changes.
-4. Run `poetry run pytest` to see if all existing tests still run through. It is important to use `poetry run` to call `pytest` so that `poetry` uses the created virtual environment and not the system's default Python interpreter. Alternatively, you can run `poetry shell` to let `poetry` activate the virtual environment for the current session. Afterwards, you can run `pytest` as usual without any prefix. You can leave the poetry shell with the `exit` command.
-5. Add new tests depending on your changes.
-6. Run `poetry run pytest` again to make sure your tests are also passed.
-7. Commit your changes. This will trigger all pre-commit hooks as defined in `.pre-commit-config.yaml`. If any of these pre-hooks fails, your commit is declined and you have to fix the issues first.
-8. Before you create a PR make sure that you have the latest changes from dev. Run `git switch dev`, run `git pull`, switch back to your branch with `git switch -` and either do a `git rebase -i dev` or `git merge dev` to get the latest changes in your current working branch. Solve all merge conflicts.
-9. Push your final changes.
-10. Create a new PR, always against `dev` as target.
+4. Delete the cassettes folder under tests to make sure that the tests are loading the latest data from the API.
+5. Run `poetry run pytest tests -s -vv --vcr-record=new_episodes` to see if all existing tests still run through. It is important to use `poetry run` to call `pytest` so that `poetry` uses the created virtual environment and not the system's default Python interpreter. Alternatively, you can run `poetry shell` to let `poetry` activate the virtual environment for the current session. Afterwards, you can run `pytest` as usual without any prefix. You can leave the poetry shell with the `exit` command.
+6. Add new tests depending on your changes.
+7. Run `poetry run pytest tests -s -vv --vcr-record=new_episodes` again to make sure your tests are also passed.
+8. Commit your changes. This will trigger all pre-commit hooks as defined in `.pre-commit-config.yaml`. If any of these pre-hooks fails, your commit is declined and you have to fix the issues first.
+9. Before you create a PR make sure that you have the latest changes from dev. Run `git switch dev`, run `git pull`, switch back to your branch with `git switch -` and either do a `git rebase -i dev` or `git merge dev` to get the latest changes in your current working branch. Solve all merge conflicts.
+10. Push your final changes.
+11. Create a new PR, always against `dev` as target.
 
 To learn more about `poetry`, see [Dependency Management With Python Poetry](https://realpython.com/dependency-management-python-poetry/#command-reference) by realpython.com.

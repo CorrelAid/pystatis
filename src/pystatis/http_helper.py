@@ -133,6 +133,7 @@ def get_data_from_endpoint(endpoint: str, method: str, params: dict, db_name: st
         {
             "username": db_user,
             "password": db_pw,
+            "quality": "on",
         }
     )
 

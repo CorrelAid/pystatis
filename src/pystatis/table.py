@@ -1,8 +1,10 @@
 """Module contains business logic related to destatis tables."""
 
 import json
+import re
 from io import StringIO
 
+import numpy as np
 import pandas as pd
 
 from pystatis import db
@@ -24,6 +26,33 @@ class Table:
         self.raw_data = ""
         self.data = pd.DataFrame()
         self.metadata: dict = {}
+        # special values mapping
+        self.mapping_de = {
+            "0": "weniger als die Hälfte von 1 in der letzten besetzten Stelle, jedoch mehr als nichts",
+            "-": "nichts vorhanden",
+            "...": "Angabe fällt später an",
+            "/": "keine Angaben, da Zahlenwert nicht sicher genug",
+            ".": "Zahlenwert unbekannt oder geheimzuhalten",
+            "x": "Tabellenfach gesperrt, weil Aussage nicht sinnvoll",
+            "()": "Aussagewert eingeschränkt, da der Zahlenwert statistisch relativ unsicher ist",
+            "p": "vorläufige Zahl",
+            "r": "berichtigte Zahl",
+            "s": "geschätzte Zahl",
+            "e": "endgültige Zahl",
+        }
+        self.mapping_en = {
+            "0": "less than half of 1 in the last occupied place, but more than nothing",
+            "-": "not available",
+            "...": "information will be available later",
+            "/": "no information because the numerical value is not certain enough",
+            ".": "numerical value unknown or to be kept secret",
+            "x": "table compartment locked because statement is not meaningful",
+            "()": "statement value restricted because the numerical value is statistically relatively uncertain",
+            "p": "preliminary number",
+            "r": "corrected number",
+            "s": "estimated number",
+            "e": "final number",
+        }
 
     # pylint: disable=too-many-arguments
     # pylint: disable=too-many-locals
@@ -92,7 +121,41 @@ class Table:
         raw_data_header = raw_data_lines[0]
         raw_data_str = raw_data_header + "".join(line for line in raw_data_lines[1:] if line[:4].isdigit())
         data_buffer = StringIO(raw_data_str)
-        self.data = pd.read_csv(data_buffer, sep=";", na_values=["...", ".", "-", "/", "x"])
+        # load as an object type to avoid automatic type conversion and losing leading zeros
+        self.data = pd.read_csv(data_buffer, sep=";", dtype=object)
+
+        # mapping of special values to their meaning
+        # e.g. https://www.regionalstatistik.de/genesis/online?operation=ergebnistabelleQualitaet&language=de&levelindex=2&levelid=1702408035981#abreadcrumb
+        if language == "de":
+            mapping = self.mapping_de
+        elif language == "en":
+            mapping = self.mapping_en
+        else:
+            # TODO: is this required? error should probably already be triggered by the http_helper/ request
+            raise ValueError(f"Language {language} is not supported.")
+
+        # Add a quality column for each column in the data frame if the column contains special values
+        for column in self.data.columns:
+            # convert all columns to string type
+            self.data[column] = self.data[column].astype(str)
+            self.data[column].str.lower().replace({"nan": np.nan}, inplace=True)
+
+            if column.endswith("__q"):
+                # regex filter for the corresponding value column
+                pattern = re.compile(f"^{column[:-1]}.*")
+                corresponding_column = next((col for col in self.data.columns if pattern.match(col)), None)
+                # update nan quality values with quality identifiers from the value column
+                mask = self.data[column].isnull()  # | self.data[column].str.lower().str.contains("nan")
+                self.data.loc[mask, column] = self.data.loc[mask, corresponding_column]
+                # replace the special values in the value column with a numeric nan (for singular column types)
+                self.data[corresponding_column].replace(mapping.keys(), np.nan, inplace=True)
+                # replace the special values with their meaning (? up for discussion)
+                self.data[column].replace(mapping, inplace=True)
+
+            # try to convert str type to numeric type after replacing special values
+            # TODO: Does not correctly handle nans in numeric columns yet...?
+            if not self.data[column].str.startswith("0").any():
+                self.data[column] = pd.to_numeric(self.data[column], errors="ignore")
 
         if prettify:
             self.data = self.prettify_table(self.data, db.identify_db(self.name)[0])

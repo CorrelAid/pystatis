@@ -108,6 +108,7 @@ class Table:
             "language": language,
             "quality": quality,
             "format": "ffcsv",
+            "quality": "on",  # always request quality labels for automatic mapping
         }
 
         raw_data_bytes = load_data(endpoint="data", method="tablefile", params=params)

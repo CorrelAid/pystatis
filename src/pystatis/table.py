@@ -103,12 +103,11 @@ class Table:
         raw_data_str = raw_data_header + "".join(line for line in raw_data_lines[1:] if line[:4].isdigit())
         data_buffer = StringIO(raw_data_str)
 
-        decimal_char = "," if language == "de" else "."
         self.data = pd.read_csv(
             data_buffer,
             sep=";",
             na_values=["...", ".", "-", "/", "x"],
-            decimal=decimal_char,
+            decimal="," if language == "de" else ".",
         )
 
         if prettify:

@@ -7,7 +7,7 @@ from io import StringIO
 import pandas as pd
 
 from pystatis import db
-from pystatis.config import COLUMN_NAME_DICT
+from pystatis.config import LANG_TO_COL_MAPPING
 from pystatis.exception import QueryParameterError
 from pystatis.http_helper import load_data
 
@@ -153,7 +153,7 @@ class Table:
     def parse_genesis_table(data: pd.DataFrame, language: str) -> pd.DataFrame:
         """Parse GENESIS table ffcsv format into a more readable format"""
 
-        column_name_dict = COLUMN_NAME_DICT["genesis-regio"][language]
+        column_name_dict = LANG_TO_COL_MAPPING["genesis-regio"][language]
 
         # Extracts time column with name from last element of Zeit_Label column
         time = pd.DataFrame({data[column_name_dict["time_label"]].iloc[-1]: data[column_name_dict["time"]]})
@@ -176,7 +176,7 @@ class Table:
     @staticmethod
     def parse_zensus_table(data: pd.DataFrame, language: str) -> pd.DataFrame:
         """Parse Zensus table ffcsv format into a more readable format"""
-        column_name_dict = COLUMN_NAME_DICT["zensus"][language]
+        column_name_dict = LANG_TO_COL_MAPPING["zensus"][language]
 
         # add the unit to the column names for the value columns
         data[column_name_dict["value_variable_label"]] = data[column_name_dict["value_variable_label"]].str.cat(
@@ -206,7 +206,7 @@ class Table:
     def parse_regio_table(data: pd.DataFrame, language: str) -> pd.DataFrame:
         """Parse Regionalstatistik table ffcsv format into a more readable format"""
 
-        column_name_dict = COLUMN_NAME_DICT["genesis-regio"][language]
+        column_name_dict = LANG_TO_COL_MAPPING["genesis-regio"][language]
 
         # Extracts time column with name from last element of Zeit_Label column
         time = pd.DataFrame({data[column_name_dict["time_label"]].iloc[-1]: data[column_name_dict["time"]]})

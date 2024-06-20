@@ -178,7 +178,9 @@ class Table:
 
         pretty_data = pd.concat([time, attributes, values], axis=1)
         if ags_code is not None:
-            # Genesis has always the same time attribute as first column, and each attribute always has 4 columns so pos_of_ags_col // 4 adjusts the original counter to the shorter column list of pretty_data
+            # Genesis has always the same time attribute as first column,
+            # and each attribute always has 4 columns so pos_of_ags_col // 4
+            # adjusts the original counter to the shorter column list of pretty_data
             pretty_data.insert(loc=pos_of_ags_col // 4, column=ags_code.name, value=ags_code)
 
         return pretty_data
@@ -197,7 +199,6 @@ class Table:
         time_label = data["time_label"].iloc[0]
         time = pd.DataFrame({time_label: pivot_table["time"]})
 
-        # for a list of all geo codes, see https://ergebnisse2011.zensus2022.de/datenbank/online/variables/filter/JTdCJTIyY29kZSUyMiUzQSUyMkdFTyUyMiU3RA==
         ags_code = None
         pos_of_ags_col = np.where(data.iloc[0].isin(config.ZENSUS_AGS_CODES))[0]
         if pos_of_ags_col.size > 0:
@@ -210,7 +211,9 @@ class Table:
 
         pretty_data = pd.concat([time, attributes, pivot_table[value_columns]], axis=1)
         if ags_code is not None:
-            # Genesis has always the same time attribute as first column, and each attribute always has 4 columns so pos_of_ags_col // 4 adjusts the original counter to the shorter column list of pretty_data
+            # Genesis has always the same time attribute as first column, and
+            # each attribute always has 4 columns so pos_of_ags_col // 4
+            # adjusts the original counter to the shorter column list of pretty_data
             pretty_data.insert(loc=pos_of_ags_col // 4, column=ags_code.name, value=ags_code)
 
         return pretty_data
@@ -243,7 +246,9 @@ class Table:
 
         pretty_data = pd.concat([time, attributes, values], axis=1)
         if ags_code is not None:
-            # Genesis has always the same time attribute as first column, and each attribute always has 4 columns so pos_of_ags_col // 4 adjusts the original counter to the shorter column list of pretty_data
+            # Genesis has always the same time attribute as first column, and
+            # each attribute always has 4 columns so pos_of_ags_col // 4
+            # adjusts the original counter to the shorter column list of pretty_data
             pretty_data.insert(loc=pos_of_ags_col // 4, column=ags_code.name, value=ags_code)
 
         return pretty_data

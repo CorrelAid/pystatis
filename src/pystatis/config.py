@@ -33,6 +33,20 @@ REGEX_DB = {
     "zensus": re.compile(r"^\d{4}[A-Z]-\d{4}$"),
     "regio": re.compile(r"^((\d{5}-.{1,2}($|-.*$))|(A.*$)|([0-9A-Z]{10}$)|(\d{5}\w-Z-\d{1,2}))"),
 }
+ZENSUS_AGS_CODES = [
+    "GEOBL1",
+    "GEOBL3",
+    "GEOGM1",
+    "GEOGM2",
+    "GEOGM3",
+    "GEOLK1",
+    "GEOLK3",
+    "GEORB1",
+    "GEORB3",
+    "GEOVB1",
+    "GEOVB3",
+]
+REGIO_AGS_CODES = ["DLAND", "DLANDU", "REGBEZ", "KREISE", "GEMEIN"]
 
 logger = logging.getLogger(__name__)
 config = ConfigParser(interpolation=None)

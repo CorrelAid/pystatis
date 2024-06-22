@@ -107,8 +107,8 @@ class Table:
             "language": language,
             "format": "ffcsv",
         }
-        if quality:
-            params["quality"] = "on"
+        # add backwards compatibility for quality parameter (mainly for test cassettes)
+        params["quality"] = "on" if quality else False
 
         raw_data_bytes = load_data(endpoint="data", method="tablefile", params=params)
         assert isinstance(raw_data_bytes, bytes)  # nosec assert_used

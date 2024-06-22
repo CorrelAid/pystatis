@@ -10,7 +10,7 @@ on:
       - main
       - dev
   workflow_dispatch:
-  
+
 jobs:
   build-and-deploy:
     runs-on: ${{ matrix.os }}
@@ -18,7 +18,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: [${{ vars.PYTHON_VERSION }}]
+        python-version: ["${{ vars.PYTHON_VERSION }}"]
         os: [ubuntu-latest]
     steps:
       - name: Checkout code
@@ -30,7 +30,7 @@ jobs:
       - name: Run poetry image
         uses: abatilo/actions-poetry@v3.0.0
         with:
-            poetry-version: ${{ vars.POETRY_VERSION }}
+          poetry-version: ${{ vars.POETRY_VERSION }}
       - name: Install dependencies
         run: |
           poetry install --with dev

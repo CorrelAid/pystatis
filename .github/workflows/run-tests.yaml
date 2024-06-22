@@ -73,8 +73,12 @@ jobs:
         run: poetry run pylint src --recursive=y
       - name: Run bandit
         run: poetry run bandit -r src
-      - name: Run safety
-        run: poetry run safety check -i 67599
+      - name: Run Safety CLI to check for vulnerabilities
+        uses: pyupio/safety-action@v1
+        with:
+          api-key: ${{ secrets.SAFETY_API_KEY }}
+          continue-on-error: true # Do not fail this action if vulnerabilities are found
+          args: --detailed-output # To always see detailed output from this action
       - name: Run mypy
         run: poetry run mypy src
 

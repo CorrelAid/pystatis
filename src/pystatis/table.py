@@ -127,7 +127,6 @@ class Table:
         self.data = pd.read_csv(data_buffer, sep=";", dtype=leading_zeros_dict, na_values=["...", ".", "-", "/", "x"])
 
         # mapping of special values to their meaning
-        # e.g. https://www.regionalstatistik.de/genesis/online?operation=ergebnistabelleQualitaet&language=de&levelindex=2&levelid=1702408035981#abreadcrumb
         if language == "de":
             mapping = self.mapping_de
         elif language == "en":

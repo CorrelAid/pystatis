@@ -1,13 +1,12 @@
 """Module contains business logic related to destatis tables."""
 
 import json
-import re
+import warnings
 from io import StringIO
 
-import numpy as np
 import pandas as pd
 
-from pystatis import db
+from pystatis import config, db
 from pystatis.http_helper import load_data
 
 
@@ -106,10 +105,10 @@ class Table:
             "regionalkey": regionalkey,
             "stand": stand,
             "language": language,
-            "quality": quality,
             "format": "ffcsv",
-            "quality": "on",  # always request quality labels for automatic mapping
         }
+        if quality:
+            params["quality"] = "on"
 
         raw_data_bytes = load_data(endpoint="data", method="tablefile", params=params)
         assert isinstance(raw_data_bytes, bytes)  # nosec assert_used
@@ -122,8 +121,10 @@ class Table:
         raw_data_header = raw_data_lines[0]
         raw_data_str = raw_data_header + "".join(line for line in raw_data_lines[1:] if line[:4].isdigit())
         data_buffer = StringIO(raw_data_str)
-        # load as an object type to avoid automatic type conversion and losing leading zeros
-        self.data = pd.read_csv(data_buffer, sep=";", dtype=object)
+        # let pandas handle automatic type conversion and only handle edge case columns with known leading zeros
+        leading_zeros_cols = config.ZENSUS_AGS_CODES + config.REGIO_AGS_CODES
+        leading_zeros_dict = {key: "str" for key in leading_zeros_cols}
+        self.data = pd.read_csv(data_buffer, sep=";", dtype=leading_zeros_dict, na_values=["...", ".", "-", "/", "x"])
 
         # mapping of special values to their meaning
         # e.g. https://www.regionalstatistik.de/genesis/online?operation=ergebnistabelleQualitaet&language=de&levelindex=2&levelid=1702408035981#abreadcrumb
@@ -137,26 +138,20 @@ class Table:
 
         # Add a quality column for each column in the data frame if the column contains special values
         for column in self.data.columns:
-            # convert all columns to string type
-            self.data[column] = self.data[column].astype(str)
-            self.data[column].str.lower().replace({"nan": np.nan}, inplace=True)
+            # try to convert data to numeric type
+            try:
+                self.data[column] = pd.to_numeric(self.data[column], errors="ignore")
+            except ValueError:
+                # try German decimal separator
+                try:
+                    self.data[column] = self.data[column].str.replace(",", ".").astype(float)
+                except ValueError:
+                    pass
 
             if column.endswith("__q"):
-                # regex filter for the corresponding value column
-                pattern = re.compile(f"^{column[:-1]}.*")
-                corresponding_column = next((col for col in self.data.columns if pattern.match(col)), None)
-                # update nan quality values with quality identifiers from the value column
-                mask = self.data[column].isnull()  # | self.data[column].str.lower().str.contains("nan")
-                self.data.loc[mask, column] = self.data.loc[mask, corresponding_column]
-                # replace the special values in the value column with a numeric nan (for singular column types)
-                self.data[corresponding_column].replace(mapping.keys(), np.nan, inplace=True)
                 # replace the special values with their meaning (? up for discussion)
+                self.data[column] = self.data[column].astype(str)
                 self.data[column].replace(mapping, inplace=True)
-
-            # try to convert str type to numeric type after replacing special values
-            # TODO: Does not correctly handle nans in numeric columns yet...?
-            if not self.data[column].str.startswith("0").any():
-                self.data[column] = pd.to_numeric(self.data[column], errors="ignore")
 
         if prettify:
             self.data = self.prettify_table(self.data, db.identify_db(self.name)[0])
@@ -217,6 +212,10 @@ class Table:
         """Parse Zensus table ffcsv format into a more readable format"""
         # add the unit to the column names for the value columns
         data["value_variable_label"] = data["value_variable_label"].str.cat(data["value_unit"], sep="__")
+
+        if "value_q" in data.columns:
+            data = data.drop(columns=["value_q"])
+            warnings.warn("Quality columns are not supported for Zensus tables.", UserWarning)
 
         pivot_table = data.pivot(index=data.columns[:-4].to_list(), columns="value_variable_label", values="value")
         value_columns = pivot_table.columns.to_list()

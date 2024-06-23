@@ -24,9 +24,9 @@ def identify_db_matches(name: str) -> list[str]:
     name = normalize_name(name).lstrip("*")
 
     # Get list of matching dbs
-    db_match = [db_name for db_name, reg in regex_db.items() if reg.match(name)]
+    db_matches = [db_name for db_name, reg in regex_db.items() if reg.match(name)]
 
-    return db_match
+    return db_matches
 
 
 def identify_db(table_name: str) -> str:
@@ -41,16 +41,16 @@ def identify_db(table_name: str) -> str:
     Returns:
         db_name (str): Identified database.
     """
-    db_match = identify_db_matches(table_name)
+    db_matches = identify_db_matches(table_name)
 
-    if db_match:
-        for db_name in db_match:
+    if db_matches:
+        for db_name in db_matches:
             # Return first hit with existing credentials.
             if check_credentials(db_name):
                 return db_name
         raise PystatisConfigError(
             "Missing credentials!\n"
-            f"To access this item you need to be a registered user of: {db_match} \n"
+            f"To access this item you need to be a registered user of: {db_matches} \n"
             "Please run setup_credentials()."
         )
 

@@ -102,14 +102,6 @@ def get_data_from_endpoint(endpoint: str, method: str, params: dict, db_name: st
         if name is not None:
             db_name = identify_db(name)
 
-    if not db_name:
-        raise ValueError(
-            "Could not determine the database for this request. "
-            "Please specify a database using the `db_name` parameter "
-            "or make sure that the `params` dictionary has a key 'name' "
-            "with a proper object number."
-        )
-
     db_host, db_user, db_pw = db.get_settings(db_name)
     url = f"{db_host}{endpoint}/{method}"
 

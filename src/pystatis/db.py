@@ -9,7 +9,7 @@ from pystatis.exception import PystatisConfigError
 logger = logging.getLogger(__name__)
 
 
-def identify_db_matches(name: str) -> list[str]:
+def identify_db_matches(table_name: str) -> list[str]:
     """Identify possible databases by matching the item code to the database regex.
 
     Args:
@@ -17,32 +17,38 @@ def identify_db_matches(name: str) -> list[str]:
 
     Returns:
         db_match (list[str]): List of matching databases.
+
+    Raises:
+        ValueError: If no db match was found.
     """
     regex_db = config.get_db_identifiers()
 
     # Strip optional leading * and trailing job id
-    name = normalize_name(name).lstrip("*")
+    table_name = normalize_name(table_name).lstrip("*")
 
     # Get list of matching dbs
-    db_matches = [db_name for db_name, reg in regex_db.items() if reg.match(name)]
+    db_matches = [db_name for db_name, reg in regex_db.items() if reg.match(table_name)]
 
-    return db_matches
+    if db_matches:
+        return db_matches
+    else:
+        raise ValueError(f"Could not determine the database for the table '{table_name}'.")
 
 
-def identify_db(table_name: str) -> str:
-    """Identify database by matching with the provided item code.
-    This is done by matching the item code to the database regex. If multiple matches
-    exist, use the first with existing credentials.
-    In this case, it must be a Cube (provided all regexing works as intended).
+def select_db_by_credentials(db_matches: list[str]):
+    """Out of a selection of db candidates, select the first that has existing
+    credentials.
 
     Args:
-        table_name (str): Query parameter 'name' corresponding to the item code.
+        db_matches (list[str]): Possible DBs to choose from.
 
     Returns:
         db_name (str): Identified database.
-    """
-    db_matches = identify_db_matches(table_name)
 
+    Raises:
+        ValueError: If no db candidates were provided.
+        PystatisConfigError: If no credentials exist for any db candidate.
+    """
     if db_matches:
         for db_name in db_matches:
             # Return first hit with existing credentials.
@@ -55,7 +61,7 @@ def identify_db(table_name: str) -> str:
         )
 
     else:
-        raise ValueError(f"Could not determine the database for the table '{table_name}'.")
+        raise ValueError(f"Empty list of candidates provided.")
 
 
 def get_host(db_name: str) -> str:

@@ -35,7 +35,7 @@ def test_set_db_pw(config_):
         ("21111-01-03-4-B", "regio"),
     ],
 )
-def test_identify_db(config_, name, expected_db):
+def test_identify_db_matches(config_, name, expected_db):
     assert db.identify_db_matches(name)[0] == expected_db
 
 

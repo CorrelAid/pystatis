@@ -85,7 +85,8 @@ class Table:
             "format": "ffcsv",
         }
 
-        db_name = db.identify_db(self.name)
+        db_matches = db.identify_db_matches(self.name)
+        db_name = db.select_db_by_credentials(db_matches)
         if db_name == "regio" and language != "de":
             raise QueryParameterError(f"Language '{language}' is not supported for Regionalstatistik, only 'de'.")
         elif language not in ["de", "en"]:

@@ -99,9 +99,8 @@ def get_data_from_endpoint(endpoint: str, method: str, params: dict, db_name: st
     if db_name is None:
         table_name = params.get("name", params.get("selection", ""))
 
-        if table_name is not None:
-            db_matches = identify_db_matches(table_name)
-            db_name = select_db_by_credentials(db_matches)
+        db_matches = identify_db_matches(table_name)
+        db_name = select_db_by_credentials(db_matches)
 
     db_host, db_user, db_pw = db.get_settings(db_name)
     url = f"{db_host}{endpoint}/{method}"

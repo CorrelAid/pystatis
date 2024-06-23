@@ -35,7 +35,7 @@ def identify_db_matches(table_name: str) -> list[str]:
         raise ValueError(f"Could not determine the database for the table '{table_name}'.")
 
 
-def select_db_by_credentials(db_matches: list[str]):
+def select_db_by_credentials(db_matches: list[str]) -> str:
     """Out of a selection of db candidates, select the first that has existing
     credentials.
 

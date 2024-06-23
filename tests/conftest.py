@@ -15,8 +15,7 @@ def vcr_cassette_name(request):
     test_arguments = request.node.callspec.params
     if "table_name" in test_arguments:
         table_name = test_arguments["table_name"]
-        language = test_arguments.get("language", "").upper()
-        return f"{language}_{table_name}"
+        return table_name
     else:
         # Fallback
         test_name = request.node.name

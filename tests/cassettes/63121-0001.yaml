@@ -1,0 +1,1267 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.31.0
+    method: GET
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=63121-0001&quality=False
+  response:
+    body:
+      string: "Statistik_Code;Statistik_Label;Zeit_Code;Zeit_Label;Zeit;1_Merkmal_Code;1_Merkmal_Label;1_Auspraegung_Code;1_Auspraegung_Label;2_Merkmal_Code;2_Merkmal_Label;2_Auspraegung_Code;2_Auspraegung_Label;3_Merkmal_Code;3_Merkmal_Label;3_Auspraegung_Code;3_Auspraegung_Label;HSH011__Erfasste_Haushalte__Anzahl;HSH012__Hochgerechnete_Haushalte__1000;HSH015__Durchschnittsbetrag_je_Haushalt_und_Monat__EUR\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR1;Haushalte
+        mit 1 Person;EAART1;Einnahme- und Ausgabearten;EKM-HSH-BR-01;Haushaltsbruttoeinkommen;;;2724\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR1;Haushalte
+        mit 1 Person;EAART1;Einnahme- und Ausgabearten;EKM-HSH-NE-01;Haushaltsnettoeinkommen;;;2070\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR1;Haushalte
+        mit 1 Person;EAART1;Einnahme- und Ausgabearten;EKM-ASGFAE-01;Ausgabef\xE4hige
+        Einkommen und Einnahmen;;;2112\n63121;Laufende Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2017;DINSG;Deutschland
+        insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR1;Haushalte mit 1
+        Person;EAART1;Einnahme- und Ausgabearten;ASG-KSMPRIV-01;Private Konsumausgaben;;;1629\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR1;Haushalte
+        mit 1 Person;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;;;1075\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR2;Haushalte
+        mit 2 Personen;EAART1;Einnahme- und Ausgabearten;EKM-HSH-BR-01;Haushaltsbruttoeinkommen;;;4996\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR2;Haushalte
+        mit 2 Personen;EAART1;Einnahme- und Ausgabearten;EKM-HSH-NE-01;Haushaltsnettoeinkommen;;;3845\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR2;Haushalte
+        mit 2 Personen;EAART1;Einnahme- und Ausgabearten;EKM-ASGFAE-01;Ausgabef\xE4hige
+        Einkommen und Einnahmen;;;3919\n63121;Laufende Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2017;DINSG;Deutschland
+        insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR2;Haushalte mit 2
+        Personen;EAART1;Einnahme- und Ausgabearten;ASG-KSMPRIV-01;Private Konsumausgaben;;;2899\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR2;Haushalte
+        mit 2 Personen;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;;;1902\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR3;Haushalte
+        mit 3 Personen;EAART1;Einnahme- und Ausgabearten;EKM-HSH-BR-01;Haushaltsbruttoeinkommen;;;6453\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR3;Haushalte
+        mit 3 Personen;EAART1;Einnahme- und Ausgabearten;EKM-HSH-NE-01;Haushaltsnettoeinkommen;;;4823\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR3;Haushalte
+        mit 3 Personen;EAART1;Einnahme- und Ausgabearten;EKM-ASGFAE-01;Ausgabef\xE4hige
+        Einkommen und Einnahmen;;;4888\n63121;Laufende Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2017;DINSG;Deutschland
+        insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR3;Haushalte mit 3
+        Personen;EAART1;Einnahme- und Ausgabearten;ASG-KSMPRIV-01;Private Konsumausgaben;;;3316\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR3;Haushalte
+        mit 3 Personen;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;;;2350\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR4;Haushalte
+        mit 4 Personen;EAART1;Einnahme- und Ausgabearten;EKM-HSH-BR-01;Haushaltsbruttoeinkommen;;;7272\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR4;Haushalte
+        mit 4 Personen;EAART1;Einnahme- und Ausgabearten;EKM-HSH-NE-01;Haushaltsnettoeinkommen;;;5393\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR4;Haushalte
+        mit 4 Personen;EAART1;Einnahme- und Ausgabearten;EKM-ASGFAE-01;Ausgabef\xE4hige
+        Einkommen und Einnahmen;;;5483\n63121;Laufende Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2017;DINSG;Deutschland
+        insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR4;Haushalte mit 4
+        Personen;EAART1;Einnahme- und Ausgabearten;ASG-KSMPRIV-01;Private Konsumausgaben;;;3812\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR4;Haushalte
+        mit 4 Personen;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;;;2503\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR51;Haushalte
+        mit 5 und mehr Personen;EAART1;Einnahme- und Ausgabearten;EKM-HSH-BR-01;Haushaltsbruttoeinkommen;;;7544\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR51;Haushalte
+        mit 5 und mehr Personen;EAART1;Einnahme- und Ausgabearten;EKM-HSH-NE-01;Haushaltsnettoeinkommen;;;5832\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR51;Haushalte
+        mit 5 und mehr Personen;EAART1;Einnahme- und Ausgabearten;EKM-ASGFAE-01;Ausgabef\xE4hige
+        Einkommen und Einnahmen;;;5927\n63121;Laufende Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2017;DINSG;Deutschland
+        insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR51;Haushalte mit
+        5 und mehr Personen;EAART1;Einnahme- und Ausgabearten;ASG-KSMPRIV-01;Private
+        Konsumausgaben;;;3905\n63121;Laufende Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2017;DINSG;Deutschland
+        insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR51;Haushalte mit
+        5 und mehr Personen;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;;;2686\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;;Insgesamt;EAART1;Einnahme-
+        und Ausgabearten;EKM-HSH-BR-01;Haushaltsbruttoeinkommen;;;4474\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;;Insgesamt;EAART1;Einnahme-
+        und Ausgabearten;EKM-HSH-NE-01;Haushaltsnettoeinkommen;;;3399\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;;Insgesamt;EAART1;Einnahme-
+        und Ausgabearten;EKM-ASGFAE-01;Ausgabef\xE4hige Einkommen und Einnahmen;;;3461\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;;Insgesamt;EAART1;Einnahme-
+        und Ausgabearten;ASG-KSMPRIV-01;Private Konsumausgaben;;;2517\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;;Insgesamt;EAART1;Einnahme-
+        und Ausgabearten;ASG-AND-01;Andere Ausgaben;;;1678\n63121;Laufende Wirtschaftsrechnungen:
+        Haushaltsbuch;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR1;Haushalte
+        mit 1 Person;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;2213;16066;\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR2;Haushalte
+        mit 2 Personen;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;3480;12856;\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR3;Haushalte
+        mit 3 Personen;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;1045;4337;\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR4;Haushalte
+        mit 4 Personen;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;734;3239;\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR51;Haushalte
+        mit 5 und mehr Personen;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere
+        Ausgaben;213;1231;\n63121;Laufende Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2017;DINSG;Deutschland
+        insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;;Insgesamt;EAART1;Einnahme-
+        und Ausgabearten;ASG-AND-01;Andere Ausgaben;7685;37729;\n63121;Laufende Wirtschaftsrechnungen:
+        Haushaltsbuch;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR1;Haushalte
+        mit 1 Person;EAART1;Einnahme- und Ausgabearten;EKM-HSH-BR-01;Haushaltsbruttoeinkommen;;;2859\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR1;Haushalte
+        mit 1 Person;EAART1;Einnahme- und Ausgabearten;EKM-HSH-NE-01;Haushaltsnettoeinkommen;;;2176\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR1;Haushalte
+        mit 1 Person;EAART1;Einnahme- und Ausgabearten;EKM-ASGFAE-01;Ausgabef\xE4hige
+        Einkommen und Einnahmen;;;2223\n63121;Laufende Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2019;DINSG;Deutschland
+        insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR1;Haushalte mit 1
+        Person;EAART1;Einnahme- und Ausgabearten;ASG-KSMPRIV-01;Private Konsumausgaben;;;1695\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR1;Haushalte
+        mit 1 Person;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;;;1222\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR2;Haushalte
+        mit 2 Personen;EAART1;Einnahme- und Ausgabearten;EKM-HSH-BR-01;Haushaltsbruttoeinkommen;;;5316\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR2;Haushalte
+        mit 2 Personen;EAART1;Einnahme- und Ausgabearten;EKM-HSH-NE-01;Haushaltsnettoeinkommen;;;4078\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR2;Haushalte
+        mit 2 Personen;EAART1;Einnahme- und Ausgabearten;EKM-ASGFAE-01;Ausgabef\xE4hige
+        Einkommen und Einnahmen;;;4153\n63121;Laufende Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2019;DINSG;Deutschland
+        insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR2;Haushalte mit 2
+        Personen;EAART1;Einnahme- und Ausgabearten;ASG-KSMPRIV-01;Private Konsumausgaben;;;2923\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR2;Haushalte
+        mit 2 Personen;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;;;2330\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR3;Haushalte
+        mit 3 Personen;EAART1;Einnahme- und Ausgabearten;EKM-HSH-BR-01;Haushaltsbruttoeinkommen;;;6837\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR3;Haushalte
+        mit 3 Personen;EAART1;Einnahme- und Ausgabearten;EKM-HSH-NE-01;Haushaltsnettoeinkommen;;;5037\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR3;Haushalte
+        mit 3 Personen;EAART1;Einnahme- und Ausgabearten;EKM-ASGFAE-01;Ausgabef\xE4hige
+        Einkommen und Einnahmen;;;5114\n63121;Laufende Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2019;DINSG;Deutschland
+        insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR3;Haushalte mit 3
+        Personen;EAART1;Einnahme- und Ausgabearten;ASG-KSMPRIV-01;Private Konsumausgaben;;;3442\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR3;Haushalte
+        mit 3 Personen;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;;;2798\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR4;Haushalte
+        mit 4 Personen;EAART1;Einnahme- und Ausgabearten;EKM-HSH-BR-01;Haushaltsbruttoeinkommen;;;8011\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR4;Haushalte
+        mit 4 Personen;EAART1;Einnahme- und Ausgabearten;EKM-HSH-NE-01;Haushaltsnettoeinkommen;;;5900\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR4;Haushalte
+        mit 4 Personen;EAART1;Einnahme- und Ausgabearten;EKM-ASGFAE-01;Ausgabef\xE4hige
+        Einkommen und Einnahmen;;;6000\n63121;Laufende Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2019;DINSG;Deutschland
+        insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR4;Haushalte mit 4
+        Personen;EAART1;Einnahme- und Ausgabearten;ASG-KSMPRIV-01;Private Konsumausgaben;;;3923\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR4;Haushalte
+        mit 4 Personen;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;;;2922\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR51;Haushalte
+        mit 5 und mehr Personen;EAART1;Einnahme- und Ausgabearten;EKM-HSH-BR-01;Haushaltsbruttoeinkommen;;;7426\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR51;Haushalte
+        mit 5 und mehr Personen;EAART1;Einnahme- und Ausgabearten;EKM-HSH-NE-01;Haushaltsnettoeinkommen;;;5749\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR51;Haushalte
+        mit 5 und mehr Personen;EAART1;Einnahme- und Ausgabearten;EKM-ASGFAE-01;Ausgabef\xE4hige
+        Einkommen und Einnahmen;;;5822\n63121;Laufende Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2019;DINSG;Deutschland
+        insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR51;Haushalte mit
+        5 und mehr Personen;EAART1;Einnahme- und Ausgabearten;ASG-KSMPRIV-01;Private
+        Konsumausgaben;;;3981\n63121;Laufende Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2019;DINSG;Deutschland
+        insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR51;Haushalte mit
+        5 und mehr Personen;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;;;2391\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;;Insgesamt;EAART1;Einnahme-
+        und Ausgabearten;EKM-HSH-BR-01;Haushaltsbruttoeinkommen;;;4734\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;;Insgesamt;EAART1;Einnahme-
+        und Ausgabearten;EKM-HSH-NE-01;Haushaltsnettoeinkommen;;;3580\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;;Insgesamt;EAART1;Einnahme-
+        und Ausgabearten;EKM-ASGFAE-01;Ausgabef\xE4hige Einkommen und Einnahmen;;;3645\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;;Insgesamt;EAART1;Einnahme-
+        und Ausgabearten;ASG-KSMPRIV-01;Private Konsumausgaben;;;2574\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;;Insgesamt;EAART1;Einnahme-
+        und Ausgabearten;ASG-AND-01;Andere Ausgaben;;;1959\n63121;Laufende Wirtschaftsrechnungen:
+        Haushaltsbuch;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR1;Haushalte
+        mit 1 Person;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;2676;16406;\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR2;Haushalte
+        mit 2 Personen;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;2822;12686;\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR3;Haushalte
+        mit 3 Personen;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;1100;4340;\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR4;Haushalte
+        mit 4 Personen;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;707;3333;\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR51;Haushalte
+        mit 5 und mehr Personen;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere
+        Ausgaben;192;1228;\n63121;Laufende Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2019;DINSG;Deutschland
+        insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;;Insgesamt;EAART1;Einnahme-
+        und Ausgabearten;ASG-AND-01;Andere Ausgaben;7497;37993;\n63121;Laufende Wirtschaftsrechnungen:
+        Haushaltsbuch;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR1;Haushalte
+        mit 1 Person;EAART1;Einnahme- und Ausgabearten;EKM-HSH-BR-01;Haushaltsbruttoeinkommen;;;2827\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR1;Haushalte
+        mit 1 Person;EAART1;Einnahme- und Ausgabearten;EKM-HSH-NE-01;Haushaltsnettoeinkommen;;;2168\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR1;Haushalte
+        mit 1 Person;EAART1;Einnahme- und Ausgabearten;EKM-ASGFAE-01;Ausgabef\xE4hige
+        Einkommen und Einnahmen;;;2207\n63121;Laufende Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2020;DINSG;Deutschland
+        insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR1;Haushalte mit 1
+        Person;EAART1;Einnahme- und Ausgabearten;ASG-KSMPRIV-01;Private Konsumausgaben;;;1600\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR1;Haushalte
+        mit 1 Person;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;;;1177\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR2;Haushalte
+        mit 2 Personen;EAART1;Einnahme- und Ausgabearten;EKM-HSH-BR-01;Haushaltsbruttoeinkommen;;;5257\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR2;Haushalte
+        mit 2 Personen;EAART1;Einnahme- und Ausgabearten;EKM-HSH-NE-01;Haushaltsnettoeinkommen;;;4071\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR2;Haushalte
+        mit 2 Personen;EAART1;Einnahme- und Ausgabearten;EKM-ASGFAE-01;Ausgabef\xE4hige
+        Einkommen und Einnahmen;;;4156\n63121;Laufende Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2020;DINSG;Deutschland
+        insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR2;Haushalte mit 2
+        Personen;EAART1;Einnahme- und Ausgabearten;ASG-KSMPRIV-01;Private Konsumausgaben;;;2912\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR2;Haushalte
+        mit 2 Personen;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;;;2404\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR3;Haushalte
+        mit 3 Personen;EAART1;Einnahme- und Ausgabearten;EKM-HSH-BR-01;Haushaltsbruttoeinkommen;;;6854\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR3;Haushalte
+        mit 3 Personen;EAART1;Einnahme- und Ausgabearten;EKM-HSH-NE-01;Haushaltsnettoeinkommen;;;5177\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR3;Haushalte
+        mit 3 Personen;EAART1;Einnahme- und Ausgabearten;EKM-ASGFAE-01;Ausgabef\xE4hige
+        Einkommen und Einnahmen;;;5270\n63121;Laufende Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2020;DINSG;Deutschland
+        insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR3;Haushalte mit 3
+        Personen;EAART1;Einnahme- und Ausgabearten;ASG-KSMPRIV-01;Private Konsumausgaben;;;3275\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR3;Haushalte
+        mit 3 Personen;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;;;2560\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR4;Haushalte
+        mit 4 Personen;EAART1;Einnahme- und Ausgabearten;EKM-HSH-BR-01;Haushaltsbruttoeinkommen;;;8165\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR4;Haushalte
+        mit 4 Personen;EAART1;Einnahme- und Ausgabearten;EKM-HSH-NE-01;Haushaltsnettoeinkommen;;;6114\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR4;Haushalte
+        mit 4 Personen;EAART1;Einnahme- und Ausgabearten;EKM-ASGFAE-01;Ausgabef\xE4hige
+        Einkommen und Einnahmen;;;6222\n63121;Laufende Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2020;DINSG;Deutschland
+        insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR4;Haushalte mit 4
+        Personen;EAART1;Einnahme- und Ausgabearten;ASG-KSMPRIV-01;Private Konsumausgaben;;;3906\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR4;Haushalte
+        mit 4 Personen;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;;;4198\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR51;Haushalte
+        mit 5 und mehr Personen;EAART1;Einnahme- und Ausgabearten;EKM-HSH-BR-01;Haushaltsbruttoeinkommen;;;7686\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR51;Haushalte
+        mit 5 und mehr Personen;EAART1;Einnahme- und Ausgabearten;EKM-HSH-NE-01;Haushaltsnettoeinkommen;;;6025\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR51;Haushalte
+        mit 5 und mehr Personen;EAART1;Einnahme- und Ausgabearten;EKM-ASGFAE-01;Ausgabef\xE4hige
+        Einkommen und Einnahmen;;;6144\n63121;Laufende Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2020;DINSG;Deutschland
+        insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR51;Haushalte mit
+        5 und mehr Personen;EAART1;Einnahme- und Ausgabearten;ASG-KSMPRIV-01;Private
+        Konsumausgaben;;;4026\n63121;Laufende Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2020;DINSG;Deutschland
+        insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR51;Haushalte mit
+        5 und mehr Personen;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;;;2493\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;;Insgesamt;EAART1;Einnahme-
+        und Ausgabearten;EKM-HSH-BR-01;Haushaltsbruttoeinkommen;;;4715\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;;Insgesamt;EAART1;Einnahme-
+        und Ausgabearten;EKM-HSH-NE-01;Haushaltsnettoeinkommen;;;3612\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;;Insgesamt;EAART1;Einnahme-
+        und Ausgabearten;EKM-ASGFAE-01;Ausgabef\xE4hige Einkommen und Einnahmen;;;3681\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;;Insgesamt;EAART1;Einnahme-
+        und Ausgabearten;ASG-KSMPRIV-01;Private Konsumausgaben;;;2507\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;;Insgesamt;EAART1;Einnahme-
+        und Ausgabearten;ASG-AND-01;Andere Ausgaben;;;2049\n63121;Laufende Wirtschaftsrechnungen:
+        Haushaltsbuch;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR1;Haushalte
+        mit 1 Person;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;2788;16428;\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR2;Haushalte
+        mit 2 Personen;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;2858;12786;\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR3;Haushalte
+        mit 3 Personen;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;1000;4267;\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR4;Haushalte
+        mit 4 Personen;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;682;3289;\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR51;Haushalte
+        mit 5 und mehr Personen;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere
+        Ausgaben;185;1224;\n63121;Laufende Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2020;DINSG;Deutschland
+        insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;;Insgesamt;EAART1;Einnahme-
+        und Ausgabearten;ASG-AND-01;Andere Ausgaben;7513;37993;\n63121;Laufende Wirtschaftsrechnungen:
+        Haushaltsbuch;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR1;Haushalte
+        mit 1 Person;EAART1;Einnahme- und Ausgabearten;EKM-HSH-BR-01;Haushaltsbruttoeinkommen;;;2941\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR1;Haushalte
+        mit 1 Person;EAART1;Einnahme- und Ausgabearten;EKM-HSH-NE-01;Haushaltsnettoeinkommen;;;2264\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR1;Haushalte
+        mit 1 Person;EAART1;Einnahme- und Ausgabearten;EKM-ASGFAE-01;Ausgabef\xE4hige
+        Einkommen und Einnahmen;;;2313\n63121;Laufende Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2021;DINSG;Deutschland
+        insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR1;Haushalte mit 1
+        Person;EAART1;Einnahme- und Ausgabearten;ASG-KSMPRIV-01;Private Konsumausgaben;;;1658\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR1;Haushalte
+        mit 1 Person;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;;;1289\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR2;Haushalte
+        mit 2 Personen;EAART1;Einnahme- und Ausgabearten;EKM-HSH-BR-01;Haushaltsbruttoeinkommen;;;5576\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR2;Haushalte
+        mit 2 Personen;EAART1;Einnahme- und Ausgabearten;EKM-HSH-NE-01;Haushaltsnettoeinkommen;;;4322\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR2;Haushalte
+        mit 2 Personen;EAART1;Einnahme- und Ausgabearten;EKM-ASGFAE-01;Ausgabef\xE4hige
+        Einkommen und Einnahmen;;;4393\n63121;Laufende Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2021;DINSG;Deutschland
+        insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR2;Haushalte mit 2
+        Personen;EAART1;Einnahme- und Ausgabearten;ASG-KSMPRIV-01;Private Konsumausgaben;;;2984\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR2;Haushalte
+        mit 2 Personen;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;;;2489\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR3;Haushalte
+        mit 3 Personen;EAART1;Einnahme- und Ausgabearten;EKM-HSH-BR-01;Haushaltsbruttoeinkommen;;;7124\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR3;Haushalte
+        mit 3 Personen;EAART1;Einnahme- und Ausgabearten;EKM-HSH-NE-01;Haushaltsnettoeinkommen;;;5374\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR3;Haushalte
+        mit 3 Personen;EAART1;Einnahme- und Ausgabearten;EKM-ASGFAE-01;Ausgabef\xE4hige
+        Einkommen und Einnahmen;;;5466\n63121;Laufende Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2021;DINSG;Deutschland
+        insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR3;Haushalte mit 3
+        Personen;EAART1;Einnahme- und Ausgabearten;ASG-KSMPRIV-01;Private Konsumausgaben;;;3421\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR3;Haushalte
+        mit 3 Personen;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;;;3073\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR4;Haushalte
+        mit 4 Personen;EAART1;Einnahme- und Ausgabearten;EKM-HSH-BR-01;Haushaltsbruttoeinkommen;;;8278\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR4;Haushalte
+        mit 4 Personen;EAART1;Einnahme- und Ausgabearten;EKM-HSH-NE-01;Haushaltsnettoeinkommen;;;6177\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR4;Haushalte
+        mit 4 Personen;EAART1;Einnahme- und Ausgabearten;EKM-ASGFAE-01;Ausgabef\xE4hige
+        Einkommen und Einnahmen;;;6264\n63121;Laufende Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2021;DINSG;Deutschland
+        insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR4;Haushalte mit 4
+        Personen;EAART1;Einnahme- und Ausgabearten;ASG-KSMPRIV-01;Private Konsumausgaben;;;4117\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR4;Haushalte
+        mit 4 Personen;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;;;3025\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR51;Haushalte
+        mit 5 und mehr Personen;EAART1;Einnahme- und Ausgabearten;EKM-HSH-BR-01;Haushaltsbruttoeinkommen;;;8849\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR51;Haushalte
+        mit 5 und mehr Personen;EAART1;Einnahme- und Ausgabearten;EKM-HSH-NE-01;Haushaltsnettoeinkommen;;;6805\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR51;Haushalte
+        mit 5 und mehr Personen;EAART1;Einnahme- und Ausgabearten;EKM-ASGFAE-01;Ausgabef\xE4hige
+        Einkommen und Einnahmen;;;6922\n63121;Laufende Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2021;DINSG;Deutschland
+        insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR51;Haushalte mit
+        5 und mehr Personen;EAART1;Einnahme- und Ausgabearten;ASG-KSMPRIV-01;Private
+        Konsumausgaben;;;4591\n63121;Laufende Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2021;DINSG;Deutschland
+        insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR51;Haushalte mit
+        5 und mehr Personen;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;;;4921\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;;Insgesamt;EAART1;Einnahme-
+        und Ausgabearten;EKM-HSH-BR-01;Haushaltsbruttoeinkommen;;;4979\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;;Insgesamt;EAART1;Einnahme-
+        und Ausgabearten;EKM-HSH-NE-01;Haushaltsnettoeinkommen;;;3813\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;;Insgesamt;EAART1;Einnahme-
+        und Ausgabearten;EKM-ASGFAE-01;Ausgabef\xE4hige Einkommen und Einnahmen;;;3880\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;;Insgesamt;EAART1;Einnahme-
+        und Ausgabearten;ASG-KSMPRIV-01;Private Konsumausgaben;;;2623\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;;Insgesamt;EAART1;Einnahme-
+        und Ausgabearten;ASG-AND-01;Andere Ausgaben;;;2171\n63121;Laufende Wirtschaftsrechnungen:
+        Haushaltsbuch;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR1;Haushalte
+        mit 1 Person;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;2826;16143;\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR2;Haushalte
+        mit 2 Personen;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;2867;12997;\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR3;Haushalte
+        mit 3 Personen;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;938;4303;\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR4;Haushalte
+        mit 4 Personen;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;670;3418;\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR51;Haushalte
+        mit 5 und mehr Personen;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere
+        Ausgaben;196;1198;\n63121;Laufende Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2021;DINSG;Deutschland
+        insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;;Insgesamt;EAART1;Einnahme-
+        und Ausgabearten;ASG-AND-01;Andere Ausgaben;7497;38058;\n63121;Laufende Wirtschaftsrechnungen:
+        Haushaltsbuch;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR1;Haushalte
+        mit 1 Person;EAART1;Einnahme- und Ausgabearten;EKM-HSH-BR-01;Haushaltsbruttoeinkommen;;;3164\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR1;Haushalte
+        mit 1 Person;EAART1;Einnahme- und Ausgabearten;EKM-HSH-NE-01;Haushaltsnettoeinkommen;;;2439\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR1;Haushalte
+        mit 1 Person;EAART1;Einnahme- und Ausgabearten;EKM-ASGFAE-01;Ausgabef\xE4hige
+        Einkommen und Einnahmen;;;2479\n63121;Laufende Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2022;DINSG;Deutschland
+        insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR1;Haushalte mit 1
+        Person;EAART1;Einnahme- und Ausgabearten;ASG-KSMPRIV-01;Private Konsumausgaben;;;1833\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR1;Haushalte
+        mit 1 Person;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;;;1470\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR2;Haushalte
+        mit 2 Personen;EAART1;Einnahme- und Ausgabearten;EKM-HSH-BR-01;Haushaltsbruttoeinkommen;;;5930\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR2;Haushalte
+        mit 2 Personen;EAART1;Einnahme- und Ausgabearten;EKM-HSH-NE-01;Haushaltsnettoeinkommen;;;4621\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR2;Haushalte
+        mit 2 Personen;EAART1;Einnahme- und Ausgabearten;EKM-ASGFAE-01;Ausgabef\xE4hige
+        Einkommen und Einnahmen;;;4702\n63121;Laufende Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2022;DINSG;Deutschland
+        insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR2;Haushalte mit 2
+        Personen;EAART1;Einnahme- und Ausgabearten;ASG-KSMPRIV-01;Private Konsumausgaben;;;3239\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR2;Haushalte
+        mit 2 Personen;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;;;2853\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR3;Haushalte
+        mit 3 Personen;EAART1;Einnahme- und Ausgabearten;EKM-HSH-BR-01;Haushaltsbruttoeinkommen;;;7438\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR3;Haushalte
+        mit 3 Personen;EAART1;Einnahme- und Ausgabearten;EKM-HSH-NE-01;Haushaltsnettoeinkommen;;;5569\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR3;Haushalte
+        mit 3 Personen;EAART1;Einnahme- und Ausgabearten;EKM-ASGFAE-01;Ausgabef\xE4hige
+        Einkommen und Einnahmen;;;5677\n63121;Laufende Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2022;DINSG;Deutschland
+        insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR3;Haushalte mit 3
+        Personen;EAART1;Einnahme- und Ausgabearten;ASG-KSMPRIV-01;Private Konsumausgaben;;;3760\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR3;Haushalte
+        mit 3 Personen;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;;;3062\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR4;Haushalte
+        mit 4 Personen;EAART1;Einnahme- und Ausgabearten;EKM-HSH-BR-01;Haushaltsbruttoeinkommen;;;8847\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR4;Haushalte
+        mit 4 Personen;EAART1;Einnahme- und Ausgabearten;EKM-HSH-NE-01;Haushaltsnettoeinkommen;;;6569\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR4;Haushalte
+        mit 4 Personen;EAART1;Einnahme- und Ausgabearten;EKM-ASGFAE-01;Ausgabef\xE4hige
+        Einkommen und Einnahmen;;;6664\n63121;Laufende Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2022;DINSG;Deutschland
+        insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR4;Haushalte mit 4
+        Personen;EAART1;Einnahme- und Ausgabearten;ASG-KSMPRIV-01;Private Konsumausgaben;;;4322\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR4;Haushalte
+        mit 4 Personen;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;;;4354\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR51;Haushalte
+        mit 5 und mehr Personen;EAART1;Einnahme- und Ausgabearten;EKM-HSH-BR-01;Haushaltsbruttoeinkommen;;;9051\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR51;Haushalte
+        mit 5 und mehr Personen;EAART1;Einnahme- und Ausgabearten;EKM-HSH-NE-01;Haushaltsnettoeinkommen;;;6928\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR51;Haushalte
+        mit 5 und mehr Personen;EAART1;Einnahme- und Ausgabearten;EKM-ASGFAE-01;Ausgabef\xE4hige
+        Einkommen und Einnahmen;;;7032\n63121;Laufende Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2022;DINSG;Deutschland
+        insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR51;Haushalte mit
+        5 und mehr Personen;EAART1;Einnahme- und Ausgabearten;ASG-KSMPRIV-01;Private
+        Konsumausgaben;;;4632\n63121;Laufende Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2022;DINSG;Deutschland
+        insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR51;Haushalte mit
+        5 und mehr Personen;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;;;3769\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;;Insgesamt;EAART1;Einnahme-
+        und Ausgabearten;EKM-HSH-BR-01;Haushaltsbruttoeinkommen;;;5296\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;;Insgesamt;EAART1;Einnahme-
+        und Ausgabearten;EKM-HSH-NE-01;Haushaltsnettoeinkommen;;;4056\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;;Insgesamt;EAART1;Einnahme-
+        und Ausgabearten;EKM-ASGFAE-01;Ausgabef\xE4hige Einkommen und Einnahmen;;;4125\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;;Insgesamt;EAART1;Einnahme-
+        und Ausgabearten;ASG-KSMPRIV-01;Private Konsumausgaben;;;2846\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;;Insgesamt;EAART1;Einnahme-
+        und Ausgabearten;ASG-AND-01;Andere Ausgaben;;;2456\n63121;Laufende Wirtschaftsrechnungen:
+        Haushaltsbuch;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR1;Haushalte
+        mit 1 Person;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;2803;16191;\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR2;Haushalte
+        mit 2 Personen;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;2847;12822;\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR3;Haushalte
+        mit 3 Personen;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;850;4359;\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR4;Haushalte
+        mit 4 Personen;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere Ausgaben;608;3432;\n63121;Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;HHGR51;Haushalte
+        mit 5 und mehr Personen;EAART1;Einnahme- und Ausgabearten;ASG-AND-01;Andere
+        Ausgaben;185;1297;\n63121;Laufende Wirtschaftsrechnungen: Haushaltsbuch;JAHR;Jahr;2022;DINSG;Deutschland
+        insgesamt;DG;Deutschland;HSHGR2;Haushaltsgr\xF6\xDFe;;Insgesamt;EAART1;Einnahme-
+        und Ausgabearten;ASG-AND-01;Andere Ausgaben;7293;38102;\n"
+    headers:
+      Connection:
+      - Keep-Alive
+      Content-Disposition:
+      - attachement;filename=63121-0001_flat.csv
+      Content-Type:
+      - text/csv
+      Date:
+      - Sun, 23 Jun 2024 17:50:03 GMT
+      Keep-Alive:
+      - timeout=15, max=100
+      Server:
+      - Apache
+      Transfer-Encoding:
+      - chunked
+    status:
+      code: 200
+      message: '200'
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.31.0
+    method: GET
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=63121-0001&quality=False
+  response:
+    body:
+      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"63121-0001\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"63121-0001\",\"Content\":\"Einkommen
+        und Einnahmen sowie Ausgaben privater Haushalte\\n(Laufende Wirtschaftsrechnungen):
+        Deutschland, Jahre,\\nHaushaltsgr\xF6\xDFe\",\"Time\":{\"From\":\"2000\",\"To\":\"2022\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"63121\",\"Content\":\"Laufende
+        Wirtschaftsrechnungen: Haushaltsbuch\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Deutschland
+        insgesamt\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"HSHGR2\",\"Content\":\"Haushaltsgr\xF6\xDFe\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Rows\":[{\"Code\":\"HSH011\",\"Content\":\"Erfasste Haushalte\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"HSH012\",\"Content\":\"Hochgerechnete Haushalte\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"HSH015\",\"Content\":\"Durchschnittsbetrag je Haushalt
+        und Monat\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":[{\"Code\":\"EAART1\",\"Content\":\"Einnahme-
+        und Ausgabearten\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Updated\":\"see parent\"}],\"Subtitel\":{\"Code\":\"JAHR\",\"Content\":\"Jahr\",\"Type\":\"Merkmal\",\"Values\":\"5\",\"Selected\":\"5\",\"Structure\":null,\"Updated\":\"see
+        parent\"},\"Subheading\":null},\"Updated\":\"28.12.2022 17:19:39h\"},\"Copyright\":\"\xA9
+        Statistisches Bundesamt (Destatis), 2024\"}"
+    headers:
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '1760'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Sun, 23 Jun 2024 17:50:05 GMT
+      Keep-Alive:
+      - timeout=15, max=100
+      Server:
+      - Apache
+    status:
+      code: 200
+      message: '200'
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.31.0
+    method: GET
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile?area=all&format=ffcsv&language=en&name=63121-0001&quality=False
+  response:
+    body:
+      string: 'statistics_code;statistics_label;time_code;time_label;time;1_variable_code;1_variable_label;1_variable_code;1_variable_code;2_variable_code;2_variable_label;2_variable_code;2_variable_code;3_variable_code;3_variable_label;3_variable_code;3_variable_code;HSH011__Households_covered__number;HSH012__Households_extrapolated__1000;HSH015__Average_amount_per_household_and_month__EUR
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2017;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR1;Households with 1 person;EAART1;Types of income and expenditure;EKM-HSH-BR-01;Household
+        gross income;;;2724
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2017;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR1;Households with 1 person;EAART1;Types of income and expenditure;EKM-HSH-NE-01;Household
+        net income;;;2070
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2017;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR1;Households with 1 person;EAART1;Types of income and expenditure;EKM-ASGFAE-01;Disposable
+        income and receipts;;;2112
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2017;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR1;Households with 1 person;EAART1;Types of income and expenditure;ASG-KSMPRIV-01;Household
+        final consumption expenditure;;;1629
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2017;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR1;Households with 1 person;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;;;1075
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2017;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR2;Households with 2 persons;EAART1;Types of income and expenditure;EKM-HSH-BR-01;Household
+        gross income;;;4996
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2017;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR2;Households with 2 persons;EAART1;Types of income and expenditure;EKM-HSH-NE-01;Household
+        net income;;;3845
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2017;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR2;Households with 2 persons;EAART1;Types of income and expenditure;EKM-ASGFAE-01;Disposable
+        income and receipts;;;3919
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2017;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR2;Households with 2 persons;EAART1;Types of income and expenditure;ASG-KSMPRIV-01;Household
+        final consumption expenditure;;;2899
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2017;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR2;Households with 2 persons;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;;;1902
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2017;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR3;Households with 3 persons;EAART1;Types of income and expenditure;EKM-HSH-BR-01;Household
+        gross income;;;6453
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2017;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR3;Households with 3 persons;EAART1;Types of income and expenditure;EKM-HSH-NE-01;Household
+        net income;;;4823
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2017;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR3;Households with 3 persons;EAART1;Types of income and expenditure;EKM-ASGFAE-01;Disposable
+        income and receipts;;;4888
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2017;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR3;Households with 3 persons;EAART1;Types of income and expenditure;ASG-KSMPRIV-01;Household
+        final consumption expenditure;;;3316
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2017;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR3;Households with 3 persons;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;;;2350
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2017;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR4;Households with 4 persons;EAART1;Types of income and expenditure;EKM-HSH-BR-01;Household
+        gross income;;;7272
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2017;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR4;Households with 4 persons;EAART1;Types of income and expenditure;EKM-HSH-NE-01;Household
+        net income;;;5393
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2017;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR4;Households with 4 persons;EAART1;Types of income and expenditure;EKM-ASGFAE-01;Disposable
+        income and receipts;;;5483
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2017;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR4;Households with 4 persons;EAART1;Types of income and expenditure;ASG-KSMPRIV-01;Household
+        final consumption expenditure;;;3812
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2017;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR4;Households with 4 persons;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;;;2503
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2017;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR51;Households with 5 or more persons;EAART1;Types of income and expenditure;EKM-HSH-BR-01;Household
+        gross income;;;7544
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2017;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR51;Households with 5 or more persons;EAART1;Types of income and expenditure;EKM-HSH-NE-01;Household
+        net income;;;5832
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2017;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR51;Households with 5 or more persons;EAART1;Types of income and expenditure;EKM-ASGFAE-01;Disposable
+        income and receipts;;;5927
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2017;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR51;Households with 5 or more persons;EAART1;Types of income and expenditure;ASG-KSMPRIV-01;Household
+        final consumption expenditure;;;3905
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2017;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR51;Households with 5 or more persons;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;;;2686
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2017;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;;Total;EAART1;Types of income and expenditure;EKM-HSH-BR-01;Household
+        gross income;;;4474
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2017;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;;Total;EAART1;Types of income and expenditure;EKM-HSH-NE-01;Household
+        net income;;;3399
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2017;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;;Total;EAART1;Types of income and expenditure;EKM-ASGFAE-01;Disposable
+        income and receipts;;;3461
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2017;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;;Total;EAART1;Types of income and expenditure;ASG-KSMPRIV-01;Household
+        final consumption expenditure;;;2517
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2017;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;;Total;EAART1;Types of income and expenditure;ASG-AND-01;Other expenditure;;;1678
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2017;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR1;Households with 1 person;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;2213;16066;
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2017;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR2;Households with 2 persons;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;3480;12856;
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2017;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR3;Households with 3 persons;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;1045;4337;
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2017;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR4;Households with 4 persons;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;734;3239;
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2017;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR51;Households with 5 or more persons;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;213;1231;
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2017;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;;Total;EAART1;Types of income and expenditure;ASG-AND-01;Other expenditure;7685;37729;
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2019;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR1;Households with 1 person;EAART1;Types of income and expenditure;EKM-HSH-BR-01;Household
+        gross income;;;2859
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2019;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR1;Households with 1 person;EAART1;Types of income and expenditure;EKM-HSH-NE-01;Household
+        net income;;;2176
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2019;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR1;Households with 1 person;EAART1;Types of income and expenditure;EKM-ASGFAE-01;Disposable
+        income and receipts;;;2223
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2019;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR1;Households with 1 person;EAART1;Types of income and expenditure;ASG-KSMPRIV-01;Household
+        final consumption expenditure;;;1695
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2019;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR1;Households with 1 person;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;;;1222
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2019;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR2;Households with 2 persons;EAART1;Types of income and expenditure;EKM-HSH-BR-01;Household
+        gross income;;;5316
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2019;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR2;Households with 2 persons;EAART1;Types of income and expenditure;EKM-HSH-NE-01;Household
+        net income;;;4078
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2019;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR2;Households with 2 persons;EAART1;Types of income and expenditure;EKM-ASGFAE-01;Disposable
+        income and receipts;;;4153
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2019;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR2;Households with 2 persons;EAART1;Types of income and expenditure;ASG-KSMPRIV-01;Household
+        final consumption expenditure;;;2923
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2019;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR2;Households with 2 persons;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;;;2330
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2019;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR3;Households with 3 persons;EAART1;Types of income and expenditure;EKM-HSH-BR-01;Household
+        gross income;;;6837
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2019;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR3;Households with 3 persons;EAART1;Types of income and expenditure;EKM-HSH-NE-01;Household
+        net income;;;5037
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2019;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR3;Households with 3 persons;EAART1;Types of income and expenditure;EKM-ASGFAE-01;Disposable
+        income and receipts;;;5114
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2019;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR3;Households with 3 persons;EAART1;Types of income and expenditure;ASG-KSMPRIV-01;Household
+        final consumption expenditure;;;3442
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2019;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR3;Households with 3 persons;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;;;2798
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2019;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR4;Households with 4 persons;EAART1;Types of income and expenditure;EKM-HSH-BR-01;Household
+        gross income;;;8011
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2019;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR4;Households with 4 persons;EAART1;Types of income and expenditure;EKM-HSH-NE-01;Household
+        net income;;;5900
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2019;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR4;Households with 4 persons;EAART1;Types of income and expenditure;EKM-ASGFAE-01;Disposable
+        income and receipts;;;6000
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2019;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR4;Households with 4 persons;EAART1;Types of income and expenditure;ASG-KSMPRIV-01;Household
+        final consumption expenditure;;;3923
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2019;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR4;Households with 4 persons;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;;;2922
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2019;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR51;Households with 5 or more persons;EAART1;Types of income and expenditure;EKM-HSH-BR-01;Household
+        gross income;;;7426
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2019;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR51;Households with 5 or more persons;EAART1;Types of income and expenditure;EKM-HSH-NE-01;Household
+        net income;;;5749
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2019;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR51;Households with 5 or more persons;EAART1;Types of income and expenditure;EKM-ASGFAE-01;Disposable
+        income and receipts;;;5822
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2019;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR51;Households with 5 or more persons;EAART1;Types of income and expenditure;ASG-KSMPRIV-01;Household
+        final consumption expenditure;;;3981
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2019;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR51;Households with 5 or more persons;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;;;2391
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2019;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;;Total;EAART1;Types of income and expenditure;EKM-HSH-BR-01;Household
+        gross income;;;4734
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2019;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;;Total;EAART1;Types of income and expenditure;EKM-HSH-NE-01;Household
+        net income;;;3580
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2019;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;;Total;EAART1;Types of income and expenditure;EKM-ASGFAE-01;Disposable
+        income and receipts;;;3645
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2019;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;;Total;EAART1;Types of income and expenditure;ASG-KSMPRIV-01;Household
+        final consumption expenditure;;;2574
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2019;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;;Total;EAART1;Types of income and expenditure;ASG-AND-01;Other expenditure;;;1959
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2019;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR1;Households with 1 person;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;2676;16406;
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2019;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR2;Households with 2 persons;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;2822;12686;
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2019;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR3;Households with 3 persons;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;1100;4340;
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2019;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR4;Households with 4 persons;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;707;3333;
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2019;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR51;Households with 5 or more persons;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;192;1228;
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2019;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;;Total;EAART1;Types of income and expenditure;ASG-AND-01;Other expenditure;7497;37993;
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2020;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR1;Households with 1 person;EAART1;Types of income and expenditure;EKM-HSH-BR-01;Household
+        gross income;;;2827
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2020;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR1;Households with 1 person;EAART1;Types of income and expenditure;EKM-HSH-NE-01;Household
+        net income;;;2168
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2020;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR1;Households with 1 person;EAART1;Types of income and expenditure;EKM-ASGFAE-01;Disposable
+        income and receipts;;;2207
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2020;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR1;Households with 1 person;EAART1;Types of income and expenditure;ASG-KSMPRIV-01;Household
+        final consumption expenditure;;;1600
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2020;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR1;Households with 1 person;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;;;1177
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2020;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR2;Households with 2 persons;EAART1;Types of income and expenditure;EKM-HSH-BR-01;Household
+        gross income;;;5257
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2020;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR2;Households with 2 persons;EAART1;Types of income and expenditure;EKM-HSH-NE-01;Household
+        net income;;;4071
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2020;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR2;Households with 2 persons;EAART1;Types of income and expenditure;EKM-ASGFAE-01;Disposable
+        income and receipts;;;4156
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2020;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR2;Households with 2 persons;EAART1;Types of income and expenditure;ASG-KSMPRIV-01;Household
+        final consumption expenditure;;;2912
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2020;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR2;Households with 2 persons;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;;;2404
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2020;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR3;Households with 3 persons;EAART1;Types of income and expenditure;EKM-HSH-BR-01;Household
+        gross income;;;6854
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2020;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR3;Households with 3 persons;EAART1;Types of income and expenditure;EKM-HSH-NE-01;Household
+        net income;;;5177
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2020;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR3;Households with 3 persons;EAART1;Types of income and expenditure;EKM-ASGFAE-01;Disposable
+        income and receipts;;;5270
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2020;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR3;Households with 3 persons;EAART1;Types of income and expenditure;ASG-KSMPRIV-01;Household
+        final consumption expenditure;;;3275
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2020;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR3;Households with 3 persons;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;;;2560
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2020;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR4;Households with 4 persons;EAART1;Types of income and expenditure;EKM-HSH-BR-01;Household
+        gross income;;;8165
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2020;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR4;Households with 4 persons;EAART1;Types of income and expenditure;EKM-HSH-NE-01;Household
+        net income;;;6114
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2020;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR4;Households with 4 persons;EAART1;Types of income and expenditure;EKM-ASGFAE-01;Disposable
+        income and receipts;;;6222
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2020;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR4;Households with 4 persons;EAART1;Types of income and expenditure;ASG-KSMPRIV-01;Household
+        final consumption expenditure;;;3906
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2020;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR4;Households with 4 persons;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;;;4198
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2020;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR51;Households with 5 or more persons;EAART1;Types of income and expenditure;EKM-HSH-BR-01;Household
+        gross income;;;7686
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2020;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR51;Households with 5 or more persons;EAART1;Types of income and expenditure;EKM-HSH-NE-01;Household
+        net income;;;6025
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2020;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR51;Households with 5 or more persons;EAART1;Types of income and expenditure;EKM-ASGFAE-01;Disposable
+        income and receipts;;;6144
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2020;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR51;Households with 5 or more persons;EAART1;Types of income and expenditure;ASG-KSMPRIV-01;Household
+        final consumption expenditure;;;4026
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2020;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR51;Households with 5 or more persons;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;;;2493
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2020;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;;Total;EAART1;Types of income and expenditure;EKM-HSH-BR-01;Household
+        gross income;;;4715
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2020;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;;Total;EAART1;Types of income and expenditure;EKM-HSH-NE-01;Household
+        net income;;;3612
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2020;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;;Total;EAART1;Types of income and expenditure;EKM-ASGFAE-01;Disposable
+        income and receipts;;;3681
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2020;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;;Total;EAART1;Types of income and expenditure;ASG-KSMPRIV-01;Household
+        final consumption expenditure;;;2507
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2020;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;;Total;EAART1;Types of income and expenditure;ASG-AND-01;Other expenditure;;;2049
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2020;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR1;Households with 1 person;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;2788;16428;
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2020;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR2;Households with 2 persons;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;2858;12786;
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2020;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR3;Households with 3 persons;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;1000;4267;
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2020;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR4;Households with 4 persons;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;682;3289;
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2020;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR51;Households with 5 or more persons;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;185;1224;
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2020;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;;Total;EAART1;Types of income and expenditure;ASG-AND-01;Other expenditure;7513;37993;
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2021;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR1;Households with 1 person;EAART1;Types of income and expenditure;EKM-HSH-BR-01;Household
+        gross income;;;2941
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2021;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR1;Households with 1 person;EAART1;Types of income and expenditure;EKM-HSH-NE-01;Household
+        net income;;;2264
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2021;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR1;Households with 1 person;EAART1;Types of income and expenditure;EKM-ASGFAE-01;Disposable
+        income and receipts;;;2313
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2021;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR1;Households with 1 person;EAART1;Types of income and expenditure;ASG-KSMPRIV-01;Household
+        final consumption expenditure;;;1658
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2021;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR1;Households with 1 person;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;;;1289
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2021;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR2;Households with 2 persons;EAART1;Types of income and expenditure;EKM-HSH-BR-01;Household
+        gross income;;;5576
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2021;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR2;Households with 2 persons;EAART1;Types of income and expenditure;EKM-HSH-NE-01;Household
+        net income;;;4322
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2021;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR2;Households with 2 persons;EAART1;Types of income and expenditure;EKM-ASGFAE-01;Disposable
+        income and receipts;;;4393
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2021;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR2;Households with 2 persons;EAART1;Types of income and expenditure;ASG-KSMPRIV-01;Household
+        final consumption expenditure;;;2984
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2021;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR2;Households with 2 persons;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;;;2489
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2021;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR3;Households with 3 persons;EAART1;Types of income and expenditure;EKM-HSH-BR-01;Household
+        gross income;;;7124
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2021;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR3;Households with 3 persons;EAART1;Types of income and expenditure;EKM-HSH-NE-01;Household
+        net income;;;5374
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2021;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR3;Households with 3 persons;EAART1;Types of income and expenditure;EKM-ASGFAE-01;Disposable
+        income and receipts;;;5466
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2021;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR3;Households with 3 persons;EAART1;Types of income and expenditure;ASG-KSMPRIV-01;Household
+        final consumption expenditure;;;3421
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2021;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR3;Households with 3 persons;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;;;3073
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2021;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR4;Households with 4 persons;EAART1;Types of income and expenditure;EKM-HSH-BR-01;Household
+        gross income;;;8278
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2021;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR4;Households with 4 persons;EAART1;Types of income and expenditure;EKM-HSH-NE-01;Household
+        net income;;;6177
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2021;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR4;Households with 4 persons;EAART1;Types of income and expenditure;EKM-ASGFAE-01;Disposable
+        income and receipts;;;6264
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2021;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR4;Households with 4 persons;EAART1;Types of income and expenditure;ASG-KSMPRIV-01;Household
+        final consumption expenditure;;;4117
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2021;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR4;Households with 4 persons;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;;;3025
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2021;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR51;Households with 5 or more persons;EAART1;Types of income and expenditure;EKM-HSH-BR-01;Household
+        gross income;;;8849
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2021;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR51;Households with 5 or more persons;EAART1;Types of income and expenditure;EKM-HSH-NE-01;Household
+        net income;;;6805
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2021;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR51;Households with 5 or more persons;EAART1;Types of income and expenditure;EKM-ASGFAE-01;Disposable
+        income and receipts;;;6922
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2021;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR51;Households with 5 or more persons;EAART1;Types of income and expenditure;ASG-KSMPRIV-01;Household
+        final consumption expenditure;;;4591
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2021;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR51;Households with 5 or more persons;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;;;4921
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2021;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;;Total;EAART1;Types of income and expenditure;EKM-HSH-BR-01;Household
+        gross income;;;4979
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2021;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;;Total;EAART1;Types of income and expenditure;EKM-HSH-NE-01;Household
+        net income;;;3813
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2021;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;;Total;EAART1;Types of income and expenditure;EKM-ASGFAE-01;Disposable
+        income and receipts;;;3880
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2021;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;;Total;EAART1;Types of income and expenditure;ASG-KSMPRIV-01;Household
+        final consumption expenditure;;;2623
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2021;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;;Total;EAART1;Types of income and expenditure;ASG-AND-01;Other expenditure;;;2171
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2021;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR1;Households with 1 person;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;2826;16143;
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2021;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR2;Households with 2 persons;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;2867;12997;
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2021;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR3;Households with 3 persons;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;938;4303;
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2021;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR4;Households with 4 persons;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;670;3418;
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2021;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR51;Households with 5 or more persons;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;196;1198;
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2021;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;;Total;EAART1;Types of income and expenditure;ASG-AND-01;Other expenditure;7497;38058;
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2022;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR1;Households with 1 person;EAART1;Types of income and expenditure;EKM-HSH-BR-01;Household
+        gross income;;;3164
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2022;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR1;Households with 1 person;EAART1;Types of income and expenditure;EKM-HSH-NE-01;Household
+        net income;;;2439
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2022;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR1;Households with 1 person;EAART1;Types of income and expenditure;EKM-ASGFAE-01;Disposable
+        income and receipts;;;2479
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2022;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR1;Households with 1 person;EAART1;Types of income and expenditure;ASG-KSMPRIV-01;Household
+        final consumption expenditure;;;1833
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2022;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR1;Households with 1 person;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;;;1470
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2022;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR2;Households with 2 persons;EAART1;Types of income and expenditure;EKM-HSH-BR-01;Household
+        gross income;;;5930
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2022;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR2;Households with 2 persons;EAART1;Types of income and expenditure;EKM-HSH-NE-01;Household
+        net income;;;4621
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2022;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR2;Households with 2 persons;EAART1;Types of income and expenditure;EKM-ASGFAE-01;Disposable
+        income and receipts;;;4702
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2022;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR2;Households with 2 persons;EAART1;Types of income and expenditure;ASG-KSMPRIV-01;Household
+        final consumption expenditure;;;3239
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2022;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR2;Households with 2 persons;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;;;2853
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2022;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR3;Households with 3 persons;EAART1;Types of income and expenditure;EKM-HSH-BR-01;Household
+        gross income;;;7438
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2022;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR3;Households with 3 persons;EAART1;Types of income and expenditure;EKM-HSH-NE-01;Household
+        net income;;;5569
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2022;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR3;Households with 3 persons;EAART1;Types of income and expenditure;EKM-ASGFAE-01;Disposable
+        income and receipts;;;5677
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2022;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR3;Households with 3 persons;EAART1;Types of income and expenditure;ASG-KSMPRIV-01;Household
+        final consumption expenditure;;;3760
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2022;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR3;Households with 3 persons;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;;;3062
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2022;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR4;Households with 4 persons;EAART1;Types of income and expenditure;EKM-HSH-BR-01;Household
+        gross income;;;8847
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2022;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR4;Households with 4 persons;EAART1;Types of income and expenditure;EKM-HSH-NE-01;Household
+        net income;;;6569
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2022;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR4;Households with 4 persons;EAART1;Types of income and expenditure;EKM-ASGFAE-01;Disposable
+        income and receipts;;;6664
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2022;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR4;Households with 4 persons;EAART1;Types of income and expenditure;ASG-KSMPRIV-01;Household
+        final consumption expenditure;;;4322
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2022;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR4;Households with 4 persons;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;;;4354
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2022;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR51;Households with 5 or more persons;EAART1;Types of income and expenditure;EKM-HSH-BR-01;Household
+        gross income;;;9051
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2022;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR51;Households with 5 or more persons;EAART1;Types of income and expenditure;EKM-HSH-NE-01;Household
+        net income;;;6928
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2022;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR51;Households with 5 or more persons;EAART1;Types of income and expenditure;EKM-ASGFAE-01;Disposable
+        income and receipts;;;7032
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2022;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR51;Households with 5 or more persons;EAART1;Types of income and expenditure;ASG-KSMPRIV-01;Household
+        final consumption expenditure;;;4632
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2022;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR51;Households with 5 or more persons;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;;;3769
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2022;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;;Total;EAART1;Types of income and expenditure;EKM-HSH-BR-01;Household
+        gross income;;;5296
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2022;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;;Total;EAART1;Types of income and expenditure;EKM-HSH-NE-01;Household
+        net income;;;4056
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2022;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;;Total;EAART1;Types of income and expenditure;EKM-ASGFAE-01;Disposable
+        income and receipts;;;4125
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2022;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;;Total;EAART1;Types of income and expenditure;ASG-KSMPRIV-01;Household
+        final consumption expenditure;;;2846
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2022;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;;Total;EAART1;Types of income and expenditure;ASG-AND-01;Other expenditure;;;2456
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2022;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR1;Households with 1 person;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;2803;16191;
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2022;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR2;Households with 2 persons;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;2847;12822;
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2022;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR3;Households with 3 persons;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;850;4359;
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2022;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR4;Households with 4 persons;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;608;3432;
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2022;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;HHGR51;Households with 5 or more persons;EAART1;Types of income and expenditure;ASG-AND-01;Other
+        expenditure;185;1297;
+
+        63121;Continuous household budget surveys: househ. book;JAHR;Year;2022;DINSG;Germany;DG;Germany;HSHGR2;Household
+        size;;Total;EAART1;Types of income and expenditure;ASG-AND-01;Other expenditure;7293;38102;
+
+        '
+    headers:
+      Connection:
+      - Keep-Alive
+      Content-Disposition:
+      - attachement;filename=63121-0001_flat.csv
+      Content-Type:
+      - text/csv
+      Date:
+      - Sun, 23 Jun 2024 17:53:51 GMT
+      Keep-Alive:
+      - timeout=15, max=100
+      Server:
+      - Apache
+      Transfer-Encoding:
+      - chunked
+    status:
+      code: 200
+      message: '200'
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.31.0
+    method: GET
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table?area=all&format=ffcsv&language=en&name=63121-0001&quality=False
+  response:
+    body:
+      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"successfull\",\"Type\":\"information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"63121-0001\",\"area\":\"all\",\"language\":\"en\"},\"Object\":{\"Code\":\"63121-0001\",\"Content\":\"Income
+        and expenditure of households (Continuous household\\nbudget surveys): Germany,
+        years, household size\",\"Time\":{\"From\":\"2000\",\"To\":\"2022\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"63121\",\"Content\":\"Continuous
+        household budget surveys: househ. book\",\"Type\":\"statistic\",\"Values\":null,\"Selected\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Germany\",\"Type\":\"variable\",\"Values\":\"1\",\"Selected\":\"1\",\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"HSHGR2\",\"Content\":\"Household
+        size\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Rows\":[{\"Code\":\"HSH011\",\"Content\":\"Households covered\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"HSH012\",\"Content\":\"Households extrapolated\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"HSH015\",\"Content\":\"Average amount per household
+        and month\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Structure\":[{\"Code\":\"EAART1\",\"Content\":\"Types
+        of income and expenditure\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Updated\":\"see parent\"}],\"Subtitel\":{\"Code\":\"JAHR\",\"Content\":\"Year\",\"Type\":\"variable\",\"Values\":\"5\",\"Selected\":\"5\",\"Structure\":null,\"Updated\":\"see
+        parent\"},\"Subheading\":null},\"Updated\":\"2022-12-28 17:19:39h\"},\"Copyright\":\"\xA9
+        Federal Statistical Office, Wiesbaden 2024\"}"
+    headers:
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '1734'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Sun, 23 Jun 2024 17:53:53 GMT
+      Keep-Alive:
+      - timeout=15, max=100
+      Server:
+      - Apache
+    status:
+      code: 200
+      message: '200'
+version: 1

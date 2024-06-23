@@ -154,14 +154,18 @@ class Table:
         """Parse GENESIS table ffcsv format into a more readable format"""
 
         column_name_dict = LANG_TO_COL_MAPPING["genesis-regio"][language]
+        time_col = column_name_dict["time"]
+        time_label_col = column_name_dict["time_label"]
+        variable_label_col = column_name_dict["variable_label"]
+        value_label_col = column_name_dict["value_label"]
 
         # Extracts time column with name from last element of Zeit_Label column
-        time = pd.DataFrame({data[column_name_dict["time_label"]].iloc[-1]: data[column_name_dict["time"]]})
+        time = pd.DataFrame({data[time_label_col].iloc[-1]: data[time_col]})
 
         # Extracts new column names from last values of the variable label columns
         # and assigns these to the relevant attribute columns (variable level)
-        attributes = data.filter(like=column_name_dict["value_label"])
-        attributes.columns = data.filter(like=column_name_dict["variable_label"]).iloc[-1].tolist()
+        attributes = data.filter(like=value_label_col)
+        attributes.columns = data.filter(like=variable_label_col).iloc[-1].tolist()
 
         # Selects all columns containing the values
         values = data.filter(like="__")
@@ -177,26 +181,33 @@ class Table:
     def parse_zensus_table(data: pd.DataFrame, language: str) -> pd.DataFrame:
         """Parse Zensus table ffcsv format into a more readable format"""
         column_name_dict = LANG_TO_COL_MAPPING["zensus"][language]
+        value_variable_label_col = column_name_dict["value_variable_label"]
+        value_unit_col = column_name_dict["value_unit"]
+        value_col = column_name_dict["value"]
+        time_label_col = column_name_dict["time_label"]
+        time_col = column_name_dict["time"]
+        variable_attribute_label_col = column_name_dict["variable_attribute_label"]
+        variable_label_col = column_name_dict["variable_label"]
 
         # add the unit to the column names for the value columns
-        data[column_name_dict["value_variable_label"]] = data[column_name_dict["value_variable_label"]].str.cat(
-            data[column_name_dict["value_unit"]].fillna("Unknown_Unit"), sep="__"
+        data[value_variable_label_col] = data[value_variable_label_col].str.cat(
+            data[value_unit_col].fillna("Unknown_Unit"), sep="__"
         )
 
         pivot_table = data.pivot(
             index=data.columns[:-4].to_list(),
-            columns=column_name_dict["value_variable_label"],
-            values=column_name_dict["value"],
+            columns=value_variable_label_col,
+            values=value_col,
         )
         value_columns = pivot_table.columns.to_list()
         pivot_table.reset_index(inplace=True)
         pivot_table.columns.name = None
 
-        time_label = data[column_name_dict["time_label"]].iloc[0]
-        time = pd.DataFrame({time_label: pivot_table[column_name_dict["time"]]})
+        time_label = data[time_label_col].iloc[0]
+        time = pd.DataFrame({time_label: pivot_table[time_col]})
 
-        attributes = pivot_table.filter(regex=r"\d+_" + column_name_dict["variable_attribute_label"])
-        attributes.columns = pivot_table.filter(regex=r"\d+_" + column_name_dict["variable_label"]).iloc[0].tolist()
+        attributes = pivot_table.filter(regex=r"\d+_" + variable_attribute_label_col)
+        attributes.columns = pivot_table.filter(regex=r"\d+_" + variable_label_col).iloc[0].tolist()
 
         pretty_data = pd.concat([time, attributes, pivot_table[value_columns]], axis=1)
 
@@ -207,14 +218,18 @@ class Table:
         """Parse Regionalstatistik table ffcsv format into a more readable format"""
 
         column_name_dict = LANG_TO_COL_MAPPING["genesis-regio"][language]
+        time_label_col = column_name_dict["time_label"]
+        time_col = column_name_dict["time"]
+        value_label_col = column_name_dict["value_label"]
+        variable_label_col = column_name_dict["variable_label"]
 
         # Extracts time column with name from last element of Zeit_Label column
-        time = pd.DataFrame({data[column_name_dict["time_label"]].iloc[-1]: data[column_name_dict["time"]]})
+        time = pd.DataFrame({data[time_label_col].iloc[-1]: data[time_col]})
 
         # Extracts new column names from first values of the variable_label columns
         # and assigns these to the relevant attribute columns (value_label)
-        attributes = data.filter(like=column_name_dict["value_label"])
-        attributes.columns = data.filter(like=column_name_dict["variable_label"]).iloc[0].tolist()
+        attributes = data.filter(like=value_label_col)
+        attributes.columns = data.filter(like=variable_label_col).iloc[0].tolist()
 
         # Selects all columns containing the values
         values = data.filter(like="__")

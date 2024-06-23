@@ -61,7 +61,7 @@ def select_db_by_credentials(db_matches: list[str]):
         )
 
     else:
-        raise ValueError(f"Empty list of candidates provided.")
+        raise ValueError("Empty list of candidates provided.")
 
 
 def get_host(db_name: str) -> str:

@@ -3,9 +3,10 @@
 import json
 from io import StringIO
 
+import numpy as np
 import pandas as pd
 
-from pystatis import db
+from pystatis import config, db
 from pystatis.http_helper import load_data
 
 
@@ -155,6 +156,14 @@ class Table:
         # Extracts time column with name from first element of Zeit_Label column
         time = pd.DataFrame({data["Zeit_Label"].iloc[0]: data["Zeit"]})
 
+        # Some tables of Genesis can have a regional code (AGS) as first attribute
+        ags_code = None
+        pos_of_ags_col = np.where(data.iloc[0].isin(config.REGIO_AND_GENESIS_AGS_CODES))[0]
+        if pos_of_ags_col.size > 0:
+            pos_of_ags_col = pos_of_ags_col[0]
+            label = "Amtlicher Gemeindeschlüssel (AGS)"  # en: official municipality code (AGS)
+            ags_code = pd.Series(data=data.iloc[:, pos_of_ags_col + 2], name=label)
+
         # Extracts new column names from first values of the Merkmal_Label columns
         # and assigns these to the relevant attribute columns (Auspraegung_Label)
         attributes = data.filter(like="Auspraegung_Label")
@@ -168,6 +177,12 @@ class Table:
         values.columns = [name.split("__", maxsplit=1)[1] for name in values.columns]
 
         pretty_data = pd.concat([time, attributes, values], axis=1)
+        if ags_code is not None:
+            # Genesis has always the same time attribute as first column,
+            # and each attribute always has 4 columns so pos_of_ags_col // 4
+            # adjusts the original counter to the shorter column list of pretty_data
+            pretty_data.insert(loc=pos_of_ags_col // 4, column=ags_code.name, value=ags_code)
+
         return pretty_data
 
     @staticmethod
@@ -184,10 +199,22 @@ class Table:
         time_label = data["time_label"].iloc[0]
         time = pd.DataFrame({time_label: pivot_table["time"]})
 
+        ags_code = None
+        pos_of_ags_col = np.where(data.iloc[0].isin(config.ZENSUS_AGS_CODES))[0]
+        if pos_of_ags_col.size > 0:
+            pos_of_ags_col = pos_of_ags_col[0]
+            label = "Amtlicher Regionalschlüssel (ARS)"  # en: official municipality code (AGS)
+            ags_code = pd.Series(data=data.iloc[:, pos_of_ags_col + 2], name=label)
+
         attributes = pivot_table.filter(regex=r"\d+_variable_attribute_label")
         attributes.columns = pivot_table.filter(regex=r"\d+_variable_label").iloc[0].tolist()
 
         pretty_data = pd.concat([time, attributes, pivot_table[value_columns]], axis=1)
+        if ags_code is not None:
+            # Genesis has always the same time attribute as first column, and
+            # each attribute always has 4 columns so pos_of_ags_col // 4
+            # adjusts the original counter to the shorter column list of pretty_data
+            pretty_data.insert(loc=pos_of_ags_col // 4, column=ags_code.name, value=ags_code)
 
         return pretty_data
 
@@ -196,6 +223,14 @@ class Table:
         """Parse Regionalstatistik table ffcsv format into a more readable format"""
         # Extracts time column with name from first element of Zeit_Label column
         time = pd.DataFrame({data["Zeit_Label"].iloc[0]: data["Zeit"]})
+
+        # All tables of Regionalstatistik have a regional code (AGS) as first attribute
+        ags_code = None
+        pos_of_ags_col = np.where(data.iloc[0].isin(config.REGIO_AND_GENESIS_AGS_CODES))[0]
+        if pos_of_ags_col.size > 0:
+            pos_of_ags_col = pos_of_ags_col[0]
+            label = "Amtlicher Gemeindeschlüssel (AGS)"  # en: official municipality code (AGS)
+            ags_code = pd.Series(data=data.iloc[:, pos_of_ags_col + 2], name=label)
 
         # Extracts new column names from first values of the Merkmal_Label columns
         # and assigns these to the relevant attribute columns (Auspraegung_Label)
@@ -210,4 +245,10 @@ class Table:
         values.columns = [name.split("__", maxsplit=1)[1] for name in values.columns]
 
         pretty_data = pd.concat([time, attributes, values], axis=1)
+        if ags_code is not None:
+            # Genesis has always the same time attribute as first column, and
+            # each attribute always has 4 columns so pos_of_ags_col // 4
+            # adjusts the original counter to the shorter column list of pretty_data
+            pretty_data.insert(loc=pos_of_ags_col // 4, column=ags_code.name, value=ags_code)
+
         return pretty_data

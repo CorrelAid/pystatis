@@ -44,6 +44,7 @@ ZENSUS_AGS_CODES = [
     "GEORB1",
     "GEORB3",
     "GEOVB1",
+    "GEOVB2",
     "GEOVB3",
 ]
 REGIO_AGS_CODES = ["DLAND", "DLANDU", "REGBEZ", "KREISE", "GEMEIN"]

@@ -56,13 +56,30 @@ class Table:
                 Accepts values between "1900" and "2100".
             timeslices (str, optional): Number of time slices to be returned.
                 This parameter is cumulative to `startyear` and `endyear`.
-            regionalvariable (str, optional): "code" der Regionalklassifikation (RKMerkmal),
-                auf die die Auswahl mittels `regionalkey` angewendet werden soll.
+            regionalvariable (str, optional): "code" of the regional classification (RKMerkmal),
+                to which the selection using `regionalkey` is to be applied.
                 Accepts 1-6 characters.
-            regionalkey (str, optional): Übergabe des Amtlichen Gemeindeschlüssel (AGS).
+                Possible values:
+                - Regionalstatistik (only for tables ending with "B"):
+                    - "DG" (Deutschland, 1) -> will not return extra column
+                    - "DLAND" (Bundesländer, 16)
+                    - "REGBEZ" (Regierungsbezirke, 44)
+                    - "KREISE" (Kreise und kreisfreie Städte, 489)
+                    - "GEMEIN" (Gemeinden, 13564)
+                - Zensusdatenbank (for all tables):
+                    - "GEODL1" (Deutschland, 1) -> will not return extra column
+                    - "GEODL3" (Deutschland, 1) -> will not return extra column
+                    - "GEOBL1" (Bundesländer, 16)
+                    - "GEOBL3" (Bundesländer, 16)
+                    - "GEOGM1" (Gemeinden, 13564)
+                    - "GEOGM2" (Gemeinden mit min. 10_000 Einwohnern)
+                    - "GEOGM3" (Gemeinden mit min. 10_000 Einwohnern)
+                    - "GEOLK1" (Landkreise und kreisfreie Städte, 401)
+                    - "GEOLK3" (Landkreise und kreisfreie Städte, 401)
+            regionalkey (str, optional): Official municipality key (AGS).
                 Multiple values can be passed as a comma-separated list.
-                Accepts 1-8 characters. "*" can be used as wildcard.
-            stand (str, optional): Provides table only if it is newer.
+                Accepts 1-12 characters. "*" can be used as wildcard.
+            stand (str, optional): Only download the table if it is newer than the status date.
                 "tt.mm.jjjj hh:mm" or "tt.mm.jjjj". Example: "24.12.2001 19:15".
             language (str, optional): Messages and data descriptions are supplied in this language.
             quality (bool, optional): If True, Value-adding quality labels are issued.

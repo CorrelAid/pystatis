@@ -158,7 +158,7 @@ class Table:
 
         # Some tables of Genesis can have a regional code (AGS) as first attribute
         ags_code = None
-        pos_of_ags_col = np.where(data.iloc[0].isin(config.REGIO_AGS_CODES))[0]
+        pos_of_ags_col = np.where(data.iloc[0].isin(config.REGIO_AND_GENESIS_AGS_CODES))[0]
         if pos_of_ags_col.size > 0:
             pos_of_ags_col = pos_of_ags_col[0]
             label = "Amtlicher Gemeindeschlüssel (AGS)"  # en: official municipality code (AGS)
@@ -226,7 +226,7 @@ class Table:
 
         # All tables of Regionalstatistik have a regional code (AGS) as first attribute
         ags_code = None
-        pos_of_ags_col = np.where(data.iloc[0].isin(config.REGIO_AGS_CODES))[0]
+        pos_of_ags_col = np.where(data.iloc[0].isin(config.REGIO_AND_GENESIS_AGS_CODES))[0]
         if pos_of_ags_col.size > 0:
             pos_of_ags_col = pos_of_ags_col[0]
             label = "Amtlicher Gemeindeschlüssel (AGS)"  # en: official municipality code (AGS)

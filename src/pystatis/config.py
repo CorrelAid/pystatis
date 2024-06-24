@@ -47,7 +47,7 @@ ZENSUS_AGS_CODES = [
     "GEOVB2",
     "GEOVB3",
 ]
-REGIO_AGS_CODES = ["DLAND", "DLANDU", "REGBEZ", "KREISE", "GEMEIN"]
+REGIO_AND_GENESIS_AGS_CODES = ["DLAND", "DLANDU", "REGBEZ", "KREISE", "GEMEIN"]
 
 logger = logging.getLogger(__name__)
 config = ConfigParser(interpolation=None)

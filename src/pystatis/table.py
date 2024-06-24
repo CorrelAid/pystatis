@@ -60,22 +60,27 @@ class Table:
                 to which the selection using `regionalkey` is to be applied.
                 Accepts 1-6 characters.
                 Possible values:
-                - Regionalstatistik (only for tables ending with "B"):
+                - Regionalstatistik (only for tables ending with "B", see /catalogue/variables):
                     - "DG" (Deutschland, 1) -> will not return extra column
                     - "DLAND" (Bundesländer, 16)
                     - "REGBEZ" (Regierungsbezirke, 44)
                     - "KREISE" (Kreise und kreisfreie Städte, 489)
                     - "GEMEIN" (Gemeinden, 13564)
-                - Zensusdatenbank (for all tables):
+                - Zensusdatenbank (for all tables, see /catalogue/variables):
                     - "GEODL1" (Deutschland, 1) -> will not return extra column
                     - "GEODL3" (Deutschland, 1) -> will not return extra column
                     - "GEOBL1" (Bundesländer, 16)
                     - "GEOBL3" (Bundesländer, 16)
-                    - "GEOGM1" (Gemeinden, 13564)
-                    - "GEOGM2" (Gemeinden mit min. 10_000 Einwohnern)
-                    - "GEOGM3" (Gemeinden mit min. 10_000 Einwohnern)
-                    - "GEOLK1" (Landkreise und kreisfreie Städte, 401)
-                    - "GEOLK3" (Landkreise und kreisfreie Städte, 401)
+                    - "GEOGM1" (Gemeinden, 11340)
+                    - "GEOGM2" (Gemeinden mit min. 10_000 Einwohnern, 1574)
+                    - "GEOGM3" (Gemeinden mit min. 10_000 Einwohnern, 1574)
+                    - "GEOLK1" (Landkreise und kreisfreie Städte, 412)
+                    - "GEOLK3" (Landkreise und kreisfreie Städte, 412)
+                    - "GEORB1" (Regierungsbezirke/Statistische Regionen, 36)
+                    - "GEORB3" (Regierungsbezirke/Statistische Regionen, 36)
+                    - "GEOVB1" (Gemeindeverbände, 1333)
+                    - "GEOVB2" (Gemeindeverbände mit mindestens 10 000 Einwohnern, 338)
+                    - "GEOVB3" (Gemeindeverbände mit mindestens 10 000 Einwohnern, 157)
             regionalkey (str, optional): Official municipality key (AGS).
                 Multiple values can be passed as a comma-separated list.
                 Accepts 1-12 characters. "*" can be used as wildcard.

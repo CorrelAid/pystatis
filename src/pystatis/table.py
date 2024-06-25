@@ -9,7 +9,6 @@ import pandas as pd
 
 from pystatis import config, db
 from pystatis.config import LANG_TO_COL_MAPPING
-from pystatis.exception import QueryParameterError
 from pystatis.http_helper import load_data
 
 
@@ -110,10 +109,6 @@ class Table:
 
         db_matches = db.identify_db_matches(self.name)
         db_name = db.select_db_by_credentials(db_matches)
-        if db_name == "regio" and language != "de":
-            raise QueryParameterError(f"Language '{language}' is not supported for Regionalstatistik, only 'de'.")
-        elif language not in ["de", "en"]:
-            raise QueryParameterError(f"Language '{language}' is not supported. Please choose from: ['de', 'en'].")
 
         raw_data_bytes = load_data(endpoint="data", method="tablefile", params=params, db_name=db_name)
         assert isinstance(raw_data_bytes, bytes)  # nosec assert_used

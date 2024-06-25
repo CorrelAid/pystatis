@@ -41,6 +41,7 @@ class Table:
         stand: str = "",
         language: str = "de",
         quality: bool = False,
+        use_multiheader: bool = False,
     ):
         """Downloads raw data and metadata from GENESIS-Online.
 
@@ -103,7 +104,7 @@ class Table:
         self.data = pd.read_csv(data_buffer, sep=";", decimal=decimal, na_values=["...", ".", "-", "/", "x"])
 
         if prettify:
-            self.data = self.prettify_table(self.data, db.identify_db(self.name)[0])
+            self.data = self.prettify_table(self.data, db.identify_db(self.name)[0], use_multiheader=use_multiheader)
 
         metadata = load_data(endpoint="metadata", method="table", params=params)
         metadata = json.loads(metadata)
@@ -112,12 +113,13 @@ class Table:
         self.metadata = metadata
 
     @staticmethod
-    def prettify_table(data: pd.DataFrame, db_name: str) -> pd.DataFrame:
+    def prettify_table(data: pd.DataFrame, db_name: str, use_multiheader: bool = False) -> pd.DataFrame:
         """Reformat the data into a more readable table
 
         Args:
             data (pd.DataFrame): A pandas dataframe created from raw_data
             db_name (str): The name of the database.
+            use_multiheader (bool, optional): If True, column names are reshaped as a multiheader.
 
         Returns:
             pd.DataFrame: Formatted dataframe that omits all unnecessary Code columns
@@ -125,18 +127,18 @@ class Table:
         """
         match db_name:
             case "genesis":
-                pretty_data = Table.parse_genesis_table(data)
+                pretty_data = Table.parse_genesis_table(data, use_multiheader)
             case "zensus":
-                pretty_data = Table.parse_zensus_table(data)
+                pretty_data = Table.parse_zensus_table(data, use_multiheader)
             case "regio":
-                pretty_data = Table.parse_regio_table(data)
+                pretty_data = Table.parse_regio_table(data, use_multiheader)
             case _:
                 pretty_data = data
 
         return pretty_data
 
     @staticmethod
-    def parse_genesis_table(data: pd.DataFrame) -> pd.DataFrame:
+    def parse_genesis_table(data: pd.DataFrame, use_multiheader: bool = False) -> pd.DataFrame:
         """Parse GENESIS table ffcsv format into a more readable format"""
         # Extracts time column with name from first element of Zeit_Label column
         time = pd.DataFrame({data["Zeit_Label"].iloc[0]: data["Zeit"]})
@@ -149,15 +151,36 @@ class Table:
         # Selects all columns containing the values
         values = data.filter(like="__")
 
+        if use_multiheader:
+            # Extracts the information from the column names iteratively
+            val_multiheader = []
+            for name in values.columns:
+                # Splits the column name by "__" to create a list of parts
+                parts = name.split("__")
+                # Ensures there are exactly three parts
+                while len(parts) < 3:
+                    parts.append("")
+                val_multiheader.append(tuple(parts))
+            # Adds columns from "time" and "attributes" on level 1
+            time_multiheader = [("", col, "") for col in time.columns]
+            attr_multiheader = [("", col, "") for col in attributes.columns]
+            # Combines the multiheaders
+            multiheader = time_multiheader + attr_multiheader + val_multiheader
+
         # Given a name like BEV036__Bevoelkerung_in_Hauptwohnsitzhaushalten__1000
         # extracts the label and the unit and omit the code
         values.columns = [name.split("__", maxsplit=1)[1] for name in values.columns]
 
         pretty_data = pd.concat([time, attributes, values], axis=1)
+
+        if use_multiheader:
+            # Applies the new multiheader to the concatenated DataFrame
+            pretty_data.columns = pd.MultiIndex.from_tuples(multiheader)
+
         return pretty_data
 
     @staticmethod
-    def parse_zensus_table(data: pd.DataFrame) -> pd.DataFrame:
+    def parse_zensus_table(data: pd.DataFrame, use_multiheader: bool = False) -> pd.DataFrame:
         """Parse Zensus table ffcsv format into a more readable format"""
         # add the unit to the column names for the value columns
         data["value_variable_label"] = data["value_variable_label"].str.cat(data["value_unit"], sep="__")
@@ -179,10 +202,23 @@ class Table:
 
         pretty_data = pd.concat([time, attributes, pivot_table[value_columns]], axis=1)
 
+        if use_multiheader:
+            # Extracts the information from the column names iteratively
+            multiheader = []
+            for name in pretty_data.columns:
+                # Splits the column name by "__" to create a list of parts
+                parts = name.split("__")
+                # Ensures there are exactly two parts
+                while len(parts) < 2:
+                    parts.append("")
+                multiheader.append(tuple(parts))
+            # Applies the new multiheader to the concatenated DataFrame
+            pretty_data.columns = pd.MultiIndex.from_tuples(multiheader)
+
         return pretty_data
 
     @staticmethod
-    def parse_regio_table(data: pd.DataFrame) -> pd.DataFrame:
+    def parse_regio_table(data: pd.DataFrame, use_multiheader: bool = False) -> pd.DataFrame:
         """Parse Regionalstatistik table ffcsv format into a more readable format"""
         # Extracts time column with name from first element of Zeit_Label column
         time = pd.DataFrame({data["Zeit_Label"].iloc[0]: data["Zeit"]})
@@ -195,9 +231,30 @@ class Table:
         # Selects all columns containing the values
         values = data.filter(like="__")
 
+        if use_multiheader:
+            # Extracts the information from the column names iteratively
+            val_multiheader = []
+            for name in values.columns:
+                # Splits the column name by "__" to create a list of parts
+                parts = name.split("__")
+                # Ensures there are exactly three parts
+                while len(parts) < 3:
+                    parts.append("")
+                val_multiheader.append(tuple(parts))
+            # Adds columns from "time" and "attributes" on level 1
+            time_multiheader = [("", col, "") for col in time.columns]
+            attr_multiheader = [("", col, "") for col in attributes.columns]
+            # Combines the multiheaders
+            multiheader = time_multiheader + attr_multiheader + val_multiheader
+
         # Given a name like BEV036__Bevoelkerung_in_Hauptwohnsitzhaushalten__1000
         # extracts the label and the unit and omit the code
         values.columns = [name.split("__", maxsplit=1)[1] for name in values.columns]
 
         pretty_data = pd.concat([time, attributes, values], axis=1)
+
+        if use_multiheader:
+            # Applies the new multiheader to the concatenated DataFrame
+            pretty_data.columns = pd.MultiIndex.from_tuples(multiheader)
+
         return pretty_data

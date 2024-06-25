@@ -6,7 +6,7 @@ from io import StringIO
 
 import pandas as pd
 
-from pystatis import config, db
+from pystatis import db
 from pystatis.http_helper import load_data
 
 
@@ -25,33 +25,6 @@ class Table:
         self.raw_data = ""
         self.data = pd.DataFrame()
         self.metadata: dict = {}
-        # special values mapping
-        self.mapping_de = {
-            "0": "weniger als die Hälfte von 1 in der letzten besetzten Stelle, jedoch mehr als nichts",
-            "-": "nichts vorhanden",
-            "...": "Angabe fällt später an",
-            "/": "keine Angaben, da Zahlenwert nicht sicher genug",
-            ".": "Zahlenwert unbekannt oder geheimzuhalten",
-            "x": "Tabellenfach gesperrt, weil Aussage nicht sinnvoll",
-            "()": "Aussagewert eingeschränkt, da der Zahlenwert statistisch relativ unsicher ist",
-            "p": "vorläufige Zahl",
-            "r": "berichtigte Zahl",
-            "s": "geschätzte Zahl",
-            "e": "endgültige Zahl",
-        }
-        self.mapping_en = {
-            "0": "less than half of 1 in the last occupied place, but more than nothing",
-            "-": "not available",
-            "...": "information will be available later",
-            "/": "no information because the numerical value is not certain enough",
-            ".": "numerical value unknown or to be kept secret",
-            "x": "table compartment locked because statement is not meaningful",
-            "()": "statement value restricted because the numerical value is statistically relatively uncertain",
-            "p": "preliminary number",
-            "r": "corrected number",
-            "s": "estimated number",
-            "e": "final number",
-        }
 
     # pylint: disable=too-many-arguments
     # pylint: disable=too-many-locals
@@ -94,6 +67,10 @@ class Table:
                 "tt.mm.jjjj hh:mm" or "tt.mm.jjjj". Example: "24.12.2001 19:15".
             language (str, optional): Messages and data descriptions are supplied in this language.
             quality (bool, optional): If True, Value-adding quality labels are issued.
+                The explanation of the quality labels can be found online after retrieving the table values,
+                table -> explanation of symbols or at e.g.
+                https://www-genesis.destatis.de/genesis/online?operation=ergebnistabelleQualitaet&language=en&levelindex=3&levelid=1719342760835#abreadcrumb.
+            use_multiheader (bool, optional): If True, column names are reshaped as a multiheader.
         """
         params = {
             "name": self.name,
@@ -107,8 +84,8 @@ class Table:
             "language": language,
             "format": "ffcsv",
         }
-        # add backwards compatibility for quality parameter (mainly for test cassettes)
-        params["quality"] = "on" if quality else False
+        # keep quality parameter as bool but internally use required "on" or "off"
+        params["quality"] = "on" if quality else "off"
 
         raw_data_bytes = load_data(endpoint="data", method="tablefile", params=params)
         assert isinstance(raw_data_bytes, bytes)  # nosec assert_used
@@ -122,35 +99,8 @@ class Table:
         raw_data_str = raw_data_header + "".join(line for line in raw_data_lines[1:] if line[:4].isdigit())
         data_buffer = StringIO(raw_data_str)
         # let pandas handle automatic type conversion and only handle edge case columns with known leading zeros
-        leading_zeros_cols = config.ZENSUS_AGS_CODES + config.REGIO_AGS_CODES
-        leading_zeros_dict = {key: "str" for key in leading_zeros_cols}
-        self.data = pd.read_csv(data_buffer, sep=";", dtype=leading_zeros_dict, na_values=["...", ".", "-", "/", "x"])
-
-        # mapping of special values to their meaning
-        if language == "de":
-            mapping = self.mapping_de
-        elif language == "en":
-            mapping = self.mapping_en
-        else:
-            # TODO: is this required? error should probably already be triggered by the http_helper/ request
-            raise ValueError(f"Language {language} is not supported.")
-
-        # Add a quality column for each column in the data frame if the column contains special values
-        for column in self.data.columns:
-            # try to convert data to numeric type
-            try:
-                self.data[column] = pd.to_numeric(self.data[column], errors="ignore")
-            except ValueError:
-                # try German decimal separator
-                try:
-                    self.data[column] = self.data[column].str.replace(",", ".").astype(float)
-                except ValueError:
-                    pass
-
-            if column.endswith("__q"):
-                # replace the special values with their meaning (? up for discussion)
-                self.data[column] = self.data[column].astype(str)
-                self.data[column].replace(mapping, inplace=True)
+        decimal = "," if language == "de" else "."
+        self.data = pd.read_csv(data_buffer, sep=";", decimal=decimal, na_values=["...", ".", "-", "/", "x"])
 
         if prettify:
             self.data = self.prettify_table(self.data, db.identify_db(self.name)[0])

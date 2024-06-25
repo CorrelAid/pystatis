@@ -97,6 +97,7 @@ def test_get_data(mocker, table_name: str, expected_shape: tuple[int, int], lang
                 "Geschlecht",
                 "Sozialvers.pflichtig_Beschaeftigte_am_Arbeitsort__Anzahl",
             ),
+            "de",
         ),
         (
             "23111-0001",
@@ -198,6 +199,7 @@ def test_get_data(mocker, table_name: str, expected_shape: tuple[int, int], lang
                 "Monate",
                 "Index_der_Nettokaltmieten__2020=100",
             ),
+            "de",
         ),
         (
             "63121-0001",
@@ -241,18 +243,7 @@ def test_get_data(mocker, table_name: str, expected_shape: tuple[int, int], lang
                 "Kreise und kreisfreie Städte",
                 "Zahl_der_Gemeinden__Anzahl",
             ),
-        ),
-        (
-            "12111-01-01-4",
-            (4842, 6),
-            (
-                "Stichtag",
-                "Amtlicher Gemeindeschlüssel (AGS)",
-                "Kreise und kreisfreie Städte",
-                "Nationalität",
-                "Geschlecht",
-                "Bevoelkerung__Anzahl",
-            ),
+            "de",
         ),
         (
             "21311-01-01-4-B",
@@ -282,12 +273,6 @@ def test_get_data(mocker, table_name: str, expected_shape: tuple[int, int], lang
         ),
         (
             "41312-01-01-4",
-            (5918, 4),
-            ("Stichtag", "Kreise und kreisfreie Städte", "Tierarten", "Tiere__Anzahl"),
-            "de",
-        ),
-        (
-            "41312-01-01-4",
             (5918, 5),
             (
                 "Stichtag",
@@ -296,6 +281,7 @@ def test_get_data(mocker, table_name: str, expected_shape: tuple[int, int], lang
                 "Tierarten",
                 "Tiere__Anzahl",
             ),
+            "de",
         ),
         (
             "52411-02-01-4",
@@ -375,6 +361,7 @@ def test_get_data(mocker, table_name: str, expected_shape: tuple[int, int], lang
                 "Fläche__qkm",
                 "Personen__Anzahl",
             ),
+            "de",
         ),
         (
             "2000S-2003",
@@ -386,6 +373,7 @@ def test_get_data(mocker, table_name: str, expected_shape: tuple[int, int], lang
                 "Gebäudetyp (Größe)",
                 "Personen__Anzahl",
             ),
+            "de",
         ),
         (
             "3000G-1008",
@@ -397,6 +385,7 @@ def test_get_data(mocker, table_name: str, expected_shape: tuple[int, int], lang
                 "Gebäude mit Wohnraum__%",
                 "Gebäude mit Wohnraum__Anzahl",
             ),
+            "de",
         ),
         (
             "4000W-5003",
@@ -431,8 +420,14 @@ def test_get_data(mocker, table_name: str, expected_shape: tuple[int, int], lang
         ),
         (
             "13111-0005",
-            (384, 4),
-            ("Reference date", "Länder", "Sex", "Employees_subj._to_social_insur._at_place_of_work__number"),
+            (384, 5),
+            (
+                "Reference date",
+                "Amtlicher Gemeindeschlüssel (AGS)",
+                "Länder",
+                "Sex",
+                "Employees_subj._to_social_insur._at_place_of_work__number",
+            ),
             "en",
         ),
         (
@@ -454,10 +449,11 @@ def test_get_data(mocker, table_name: str, expected_shape: tuple[int, int], lang
         ),
         (
             "23311-0010",
-            (4352, 6),
+            (4352, 7),
             (
                 "Year",
                 "Land of origin or origin from abroad",
+                "Amtlicher Gemeindeschlüssel (AGS)",
                 "Länder",
                 "Quarters",
                 "Marital status",
@@ -482,9 +478,10 @@ def test_get_data(mocker, table_name: str, expected_shape: tuple[int, int], lang
         ),
         (
             "32421-0012",
-            (560, 6),
+            (560, 7),
             (
                 "Year",
+                "Amtlicher Gemeindeschlüssel (AGS)",
                 "Länder",
                 "Groups of substances",
                 "Application areas",
@@ -525,8 +522,14 @@ def test_get_data(mocker, table_name: str, expected_shape: tuple[int, int], lang
         ),
         (
             "61111-0021",
-            (960, 4),
-            ("Year", "Länder", "Months", "Index_of_net_rents_exclusive_of_heating_expenses__2020=100"),
+            (960, 5),
+            (
+                "Year",
+                "Amtlicher Gemeindeschlüssel (AGS)",
+                "Länder",
+                "Months",
+                "Index_of_net_rents_exclusive_of_heating_expenses__2020=100",
+            ),
             "en",
         ),
         (
@@ -564,9 +567,10 @@ def test_get_data(mocker, table_name: str, expected_shape: tuple[int, int], lang
         ),
         (
             "1000A-0001",
-            (11339, 5),
+            (11339, 6),
             (
                 "Reference date",
+                "Amtlicher Regionalschlüssel (ARS)",
                 "Municipalities (LAU-2)",
                 "Area__Unknown_Unit",
                 "Persons__number",

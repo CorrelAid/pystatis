@@ -145,6 +145,8 @@ class Results:
                         f"{'-' * 40}",
                     ]
                 )
+            else:
+                output = ""
 
             print(output)
 

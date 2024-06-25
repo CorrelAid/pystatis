@@ -4,9 +4,10 @@ import json
 import re
 from io import StringIO
 
+import numpy as np
 import pandas as pd
 
-from pystatis import db
+from pystatis import config, db
 from pystatis.config import LANG_TO_COL_MAPPING
 from pystatis.exception import QueryParameterError
 from pystatis.http_helper import load_data
@@ -59,13 +60,35 @@ class Table:
                 Accepts values between "1900" and "2100".
             timeslices (str, optional): Number of time slices to be returned.
                 This parameter is cumulative to `startyear` and `endyear`.
-            regionalvariable (str, optional): "code" der Regionalklassifikation (RKMerkmal),
-                auf die die Auswahl mittels `regionalkey` angewendet werden soll.
+            regionalvariable (str, optional): "code" of the regional classification (RKMerkmal),
+                to which the selection using `regionalkey` is to be applied.
                 Accepts 1-6 characters.
-            regionalkey (str, optional): Übergabe des Amtlichen Gemeindeschlüssel (AGS).
+                Possible values:
+                - Regionalstatistik (only for tables ending with "B", see /catalogue/variables):
+                    - "DG" (Deutschland, 1) -> will not return extra column
+                    - "DLAND" (Bundesländer, 16)
+                    - "REGBEZ" (Regierungsbezirke, 44)
+                    - "KREISE" (Kreise und kreisfreie Städte, 489)
+                    - "GEMEIN" (Gemeinden, 13564)
+                - Zensusdatenbank (for all tables, see /catalogue/variables):
+                    - "GEODL1" (Deutschland, 1) -> will not return extra column
+                    - "GEODL3" (Deutschland, 1) -> will not return extra column
+                    - "GEOBL1" (Bundesländer, 16)
+                    - "GEOBL3" (Bundesländer, 16)
+                    - "GEOGM1" (Gemeinden, 11340)
+                    - "GEOGM2" (Gemeinden mit min. 10_000 Einwohnern, 1574)
+                    - "GEOGM3" (Gemeinden mit min. 10_000 Einwohnern, 1574)
+                    - "GEOLK1" (Landkreise und kreisfreie Städte, 412)
+                    - "GEOLK3" (Landkreise und kreisfreie Städte, 412)
+                    - "GEORB1" (Regierungsbezirke/Statistische Regionen, 36)
+                    - "GEORB3" (Regierungsbezirke/Statistische Regionen, 36)
+                    - "GEOVB1" (Gemeindeverbände, 1333)
+                    - "GEOVB2" (Gemeindeverbände mit mindestens 10 000 Einwohnern, 338)
+                    - "GEOVB3" (Gemeindeverbände mit mindestens 10 000 Einwohnern, 157)
+            regionalkey (str, optional): Official municipality key (AGS).
                 Multiple values can be passed as a comma-separated list.
-                Accepts 1-8 characters. "*" can be used as wildcard.
-            stand (str, optional): Provides table only if it is newer.
+                Accepts 1-12 characters. "*" can be used as wildcard.
+            stand (str, optional): Only download the table if it is newer than the status date.
                 "tt.mm.jjjj hh:mm" or "tt.mm.jjjj". Example: "24.12.2001 19:15".
             language (str, optional): Messages and data descriptions are supplied in this language.
                 For GENESIS and Zensus, ['de', 'en'] are supported. For Regionalstatistik, only 'de' is supported.
@@ -162,6 +185,14 @@ class Table:
         # Extracts time column with name from last element of Zeit_Label column
         time = pd.DataFrame({data[time_label_col].iloc[-1]: data[time_col]})
 
+        # Some tables of Genesis can have a regional code (AGS) as first attribute
+        ags_code = None
+        pos_of_ags_col = np.where(data.iloc[0].isin(config.REGIO_AND_GENESIS_AGS_CODES))[0]
+        if pos_of_ags_col.size > 0:
+            pos_of_ags_col = pos_of_ags_col[0]
+            label = "Amtlicher Gemeindeschlüssel (AGS)"  # en: official municipality code (AGS)
+            ags_code = pd.Series(data=data.iloc[:, pos_of_ags_col + 2], name=label)
+
         # Extracts new column names from last values of the variable label columns
         # and assigns these to the relevant attribute columns (variable level)
         attributes = data.filter(like=value_label_col)
@@ -175,6 +206,12 @@ class Table:
         values.columns = [re.split(r"_{2,}", name, maxsplit=1)[1] for name in values.columns]
 
         pretty_data = pd.concat([time, attributes, values], axis=1).dropna(axis=0, how="all")
+        if ags_code is not None:
+            # Genesis has always the same time attribute as first column,
+            # and each attribute always has 4 columns so pos_of_ags_col // 4
+            # adjusts the original counter to the shorter column list of pretty_data
+            pretty_data.insert(loc=pos_of_ags_col // 4, column=ags_code.name, value=ags_code)
+
         return pretty_data
 
     @staticmethod
@@ -206,10 +243,22 @@ class Table:
         time_label = data[time_label_col].iloc[0]
         time = pd.DataFrame({time_label: pivot_table[time_col]})
 
+        ags_code = None
+        pos_of_ags_col = np.where(data.iloc[0].isin(config.ZENSUS_AGS_CODES))[0]
+        if pos_of_ags_col.size > 0:
+            pos_of_ags_col = pos_of_ags_col[0]
+            label = "Amtlicher Regionalschlüssel (ARS)"  # en: official municipality code (AGS)
+            ags_code = pd.Series(data=data.iloc[:, pos_of_ags_col + 2], name=label)
+
         attributes = pivot_table.filter(regex=r"\d+_" + variable_attribute_label_col)
         attributes.columns = pivot_table.filter(regex=r"\d+_" + variable_label_col).iloc[0].tolist()
 
         pretty_data = pd.concat([time, attributes, pivot_table[value_columns]], axis=1)
+        if ags_code is not None:
+            # Genesis has always the same time attribute as first column, and
+            # each attribute always has 4 columns so pos_of_ags_col // 4
+            # adjusts the original counter to the shorter column list of pretty_data
+            pretty_data.insert(loc=pos_of_ags_col // 4, column=ags_code.name, value=ags_code)
 
         return pretty_data
 
@@ -226,6 +275,14 @@ class Table:
         # Extracts time column with name from last element of Zeit_Label column
         time = pd.DataFrame({data[time_label_col].iloc[-1]: data[time_col]})
 
+        # All tables of Regionalstatistik have a regional code (AGS) as first attribute
+        ags_code = None
+        pos_of_ags_col = np.where(data.iloc[0].isin(config.REGIO_AND_GENESIS_AGS_CODES))[0]
+        if pos_of_ags_col.size > 0:
+            pos_of_ags_col = pos_of_ags_col[0]
+            label = "Amtlicher Gemeindeschlüssel (AGS)"  # en: official municipality code (AGS)
+            ags_code = pd.Series(data=data.iloc[:, pos_of_ags_col + 2], name=label)
+
         # Extracts new column names from first values of the variable_label columns
         # and assigns these to the relevant attribute columns (value_label)
         attributes = data.filter(like=value_label_col)
@@ -239,4 +296,10 @@ class Table:
         values.columns = [re.split(r"_{2,}", name, maxsplit=1)[1] for name in values.columns]
 
         pretty_data = pd.concat([time, attributes, values], axis=1)
+        if ags_code is not None:
+            # Genesis has always the same time attribute as first column, and
+            # each attribute always has 4 columns so pos_of_ags_col // 4
+            # adjusts the original counter to the shorter column list of pretty_data
+            pretty_data.insert(loc=pos_of_ags_col // 4, column=ags_code.name, value=ags_code)
+
         return pretty_data

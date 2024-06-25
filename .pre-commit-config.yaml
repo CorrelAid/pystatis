@@ -44,3 +44,9 @@ repos:
           ]
         language_version: python3
         additional_dependencies: [myst-parser]
+  - repo: https://github.com/Lucas-C/pre-commit-hooks-safety
+    rev: v1.3.3
+    hooks:
+      - id: python-safety-dependencies-check
+        files: pyproject.toml
+        args: ["--short-report", "--policy-file=.safety-policy-v2.yml"]

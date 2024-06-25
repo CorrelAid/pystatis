@@ -1,0 +1,36 @@
+name: Release to PyPI
+
+on:
+  # trigger the workflow on release publish or manually dispatch from the Actions tab
+  release:
+    types:
+      - published
+
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["${{ vars.PYTHON_VERSION }}"]
+        poetry-version: ["${{ vars.POETRY_VERSION }}"]
+        os: [ubuntu-latest]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run poetry image
+        uses: abatilo/actions-poetry@v3.0.0
+        with:
+          poetry-version: ${{ vars.POETRY_VERSION }}
+      - name: Publish to PyPI and build before
+        env:
+          PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
+        run: |
+          poetry config pypi-token.pypi $PYPI_TOKEN
+          poetry publish --build

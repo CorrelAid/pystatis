@@ -1,6 +1,7 @@
 """Module contains business logic related to destatis tables."""
 
 import json
+import re
 from io import StringIO
 
 import numpy as np
@@ -139,20 +140,20 @@ class Table:
             and includes informative columns names
         """
         match db_name:
-            case "genesis":
-                pretty_data = Table.parse_genesis_table(data)
+            case "genesis" | "regio":
+                pretty_data = Table.parse_genesis_and_regio_table(data)
             case "zensus":
                 pretty_data = Table.parse_zensus_table(data)
-            case "regio":
-                pretty_data = Table.parse_regio_table(data)
             case _:
                 pretty_data = data
 
         return pretty_data
 
     @staticmethod
-    def parse_genesis_table(data: pd.DataFrame) -> pd.DataFrame:
-        """Parse GENESIS table ffcsv format into a more readable format"""
+    def parse_genesis_and_regio_table(data: pd.DataFrame) -> pd.DataFrame:
+        """
+        Parse ffcsv format for tables from GENESIS and Regionalstatistik into a more readable format
+        """
         # Extracts time column with name from first element of Zeit_Label column
         time = pd.DataFrame({data["Zeit_Label"].iloc[0]: data["Zeit"]})
 
@@ -174,7 +175,7 @@ class Table:
 
         # Given a name like BEV036__Bevoelkerung_in_Hauptwohnsitzhaushalten__1000
         # extracts the label and the unit and omit the code
-        values.columns = [name.split("__", maxsplit=1)[1] for name in values.columns]
+        values.columns = [re.split(r"_{2,}", name, maxsplit=1)[1] for name in values.columns]
 
         pretty_data = pd.concat([time, attributes, values], axis=1)
         if ags_code is not None:
@@ -210,41 +211,6 @@ class Table:
         attributes.columns = pivot_table.filter(regex=r"\d+_variable_label").iloc[0].tolist()
 
         pretty_data = pd.concat([time, attributes, pivot_table[value_columns]], axis=1)
-        if ags_code is not None:
-            # Genesis has always the same time attribute as first column, and
-            # each attribute always has 4 columns so pos_of_ags_col // 4
-            # adjusts the original counter to the shorter column list of pretty_data
-            pretty_data.insert(loc=pos_of_ags_col // 4, column=ags_code.name, value=ags_code)
-
-        return pretty_data
-
-    @staticmethod
-    def parse_regio_table(data: pd.DataFrame) -> pd.DataFrame:
-        """Parse Regionalstatistik table ffcsv format into a more readable format"""
-        # Extracts time column with name from first element of Zeit_Label column
-        time = pd.DataFrame({data["Zeit_Label"].iloc[0]: data["Zeit"]})
-
-        # All tables of Regionalstatistik have a regional code (AGS) as first attribute
-        ags_code = None
-        pos_of_ags_col = np.where(data.iloc[0].isin(config.REGIO_AND_GENESIS_AGS_CODES))[0]
-        if pos_of_ags_col.size > 0:
-            pos_of_ags_col = pos_of_ags_col[0]
-            label = "Amtlicher Gemeindeschlüssel (AGS)"  # en: official municipality code (AGS)
-            ags_code = pd.Series(data=data.iloc[:, pos_of_ags_col + 2], name=label)
-
-        # Extracts new column names from first values of the Merkmal_Label columns
-        # and assigns these to the relevant attribute columns (Auspraegung_Label)
-        attributes = data.filter(like="Auspraegung_Label")
-        attributes.columns = data.filter(like="Merkmal_Label").iloc[0].tolist()
-
-        # Selects all columns containing the values
-        values = data.filter(like="__")
-
-        # Given a name like BEV036__Bevoelkerung_in_Hauptwohnsitzhaushalten__1000
-        # extracts the label and the unit and omit the code
-        values.columns = [name.split("__", maxsplit=1)[1] for name in values.columns]
-
-        pretty_data = pd.concat([time, attributes, values], axis=1)
         if ags_code is not None:
             # Genesis has always the same time attribute as first column, and
             # each attribute always has 4 columns so pos_of_ags_col // 4

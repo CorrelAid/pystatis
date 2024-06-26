@@ -200,18 +200,22 @@ class Table:
         # add the unit to the column names for the value columns
         data["value_variable_label"] = data["value_variable_label"].str.cat(data["value_unit"], sep="__")
 
+        # quality columns are not yet supported for Zensus tables
         if "value_q" in data.columns:
             data = data.drop(columns=["value_q"])
             warnings.warn("Quality columns are not supported for Zensus tables.", UserWarning)
 
+        # pivot the table to get the values in one column per value_variable_label
         pivot_table = data.pivot(index=data.columns[:-4].to_list(), columns="value_variable_label", values="value")
         value_columns = pivot_table.columns.to_list()
         pivot_table.reset_index(inplace=True)
         pivot_table.columns.name = None
 
+        # extract time column with name from first element of time_label column and try to convert it to datetime
         time_label = data["time_label"].iloc[0]
         time = pd.DataFrame({time_label: pivot_table["time"]})
 
+        # Some tables of Zensus can have a regional code (AGS) as first attribute
         ags_code = None
         pos_of_ags_col = np.where(data.iloc[0].isin(config.ZENSUS_AGS_CODES))[0]
         if pos_of_ags_col.size > 0:

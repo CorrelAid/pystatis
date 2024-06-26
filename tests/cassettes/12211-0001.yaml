@@ -166,4 +166,338 @@ interactions:
     status:
       code: 200
       message: '200'
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=12211-0001&quality=off
+  response:
+    body:
+      string: "Statistik_Code;Statistik_Label;Zeit_Code;Zeit_Label;Zeit;1_Merkmal_Code;1_Merkmal_Label;1_Auspraegung_Code;1_Auspraegung_Label;2_Merkmal_Code;2_Merkmal_Label;2_Auspraegung_Code;2_Auspraegung_Label;3_Merkmal_Code;3_Merkmal_Label;3_Auspraegung_Code;3_Auspraegung_Label;BEV036__Bevoelkerung_in_Hauptwohnsitzhaushalten__1000;ERW041__Erwerbstaetige_aus_Hauptwohnsitzhaushalten__1000;ERW042__Erwerbslose_aus_Hauptwohnsitzhaushalten__1000;ERW040__Erwerbspersonen_aus_Hauptwohnsitzhaushalten__1000;ERW043__Nichterwerbspersonen_aus_Hauptwohnsitzhaushalten__1000\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESM;m\xE4nnlich;ALT068;Altersgruppen;ALT000B15;unter
+        15 Jahre;6174;x;x;x;6174\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESM;m\xE4nnlich;ALT068;Altersgruppen;ALT015B20;15
+        bis unter 20 Jahre;2065;608;59;667;1397\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESM;m\xE4nnlich;ALT068;Altersgruppen;ALT020B25;20
+        bis unter 25 Jahre;2322;1676;105;1780;541\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESM;m\xE4nnlich;ALT068;Altersgruppen;ALT025B30;25
+        bis unter 30 Jahre;2585;2209;96;2305;280\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESM;m\xE4nnlich;ALT068;Altersgruppen;ALT030B35;30
+        bis unter 35 Jahre;2896;2605;93;2698;198\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESM;m\xE4nnlich;ALT068;Altersgruppen;ALT035B40;35
+        bis unter 40 Jahre;2800;2531;86;2617;183\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESM;m\xE4nnlich;ALT068;Altersgruppen;ALT040B45;40
+        bis unter 45 Jahre;2707;2463;69;2532;175\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESM;m\xE4nnlich;ALT068;Altersgruppen;ALT045B50;45
+        bis unter 50 Jahre;2433;2198;61;2259;174\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESM;m\xE4nnlich;ALT068;Altersgruppen;ALT050B55;50
+        bis unter 55 Jahre;2876;2577;62;2639;237\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESM;m\xE4nnlich;ALT068;Altersgruppen;ALT055B60;55
+        bis unter 60 Jahre;3405;2953;65;3018;387\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESM;m\xE4nnlich;ALT068;Altersgruppen;ALT060B65;60
+        bis unter 65 Jahre;3075;2134;63;2197;878\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESM;m\xE4nnlich;ALT068;Altersgruppen;ALT065B70;65
+        bis unter 70 Jahre;2436;583;9;592;1844\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESM;m\xE4nnlich;ALT068;Altersgruppen;ALT070B75;70
+        bis unter 75 Jahre;2014;242;/;243;1771\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESM;m\xE4nnlich;ALT068;Altersgruppen;ALT075UM;75
+        Jahre und mehr;3639;131;/;132;3507\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESM;m\xE4nnlich;ALT068;Altersgruppen;;Insgesamt;41427;22909;773;23682;17745\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESW;weiblich;ALT068;Altersgruppen;ALT000B15;unter
+        15 Jahre;5845;x;x;x;5845\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESW;weiblich;ALT068;Altersgruppen;ALT015B20;15
+        bis unter 20 Jahre;1922;511;44;556;1367\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESW;weiblich;ALT068;Altersgruppen;ALT020B25;20
+        bis unter 25 Jahre;2165;1474;74;1548;617\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESW;weiblich;ALT068;Altersgruppen;ALT025B30;25
+        bis unter 30 Jahre;2379;1876;73;1949;430\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESW;weiblich;ALT068;Altersgruppen;ALT030B35;30
+        bis unter 35 Jahre;2742;2151;74;2225;518\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESW;weiblich;ALT068;Altersgruppen;ALT035B40;35
+        bis unter 40 Jahre;2714;2145;67;2212;502\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESW;weiblich;ALT068;Altersgruppen;ALT040B45;40
+        bis unter 45 Jahre;2692;2212;61;2274;418\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESW;weiblich;ALT068;Altersgruppen;ALT045B50;45
+        bis unter 50 Jahre;2460;2079;46;2125;336\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESW;weiblich;ALT068;Altersgruppen;ALT050B55;50
+        bis unter 55 Jahre;2898;2419;45;2464;434\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESW;weiblich;ALT068;Altersgruppen;ALT055B60;55
+        bis unter 60 Jahre;3418;2720;51;2771;647\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESW;weiblich;ALT068;Altersgruppen;ALT060B65;60
+        bis unter 65 Jahre;3170;1949;48;1997;1174\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESW;weiblich;ALT068;Altersgruppen;ALT065B70;65
+        bis unter 70 Jahre;2660;446;/;452;2209\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESW;weiblich;ALT068;Altersgruppen;ALT070B75;70
+        bis unter 75 Jahre;2337;154;/;155;2182\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESW;weiblich;ALT068;Altersgruppen;ALT075UM;75
+        Jahre und mehr;5046;71;/;72;4974\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESW;weiblich;ALT068;Altersgruppen;;Insgesamt;42448;20207;589;20796;21652\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;;Insgesamt;ALT068;Altersgruppen;ALT000B15;unter
+        15 Jahre;12019;x;x;x;12019\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;;Insgesamt;ALT068;Altersgruppen;ALT015B20;15
+        bis unter 20 Jahre;3987;1120;103;1223;2764\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;;Insgesamt;ALT068;Altersgruppen;ALT020B25;20
+        bis unter 25 Jahre;4487;3150;179;3328;1159\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;;Insgesamt;ALT068;Altersgruppen;ALT025B30;25
+        bis unter 30 Jahre;4963;4085;169;4254;710\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;;Insgesamt;ALT068;Altersgruppen;ALT030B35;30
+        bis unter 35 Jahre;5638;4756;167;4923;716\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;;Insgesamt;ALT068;Altersgruppen;ALT035B40;35
+        bis unter 40 Jahre;5513;4676;153;4829;685\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;;Insgesamt;ALT068;Altersgruppen;ALT040B45;40
+        bis unter 45 Jahre;5399;4675;131;4806;593\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;;Insgesamt;ALT068;Altersgruppen;ALT045B50;45
+        bis unter 50 Jahre;4893;4277;107;4384;509\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;;Insgesamt;ALT068;Altersgruppen;ALT050B55;50
+        bis unter 55 Jahre;5774;4996;107;5103;671\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;;Insgesamt;ALT068;Altersgruppen;ALT055B60;55
+        bis unter 60 Jahre;6823;5673;116;5789;1034\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;;Insgesamt;ALT068;Altersgruppen;ALT060B65;60
+        bis unter 65 Jahre;6245;4083;111;4194;2051\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;;Insgesamt;ALT068;Altersgruppen;ALT065B70;65
+        bis unter 70 Jahre;5097;1029;15;1044;4053\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;;Insgesamt;ALT068;Altersgruppen;ALT070B75;70
+        bis unter 75 Jahre;4351;396;/;398;3953\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;;Insgesamt;ALT068;Altersgruppen;ALT075UM;75
+        Jahre und mehr;8685;202;/;204;8481\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;;Insgesamt;ALT068;Altersgruppen;;Insgesamt;83875;43117;1362;44479;39397\n"
+    headers:
+      Connection:
+      - Keep-Alive
+      Content-Disposition:
+      - attachement;filename=12211-0001_flat.csv
+      Content-Type:
+      - text/csv
+      Date:
+      - Wed, 26 Jun 2024 16:34:18 GMT
+      Keep-Alive:
+      - timeout=15, max=100
+      Server:
+      - Apache
+      Transfer-Encoding:
+      - chunked
+    status:
+      code: 200
+      message: '200'
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=12211-0001&quality=off
+  response:
+    body:
+      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"12211-0001\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"12211-0001\",\"Content\":\"Bev\xF6lkerung,
+        Erwerbst\xE4tige, Erwerbslose, Erwerbspersonen, Nichterwerbspersonen aus Hauptwohnsitzhaushalten:
+        Deutschland, Jahre, Geschlecht, Altersgruppen\",\"Time\":{\"From\":\"2020\",\"To\":\"2023\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"12211\",\"Content\":\"Mikrozensus\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Deutschland
+        insgesamt\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"BEV036\",\"Content\":\"Bev\xF6lkerung
+        in Hauptwohnsitzhaushalten\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"ERW041\",\"Content\":\"Erwerbst\xE4tige aus Hauptwohnsitzhaushalten\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"ERW042\",\"Content\":\"Erwerbslose aus Hauptwohnsitzhaushalten\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"ERW040\",\"Content\":\"Erwerbspersonen aus Hauptwohnsitzhaushalten\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"ERW043\",\"Content\":\"Nichterwerbspersonen aus Hauptwohnsitzhaushalten\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Rows\":[{\"Code\":\"GES\",\"Content\":\"Geschlecht\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":[{\"Code\":\"ALT068\",\"Content\":\"Altersgruppen
+        (u15-75m)\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Updated\":\"see parent\"}],\"Subtitel\":{\"Code\":\"JAHR\",\"Content\":\"Jahr\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Structure\":null,\"Updated\":\"see
+        parent\"},\"Subheading\":null},\"Updated\":\"28.12.2022 09:26:09h\"},\"Copyright\":\"\xA9
+        Statistisches Bundesamt (Destatis), 2024\"}"
+    headers:
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '2103'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Wed, 26 Jun 2024 16:34:22 GMT
+      Keep-Alive:
+      - timeout=15, max=100
+      Server:
+      - Apache
+    status:
+      code: 200
+      message: '200'
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=12211-0001
+  response:
+    body:
+      string: "Statistik_Code;Statistik_Label;Zeit_Code;Zeit_Label;Zeit;1_Merkmal_Code;1_Merkmal_Label;1_Auspraegung_Code;1_Auspraegung_Label;2_Merkmal_Code;2_Merkmal_Label;2_Auspraegung_Code;2_Auspraegung_Label;3_Merkmal_Code;3_Merkmal_Label;3_Auspraegung_Code;3_Auspraegung_Label;BEV036__Bevoelkerung_in_Hauptwohnsitzhaushalten__1000;ERW041__Erwerbstaetige_aus_Hauptwohnsitzhaushalten__1000;ERW042__Erwerbslose_aus_Hauptwohnsitzhaushalten__1000;ERW040__Erwerbspersonen_aus_Hauptwohnsitzhaushalten__1000;ERW043__Nichterwerbspersonen_aus_Hauptwohnsitzhaushalten__1000\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESM;m\xE4nnlich;ALT068;Altersgruppen;ALT000B15;unter
+        15 Jahre;6174;x;x;x;6174\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESM;m\xE4nnlich;ALT068;Altersgruppen;ALT015B20;15
+        bis unter 20 Jahre;2065;608;59;667;1397\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESM;m\xE4nnlich;ALT068;Altersgruppen;ALT020B25;20
+        bis unter 25 Jahre;2322;1676;105;1780;541\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESM;m\xE4nnlich;ALT068;Altersgruppen;ALT025B30;25
+        bis unter 30 Jahre;2585;2209;96;2305;280\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESM;m\xE4nnlich;ALT068;Altersgruppen;ALT030B35;30
+        bis unter 35 Jahre;2896;2605;93;2698;198\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESM;m\xE4nnlich;ALT068;Altersgruppen;ALT035B40;35
+        bis unter 40 Jahre;2800;2531;86;2617;183\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESM;m\xE4nnlich;ALT068;Altersgruppen;ALT040B45;40
+        bis unter 45 Jahre;2707;2463;69;2532;175\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESM;m\xE4nnlich;ALT068;Altersgruppen;ALT045B50;45
+        bis unter 50 Jahre;2433;2198;61;2259;174\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESM;m\xE4nnlich;ALT068;Altersgruppen;ALT050B55;50
+        bis unter 55 Jahre;2876;2577;62;2639;237\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESM;m\xE4nnlich;ALT068;Altersgruppen;ALT055B60;55
+        bis unter 60 Jahre;3405;2953;65;3018;387\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESM;m\xE4nnlich;ALT068;Altersgruppen;ALT060B65;60
+        bis unter 65 Jahre;3075;2134;63;2197;878\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESM;m\xE4nnlich;ALT068;Altersgruppen;ALT065B70;65
+        bis unter 70 Jahre;2436;583;9;592;1844\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESM;m\xE4nnlich;ALT068;Altersgruppen;ALT070B75;70
+        bis unter 75 Jahre;2014;242;/;243;1771\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESM;m\xE4nnlich;ALT068;Altersgruppen;ALT075UM;75
+        Jahre und mehr;3639;131;/;132;3507\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESM;m\xE4nnlich;ALT068;Altersgruppen;;Insgesamt;41427;22909;773;23682;17745\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESW;weiblich;ALT068;Altersgruppen;ALT000B15;unter
+        15 Jahre;5845;x;x;x;5845\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESW;weiblich;ALT068;Altersgruppen;ALT015B20;15
+        bis unter 20 Jahre;1922;511;44;556;1367\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESW;weiblich;ALT068;Altersgruppen;ALT020B25;20
+        bis unter 25 Jahre;2165;1474;74;1548;617\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESW;weiblich;ALT068;Altersgruppen;ALT025B30;25
+        bis unter 30 Jahre;2379;1876;73;1949;430\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESW;weiblich;ALT068;Altersgruppen;ALT030B35;30
+        bis unter 35 Jahre;2742;2151;74;2225;518\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESW;weiblich;ALT068;Altersgruppen;ALT035B40;35
+        bis unter 40 Jahre;2714;2145;67;2212;502\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESW;weiblich;ALT068;Altersgruppen;ALT040B45;40
+        bis unter 45 Jahre;2692;2212;61;2274;418\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESW;weiblich;ALT068;Altersgruppen;ALT045B50;45
+        bis unter 50 Jahre;2460;2079;46;2125;336\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESW;weiblich;ALT068;Altersgruppen;ALT050B55;50
+        bis unter 55 Jahre;2898;2419;45;2464;434\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESW;weiblich;ALT068;Altersgruppen;ALT055B60;55
+        bis unter 60 Jahre;3418;2720;51;2771;647\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESW;weiblich;ALT068;Altersgruppen;ALT060B65;60
+        bis unter 65 Jahre;3170;1949;48;1997;1174\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESW;weiblich;ALT068;Altersgruppen;ALT065B70;65
+        bis unter 70 Jahre;2660;446;/;452;2209\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESW;weiblich;ALT068;Altersgruppen;ALT070B75;70
+        bis unter 75 Jahre;2337;154;/;155;2182\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESW;weiblich;ALT068;Altersgruppen;ALT075UM;75
+        Jahre und mehr;5046;71;/;72;4974\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;GESW;weiblich;ALT068;Altersgruppen;;Insgesamt;42448;20207;589;20796;21652\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;;Insgesamt;ALT068;Altersgruppen;ALT000B15;unter
+        15 Jahre;12019;x;x;x;12019\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;;Insgesamt;ALT068;Altersgruppen;ALT015B20;15
+        bis unter 20 Jahre;3987;1120;103;1223;2764\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;;Insgesamt;ALT068;Altersgruppen;ALT020B25;20
+        bis unter 25 Jahre;4487;3150;179;3328;1159\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;;Insgesamt;ALT068;Altersgruppen;ALT025B30;25
+        bis unter 30 Jahre;4963;4085;169;4254;710\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;;Insgesamt;ALT068;Altersgruppen;ALT030B35;30
+        bis unter 35 Jahre;5638;4756;167;4923;716\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;;Insgesamt;ALT068;Altersgruppen;ALT035B40;35
+        bis unter 40 Jahre;5513;4676;153;4829;685\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;;Insgesamt;ALT068;Altersgruppen;ALT040B45;40
+        bis unter 45 Jahre;5399;4675;131;4806;593\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;;Insgesamt;ALT068;Altersgruppen;ALT045B50;45
+        bis unter 50 Jahre;4893;4277;107;4384;509\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;;Insgesamt;ALT068;Altersgruppen;ALT050B55;50
+        bis unter 55 Jahre;5774;4996;107;5103;671\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;;Insgesamt;ALT068;Altersgruppen;ALT055B60;55
+        bis unter 60 Jahre;6823;5673;116;5789;1034\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;;Insgesamt;ALT068;Altersgruppen;ALT060B65;60
+        bis unter 65 Jahre;6245;4083;111;4194;2051\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;;Insgesamt;ALT068;Altersgruppen;ALT065B70;65
+        bis unter 70 Jahre;5097;1029;15;1044;4053\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;;Insgesamt;ALT068;Altersgruppen;ALT070B75;70
+        bis unter 75 Jahre;4351;396;/;398;3953\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;;Insgesamt;ALT068;Altersgruppen;ALT075UM;75
+        Jahre und mehr;8685;202;/;204;8481\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
+        insgesamt;DG;Deutschland;GES;Geschlecht;;Insgesamt;ALT068;Altersgruppen;;Insgesamt;83875;43117;1362;44479;39397\n"
+    headers:
+      Connection:
+      - Keep-Alive
+      Content-Disposition:
+      - attachement;filename=12211-0001_flat.csv
+      Content-Type:
+      - text/csv
+      Date:
+      - Wed, 26 Jun 2024 18:17:36 GMT
+      Keep-Alive:
+      - timeout=15, max=100
+      Server:
+      - Apache
+      Transfer-Encoding:
+      - chunked
+    status:
+      code: 200
+      message: '200'
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=12211-0001
+  response:
+    body:
+      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"12211-0001\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"12211-0001\",\"Content\":\"Bev\xF6lkerung,
+        Erwerbst\xE4tige, Erwerbslose, Erwerbspersonen, Nichterwerbspersonen aus Hauptwohnsitzhaushalten:
+        Deutschland, Jahre, Geschlecht, Altersgruppen\",\"Time\":{\"From\":\"2020\",\"To\":\"2023\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"12211\",\"Content\":\"Mikrozensus\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Deutschland
+        insgesamt\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"BEV036\",\"Content\":\"Bev\xF6lkerung
+        in Hauptwohnsitzhaushalten\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"ERW041\",\"Content\":\"Erwerbst\xE4tige aus Hauptwohnsitzhaushalten\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"ERW042\",\"Content\":\"Erwerbslose aus Hauptwohnsitzhaushalten\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"ERW040\",\"Content\":\"Erwerbspersonen aus Hauptwohnsitzhaushalten\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"ERW043\",\"Content\":\"Nichterwerbspersonen aus Hauptwohnsitzhaushalten\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Rows\":[{\"Code\":\"GES\",\"Content\":\"Geschlecht\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":[{\"Code\":\"ALT068\",\"Content\":\"Altersgruppen
+        (u15-75m)\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Updated\":\"see parent\"}],\"Subtitel\":{\"Code\":\"JAHR\",\"Content\":\"Jahr\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Structure\":null,\"Updated\":\"see
+        parent\"},\"Subheading\":null},\"Updated\":\"28.12.2022 09:26:09h\"},\"Copyright\":\"\xA9
+        Statistisches Bundesamt (Destatis), 2024\"}"
+    headers:
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '2103'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Wed, 26 Jun 2024 18:17:40 GMT
+      Keep-Alive:
+      - timeout=15, max=100
+      Server:
+      - Apache
+    status:
+      code: 200
+      message: '200'
 version: 1

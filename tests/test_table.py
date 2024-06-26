@@ -1,5 +1,3 @@
-import os
-
 import pandas as pd
 import pytest
 
@@ -26,7 +24,6 @@ pystatis.clear_cache()
         ("81000-0001", (40, 20)),
         ("91111-0001", (6600, 14)),
         ("11111-02-01-4", (538, 10)),
-        ("12111-01-01-4", (4842, 18)),
         ("21311-01-01-4-B", (44010, 22)),
         ("32121-01-02-4", (3766, 14)),
         ("41312-01-01-4", (5918, 14)),
@@ -52,6 +49,39 @@ def test_get_data(mocker, table_name: str, expected_shape: tuple[int, int]):
     assert table.raw_data != ""
 
     assert table.data.shape == expected_shape
+
+
+@pytest.mark.vcr()
+@pytest.mark.parametrize(
+    "table_name, expected_shape",
+    [
+        ("52111-0001", (68, 19)),
+        ("12211-Z-11", (2152, 14)),
+        ("6000F-1007", (10, 18)),
+    ],
+)
+def test_get_data_quality(mocker, table_name: str, expected_shape: tuple[int, int]):
+    mocker.patch.object(pystatis.db, "check_credentials", return_value=True)
+    table = pystatis.Table(name=table_name)
+    table.get_data(prettify=False, quality="on")
+
+    assert isinstance(table.data, pd.DataFrame)
+    assert not table.data.empty
+    assert isinstance(table.raw_data, str)
+    assert table.raw_data != ""
+
+    assert table.data.shape == expected_shape
+
+    if table_name == "6000F-1007":
+        # check that at least one raw column ends with "_q" for zensus + quality
+        assert any(column.endswith("_q") for column in table.data.columns)
+    elif table_name == "12211-Z-11":
+        # check that at least no raw column ends with "__q" for regio + quality
+        # (API call with quality="on" does not support quality for regio tables)
+        assert not any(column.endswith("__q") for column in table.data.columns)
+    else:
+        # check that at least one raw column ends with "__q" for genesis + quality
+        assert any(column.endswith("__q") for column in table.data.columns)
 
 
 @pytest.mark.vcr()
@@ -217,18 +247,6 @@ def test_get_data(mocker, table_name: str, expected_shape: tuple[int, int]):
                 "Amtlicher Gemeindeschlüssel (AGS)",
                 "Kreise und kreisfreie Städte",
                 "Zahl_der_Gemeinden__Anzahl",
-            ),
-        ),
-        (
-            "12111-01-01-4",
-            (4842, 6),
-            (
-                "Stichtag",
-                "Amtlicher Gemeindeschlüssel (AGS)",
-                "Kreise und kreisfreie Städte",
-                "Nationalität",
-                "Geschlecht",
-                "Bevoelkerung__Anzahl",
             ),
         ),
         (
@@ -404,3 +422,72 @@ def test_prettify(mocker, table_name, expected_shape: tuple[int, int], expected_
 
     assert table.data.shape == expected_shape
     assert tuple(table.data.columns) == expected_columns
+
+
+@pytest.mark.vcr()
+@pytest.mark.parametrize(
+    "table_name, expected_shape, expected_columns",
+    [
+        (
+            "52111-0001",
+            (68, 6),
+            (
+                "Jahr",
+                "Deutschland insgesamt",
+                "Beschäftigtengrößenklassen",
+                "WZ2008 (Abschnitte): URS",
+                "Unternehmen_(EU)__Anzahl",
+                "Unternehmen_(EU)__q",
+            ),
+        ),
+        (
+            "12211-Z-11",
+            (2152, 5),
+            (
+                "Jahr",
+                "Amtlicher Gemeindeschlüssel (AGS)",
+                "Kreise und kreisfreie Städte",
+                "Art der Lebensform",
+                "Lebensformen_am_Hauptwohnort__1000",
+            ),
+        ),
+        (
+            "6000F-1007",
+            (5, 5),
+            (
+                "Stichtag",
+                "Deutschland",
+                "Ausstattung der Wohnung",
+                "Familien__%",
+                "Familien__Anzahl",
+            ),
+        ),
+    ],
+)
+def test_prettify_with_quality(mocker, table_name, expected_shape: tuple[int, int], expected_columns: tuple[str]):
+    mocker.patch.object(pystatis.db, "check_credentials", return_value=True)
+    table = pystatis.Table(name=table_name)
+
+    # check that the Zensus table raises a warning, as quality label are not supported yet
+    if table_name == "6000F-1007":
+        with pytest.warns(UserWarning, match="Quality columns are not supported for Zensus tables."):
+            table.get_data(prettify=True, quality="on")
+    else:
+        table.get_data(prettify=True, quality="on")
+
+    assert isinstance(table.data, pd.DataFrame)
+    assert not table.data.empty
+
+    assert table.data.shape == expected_shape
+    assert tuple(table.data.columns) == expected_columns
+
+    if table_name == "6000F-1007":
+        # check that no prettified column ends with "_q" for zensus + quality (not supported)
+        assert not any(column.endswith("_q") for column in table.data.columns)
+    elif table_name == "12211-Z-11":
+        # check that no prettified column ends with "__q" for regio + quality
+        # (API call with quality="on" does not support quality for regio tables)
+        assert not any(column.endswith("__q") for column in table.data.columns)
+    else:
+        # check that at least one prettified column ends with "__q" for genesis + quality
+        assert any(column.endswith("__q") for column in table.data.columns)

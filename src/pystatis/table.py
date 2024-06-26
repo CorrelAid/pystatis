@@ -42,7 +42,7 @@ class Table:
         regionalkey: str = "",
         stand: str = "",
         language: str = "de",
-        quality: bool = False,
+        quality: str = None,
     ):
         """Downloads raw data and metadata from GENESIS-Online.
 
@@ -90,7 +90,7 @@ class Table:
             stand (str, optional): Only download the table if it is newer than the status date.
                 "tt.mm.jjjj hh:mm" or "tt.mm.jjjj". Example: "24.12.2001 19:15".
             language (str, optional): Messages and data descriptions are supplied in this language.
-            quality (bool, optional): If True, Value-adding quality labels are issued.
+            quality (str, optional): If "on", Value-adding quality labels are issued.
                 The explanation of the quality labels can be found online after retrieving the table values,
                 table -> explanation of symbols or at e.g.
                 https://www-genesis.destatis.de/genesis/online?operation=ergebnistabelleQualitaet&language=en&levelindex=3&levelid=1719342760835#abreadcrumb.
@@ -106,11 +106,9 @@ class Table:
             "regionalkey": regionalkey,
             "stand": stand,
             "language": language,
+            "quality": quality,
             "format": "ffcsv",
         }
-        # keep quality parameter as bool but internally use required "on" or "off"
-        params["quality"] = "on" if quality else "off"
-
         raw_data_bytes = load_data(endpoint="data", method="tablefile", params=params)
         assert isinstance(raw_data_bytes, bytes)  # nosec assert_used
         raw_data_str = raw_data_bytes.decode("utf-8-sig")

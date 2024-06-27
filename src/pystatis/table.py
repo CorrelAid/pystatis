@@ -62,6 +62,7 @@ class Table:
                 to which the selection using `regionalkey` is to be applied.
                 Accepts 1-6 characters.
                 Possible values:
+
                 - Regionalstatistik (only for tables ending with "B", see /catalogue/variables):
                     - "DG" (Deutschland, 1) -> will not return extra column
                     - "DLAND" (Bundesländer, 16)

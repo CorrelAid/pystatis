@@ -42,7 +42,7 @@ class Table:
         regionalkey: str = "",
         stand: str = "",
         language: str = "de",
-        quality: str = None,
+        quality: str | None = None,
     ):
         """Downloads raw data and metadata from GENESIS-Online.
 

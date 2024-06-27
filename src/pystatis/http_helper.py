@@ -216,7 +216,11 @@ def get_data_from_resultfile(job_id: str, db_name: str | None = None) -> bytes:
         jobs = response.json().get("List")
         if len(jobs) > 0 and jobs[0].get("State") == "Fertig":
             logger.info(
-                "Verarbeitung im Hintergrund abgeschlossen. Ergebnis kann jetzt abgerufen werden über /data/resultfile und Job-ID: %s.",
+                (
+                    "Verarbeitung im Hintergrund abgeschlossen. "
+                    "Ergebnis kann jetzt abgerufen werden über "
+                    "/data/resultfile und Job-ID: %s."
+                ),
                 job_id,
             )
             break

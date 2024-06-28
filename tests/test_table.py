@@ -403,6 +403,23 @@ def test_get_data(mocker, table_name: str, expected_shape: tuple[int, int], lang
             "de",
         ),
         (
+            "81000-0001",
+            (40, 10),
+            (
+                "Jahr",
+                "Deutschland insgesamt",
+                "Preisbasis",
+                "Bruttowertschoepfung__jew._ME",
+                "Guetersteuern_abzuegl._Guetersubventionen__jew._ME",
+                "Guetersteuern__jew._ME",
+                "Guetersubventionen__jew._ME",
+                "Bruttoinlandsprodukt__jew._ME",
+                "nachr.:_Bruttoinlandsprodukt_(Veraenderung_in_%)__Prozent",
+                "nachr.:_Bruttoinlandsprodukt_je_Einwohner__jew._ME",
+            ),
+            "en",
+        ),
+        (
             "12211-0001",
             (45, 9),
             (

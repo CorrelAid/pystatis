@@ -65,6 +65,7 @@ def load_data(
             if response_status_code == 98:
                 job_response = start_job(endpoint, method, params)
                 job_id = get_job_id_from_response(job_response)
+                logger.info("Verarbeitung im Hintergrund erfolgreich gestartet. Job-ID: %s.", job_id)
                 data = get_data_from_resultfile(job_id, db_name)
 
             cache_data(cache_dir, name, params, data, content_type)
@@ -114,7 +115,7 @@ def get_data_from_endpoint(endpoint: str, method: str, params: dict, db_name: st
         }
     )
 
-    response = requests.get(url, params=params_, timeout=(5, 60))
+    response = requests.get(url, params=params_, timeout=(5, 300))
 
     response.encoding = "UTF-8"
     _check_invalid_status_code(response)
@@ -192,6 +193,14 @@ def get_data_from_resultfile(job_id: str, db_name: str | None = None) -> bytes:
 
         jobs = response.json().get("List")
         if len(jobs) > 0 and jobs[0].get("State") == "Fertig":
+            logger.info(
+                (
+                    "Verarbeitung im Hintergrund abgeschlossen. "
+                    "Ergebnis kann jetzt abgerufen werden über "
+                    "/data/resultfile und Job-ID: %s."
+                ),
+                job_id,
+            )
             break
 
         time.sleep(5)
@@ -199,6 +208,7 @@ def get_data_from_resultfile(job_id: str, db_name: str | None = None) -> bytes:
         print("Time out exceeded! Aborting...")
         return bytes()
 
+    time.sleep(5)
     params = {
         "name": job_id,
         "area": "all",

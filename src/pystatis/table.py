@@ -156,20 +156,20 @@ class Table:
             and includes informative columns names
         """
         match db_name:
-            case "genesis":
-                pretty_data = Table.parse_genesis_table(data, language)
+            case "genesis" | "regio":
+                pretty_data = Table.parse_genesis_and_regio_table(data)
             case "zensus":
-                pretty_data = Table.parse_zensus_table(data, language)
-            case "regio":
-                pretty_data = Table.parse_regio_table(data, language)
+                pretty_data = Table.parse_zensus_table(data)
             case _:
                 pretty_data = data
 
         return pretty_data
 
     @staticmethod
-    def parse_genesis_table(data: pd.DataFrame, language: str) -> pd.DataFrame:
-        """Parse GENESIS table ffcsv format into a more readable format"""
+    def parse_genesis_and_regio_table(data: pd.DataFrame, language: str) -> pd.DataFrame:
+        """
+        Parse ffcsv format for tables from GENESIS and Regionalstatistik into a more readable format
+        """
 
         column_name_dict = LANG_TO_COL_MAPPING["genesis-regio"][language]
         time_col = column_name_dict["time"]
@@ -249,48 +249,6 @@ class Table:
         attributes.columns = pivot_table.filter(regex=r"\d+_" + variable_label_col).iloc[0].tolist()
 
         pretty_data = pd.concat([time, attributes, pivot_table[value_columns]], axis=1)
-        if ags_code is not None:
-            # Genesis has always the same time attribute as first column, and
-            # each attribute always has 4 columns so pos_of_ags_col // 4
-            # adjusts the original counter to the shorter column list of pretty_data
-            pretty_data.insert(loc=pos_of_ags_col // 4, column=ags_code.name, value=ags_code)
-
-        return pretty_data
-
-    @staticmethod
-    def parse_regio_table(data: pd.DataFrame, language: str) -> pd.DataFrame:
-        """Parse Regionalstatistik table ffcsv format into a more readable format"""
-
-        column_name_dict = LANG_TO_COL_MAPPING["genesis-regio"][language]
-        time_label_col = column_name_dict["time_label"]
-        time_col = column_name_dict["time"]
-        value_label_col = column_name_dict["value_label"]
-        variable_label_col = column_name_dict["variable_label"]
-
-        # Extracts time column with name from last element of Zeit_Label column
-        time = pd.DataFrame({data[time_label_col].iloc[-1]: data[time_col]})
-
-        # All tables of Regionalstatistik have a regional code (AGS) as first attribute
-        ags_code = None
-        pos_of_ags_col = np.where(data.iloc[0].isin(config.REGIO_AND_GENESIS_AGS_CODES))[0]
-        if pos_of_ags_col.size > 0:
-            pos_of_ags_col = pos_of_ags_col[0]
-            label = "Amtlicher Gemeindeschlüssel (AGS)"  # en: official municipality code (AGS)
-            ags_code = pd.Series(data=data.iloc[:, pos_of_ags_col + 2], name=label)
-
-        # Extracts new column names from first values of the variable_label columns
-        # and assigns these to the relevant attribute columns (value_label)
-        attributes = data.filter(like=value_label_col)
-        attributes.columns = data.filter(like=variable_label_col).iloc[0].tolist()
-
-        # Selects all columns containing the values
-        values = data.filter(like="__")
-
-        # Given a name like BEV036__Bevoelkerung_in_Hauptwohnsitzhaushalten__1000
-        # extracts the label and the unit and omit the code
-        values.columns = [re.split(r"_{2,}", name, maxsplit=1)[1] for name in values.columns]
-
-        pretty_data = pd.concat([time, attributes, values], axis=1)
         if ags_code is not None:
             # Genesis has always the same time attribute as first column, and
             # each attribute always has 4 columns so pos_of_ags_col // 4

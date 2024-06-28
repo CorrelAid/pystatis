@@ -157,9 +157,9 @@ class Table:
         """
         match db_name:
             case "genesis" | "regio":
-                pretty_data = Table.parse_genesis_and_regio_table(data)
+                pretty_data = Table.parse_genesis_and_regio_table(data, language)
             case "zensus":
-                pretty_data = Table.parse_zensus_table(data)
+                pretty_data = Table.parse_zensus_table(data, language)
             case _:
                 pretty_data = data
 

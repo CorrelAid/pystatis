@@ -417,7 +417,7 @@ def test_get_data(mocker, table_name: str, expected_shape: tuple[int, int], lang
                 "nachr.:_Bruttoinlandsprodukt_(Veraenderung_in_%)__Prozent",
                 "nachr.:_Bruttoinlandsprodukt_je_Einwohner__jew._ME",
             ),
-            "en",
+            "de",
         ),
         (
             "12211-0001",

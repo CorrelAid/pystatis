@@ -5,7 +5,7 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
@@ -4729,9 +4729,9 @@ interactions:
       Content-Type:
       - text/csv
       Date:
-      - Wed, 26 Jun 2024 19:37:50 GMT
+      - Sat, 29 Jun 2024 21:14:59 GMT
       Expires:
-      - Fri, 28 Jun 2024 19:37:44 GMT
+      - Mon, 01 Jul 2024 21:14:53 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
@@ -4755,7 +4755,7 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
@@ -4786,9 +4786,9 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Wed, 26 Jun 2024 19:37:53 GMT
+      - Sat, 29 Jun 2024 21:15:01 GMT
       Expires:
-      - Fri, 28 Jun 2024 19:37:50 GMT
+      - Mon, 01 Jul 2024 21:14:59 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:

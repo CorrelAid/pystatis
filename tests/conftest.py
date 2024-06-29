@@ -11,7 +11,7 @@ def vcr_config():
 
 @pytest.fixture
 def vcr_cassette_name(request):
-    """Name of the VCR cassette, changed to {language}_{table_name}."""
+    """Name of the VCR cassette, changed to {table_name}."""
     test_arguments = request.node.callspec.params
     if "table_name" in test_arguments:
         table_name = test_arguments["table_name"]

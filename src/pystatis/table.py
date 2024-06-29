@@ -219,30 +219,48 @@ class Table:
     def parse_zensus_table(data: pd.DataFrame, language: str) -> pd.DataFrame:
         """Parse Zensus table ffcsv format into a more readable format"""
         column_name_dict = LANG_TO_COL_MAPPING["zensus"][language]
-        value_variable_label_col = column_name_dict["value_variable_label"]
-        value_unit_col = column_name_dict["value_unit"]
-        value_col = column_name_dict["value"]
-        time_label_col = column_name_dict["time_label"]
+        ars_label_code = column_name_dict["ars"]
         time_col = column_name_dict["time"]
+        time_label_col = column_name_dict["time_label"]
+        value_col = column_name_dict["value"]
+        value_q_col = column_name_dict["value_q"]
+        value_unit_col = column_name_dict["value_unit"]
+        value_variable_label_col = column_name_dict["value_variable_label"]
         variable_attribute_label_col = column_name_dict["variable_attribute_label"]
         variable_label_col = column_name_dict["variable_label"]
-        ars_label_code = column_name_dict["ars"]
 
         # quality columns are not yet supported for Zensus tables
-        if "value_q" in data.columns:
-            data = data.drop(columns=["value_q"])
-            warnings.warn("Quality columns are not supported for Zensus tables.", UserWarning)
+        quality = False
+        if value_q_col in data.columns:
+            quality = True
 
         # add the unit to the column names for the value columns
         data[value_variable_label_col] = data[value_variable_label_col].str.cat(
             data[value_unit_col].fillna("Unknown_Unit"), sep="__"
         )
 
+        if quality:
+            # with quality = 'on' we have an additional column value_q
+            # to still use pivot table we have to combine value and value_q
+            # so we can later split them again
+            data[value_col] = [[v, q] for v, q in zip(data[value_col], data[value_q_col])]
+            data = data.drop(columns=[value_q_col])
+
         pivot_table = data.pivot(
-            index=data.columns[:-4].to_list(),
+            index=[col for col in data.columns if col not in data.filter(regex=r"^value").columns],
             columns=value_variable_label_col,
             values=value_col,
         )
+
+        if quality:
+            for col in pivot_table.columns:
+                pivot_table.insert(
+                    pivot_table.columns.to_list().index(col) + 1,
+                    col + "__q",
+                    pivot_table[col].apply(lambda x: x[1]),
+                )
+                pivot_table[col] = pivot_table[col].apply(lambda x: x[0])
+
         value_columns = pivot_table.columns.to_list()
         pivot_table.reset_index(inplace=True)
         pivot_table.columns.name = None
@@ -250,7 +268,7 @@ class Table:
         time_label = data[time_label_col].iloc[0]
         time = pd.DataFrame({time_label: pivot_table[time_col]})
 
-        # Some tables of Zensus can have a regional code (AGS) as first attribute
+        # If AGS column is present, add it to the final output
         ags_code = None
         pos_of_ags_col = np.where(data.iloc[0].isin(config.ZENSUS_AGS_CODES))[0]
         if pos_of_ags_col.size > 0:

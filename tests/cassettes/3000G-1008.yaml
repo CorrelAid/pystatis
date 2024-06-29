@@ -5,240 +5,7 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.31.0
-    method: GET
-    uri: https://ergebnisse2011.zensus2022.de/api/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=3000G-1008&quality=False
-  response:
-    body:
-      string: !!binary |
-        UEsDBBQACAgIAKGe11gAAAAAAAAAAAAAAAAWAAAAMzAwMEctMTAwOF9kZV9mbGF0LmNzds1Wy47a
-        MBTd9yu8qTQjgWqbPIjuCkoIo6EgzSC1YoNMuCVWE1M5zlTie+YbZtNFF3xQf6GGpAxDmapdJZvI
-        93Xuybl2nJ/ff+RGGJkbGeeLeLNCOLFTscQUjMywDB1Wz05giwehpVimVfzELrNOHMIYLZeF+TP1
-        OVIW8TNUfo7KX0W9GCmLHkRaYPlcFEqaavmy1ZnvUPmmQymNIMLl7rGwOfezXgT3Vp/EiDVwylib
-        um0aQBROB2MGAyxMHiepUCsYRC/M0TzqzRiMUG4Ltc6FNjAKb+bt6TCcQCjVFtP2uw+YaC2KbPf0
-        GRW5EkWckImw3fKvaJuiTsrya/BbHry1bfuUsiM/kklDPm4StcdoLnfmdFzfcaGntiJJ636JeTiZ
-        3fXGMEdltEgrluAHLVq/wq+QY07gMi/w65cQblS+xlxkBhilNUt2SqYbcO4xp36FDnMchncTGKJW
-        1QTJ1d74tnvUGV6D23Lq32p/p8gop47HGyJnfzx9fwv9dBN/OR6JJhzXS7y6nuM0RbfQQoYQWjz8
-        PWbwmrD5LhFjnHVp0GmIdJ/gFqVCUgWIzMiRiv190EQqsrIX356SjaMC2oQr+v9pM0aZ/2/fzV9Q
-        SwcIWP1nu8wBAABCCgAAUEsBAhQAFAAICAgAoZ7XWFj9Z7vMAQAAQgoAABYAAAAAAAAAAAAAAAAA
-        AAAAADMwMDBHLTEwMDhfZGVfZmxhdC5jc3ZQSwUGAAAAAAEAAQBEAAAAEAIAAAAA
-    headers:
-      Connection:
-      - Keep-Alive
-      Content-Disposition:
-      - attachment; filename=3000G-1008_de_flat.zip
-      Content-Length:
-      - '618'
-      Content-Type:
-      - application/zip
-      Date:
-      - Sun, 23 Jun 2024 17:52:59 GMT
-      Keep-Alive:
-      - timeout=10, max=500
-      Referrer-Policy:
-      - same-origin
-      Server:
-      - Apache
-      Set-Cookie:
-      - AL_BALANCE-S=$xc/hrguHxE9TLt3AQAi7fcvmLM9G0!dE!EP1Aejty52ns7DuMxd; Path=/;
-        Secure; HttpOnly; SameSite=None
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains
-      Vary:
-      - User-Agent
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-XSS-Protection:
-      - 1; mode=block
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.31.0
-    method: GET
-    uri: https://ergebnisse2011.zensus2022.de/api/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=3000G-1008&quality=False
-  response:
-    body:
-      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"3000G-1008\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"3000G-1008\",\"Content\":\"Geb\xE4ude:
-        Heizungsart\",\"Time\":{\"From\":\"09.05.2011\",\"To\":\"09.05.2011\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"3000G\",\"Content\":\"Geb\xE4ude\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"STAG\",\"Content\":\"Stichtag\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"GEODL1\",\"Content\":\"Deutschland\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"GEB001\",\"Content\":\"Geb\xE4ude
-        mit Wohnraum\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":\"ID0004
-        ,PO0004\",\"Structure\":null,\"Updated\":\"see parent\"}],\"Updated\":\"see
-        parent\"}],\"Rows\":[{\"Code\":\"HZGAT1\",\"Content\":\"Heizungsart\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Subtitel\":null,\"Subheading\":null},\"Updated\":\"21.03.2022
-        13:53:13h\"},\"Copyright\":\"\xA9 Statistische \xC4mter des Bundes und der
-        L\xE4nder, Deutschland, 2024. Lizenziert unter der Datenlizenz Deutschland
-        - Namensnennung - Version 2.0\"}"
-    headers:
-      Connection:
-      - Keep-Alive
-      Content-Length:
-      - '1379'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Sun, 23 Jun 2024 17:53:03 GMT
-      Keep-Alive:
-      - timeout=10, max=500
-      Referrer-Policy:
-      - same-origin
-      Server:
-      - Apache
-      Set-Cookie:
-      - AL_BALANCE-S=$xc/KFSP62KxFrWLojcRzZiO0UISqzGdBMm5t765yWrKroivgJXo; Path=/;
-        Secure; HttpOnly; SameSite=None
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains
-      Vary:
-      - User-Agent
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-XSS-Protection:
-      - 1; mode=block
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.31.0
-    method: GET
-    uri: https://ergebnisse2011.zensus2022.de/api/rest/2020/data/tablefile?area=all&format=ffcsv&language=en&name=3000G-1008&quality=False
-  response:
-    body:
-      string: !!binary |
-        UEsDBBQACAgIAMue11gAAAAAAAAAAAAAAAAWAAAAMzAwMEctMTAwOF9lbl9mbGF0LmNzds1WzY7a
-        MBC+9yl8qdQeguyQH6I5wZLNVkUgsTmsuCAnmQWrTrJyHFY8Ww99pL5CvST8lJZK25Mv0Xh+P3/2
-        ePLz+49Gcy0aLfJmndcFwsVa8gwlaFFiZzpIZyWw9Y4rwTPZ2y/WndeFgmutRNbqP13Pli7Ivcrq
-        Xmd1b2b9q6UL2nHZYvddt5XQvfh7qSvdIfLDkFKawKQVshDVpoHHdJzAEp9RYZUjKbg2hSljDvUd
-        GkESL6YzBgmqkld7mCYn8WGVjFMG6f4FSf1MtmiIrjbwEH9ZOYv7eA6PZinRIbUiZSu1cFRdl6TR
-        9Q4bCAcBfDTZJ5SyMxryKvSWKGxEgZUWXJLmhedoC2jmDf3Q86FqywyVXehX8TxdjmdwZ0orU/po
-        DKMBtY3pW1iZF/ksiELbCIa01tz0P6VWcXmENYpcN2Cebawdjvo+Xs5hal5gJXJ9NJFPsq42TmHU
-        /K1Ur/4M/sCziN//2ACjLvUC18qjmMwWd19hIuv827njrLrQt2GOAs+zk9XYJI2PY8PMCYX7k0Ng
-        33X+F1zmshGNhlbS/ATz+tR9oiJ6iyTrS74N615VvKKUBxTUvh+Md++BMcrCd7/rvwBQSwcIbsS5
-        2sYBAAAGCwAAUEsBAhQAFAAICAgAy57XWG7EudrGAQAABgsAABYAAAAAAAAAAAAAAAAAAAAAADMw
-        MDBHLTEwMDhfZW5fZmxhdC5jc3ZQSwUGAAAAAAEAAQBEAAAACgIAAAAA
-    headers:
-      Connection:
-      - Keep-Alive
-      Content-Disposition:
-      - attachment; filename=3000G-1008_en_flat.zip
-      Content-Length:
-      - '612'
-      Content-Type:
-      - application/zip
-      Date:
-      - Sun, 23 Jun 2024 17:54:18 GMT
-      Keep-Alive:
-      - timeout=10, max=500
-      Referrer-Policy:
-      - same-origin
-      Server:
-      - Apache
-      Set-Cookie:
-      - AL_BALANCE-S=$xc/UyJ1qZ8McJmOQkebhQkGULdfPhc6sQUaqQjL50y7CSfJ_RzL; Path=/;
-        Secure; HttpOnly; SameSite=None
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains
-      Vary:
-      - User-Agent
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-XSS-Protection:
-      - 1; mode=block
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.31.0
-    method: GET
-    uri: https://ergebnisse2011.zensus2022.de/api/rest/2020/metadata/table?area=all&format=ffcsv&language=en&name=3000G-1008&quality=False
-  response:
-    body:
-      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"successfull\",\"Type\":\"information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"3000G-1008\",\"area\":\"all\",\"language\":\"en\"},\"Object\":{\"Code\":\"3000G-1008\",\"Content\":\"Buildings:
-        Type of heating\",\"Time\":{\"From\":\"2011-05-09\",\"To\":\"2011-05-09\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"3000G\",\"Content\":\"Buildings\",\"Type\":\"statistic\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"STAG\",\"Content\":\"Reference
-        date\",\"Type\":\"variable\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"GEODL1\",\"Content\":\"Germany\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"GEB001\",\"Content\":\"Buildings
-        with residential space\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":\"ID0004
-        ,PO0004\",\"Structure\":null,\"Updated\":\"see parent\"}],\"Updated\":\"see
-        parent\"}],\"Rows\":[{\"Code\":\"HZGAT1\",\"Content\":\"Type of heating\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Subtitel\":null,\"Subheading\":null},\"Updated\":\"2022-03-21
-        13:53:13h\"},\"Copyright\":\"\xA9 Statistical Offices of the Federation and
-        the L\xE4nder, Germany, 2024. Licensed under Data licence Germany - attribution
-        - Version 2.0\"}"
-    headers:
-      Connection:
-      - Keep-Alive
-      Content-Length:
-      - '1397'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Sun, 23 Jun 2024 17:54:22 GMT
-      Keep-Alive:
-      - timeout=10, max=500
-      Referrer-Policy:
-      - same-origin
-      Server:
-      - Apache
-      Set-Cookie:
-      - AL_BALANCE-S=$xc/OThvwx2IoG1xVJvs4z2uHZTsmbH5Hzaf6kRpIDgJS9R1qj5O; Path=/;
-        Secure; HttpOnly; SameSite=None
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains
-      Vary:
-      - User-Agent
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-XSS-Protection:
-      - 1; mode=block
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
@@ -248,7 +15,7 @@ interactions:
   response:
     body:
       string: !!binary |
-        UEsDBBQACAgIALqU2lgAAAAAAAAAAAAAAAAWAAAAMzAwMEctMTAwOF9kZV9mbGF0LmNzds1Wy47a
+        UEsDBBQACAgIAGW53VgAAAAAAAAAAAAAAAAWAAAAMzAwMEctMTAwOF9kZV9mbGF0LmNzds1Wy47a
         MBTd9yu8qTQjgWqbPIjuCkoIo6EgzSC1YoNMuCVWE1M5zlTie+YbZtNFF3xQf6GGpAxDmapdJZvI
         93Xuybl2nJ/ff+RGGJkbGeeLeLNCOLFTscQUjMywDB1Wz05giwehpVimVfzELrNOHMIYLZeF+TP1
         OVIW8TNUfo7KX0W9GCmLHkRaYPlcFEqaavmy1ZnvUPmmQymNIMLl7rGwOfezXgT3Vp/EiDVwylib
@@ -257,7 +24,7 @@ interactions:
         3fXGMEdltEgrluAHLVq/wq+QY07gMi/w65cQblS+xlxkBhilNUt2SqYbcO4xp36FDnMchncTGKJW
         1QTJ1d74tnvUGV6D23Lq32p/p8gop47HGyJnfzx9fwv9dBN/OR6JJhzXS7y6nuM0RbfQQoYQWjz8
         PWbwmrD5LhFjnHVp0GmIdJ/gFqVCUgWIzMiRiv190EQqsrIX356SjaMC2oQr+v9pM0aZ/2/fzV9Q
-        SwcIWP1nu8wBAABCCgAAUEsBAhQAFAAICAgAupTaWFj9Z7vMAQAAQgoAABYAAAAAAAAAAAAAAAAA
+        SwcIWP1nu8wBAABCCgAAUEsBAhQAFAAICAgAZbndWFj9Z7vMAQAAQgoAABYAAAAAAAAAAAAAAAAA
         AAAAADMwMDBHLTEwMDhfZGVfZmxhdC5jc3ZQSwUGAAAAAAEAAQBEAAAAEAIAAAAA
     headers:
       Connection:
@@ -269,7 +36,7 @@ interactions:
       Content-Type:
       - application/zip
       Date:
-      - Wed, 26 Jun 2024 16:37:48 GMT
+      - Sat, 29 Jun 2024 21:11:08 GMT
       Keep-Alive:
       - timeout=10, max=500
       Referrer-Policy:
@@ -277,7 +44,7 @@ interactions:
       Server:
       - Apache
       Set-Cookie:
-      - AL_BALANCE-S=$xc/nKl3fMdJd1gEPgleDu89zQwLOOMElDol7vC7WFZITk2PrgpB; Path=/;
+      - AL_BALANCE-S=$xc/Ol1q15Dpwv6X11JAy_wAL38CHzpcq2SKDoE3Nku!1u8vfvZV; Path=/;
         Secure; HttpOnly; SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -298,7 +65,7 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
@@ -325,7 +92,7 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Wed, 26 Jun 2024 16:37:53 GMT
+      - Sat, 29 Jun 2024 21:11:11 GMT
       Keep-Alive:
       - timeout=10, max=500
       Referrer-Policy:
@@ -333,7 +100,7 @@ interactions:
       Server:
       - Apache
       Set-Cookie:
-      - AL_BALANCE-S=$xc/YvwILzDPm6OMx2onaWejojGkK4_VzckP3hAGpJcBY6jOyLbe; Path=/;
+      - AL_BALANCE-S=$xc/Zaw1qy2qXGPN6Y_dGx9FNK_AmlxD0383au6HCGQ6tAa403Eg; Path=/;
         Secure; HttpOnly; SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -354,38 +121,38 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://ergebnisse2011.zensus2022.de/api/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=3000G-1008
+    uri: https://ergebnisse2011.zensus2022.de/api/rest/2020/data/tablefile?area=all&format=ffcsv&language=en&name=3000G-1008&quality=off
   response:
     body:
       string: !!binary |
-        UEsDBBQACAgIAJai2lgAAAAAAAAAAAAAAAAWAAAAMzAwMEctMTAwOF9kZV9mbGF0LmNzds1Wy47a
-        MBTd9yu8qTQjgWqbPIjuCkoIo6EgzSC1YoNMuCVWE1M5zlTie+YbZtNFF3xQf6GGpAxDmapdJZvI
-        93Xuybl2nJ/ff+RGGJkbGeeLeLNCOLFTscQUjMywDB1Wz05giwehpVimVfzELrNOHMIYLZeF+TP1
-        OVIW8TNUfo7KX0W9GCmLHkRaYPlcFEqaavmy1ZnvUPmmQymNIMLl7rGwOfezXgT3Vp/EiDVwylib
-        um0aQBROB2MGAyxMHiepUCsYRC/M0TzqzRiMUG4Ltc6FNjAKb+bt6TCcQCjVFtP2uw+YaC2KbPf0
-        GRW5EkWckImw3fKvaJuiTsrya/BbHry1bfuUsiM/kklDPm4StcdoLnfmdFzfcaGntiJJ636JeTiZ
-        3fXGMEdltEgrluAHLVq/wq+QY07gMi/w65cQblS+xlxkBhilNUt2SqYbcO4xp36FDnMchncTGKJW
-        1QTJ1d74tnvUGV6D23Lq32p/p8gop47HGyJnfzx9fwv9dBN/OR6JJhzXS7y6nuM0RbfQQoYQWjz8
-        PWbwmrD5LhFjnHVp0GmIdJ/gFqVCUgWIzMiRiv190EQqsrIX356SjaMC2oQr+v9pM0aZ/2/fzV9Q
-        SwcIWP1nu8wBAABCCgAAUEsBAhQAFAAICAgAlqLaWFj9Z7vMAQAAQgoAABYAAAAAAAAAAAAAAAAA
-        AAAAADMwMDBHLTEwMDhfZGVfZmxhdC5jc3ZQSwUGAAAAAAEAAQBEAAAAEAIAAAAA
+        UEsDBBQACAgIANK53VgAAAAAAAAAAAAAAAAWAAAAMzAwMEctMTAwOF9lbl9mbGF0LmNzds1WzY7a
+        MBC+9yl8qdQeguyQH6I5wZLNVkUgsTmsuCAnmQWrTrJyHFY8Ww99pL5CvST8lJZK25Mv0Xh+P3/2
+        ePLz+49Gcy0aLfJmndcFwsVa8gwlaFFiZzpIZyWw9Y4rwTPZ2y/WndeFgmutRNbqP13Pli7Ivcrq
+        Xmd1b2b9q6UL2nHZYvddt5XQvfh7qSvdIfLDkFKawKQVshDVpoHHdJzAEp9RYZUjKbg2hSljDvUd
+        GkESL6YzBgmqkld7mCYn8WGVjFMG6f4FSf1MtmiIrjbwEH9ZOYv7eA6PZinRIbUiZSu1cFRdl6TR
+        9Q4bCAcBfDTZJ5SyMxryKvSWKGxEgZUWXJLmhedoC2jmDf3Q86FqywyVXehX8TxdjmdwZ0orU/po
+        DKMBtY3pW1iZF/ksiELbCIa01tz0P6VWcXmENYpcN2Cebawdjvo+Xs5hal5gJXJ9NJFPsq42TmHU
+        /K1Ur/4M/sCziN//2ACjLvUC18qjmMwWd19hIuv827njrLrQt2GOAs+zk9XYJI2PY8PMCYX7k0Ng
+        33X+F1zmshGNhlbS/ATz+tR9oiJ6iyTrS74N615VvKKUBxTUvh+Md++BMcrCd7/rvwBQSwcIbsS5
+        2sYBAAAGCwAAUEsBAhQAFAAICAgA0rndWG7EudrGAQAABgsAABYAAAAAAAAAAAAAAAAAAAAAADMw
+        MDBHLTEwMDhfZW5fZmxhdC5jc3ZQSwUGAAAAAAEAAQBEAAAACgIAAAAA
     headers:
       Connection:
       - Keep-Alive
       Content-Disposition:
-      - attachment; filename=3000G-1008_de_flat.zip
+      - attachment; filename=3000G-1008_en_flat.zip
       Content-Length:
-      - '618'
+      - '612'
       Content-Type:
       - application/zip
       Date:
-      - Wed, 26 Jun 2024 18:20:40 GMT
+      - Sat, 29 Jun 2024 21:14:32 GMT
       Keep-Alive:
       - timeout=10, max=500
       Referrer-Policy:
@@ -393,7 +160,7 @@ interactions:
       Server:
       - Apache
       Set-Cookie:
-      - AL_BALANCE-S=$xc/g2ifvf6uZ9acGU5xTQzrW5PVxHchSUfps1Zr_hRu8h6LIojb; Path=/;
+      - AL_BALANCE-S=$xc/Pqwel9ZrMK8jOr9RSP5wNQxDHHKVKburI0E5F8GN3NqgGeyb; Path=/;
         Secure; HttpOnly; SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -414,34 +181,35 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://ergebnisse2011.zensus2022.de/api/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=3000G-1008
+    uri: https://ergebnisse2011.zensus2022.de/api/rest/2020/metadata/table?area=all&format=ffcsv&language=en&name=3000G-1008&quality=off
   response:
     body:
-      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"3000G-1008\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"3000G-1008\",\"Content\":\"Geb\xE4ude:
-        Heizungsart\",\"Time\":{\"From\":\"09.05.2011\",\"To\":\"09.05.2011\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"3000G\",\"Content\":\"Geb\xE4ude\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"STAG\",\"Content\":\"Stichtag\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"GEODL1\",\"Content\":\"Deutschland\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"GEB001\",\"Content\":\"Geb\xE4ude
-        mit Wohnraum\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":\"ID0004
+      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"successfull\",\"Type\":\"information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"3000G-1008\",\"area\":\"all\",\"language\":\"en\"},\"Object\":{\"Code\":\"3000G-1008\",\"Content\":\"Buildings:
+        Type of heating\",\"Time\":{\"From\":\"2011-05-09\",\"To\":\"2011-05-09\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"3000G\",\"Content\":\"Buildings\",\"Type\":\"statistic\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"STAG\",\"Content\":\"Reference
+        date\",\"Type\":\"variable\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"GEODL1\",\"Content\":\"Germany\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"GEB001\",\"Content\":\"Buildings
+        with residential space\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":\"ID0004
         ,PO0004\",\"Structure\":null,\"Updated\":\"see parent\"}],\"Updated\":\"see
-        parent\"}],\"Rows\":[{\"Code\":\"HZGAT1\",\"Content\":\"Heizungsart\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Subtitel\":null,\"Subheading\":null},\"Updated\":\"21.03.2022
-        13:53:13h\"},\"Copyright\":\"\xA9 Statistische \xC4mter des Bundes und der
-        L\xE4nder, Deutschland, 2024. Lizenziert unter der Datenlizenz Deutschland
-        - Namensnennung - Version 2.0\"}"
+        parent\"}],\"Rows\":[{\"Code\":\"HZGAT1\",\"Content\":\"Type of heating\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Subtitel\":null,\"Subheading\":null},\"Updated\":\"2022-03-21
+        13:53:13h\"},\"Copyright\":\"\xA9 Statistical Offices of the Federation and
+        the L\xE4nder, Germany, 2024. Licensed under Data licence Germany - attribution
+        - Version 2.0\"}"
     headers:
       Connection:
       - Keep-Alive
       Content-Length:
-      - '1379'
+      - '1397'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Wed, 26 Jun 2024 18:20:44 GMT
+      - Sat, 29 Jun 2024 21:14:36 GMT
       Keep-Alive:
       - timeout=10, max=500
       Referrer-Policy:
@@ -449,7 +217,7 @@ interactions:
       Server:
       - Apache
       Set-Cookie:
-      - AL_BALANCE-S=$xc/CG1oLzj9X7LDK4EdeX2Ub70vJ47ADCrxFTMDLiSjyvoIjF!O; Path=/;
+      - AL_BALANCE-S=$xc/qLI8eaWJ80SubZ2yCLF5myu599goIFWms0RO7eP_bPekDOW8; Path=/;
         Secure; HttpOnly; SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains

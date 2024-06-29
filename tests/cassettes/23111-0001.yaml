@@ -5,13 +5,13 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.31.0
+      - python-requests/2.32.3
     method: GET
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=23111-0001&quality=False
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=23111-0001&quality=off
   response:
     body:
       string: "Statistik_Code;Statistik_Label;Zeit_Code;Zeit_Label;Zeit;1_Merkmal_Code;1_Merkmal_Label;1_Auspraegung_Code;1_Auspraegung_Label;GES024__Krankenhaeuser__Anzahl;BTT001__Betten__Anzahl;BTT010__Betten_je_100.000_Einwohner__Anzahl;GES020__Patienten__Anzahl;GES053__Patienten_je_100.000_Einwohner__Anzahl;GES052__Berechnungs-/Belegungstage__1000;GES012__Durchschnittliche_Verweildauer__Tage;BTT004__Durchschnittliche_Bettenauslastung__Prozent\n23111;Grunddaten
@@ -57,7 +57,7 @@ interactions:
       Content-Type:
       - text/csv
       Date:
-      - Sun, 23 Jun 2024 17:49:34 GMT
+      - Sat, 29 Jun 2024 21:07:46 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
@@ -71,13 +71,13 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.31.0
+      - python-requests/2.32.3
     method: GET
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=23111-0001&quality=False
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=23111-0001&quality=off
   response:
     body:
       string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"23111-0001\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"23111-0001\",\"Content\":\"Krankenh\xE4user,
@@ -103,7 +103,7 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Sun, 23 Jun 2024 17:49:37 GMT
+      - Sat, 29 Jun 2024 21:07:48 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
@@ -117,13 +117,13 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.31.0
+      - python-requests/2.32.3
     method: GET
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile?area=all&format=ffcsv&language=en&name=23111-0001&quality=False
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile?area=all&format=ffcsv&language=en&name=23111-0001&quality=off
   response:
     body:
       string: 'statistics_code;statistics_label;time_code;time_label;time;1_variable_code;1_variable_label;1_variable_code;1_variable_code;GES024__Hospitals__number;BTT001__Beds__number;BTT010__Beds_per_100_000_inhabitants__number;GES020__Patients__number;GES053__Patients_per_100_000_inhabitants__number;GES052__Occupancy_/_billing_days__1000;GES012__Average_length_of_stay__days;BTT004__Average_occupancy_of_hospital_beds__percent
@@ -203,7 +203,7 @@ interactions:
       Content-Type:
       - text/csv
       Date:
-      - Sun, 23 Jun 2024 17:53:22 GMT
+      - Sat, 29 Jun 2024 21:13:37 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
@@ -217,13 +217,13 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.31.0
+      - python-requests/2.32.3
     method: GET
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table?area=all&format=ffcsv&language=en&name=23111-0001&quality=False
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table?area=all&format=ffcsv&language=en&name=23111-0001&quality=off
   response:
     body:
       string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"successfull\",\"Type\":\"information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"23111-0001\",\"area\":\"all\",\"language\":\"en\"},\"Object\":{\"Code\":\"23111-0001\",\"Content\":\"Hospitals,
@@ -249,231 +249,7 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Sun, 23 Jun 2024 17:53:25 GMT
-      Keep-Alive:
-      - timeout=15, max=100
-      Server:
-      - Apache
-    status:
-      code: 200
-      message: '200'
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=23111-0001&quality=off
-  response:
-    body:
-      string: "Statistik_Code;Statistik_Label;Zeit_Code;Zeit_Label;Zeit;1_Merkmal_Code;1_Merkmal_Label;1_Auspraegung_Code;1_Auspraegung_Label;GES024__Krankenhaeuser__Anzahl;BTT001__Betten__Anzahl;BTT010__Betten_je_100.000_Einwohner__Anzahl;GES020__Patienten__Anzahl;GES053__Patienten_je_100.000_Einwohner__Anzahl;GES052__Berechnungs-/Belegungstage__1000;GES012__Durchschnittliche_Verweildauer__Tage;BTT004__Durchschnittliche_Bettenauslastung__Prozent\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;1991;DINSG;Deutschland insgesamt;DG;Deutschland;2411;665565;832;14576613;18224;204204;14,0;84,1\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;1992;DINSG;Deutschland insgesamt;DG;Deutschland;2381;646995;803;14974845;18581;198769;13,2;83,9\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;1993;DINSG;Deutschland insgesamt;DG;Deutschland;2354;628658;774;15191174;18713;190741;12,5;83,1\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;1994;DINSG;Deutschland insgesamt;DG;Deutschland;2337;618176;759;15497702;19034;186049;11,9;82,5\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;1995;DINSG;Deutschland insgesamt;DG;Deutschland;2325;609123;746;15931168;19509;182627;11,4;82,1\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;1996;DINSG;Deutschland insgesamt;DG;Deutschland;2269;593743;725;16165019;19739;175247;10,8;80,6\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;1997;DINSG;Deutschland insgesamt;DG;Deutschland;2258;580425;707;16429031;20023;171837;10,4;81,1\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;1998;DINSG;Deutschland insgesamt;DG;Deutschland;2263;571629;697;16847477;20538;171802;10,1;82,3\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;1999;DINSG;Deutschland insgesamt;DG;Deutschland;2252;565268;689;17092707;20823;169696;9,9;82,2\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2000;DINSG;Deutschland insgesamt;DG;Deutschland;2242;559651;681;17262929;21004;167789;9,7;81,9\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2001;DINSG;Deutschland insgesamt;DG;Deutschland;2240;552680;671;17325083;21041;163536;9,4;81,1\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2002;DINSG;Deutschland insgesamt;DG;Deutschland;2221;547284;664;17432272;21135;159937;9,2;80,1\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2003;DINSG;Deutschland insgesamt;DG;Deutschland;2197;541901;657;17295910;20960;153518;8,9;77,6\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2004;DINSG;Deutschland insgesamt;DG;Deutschland;2166;531333;644;16801649;20365;146746;8,7;75,5\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2005;DINSG;Deutschland insgesamt;DG;Deutschland;2139;523824;635;16539398;20056;143244;8,7;74,9\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2006;DINSG;Deutschland insgesamt;DG;Deutschland;2104;510767;620;16832883;20437;142251;8,5;76,3\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2007;DINSG;Deutschland insgesamt;DG;Deutschland;2087;506954;616;17178573;20883;142893;8,3;77,2\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2008;DINSG;Deutschland insgesamt;DG;Deutschland;2083;503360;613;17519579;21334;142535;8,1;77,4\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2009;DINSG;Deutschland insgesamt;DG;Deutschland;2084;503341;615;17817180;21762;142414;8,0;77,5\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2010;DINSG;Deutschland insgesamt;DG;Deutschland;2064;502749;615;18032903;22057;141942;7,9;77,4\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2011;DINSG;Deutschland insgesamt;DG;Deutschland;2045;502029;626;18344156;22870;141676;7,7;77,3\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2012;DINSG;Deutschland insgesamt;DG;Deutschland;2017;501475;624;18620442;23156;142024;7,6;77,4\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2013;DINSG;Deutschland insgesamt;DG;Deutschland;1996;500671;621;18787168;23296;141340;7,5;77,3\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2014;DINSG;Deutschland insgesamt;DG;Deutschland;1980;500680;618;19148626;23645;141534;7,4;77,4\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2015;DINSG;Deutschland insgesamt;DG;Deutschland;1956;499351;611;19239574;23553;141281;7,3;77,5\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2016;DINSG;Deutschland insgesamt;DG;Deutschland;1951;498718;606;19532779;23720;142170;7,3;77,9\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;1942;497182;602;19442810;23522;141152;7,3;77,8\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;1925;498192;601;19392466;23391;140225;7,2;77,1\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;1914;494326;595;19415555;23266;139268;7,2;77,2\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;1903;487783;587;16793962;20195;120202;7,2;67,3\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;1887;483606;581;16742344;20124;120421;7,2;68,2\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;1893;480382;573;16802693;20051;121049;7,2;69,0\n"
-    headers:
-      Connection:
-      - Keep-Alive
-      Content-Disposition:
-      - attachement;filename=23111-0001_flat.csv
-      Content-Length:
-      - '4956'
-      Content-Type:
-      - text/csv
-      Date:
-      - Wed, 26 Jun 2024 16:34:27 GMT
-      Keep-Alive:
-      - timeout=15, max=100
-      Server:
-      - Apache
-    status:
-      code: 200
-      message: '200'
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=23111-0001&quality=off
-  response:
-    body:
-      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"23111-0001\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"23111-0001\",\"Content\":\"Krankenh\xE4user,
-        Betten, Patienten: Deutschland, Jahre\",\"Time\":{\"From\":\"1991\",\"To\":\"2022\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"23111\",\"Content\":\"Grunddaten
-        der Krankenh\xE4user\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Deutschland
-        insgesamt\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"GES024\",\"Content\":\"Krankenh\xE4user\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"BTT001\",\"Content\":\"Betten\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"BTT010\",\"Content\":\"Betten je 100.000 Einwohner\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"GES020\",\"Content\":\"Patienten\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"GES053\",\"Content\":\"Patienten je 100.000 Einwohner\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"GES052\",\"Content\":\"Berechnungs-/Belegungstage\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"GES012\",\"Content\":\"Durchschnittliche Verweildauer\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"BTT004\",\"Content\":\"Durchschnittliche Bettenauslastung\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Rows\":[{\"Code\":\"JAHR\",\"Content\":\"Jahr\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Subtitel\":null,\"Subheading\":null},\"Updated\":\"28.12.2022
-        17:30:45h\"},\"Copyright\":\"\xA9 Statistisches Bundesamt (Destatis), 2024\"}"
-    headers:
-      Connection:
-      - Keep-Alive
-      Content-Length:
-      - '2082'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Wed, 26 Jun 2024 16:34:30 GMT
-      Keep-Alive:
-      - timeout=15, max=100
-      Server:
-      - Apache
-    status:
-      code: 200
-      message: '200'
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=23111-0001
-  response:
-    body:
-      string: "Statistik_Code;Statistik_Label;Zeit_Code;Zeit_Label;Zeit;1_Merkmal_Code;1_Merkmal_Label;1_Auspraegung_Code;1_Auspraegung_Label;GES024__Krankenhaeuser__Anzahl;BTT001__Betten__Anzahl;BTT010__Betten_je_100.000_Einwohner__Anzahl;GES020__Patienten__Anzahl;GES053__Patienten_je_100.000_Einwohner__Anzahl;GES052__Berechnungs-/Belegungstage__1000;GES012__Durchschnittliche_Verweildauer__Tage;BTT004__Durchschnittliche_Bettenauslastung__Prozent\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;1991;DINSG;Deutschland insgesamt;DG;Deutschland;2411;665565;832;14576613;18224;204204;14,0;84,1\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;1992;DINSG;Deutschland insgesamt;DG;Deutschland;2381;646995;803;14974845;18581;198769;13,2;83,9\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;1993;DINSG;Deutschland insgesamt;DG;Deutschland;2354;628658;774;15191174;18713;190741;12,5;83,1\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;1994;DINSG;Deutschland insgesamt;DG;Deutschland;2337;618176;759;15497702;19034;186049;11,9;82,5\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;1995;DINSG;Deutschland insgesamt;DG;Deutschland;2325;609123;746;15931168;19509;182627;11,4;82,1\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;1996;DINSG;Deutschland insgesamt;DG;Deutschland;2269;593743;725;16165019;19739;175247;10,8;80,6\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;1997;DINSG;Deutschland insgesamt;DG;Deutschland;2258;580425;707;16429031;20023;171837;10,4;81,1\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;1998;DINSG;Deutschland insgesamt;DG;Deutschland;2263;571629;697;16847477;20538;171802;10,1;82,3\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;1999;DINSG;Deutschland insgesamt;DG;Deutschland;2252;565268;689;17092707;20823;169696;9,9;82,2\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2000;DINSG;Deutschland insgesamt;DG;Deutschland;2242;559651;681;17262929;21004;167789;9,7;81,9\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2001;DINSG;Deutschland insgesamt;DG;Deutschland;2240;552680;671;17325083;21041;163536;9,4;81,1\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2002;DINSG;Deutschland insgesamt;DG;Deutschland;2221;547284;664;17432272;21135;159937;9,2;80,1\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2003;DINSG;Deutschland insgesamt;DG;Deutschland;2197;541901;657;17295910;20960;153518;8,9;77,6\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2004;DINSG;Deutschland insgesamt;DG;Deutschland;2166;531333;644;16801649;20365;146746;8,7;75,5\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2005;DINSG;Deutschland insgesamt;DG;Deutschland;2139;523824;635;16539398;20056;143244;8,7;74,9\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2006;DINSG;Deutschland insgesamt;DG;Deutschland;2104;510767;620;16832883;20437;142251;8,5;76,3\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2007;DINSG;Deutschland insgesamt;DG;Deutschland;2087;506954;616;17178573;20883;142893;8,3;77,2\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2008;DINSG;Deutschland insgesamt;DG;Deutschland;2083;503360;613;17519579;21334;142535;8,1;77,4\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2009;DINSG;Deutschland insgesamt;DG;Deutschland;2084;503341;615;17817180;21762;142414;8,0;77,5\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2010;DINSG;Deutschland insgesamt;DG;Deutschland;2064;502749;615;18032903;22057;141942;7,9;77,4\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2011;DINSG;Deutschland insgesamt;DG;Deutschland;2045;502029;626;18344156;22870;141676;7,7;77,3\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2012;DINSG;Deutschland insgesamt;DG;Deutschland;2017;501475;624;18620442;23156;142024;7,6;77,4\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2013;DINSG;Deutschland insgesamt;DG;Deutschland;1996;500671;621;18787168;23296;141340;7,5;77,3\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2014;DINSG;Deutschland insgesamt;DG;Deutschland;1980;500680;618;19148626;23645;141534;7,4;77,4\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2015;DINSG;Deutschland insgesamt;DG;Deutschland;1956;499351;611;19239574;23553;141281;7,3;77,5\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2016;DINSG;Deutschland insgesamt;DG;Deutschland;1951;498718;606;19532779;23720;142170;7,3;77,9\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;1942;497182;602;19442810;23522;141152;7,3;77,8\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;1925;498192;601;19392466;23391;140225;7,2;77,1\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;1914;494326;595;19415555;23266;139268;7,2;77,2\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;1903;487783;587;16793962;20195;120202;7,2;67,3\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;1887;483606;581;16742344;20124;120421;7,2;68,2\n23111;Grunddaten
-        der Krankenh\xE4user;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;1893;480382;573;16802693;20051;121049;7,2;69,0\n"
-    headers:
-      Connection:
-      - Keep-Alive
-      Content-Disposition:
-      - attachement;filename=23111-0001_flat.csv
-      Content-Length:
-      - '4956'
-      Content-Type:
-      - text/csv
-      Date:
-      - Wed, 26 Jun 2024 18:17:44 GMT
-      Keep-Alive:
-      - timeout=15, max=100
-      Server:
-      - Apache
-    status:
-      code: 200
-      message: '200'
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=23111-0001
-  response:
-    body:
-      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"23111-0001\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"23111-0001\",\"Content\":\"Krankenh\xE4user,
-        Betten, Patienten: Deutschland, Jahre\",\"Time\":{\"From\":\"1991\",\"To\":\"2022\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"23111\",\"Content\":\"Grunddaten
-        der Krankenh\xE4user\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Deutschland
-        insgesamt\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"GES024\",\"Content\":\"Krankenh\xE4user\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"BTT001\",\"Content\":\"Betten\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"BTT010\",\"Content\":\"Betten je 100.000 Einwohner\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"GES020\",\"Content\":\"Patienten\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"GES053\",\"Content\":\"Patienten je 100.000 Einwohner\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"GES052\",\"Content\":\"Berechnungs-/Belegungstage\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"GES012\",\"Content\":\"Durchschnittliche Verweildauer\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"BTT004\",\"Content\":\"Durchschnittliche Bettenauslastung\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Rows\":[{\"Code\":\"JAHR\",\"Content\":\"Jahr\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Subtitel\":null,\"Subheading\":null},\"Updated\":\"28.12.2022
-        17:30:45h\"},\"Copyright\":\"\xA9 Statistisches Bundesamt (Destatis), 2024\"}"
-    headers:
-      Connection:
-      - Keep-Alive
-      Content-Length:
-      - '2082'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Wed, 26 Jun 2024 18:17:46 GMT
+      - Sat, 29 Jun 2024 21:13:39 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:

@@ -5,7 +5,7 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
@@ -15,14 +15,14 @@ interactions:
   response:
     body:
       string: !!binary |
-        UEsDBBQACAgIADSl2lgAAAAAAAAAAAAAAAAWAAAANjAwMEYtMTAwN19kZV9mbGF0LmNzds1UvW7C
+        UEsDBBQACAgIAOO53VgAAAAAAAAAAAAAAAAWAAAANjAwMEYtMTAwN19kZV9mbGF0LmNzds1UvW7C
         MBDe+xRZuiXq2QFCdFMgJa3UqkOKwhYZYhFLwaixTaW+Woc+Ul+hoUEiBFqVLmSx7sd3992nz/58
         /1CaaaG0WKh0sc44NvyCzXmBWqx4nfq29kEk6YaVgs2LXb7h17caAaZ1KeZGH1/dZ+oi2upK213p
         j11PZuqiDSsMr8/USKF35uGoVqxRmb5cDQBgghO2EoXgEuPnIMK44inXbIkUCHGg74CP0e1T+EAw
         5EarRV4wmWEYHbjJXRTEBAOjtmRrI5dWxksrWeeyshHvpVpyxVYaCYANeI2T4BGA7ofzi6ChdNAf
         ei5gIN9YXlwSVTCNnVEQzpxkPMMRy/grk5LfhKaq55aRmZWMLbkdbG3WZV51rOCA3bssl/9C7bvU
         H3aL8mPsLdD2dpEm8W5niD8X+8Cjrtcd+k9usFNOQzO+TTrB+N/gUtrrEwIdUvnpF3qokePvhXaF
-        87Ox9zwY/qLyL1BLBwjW/xS3ZQEAACgIAABQSwECFAAUAAgICAA0pdpY1v8Ut2UBAAAoCAAAFgAA
+        87Ox9zwY/qLyL1BLBwjW/xS3ZQEAACgIAABQSwECFAAUAAgICADjud1Y1v8Ut2UBAAAoCAAAFgAA
         AAAAAAAAAAAAAAAAAAAANjAwMEYtMTAwN19kZV9mbGF0LmNzdlBLBQYAAAAAAQABAEQAAACpAQAA
         AAA=
     headers:
@@ -35,7 +35,7 @@ interactions:
       Content-Type:
       - application/zip
       Date:
-      - Wed, 26 Jun 2024 18:41:38 GMT
+      - Sat, 29 Jun 2024 21:15:01 GMT
       Keep-Alive:
       - timeout=10, max=500
       Referrer-Policy:
@@ -43,7 +43,7 @@ interactions:
       Server:
       - Apache
       Set-Cookie:
-      - AL_BALANCE-S=$xc/ROLvOQPrvxxGEly9Q_EJzSgHdhrPVZGIUssClhf5unoo3pfO; Path=/;
+      - AL_BALANCE-S=$xc/F4UKUeTnt1ZqBeNmWM8OIITh1T!klwQWnKbmSiCaZmPJ6Jg8; Path=/;
         Secure; HttpOnly; SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -64,7 +64,7 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
@@ -90,7 +90,7 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Wed, 26 Jun 2024 18:41:42 GMT
+      - Sat, 29 Jun 2024 21:15:06 GMT
       Keep-Alive:
       - timeout=10, max=500
       Referrer-Policy:
@@ -98,7 +98,7 @@ interactions:
       Server:
       - Apache
       Set-Cookie:
-      - AL_BALANCE-S=$xc/94hef2B27GrsfFwAXLtMsMoLB!LZyxrvtSe9mOyc2QrWCwmf; Path=/;
+      - AL_BALANCE-S=$xc/K1HmuZuiKR8f_!g6qBwIF2EjJOU2OmHwi1bbzFSf_mGw3Zcp; Path=/;
         Secure; HttpOnly; SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains

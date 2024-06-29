@@ -63,6 +63,7 @@ LANG_TO_COL_MAPPING = {
             "value_variable_label": "value_variable_label",
             "value": "value",
             "value_unit": "value_unit",
+            "value_q": "value_q",
             "ars": "Amtlicher Regionalschlüssel (ARS)",
         },
         "en": {
@@ -73,6 +74,7 @@ LANG_TO_COL_MAPPING = {
             "value_variable_label": "value_variable_label",
             "value": "value",
             "value_unit": "value_unit",
+            "value_q": "value_q",
             "ars": "Official regional key (ARS)",
         },
     },

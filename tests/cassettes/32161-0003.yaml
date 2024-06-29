@@ -5,13 +5,13 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.31.0
+      - python-requests/2.32.3
     method: GET
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=32161-0003&quality=False
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=32161-0003&quality=off
   response:
     body:
       string: "Statistik_Code;Statistik_Label;Zeit_Code;Zeit_Label;Zeit;1_Merkmal_Code;1_Merkmal_Label;1_Auspraegung_Code;1_Auspraegung_Label;2_Merkmal_Code;2_Merkmal_Label;2_Auspraegung_Code;2_Auspraegung_Label;BETR01__Betriebe__Anzahl;ABF014__Erzeugte_Abfallmenge__1000_t;ERW012__Beschaeftigte__1000;ERF001__Erfassungsgrad_der_Betriebe__Prozent;ERF002__Erfassungsgrad_der_Beschaeftigten__Prozent\n32161;Erhebung
@@ -56,7 +56,7 @@ interactions:
       Content-Type:
       - text/csv
       Date:
-      - Sun, 23 Jun 2024 17:49:42 GMT
+      - Sat, 29 Jun 2024 21:07:54 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
@@ -70,13 +70,13 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.31.0
+      - python-requests/2.32.3
     method: GET
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=32161-0003&quality=False
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=32161-0003&quality=off
   response:
     body:
       string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"32161-0003\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"32161-0003\",\"Content\":\"Betriebe,
@@ -102,7 +102,7 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Sun, 23 Jun 2024 17:49:44 GMT
+      - Sat, 29 Jun 2024 21:07:56 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
@@ -116,13 +116,13 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.31.0
+      - python-requests/2.32.3
     method: GET
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile?area=all&format=ffcsv&language=en&name=32161-0003&quality=False
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile?area=all&format=ffcsv&language=en&name=32161-0003&quality=off
   response:
     body:
       string: 'statistics_code;statistics_label;time_code;time_label;time;1_variable_code;1_variable_label;1_variable_code;1_variable_code;2_variable_code;2_variable_label;2_variable_code;2_variable_code;BETR01__Local_units__number;ABF014__Quantity_of_waste_produced__1000_t;ERW012__Persons_employed__1000;ERF001__Coverage_of_local_units__percent;ERF002__Coverage_of_persons_employed__percent
@@ -191,7 +191,7 @@ interactions:
       Content-Type:
       - text/csv
       Date:
-      - Sun, 23 Jun 2024 17:53:31 GMT
+      - Sat, 29 Jun 2024 21:13:44 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
@@ -205,13 +205,13 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.31.0
+      - python-requests/2.32.3
     method: GET
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table?area=all&format=ffcsv&language=en&name=32161-0003&quality=False
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table?area=all&format=ffcsv&language=en&name=32161-0003&quality=off
   response:
     body:
       string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"successfull\",\"Type\":\"information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"32161-0003\",\"area\":\"all\",\"language\":\"en\"},\"Object\":{\"Code\":\"32161-0003\",\"Content\":\"Local
@@ -237,229 +237,7 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Sun, 23 Jun 2024 17:53:33 GMT
-      Keep-Alive:
-      - timeout=15, max=100
-      Server:
-      - Apache
-    status:
-      code: 200
-      message: '200'
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=32161-0003&quality=off
-  response:
-    body:
-      string: "Statistik_Code;Statistik_Label;Zeit_Code;Zeit_Label;Zeit;1_Merkmal_Code;1_Merkmal_Label;1_Auspraegung_Code;1_Auspraegung_Label;2_Merkmal_Code;2_Merkmal_Label;2_Auspraegung_Code;2_Auspraegung_Label;BETR01__Betriebe__Anzahl;ABF014__Erzeugte_Abfallmenge__1000_t;ERW012__Beschaeftigte__1000;ERF001__Erfassungsgrad_der_Betriebe__Prozent;ERF002__Erfassungsgrad_der_Beschaeftigten__Prozent\n32161;Erhebung
-        \xFCber die Abfallerzeugung;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;WZ08T1;WZ2008
-        (2-Steller): Abfallerzeugung;WZ08-01-03;Land- und Forstwirtschaft, Fischerei;366;423,9;32,9;0,4;14,2\n32161;Erhebung
-        \xFCber die Abfallerzeugung;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;WZ08T1;WZ2008
-        (2-Steller): Abfallerzeugung;WZ08-05-02;Bergbau und Gewinnung von Steinen
-        und Erden;49;463,3;22,5;2,3;46,0\n32161;Erhebung \xFCber die Abfallerzeugung;JAHR;Jahr;2018;DINSG;Deutschland
-        insgesamt;DG;Deutschland;WZ08T1;WZ2008 (2-Steller): Abfallerzeugung;WZ08-10-01;Ern\xE4hrungsgewerbe
-        und Tabakverarbeitung;1451;6318,3;404,4;4,7;55,7\n32161;Erhebung \xFCber die
-        Abfallerzeugung;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;WZ08T1;WZ2008
-        (2-Steller): Abfallerzeugung;WZ08-13-03;Textil- und Bekleidungsgewerbe, Ledergewerbe;503;229,7;86,7;6,9;70,1\n32161;Erhebung
-        \xFCber die Abfallerzeugung;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;WZ08T1;WZ2008
-        (2-Steller): Abfallerzeugung;WZ08-16;H.v. Holz-, Flecht-, Korb-u.Korkwaren
-        (ohne M\xF6bel);348;3582,6;57,9;3,6;51,1\n32161;Erhebung \xFCber die Abfallerzeugung;JAHR;Jahr;2018;DINSG;Deutschland
-        insgesamt;DG;Deutschland;WZ08T1;WZ2008 (2-Steller): Abfallerzeugung;WZ08-17-03;Papier-
-        und Druckgewerbe;1039;6552,3;178,0;8,9;71,5\n32161;Erhebung \xFCber die Abfallerzeugung;JAHR;Jahr;2018;DINSG;Deutschland
-        insgesamt;DG;Deutschland;WZ08T1;WZ2008 (2-Steller): Abfallerzeugung;WZ08-19;Kokerei
-        und Mineral\xF6lverarbeitung;50;486,5;18,5;37,6;89,4\n32161;Erhebung \xFCber
-        die Abfallerzeugung;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;WZ08T1;WZ2008
-        (2-Steller): Abfallerzeugung;WZ08-20-03;Chem. u. pharm. Erzeugn., Gummi-,
-        Kunststoffwaren;2987;7729,4;752,5;23,7;84,6\n32161;Erhebung \xFCber die Abfallerzeugung;JAHR;Jahr;2018;DINSG;Deutschland
-        insgesamt;DG;Deutschland;WZ08T1;WZ2008 (2-Steller): Abfallerzeugung;WZ08-23;H.v.Glas,-waren,Keramik,Verarb.
-        v.Steinen u.Erden;940;3768,9;149,8;9,1;69,3\n32161;Erhebung \xFCber die Abfallerzeugung;JAHR;Jahr;2018;DINSG;Deutschland
-        insgesamt;DG;Deutschland;WZ08T1;WZ2008 (2-Steller): Abfallerzeugung;WZ08-24-03;Metallerzeugung
-        u. -bearb., Herstell. v.Metallerz.;1912;12270,4;609,0;4,4;55,3\n32161;Erhebung
-        \xFCber die Abfallerzeugung;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;WZ08T1;WZ2008
-        (2-Steller): Abfallerzeugung;WZ08-26-03;DV-Ger\xE4te,elektr. u. opt.Erzeugn.,Fahrzeugbau,etc.;5402;8375,5;2531,1;10,4;79,2\n32161;Erhebung
-        \xFCber die Abfallerzeugung;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;WZ08T1;WZ2008
-        (2-Steller): Abfallerzeugung;WZ08-31-02;Herstellung von M\xF6beln und sonstigen
-        Waren;995;547,5;201,0;3,8;57,7\n32161;Erhebung \xFCber die Abfallerzeugung;JAHR;Jahr;2018;DINSG;Deutschland
-        insgesamt;DG;Deutschland;WZ08T1;WZ2008 (2-Steller): Abfallerzeugung;WZ08-35-01;Energieversorgung,
-        Wasserversorgung;526;13554,5;179,4;2,5;64,2\n32161;Erhebung \xFCber die Abfallerzeugung;JAHR;Jahr;2018;DINSG;Deutschland
-        insgesamt;DG;Deutschland;WZ08T1;WZ2008 (2-Steller): Abfallerzeugung;WZ08-45-04;Dienstleistungen;3377;3613,5;3844,6;0,1;17,5\n"
-    headers:
-      Connection:
-      - Keep-Alive
-      Content-Disposition:
-      - attachement;filename=32161-0003_flat.csv
-      Content-Length:
-      - '3460'
-      Content-Type:
-      - text/csv
-      Date:
-      - Wed, 26 Jun 2024 16:34:36 GMT
-      Keep-Alive:
-      - timeout=15, max=100
-      Server:
-      - Apache
-    status:
-      code: 200
-      message: '200'
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=32161-0003&quality=off
-  response:
-    body:
-      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"32161-0003\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"32161-0003\",\"Content\":\"Betriebe,
-        erzeugte Abfallmenge, Besch\xE4ftigte, Erfassungsgrad\\nder Betriebe, Erfassungsgrad
-        der Besch\xE4ftigten: Deutschland,\\nJahre, Wirtschaftszweige\",\"Time\":{\"From\":\"2010\",\"To\":\"2018\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"32161\",\"Content\":\"Erhebung
-        \xFCber die Abfallerzeugung\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Deutschland
-        insgesamt\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"BETR01\",\"Content\":\"Betriebe\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"ABF014\",\"Content\":\"Erzeugte Abfallmenge\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"ERW012\",\"Content\":\"Besch\xE4ftigte\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"ERF001\",\"Content\":\"Erfassungsgrad der Betriebe\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"ERF002\",\"Content\":\"Erfassungsgrad der Besch\xE4ftigten\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Rows\":[{\"Code\":\"WZ08T1\",\"Content\":\"WZ2008 (2-Steller):
-        Abfallerzeugung\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Subtitel\":{\"Code\":\"JAHR\",\"Content\":\"Jahr\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Structure\":null,\"Updated\":\"see
-        parent\"},\"Subheading\":null},\"Updated\":\"28.12.2022 17:46:57h\"},\"Copyright\":\"\xA9
-        Statistisches Bundesamt (Destatis), 2024\"}"
-    headers:
-      Connection:
-      - Keep-Alive
-      Content-Length:
-      - '1901'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Wed, 26 Jun 2024 16:34:38 GMT
-      Keep-Alive:
-      - timeout=15, max=100
-      Server:
-      - Apache
-    status:
-      code: 200
-      message: '200'
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=32161-0003
-  response:
-    body:
-      string: "Statistik_Code;Statistik_Label;Zeit_Code;Zeit_Label;Zeit;1_Merkmal_Code;1_Merkmal_Label;1_Auspraegung_Code;1_Auspraegung_Label;2_Merkmal_Code;2_Merkmal_Label;2_Auspraegung_Code;2_Auspraegung_Label;BETR01__Betriebe__Anzahl;ABF014__Erzeugte_Abfallmenge__1000_t;ERW012__Beschaeftigte__1000;ERF001__Erfassungsgrad_der_Betriebe__Prozent;ERF002__Erfassungsgrad_der_Beschaeftigten__Prozent\n32161;Erhebung
-        \xFCber die Abfallerzeugung;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;WZ08T1;WZ2008
-        (2-Steller): Abfallerzeugung;WZ08-01-03;Land- und Forstwirtschaft, Fischerei;366;423,9;32,9;0,4;14,2\n32161;Erhebung
-        \xFCber die Abfallerzeugung;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;WZ08T1;WZ2008
-        (2-Steller): Abfallerzeugung;WZ08-05-02;Bergbau und Gewinnung von Steinen
-        und Erden;49;463,3;22,5;2,3;46,0\n32161;Erhebung \xFCber die Abfallerzeugung;JAHR;Jahr;2018;DINSG;Deutschland
-        insgesamt;DG;Deutschland;WZ08T1;WZ2008 (2-Steller): Abfallerzeugung;WZ08-10-01;Ern\xE4hrungsgewerbe
-        und Tabakverarbeitung;1451;6318,3;404,4;4,7;55,7\n32161;Erhebung \xFCber die
-        Abfallerzeugung;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;WZ08T1;WZ2008
-        (2-Steller): Abfallerzeugung;WZ08-13-03;Textil- und Bekleidungsgewerbe, Ledergewerbe;503;229,7;86,7;6,9;70,1\n32161;Erhebung
-        \xFCber die Abfallerzeugung;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;WZ08T1;WZ2008
-        (2-Steller): Abfallerzeugung;WZ08-16;H.v. Holz-, Flecht-, Korb-u.Korkwaren
-        (ohne M\xF6bel);348;3582,6;57,9;3,6;51,1\n32161;Erhebung \xFCber die Abfallerzeugung;JAHR;Jahr;2018;DINSG;Deutschland
-        insgesamt;DG;Deutschland;WZ08T1;WZ2008 (2-Steller): Abfallerzeugung;WZ08-17-03;Papier-
-        und Druckgewerbe;1039;6552,3;178,0;8,9;71,5\n32161;Erhebung \xFCber die Abfallerzeugung;JAHR;Jahr;2018;DINSG;Deutschland
-        insgesamt;DG;Deutschland;WZ08T1;WZ2008 (2-Steller): Abfallerzeugung;WZ08-19;Kokerei
-        und Mineral\xF6lverarbeitung;50;486,5;18,5;37,6;89,4\n32161;Erhebung \xFCber
-        die Abfallerzeugung;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;WZ08T1;WZ2008
-        (2-Steller): Abfallerzeugung;WZ08-20-03;Chem. u. pharm. Erzeugn., Gummi-,
-        Kunststoffwaren;2987;7729,4;752,5;23,7;84,6\n32161;Erhebung \xFCber die Abfallerzeugung;JAHR;Jahr;2018;DINSG;Deutschland
-        insgesamt;DG;Deutschland;WZ08T1;WZ2008 (2-Steller): Abfallerzeugung;WZ08-23;H.v.Glas,-waren,Keramik,Verarb.
-        v.Steinen u.Erden;940;3768,9;149,8;9,1;69,3\n32161;Erhebung \xFCber die Abfallerzeugung;JAHR;Jahr;2018;DINSG;Deutschland
-        insgesamt;DG;Deutschland;WZ08T1;WZ2008 (2-Steller): Abfallerzeugung;WZ08-24-03;Metallerzeugung
-        u. -bearb., Herstell. v.Metallerz.;1912;12270,4;609,0;4,4;55,3\n32161;Erhebung
-        \xFCber die Abfallerzeugung;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;WZ08T1;WZ2008
-        (2-Steller): Abfallerzeugung;WZ08-26-03;DV-Ger\xE4te,elektr. u. opt.Erzeugn.,Fahrzeugbau,etc.;5402;8375,5;2531,1;10,4;79,2\n32161;Erhebung
-        \xFCber die Abfallerzeugung;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;WZ08T1;WZ2008
-        (2-Steller): Abfallerzeugung;WZ08-31-02;Herstellung von M\xF6beln und sonstigen
-        Waren;995;547,5;201,0;3,8;57,7\n32161;Erhebung \xFCber die Abfallerzeugung;JAHR;Jahr;2018;DINSG;Deutschland
-        insgesamt;DG;Deutschland;WZ08T1;WZ2008 (2-Steller): Abfallerzeugung;WZ08-35-01;Energieversorgung,
-        Wasserversorgung;526;13554,5;179,4;2,5;64,2\n32161;Erhebung \xFCber die Abfallerzeugung;JAHR;Jahr;2018;DINSG;Deutschland
-        insgesamt;DG;Deutschland;WZ08T1;WZ2008 (2-Steller): Abfallerzeugung;WZ08-45-04;Dienstleistungen;3377;3613,5;3844,6;0,1;17,5\n"
-    headers:
-      Connection:
-      - Keep-Alive
-      Content-Disposition:
-      - attachement;filename=32161-0003_flat.csv
-      Content-Length:
-      - '3460'
-      Content-Type:
-      - text/csv
-      Date:
-      - Wed, 26 Jun 2024 18:20:56 GMT
-      Keep-Alive:
-      - timeout=15, max=100
-      Server:
-      - Apache
-    status:
-      code: 200
-      message: '200'
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=32161-0003
-  response:
-    body:
-      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"32161-0003\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"32161-0003\",\"Content\":\"Betriebe,
-        erzeugte Abfallmenge, Besch\xE4ftigte, Erfassungsgrad\\nder Betriebe, Erfassungsgrad
-        der Besch\xE4ftigten: Deutschland,\\nJahre, Wirtschaftszweige\",\"Time\":{\"From\":\"2010\",\"To\":\"2018\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"32161\",\"Content\":\"Erhebung
-        \xFCber die Abfallerzeugung\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Deutschland
-        insgesamt\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"BETR01\",\"Content\":\"Betriebe\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"ABF014\",\"Content\":\"Erzeugte Abfallmenge\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"ERW012\",\"Content\":\"Besch\xE4ftigte\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"ERF001\",\"Content\":\"Erfassungsgrad der Betriebe\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"ERF002\",\"Content\":\"Erfassungsgrad der Besch\xE4ftigten\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Rows\":[{\"Code\":\"WZ08T1\",\"Content\":\"WZ2008 (2-Steller):
-        Abfallerzeugung\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Subtitel\":{\"Code\":\"JAHR\",\"Content\":\"Jahr\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Structure\":null,\"Updated\":\"see
-        parent\"},\"Subheading\":null},\"Updated\":\"28.12.2022 17:46:57h\"},\"Copyright\":\"\xA9
-        Statistisches Bundesamt (Destatis), 2024\"}"
-    headers:
-      Connection:
-      - Keep-Alive
-      Content-Length:
-      - '1901'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Wed, 26 Jun 2024 18:20:58 GMT
+      - Sat, 29 Jun 2024 21:13:46 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:

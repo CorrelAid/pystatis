@@ -74,21 +74,21 @@ This package currently supports retrieving the following data types:
 
 ### Find the right data
 
-`pystatis` offers the `Find` class to search for any piece of information with GENESIS. Behind the scene it's using the `find` endpoint.
+`pystatis` offers the `Find` class to search for any piece of information within each database. Behind the scene it's using the `find` endpoint.
 
 Example:
 
 ```python
 from pystatis import Find
 
-results = Find("Rohöl") # Initiates object that contains all variables, statistics, tables and cubes
+results = Find("Rohöl", "genesis") # Initiates object that contains all variables, statistics, tables and cubes
 results.run() # Runs the query
 results.tables.df # Results for tables
 results.tables.get_code([1,2,3]) # Gets the table codes, e.g. for downloading the table
 results.tables.get_metadata([1,2]) # Gets the metadata for the table
 ```
 
-A complete overview of all use cases is provided in the example notebook for [find](https://github.com/CorrelAid/pystatis/blob/main/nb/find.ipynb).
+A complete overview of all use cases is provided in the example notebook for [find](https://github.com/CorrelAid/pystatis/blob/main/nb/03_find.ipynb).
 
 ### Download data
 
@@ -104,7 +104,7 @@ t.get_data()  # only now the data is either fetched from GENESIS or loaded from 
 t.data  # prettified data stored as pandas DataFrame
 ```
 
-For more details, please study the provided sample notebook for [tables](https://github.com/CorrelAid/pystatis/blob/main/nb/table.ipynb).
+For more details, please study the provided sample notebook for [tables](https://github.com/CorrelAid/pystatis/blob/main/nb/01_table.ipynb).
 
 ### Clear Cache
 

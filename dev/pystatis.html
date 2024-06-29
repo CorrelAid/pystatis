@@ -624,10 +624,10 @@ One of “genesis”, “zensus”, “regio”. Defaults to None.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The raw data of the table file as returned by Destatis.</p>
+<dd class="field-even"><p>the response object holding the response from calling the Destatis endpoint.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>bytes</p>
+<dd class="field-odd"><p>requests.Response</p>
 </dd>
 </dl>
 </dd></dl>
@@ -780,18 +780,19 @@ This parameter is cumulative to <cite>startyear</cite> and <cite>endyear</cite>.
 <li><p><strong>regionalvariable</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>“code” of the regional classification (RKMerkmal),
 to which the selection using <cite>regionalkey</cite> is to be applied.
 Accepts 1-6 characters.
-Possible values:
-- Regionalstatistik (only for tables ending with “B”, see /catalogue/variables):</p>
-<blockquote>
-<div><ul>
+Possible values:</p>
+<ul>
+<li><dl class="simple">
+<dt>Regionalstatistik (only for tables ending with “B”, see /catalogue/variables):</dt><dd><ul>
 <li><p>”DG” (Deutschland, 1) -&gt; will not return extra column</p></li>
 <li><p>”DLAND” (Bundesländer, 16)</p></li>
 <li><p>”REGBEZ” (Regierungsbezirke, 44)</p></li>
 <li><p>”KREISE” (Kreise und kreisfreie Städte, 489)</p></li>
 <li><p>”GEMEIN” (Gemeinden, 13564)</p></li>
 </ul>
-</div></blockquote>
-<ul>
+</dd>
+</dl>
+</li>
 <li><dl class="simple">
 <dt>Zensusdatenbank (for all tables, see /catalogue/variables):</dt><dd><ul>
 <li><p>”GEODL1” (Deutschland, 1) -&gt; will not return extra column</p></li>
@@ -1044,18 +1045,19 @@ This parameter is cumulative to <cite>startyear</cite> and <cite>endyear</cite>.
 <li><p><strong>regionalvariable</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>“code” of the regional classification (RKMerkmal),
 to which the selection using <cite>regionalkey</cite> is to be applied.
 Accepts 1-6 characters.
-Possible values:
-- Regionalstatistik (only for tables ending with “B”, see /catalogue/variables):</p>
-<blockquote>
-<div><ul>
+Possible values:</p>
+<ul>
+<li><dl class="simple">
+<dt>Regionalstatistik (only for tables ending with “B”, see /catalogue/variables):</dt><dd><ul>
 <li><p>”DG” (Deutschland, 1) -&gt; will not return extra column</p></li>
 <li><p>”DLAND” (Bundesländer, 16)</p></li>
 <li><p>”REGBEZ” (Regierungsbezirke, 44)</p></li>
 <li><p>”KREISE” (Kreise und kreisfreie Städte, 489)</p></li>
 <li><p>”GEMEIN” (Gemeinden, 13564)</p></li>
 </ul>
-</div></blockquote>
-<ul>
+</dd>
+</dl>
+</li>
 <li><dl class="simple">
 <dt>Zensusdatenbank (for all tables, see /catalogue/variables):</dt><dd><ul>
 <li><p>”GEODL1” (Deutschland, 1) -&gt; will not return extra column</p></li>

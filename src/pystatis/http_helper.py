@@ -9,7 +9,7 @@ import requests
 
 from pystatis import config, db
 from pystatis.cache import cache_data, hit_in_cash, normalize_name, read_from_cache
-from pystatis.exception import DestatisStatusError, PystatisConfigError
+from pystatis.exception import DestatisStatusError
 
 logger = logging.getLogger(__name__)
 
@@ -64,6 +64,7 @@ def load_data(
             if response_status_code == 98:
                 job_response = start_job(endpoint, method, params)
                 job_id = get_job_id_from_response(job_response)
+                logger.info("Verarbeitung im Hintergrund erfolgreich gestartet. Job-ID: %s.", job_id)
                 data = get_data_from_resultfile(job_id, db_name)
 
             cache_data(cache_dir, name, params, data, content_type)
@@ -96,33 +97,10 @@ def get_data_from_endpoint(endpoint: str, method: str, params: dict, db_name: st
 
     # Determine database by matching regex to item code
     if db_name is None:
-        name = params.get("name", params.get("selection", ""))
+        table_name = params.get("name", params.get("selection", ""))
 
-        if name is not None:
-            db_match = db.identify_db(name)
-
-            # Check credentials (Note: we might want to do this also for explicitly specified db_names?)
-            # If more than one db matches it must be a Cube (provided all regexing works as intended).
-            # --> Choose db based on available credentials.
-            if db_match:
-                for name in db_match:
-                    if db.check_credentials(name):
-                        db_name = name
-                        break
-                else:
-                    raise PystatisConfigError(
-                        "Missing credentials!\n"
-                        f"To access this item you need to be a registered user of: {db_match} \n"
-                        "Please run setup_credentials()."
-                    )
-
-    if not db_name:
-        raise ValueError(
-            "Could not determine the database for this request. "
-            "Please specify a database using the `db_name` parameter "
-            "or make sure that the `params` dictionary has a key 'name' "
-            "with a proper object number."
-        )
+        db_matches = db.identify_db_matches(table_name)
+        db_name = db.select_db_by_credentials(db_matches)
 
     db_host, db_user, db_pw = db.get_settings(db_name)
     url = f"{db_host}{endpoint}/{method}"
@@ -136,7 +114,7 @@ def get_data_from_endpoint(endpoint: str, method: str, params: dict, db_name: st
         }
     )
 
-    response = requests.get(url, params=params_, timeout=(5, 60))
+    response = requests.get(url, params=params_, timeout=(5, 300))
 
     response.encoding = "UTF-8"
     _check_invalid_status_code(response)
@@ -214,6 +192,14 @@ def get_data_from_resultfile(job_id: str, db_name: str | None = None) -> bytes:
 
         jobs = response.json().get("List")
         if len(jobs) > 0 and jobs[0].get("State") == "Fertig":
+            logger.info(
+                (
+                    "Verarbeitung im Hintergrund abgeschlossen. "
+                    "Ergebnis kann jetzt abgerufen werden über "
+                    "/data/resultfile und Job-ID: %s."
+                ),
+                job_id,
+            )
             break
 
         time.sleep(5)
@@ -221,6 +207,7 @@ def get_data_from_resultfile(job_id: str, db_name: str | None = None) -> bytes:
         print("Time out exceeded! Aborting...")
         return bytes()
 
+    time.sleep(5)
     params = {
         "name": job_id,
         "area": "all",

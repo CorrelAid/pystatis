@@ -8,6 +8,7 @@ import numpy as np
 import pandas as pd
 
 from pystatis import config, db
+from pystatis.config import LANG_TO_COL_MAPPING
 from pystatis.http_helper import load_data
 
 
@@ -90,6 +91,7 @@ class Table:
             stand (str, optional): Only download the table if it is newer than the status date.
                 "tt.mm.jjjj hh:mm" or "tt.mm.jjjj". Example: "24.12.2001 19:15".
             language (str, optional): Messages and data descriptions are supplied in this language.
+                For GENESIS and Zensus, ['de', 'en'] are supported. For Regionalstatistik, only 'de' is supported.
             quality (bool, optional): If True, Value-adding quality labels are issued.
         """
         params = {
@@ -106,7 +108,10 @@ class Table:
             "format": "ffcsv",
         }
 
-        raw_data_bytes = load_data(endpoint="data", method="tablefile", params=params)
+        db_matches = db.identify_db_matches(self.name)
+        db_name = db.select_db_by_credentials(db_matches)
+
+        raw_data_bytes = load_data(endpoint="data", method="tablefile", params=params, db_name=db_name)
         assert isinstance(raw_data_bytes, bytes)  # nosec assert_used
         raw_data_str = raw_data_bytes.decode("utf-8-sig")
 
@@ -117,10 +122,20 @@ class Table:
         raw_data_header = raw_data_lines[0]
         raw_data_str = raw_data_header + "".join(line for line in raw_data_lines[1:] if line[:4].isdigit())
         data_buffer = StringIO(raw_data_str)
-        self.data = pd.read_csv(data_buffer, sep=";", na_values=["...", ".", "-", "/", "x"])
+
+        self.data = pd.read_csv(
+            data_buffer,
+            sep=";",
+            na_values=["...", ".", "-", "/", "x"],
+            decimal="," if language == "de" else ".",
+        )
 
         if prettify:
-            self.data = self.prettify_table(self.data, db.identify_db(self.name)[0])
+            self.data = self.prettify_table(
+                data=self.data,
+                db_name=db.identify_db_matches(self.name)[0],
+                language=language,
+            )
 
         metadata = load_data(endpoint="metadata", method="table", params=params)
         metadata = json.loads(metadata)
@@ -129,12 +144,13 @@ class Table:
         self.metadata = metadata
 
     @staticmethod
-    def prettify_table(data: pd.DataFrame, db_name: str) -> pd.DataFrame:
+    def prettify_table(data: pd.DataFrame, db_name: str, language: str) -> pd.DataFrame:
         """Reformat the data into a more readable table
 
         Args:
             data (pd.DataFrame): A pandas dataframe created from raw_data
             db_name (str): The name of the database.
+            language (str): The requested language. One of "de" or "en".
 
         Returns:
             pd.DataFrame: Formatted dataframe that omits all unnecessary Code columns
@@ -142,43 +158,51 @@ class Table:
         """
         match db_name:
             case "genesis" | "regio":
-                pretty_data = Table.parse_genesis_and_regio_table(data)
+                pretty_data = Table.parse_genesis_and_regio_table(data, language)
             case "zensus":
-                pretty_data = Table.parse_zensus_table(data)
+                pretty_data = Table.parse_zensus_table(data, language)
             case _:
                 pretty_data = data
 
         return pretty_data
 
     @staticmethod
-    def parse_genesis_and_regio_table(data: pd.DataFrame) -> pd.DataFrame:
+    def parse_genesis_and_regio_table(data: pd.DataFrame, language: str) -> pd.DataFrame:
         """
         Parse ffcsv format for tables from GENESIS and Regionalstatistik into a more readable format
         """
-        # Extracts time column with name from first element of Zeit_Label column
-        time = pd.DataFrame({data["Zeit_Label"].iloc[0]: data["Zeit"]})
 
-        # Some tables of Genesis can have a regional code (AGS) as first attribute
+        column_name_dict = LANG_TO_COL_MAPPING["genesis-regio"][language]
+        time_col = column_name_dict["time"]
+        time_label_col = column_name_dict["time_label"]
+        variable_label_col = column_name_dict["variable_label"]
+        value_label_col = column_name_dict["value_label"]
+        ags_label_col = column_name_dict["ags"]
+
+        # Extracts time column with name from last element of Zeit_Label column
+        time = pd.DataFrame({data[time_label_col].iloc[-1]: data[time_col]})
+
+        # Whenever there is a column with a regional code, we add this column to the final output
+        # As the position is unknown, we have to identify this column by looking for the AGS code
         ags_code = None
         pos_of_ags_col = np.where(data.iloc[0].isin(config.REGIO_AND_GENESIS_AGS_CODES))[0]
         if pos_of_ags_col.size > 0:
             pos_of_ags_col = pos_of_ags_col[0]
-            label = "Amtlicher Gemeindeschlüssel (AGS)"  # en: official municipality code (AGS)
-            ags_code = pd.Series(data=data.iloc[:, pos_of_ags_col + 2], name=label)
+            ags_code = pd.Series(data=data.iloc[:, pos_of_ags_col + 2], name=ags_label_col)
 
-        # Extracts new column names from first values of the Merkmal_Label columns
-        # and assigns these to the relevant attribute columns (Auspraegung_Label)
-        attributes = data.filter(like="Auspraegung_Label")
-        attributes.columns = data.filter(like="Merkmal_Label").iloc[0].tolist()
+        # Extracts new column names from last values of the variable label columns
+        # and assigns these to the relevant attribute columns (variable level)
+        attributes = data.filter(like=value_label_col)
+        attributes.columns = data.filter(like=variable_label_col).iloc[-1].tolist()
 
         # Selects all columns containing the values
         values = data.filter(like="__")
 
         # Given a name like BEV036__Bevoelkerung_in_Hauptwohnsitzhaushalten__1000
-        # extracts the label and the unit and omit the code
+        # extracts the label and the unit and omits the code
         values.columns = [re.split(r"_{2,}", name, maxsplit=1)[1] for name in values.columns]
 
-        pretty_data = pd.concat([time, attributes, values], axis=1)
+        pretty_data = pd.concat([time, attributes, values], axis=1).dropna(axis=0, how="all")
         if ags_code is not None:
             # Genesis has always the same time attribute as first column,
             # and each attribute always has 4 columns so pos_of_ags_col // 4
@@ -188,28 +212,43 @@ class Table:
         return pretty_data
 
     @staticmethod
-    def parse_zensus_table(data: pd.DataFrame) -> pd.DataFrame:
+    def parse_zensus_table(data: pd.DataFrame, language: str) -> pd.DataFrame:
         """Parse Zensus table ffcsv format into a more readable format"""
-        # add the unit to the column names for the value columns
-        data["value_variable_label"] = data["value_variable_label"].str.cat(data["value_unit"], sep="__")
+        column_name_dict = LANG_TO_COL_MAPPING["zensus"][language]
+        value_variable_label_col = column_name_dict["value_variable_label"]
+        value_unit_col = column_name_dict["value_unit"]
+        value_col = column_name_dict["value"]
+        time_label_col = column_name_dict["time_label"]
+        time_col = column_name_dict["time"]
+        variable_attribute_label_col = column_name_dict["variable_attribute_label"]
+        variable_label_col = column_name_dict["variable_label"]
+        ars_label_code = column_name_dict["ars"]
 
-        pivot_table = data.pivot(index=data.columns[:-4].to_list(), columns="value_variable_label", values="value")
+        # add the unit to the column names for the value columns
+        data[value_variable_label_col] = data[value_variable_label_col].str.cat(
+            data[value_unit_col].fillna("Unknown_Unit"), sep="__"
+        )
+
+        pivot_table = data.pivot(
+            index=data.columns[:-4].to_list(),
+            columns=value_variable_label_col,
+            values=value_col,
+        )
         value_columns = pivot_table.columns.to_list()
         pivot_table.reset_index(inplace=True)
         pivot_table.columns.name = None
 
-        time_label = data["time_label"].iloc[0]
-        time = pd.DataFrame({time_label: pivot_table["time"]})
+        time_label = data[time_label_col].iloc[0]
+        time = pd.DataFrame({time_label: pivot_table[time_col]})
 
         ags_code = None
         pos_of_ags_col = np.where(data.iloc[0].isin(config.ZENSUS_AGS_CODES))[0]
         if pos_of_ags_col.size > 0:
             pos_of_ags_col = pos_of_ags_col[0]
-            label = "Amtlicher Regionalschlüssel (ARS)"  # en: official municipality code (AGS)
-            ags_code = pd.Series(data=data.iloc[:, pos_of_ags_col + 2], name=label)
+            ags_code = pd.Series(data=data.iloc[:, pos_of_ags_col + 2], name=ars_label_code)
 
-        attributes = pivot_table.filter(regex=r"\d+_variable_attribute_label")
-        attributes.columns = pivot_table.filter(regex=r"\d+_variable_label").iloc[0].tolist()
+        attributes = pivot_table.filter(regex=r"\d+_" + variable_attribute_label_col)
+        attributes.columns = pivot_table.filter(regex=r"\d+_" + variable_label_col).iloc[0].tolist()
 
         pretty_data = pd.concat([time, attributes, pivot_table[value_columns]], axis=1)
         if ags_code is not None:

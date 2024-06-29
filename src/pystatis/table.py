@@ -176,17 +176,18 @@ class Table:
         time_label_col = column_name_dict["time_label"]
         variable_label_col = column_name_dict["variable_label"]
         value_label_col = column_name_dict["value_label"]
+        ags_label_col = column_name_dict["ags"]
 
         # Extracts time column with name from last element of Zeit_Label column
         time = pd.DataFrame({data[time_label_col].iloc[-1]: data[time_col]})
 
-        # Some tables of Genesis can have a regional code (AGS) as first attribute
+        # Whenever there is a column with a regional code, we add this column to the final output
+        # As the position is unknown, we have to identify this column by looking for the AGS code
         ags_code = None
         pos_of_ags_col = np.where(data.iloc[0].isin(config.REGIO_AND_GENESIS_AGS_CODES))[0]
         if pos_of_ags_col.size > 0:
             pos_of_ags_col = pos_of_ags_col[0]
-            label = "Amtlicher Gemeindeschlüssel (AGS)"  # en: official municipality code (AGS)
-            ags_code = pd.Series(data=data.iloc[:, pos_of_ags_col + 2], name=label)
+            ags_code = pd.Series(data=data.iloc[:, pos_of_ags_col + 2], name=ags_label_col)
 
         # Extracts new column names from last values of the variable label columns
         # and assigns these to the relevant attribute columns (variable level)
@@ -220,6 +221,7 @@ class Table:
         time_col = column_name_dict["time"]
         variable_attribute_label_col = column_name_dict["variable_attribute_label"]
         variable_label_col = column_name_dict["variable_label"]
+        ars_label_code = column_name_dict["ars"]
 
         # add the unit to the column names for the value columns
         data[value_variable_label_col] = data[value_variable_label_col].str.cat(
@@ -242,8 +244,7 @@ class Table:
         pos_of_ags_col = np.where(data.iloc[0].isin(config.ZENSUS_AGS_CODES))[0]
         if pos_of_ags_col.size > 0:
             pos_of_ags_col = pos_of_ags_col[0]
-            label = "Amtlicher Regionalschlüssel (ARS)"  # en: official municipality code (AGS)
-            ags_code = pd.Series(data=data.iloc[:, pos_of_ags_col + 2], name=label)
+            ags_code = pd.Series(data=data.iloc[:, pos_of_ags_col + 2], name=ars_label_code)
 
         attributes = pivot_table.filter(regex=r"\d+_" + variable_attribute_label_col)
         attributes.columns = pivot_table.filter(regex=r"\d+_" + variable_label_col).iloc[0].tolist()

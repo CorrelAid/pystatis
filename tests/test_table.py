@@ -440,7 +440,7 @@ def test_get_data(mocker, table_name: str, expected_shape: tuple[int, int], lang
             (384, 5),
             (
                 "Reference date",
-                "Amtlicher Gemeindeschlüssel (AGS)",
+                "Official municipality key (AGS)",
                 "Länder",
                 "Sex",
                 "Employees_subj._to_social_insur._at_place_of_work__number",
@@ -470,7 +470,7 @@ def test_get_data(mocker, table_name: str, expected_shape: tuple[int, int], lang
             (
                 "Year",
                 "Land of origin or origin from abroad",
-                "Amtlicher Gemeindeschlüssel (AGS)",
+                "Official municipality key (AGS)",
                 "Länder",
                 "Quarters",
                 "Marital status",
@@ -498,7 +498,7 @@ def test_get_data(mocker, table_name: str, expected_shape: tuple[int, int], lang
             (560, 7),
             (
                 "Year",
-                "Amtlicher Gemeindeschlüssel (AGS)",
+                "Official municipality key (AGS)",
                 "Länder",
                 "Groups of substances",
                 "Application areas",
@@ -542,7 +542,7 @@ def test_get_data(mocker, table_name: str, expected_shape: tuple[int, int], lang
             (960, 5),
             (
                 "Year",
-                "Amtlicher Gemeindeschlüssel (AGS)",
+                "Official municipality key (AGS)",
                 "Länder",
                 "Months",
                 "Index_of_net_rents_exclusive_of_heating_expenses__2020=100",
@@ -587,7 +587,7 @@ def test_get_data(mocker, table_name: str, expected_shape: tuple[int, int], lang
             (11339, 6),
             (
                 "Reference date",
-                "Amtlicher Regionalschlüssel (ARS)",
+                "Official regional key (ARS)",
                 "Municipalities (LAU-2)",
                 "Area__Unknown_Unit",
                 "Persons__number",

@@ -41,6 +41,7 @@ LANG_TO_COL_MAPPING = {
             "variable_label": "Merkmal_Label",
             "value_label": "Auspraegung_Label",
             "value_code": "Auspraegung_Code",
+            "ags": "Amtlicher Gemeindeschlüssel (AGS)",
         },
         "en": {
             "time_label": "time_label",
@@ -48,6 +49,7 @@ LANG_TO_COL_MAPPING = {
             "variable_label": "variable_label",
             "value_label": "variable_code.2",
             "value_code": "variable_code.1",
+            "ags": "Official municipality key (AGS)",
         },
     },
     # Curently, response does not change colum names between languages.
@@ -61,6 +63,7 @@ LANG_TO_COL_MAPPING = {
             "value_variable_label": "value_variable_label",
             "value": "value",
             "value_unit": "value_unit",
+            "ars": "Amtlicher Regionalschlüssel (ARS)",
         },
         "en": {
             "time_label": "time_label",
@@ -70,6 +73,7 @@ LANG_TO_COL_MAPPING = {
             "value_variable_label": "value_variable_label",
             "value": "value",
             "value_unit": "value_unit",
+            "ars": "Official regional key (ARS)",
         },
     },
 }

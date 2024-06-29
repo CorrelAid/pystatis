@@ -46,22 +46,18 @@ def select_db_by_credentials(db_matches: list[str]) -> str:
         db_name (str): Identified database.
 
     Raises:
-        ValueError: If no db candidates were provided.
         PystatisConfigError: If no credentials exist for any db candidate.
     """
-    if db_matches:
-        for db_name in db_matches:
-            # Return first hit with existing credentials.
-            if check_credentials(db_name):
-                return db_name
-        raise PystatisConfigError(
-            "Missing credentials!\n"
-            f"To access this item you need to be a registered user of: {db_matches} \n"
-            "Please run setup_credentials()."
-        )
+    for db_name in db_matches:
+        # Return first hit with existing credentials.
+        if check_credentials(db_name):
+            return db_name
 
-    else:
-        raise ValueError("Empty list of candidates provided.")
+    raise PystatisConfigError(
+        "Missing credentials!\n"
+        f"To access this item you need to be a registered user of: {db_matches} \n"
+        "Please run setup_credentials()."
+    )
 
 
 def get_host(db_name: str) -> str:

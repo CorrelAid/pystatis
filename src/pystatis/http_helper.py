@@ -9,7 +9,6 @@ import requests
 
 from pystatis import config, db
 from pystatis.cache import cache_data, hit_in_cash, normalize_name, read_from_cache
-from pystatis.db import identify_db_matches, select_db_by_credentials
 from pystatis.exception import DestatisStatusError
 
 logger = logging.getLogger(__name__)
@@ -100,8 +99,8 @@ def get_data_from_endpoint(endpoint: str, method: str, params: dict, db_name: st
     if db_name is None:
         table_name = params.get("name", params.get("selection", ""))
 
-        db_matches = identify_db_matches(table_name)
-        db_name = select_db_by_credentials(db_matches)
+        db_matches = db.identify_db_matches(table_name)
+        db_name = db.select_db_by_credentials(db_matches)
 
     db_host, db_user, db_pw = db.get_settings(db_name)
     url = f"{db_host}{endpoint}/{method}"

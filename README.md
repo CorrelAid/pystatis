@@ -100,8 +100,8 @@ Example for downloading a Table:
 from pystatis import Table
 
 t = Table(name="21311-0001")  # data is not yet downloaded
-t.get_data()  # Only now the data is either fetched from GENESIS or loaded from cache. If the data is downloaded from online, it will be also cached, so next time the data is loaded from cache.
-t.data  # prettified data stored as pandas data frame
+t.get_data()  # only now the data is either fetched from GENESIS or loaded from cache. If the data is downloaded from online, it will be also cached, so next time the data is loaded from cache. The default language of the data is German but it can be set to either German (de) or English (en) using the language parameter of get_data().
+t.data  # prettified data stored as pandas DataFrame
 ```
 
 For more details, please study the provided sample notebook for [tables](https://github.com/CorrelAid/pystatis/blob/main/nb/table.ipynb).

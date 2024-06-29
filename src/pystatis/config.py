@@ -34,7 +34,25 @@ REGEX_DB = {
     "regio": re.compile(r"^((\d{5}-.{1,2}($|-.*$))|(A.*$)|([0-9A-Z]{10}$)|(\d{5}\w-Z-\d{1,2}))"),
 }
 LANG_TO_COL_MAPPING = {
-    "genesis-regio": {
+    "genesis": {
+        "de": {
+            "time_label": "Zeit_Label",
+            "time": "Zeit",
+            "variable_label": "Merkmal_Label",
+            "value_label": "Auspraegung_Label",
+            "value_code": "Auspraegung_Code",
+            "ags": "Amtlicher Gemeindeschlüssel (AGS)",
+        },
+        "en": {
+            "time_label": "time_label",
+            "time": "time",
+            "variable_label": "variable_label",
+            "value_label": "variable_code.2",
+            "value_code": "variable_code.1",
+            "ags": "Official municipality key (AGS)",
+        },
+    },
+    "regio": {
         "de": {
             "time_label": "Zeit_Label",
             "time": "Zeit",
@@ -80,6 +98,8 @@ LANG_TO_COL_MAPPING = {
     },
 }
 ZENSUS_AGS_CODES = [
+    "GEODL1",
+    "GEODL3",
     "GEOBL1",
     "GEOBL3",
     "GEOGM1",
@@ -93,7 +113,8 @@ ZENSUS_AGS_CODES = [
     "GEOVB2",
     "GEOVB3",
 ]
-REGIO_AND_GENESIS_AGS_CODES = ["DLAND", "DLANDU", "REGBEZ", "KREISE", "GEMEIN"]
+REGIO_AND_GENESIS_AGS_CODES = ["DG", "DLAND", "DLANDU", "REGBEZ", "KREISE", "GEMEIN"]
+EXCLUDE_AGS_CODES = ["GEODL1", "GEODL3", "DG"]
 
 logger = logging.getLogger(__name__)
 config = ConfigParser(interpolation=None)

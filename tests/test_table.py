@@ -1,5 +1,6 @@
 import pandas as pd
 import pytest
+from pandas.api.types import is_datetime64_any_dtype as is_datetime
 
 import pystatis
 
@@ -717,7 +718,9 @@ def test_get_data_with_quality_on_and_prettify_true(
         ),
     ],
 )
-def test_prettify(mocker, table_name, expected_shape: tuple[int, int], expected_columns: tuple[str], language: str):
+def test_prettify(
+    mocker, table_name: str, expected_shape: tuple[int, int], expected_columns: tuple[str], language: str
+):
     mocker.patch.object(pystatis.db, "check_credentials", return_value=True)
     table = pystatis.Table(name=table_name)
     table.get_data(prettify=True, language=language)
@@ -727,3 +730,15 @@ def test_prettify(mocker, table_name, expected_shape: tuple[int, int], expected_
 
     assert table.data.shape == expected_shape
     assert tuple(table.data.columns) == expected_columns
+
+
+@pytest.mark.vcr()
+@pytest.mark.parametrize(
+    "table_name, time_col, language", [("12411-01-01-4", "Stichtag", "de"), ("12411-01-01-4", "Stichtag", "en")]
+)
+def test_dtype_time_column(mocker, table_name: str, time_col: str, language: str):
+    mocker.patch.object(pystatis.db, "check_credentials", return_value=True)
+    table = pystatis.Table(name=table_name)
+    table.get_data(prettify=True, language=language)
+
+    assert is_datetime(table.data[time_col].values)

@@ -5,13 +5,13 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.31.0
+      - python-requests/2.32.3
     method: GET
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=12211-0001&quality=False
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=12211-0001&quality=off
   response:
     body:
       string: "Statistik_Code;Statistik_Label;Zeit_Code;Zeit_Label;Zeit;1_Merkmal_Code;1_Merkmal_Label;1_Auspraegung_Code;1_Auspraegung_Label;2_Merkmal_Code;2_Merkmal_Label;2_Auspraegung_Code;2_Auspraegung_Label;3_Merkmal_Code;3_Merkmal_Label;3_Auspraegung_Code;3_Auspraegung_Label;BEV036__Bevoelkerung_in_Hauptwohnsitzhaushalten__1000;ERW041__Erwerbstaetige_aus_Hauptwohnsitzhaushalten__1000;ERW042__Erwerbslose_aus_Hauptwohnsitzhaushalten__1000;ERW040__Erwerbspersonen_aus_Hauptwohnsitzhaushalten__1000;ERW043__Nichterwerbspersonen_aus_Hauptwohnsitzhaushalten__1000\n12211;Mikrozensus;JAHR;Jahr;2023;DINSG;Deutschland
@@ -110,7 +110,7 @@ interactions:
       Content-Type:
       - text/csv
       Date:
-      - Sun, 23 Jun 2024 17:49:26 GMT
+      - Sat, 29 Jun 2024 21:07:37 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
@@ -126,13 +126,13 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.31.0
+      - python-requests/2.32.3
     method: GET
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=12211-0001&quality=False
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=12211-0001&quality=off
   response:
     body:
       string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"12211-0001\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"12211-0001\",\"Content\":\"Bev\xF6lkerung,
@@ -158,7 +158,7 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Sun, 23 Jun 2024 17:49:30 GMT
+      - Sat, 29 Jun 2024 21:07:41 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
@@ -172,13 +172,13 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.31.0
+      - python-requests/2.32.3
     method: GET
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile?area=all&format=ffcsv&language=en&name=12211-0001&quality=False
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile?area=all&format=ffcsv&language=en&name=12211-0001&quality=off
   response:
     body:
       string: 'statistics_code;statistics_label;time_code;time_label;time;1_variable_code;1_variable_label;1_variable_code;1_variable_code;2_variable_code;2_variable_label;2_variable_code;2_variable_code;3_variable_code;3_variable_label;3_variable_code;3_variable_code;BEV036__Population_in_primary_residence_households__1000;ERW041__Persons_in_employment_from_primary_residence_hh.__1000;ERW042__Unemployed_persons_from_primary_residence_hh.__1000;ERW040__Economically_active_population_from_prim.resid.hh.__1000;ERW043__Economically_inactive_population_fr.prim.resid.hh.__1000
@@ -329,7 +329,7 @@ interactions:
       Content-Type:
       - text/csv
       Date:
-      - Sun, 23 Jun 2024 17:53:14 GMT
+      - Sat, 29 Jun 2024 21:13:29 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
@@ -343,13 +343,13 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.31.0
+      - python-requests/2.32.3
     method: GET
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table?area=all&format=ffcsv&language=en&name=12211-0001&quality=False
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table?area=all&format=ffcsv&language=en&name=12211-0001&quality=off
   response:
     body:
       string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"successfull\",\"Type\":\"information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"12211-0001\",\"area\":\"all\",\"language\":\"en\"},\"Object\":{\"Code\":\"12211-0001\",\"Content\":\"Population,
@@ -379,7 +379,7 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Sun, 23 Jun 2024 17:53:18 GMT
+      - Sat, 29 Jun 2024 21:13:33 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:

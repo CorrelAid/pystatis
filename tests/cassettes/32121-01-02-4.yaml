@@ -5,13 +5,13 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.31.0
+      - python-requests/2.32.3
     method: GET
-    uri: https://www.regionalstatistik.de/genesisws/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=32121-01-02-4&quality=False
+    uri: https://www.regionalstatistik.de/genesisws/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=32121-01-02-4&quality=off
   response:
     body:
       string: "Statistik_Code;Statistik_Label;Zeit_Code;Zeit_Label;Zeit;1_Merkmal_Code;1_Merkmal_Label;1_Auspraegung_Code;1_Auspraegung_Label;2_Merkmal_Code;2_Merkmal_Label;2_Auspraegung_Code;2_Auspraegung_Label;AEW009__Aufkommen_an_Haushaltsabfaellen_(o.E-altgeraete)__t\n32121;Erhebung
@@ -10693,9 +10693,9 @@ interactions:
       Content-Type:
       - text/csv
       Date:
-      - Sun, 23 Jun 2024 17:51:08 GMT
+      - Sat, 29 Jun 2024 21:09:20 GMT
       Expires:
-      - Tue, 25 Jun 2024 17:51:02 GMT
+      - Mon, 01 Jul 2024 21:09:14 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
@@ -10719,13 +10719,13 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.31.0
+      - python-requests/2.32.3
     method: GET
-    uri: https://www.regionalstatistik.de/genesisws/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=32121-01-02-4&quality=False
+    uri: https://www.regionalstatistik.de/genesisws/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=32121-01-02-4&quality=off
   response:
     body:
       string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"32121-01-02-4\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"32121-01-02-4\",\"Content\":\"Haushaltsabf\xE4lle
@@ -10750,9 +10750,9 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Sun, 23 Jun 2024 17:51:11 GMT
+      - Sat, 29 Jun 2024 21:09:23 GMT
       Expires:
-      - Tue, 25 Jun 2024 17:51:09 GMT
+      - Mon, 01 Jul 2024 21:09:20 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:

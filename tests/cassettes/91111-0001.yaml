@@ -5,13 +5,13 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.31.0
+      - python-requests/2.32.3
     method: GET
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=91111-0001&quality=False
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=91111-0001&quality=off
   response:
     body:
       string: "Statistik_Code;Statistik_Label;Zeit_Code;Zeit_Label;Zeit;1_Merkmal_Code;1_Merkmal_Label;1_Auspraegung_Code;1_Auspraegung_Label;2_Merkmal_Code;2_Merkmal_Label;2_Auspraegung_Code;2_Auspraegung_Label;INDIKA__Indikatoren__jew._ME\n91111;Nachhaltige
@@ -15335,7 +15335,7 @@ interactions:
       Content-Type:
       - text/csv
       Date:
-      - Sun, 23 Jun 2024 17:50:10 GMT
+      - Sat, 29 Jun 2024 21:08:24 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
@@ -15351,13 +15351,13 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.31.0
+      - python-requests/2.32.3
     method: GET
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=91111-0001&quality=False
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=91111-0001&quality=off
   response:
     body:
       string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"91111-0001\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"91111-0001\",\"Content\":\"Indikatoren
@@ -15377,7 +15377,7 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Sun, 23 Jun 2024 17:50:13 GMT
+      - Sat, 29 Jun 2024 21:08:28 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
@@ -15391,13 +15391,13 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.31.0
+      - python-requests/2.32.3
     method: GET
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile?area=all&format=ffcsv&language=en&name=91111-0001&quality=False
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile?area=all&format=ffcsv&language=en&name=91111-0001&quality=off
   response:
     body:
       string: 'statistics_code;statistics_label;time_code;time_label;time;1_variable_code;1_variable_label;1_variable_code;1_variable_code;2_variable_code;2_variable_label;2_variable_code;2_variable_code;INDIKA__Indicators__jew._ME
@@ -39105,7 +39105,7 @@ interactions:
       Content-Type:
       - text/csv
       Date:
-      - Sun, 23 Jun 2024 17:53:58 GMT
+      - Sat, 29 Jun 2024 21:14:12 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
@@ -39121,13 +39121,13 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.31.0
+      - python-requests/2.32.3
     method: GET
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table?area=all&format=ffcsv&language=en&name=91111-0001&quality=False
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table?area=all&format=ffcsv&language=en&name=91111-0001&quality=off
   response:
     body:
       string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"successfull\",\"Type\":\"information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"91111-0001\",\"area\":\"all\",\"language\":\"en\"},\"Object\":{\"Code\":\"91111-0001\",\"Content\":\"Indicators
@@ -39146,7 +39146,7 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Sun, 23 Jun 2024 17:54:01 GMT
+      - Sat, 29 Jun 2024 21:14:15 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:

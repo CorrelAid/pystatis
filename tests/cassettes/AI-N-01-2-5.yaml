@@ -5,13 +5,13 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.31.0
+      - python-requests/2.32.3
     method: GET
-    uri: https://www.regionalstatistik.de/genesisws/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=AI-N-01-2-5&quality=False
+    uri: https://www.regionalstatistik.de/genesisws/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=AI-N-01-2-5&quality=off
   response:
     body:
       string: "Statistik_Code;Statistik_Label;Zeit_Code;Zeit_Label;Zeit;1_Merkmal_Code;1_Merkmal_Label;1_Auspraegung_Code;1_Auspraegung_Label;AI0111__Anteil_Siedlungs-_und_Verkehrsflaeche_an_Gesamtflaeche__Prozent;AI0112__Veraenderung_der_Siedlungs-_und_Verkehrsflaeche__Prozent\n99910;Regionalatlas
@@ -13989,9 +13989,9 @@ interactions:
       Content-Type:
       - text/csv
       Date:
-      - Sun, 23 Jun 2024 17:52:40 GMT
+      - Sat, 29 Jun 2024 21:10:50 GMT
       Expires:
-      - Tue, 25 Jun 2024 17:52:00 GMT
+      - Mon, 01 Jul 2024 21:10:10 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
@@ -14015,13 +14015,13 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.31.0
+      - python-requests/2.32.3
     method: GET
-    uri: https://www.regionalstatistik.de/genesisws/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=AI-N-01-2-5&quality=False
+    uri: https://www.regionalstatistik.de/genesisws/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=AI-N-01-2-5&quality=off
   response:
     body:
       string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"AI-N-01-2-5\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"AI-N-01-2-5\",\"Content\":\"Regionalatlas
@@ -14047,9 +14047,9 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Sun, 23 Jun 2024 17:52:43 GMT
+      - Sat, 29 Jun 2024 21:10:51 GMT
       Expires:
-      - Tue, 25 Jun 2024 17:52:41 GMT
+      - Mon, 01 Jul 2024 21:10:50 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:

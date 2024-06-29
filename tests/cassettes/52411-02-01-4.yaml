@@ -5,13 +5,13 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.31.0
+      - python-requests/2.32.3
     method: GET
-    uri: https://www.regionalstatistik.de/genesisws/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=52411-02-01-4&quality=False
+    uri: https://www.regionalstatistik.de/genesisws/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=52411-02-01-4&quality=off
   response:
     body:
       string: "Statistik_Code;Statistik_Label;Zeit_Code;Zeit_Label;Zeit;1_Merkmal_Code;1_Merkmal_Label;1_Auspraegung_Code;1_Auspraegung_Label;ISV006__Insolvenzverfahren_(Unternehmen)__MeasureUnitNotFound!;ISVNW1__Arbeitnehmer__Anzahl;FOR002__voraussichtliche_Forderungen_(Unternehmen)__Tsd._EUR\nKREISE;Kreise
@@ -1106,9 +1106,9 @@ interactions:
       Content-Type:
       - text/csv
       Date:
-      - Sun, 23 Jun 2024 17:51:29 GMT
+      - Sat, 29 Jun 2024 21:09:40 GMT
       Expires:
-      - Tue, 25 Jun 2024 17:51:20 GMT
+      - Mon, 01 Jul 2024 21:09:31 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
@@ -1132,13 +1132,13 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.31.0
+      - python-requests/2.32.3
     method: GET
-    uri: https://www.regionalstatistik.de/genesisws/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=52411-02-01-4&quality=False
+    uri: https://www.regionalstatistik.de/genesisws/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=52411-02-01-4&quality=off
   response:
     body:
       string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"52411-02-01-4\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"52411-02-01-4\",\"Content\":\"Unternehmensinsolvenzen
@@ -1166,9 +1166,9 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Sun, 23 Jun 2024 17:51:32 GMT
+      - Sat, 29 Jun 2024 21:09:43 GMT
       Expires:
-      - Tue, 25 Jun 2024 17:51:29 GMT
+      - Mon, 01 Jul 2024 21:09:40 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:

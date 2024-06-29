@@ -5,17 +5,17 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.31.0
+      - python-requests/2.32.3
     method: GET
-    uri: https://ergebnisse2011.zensus2022.de/api/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=4000W-5003&quality=False
+    uri: https://ergebnisse2011.zensus2022.de/api/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=4000W-5003&quality=off
   response:
     body:
       string: !!binary |
-        UEsDBBQACAgIAKWe11gAAAAAAAAAAAAAAAAWAAAANDAwMFctNTAwM19kZV9mbGF0LmNzduy9265l
+        UEsDBBQACAgIAGm53VgAAAAAAAAAAAAAAAAWAAAANDAwMFctNTAwM19kZV9mbGF0LmNzduy9265l
         x3Ul+N5fwUcbaKHjfkE+SWXdAJddsOyW4BeDlrMtoiWqQSZtwD9TL/UF/dAv3UAB5Q/qX+idlNpe
         h9zbuVasmBFzjAgWyiJ58pwk92REzDnmuPy///d///rD5x+++PrDF7/++u9+/ft/eP/u8Ne//fzv
         3//23Ycvfvf+D1/69s/+/W++s3/3T59/9cXnf//bP3798Nd/+FWHv/H5hw9fffH333z4/i/996/8
@@ -894,7 +894,7 @@ interactions:
         AKR8DM524DrGxEDcR2JKXSxdJqeChasWDQR2rm2/vIJSYkRCb5CrRlWrq+VaY6TD9VL9BlJ6G4dQ
         NKjPusoDFDU230lp4GQA2Yih0wfK6COvPNdjtYmTjkjnsyw4LoBDfFaVqrfbO/lMsaxQQO8ggI11
         Iz4ec1CHXIlaWivz3hWAqMa+mUnXcTaeLWuod1jdVWHzTCrn9CvES9xop1Akg4NskhQq7EIxBV0z
-        PunS/wNQSwcI5dyoLYjDAACN6CEAUEsBAhQAFAAICAgApZ7XWOXcqC2IwwAAjeghABYAAAAAAAAA
+        PunS/wNQSwcI5dyoLYjDAACN6CEAUEsBAhQAFAAICAgAabndWOXcqC2IwwAAjeghABYAAAAAAAAA
         AAAAAAAAAAAAADQwMDBXLTUwMDNfZGVfZmxhdC5jc3ZQSwUGAAAAAAEAAQBEAAAAzMMAAAAA
     headers:
       Connection:
@@ -904,7 +904,7 @@ interactions:
       Content-Type:
       - application/zip
       Date:
-      - Sun, 23 Jun 2024 17:53:07 GMT
+      - Sat, 29 Jun 2024 21:11:15 GMT
       Keep-Alive:
       - timeout=10, max=500
       Referrer-Policy:
@@ -912,7 +912,7 @@ interactions:
       Server:
       - Apache
       Set-Cookie:
-      - AL_BALANCE-S=$xc/EHUIz_wVzTPaS1PTGei2CvqoB!oanRPa2zL4HdTlHg3MROBw; Path=/;
+      - AL_BALANCE-S=$xc/fiutPcYtBSYH50uHbVrPXPUws41Gdf0mcOrknYQqGQVSLP32; Path=/;
         Secure; HttpOnly; SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -935,13 +935,13 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.31.0
+      - python-requests/2.32.3
     method: GET
-    uri: https://ergebnisse2011.zensus2022.de/api/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=4000W-5003&quality=False
+    uri: https://ergebnisse2011.zensus2022.de/api/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=4000W-5003&quality=off
   response:
     body:
       string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"4000W-5003\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"4000W-5003\",\"Content\":\"Wohnungen:
@@ -968,7 +968,7 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Sun, 23 Jun 2024 17:53:10 GMT
+      - Sat, 29 Jun 2024 21:11:19 GMT
       Keep-Alive:
       - timeout=10, max=500
       Referrer-Policy:
@@ -976,7 +976,7 @@ interactions:
       Server:
       - Apache
       Set-Cookie:
-      - AL_BALANCE-S=$xc/msr8OrKcYJJZt1h8xf90KQx2CPEN3UoTDkddtTYTk10Na8ho; Path=/;
+      - AL_BALANCE-S=$xc/MGtMgDkjvhEf9PID6rQ63LbXFeiArzJKXo4KmEf5L9sHGBHH; Path=/;
         Secure; HttpOnly; SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -997,17 +997,17 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.31.0
+      - python-requests/2.32.3
     method: GET
-    uri: https://ergebnisse2011.zensus2022.de/api/rest/2020/data/tablefile?area=all&format=ffcsv&language=en&name=4000W-5003&quality=False
+    uri: https://ergebnisse2011.zensus2022.de/api/rest/2020/data/tablefile?area=all&format=ffcsv&language=en&name=4000W-5003&quality=off
   response:
     body:
       string: !!binary |
-        UEsDBBQACAgIAM6e11gAAAAAAAAAAAAAAAAWAAAANDAwMFctNTAwM19lbl9mbGF0LmNzduy9387l
+        UEsDBBQACAgIANW53VgAAAAAAAAAAAAAAAAWAAAANDAwMFctNTAwM19lbl9mbGF0LmNzduy9387l
         x3Etdp+n4KUNREj//4O5smJZNuBjB5YcC+fGoCQ6IkCTDkXZOOexcpuLAHmhvEL2SLNHMs9w7697
         d9Wv1uqmYZPmzHzD+WpXddWqtVb9f//3//Pb7z7/7svffvflr377z7/65tdfvPuT//+rz3/5xVfv
         vvvyX7/4ww/9/p/++C/f+X/+98+//fLzX3714cf/5P//w8/6k3/x+XffffvlL3/33f/4U//4I3/4
@@ -1897,7 +1897,7 @@ interactions:
         qYUGW/Zb0qFlz2Xpu6yG2F0t8Akk7+aIsKvIg6ywXvB4CIVGyy5hNzFWO+c3kTWzYNAgCSQ8ade/
         xt5LwJN3vdA6SMn5RXM+XZmATFbJY6/VMf88SVHVF4Jcq5FQOqN3YjVLfY9wfw4ahAQWTqpGKpgn
         57ZMY/gCTTa27o5SudQ5km/rIvnq61xMw8JISi4lCLaldr6d4v8NUEsHCKaoueXkxQAAkCAjAFBL
-        AQIUABQACAgIAM6e11imqLnl5MUAAJAgIwAWAAAAAAAAAAAAAAAAAAAAAAA0MDAwVy01MDAzX2Vu
+        AQIUABQACAgIANW53VimqLnl5MUAAJAgIwAWAAAAAAAAAAAAAAAAAAAAAAA0MDAwVy01MDAzX2Vu
         X2ZsYXQuY3N2UEsFBgAAAAABAAEARAAAACjGAAAAAA==
     headers:
       Connection:
@@ -1907,7 +1907,7 @@ interactions:
       Content-Type:
       - application/zip
       Date:
-      - Sun, 23 Jun 2024 17:54:26 GMT
+      - Sat, 29 Jun 2024 21:14:40 GMT
       Keep-Alive:
       - timeout=10, max=500
       Referrer-Policy:
@@ -1915,7 +1915,7 @@ interactions:
       Server:
       - Apache
       Set-Cookie:
-      - AL_BALANCE-S=$xc/46oz8RSV2N1iIll9UBIoZpADURmv7i4gUaDmT0BToYXImWbm; Path=/;
+      - AL_BALANCE-S=$xc/i2SqSV6XaOGwkybAyryf23OxLhrvwCTtgj_GYyL!91pS9aw8; Path=/;
         Secure; HttpOnly; SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -1938,13 +1938,13 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.31.0
+      - python-requests/2.32.3
     method: GET
-    uri: https://ergebnisse2011.zensus2022.de/api/rest/2020/metadata/table?area=all&format=ffcsv&language=en&name=4000W-5003&quality=False
+    uri: https://ergebnisse2011.zensus2022.de/api/rest/2020/metadata/table?area=all&format=ffcsv&language=en&name=4000W-5003&quality=off
   response:
     body:
       string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"successfull\",\"Type\":\"information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"4000W-5003\",\"area\":\"all\",\"language\":\"en\"},\"Object\":{\"Code\":\"4000W-5003\",\"Content\":\"Dwellings:
@@ -1971,7 +1971,7 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Sun, 23 Jun 2024 17:54:29 GMT
+      - Sat, 29 Jun 2024 21:14:43 GMT
       Keep-Alive:
       - timeout=10, max=500
       Referrer-Policy:
@@ -1979,7 +1979,7 @@ interactions:
       Server:
       - Apache
       Set-Cookie:
-      - AL_BALANCE-S=$xc/IahqJVu8AvZ8YPEsSHdE_YfkC!24tjxNPAPZ6PDooqgmhfAL; Path=/;
+      - AL_BALANCE-S=$xc/ZMH!4SBXbtLHVlBmdpSPmfVRq5rleR_B8wDlxddgaB3EUVdu; Path=/;
         Secure; HttpOnly; SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains

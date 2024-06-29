@@ -11,7 +11,7 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=81000-0001&quality=False
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=81000-0001&quality=off
   response:
     body:
       string: 'Statistik_Code;Statistik_Label;Zeit_Code;Zeit_Label;Zeit;1_Merkmal_Code;1_Merkmal_Label;1_Auspraegung_Code;1_Auspraegung_Label;2_Merkmal_Code;2_Merkmal_Label;2_Auspraegung_Code;2_Auspraegung_Label;BWS001__Bruttowertschoepfung__jew._ME;STR006__Guetersteuern_abzuegl._Guetersubventionen__jew._ME;STR020_______Guetersteuern__jew._ME;SUB003_______Guetersubventionen__jew._ME;VGR014__Bruttoinlandsprodukt__jew._ME;BIP005__nachr.:_Bruttoinlandsprodukt_(Veraenderung_in_%)__Prozent;BIP004__nachr.:_Bruttoinlandsprodukt_je_Einwohner__jew._ME
@@ -185,7 +185,7 @@ interactions:
       Content-Type:
       - text/csv
       Date:
-      - Tue, 25 Jun 2024 21:02:27 GMT
+      - Sat, 29 Jun 2024 21:25:14 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
@@ -207,7 +207,7 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=81000-0001&quality=False
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=81000-0001&quality=off
   response:
     body:
       string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"81000-0001\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"81000-0001\",\"Content\":\"VGR
@@ -236,7 +236,7 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Tue, 25 Jun 2024 21:02:29 GMT
+      - Sat, 29 Jun 2024 21:25:17 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:

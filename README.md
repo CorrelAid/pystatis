@@ -16,12 +16,12 @@ The main features are:
 - **Simplified access** to all supported API. No more need to write cumbersome API calls or switch between databases.
 - **Credential management** removes the need to manually add credentials. We handle all your credentials for you.
 - **Database management** handles different databases and lets you switch easily between them.
-- **Integrated workflow** enables an end-to-end process from finding the relevant data to download it.
+- **Integrated workflow** enables an end-to-end process from finding the relevant data to downloading it.
 - **Pandas support** instead of manually parsing results.
 - **Caching** to enable productive work despite strict query limits.
-- **Starting and handling background jobs** for datasets that are to big to be downloaded directly from GENESIS.
+- **Starting and handling background jobs** for datasets that are too big to be downloaded directly from GENESIS.
 
-To learn more about GENESIS refer to the official documentation [here](https://www.destatis.de/EN/Service/OpenData/api-webservice.html).
+To learn more about GENESIS, please refer to the official documentation [here](https://www.destatis.de/EN/Service/OpenData/api-webservice.html).
 
 ## Installation
 
@@ -41,7 +41,7 @@ print("Version:", pystatis.__version__)
 
 ## Getting started
 
-To be able to use the web service/API of either GENESIS-Online, Regionaldatenbank or Zensus, you have to be a registered user. You can create your user [here](https://www-genesis.destatis.de/genesis/online?Menu=Anmeldung), [here](https://www.regionalstatistik.de/genesis/online?Menu=Registrierung#abreadcrumb), or [here](https://ergebnisse2011.zensus2022.de/datenbank/online?Menu=Registrierung#abreadcrumb).
+To be able to use the web service/API of either GENESIS-Online, Regionaldatenbank or Zensus, you have to be a registered user of the respective database. You can create your user [here](https://www-genesis.destatis.de/genesis/online?Menu=Anmeldung), [here](https://www.regionalstatistik.de/genesis/online?Menu=Registrierung#abreadcrumb), or [here](https://ergebnisse2011.zensus2022.de/datenbank/online?Menu=Registrierung#abreadcrumb).
 
 Once you have a registered user, you can use your username and password as credentials for authentication against the web service/API.
 
@@ -101,7 +101,7 @@ from pystatis import Table
 
 t = Table(name="21311-0001")  # data is not yet downloaded
 t.get_data()  # Only now the data is either fetched from GENESIS or loaded from cache. If the data is downloaded from online, it will be also cached, so next time the data is loaded from cache.
-t.data  #prettified data stored as pandas data frame
+t.data  # prettified data stored as pandas data frame
 ```
 
 For more details, please study the provided sample notebook for [tables](https://github.com/CorrelAid/pystatis/blob/main/nb/table.ipynb).
@@ -143,7 +143,7 @@ A few ideas we should implement in the maybe-near future:
 
 ## How to contribute?
 
-Contributions to this project are highly appreciated! You can either contact the maintainers or directly create a pull request for your proposed changes:
+Contributions to this project are highly appreciated! You can either contact the maintainers, create an issue or directly create a pull request for your proposed changes:
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/<descriptive-name>`)

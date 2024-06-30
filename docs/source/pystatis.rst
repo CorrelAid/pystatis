@@ -22,7 +22,7 @@ pystatis.config module
 pystatis.custom\_exceptions module
 ----------------------------------
 
-.. automodule:: pystatis.custom_exceptions
+.. automodule:: pystatis.exception
    :members:
    :undoc-members:
    :show-inheritance:

@@ -9,7 +9,7 @@ import requests
 
 from pystatis import config, db
 from pystatis.cache import cache_data, hit_in_cash, normalize_name, read_from_cache
-from pystatis.exception import DestatisStatusError
+from pystatis.exception import DestatisStatusError, NoNewerDataError
 
 logger = logging.getLogger(__name__)
 
@@ -275,6 +275,7 @@ def _check_destatis_status(destatis_status: dict) -> None:
     # TODO: Ask Destatis for full list of error codes
     - 0: "erfolgreich" (Type: "Information")
     - 22: "erfolgreich mit Parameteranpassung" (Type: "Warnung")
+    - 50: "Keine aktualisierten Daten vorhanden." (Type: "Information")
     - 104: "Kein passendes Objekt zu Suche" (Type: "Information")
 
     Args:
@@ -297,11 +298,13 @@ def _check_destatis_status(destatis_status: dict) -> None:
         raise DestatisStatusError(destatis_status_content)
 
     # check for destatis/ query errors
-    elif (destatis_status_code == 104) or (destatis_status_type in error_en_de):
+    elif (destatis_status_code in [104, 50]) or (destatis_status_type in error_en_de):
         if destatis_status_code == 98:
             pass
+        elif destatis_status_code == 50:
+            raise NoNewerDataError(destatis_status_content) from None
         else:
-            raise DestatisStatusError(destatis_status_content)
+            raise DestatisStatusError(destatis_status_content) from None
 
     # output warnings to user
     elif (destatis_status_code == 22) or (destatis_status_type in warning_en_de):

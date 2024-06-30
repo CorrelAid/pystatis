@@ -120,6 +120,7 @@ class Table:
         raw_data_str = raw_data_bytes.decode("utf-8-sig")
 
         self.raw_data = raw_data_str
+
         # sometimes the data contains invalid rows that do not start with the statistics number (always first column)
         # so we have to do this workaround to get a proper data frame later
         raw_data_lines = raw_data_str.splitlines(keepends=True)
@@ -136,7 +137,7 @@ class Table:
             sep=";",
             na_values=["...", ".", "-", "/", "x"],
             decimal="," if language == "de" else ".",
-            dtype={raw_data_header.split(";")[pos]: str for pos in pos_of_ags_col},
+            dtype={raw_data_header.split(";")[pos + 2]: str for pos in pos_of_ags_col},
             parse_dates=[config.LANG_TO_COL_MAPPING[db_name][language]["time"]],
             date_format="%d.%m.%Y" if language == "de" else "%Y-%m-%d",
         )
@@ -304,6 +305,6 @@ class Table:
         pos_of_ags_col = np.where(data.iloc[0].isin(codes))[0]
         if pos_of_ags_col.size > 0:
             pos_of_ags_col = pos_of_ags_col[0]
-            ags_code = pd.Series(data=data.iloc[:, pos_of_ags_col + 2], name=label)
+            ags_code = pd.Series(data=data.iloc[:, pos_of_ags_col + 2], name=label, dtype=str)
 
         return pos_of_ags_col, ags_code

@@ -39,7 +39,7 @@ def cache_data(
         content_type (str): The content type of the data, e.g. "csv" or "zip".
     """
     # pylint: disable=too-many-arguments
-    if name is None:
+    if name is None or content_type not in ["csv", "zip"]:
         return
 
     data_dir = _build_file_path(cache_dir, name, params)

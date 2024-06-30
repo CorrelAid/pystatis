@@ -6,12 +6,13 @@ authors = [
     "Daniel Pleus <danielpleus@gmail.com>",
     "Felix Schmitz <felix.schmitz@philosophy-economics.de>",
     "Frederik Hering <jobs.fhering@gmail.com>",
-    "Marco Hübner <marco_huebner1@gmx.de>"
+    "Marco Hübner <marco_huebner1@gmx.de>",
+    "Jonas Berger <jonas.bergner97@gmx.de>"
 ]
 maintainers = ["Michael Aydinbas <michael.aydinbas@gmail.com>"]
 description = "Python wrapper for GENESIS web service interface (API) of the Federal Statistical Office."
 name = "pystatis"
-version = "0.2.0"
+version = "0.3.0"
 readme = "README.md"
 repository = "https://github.com/CorrelAid/pystatis"
 documentation = "https://correlaid.github.io/pystatis/"

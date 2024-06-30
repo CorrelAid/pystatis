@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.0
+
+- support a wide range of parameters for `get_data()`, see API documentation for details -> [PR #64](https://github.com/CorrelAid/pystatis/pull/64)
+- support quality symbols with `quality` parameter and improve handling of missing values -> [PR #117](https://github.com/CorrelAid/pystatis/pull/117)
+- for all tables with regional codes always include an AGS column with official municipality codes (AGS) -> [PR #123](https://github.com/CorrelAid/pystatis/pull/123)
+- improve test suite quality and introduce proper end-to-end tests -> [PR #99](https://github.com/CorrelAid/pystatis/pull/99)
+- handle support for languages "en" and "de" -> [PR #58](https://github.com/CorrelAid/pystatis/pull/58)
+
 ## 0.2.0
 
 - remove support for Cube until requested

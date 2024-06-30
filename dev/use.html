@@ -108,18 +108,18 @@
 </section>
 <section id="find-the-right-data">
 <h2>Find the right data<a class="headerlink" href="#find-the-right-data" title="Link to this heading"></a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">pystatis</span></code> offers the <code class="docutils literal notranslate"><span class="pre">Find</span></code> class to search for any piece of information with GENESIS. Behind the scene it’s using the <code class="docutils literal notranslate"><span class="pre">find</span></code> endpoint.</p>
+<p><code class="docutils literal notranslate"><span class="pre">pystatis</span></code> offers the <code class="docutils literal notranslate"><span class="pre">Find</span></code> class to search for any piece of information within each database. Behind the scene it’s using the <code class="docutils literal notranslate"><span class="pre">find</span></code> endpoint.</p>
 <p>Example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pystatis</span> <span class="kn">import</span> <span class="n">Find</span>
 
-<span class="n">results</span> <span class="o">=</span> <span class="n">Find</span><span class="p">(</span><span class="s2">&quot;Rohöl&quot;</span><span class="p">)</span> <span class="c1"># Initiates object that contains all variables, statistics, tables and cubes</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">Find</span><span class="p">(</span><span class="s2">&quot;Rohöl&quot;</span><span class="p">,</span> <span class="s2">&quot;genesis&quot;</span><span class="p">)</span> <span class="c1"># Initiates object that contains all variables, statistics, tables and cubes</span>
 <span class="n">results</span><span class="o">.</span><span class="n">run</span><span class="p">()</span> <span class="c1"># Runs the query</span>
 <span class="n">results</span><span class="o">.</span><span class="n">tables</span><span class="o">.</span><span class="n">df</span> <span class="c1"># Results for tables</span>
 <span class="n">results</span><span class="o">.</span><span class="n">tables</span><span class="o">.</span><span class="n">get_code</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span> <span class="c1"># Gets the table codes, e.g. for downloading the table</span>
 <span class="n">results</span><span class="o">.</span><span class="n">tables</span><span class="o">.</span><span class="n">get_metadata</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># Gets the metadata for the table</span>
 </pre></div>
 </div>
-<p>A complete overview of all use cases is provided in the example notebook for <a class="reference external" href="https://github.com/CorrelAid/pystatis/blob/main/nb/find.ipynb">find</a>.</p>
+<p>A complete overview of all use cases is provided in the example notebook for <a class="reference external" href="https://github.com/CorrelAid/pystatis/blob/main/nb/03_find.ipynb">find</a>.</p>
 </section>
 <section id="download-data">
 <h2>Download data<a class="headerlink" href="#download-data" title="Link to this heading"></a></h2>
@@ -129,10 +129,10 @@
 
 <span class="n">t</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;21311-0001&quot;</span><span class="p">)</span>  <span class="c1"># data is not yet downloaded</span>
 <span class="n">t</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>  <span class="c1"># only now the data is either fetched from GENESIS or loaded from cache. If the data is downloaded from online, it will be also cached, so next time the data is loaded from cache. The default language of the data is German but it can be set to either German (de) or English (en) using the language parameter of get_data().</span>
-<span class="n">t</span><span class="o">.</span><span class="n">data</span>  <span class="c1"># prettified data stored as pandas data frame</span>
+<span class="n">t</span><span class="o">.</span><span class="n">data</span>  <span class="c1"># prettified data stored as pandas DataFrame</span>
 </pre></div>
 </div>
-<p>For more details, please study the provided sample notebook for <a class="reference external" href="https://github.com/CorrelAid/pystatis/blob/main/nb/table.ipynb">tables</a>.</p>
+<p>For more details, please study the provided sample notebook for <a class="reference external" href="https://github.com/CorrelAid/pystatis/blob/main/nb/01_table.ipynb">tables</a>.</p>
 </section>
 <section id="clear-cache">
 <h2>Clear Cache<a class="headerlink" href="#clear-cache" title="Link to this heading"></a></h2>

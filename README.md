@@ -23,6 +23,8 @@ The main features are:
 
 To learn more about GENESIS, please refer to the official documentation [here](https://www.destatis.de/EN/Service/OpenData/api-webservice.html).
 
+The full documentation of the main and dev branches are hosted via [GitHub Pages (main)](https://correlaid.github.io/pystatis/) and [GitHub Pages (dev)](https://correlaid.github.io/pystatis/dev/).
+
 ## Installation
 
 You can install the package via
@@ -117,18 +119,6 @@ clear_cache("21311-0001")  # only deletes the data for the object with the speci
 clear_cache()  # deletes the complete cache
 ```
 
-### Full documentation
-
-The full documentation of the main and dev branches are hosted via [GitHub Pages (main)](https://correlaid.github.io/pystatis/) and [GitHub Pages (dev)](https://correlaid.github.io/pystatis/dev/). It can also be built locally by running
-
-```bash
-cd docs && make clean && make html
-```
-
-from the project root directory. Besides providing parsed docstrings of the individual package modules, the full documentation currently mirrors most of the readme, like installation and usage. The mirroring crucially relies on the names of the section headers in the ReadMe, so change them with care!
-
-More information on how to use sphinx is provided [here](https://docs.readthedocs.io/en/stable/intro/getting-started-with-sphinx.html).
-
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
@@ -179,3 +169,15 @@ To contribute to this project, please follow these steps:
 11. Create a new PR, always against `dev` as target.
 
 To learn more about `poetry`, see [Dependency Management With Python Poetry](https://realpython.com/dependency-management-python-poetry/#command-reference) by realpython.com.
+
+### Documentation process
+
+Documentation can also be built locally by running
+
+```bash
+cd docs && make clean && make html
+```
+
+from the project root directory. Besides providing parsed docstrings of the individual package modules, the full documentation currently mirrors most of the readme, like installation and usage. The mirroring crucially relies on the names of the section headers in the ReadMe, so change them with care!
+
+More information on how to use sphinx is provided [here](https://docs.readthedocs.io/en/stable/intro/getting-started-with-sphinx.html).

@@ -42,7 +42,7 @@ class Table:
         regionalkey: str = "",
         stand: str = "",
         language: str = "de",
-        quality: bool = False,
+        quality: str = "off",
     ):
         """Downloads raw data and metadata from GENESIS-Online.
 
@@ -92,7 +92,11 @@ class Table:
                 "tt.mm.jjjj hh:mm" or "tt.mm.jjjj". Example: "24.12.2001 19:15".
             language (str, optional): Messages and data descriptions are supplied in this language.
                 For GENESIS and Zensus, ['de', 'en'] are supported. For Regionalstatistik, only 'de' is supported.
-            quality (bool, optional): If True, Value-adding quality labels are issued.
+            quality (str): One of "on" or "off". If "on", quality symbols are part of the download and
+                additional columns (__q) are displayed. Defaults to "off".
+                The explanation of the quality labels can be found online after retrieving the table values,
+                table -> explanation of symbols or at e.g.
+                https://www-genesis.destatis.de/genesis/online?operation=ergebnistabelleQualitaet&language=en&levelindex=3&levelid=1719342760835#abreadcrumb.
         """
         params = {
             "name": self.name,
@@ -123,11 +127,18 @@ class Table:
         raw_data_str = raw_data_header + "".join(line for line in raw_data_lines[1:] if line[:4].isdigit())
         data_buffer = StringIO(raw_data_str)
 
+        # find AGS column, if present, to set dtype correctly and avoid mixed types
+        ags_codes = config.ZENSUS_AGS_CODES if db_name == "zensus" else config.REGIO_AND_GENESIS_AGS_CODES
+        pos_of_ags_col = np.where(pd.Series(raw_data_lines[1].split(";")).isin(ags_codes))[0]
+
         self.data = pd.read_csv(
             data_buffer,
             sep=";",
             na_values=["...", ".", "-", "/", "x"],
             decimal="," if language == "de" else ".",
+            dtype={raw_data_header.split(";")[pos]: str for pos in pos_of_ags_col},
+            parse_dates=[config.LANG_TO_COL_MAPPING[db_name][language]["time"]],
+            date_format="%d.%m.%Y" if language == "de" else "%Y-%m-%d",
         )
 
         if prettify:
@@ -172,7 +183,7 @@ class Table:
         Parse ffcsv format for tables from GENESIS and Regionalstatistik into a more readable format
         """
 
-        column_name_dict = LANG_TO_COL_MAPPING["genesis-regio"][language]
+        column_name_dict = LANG_TO_COL_MAPPING["genesis"][language]
         time_col = column_name_dict["time"]
         time_label_col = column_name_dict["time_label"]
         variable_label_col = column_name_dict["variable_label"]
@@ -184,11 +195,8 @@ class Table:
 
         # Whenever there is a column with a regional code, we add this column to the final output
         # As the position is unknown, we have to identify this column by looking for the AGS code
-        ags_code = None
-        pos_of_ags_col = np.where(data.iloc[0].isin(config.REGIO_AND_GENESIS_AGS_CODES))[0]
-        if pos_of_ags_col.size > 0:
-            pos_of_ags_col = pos_of_ags_col[0]
-            ags_code = pd.Series(data=data.iloc[:, pos_of_ags_col + 2], name=ags_label_col)
+        ags_codes = list(set(config.REGIO_AND_GENESIS_AGS_CODES) - set(config.EXCLUDE_AGS_CODES))
+        pos_of_ags_col, ags_code = Table.extract_ags_col(data, ags_codes, ags_label_col)
 
         # Extracts new column names from last values of the variable label columns
         # and assigns these to the relevant attribute columns (variable level)
@@ -215,25 +223,48 @@ class Table:
     def parse_zensus_table(data: pd.DataFrame, language: str) -> pd.DataFrame:
         """Parse Zensus table ffcsv format into a more readable format"""
         column_name_dict = LANG_TO_COL_MAPPING["zensus"][language]
-        value_variable_label_col = column_name_dict["value_variable_label"]
-        value_unit_col = column_name_dict["value_unit"]
-        value_col = column_name_dict["value"]
-        time_label_col = column_name_dict["time_label"]
+        ars_label_code = column_name_dict["ars"]
         time_col = column_name_dict["time"]
+        time_label_col = column_name_dict["time_label"]
+        value_col = column_name_dict["value"]
+        value_q_col = column_name_dict["value_q"]
+        value_unit_col = column_name_dict["value_unit"]
+        value_variable_label_col = column_name_dict["value_variable_label"]
         variable_attribute_label_col = column_name_dict["variable_attribute_label"]
         variable_label_col = column_name_dict["variable_label"]
-        ars_label_code = column_name_dict["ars"]
+
+        # quality columns are not yet supported for Zensus tables
+        quality = False
+        if value_q_col in data.columns:
+            quality = True
 
         # add the unit to the column names for the value columns
         data[value_variable_label_col] = data[value_variable_label_col].str.cat(
             data[value_unit_col].fillna("Unknown_Unit"), sep="__"
         )
 
+        if quality:
+            # with quality = 'on' we have an additional column value_q
+            # to still use pivot table we have to combine value and value_q
+            # so we can later split them again
+            data[value_col] = [[v, q] for v, q in zip(data[value_col], data[value_q_col])]
+            data = data.drop(columns=[value_q_col])
+
         pivot_table = data.pivot(
-            index=data.columns[:-4].to_list(),
+            index=[col for col in data.columns if col not in data.filter(regex=r"^value").columns],
             columns=value_variable_label_col,
             values=value_col,
         )
+
+        if quality:
+            for col in pivot_table.columns:
+                pivot_table.insert(
+                    pivot_table.columns.to_list().index(col) + 1,
+                    col + "__q",
+                    pivot_table[col].apply(lambda x: x[1]),
+                )
+                pivot_table[col] = pivot_table[col].apply(lambda x: x[0])
+
         value_columns = pivot_table.columns.to_list()
         pivot_table.reset_index(inplace=True)
         pivot_table.columns.name = None
@@ -241,11 +272,9 @@ class Table:
         time_label = data[time_label_col].iloc[0]
         time = pd.DataFrame({time_label: pivot_table[time_col]})
 
-        ags_code = None
-        pos_of_ags_col = np.where(data.iloc[0].isin(config.ZENSUS_AGS_CODES))[0]
-        if pos_of_ags_col.size > 0:
-            pos_of_ags_col = pos_of_ags_col[0]
-            ags_code = pd.Series(data=data.iloc[:, pos_of_ags_col + 2], name=ars_label_code)
+        # If AGS column is present, add it to the final output
+        ags_codes = list(set(config.ZENSUS_AGS_CODES) - set(config.EXCLUDE_AGS_CODES))
+        pos_of_ags_col, ags_code = Table.extract_ags_col(pivot_table, ags_codes, ars_label_code)
 
         attributes = pivot_table.filter(regex=r"\d+_" + variable_attribute_label_col)
         attributes.columns = pivot_table.filter(regex=r"\d+_" + variable_label_col).iloc[0].tolist()
@@ -258,3 +287,23 @@ class Table:
             pretty_data.insert(loc=pos_of_ags_col // 4, column=ags_code.name, value=ags_code)
 
         return pretty_data
+
+    @staticmethod
+    def extract_ags_col(data: pd.DataFrame, codes: list[str], label: str) -> tuple[np.ndarray, pd.Series | None]:
+        """Extracts the AGS column from the data if present.
+
+        Args:
+            data (pd.DataFrame): The data frame to extract the AGS column from.
+            codes (list[str]): The AGS codes to look for in the data.
+            label (str): The label of the AGS column.
+
+        Returns:
+            pd.Series | None: The AGS column if present, otherwise None.
+        """
+        ags_code = None
+        pos_of_ags_col = np.where(data.iloc[0].isin(codes))[0]
+        if pos_of_ags_col.size > 0:
+            pos_of_ags_col = pos_of_ags_col[0]
+            ags_code = pd.Series(data=data.iloc[:, pos_of_ags_col + 2], name=label)
+
+        return pos_of_ags_col, ags_code

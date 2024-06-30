@@ -5,13 +5,13 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.31.0
+      - python-requests/2.32.3
     method: GET
-    uri: https://www.regionalstatistik.de/genesisws/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=73111-01-01-4&quality=False
+    uri: https://www.regionalstatistik.de/genesisws/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=73111-01-01-4&quality=off
   response:
     body:
       string: "Statistik_Code;Statistik_Label;Zeit_Code;Zeit_Label;Zeit;1_Merkmal_Code;1_Merkmal_Label;1_Auspraegung_Code;1_Auspraegung_Label;LSNW01__Lohn-_und_Einkommensteuerpflichtige__Anzahl;EKF002__Gesamtbetrag_der_Einkuenfte__Tsd._EUR;LSNW02__Lohn-_und_Einkommensteuer__Tsd._EUR\n73111;Lohn-
@@ -867,9 +867,9 @@ interactions:
       Content-Type:
       - text/csv
       Date:
-      - Sun, 23 Jun 2024 17:51:52 GMT
+      - Sat, 29 Jun 2024 21:10:03 GMT
       Expires:
-      - Tue, 25 Jun 2024 17:51:42 GMT
+      - Mon, 01 Jul 2024 21:09:53 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
@@ -893,13 +893,13 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.31.0
+      - python-requests/2.32.3
     method: GET
-    uri: https://www.regionalstatistik.de/genesisws/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=73111-01-01-4&quality=False
+    uri: https://www.regionalstatistik.de/genesisws/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=73111-01-01-4&quality=off
   response:
     body:
       string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"73111-01-01-4\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"73111-01-01-4\",\"Content\":\"Lohn-
@@ -925,9 +925,9 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Sun, 23 Jun 2024 17:51:57 GMT
+      - Sat, 29 Jun 2024 21:10:07 GMT
       Expires:
-      - Tue, 25 Jun 2024 17:51:52 GMT
+      - Mon, 01 Jul 2024 21:10:03 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:

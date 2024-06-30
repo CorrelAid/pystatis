@@ -59,6 +59,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#contributor-information">Contributor information</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#dev-env-setup">Dev env setup</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#workflow">Workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#documentation-process">Documentation process</a></li>
 </ul>
 </li>
 </ul>
@@ -136,6 +137,15 @@
 <li><p>Create a new PR, always against <code class="docutils literal notranslate"><span class="pre">dev</span></code> as target.</p></li>
 </ol>
 <p>To learn more about <code class="docutils literal notranslate"><span class="pre">poetry</span></code>, see <a class="reference external" href="https://realpython.com/dependency-management-python-poetry/#command-reference">Dependency Management With Python Poetry</a> by realpython.com.</p>
+</section>
+<section id="documentation-process">
+<h3>Documentation process<a class="headerlink" href="#documentation-process" title="Link to this heading"></a></h3>
+<p>Documentation can also be built locally by running</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>docs<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>make<span class="w"> </span>clean<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>make<span class="w"> </span>html
+</pre></div>
+</div>
+<p>from the project root directory. Besides providing parsed docstrings of the individual package modules, the full documentation currently mirrors most of the readme, like installation and usage. The mirroring crucially relies on the names of the section headers in the ReadMe, so change them with care!</p>
+<p>More information on how to use sphinx is provided <a class="reference external" href="https://docs.readthedocs.io/en/stable/intro/getting-started-with-sphinx.html">here</a>.</p>
 </section>
 </section>
 </section>

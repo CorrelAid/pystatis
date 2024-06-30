@@ -81,7 +81,12 @@
 <li class="toctree-l3"><a class="reference internal" href="#pystatis.config.write_config"><code class="docutils literal notranslate"><span class="pre">write_config()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#pystatis-custom-exceptions-module">pystatis.custom_exceptions module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-pystatis.exception">pystatis.custom_exceptions module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pystatis.exception.DestatisStatusError"><code class="docutils literal notranslate"><span class="pre">DestatisStatusError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pystatis.exception.NoNewerDataError"><code class="docutils literal notranslate"><span class="pre">NoNewerDataError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pystatis.exception.PystatisConfigError"><code class="docutils literal notranslate"><span class="pre">PystatisConfigError</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#module-pystatis.find">pystatis.find module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#pystatis.find.Find"><code class="docutils literal notranslate"><span class="pre">Find</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#pystatis.find.Find.query"><code class="docutils literal notranslate"><span class="pre">Find.query</span></code></a></li>
@@ -426,8 +431,30 @@ until the user has filled in the credentials.</p>
 </dd></dl>
 
 </section>
-<section id="pystatis-custom-exceptions-module">
-<h2>pystatis.custom_exceptions module<a class="headerlink" href="#pystatis-custom-exceptions-module" title="Link to this heading"></a></h2>
+<section id="module-pystatis.exception">
+<span id="pystatis-custom-exceptions-module"></span><h2>pystatis.custom_exceptions module<a class="headerlink" href="#module-pystatis.exception" title="Link to this heading"></a></h2>
+<p>Define custom “speaking” Exception and Error classes.</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="pystatis.exception.DestatisStatusError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pystatis.exception.</span></span><span class="sig-name descname"><span class="pre">DestatisStatusError</span></span><a class="headerlink" href="#pystatis.exception.DestatisStatusError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ValueError</span></code></p>
+<p>Raised when Destatis status code indicates an error (“Fehler”)</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="pystatis.exception.NoNewerDataError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pystatis.exception.</span></span><span class="sig-name descname"><span class="pre">NoNewerDataError</span></span><a class="headerlink" href="#pystatis.exception.NoNewerDataError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Raised when no newer data is available for download (parameter stand, API Error Code 50).</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="pystatis.exception.PystatisConfigError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pystatis.exception.</span></span><span class="sig-name descname"><span class="pre">PystatisConfigError</span></span><a class="headerlink" href="#pystatis.exception.PystatisConfigError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Raised when pystatis configuration is invalid.</p>
+</dd></dl>
+
 </section>
 <section id="module-pystatis.find">
 <span id="pystatis-find-module"></span><h2>pystatis.find module<a class="headerlink" href="#module-pystatis.find" title="Link to this heading"></a></h2>
@@ -528,7 +555,8 @@ One of “genesis”, “zensus”, “regio”.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="id0">
 <span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Execute the search to find statistics, variables, tables and cubes.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="id1">
@@ -1019,7 +1047,8 @@ One of “genesis”, “zensus”, “regio”.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="id10">
 <span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id10" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Execute the search to find statistics, variables, tables and cubes.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="id11">

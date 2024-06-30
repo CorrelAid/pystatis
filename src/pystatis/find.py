@@ -52,6 +52,9 @@ class Find:
         self.is_run = False
 
     def run(self):
+        """
+        Execute the search to find statistics, variables, tables and cubes.
+        """
         self.statistics = self._get_find_results("statistics")
         self.variables = self._get_find_results("variables")
         self.tables = self._get_find_results("tables")

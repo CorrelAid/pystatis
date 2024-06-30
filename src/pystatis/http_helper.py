@@ -9,7 +9,7 @@ import requests
 
 from pystatis import config, db
 from pystatis.cache import cache_data, hit_in_cash, normalize_name, read_from_cache
-from pystatis.exception import DestatisStatusError
+from pystatis.exception import DestatisStatusError, NoNewerDataError
 
 logger = logging.getLogger(__name__)
 
@@ -65,7 +65,10 @@ def load_data(
                 job_response = start_job(endpoint, method, params)
                 job_id = get_job_id_from_response(job_response)
                 logger.info("Verarbeitung im Hintergrund erfolgreich gestartet. Job-ID: %s.", job_id)
-                data = get_data_from_resultfile(job_id, db_name)
+                response = get_data_from_resultfile(job_id, db_name)
+                assert isinstance(response.content, bytes)  # nosec assert_used
+                content_type = response.headers.get("Content-Type", "text/csv").split("/")[-1]
+                data = response.content
 
             cache_data(cache_dir, name, params, data, content_type)
 
@@ -167,7 +170,7 @@ def get_job_id_from_response(response: requests.Response) -> str:
     return job_id
 
 
-def get_data_from_resultfile(job_id: str, db_name: str | None = None) -> bytes:
+def get_data_from_resultfile(job_id: str, db_name: str | None = None) -> requests.Response:
     """Get data from a job once it is finished or when the timeout is reached.
 
     Args:
@@ -176,7 +179,7 @@ def get_data_from_resultfile(job_id: str, db_name: str | None = None) -> bytes:
             One of "genesis", "zensus", "regio". Defaults to None.
 
     Returns:
-        bytes: The raw data of the table file as returned by Destatis.
+        requests.Response: the response object holding the response from calling the Destatis endpoint.
     """
     params = {
         "selection": "*" + job_id,
@@ -215,8 +218,7 @@ def get_data_from_resultfile(job_id: str, db_name: str | None = None) -> bytes:
         "format": "ffcsv",
     }
     response = get_data_from_endpoint(endpoint="data", method="resultfile", params=params, db_name=db_name)
-    assert isinstance(response.content, bytes)  # nosec assert_used
-    return response.content
+    return response
 
 
 def _check_invalid_status_code(response: requests.Response) -> None:
@@ -273,6 +275,7 @@ def _check_destatis_status(destatis_status: dict) -> None:
     # TODO: Ask Destatis for full list of error codes
     - 0: "erfolgreich" (Type: "Information")
     - 22: "erfolgreich mit Parameteranpassung" (Type: "Warnung")
+    - 50: "Keine aktualisierten Daten vorhanden." (Type: "Information")
     - 104: "Kein passendes Objekt zu Suche" (Type: "Information")
 
     Args:
@@ -295,11 +298,13 @@ def _check_destatis_status(destatis_status: dict) -> None:
         raise DestatisStatusError(destatis_status_content)
 
     # check for destatis/ query errors
-    elif (destatis_status_code == 104) or (destatis_status_type in error_en_de):
+    elif (destatis_status_code in [104, 50]) or (destatis_status_type in error_en_de):
         if destatis_status_code == 98:
             pass
+        elif destatis_status_code == 50:
+            raise NoNewerDataError(destatis_status_content) from None
         else:
-            raise DestatisStatusError(destatis_status_content)
+            raise DestatisStatusError(destatis_status_content) from None
 
     # output warnings to user
     elif (destatis_status_code == 22) or (destatis_status_type in warning_en_de):

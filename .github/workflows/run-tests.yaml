@@ -114,7 +114,7 @@ jobs:
         run: |
           poetry run pytest --cov=src/pystatis --cov-report=xml --vcr-record=none tests
       - name: Upload coverage reports to Codecov with GitHub Action
-        uses: codecov/codecov-action@v4.2.0
+        uses: codecov/codecov-action@v4.5.0
         with:
           verbose: true
         env:

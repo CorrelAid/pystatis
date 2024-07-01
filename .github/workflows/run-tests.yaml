@@ -117,15 +117,8 @@ jobs:
           retention-days: 5
       - name: Generate and filter test coverage report
         run: |
-          poetry run coverage run -m pytest --vcr-record=none tests
-          poetry run coverage json -o assets/coverage.json
-          cov=$(jq -r '.totals.percent_covered_display' assets/coverage.json)
-          echo "{\"label\":\"Test Coverage\",\"message\":\"${cov}%\",\"schemaVersion\":1,\"color\":\"hsl(120, 100%, 40%)\"}" > assets/coverage_badge.json
-      # compromise: Due to versioning issues, only display
-      # coverage (report) for main (on/push/branches/main)
-      - name: Prepare files
-        # if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        run: |
-          set -e
-          mkdir -p output/publish
-          cp assets/coverage_badge.json output/publish/
+          poetry run pytest --cov --vcr-record=none tests
+      - name: Upload coverage reports to Codecov with GitHub Action
+        uses: codecov/codecov-action@v4.2.0
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}

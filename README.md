@@ -1,8 +1,7 @@
 # ``pystatis``
 
+[![codecov](https://codecov.io/github/CorrelAid/pystatis/branch/dev/graph/badge.svg?token=H6CXTOV05D)](https://codecov.io/github/CorrelAid/pystatis)
 ![Tests, Code Quality and Documentation](https://github.com/CorrelAid/pystatis/actions/workflows/run-tests.yaml/badge.svg?event=push)
-![Code Coverage](https://img.shields.io/endpoint?url=https%3A%2F%2Fcorrelaid.github.io%2Fpystatis%2Fpublish%2Fcoverage_badge.json
-)
 ![GitHub Pages Documentation](https://github.com/CorrelAid/pystatis/actions/workflows/deploy-docs.yaml/badge.svg?event=push)
 [![Release to PyPI](https://github.com/CorrelAid/pystatis/actions/workflows/release-to-pypi.yaml/badge.svg)](https://github.com/CorrelAid/pystatis/actions/workflows/release-to-pypi.yaml)
 

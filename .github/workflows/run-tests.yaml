@@ -83,20 +83,15 @@ jobs:
         run: poetry run mypy src
 
   sphinx-documentation-and-coverage:
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
+    name: Sphinx Documentation and Test Coverage
     timeout-minutes: 10
-    strategy:
-      fail-fast: false
-      matrix:
-        python-version: ["${{ vars.PYTHON_VERSION}}"]
-        os: [ubuntu-latest]
-
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Python ${{ matrix.python-version }}
+      - name: Set up Python ${{ vars.PYTHON_VERSION}}
         uses: actions/setup-python@v5
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: ${{ vars.PYTHON_VERSION}}
       - name: Run poetry image
         uses: abatilo/actions-poetry@v3.0.0
         with:
@@ -117,8 +112,10 @@ jobs:
           retention-days: 5
       - name: Generate and filter test coverage report
         run: |
-          poetry run pytest --cov --vcr-record=none tests
+          poetry run pytest --cov=src/pystatis --cov-report=xml --vcr-record=none tests
       - name: Upload coverage reports to Codecov with GitHub Action
         uses: codecov/codecov-action@v4.2.0
+        with:
+          verbose: true
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}

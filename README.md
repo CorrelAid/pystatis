@@ -4,8 +4,9 @@
 ![Code Coverage](https://img.shields.io/endpoint?url=https%3A%2F%2Fcorrelaid.github.io%2Fpystatis%2Fpublish%2Fcoverage_badge.json
 )
 ![GitHub Pages Documentation](https://github.com/CorrelAid/pystatis/actions/workflows/deploy-docs.yaml/badge.svg?event=push)
+[![Release to PyPI](https://github.com/CorrelAid/pystatis/actions/workflows/release-to-pypi.yaml/badge.svg)](https://github.com/CorrelAid/pystatis/actions/workflows/release-to-pypi.yaml)
 
-```pystatis``` is a Python wrapper for the different GENESIS web service interfaces (API). Currently we are supporting the following databases:
+``pystatis`` is a Python wrapper for the different GENESIS web service interfaces (API). Currently we are supporting the following databases:
 
 - [GENESIS-Online](https://www-genesis.destatis.de/genesis/online)
 - [Regionaldatenbank](https://www.regionalstatistik.de/genesis/online)

@@ -25,6 +25,23 @@ To learn more about GENESIS, please refer to the official documentation [here](h
 
 The full documentation of the main and dev branches are hosted via [GitHub Pages (main)](https://correlaid.github.io/pystatis/) and [GitHub Pages (dev)](https://correlaid.github.io/pystatis/dev/).
 
+## Zensus 2022 update
+
+The new Zensus has finally arrived and been published. If you have worked with `pystatis` and Zensus database before, you need to update your config. You can do so in two ways:
+
+**Create a new config**:
+
+1. Delete your current user config manually or via `pystatis.config.delete_config()`.
+2. Restart your Python session and import `pystatis` again, this will create a new default config.
+3. Set up your credentials via `pystatis.setup_credentials()`.
+
+**Update your config**:
+
+1. It is not enough to just change your credentials, you also have to change the base_url.
+2. That is why you have to manually open the current `config.ini` and change both username and password as well as the base_url for the Zensus database.
+
+You can test your changes by calling `pystatis.helloworld.logincheck("zensus")`.
+
 ## Installation
 
 You can install the package via

@@ -9,7 +9,7 @@
 
 - [GENESIS-Online](https://www-genesis.destatis.de/genesis/online)
 - [Regionaldatenbank](https://www.regionalstatistik.de/genesis/online)
-- [Zensus Datenbank](https://ergebnisse2011.zensus2022.de/datenbank/online/)
+- [Zensus Datenbank](https://ergebnisse.zensus2022.de/datenbank/online/)
 
 The main features are:
 
@@ -43,7 +43,7 @@ print("Version:", pystatis.__version__)
 
 ## Getting started
 
-To be able to use the web service/API of either GENESIS-Online, Regionaldatenbank or Zensus, you have to be a registered user of the respective database. You can create your user [here](https://www-genesis.destatis.de/genesis/online?Menu=Anmeldung), [here](https://www.regionalstatistik.de/genesis/online?Menu=Registrierung#abreadcrumb), or [here](https://ergebnisse2011.zensus2022.de/datenbank/online?Menu=Registrierung#abreadcrumb).
+To be able to use the web service/API of either GENESIS-Online, Regionaldatenbank or Zensus, you have to be a registered user of the respective database. You can create your user [here](https://www-genesis.destatis.de/genesis/online?Menu=Anmeldung), [here](https://www.regionalstatistik.de/genesis/online?Menu=Registrierung#abreadcrumb), or [here](https://ergebnisse.zensus2022.de/datenbank/online#modal=login:~:text=hier-,registrieren,-.).
 
 Once you have a registered user, you can use your username and password as credentials for authentication against the web service/API.
 

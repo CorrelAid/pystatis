@@ -235,14 +235,14 @@ def create_default_config() -> None:
     config.set(
         "zensus",
         "base_url",
-        "https://ergebnisse2011.zensus2022.de/api/rest/2020/",
+        "https://ergebnisse.zensus2022.de/api/rest/2020/",
     )
     config.set("zensus", "username", "")
     config.set("zensus", "password", "")
     config.set(
         "zensus",
         "doku",
-        "https://ergebnisse2011.zensus2022.de/datenbank/misc/ZENSUS-Webservices_Einfuehrung.pdf",
+        "https://ergebnisse.zensus2022.de/datenbank/online/docs/ZENSUS-Webservices_Einfuehrung.pdf",
     )
 
     config.add_section("regio")

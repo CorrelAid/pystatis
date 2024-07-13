@@ -1,0 +1,311 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://ergebnisse.zensus2022.de/api/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=4000W-2041&quality=off
+  response:
+    body:
+      string: !!binary |
+        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
+    headers:
+      Cache-Control:
+      - max-age=0
+      Connection:
+      - keep-alive
+      Content-Disposition:
+      - attachment; filename=4000W-2041_1720823888397_de_flat.zip
+      Content-Type:
+      - application/zip
+      Date:
+      - Fri, 12 Jul 2024 22:38:10 GMT
+      ETag:
+      - '"myra-7554e776"'
+      Expires:
+      - Fri, 12 Jul 2024 22:38:10 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - myracloud
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - user-agent
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://ergebnisse.zensus2022.de/api/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=4000W-2041&quality=off
+  response:
+    body:
+      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"4000W-2041\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"4000W-2041\",\"Content\":\"Wohnungen:
+        Dauer des Wohnungsleerstands - Fl\xE4che der Wohnung (10 m\xB2-Intervalle)\",\"Time\":{\"From\":\"15.05.2022\",\"To\":\"15.05.2022\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"4000W\",\"Content\":\"Wohnungen
+        (Gebietsstand 15.05.2022)\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},\"Columns\":[{\"Code\":\"GEODL1\",\"Content\":\"Deutschland\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"WHG006\",\"Content\":\"Leerstehende
+        Wohnungen in Geb\xE4uden mit Wohnraum\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":\"ID0004
+        ,PO0004\",\"Structure\":null,\"Updated\":\"see parent\"}],\"Updated\":\"see
+        parent\"}],\"Rows\":[{\"Code\":\"WHGLE1\",\"Content\":\"Dauer des Wohnungsleerstands\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"WHGFL2\",\"Content\":\"Fl\xE4che
+        der Wohnung (10 m\xB2-Intervalle)\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Updated\":\"see parent\"}],\"Subtitel\":{\"Code\":\"STAG\",\"Content\":\"Stichtag\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},\"Subheading\":null},\"Updated\":\"01.07.2024 16:04:59h\"},\"Copyright\":\"\xA9
+        Statistische \xC4mter des Bundes und der L\xE4nder, Deutschland, 2024. Lizenziert
+        unter der Datenlizenz Deutschland - Namensnennung - Version 2.0\"}"
+    headers:
+      Cache-Control:
+      - max-age=0
+      Connection:
+      - close
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Fri, 12 Jul 2024 22:38:14 GMT
+      ETag:
+      - '"myra-6dbd3f21"'
+      Expires:
+      - Fri, 12 Jul 2024 22:38:14 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - myracloud
+      Set-Cookie:
+      - AL_BALANCE-S=$xc/twQLc9ZaMUGU5xAhojXIodrn9xE5LORJUwooXCuE9Gn96fbV; Path=/;
+        Secure; HttpOnly; SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - user-agent, accept-encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://ergebnisse.zensus2022.de/api/rest/2020/data/tablefile?area=all&format=ffcsv&language=en&name=4000W-2041&quality=off
+  response:
+    body:
+      string: !!binary |
+        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
+    headers:
+      Cache-Control:
+      - max-age=0
+      Connection:
+      - keep-alive
+      Content-Disposition:
+      - attachment; filename=4000W-2041_1720823931154_en_flat.zip
+      Content-Type:
+      - application/zip
+      Date:
+      - Fri, 12 Jul 2024 22:38:53 GMT
+      ETag:
+      - '"myra-7554eaf4"'
+      Expires:
+      - Fri, 12 Jul 2024 22:38:53 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - myracloud
+      Set-Cookie:
+      - AL_BALANCE-S=$xc/F900mKg3NHkuD9kKsNrpTA_qWrcbgJxKqdAyB0KIi!QUfTTa; Path=/;
+        Secure; HttpOnly; SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - user-agent
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://ergebnisse.zensus2022.de/api/rest/2020/metadata/table?area=all&format=ffcsv&language=en&name=4000W-2041&quality=off
+  response:
+    body:
+      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"successfull\",\"Type\":\"information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"4000W-2041\",\"area\":\"all\",\"language\":\"en\"},\"Object\":{\"Code\":\"4000W-2041\",\"Content\":\"Dwellings:
+        Duration of dwelling vacancy - Floor area of the\\ndwelling (10m\xB2 increments)\",\"Time\":{\"From\":\"2022-05-15\",\"To\":\"2022-05-15\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"4000W\",\"Content\":\"Dwellings
+        (territory on 15 May 2022)\",\"Type\":\"statistic\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},\"Columns\":[{\"Code\":\"GEODL1\",\"Content\":\"Germany\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"WHG006\",\"Content\":\"Vacant
+        dwellings in buildings with residential space\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":\"ID0004
+        ,PO0004\",\"Structure\":null,\"Updated\":\"see parent\"}],\"Updated\":\"see
+        parent\"}],\"Rows\":[{\"Code\":\"WHGLE1\",\"Content\":\"Duration of dwelling
+        vacancy\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"WHGFL2\",\"Content\":\"Floor
+        area of the dwelling (10m\xB2 increments)\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Updated\":\"see parent\"}],\"Subtitel\":{\"Code\":\"STAG\",\"Content\":\"Reference
+        date\",\"Type\":\"variable\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},\"Subheading\":null},\"Updated\":\"2024-07-01 16:04:59h\"},\"Copyright\":\"\xA9
+        Statistical Offices of the Federation and the L\xE4nder, Germany, 2024. Licensed
+        under Data licence Germany - attribution - Version 2.0\"}"
+    headers:
+      Cache-Control:
+      - max-age=0
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Fri, 12 Jul 2024 22:38:57 GMT
+      ETag:
+      - '"myra-6dbd429f"'
+      Expires:
+      - Fri, 12 Jul 2024 22:38:57 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - myracloud
+      Set-Cookie:
+      - AL_BALANCE-S=$xc/KziFpVxpw6mKG3aUkaUNzx3QfZBIuWdZ3VPPmnUEnQHHeBwg; Path=/;
+        Secure; HttpOnly; SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - user-agent, accept-encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+version: 1

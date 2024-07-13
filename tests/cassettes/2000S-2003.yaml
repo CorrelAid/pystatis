@@ -5,75 +5,48 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br
+      - gzip, deflate, br, zstd
       Connection:
       - keep-alive
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://ergebnisse2011.zensus2022.de/api/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=2000S-2003&quality=off
+    uri: https://ergebnisse.zensus2022.de/api/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=2000S-2003&quality=off
   response:
     body:
-      string: !!binary |
-        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
+      string: "{\"Ident\":{\"Service\":\"data\",\"Method\":\"tablefile\"},\"Status\":{\"Code\":90,\"Content\":\"Die
+        angeforderte Tabelle ist nicht vorhanden. Bitte pr\xFCfen Sie den Tabellennamen
+        und ggf. eingegebene Auswahlmerkmale.\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"2000S-2003\",\"area\":\"Alle\",\"compress\":\"false\",\"transpose\":\"false\",\"contents\":\"\",\"startyear\":\"\",\"endyear\":\"\",\"timeslices\":\"\",\"regionalvariable\":\"\",\"regionalkey\":\"\",\"classifyingvariable1\":\"\",\"classifyingkey1\":\"\",\"classifyingvariable2\":\"\",\"classifyingkey2\":\"\",\"classifyingvariable3\":\"\",\"classifyingkey3\":\"\",\"classifyingvariable4\":\"\",\"classifyingkey4\":\"\",\"classifyingvariable5\":\"\",\"classifyingkey5\":\"\",\"format\":\"ffcsv\",\"job\":\"false\",\"stand\":\"\",\"language\":\"de\"},\"Object\":null,\"Copyright\":\"\xA9
+        Statistische \xC4mter des Bundes und der L\xE4nder, Deutschland, 2024. Lizenziert
+        unter der Datenlizenz Deutschland - Namensnennung - Version 2.0\"}"
     headers:
+      Cache-Control:
+      - max-age=0
       Connection:
-      - Keep-Alive
-      Content-Disposition:
-      - attachment; filename=2000S-2003_de_flat.zip
-      Content-Length:
-      - '1985'
+      - keep-alive
+      Content-Encoding:
+      - gzip
       Content-Type:
-      - application/zip
+      - application/json
       Date:
-      - Sat, 29 Jun 2024 21:11:00 GMT
-      Keep-Alive:
-      - timeout=10, max=500
+      - Fri, 12 Jul 2024 22:24:45 GMT
+      ETag:
+      - '"myra-7554c552"'
+      Expires:
+      - Fri, 12 Jul 2024 22:24:45 GMT
       Referrer-Policy:
       - same-origin
       Server:
-      - Apache
+      - myracloud
       Set-Cookie:
-      - AL_BALANCE-S=$xc/rUnJzLjlnBpc0FV84mRtMtCli3EU70lMcAUNTdDE7KzqkyR2; Path=/;
+      - AL_BALANCE-S=$xc/!E2lCe0JP8X12eWl6LmYcKbtFEZFAIUrp4zC5UgZDk6Be3QN; Path=/;
         Secure; HttpOnly; SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
       Vary:
-      - User-Agent
+      - user-agent, accept-encoding
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
@@ -89,191 +62,48 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br
+      - gzip, deflate, br, zstd
       Connection:
       - keep-alive
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://ergebnisse2011.zensus2022.de/api/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=2000S-2003&quality=off
+    uri: https://ergebnisse.zensus2022.de/api/rest/2020/data/tablefile?area=all&format=ffcsv&language=en&name=2000S-2003&quality=off
   response:
     body:
-      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"2000S-2003\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"2000S-2003\",\"Content\":\"Personen:
-        Erwerbsstatus - Geb\xE4udetyp (Gr\xF6\xDFe)/Gr\xF6\xDFe des\\nprivaten Haushalts/Typ
-        des privaten Haushalts (nach\\nFamilien)\",\"Time\":{\"From\":\"09.05.2011\",\"To\":\"09.05.2011\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"2000S\",\"Content\":\"Bev\xF6lkerung:
-        Bildung, Erwerb, Migration\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"PRS005\",\"Content\":\"Personen\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"STAG\",\"Content\":\"Stichtag\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Updated\":\"see parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"GEODL3\",\"Content\":\"Deutschland\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Rows\":[{\"Code\":\"ERWST2\",\"Content\":\"Erwerbsstatus\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"GEBTP2\",\"Content\":\"Geb\xE4udetyp
-        (Gr\xF6\xDFe)\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Updated\":\"see parent\"}],\"Subtitel\":null,\"Subheading\":null},\"Updated\":\"10.02.2022
-        08:05:51h\"},\"Copyright\":\"\xA9 Statistische \xC4mter des Bundes und der
-        L\xE4nder, Deutschland, 2024. Lizenziert unter der Datenlizenz Deutschland
-        - Namensnennung - Version 2.0\"}"
+      string: "{\"Ident\":{\"Service\":\"data\",\"Method\":\"tablefile\"},\"Status\":{\"Code\":90,\"Content\":\"The
+        table you requested is not available. Please check the tablecode and any selection
+        parameter entered.\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"2000S-2003\",\"area\":\"all\",\"compress\":\"false\",\"transpose\":\"false\",\"contents\":\"\",\"startyear\":\"\",\"endyear\":\"\",\"timeslices\":\"\",\"regionalvariable\":\"\",\"regionalkey\":\"\",\"classifyingvariable1\":\"\",\"classifyingkey1\":\"\",\"classifyingvariable2\":\"\",\"classifyingkey2\":\"\",\"classifyingvariable3\":\"\",\"classifyingkey3\":\"\",\"classifyingvariable4\":\"\",\"classifyingkey4\":\"\",\"classifyingvariable5\":\"\",\"classifyingkey5\":\"\",\"format\":\"ffcsv\",\"job\":\"false\",\"stand\":\"\",\"language\":\"en\"},\"Object\":null,\"Copyright\":\"\xA9
+        Statistical Offices of the Federation and the L\xE4nder, Germany, 2024. Licensed
+        under Data licence Germany - attribution - Version 2.0\"}"
     headers:
-      Connection:
-      - Keep-Alive
-      Content-Length:
-      - '1643'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Sat, 29 Jun 2024 21:11:04 GMT
-      Keep-Alive:
-      - timeout=10, max=500
-      Referrer-Policy:
-      - same-origin
-      Server:
-      - Apache
-      Set-Cookie:
-      - AL_BALANCE-S=$xc/FQuRdQ5NrREi2ehEj!dbtgS7poOSytlIbhExjST9jotP0jT_; Path=/;
-        Secure; HttpOnly; SameSite=None
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains
-      Vary:
-      - User-Agent
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-XSS-Protection:
-      - 1; mode=block
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate, br
+      Cache-Control:
+      - max-age=0
       Connection:
       - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://ergebnisse2011.zensus2022.de/api/rest/2020/data/tablefile?area=all&format=ffcsv&language=en&name=2000S-2003&quality=off
-  response:
-    body:
-      string: !!binary |
-        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
-        AHgHAAAAAA==
-    headers:
-      Connection:
-      - Keep-Alive
-      Content-Disposition:
-      - attachment; filename=2000S-2003_en_flat.zip
-      Content-Length:
-      - '2002'
+      Content-Encoding:
+      - gzip
       Content-Type:
-      - application/zip
+      - application/json
       Date:
-      - Sat, 29 Jun 2024 21:14:24 GMT
-      Keep-Alive:
-      - timeout=10, max=500
+      - Fri, 12 Jul 2024 22:25:13 GMT
+      ETag:
+      - '"myra-7554c8aa"'
+      Expires:
+      - Fri, 12 Jul 2024 22:25:13 GMT
       Referrer-Policy:
       - same-origin
       Server:
-      - Apache
+      - myracloud
       Set-Cookie:
-      - AL_BALANCE-S=$xc/upzwuNVjvGSLf9z34lV0Rj54DV!XyKqiFdamw9kh9Z59c!zY; Path=/;
+      - AL_BALANCE-S=$xc/PLJk13oOi5snR80JQv9EPDTzro!xbWFx5DPhn8WLbnhx7Xl0; Path=/;
         Secure; HttpOnly; SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
       Vary:
-      - User-Agent
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-XSS-Protection:
-      - 1; mode=block
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate, br
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://ergebnisse2011.zensus2022.de/api/rest/2020/metadata/table?area=all&format=ffcsv&language=en&name=2000S-2003&quality=off
-  response:
-    body:
-      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"successfull\",\"Type\":\"information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"2000S-2003\",\"area\":\"all\",\"language\":\"en\"},\"Object\":{\"Code\":\"2000S-2003\",\"Content\":\"Persons:
-        Activity status - Type of building (size)/Size of\\nprivate household/Type
-        of private household (by family)\",\"Time\":{\"From\":\"2011-05-09\",\"To\":\"2011-05-09\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"2000S\",\"Content\":\"Population:
-        education, employment, migration\",\"Type\":\"statistic\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"PRS005\",\"Content\":\"Persons\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"STAG\",\"Content\":\"Reference
-        date\",\"Type\":\"variable\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Updated\":\"see parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"GEODL3\",\"Content\":\"Germany\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Rows\":[{\"Code\":\"ERWST2\",\"Content\":\"Activity status (detailed)\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"GEBTP2\",\"Content\":\"Type
-        of the building (size)\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Updated\":\"see parent\"}],\"Subtitel\":null,\"Subheading\":null},\"Updated\":\"2022-02-10
-        08:05:51h\"},\"Copyright\":\"\xA9 Statistical Offices of the Federation and
-        the L\xE4nder, Germany, 2024. Licensed under Data licence Germany - attribution
-        - Version 2.0\"}"
-    headers:
-      Connection:
-      - Keep-Alive
-      Content-Length:
-      - '1655'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Sat, 29 Jun 2024 21:14:28 GMT
-      Keep-Alive:
-      - timeout=10, max=500
-      Referrer-Policy:
-      - same-origin
-      Server:
-      - Apache
-      Set-Cookie:
-      - AL_BALANCE-S=$xc/WbRzeJjH212zpspFN2DWAtzLVQDy8BClRXyILyfo9wtNmoFL; Path=/;
-        Secure; HttpOnly; SameSite=None
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains
-      Vary:
-      - User-Agent
+      - user-agent, accept-encoding
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:

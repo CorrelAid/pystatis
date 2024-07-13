@@ -5,105 +5,45 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br
+      - gzip, deflate, br, zstd
       Connection:
       - keep-alive
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://ergebnisse2011.zensus2022.de/api/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=6000F-1007&quality=on
+    uri: https://ergebnisse.zensus2022.de/api/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=6000F-1007&quality=on
   response:
     body:
-      string: !!binary |
-        UEsDBBQACAgIAOO53VgAAAAAAAAAAAAAAAAWAAAANjAwMEYtMTAwN19kZV9mbGF0LmNzds1UvW7C
-        MBDe+xRZuiXq2QFCdFMgJa3UqkOKwhYZYhFLwaixTaW+Woc+Ul+hoUEiBFqVLmSx7sd3992nz/58
-        /1CaaaG0WKh0sc44NvyCzXmBWqx4nfq29kEk6YaVgs2LXb7h17caAaZ1KeZGH1/dZ+oi2upK213p
-        j11PZuqiDSsMr8/USKF35uGoVqxRmb5cDQBgghO2EoXgEuPnIMK44inXbIkUCHGg74CP0e1T+EAw
-        5EarRV4wmWEYHbjJXRTEBAOjtmRrI5dWxksrWeeyshHvpVpyxVYaCYANeI2T4BGA7ofzi6ChdNAf
-        ei5gIN9YXlwSVTCNnVEQzpxkPMMRy/grk5LfhKaq55aRmZWMLbkdbG3WZV51rOCA3bssl/9C7bvU
-        H3aL8mPsLdD2dpEm8W5niD8X+8Cjrtcd+k9usFNOQzO+TTrB+N/gUtrrEwIdUvnpF3qokePvhXaF
-        87Ox9zwY/qLyL1BLBwjW/xS3ZQEAACgIAABQSwECFAAUAAgICADjud1Y1v8Ut2UBAAAoCAAAFgAA
-        AAAAAAAAAAAAAAAAAAAANjAwMEYtMTAwN19kZV9mbGF0LmNzdlBLBQYAAAAAAQABAEQAAACpAQAA
-        AAA=
+      string: "{\"Ident\":{\"Service\":\"data\",\"Method\":\"tablefile\"},\"Status\":{\"Code\":90,\"Content\":\"Die
+        angeforderte Tabelle ist nicht vorhanden. Bitte pr\xFCfen Sie den Tabellennamen
+        und ggf. eingegebene Auswahlmerkmale.\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"6000F-1007\",\"area\":\"Alle\",\"compress\":\"false\",\"transpose\":\"false\",\"contents\":\"\",\"startyear\":\"\",\"endyear\":\"\",\"timeslices\":\"\",\"regionalvariable\":\"\",\"regionalkey\":\"\",\"classifyingvariable1\":\"\",\"classifyingkey1\":\"\",\"classifyingvariable2\":\"\",\"classifyingkey2\":\"\",\"classifyingvariable3\":\"\",\"classifyingkey3\":\"\",\"classifyingvariable4\":\"\",\"classifyingkey4\":\"\",\"classifyingvariable5\":\"\",\"classifyingkey5\":\"\",\"format\":\"ffcsv\",\"job\":\"false\",\"stand\":\"\",\"language\":\"de\"},\"Object\":null,\"Copyright\":\"\xA9
+        Statistische \xC4mter des Bundes und der L\xE4nder, Deutschland, 2024. Lizenziert
+        unter der Datenlizenz Deutschland - Namensnennung - Version 2.0\"}"
     headers:
-      Connection:
-      - Keep-Alive
-      Content-Disposition:
-      - attachment; filename=6000F-1007_de_flat.zip
-      Content-Length:
-      - '515'
-      Content-Type:
-      - application/zip
-      Date:
-      - Sat, 29 Jun 2024 21:15:01 GMT
-      Keep-Alive:
-      - timeout=10, max=500
-      Referrer-Policy:
-      - same-origin
-      Server:
-      - Apache
-      Set-Cookie:
-      - AL_BALANCE-S=$xc/F4UKUeTnt1ZqBeNmWM8OIITh1T!klwQWnKbmSiCaZmPJ6Jg8; Path=/;
-        Secure; HttpOnly; SameSite=None
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains
-      Vary:
-      - User-Agent
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-XSS-Protection:
-      - 1; mode=block
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate, br
+      Cache-Control:
+      - max-age=0
       Connection:
       - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://ergebnisse2011.zensus2022.de/api/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=6000F-1007&quality=on
-  response:
-    body:
-      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"6000F-1007\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"6000F-1007\",\"Content\":\"Familien:
-        Ausstattung der Wohnung\",\"Time\":{\"From\":\"09.05.2011\",\"To\":\"09.05.2011\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"6000F\",\"Content\":\"Familien\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"STAG\",\"Content\":\"Stichtag\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"GEODL1\",\"Content\":\"Deutschland\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"FAM002\",\"Content\":\"Familien\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":\"ID0004
-        ,PO0004\",\"Structure\":null,\"Updated\":\"see parent\"}],\"Updated\":\"see
-        parent\"}],\"Rows\":[{\"Code\":\"WHGAS1\",\"Content\":\"Ausstattung der Wohnung\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Subtitel\":null,\"Subheading\":null},\"Updated\":\"21.03.2022
-        13:45:50h\"},\"Copyright\":\"\xA9 Statistische \xC4mter des Bundes und der
-        L\xE4nder, Deutschland, 2024. Lizenziert unter der Datenlizenz Deutschland
-        - Namensnennung - Version 2.0\"}"
-    headers:
-      Connection:
-      - Keep-Alive
-      Content-Length:
-      - '1390'
+      Content-Encoding:
+      - gzip
       Content-Type:
-      - application/json;charset=UTF-8
+      - application/json
       Date:
-      - Sat, 29 Jun 2024 21:15:06 GMT
-      Keep-Alive:
-      - timeout=10, max=500
+      - Fri, 12 Jul 2024 22:25:34 GMT
+      ETag:
+      - '"myra-7554c8ed"'
+      Expires:
+      - Fri, 12 Jul 2024 22:25:34 GMT
       Referrer-Policy:
       - same-origin
       Server:
-      - Apache
-      Set-Cookie:
-      - AL_BALANCE-S=$xc/K1HmuZuiKR8f_!g6qBwIF2EjJOU2OmHwi1bbzFSf_mGw3Zcp; Path=/;
-        Secure; HttpOnly; SameSite=None
+      - myracloud
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
       Vary:
-      - User-Agent
+      - user-agent, accept-encoding
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:

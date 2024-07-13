@@ -40,7 +40,7 @@ The new Zensus has finally arrived and been published. If you have worked with `
 1. It is not enough to just change your credentials, you also have to change the base_url.
 2. That is why you have to manually open the current `config.ini` and change both username and password as well as the base_url for the Zensus database.
 
-You can test your changes by calling `pystatis.helloworld.logincheck("zensus")`.
+You can test your changes by calling `pystatis.logincheck("zensus")`.
 
 ## Installation
 

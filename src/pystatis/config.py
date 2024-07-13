@@ -98,20 +98,24 @@ LANG_TO_COL_MAPPING = {
     },
 }
 ZENSUS_AGS_CODES = [
-    "GEODL1",
-    "GEODL3",
     "GEOBL1",
     "GEOBL3",
+    "GEOBZ1",
+    "GEODL1",
+    "GEODL3",
     "GEOGM1",
     "GEOGM2",
     "GEOGM3",
+    "GEOGM4",
     "GEOLK1",
     "GEOLK3",
+    "GEOLK4",
     "GEORB1",
     "GEORB3",
     "GEOVB1",
     "GEOVB2",
     "GEOVB3",
+    "GEOVB4",
 ]
 REGIO_AND_GENESIS_AGS_CODES = ["DG", "DLAND", "DLANDU", "REGBEZ", "KREISE", "GEMEIN"]
 EXCLUDE_AGS_CODES = ["GEODL1", "GEODL3", "DG"]

@@ -75,16 +75,20 @@ class Table:
                     - "GEODL3" (Deutschland, 1) -> will not return extra column
                     - "GEOBL1" (Bundesländer, 16)
                     - "GEOBL3" (Bundesländer, 16)
+                    - "GEOBZ1" (Bezirke (Hamburg und Berlin), 19)
                     - "GEOGM1" (Gemeinden, 11340)
                     - "GEOGM2" (Gemeinden mit min. 10_000 Einwohnern, 1574)
                     - "GEOGM3" (Gemeinden mit min. 10_000 Einwohnern, 1574)
+                    - "GEOGM4" (Gemeinden (Gebietsstand 15.05.2022), 10787)
                     - "GEOLK1" (Landkreise und kreisfreie Städte, 412)
                     - "GEOLK3" (Landkreise und kreisfreie Städte, 412)
+                    - "GEOLK4" (Landkreise u. krsfr. Städte (Stand 15.05.22), 400)
                     - "GEORB1" (Regierungsbezirke/Statistische Regionen, 36)
                     - "GEORB3" (Regierungsbezirke/Statistische Regionen, 36)
                     - "GEOVB1" (Gemeindeverbände, 1333)
                     - "GEOVB2" (Gemeindeverbände mit mindestens 10 000 Einwohnern, 338)
                     - "GEOVB3" (Gemeindeverbände mit mindestens 10 000 Einwohnern, 157)
+                    - "GEOVB4" (Gemeindeverbände (Gebietsstand 15.05.2022), 1207)
             regionalkey (str, optional): Official municipality key (AGS).
                 Multiple values can be passed as a comma-separated list.
                 Accepts 1-12 characters. "*" can be used as wildcard.
@@ -234,7 +238,6 @@ class Table:
         variable_attribute_label_col = column_name_dict["variable_attribute_label"]
         variable_label_col = column_name_dict["variable_label"]
 
-        # quality columns are not yet supported for Zensus tables
         quality = False
         if value_q_col in data.columns:
             quality = True
@@ -278,7 +281,10 @@ class Table:
         pos_of_ags_col, ags_code = Table.extract_ags_col(pivot_table, ags_codes, ars_label_code)
 
         attributes = pivot_table.filter(regex=r"\d+_" + variable_attribute_label_col)
-        attributes.columns = pivot_table.filter(regex=r"\d+_" + variable_label_col).iloc[0].tolist()
+        # avoid taking label from first row
+        # as this can contain value for whole Germany
+        # even if table is for regional areas
+        attributes.columns = pivot_table.filter(regex=r"\d+_" + variable_label_col).iloc[1].tolist()
 
         pretty_data = pd.concat([time, attributes, pivot_table[value_columns]], axis=1)
         if ags_code is not None:
@@ -302,7 +308,8 @@ class Table:
             pd.Series | None: The AGS column if present, otherwise None.
         """
         ags_code = None
-        pos_of_ags_col = np.where(data.iloc[0].isin(codes))[0]
+        # don't compare very first row, as it can often be Germany as a summary
+        pos_of_ags_col = np.where(data.iloc[1].isin(codes))[0]
         if pos_of_ags_col.size > 0:
             pos_of_ags_col = pos_of_ags_col[0]
             ags_code = pd.Series(data=data.iloc[:, pos_of_ags_col + 2], name=label, dtype=str)

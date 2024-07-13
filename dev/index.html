@@ -16,7 +16,7 @@
   
         <script src="_static/jquery.js?v=5d32c60e"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=e259d695"></script>
+        <script src="_static/documentation_options.js?v=4621528c"></script>
         <script src="_static/doctools.js?v=9a2dae69"></script>
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -38,7 +38,7 @@
               <img src="_static/pystatis_logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.3.0
+                0.3.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -97,7 +97,7 @@
 <ul class="simple">
 <li><p><a class="reference external" href="https://www-genesis.destatis.de/genesis/online">GENESIS-Online</a></p></li>
 <li><p><a class="reference external" href="https://www.regionalstatistik.de/genesis/online">Regionaldatenbank</a></p></li>
-<li><p><a class="reference external" href="https://ergebnisse2011.zensus2022.de/datenbank/online/">Zensus Datenbank</a></p></li>
+<li><p><a class="reference external" href="https://ergebnisse.zensus2022.de/datenbank/online/">Zensus Datenbank</a></p></li>
 </ul>
 <p>The main features are:</p>
 <ul class="simple">
@@ -111,6 +111,22 @@
 </ul>
 <p>To learn more about GENESIS, please refer to the official documentation <a class="reference external" href="https://www.destatis.de/EN/Service/OpenData/api-webservice.html">here</a>.</p>
 <p>The full documentation of the main and dev branches are hosted via <a class="reference external" href="https://correlaid.github.io/pystatis/">GitHub Pages (main)</a> and <a class="reference external" href="https://correlaid.github.io/pystatis/dev/">GitHub Pages (dev)</a>.</p>
+<section id="zensus-2022-update">
+<h2>Zensus 2022 update<a class="headerlink" href="#zensus-2022-update" title="Link to this heading"></a></h2>
+<p>The new Zensus has finally arrived and been published. If you have worked with <code class="docutils literal notranslate"><span class="pre">pystatis</span></code> and Zensus database before, you need to update your config. You can do so in two ways:</p>
+<p><strong>Create a new config</strong>:</p>
+<ol class="arabic simple">
+<li><p>Delete your current user config manually or via <code class="docutils literal notranslate"><span class="pre">pystatis.config.delete_config()</span></code>.</p></li>
+<li><p>Restart your Python session and import <code class="docutils literal notranslate"><span class="pre">pystatis</span></code> again, this will create a new default config.</p></li>
+<li><p>Set up your credentials via <code class="docutils literal notranslate"><span class="pre">pystatis.setup_credentials()</span></code>.</p></li>
+</ol>
+<p><strong>Update your config</strong>:</p>
+<ol class="arabic simple">
+<li><p>It is not enough to just change your credentials, you also have to change the base_url.</p></li>
+<li><p>That is why you have to manually open the current <code class="docutils literal notranslate"><span class="pre">config.ini</span></code> and change both username and password as well as the base_url for the Zensus database.</p></li>
+</ol>
+<p>You can test your changes by calling <code class="docutils literal notranslate"><span class="pre">pystatis.logincheck(&quot;zensus&quot;)</span></code>.</p>
+</section>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul>

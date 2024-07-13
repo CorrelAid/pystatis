@@ -16,7 +16,7 @@
   
         <script src="_static/jquery.js?v=5d32c60e"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=e259d695"></script>
+        <script src="_static/documentation_options.js?v=4621528c"></script>
         <script src="_static/doctools.js?v=9a2dae69"></script>
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -38,7 +38,7 @@
               <img src="_static/pystatis_logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.3.0
+                0.3.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -85,6 +85,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#pystatis.exception.DestatisStatusError"><code class="docutils literal notranslate"><span class="pre">DestatisStatusError</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pystatis.exception.NoNewerDataError"><code class="docutils literal notranslate"><span class="pre">NoNewerDataError</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pystatis.exception.PystatisConfigError"><code class="docutils literal notranslate"><span class="pre">PystatisConfigError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pystatis.exception.TableNotFoundError"><code class="docutils literal notranslate"><span class="pre">TableNotFoundError</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#module-pystatis.find">pystatis.find module</a><ul>
@@ -453,6 +454,13 @@ until the user has filled in the credentials.</p>
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pystatis.exception.</span></span><span class="sig-name descname"><span class="pre">PystatisConfigError</span></span><a class="headerlink" href="#pystatis.exception.PystatisConfigError" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 <p>Raised when pystatis configuration is invalid.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="pystatis.exception.TableNotFoundError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pystatis.exception.</span></span><span class="sig-name descname"><span class="pre">TableNotFoundError</span></span><a class="headerlink" href="#pystatis.exception.TableNotFoundError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Raised when table is not found in the database (API Error Code 90).</p>
 </dd></dl>
 
 </section>
@@ -850,16 +858,20 @@ Possible values:</p>
 <li><p>”GEODL3” (Deutschland, 1) -&gt; will not return extra column</p></li>
 <li><p>”GEOBL1” (Bundesländer, 16)</p></li>
 <li><p>”GEOBL3” (Bundesländer, 16)</p></li>
+<li><p>”GEOBZ1” (Bezirke (Hamburg und Berlin), 19)</p></li>
 <li><p>”GEOGM1” (Gemeinden, 11340)</p></li>
 <li><p>”GEOGM2” (Gemeinden mit min. 10_000 Einwohnern, 1574)</p></li>
 <li><p>”GEOGM3” (Gemeinden mit min. 10_000 Einwohnern, 1574)</p></li>
+<li><p>”GEOGM4” (Gemeinden (Gebietsstand 15.05.2022), 10787)</p></li>
 <li><p>”GEOLK1” (Landkreise und kreisfreie Städte, 412)</p></li>
 <li><p>”GEOLK3” (Landkreise und kreisfreie Städte, 412)</p></li>
+<li><p>”GEOLK4” (Landkreise u. krsfr. Städte (Stand 15.05.22), 400)</p></li>
 <li><p>”GEORB1” (Regierungsbezirke/Statistische Regionen, 36)</p></li>
 <li><p>”GEORB3” (Regierungsbezirke/Statistische Regionen, 36)</p></li>
 <li><p>”GEOVB1” (Gemeindeverbände, 1333)</p></li>
 <li><p>”GEOVB2” (Gemeindeverbände mit mindestens 10 000 Einwohnern, 338)</p></li>
 <li><p>”GEOVB3” (Gemeindeverbände mit mindestens 10 000 Einwohnern, 157)</p></li>
+<li><p>”GEOVB4” (Gemeindeverbände (Gebietsstand 15.05.2022), 1207)</p></li>
 </ul>
 </dd>
 </dl>
@@ -1141,16 +1153,20 @@ Possible values:</p>
 <li><p>”GEODL3” (Deutschland, 1) -&gt; will not return extra column</p></li>
 <li><p>”GEOBL1” (Bundesländer, 16)</p></li>
 <li><p>”GEOBL3” (Bundesländer, 16)</p></li>
+<li><p>”GEOBZ1” (Bezirke (Hamburg und Berlin), 19)</p></li>
 <li><p>”GEOGM1” (Gemeinden, 11340)</p></li>
 <li><p>”GEOGM2” (Gemeinden mit min. 10_000 Einwohnern, 1574)</p></li>
 <li><p>”GEOGM3” (Gemeinden mit min. 10_000 Einwohnern, 1574)</p></li>
+<li><p>”GEOGM4” (Gemeinden (Gebietsstand 15.05.2022), 10787)</p></li>
 <li><p>”GEOLK1” (Landkreise und kreisfreie Städte, 412)</p></li>
 <li><p>”GEOLK3” (Landkreise und kreisfreie Städte, 412)</p></li>
+<li><p>”GEOLK4” (Landkreise u. krsfr. Städte (Stand 15.05.22), 400)</p></li>
 <li><p>”GEORB1” (Regierungsbezirke/Statistische Regionen, 36)</p></li>
 <li><p>”GEORB3” (Regierungsbezirke/Statistische Regionen, 36)</p></li>
 <li><p>”GEOVB1” (Gemeindeverbände, 1333)</p></li>
 <li><p>”GEOVB2” (Gemeindeverbände mit mindestens 10 000 Einwohnern, 338)</p></li>
 <li><p>”GEOVB3” (Gemeindeverbände mit mindestens 10 000 Einwohnern, 157)</p></li>
+<li><p>”GEOVB4” (Gemeindeverbände (Gebietsstand 15.05.2022), 1207)</p></li>
 </ul>
 </dd>
 </dl>

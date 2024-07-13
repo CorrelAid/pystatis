@@ -27,7 +27,7 @@ The full documentation of the main and dev branches are hosted via [GitHub Pages
 
 ## Zensus 2022 update
 
-The new Zensus has finally arrived and been published. If you have worked with `pystatis` and Zensus database before, you need to update your config. You can do so in two ways:
+The new Zensus has finally arrived and been published. However, old credentials are no longer valid and the base url has changed, too. If you have worked with `pystatis` and Zensus database before, you need to update your config. You can do so in two ways:
 
 **Create a new config**:
 
@@ -55,7 +55,7 @@ If everything worked out correctly, you should be able to import `pystatis` like
 ```python
 import pystatis
 
-print("Version:", pystatis.__version__)
+print("Version: ", pystatis.__version__)
 ```
 
 ## Getting started
@@ -66,7 +66,7 @@ Once you have a registered user, you can use your username and password as crede
 
 You can use `pystatis` with only one of the supported database or with all, it is simply about providing the right credentials. `pystatis` will only use databases for which you have provided credentials.
 
-Please follow this [guide](./nb/00_Setup.ipynb) to set up `pystatis` correctly.
+Please follow this [guide](https://github.com/CorrelAid/pystatis/blob/main/nb/00_Setup.ipynb) to set up `pystatis` correctly.
 
 All APIs provide a `helloworld` endpoint that can be used to check your credentials.
 
@@ -78,7 +78,7 @@ logincheck("genesis")
 
 If everything worked out, your setup is complete and you can start downloading data.
 
-For more details, please study the provided examples [notebooks](./nb/).
+For more details, please study the provided examples [notebooks](https://github.com/CorrelAid/pystatis/tree/main/nb).
 
 ## How to use
 

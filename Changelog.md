@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.1
+
+- support new Zensus 2022 web interface / API by changing base_url in default config to new value <https://ergebnisse.zensus2022.de/api/rest/2020/>
+- users have to either update or delete their old config, detailed instructions are added to the README
+- for some tables, the regional code can change, all rows except one might be KREISE but one is DG for Germany, fixed this so we still output AGS column
+- added missing regional codes that were introduced by Zensus 2022
+
 ## 0.3.0
 
 - support a wide range of parameters for `get_data()`, see API documentation for details -> [PR #64](https://github.com/CorrelAid/pystatis/pull/64)

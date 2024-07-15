@@ -42,6 +42,12 @@ The new Zensus has finally arrived and been published. However, old credentials 
 
 You can test your changes by calling `pystatis.logincheck("zensus")`.
 
+### API Token
+
+Zensus database now also supports authentication with an API token instead of the classic username and password.
+You can get your token from the Webservice interface [info page](https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/details#modal=web-service-api) when being logged in.
+You can use the token instead of your username, and leave the password blank. There is no extra field or parameter for the token, so you have to pass it as your username. That means `pystatis` is already supporting it, you can just put it as your username and leave the password blank.
+
 ## Installation
 
 You can install the package via

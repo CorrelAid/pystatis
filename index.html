@@ -16,7 +16,7 @@
   
         <script src="_static/jquery.js?v=5d32c60e"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=4621528c"></script>
+        <script src="_static/documentation_options.js?v=71d9d8e6"></script>
         <script src="_static/doctools.js?v=9a2dae69"></script>
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -38,7 +38,7 @@
               <img src="_static/pystatis_logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.3.1
+                0.3.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -126,6 +126,12 @@
 <li><p>That is why you have to manually open the current <code class="docutils literal notranslate"><span class="pre">config.ini</span></code> and change both username and password as well as the base_url for the Zensus database.</p></li>
 </ol>
 <p>You can test your changes by calling <code class="docutils literal notranslate"><span class="pre">pystatis.logincheck(&quot;zensus&quot;)</span></code>.</p>
+<section id="api-token">
+<h3>API Token<a class="headerlink" href="#api-token" title="Link to this heading"></a></h3>
+<p>Zensus database now also supports authentication with an API token instead of the classic username and password.
+You can get your token from the Webservice interface <a class="reference external" href="https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/details#modal=web-service-api">info page</a> when being logged in.
+You can use the token instead of your username, and leave the password blank. There is no extra field or parameter for the token, so you have to pass it as your username. That means <code class="docutils literal notranslate"><span class="pre">pystatis</span></code> is already supporting it, you can just put it as your username and leave the password blank.</p>
+</section>
 </section>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Contents</span></p>

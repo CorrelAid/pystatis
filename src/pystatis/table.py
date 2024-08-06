@@ -143,7 +143,7 @@ class Table:
             decimal="," if language == "de" else ".",
             dtype={raw_data_header.split(";")[pos + 2]: str for pos in pos_of_ags_col},
             parse_dates=[config.LANG_TO_COL_MAPPING[db_name][language]["time"]],
-            date_format="%d.%m.%Y" if language == "de" else "%Y-%m-%d",
+            date_format="%d.%m.%Y" if (language == "de" and db_name != "zensus") else "%Y-%m-%d",
         )
 
         if prettify:

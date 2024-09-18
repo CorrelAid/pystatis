@@ -36,6 +36,15 @@ jobs:
       - name: Install dependencies
         run: |
           poetry install --with dev
+      - name: Remove existing nb directory
+        run: |
+          if [ -d "docs/source/nb" ]; then
+            rm -rf docs/source/nb
+          fi
+      - name: Copy Notebook to docs
+        run: |
+          mkdir -p docs/source/nb
+          cp -r nb/* docs/source/nb/
       - name: Build docs
         run: |
           cd docs

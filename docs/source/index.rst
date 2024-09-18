@@ -24,6 +24,17 @@ pystatis
 
 .. toctree::
    :maxdepth: 2
+   :caption: Notebooks
+
+   nb/00_Setup
+   nb/01_table
+   nb/02_Geo_visualization_example
+   nb/03_find
+   nb/04_jobs
+   nb/05_presentation
+
+.. toctree::
+   :maxdepth: 2
    :caption: Modules
 
    pystatis

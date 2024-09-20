@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Table class &mdash; pystatis</title>
+  <title>The Table Class &mdash; pystatis</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
@@ -26,8 +26,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Geo-Visualization Example Notebook" href="02_Geo_visualization_example.html" />
-    <link rel="prev" title="Setup pystatis" href="00_Setup.html" /> 
+    <link rel="next" title="Geovisualization of Data on the Map of Germany" href="02_geo_visualization_int_students_germany.html" />
+    <link rel="prev" title="License" href="../license.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -64,8 +64,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Notebooks</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="00_Setup.html">Setup <code class="docutils literal notranslate"><span class="pre">pystatis</span></code></a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">The <code class="docutils literal notranslate"><span class="pre">Table</span></code> class</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">The <code class="docutils literal notranslate"><span class="pre">Table</span></code> Class</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#Downloading-data">Downloading data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#How-pystatis-prepares-the-data-for-you">How <code class="docutils literal notranslate"><span class="pre">pystatis</span></code> prepares the data for you</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#All-get_data()-parameters-explained">All <code class="docutils literal notranslate"><span class="pre">get_data()</span></code> parameters explained</a><ul>
@@ -80,11 +79,10 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="02_Geo_visualization_example.html">Geo-Visualization Example Notebook</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03_find.html">Finding the right tables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04_jobs.html">Jobs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05_presentation.html">CorrelAid</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05_presentation.html#Pystatis-presentation">Pystatis presentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_geo_visualization_int_students_germany.html">Geovisualization of Data on the Map of Germany</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_find.html">Finding the Right Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_jobs.html">Jobs: Loading Large Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_presentation.html"><code class="docutils literal notranslate"><span class="pre">pystatis</span></code> Presentation for Data Journalists</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Modules</span></p>
 <ul>
@@ -106,7 +104,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">The <code class="docutils literal notranslate"><span class="pre">Table</span></code> class</li>
+      <li class="breadcrumb-item active">The <code class="docutils literal notranslate"><span class="pre">Table</span></code> Class</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/nb/01_table.ipynb.txt" rel="nofollow"> View page source</a>
       </li>
@@ -128,8 +126,8 @@
 </pre></div>
 </div>
 </div>
-<section id="The-Table-class">
-<h1>The <code class="docutils literal notranslate"><span class="pre">Table</span></code> class<a class="headerlink" href="#The-Table-class" title="Link to this heading"></a></h1>
+<section id="The-Table-Class">
+<h1>The <code class="docutils literal notranslate"><span class="pre">Table</span></code> Class<a class="headerlink" href="#The-Table-Class" title="Link to this heading"></a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">Table</span></code> class in <code class="docutils literal notranslate"><span class="pre">pystatis</span></code> is the main interface for users to interact with the different databases and download the data/tables in form of <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <code class="docutils literal notranslate"><span class="pre">DataFrames</span></code>.</p>
 <p>To use the class, you have to pass only a single parameter: the <code class="docutils literal notranslate"><span class="pre">name</span></code> of the table you want to download.</p>
 <div class="nbinput nblast docutils container">
@@ -2166,8 +2164,8 @@ INFO:pystatis.http_helper:Code 0: erfolgreich
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="00_Setup.html" class="btn btn-neutral float-left" title="Setup pystatis" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="02_Geo_visualization_example.html" class="btn btn-neutral float-right" title="Geo-Visualization Example Notebook" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../license.html" class="btn btn-neutral float-left" title="License" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="02_geo_visualization_int_students_germany.html" class="btn btn-neutral float-right" title="Geovisualization of Data on the Map of Germany" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

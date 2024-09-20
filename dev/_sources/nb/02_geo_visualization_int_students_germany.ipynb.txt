@@ -4,8 +4,8 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "Geo-Visualization Example Notebook\n",
-    "==================================\n",
+    "Geovisualization of Data on the Map of Germany\n",
+    "==============================================\n",
     "\n",
     "Welcome to the `Geo-Visualization Example` notebook! This notebook is designed to guide you through the process of visualizing geographical data from the Regionalstatistik database using Python and pystatis as API wrapper.\n",
     "\n",

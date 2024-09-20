@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CorrelAid &mdash; pystatis</title>
+  <title>pystatis Presentation for Data Journalists &mdash; pystatis</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
@@ -27,7 +27,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="pystatis package" href="../pystatis.html" />
-    <link rel="prev" title="Jobs" href="04_jobs.html" /> 
+    <link rel="prev" title="Jobs: Loading Large Tables" href="04_jobs.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -64,34 +64,34 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Notebooks</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="00_Setup.html">Setup <code class="docutils literal notranslate"><span class="pre">pystatis</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="01_table.html">The <code class="docutils literal notranslate"><span class="pre">Table</span></code> class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_Geo_visualization_example.html">Geo-Visualization Example Notebook</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03_find.html">Finding the right tables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04_jobs.html">Jobs</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">CorrelAid</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#Our-Mission">Our Mission</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Our-Work">Our Work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_table.html">The <code class="docutils literal notranslate"><span class="pre">Table</span></code> Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_geo_visualization_int_students_germany.html">Geovisualization of Data on the Map of Germany</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_find.html">Finding the Right Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_jobs.html">Jobs: Loading Large Tables</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">pystatis</span></code> Presentation for Data Journalists</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#CorrelAid">CorrelAid</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Our-Mission">Our Mission</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Our-Work">Our Work</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="#Pystatis-presentation">Pystatis presentation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#Setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pystatis"><code class="docutils literal notranslate"><span class="pre">pystatis</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Setup">Setup</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#Main-Use-Cases">Main Use Cases</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#Find">Find</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#Table">Table</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#Advanced-features">Advanced features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Geo-visualization">Geo-visualization</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#load-data-from-Regionalstatistik">load data from Regionalstatistik</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#set-proper-column-types">set proper column types</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Dataframe">Dataframe</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#determine-ratio-of-international-students-per-year-and-region">determine ratio of international students per year and region</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#plot-time-evolution">plot time evolution</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#load-shape-file">load shape file</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#merge-with-geodataframe-and-plot">merge with geodataframe and plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Advanced-Features">Advanced Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Geo-Visualization">Geo-Visualization</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Load-Data-from-Regionalstatistik">Load Data from Regionalstatistik</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Set-Proper-Column-Types">Set Proper Column Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Inspect-Dataframe">Inspect Dataframe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Determine-Ratio-of-International-Students-per-Year-and-Region">Determine Ratio of International Students per Year and Region</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Plot-Evoluation-of-International-Students-over-Time">Plot Evoluation of International Students over Time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Load-Shape-File-for-the-Map-of-Germany">Load Shape File for the Map of Germany</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Merge-GeoDataFrame-with-Data-and-Visualize-on-the-Map">Merge <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> with Data and Visualize on the Map</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#Outlook">Outlook</a></li>
@@ -118,7 +118,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">CorrelAid</li>
+      <li class="breadcrumb-item active"><code class="docutils literal notranslate"><span class="pre">pystatis</span></code> Presentation for Data Journalists</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/nb/05_presentation.ipynb.txt" rel="nofollow"> View page source</a>
       </li>
@@ -138,6 +138,8 @@
 </pre></div>
 </div>
 </div>
+<section id="pystatis-Presentation-for-Data-Journalists">
+<h1><code class="docutils literal notranslate"><span class="pre">pystatis</span></code> Presentation for Data Journalists<a class="headerlink" href="#pystatis-Presentation-for-Data-Journalists" title="Link to this heading"></a></h1>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -147,15 +149,17 @@
 </div>
 </div>
 <section id="CorrelAid">
-<h1>CorrelAid<a class="headerlink" href="#CorrelAid" title="Link to this heading"></a></h1>
+<h2>CorrelAid<a class="headerlink" href="#CorrelAid" title="Link to this heading"></a></h2>
 <p><a class="reference external" href="https://www.correlaid.org/en/about/">https://www.correlaid.org/en/about/</a></p>
 <section id="Our-Mission">
-<h2>Our Mission<a class="headerlink" href="#Our-Mission" title="Link to this heading"></a></h2>
+<h3>Our Mission<a class="headerlink" href="#Our-Mission" title="Link to this heading"></a></h3>
+<hr class="docutils" />
 <p>CorrelAid is a <strong>non-profit community of data science enthusiasts</strong> who want to change the world using data science. We dedicate our work to the humans, initiatives and organizations that strive to make the world a better place.</p>
 <p>We value open knowledge management and transparency in our work wherever possible while complying with GDPR regulations and following strong principles of data ethics.</p>
 </section>
 <section id="Our-Work">
-<h2>Our Work<a class="headerlink" href="#Our-Work" title="Link to this heading"></a></h2>
+<h3>Our Work<a class="headerlink" href="#Our-Work" title="Link to this heading"></a></h3>
+<hr class="docutils" />
 <p>Our work is based on three pillars:</p>
 <ol class="arabic simple">
 <li><p><strong>Using data</strong>: We enable data analysts and scientists to apply their knowledge for the common good and social organizations to increase their impact on society by <strong>conducting pro-bono data for good (Data4Good) projects</strong> and providing consulting on data topics.</p></li>
@@ -164,18 +168,21 @@
 </ol>
 </section>
 </section>
-<section id="Pystatis-presentation">
-<h1>Pystatis presentation<a class="headerlink" href="#Pystatis-presentation" title="Link to this heading"></a></h1>
+<section id="pystatis">
+<h2><code class="docutils literal notranslate"><span class="pre">pystatis</span></code><a class="headerlink" href="#pystatis" title="Link to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">pystatis</span></code> is a small Python library to conveniently wrap the different GENESIS web services (APIs) in a centralized and user-friendly manner.</p>
 <p>It allows users to browse the different databases and download the desired tables from all supported databases in a convenient <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> object, suited for further analysis.</p>
 <section id="Setup">
-<h2>Setup<a class="headerlink" href="#Setup" title="Link to this heading"></a></h2>
+<h3>Setup<a class="headerlink" href="#Setup" title="Link to this heading"></a></h3>
+<hr class="docutils" />
 <p>We won’t cover the initial only-once setup here because the user has to enter their credentials for the supported databases (GENESIS, Regionalstatistik, Zensus). But there is a dedicated notebook <a class="reference internal" href="00_Setup.html"><span class="doc">Setup</span></a> with examples and explanations.</p>
+</section>
 </section>
 <section id="Main-Use-Cases">
 <h2>Main Use Cases<a class="headerlink" href="#Main-Use-Cases" title="Link to this heading"></a></h2>
 <section id="Find">
 <h3>Find<a class="headerlink" href="#Find" title="Link to this heading"></a></h3>
+<hr class="docutils" />
 <p><code class="docutils literal notranslate"><span class="pre">pystatis.Find</span></code> allows a user to use a keyword to browse the data available on the chosen database. Finds 3 different objects: - Tables: the tables containing the relevant keyword in title - Statistics: statistics is the larger collections of tables on the topic, finds the ones with keyword in title - Variables: variables are the values (DE: Merkmal) in columns of the tables, find ones with keyword in label</p>
 <p>Returns the titles of relevant tables/statistics/variables and their <a class="reference external" href="https://www.destatis.de/DE/Service/Bibliothek/Abloesung-Fachserien/uebersicht-fs.html">EVAS</a> number – useful tool to look these up (EVAS is necessary for the Table method)</p>
 <ol class="arabic simple">
@@ -353,7 +360,7 @@
 [&#39;32121-01-02-4&#39;, &#39;32121-01-02-4-B&#39;, &#39;32151-01-01-4&#39;]
 </pre></div></div>
 </div>
-<p>To then check that the object has the relevant data, we can preview the columns using the <code class="docutils literal notranslate"><span class="pre">.meta_data()</span></code> method.</p>
+<p>To then check that the object has the relevant data, we can preview the columns using the <code class="docutils literal notranslate"><span class="pre">.get_metadata()</span></code> method.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
@@ -395,6 +402,7 @@ Kreise und kreisfreie Städte
 </section>
 <section id="Table">
 <h3>Table<a class="headerlink" href="#Table" title="Link to this heading"></a></h3>
+<hr class="docutils" />
 <p><code class="docutils literal notranslate"><span class="pre">pystatis.Table</span></code> offers a simple Interface to get any table via its “name” (<a class="reference external" href="https://www.destatis.de/DE/Service/Bibliothek/Abloesung-Fachserien/uebersicht-fs.html">EVAS</a> number).</p>
 <ol class="arabic simple">
 <li><p>Create a new Table instance by passing <code class="docutils literal notranslate"><span class="pre">name=&lt;EVAS&gt;</span></code></p></li>
@@ -2003,16 +2011,16 @@ Kreise und kreisfreie Städte
 </div>
 </section>
 </section>
-<section id="Advanced-features">
-<h2>Advanced features<a class="headerlink" href="#Advanced-features" title="Link to this heading"></a></h2>
+<section id="Advanced-Features">
+<h2>Advanced Features<a class="headerlink" href="#Advanced-Features" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Caching</p></li>
 <li><p>Handling background jobs</p></li>
 <li><p>Cubes</p></li>
 </ul>
 </section>
-<section id="Geo-visualization">
-<h2>Geo-visualization<a class="headerlink" href="#Geo-visualization" title="Link to this heading"></a></h2>
+<section id="Geo-Visualization">
+<h2>Geo-Visualization<a class="headerlink" href="#Geo-Visualization" title="Link to this heading"></a></h2>
 <p>Case study: international students in Germany - time evolution - regional differences (at the level of federal states)</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
@@ -2033,8 +2041,9 @@ Kreise und kreisfreie Städte
 </pre></div>
 </div>
 </div>
-<section id="load-data-from-Regionalstatistik">
-<h3>load data from Regionalstatistik<a class="headerlink" href="#load-data-from-Regionalstatistik" title="Link to this heading"></a></h3>
+<section id="Load-Data-from-Regionalstatistik">
+<h3>Load Data from Regionalstatistik<a class="headerlink" href="#Load-Data-from-Regionalstatistik" title="Link to this heading"></a></h3>
+<hr class="docutils" />
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[56]:
 </pre></div>
@@ -2061,8 +2070,9 @@ Kreise und kreisfreie Städte
 </pre></div></div>
 </div>
 </section>
-<section id="set-proper-column-types">
-<h3>set proper column types<a class="headerlink" href="#set-proper-column-types" title="Link to this heading"></a></h3>
+<section id="Set-Proper-Column-Types">
+<h3>Set Proper Column Types<a class="headerlink" href="#Set-Proper-Column-Types" title="Link to this heading"></a></h3>
+<hr class="docutils" />
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[61]:
 </pre></div>
@@ -2126,8 +2136,9 @@ Name: Kreise und kreisfreie Städte_Code, Length: 338940, dtype: object
 </pre></div></div>
 </div>
 </section>
-<section id="Dataframe">
-<h3>Dataframe<a class="headerlink" href="#Dataframe" title="Link to this heading"></a></h3>
+<section id="Inspect-Dataframe">
+<h3>Inspect Dataframe<a class="headerlink" href="#Inspect-Dataframe" title="Link to this heading"></a></h3>
+<hr class="docutils" />
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[62]:
 </pre></div>
@@ -2321,8 +2332,9 @@ Name: Kreise und kreisfreie Städte_Code, Length: 338940, dtype: object
 </div></div>
 </div>
 </section>
-<section id="determine-ratio-of-international-students-per-year-and-region">
-<h3>determine ratio of international students per year and region<a class="headerlink" href="#determine-ratio-of-international-students-per-year-and-region" title="Link to this heading"></a></h3>
+<section id="Determine-Ratio-of-International-Students-per-Year-and-Region">
+<h3>Determine Ratio of International Students per Year and Region<a class="headerlink" href="#Determine-Ratio-of-International-Students-per-Year-and-Region" title="Link to this heading"></a></h3>
+<hr class="docutils" />
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[63]:
 </pre></div>
@@ -2544,9 +2556,9 @@ Name: Kreise und kreisfreie Städte_Code, Length: 338940, dtype: object
 </div></div>
 </div>
 </section>
-</section>
-<section id="plot-time-evolution">
-<h2>plot time evolution<a class="headerlink" href="#plot-time-evolution" title="Link to this heading"></a></h2>
+<section id="Plot-Evoluation-of-International-Students-over-Time">
+<h3>Plot Evoluation of International Students over Time<a class="headerlink" href="#Plot-Evoluation-of-International-Students-over-Time" title="Link to this heading"></a></h3>
+<hr class="docutils" />
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[65]:
 </pre></div>
@@ -2588,11 +2600,13 @@ Name: Kreise und kreisfreie Städte_Code, Length: 338940, dtype: object
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/nb_05_presentation_54_1.png" src="../_images/nb_05_presentation_54_1.png" />
+<img alt="../_images/nb_05_presentation_52_1.png" src="../_images/nb_05_presentation_52_1.png" />
 </div>
 </div>
-<section id="load-shape-file">
-<h3>load shape file<a class="headerlink" href="#load-shape-file" title="Link to this heading"></a></h3>
+</section>
+<section id="Load-Shape-File-for-the-Map-of-Germany">
+<h3>Load Shape File for the Map of Germany<a class="headerlink" href="#Load-Shape-File-for-the-Map-of-Germany" title="Link to this heading"></a></h3>
+<hr class="docutils" />
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[66]:
 </pre></div>
@@ -2631,7 +2645,7 @@ Name: Kreise und kreisfreie Städte_Code, Length: 338940, dtype: object
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/nb_05_presentation_58_1.png" src="../_images/nb_05_presentation_58_1.png" />
+<img alt="../_images/nb_05_presentation_56_1.png" src="../_images/nb_05_presentation_56_1.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
@@ -2684,8 +2698,9 @@ Name: GEN, dtype: object
 </div>
 </div>
 </section>
-<section id="merge-with-geodataframe-and-plot">
-<h3>merge with geodataframe and plot<a class="headerlink" href="#merge-with-geodataframe-and-plot" title="Link to this heading"></a></h3>
+<section id="Merge-GeoDataFrame-with-Data-and-Visualize-on-the-Map">
+<h3>Merge <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> with Data and Visualize on the Map<a class="headerlink" href="#Merge-GeoDataFrame-with-Data-and-Visualize-on-the-Map" title="Link to this heading"></a></h3>
+<hr class="docutils" />
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[102]:
 </pre></div>
@@ -2776,7 +2791,7 @@ Name: GEN, dtype: object
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/nb_05_presentation_62_1.png" src="../_images/nb_05_presentation_62_1.png" />
+<img alt="../_images/nb_05_presentation_60_1.png" src="../_images/nb_05_presentation_60_1.png" />
 </div>
 </div>
 </section>
@@ -2795,7 +2810,7 @@ Name: GEN, dtype: object
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="04_jobs.html" class="btn btn-neutral float-left" title="Jobs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="04_jobs.html" class="btn btn-neutral float-left" title="Jobs: Loading Large Tables" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="../pystatis.html" class="btn btn-neutral float-right" title="pystatis package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

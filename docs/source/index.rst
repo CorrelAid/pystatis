@@ -26,9 +26,9 @@ pystatis
    :maxdepth: 2
    :caption: Notebooks
 
-   nb/00_Setup
+   nb/00_setup
    nb/01_table
-   nb/02_Geo_visualization_example
+   nb/02_geo_visualization_int_students_germany
    nb/03_find
    nb/04_jobs
    nb/05_presentation

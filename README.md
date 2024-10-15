@@ -195,7 +195,7 @@ To learn more about `poetry`, see [Dependency Management With Python Poetry](htt
 
 ### Documentation process
 
-Documentation can also be built locally by running
+Documentation can also be built locally by ensuring that [pandoc is installed](https://pandoc.org/installing.html), e.g. via `conda install pandoc`, and then running
 
 ```bash
 cd docs && make clean && make html

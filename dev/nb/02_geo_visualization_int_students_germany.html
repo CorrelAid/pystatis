@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Geovisualization of Data on the Map of Germany &mdash; pystatis</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
+
+  
+    <link rel="shortcut icon" href="../_static/pystatis_logo.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=71d9d8e6"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Finding the Right Tables" href="03_find.html" />
+    <link rel="prev" title="The Table Class" href="01_table.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            pystatis
+              <img src="../_static/pystatis_logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                0.3.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../start.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute.html">Developer Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Notebooks</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="00_setup.html">Setup <code class="docutils literal notranslate"><span class="pre">pystatis</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_table.html">The <code class="docutils literal notranslate"><span class="pre">Table</span></code> Class</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Geovisualization of Data on the Map of Germany</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Libraries-Overview">Libraries Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Import-Required-Libraries">Import Required Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#Visualization-on-the-Level-of-Bundesländer">Visualization on the Level of Bundesländer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Load-Regionalstatistik-Data">Load Regionalstatistik Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Process-Students-Data">Process Students Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Plot-the-Development-of-International-Student-Ratio-for-All-Bundesländer">Plot the Development of International Student Ratio for All Bundesländer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Plot-the-Development-of-International-Student-Ratio-on-the-Map-of-Germany">Plot the Development of International Student Ratio on the Map of Germany</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#Visualization-on-the-Level-of-Landkreise">Visualization on the Level of Landkreise</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Process Students Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Plot-the-Development-of-International-Student-Ratio-for-Köln-and-Aachen">Plot the Development of International Student Ratio for Köln and Aachen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Investigating-Missing-Data-and-the-Data-Quality-Parameter">Investigating Missing Data and the Data Quality Parameter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Plot-the-Development-of-International-Student-Ratio-on-the-Map-of-Germany-With-Finer-Granularity">Plot the Development of International Student Ratio on the Map of Germany With Finer Granularity</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="03_find.html">Finding the Right Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_jobs.html">Jobs: Loading Large Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_presentation.html"><code class="docutils literal notranslate"><span class="pre">pystatis</span></code> Presentation for Data Journalists</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pystatis.html">pystatis package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pystatis.html#module-pystatis">Overall Module contents</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pystatis</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Geovisualization of Data on the Map of Germany</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/nb/02_geo_visualization_int_students_germany.ipynb.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="Geovisualization-of-Data-on-the-Map-of-Germany">
+<h1>Geovisualization of Data on the Map of Germany<a class="headerlink" href="#Geovisualization-of-Data-on-the-Map-of-Germany" title="Link to this heading"></a></h1>
+<p>Welcome to the <code class="docutils literal notranslate"><span class="pre">Geo-Visualization</span> <span class="pre">Example</span></code> notebook! This notebook is designed to guide you through the process of visualizing geographical data from the Regionalstatistik database using Python and pystatis as API wrapper.</p>
+<section id="Libraries-Overview">
+<h2>Libraries Overview<a class="headerlink" href="#Libraries-Overview" title="Link to this heading"></a></h2>
+<p>In this notebook, we will require the following additional libraries:</p>
+<ul class="simple">
+<li><p>GeoPandas: An open-source project that makes working with geospatial data in python easier. It extends the datatypes used by pandas to allow spatial operations on geometric types. GeoPandas enables us to work with geospatial data in Python similarly to how we work with pandas for regular data.</p></li>
+<li><p>Matplotlib: A comprehensive library for creating static, animated, and interactive visualizations in Python. It is a multi-platform data visualization library built on NumPy arrays and designed to work with the broader SciPy stack.</p></li>
+</ul>
+<p>You can install these libraries via pip using the following commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>!pip<span class="w"> </span>install<span class="w"> </span>geopandas<span class="w"> </span>matplotlib
+</pre></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># !pip install geopandas matplotlib</span>
+</pre></div>
+</div>
+</div>
+<section id="Import-Required-Libraries">
+<h3>Import Required Libraries<a class="headerlink" href="#Import-Required-Libraries" title="Link to this heading"></a></h3>
+<hr class="docutils" />
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="kn">from</span> <span class="nn">pystatis</span> <span class="kn">import</span> <span class="n">Table</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="Visualization-on-the-Level-of-Bundesländer">
+<h2>Visualization on the Level of Bundesländer<a class="headerlink" href="#Visualization-on-the-Level-of-Bundesländer" title="Link to this heading"></a></h2>
+<p>In this first example, we will visualize the ratio of international students among students on the level of the Bundesländer. We will use the table with code <code class="docutils literal notranslate"><span class="pre">21311-01-01-4</span></code> from the Regionalstatistik API for the student data and <code class="docutils literal notranslate"><span class="pre">12411-01-01-4</span></code> for the population data. You can find the data by either search on the website or use the <code class="docutils literal notranslate"><span class="pre">Find</span></code> class which we also provide in <code class="docutils literal notranslate"><span class="pre">pystatis</span></code> to skim through the available data.</p>
+<p>But first of all, we need to load the map of Germany which we already provide in the repository (Source: <a class="reference external" href="https://gdz.bkg.bund.de/index.php/default/digitale-geodaten/verwaltungsgebiete/verwaltungsgebiete-1-2-500-000-stand-31-12-vg2500-12-31.html">BKG</a>). The geopandas library provides a convenient way to load shapefiles. We can load the shapefile of Germany using the <code class="docutils literal notranslate"><span class="pre">geopandas.read_file()</span></code> function.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load Bundesländer geopandas shapefile</span>
+<span class="n">path_to_data</span> <span class="o">=</span> <span class="s2">&quot;data/VG2500_LAN.shp&quot;</span>
+<span class="n">gdf</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">path_to_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Geopandas also conveniently loads a bunch of associated metadata such as <code class="docutils literal notranslate"><span class="pre">area</span></code> and provides a <code class="docutils literal notranslate"><span class="pre">plot()</span></code> function that allows us to plot the map of Germany.</p>
+<p>Example metadata are the <code class="docutils literal notranslate"><span class="pre">GEN</span></code> (name of the federal state or shape), <code class="docutils literal notranslate"><span class="pre">AGS</span></code> (<a class="reference external" href="https://datengui.de/statistik-erklaert/ags">amtlicher Gemeindeschlüssel</a>) columns printed below as well as <code class="docutils literal notranslate"><span class="pre">CRS</span></code> information on the used coordinate frame.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span><span class="o">.</span><span class="n">GEN</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0               Schleswig-Holstein
+1                          Hamburg
+2                    Niedersachsen
+3                           Bremen
+4              Nordrhein-Westfalen
+5                           Hessen
+6                  Rheinland-Pfalz
+7                Baden-Württemberg
+8                           Bayern
+9                         Saarland
+10                          Berlin
+11                     Brandenburg
+12          Mecklenburg-Vorpommern
+13                         Sachsen
+14                  Sachsen-Anhalt
+15                       Thüringen
+16              Schleswig-Holstein
+17                         Hamburg
+18                   Niedersachsen
+19                   Niedersachsen
+20                          Bremen
+21          Mecklenburg-Vorpommern
+22    Baden-Württemberg (Bodensee)
+23               Bayern (Bodensee)
+Name: GEN, dtype: object
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span><span class="o">.</span><span class="n">AGS</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0     01
+1     02
+2     03
+3     04
+4     05
+5     06
+6     07
+7     08
+8     09
+9     10
+10    11
+11    12
+12    13
+13    14
+14    15
+15    16
+16    01
+17    02
+18    03
+19    03
+20    04
+21    13
+22    08
+23    09
+Name: AGS, dtype: object
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span><span class="o">.</span><span class="n">crs</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;Projected CRS: EPSG:25832&gt;
+Name: ETRS89 / UTM zone 32N
+Axis Info [cartesian]:
+- E[east]: Easting (metre)
+- N[north]: Northing (metre)
+Area of Use:
+- name: Europe between 6°E and 12°E: Austria; Belgium; Denmark - onshore and offshore; Germany - onshore and offshore; Norway including - onshore and offshore; Spain - offshore.
+- bounds: (6.0, 38.76, 12.01, 84.33)
+Coordinate Operation:
+- name: UTM zone 32N
+- method: Transverse Mercator
+Datum: European Terrestrial Reference System 1989 ensemble
+- Ellipsoid: GRS 1980
+- Prime Meridian: Greenwich
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot the GeoDataFrame</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">gdf</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="n">gdf</span><span class="o">.</span><span class="n">area</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;viridis&quot;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+
+<span class="c1"># add titles and labels</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Area Visualization&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Longitude [geopandas units]&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Latitude [geopandas units]&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+
+<span class="c1"># rotate x-axis labels to 45 degrees</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+
+<span class="c1"># customize the colorbar</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_figure</span><span class="p">()</span><span class="o">.</span><span class="n">get_axes</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Area [$m^2$]&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/nb_02_geo_visualization_int_students_germany_10_0.png" src="../_images/nb_02_geo_visualization_int_students_germany_10_0.png" />
+</div>
+</div>
+<section id="Load-Regionalstatistik-Data">
+<h3>Load Regionalstatistik Data<a class="headerlink" href="#Load-Regionalstatistik-Data" title="Link to this heading"></a></h3>
+<hr class="docutils" />
+<p>To now fill the map with our tables of interest, we need to query the data from the Regionalstatistik API. We will use our the <code class="docutils literal notranslate"><span class="pre">pystatis</span></code> library - more specifically the <code class="docutils literal notranslate"><span class="pre">Table</span></code> class - to query the data.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;21311-01-01-4&quot;</span><span class="p">)</span>
+<span class="n">population</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;12411-01-01-4&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Querying the data does not require any parameters, however, the data can be filtered by e.g. <code class="docutils literal notranslate"><span class="pre">startyear</span></code> or can be queried in a specific <code class="docutils literal notranslate"><span class="pre">language</span></code> (default is German, further supported language is English).</p>
+<p>If the data is too large to be directly available via the API, we automatically start a so-called job to tell the API that we would like to wait until the data is processed in the background and ready to be downloaded - and download it for you automatically.</p>
+<p><strong>Warning</strong>: The following code might run a while, most of the runtime is waiting for the API to deliver the data so take a break and drink some tea!</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">startyear</span><span class="o">=</span><span class="mi">2015</span><span class="p">)</span>
+<span class="n">population</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+Die Tabelle ist zu groß, um direkt abgerufen zu werden. Es wird eine Verarbeitung im Hintergrund gestartet.
+</pre></div></div>
+</div>
+</section>
+<section id="Process-Students-Data">
+<h3>Process Students Data<a class="headerlink" href="#Process-Students-Data" title="Link to this heading"></a></h3>
+<hr class="docutils" />
+<p>To determine the ratio of international students among students per year and region we need to first filter the data for the relevant columns. We will then merge the two tables and calculate the ratio of international students among students.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define the filters in the relevant columns</span>
+<span class="n">total_sex</span> <span class="o">=</span> <span class="n">students</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Geschlecht</span> <span class="o">==</span> <span class="s2">&quot;Insgesamt&quot;</span>
+<span class="n">all_subjects</span> <span class="o">=</span> <span class="n">students</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;Fächergruppe (mit Insgesamt)&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Insgesamt&quot;</span>
+
+<span class="c1"># filter and display example subselection of the data</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">students</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">total_sex</span> <span class="o">&amp;</span> <span class="n">all_subjects</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Amtlicher Gemeindeschlüssel (AGS)&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;07131&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Semester&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;WS 2015/16&quot;</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Semester</th>
+      <th>Amtlicher Gemeindeschlüssel (AGS)</th>
+      <th>Kreise und kreisfreie Städte</th>
+      <th>Geschlecht</th>
+      <th>Nationalität (inkl. insgesamt)</th>
+      <th>Fächergruppe (mit Insgesamt)</th>
+      <th>Studierende_(im_Kreisgebiet)__Anzahl</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>15129</th>
+      <td>WS 2015/16</td>
+      <td>07131</td>
+      <td>Ahrweiler, Landkreis</td>
+      <td>Insgesamt</td>
+      <td>Insgesamt</td>
+      <td>Insgesamt</td>
+      <td>2887.0</td>
+    </tr>
+    <tr>
+      <th>15139</th>
+      <td>WS 2015/16</td>
+      <td>07131</td>
+      <td>Ahrweiler, Landkreis</td>
+      <td>Insgesamt</td>
+      <td>Ausländer/-innen</td>
+      <td>Insgesamt</td>
+      <td>300.0</td>
+    </tr>
+    <tr>
+      <th>15149</th>
+      <td>WS 2015/16</td>
+      <td>07131</td>
+      <td>Ahrweiler, Landkreis</td>
+      <td>Insgesamt</td>
+      <td>Deutsche</td>
+      <td>Insgesamt</td>
+      <td>2587.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate the ratio of international students in percent</span>
+<span class="n">ratio_international</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">students</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">total_sex</span> <span class="o">&amp;</span> <span class="n">all_subjects</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">,</span> <span class="s2">&quot;Amtlicher Gemeindeschlüssel (AGS)&quot;</span><span class="p">,</span> <span class="s2">&quot;Semester&quot;</span><span class="p">])[</span>
+        <span class="s2">&quot;Studierende_(im_Kreisgebiet)__Anzahl&quot;</span>
+    <span class="p">]</span>
+    <span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">x</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="p">)</span>  <span class="c1"># filter to ensure that all 3 columns are present</span>
+<span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+<span class="n">ratio_international</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">&quot;ratio_international&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ratio_international</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Kreise und kreisfreie Städte  Amtlicher Gemeindeschlüssel (AGS)  Semester
+      Aachen, Kreis           05354                              WS 2015/16          NaN
+                                                                 WS 2016/17          NaN
+                                                                 WS 2017/18          NaN
+                                                                 WS 2018/19          NaN
+                                                                 WS 2019/20          NaN
+                                                                                 ...
+Deutschland                   DG                                 WS 2017/18    13.166464
+                                                                 WS 2018/19    13.759918
+                                                                 WS 2019/20    14.237081
+                                                                 WS 2020/21    14.144582
+                                                                 WS 2021/22    14.975416
+Name: ratio_international, Length: 3766, dtype: float64
+</pre></div></div>
+</div>
+<p>The ratio is now calculated and grouped by <code class="docutils literal notranslate"><span class="pre">Kreise</span> <span class="pre">and</span> <span class="pre">kreisfreie</span> <span class="pre">Städte</span></code> (districts and urban districts) as well as further parameters and can be visualized on the map of Germany. The missing data for <code class="docutils literal notranslate"><span class="pre">Aachen,</span> <span class="pre">Kreis</span></code> will be discussed later.</p>
+</section>
+<section id="Plot-the-Development-of-International-Student-Ratio-for-All-Bundesländer">
+<h3>Plot the Development of International Student Ratio for All Bundesländer<a class="headerlink" href="#Plot-the-Development-of-International-Student-Ratio-for-All-Bundesländer" title="Link to this heading"></a></h3>
+<hr class="docutils" />
+<p>Before we do this, we will first convert the grouped data into a DataFrame and re-sort the data by year to have a look at the time development for individual Bundesländer first. Lastly, we merge the DataFrame with international student ratios with the geopandas DataFrame to visualize the data on the map.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a DataFrame with the ratio of international students</span>
+<span class="n">ratio_international</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">ratio_international</span><span class="p">)</span>
+<span class="c1"># add the year as a column</span>
+<span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">semester</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">7</span><span class="p">])</span> <span class="k">for</span> <span class="n">semester</span> <span class="ow">in</span> <span class="n">ratio_international</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span>
+<span class="c1"># reset the index and sort the values in a time series manner</span>
+<span class="n">ratio_international</span> <span class="o">=</span> <span class="n">ratio_international</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">ratio_international</span> <span class="o">=</span> <span class="n">ratio_international</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">])</span>
+<span class="c1"># remove leading whitespaces</span>
+<span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+<span class="n">ratio_international</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;`Kreise und kreisfreie Städte` == &#39;Bayern&#39;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Kreise und kreisfreie Städte</th>
+      <th>Amtlicher Gemeindeschlüssel (AGS)</th>
+      <th>Semester</th>
+      <th>ratio_international</th>
+      <th>year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3654</th>
+      <td>Bayern</td>
+      <td>09</td>
+      <td>WS 2015/16</td>
+      <td>11.428808</td>
+      <td>2015</td>
+    </tr>
+    <tr>
+      <th>3655</th>
+      <td>Bayern</td>
+      <td>09</td>
+      <td>WS 2016/17</td>
+      <td>12.043405</td>
+      <td>2016</td>
+    </tr>
+    <tr>
+      <th>3656</th>
+      <td>Bayern</td>
+      <td>09</td>
+      <td>WS 2017/18</td>
+      <td>12.894807</td>
+      <td>2017</td>
+    </tr>
+    <tr>
+      <th>3657</th>
+      <td>Bayern</td>
+      <td>09</td>
+      <td>WS 2018/19</td>
+      <td>13.912418</td>
+      <td>2018</td>
+    </tr>
+    <tr>
+      <th>3658</th>
+      <td>Bayern</td>
+      <td>09</td>
+      <td>WS 2019/20</td>
+      <td>14.715688</td>
+      <td>2019</td>
+    </tr>
+    <tr>
+      <th>3659</th>
+      <td>Bayern</td>
+      <td>09</td>
+      <td>WS 2020/21</td>
+      <td>15.081850</td>
+      <td>2020</td>
+    </tr>
+    <tr>
+      <th>3660</th>
+      <td>Bayern</td>
+      <td>09</td>
+      <td>WS 2021/22</td>
+      <td>16.768047</td>
+      <td>2021</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define figure</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="c1"># define the regions (Bundesländer)</span>
+<span class="n">regions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Deutschland&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Baden-Württemberg&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Bayern&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Berlin&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Brandenburg&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Bremen&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Hamburg&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Hessen&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Mecklenburg-Vorpommern&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Niedersachsen&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Nordrhein-Westfalen&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Rheinland-Pfalz&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Saarland&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Sachsen&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Sachsen-Anhalt&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Schleswig-Holstein&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Thüringen&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="c1"># define the colormap</span>
+<span class="n">cmap</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s2">&quot;tab20c&quot;</span><span class="p">)</span>
+<span class="c1"># henerate a color sequence based on the number of regions</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">cmap</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">regions</span><span class="p">)))</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">region</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">regions</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">ratio_international</span><span class="p">[</span><span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">region</span><span class="p">]</span><span class="o">.</span><span class="n">year</span><span class="p">,</span>
+        <span class="n">ratio_international</span><span class="p">[</span><span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">region</span><span class="p">]</span><span class="o">.</span><span class="n">ratio_international</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="n">region</span><span class="p">,</span>
+        <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span>
+        <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+    <span class="p">)</span>
+    <span class="c1"># annotate the last point in the line plot with the region</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span>
+        <span class="n">ratio_international</span><span class="p">[</span><span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">region</span><span class="p">]</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+        <span class="n">ratio_international</span><span class="p">[</span><span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">region</span><span class="p">]</span><span class="o">.</span><span class="n">ratio_international</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+        <span class="n">region</span><span class="p">,</span>
+        <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+    <span class="p">)</span>
+
+<span class="c1"># add titles and labels</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;International Student Ratio by Bundesland Since 2015&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;International Student Ratio [%]&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+
+<span class="c1"># enhance the legend</span>
+<span class="c1">#ax.legend(title=&quot;Region&quot;, title_fontsize=&quot;13&quot;, fontsize=&quot;12&quot;, loc=&quot;upper left&quot;, bbox_to_anchor=(1, 1))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/nb_02_geo_visualization_int_students_germany_24_0.png" src="../_images/nb_02_geo_visualization_int_students_germany_24_0.png" />
+</div>
+</div>
+</section>
+<section id="Plot-the-Development-of-International-Student-Ratio-on-the-Map-of-Germany">
+<h3>Plot the Development of International Student Ratio on the Map of Germany<a class="headerlink" href="#Plot-the-Development-of-International-Student-Ratio-on-the-Map-of-Germany" title="Link to this heading"></a></h3>
+<hr class="docutils" />
+<p>As mentioned before, we merge the DataFrame now with international student ratios with the geopandas DataFrame to visualize the data on the map of Germany.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdf_merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+    <span class="n">left</span><span class="o">=</span><span class="n">gdf</span><span class="p">,</span>
+    <span class="n">right</span><span class="o">=</span><span class="n">ratio_international</span><span class="p">[</span><span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">2018</span><span class="p">,</span> <span class="mi">2020</span><span class="p">])],</span>
+    <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;AGS&quot;</span><span class="p">,</span>
+    <span class="n">right_on</span><span class="o">=</span><span class="s2">&quot;Amtlicher Gemeindeschlüssel (AGS)&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get a sorted list of unique years</span>
+<span class="n">years</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">gdf_merged</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="c1"># get the global minimum and maximum of the ratio_international column</span>
+<span class="n">min_value</span> <span class="o">=</span> <span class="n">gdf_merged</span><span class="p">[</span><span class="s2">&quot;ratio_international&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">max_value</span> <span class="o">=</span> <span class="n">gdf_merged</span><span class="p">[</span><span class="s2">&quot;ratio_international&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">years</span><span class="p">),</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axes</span><span class="p">,</span> <span class="n">years</span><span class="p">):</span>
+    <span class="c1"># filter the GeoDataFrame for the current year</span>
+    <span class="n">gdf_year</span> <span class="o">=</span> <span class="n">gdf_merged</span><span class="p">[</span><span class="n">gdf_merged</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">year</span><span class="p">]</span>
+
+    <span class="c1"># plot the GeoDataFrame</span>
+    <span class="n">gdf_year</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
+        <span class="n">column</span><span class="o">=</span><span class="s2">&quot;ratio_international&quot;</span><span class="p">,</span>
+        <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">vmin</span><span class="o">=</span><span class="n">min_value</span><span class="p">,</span>
+        <span class="n">vmax</span><span class="o">=</span><span class="n">max_value</span><span class="p">,</span>
+        <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;viridis&quot;</span><span class="p">,</span>
+        <span class="n">missing_kwds</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;lightgrey&quot;</span><span class="p">},</span>
+        <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="c1"># set title and turn off axis</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+
+<span class="c1"># add a global colorbar</span>
+<span class="n">cm</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">ScalarMappable</span><span class="p">(</span><span class="n">norm</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="n">min_value</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">max_value</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;viridis&quot;</span><span class="p">),</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">years</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">cm</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="s2">&quot;International Student Ratio [%]&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+
+<span class="c1"># adjust the layout</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/nb_02_geo_visualization_int_students_germany_28_0.png" src="../_images/nb_02_geo_visualization_int_students_germany_28_0.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="Visualization-on-the-Level-of-Landkreise">
+<h2>Visualization on the Level of Landkreise<a class="headerlink" href="#Visualization-on-the-Level-of-Landkreise" title="Link to this heading"></a></h2>
+<p>In this second example, we will visualize the ratio of international students among students on the level of individual Landkreise. For this, we additionally need to load the map of Germany which outlines the individual Landkreise.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load Kreise geopandas shapefile</span>
+<span class="n">path_to_data</span> <span class="o">=</span> <span class="s2">&quot;data/VG2500_KRS.shp&quot;</span>
+<span class="n">gdf</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">path_to_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot the GeoDataFrame</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">gdf</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="n">gdf</span><span class="o">.</span><span class="n">area</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;viridis&quot;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+
+<span class="c1"># add titles and labels</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Area Visualization&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Longitude [geopandas units]&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Latitude [geopandas units]&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+
+<span class="c1"># rotate x-axis labels to 45 degrees</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+
+<span class="c1"># customize the colorbar</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_figure</span><span class="p">()</span><span class="o">.</span><span class="n">get_axes</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Area [$m^2$]&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/nb_02_geo_visualization_int_students_germany_31_0.png" src="../_images/nb_02_geo_visualization_int_students_germany_31_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span><span class="o">.</span><span class="n">GEN</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0                 Flensburg
+1                      Kiel
+2                    Lübeck
+3                Neumünster
+4              Dithmarschen
+               ...
+395     Saalfeld-Rudolstadt
+396    Saale-Holzland-Kreis
+397        Saale-Orla-Kreis
+398                   Greiz
+399        Altenburger Land
+Name: GEN, Length: 400, dtype: object
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># convert AGS (amtlicher Gemeindeschlüssel) to string</span>
+<span class="n">gdf</span><span class="o">.</span><span class="n">AGS</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">AGS</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">gdf</span><span class="o">.</span><span class="n">AGS</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0      01001
+1      01002
+2      01003
+3      01004
+4      01051
+       ...
+395    16073
+396    16074
+397    16075
+398    16076
+399    16077
+Name: AGS, Length: 400, dtype: object
+</pre></div></div>
+</div>
+<section id="id1">
+<h3>Process Students Data<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<hr class="docutils" />
+<p>Now we can re-determine the ratio of international students among students per year and region. We will first look again at specific regions to see the time development of the ratio of international students among students before we then merge the DataFrame with the geopandas DataFrame to visualize the data on the map.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate the ratio of international students in percent</span>
+<span class="n">ratio_international</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">students</span><span class="o">.</span><span class="n">data</span><span class="p">[</span>
+        <span class="p">(</span><span class="n">students</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Geschlecht</span> <span class="o">==</span> <span class="s2">&quot;Insgesamt&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">students</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;Fächergruppe (mit Insgesamt)&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Insgesamt&quot;</span><span class="p">)</span>
+    <span class="p">]</span>
+    <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">,</span> <span class="s2">&quot;Amtlicher Gemeindeschlüssel (AGS)&quot;</span><span class="p">,</span> <span class="s2">&quot;Semester&quot;</span><span class="p">])[</span>
+        <span class="s2">&quot;Studierende_(im_Kreisgebiet)__Anzahl&quot;</span>
+    <span class="p">]</span>
+    <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">x</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>  <span class="c1"># filter to ensure that all 3 columns are present</span>
+<span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+<span class="n">ratio_international</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">&quot;ratio_international&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ratio_international</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Kreise und kreisfreie Städte  Amtlicher Gemeindeschlüssel (AGS)  Semester
+      Aachen, Kreis           05354                              WS 2015/16          NaN
+                                                                 WS 2016/17          NaN
+                                                                 WS 2017/18          NaN
+                                                                 WS 2018/19          NaN
+                                                                 WS 2019/20          NaN
+                                                                                 ...
+Deutschland                   DG                                 WS 2017/18    13.166464
+                                                                 WS 2018/19    13.759918
+                                                                 WS 2019/20    14.237081
+                                                                 WS 2020/21    14.144582
+                                                                 WS 2021/22    14.975416
+Name: ratio_international, Length: 3766, dtype: float64
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a DataFrame with the ratio of international students</span>
+<span class="n">ratio_international</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">ratio_international</span><span class="p">)</span>
+<span class="c1"># add the year as a column</span>
+<span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">semester</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">7</span><span class="p">])</span> <span class="k">for</span> <span class="n">semester</span> <span class="ow">in</span> <span class="n">ratio_international</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span>
+<span class="c1"># reset the index and sort the values in a time series manner</span>
+<span class="n">ratio_international</span> <span class="o">=</span> <span class="n">ratio_international</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">ratio_international</span> <span class="o">=</span> <span class="n">ratio_international</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">])</span>
+<span class="c1"># remove leading whitespaces</span>
+<span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+<span class="n">ratio_international</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;`Kreise und kreisfreie Städte` == &#39;Köln, kreisfreie Stadt&#39;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Kreise und kreisfreie Städte</th>
+      <th>Amtlicher Gemeindeschlüssel (AGS)</th>
+      <th>Semester</th>
+      <th>ratio_international</th>
+      <th>year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1540</th>
+      <td>Köln, kreisfreie Stadt</td>
+      <td>05315</td>
+      <td>WS 2015/16</td>
+      <td>10.725453</td>
+      <td>2015</td>
+    </tr>
+    <tr>
+      <th>1541</th>
+      <td>Köln, kreisfreie Stadt</td>
+      <td>05315</td>
+      <td>WS 2016/17</td>
+      <td>11.492824</td>
+      <td>2016</td>
+    </tr>
+    <tr>
+      <th>1542</th>
+      <td>Köln, kreisfreie Stadt</td>
+      <td>05315</td>
+      <td>WS 2017/18</td>
+      <td>11.683984</td>
+      <td>2017</td>
+    </tr>
+    <tr>
+      <th>1543</th>
+      <td>Köln, kreisfreie Stadt</td>
+      <td>05315</td>
+      <td>WS 2018/19</td>
+      <td>11.910545</td>
+      <td>2018</td>
+    </tr>
+    <tr>
+      <th>1544</th>
+      <td>Köln, kreisfreie Stadt</td>
+      <td>05315</td>
+      <td>WS 2019/20</td>
+      <td>12.133971</td>
+      <td>2019</td>
+    </tr>
+    <tr>
+      <th>1545</th>
+      <td>Köln, kreisfreie Stadt</td>
+      <td>05315</td>
+      <td>WS 2020/21</td>
+      <td>11.687422</td>
+      <td>2020</td>
+    </tr>
+    <tr>
+      <th>1546</th>
+      <td>Köln, kreisfreie Stadt</td>
+      <td>05315</td>
+      <td>WS 2021/22</td>
+      <td>12.322888</td>
+      <td>2021</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="Plot-the-Development-of-International-Student-Ratio-for-Köln-and-Aachen">
+<h3>Plot the Development of International Student Ratio for Köln and Aachen<a class="headerlink" href="#Plot-the-Development-of-International-Student-Ratio-for-Köln-and-Aachen" title="Link to this heading"></a></h3>
+<hr class="docutils" />
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define figure</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="c1"># define the regions (Kreise und kreisfreie Städte)</span>
+<span class="n">regions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Köln, kreisfreie Stadt&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Köln, Regierungsbezirk&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="c1"># define the colormap</span>
+<span class="n">cmap</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s2">&quot;tab20c&quot;</span><span class="p">)</span>
+<span class="c1"># henerate a color sequence based on the number of regions</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">cmap</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">regions</span><span class="p">)))</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">region</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">regions</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">ratio_international</span><span class="p">[</span><span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">region</span><span class="p">]</span><span class="o">.</span><span class="n">year</span><span class="p">,</span>
+        <span class="n">ratio_international</span><span class="p">[</span><span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">region</span><span class="p">]</span><span class="o">.</span><span class="n">ratio_international</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="n">region</span><span class="p">,</span>
+        <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span>
+        <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+    <span class="p">)</span>
+
+<span class="c1"># add titles and labels</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;International Student Ratio for Köln Since 2015&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;International Student Ratio [%]&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+
+<span class="c1"># enhance the legend</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Region&quot;</span><span class="p">,</span> <span class="n">title_fontsize</span><span class="o">=</span><span class="s2">&quot;13&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s2">&quot;12&quot;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper left&quot;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/nb_02_geo_visualization_int_students_germany_39_0.png" src="../_images/nb_02_geo_visualization_int_students_germany_39_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define figure</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="c1"># define the regions (Kreise und kreisfreie Städte)</span>
+<span class="n">regions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Aachen, kreisfreie Stadt&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Aachen, Kreis&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Städteregion Aachen, Kreis&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="c1"># define the colormap</span>
+<span class="n">cmap</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s2">&quot;tab20c&quot;</span><span class="p">)</span>
+<span class="c1"># henerate a color sequence based on the number of regions</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">cmap</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">regions</span><span class="p">)))</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">region</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">regions</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">ratio_international</span><span class="p">[</span><span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">region</span><span class="p">]</span><span class="o">.</span><span class="n">year</span><span class="p">,</span>
+        <span class="n">ratio_international</span><span class="p">[</span><span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">region</span><span class="p">]</span><span class="o">.</span><span class="n">ratio_international</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="n">region</span><span class="p">,</span>
+        <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span>
+        <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+    <span class="p">)</span>
+
+<span class="c1"># add titles and labels</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;International Student Ratio for Aachen Since 2015&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;International Student Ratio [%]&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+
+<span class="c1"># enhance the legend</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Region&quot;</span><span class="p">,</span> <span class="n">title_fontsize</span><span class="o">=</span><span class="s2">&quot;13&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s2">&quot;12&quot;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper left&quot;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/nb_02_geo_visualization_int_students_germany_40_0.png" src="../_images/nb_02_geo_visualization_int_students_germany_40_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ratio_international</span><span class="p">[</span><span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Aachen, Kreis&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Kreise und kreisfreie Städte</th>
+      <th>Amtlicher Gemeindeschlüssel (AGS)</th>
+      <th>Semester</th>
+      <th>ratio_international</th>
+      <th>year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Aachen, Kreis</td>
+      <td>05354</td>
+      <td>WS 2015/16</td>
+      <td>NaN</td>
+      <td>2015</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Aachen, Kreis</td>
+      <td>05354</td>
+      <td>WS 2016/17</td>
+      <td>NaN</td>
+      <td>2016</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Aachen, Kreis</td>
+      <td>05354</td>
+      <td>WS 2017/18</td>
+      <td>NaN</td>
+      <td>2017</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Aachen, Kreis</td>
+      <td>05354</td>
+      <td>WS 2018/19</td>
+      <td>NaN</td>
+      <td>2018</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Aachen, Kreis</td>
+      <td>05354</td>
+      <td>WS 2019/20</td>
+      <td>NaN</td>
+      <td>2019</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Aachen, Kreis</td>
+      <td>05354</td>
+      <td>WS 2020/21</td>
+      <td>NaN</td>
+      <td>2020</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Aachen, Kreis</td>
+      <td>05354</td>
+      <td>WS 2021/22</td>
+      <td>NaN</td>
+      <td>2021</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>Having looked at the time development of the ratio of international students among students for specific regions shows a continues increase in the ratio of international students among students - in different strengths. However, it also shows that for example for <code class="docutils literal notranslate"><span class="pre">Aachen,</span> <span class="pre">Kreis</span></code>, there is no data available for all years in question.</p>
+</section>
+<section id="Investigating-Missing-Data-and-the-Data-Quality-Parameter">
+<h3>Investigating Missing Data and the Data Quality Parameter<a class="headerlink" href="#Investigating-Missing-Data-and-the-Data-Quality-Parameter" title="Link to this heading"></a></h3>
+<hr class="docutils" />
+<p>A more detailed investigation of the <code class="docutils literal notranslate"><span class="pre">quality</span></code> parameter of the data would be necessary to potentially determine the reason for the missing data. While this is in principle supported by the API via <code class="docutils literal notranslate"><span class="pre">quality=&quot;on&quot;</span></code>, regionalstatistik is the only of the three GENESIS databases to not actively support this. As a workaround, the website can be used to determine potential quality parameters of the data.</p>
+<p>Looking at the data on the <a class="reference external" href="https://www.regionalstatistik.de/genesis/online?operation=ergebnistabelleUmfang&amp;levelindex=3&amp;levelid=1719518083070&amp;downloadname=21311-01-01-4#abreadcrumb">website</a> reveals that there are indeed no values for <code class="docutils literal notranslate"><span class="pre">Aachen,</span> <span class="pre">Kreis</span></code> (more specifically, “-” means “nichts vorhanden”), while the data for <code class="docutils literal notranslate"><span class="pre">Aachen,</span> <span class="pre">kreisfreie</span> <span class="pre">Stadt</span></code> is unknown or to be kept secret (“.” means “Zahlenwert unbekannt oder geheimzuhalten”).</p>
+<p>(Explanation of legend <a class="reference external" href="https://www.regionalstatistik.de/genesis/online?operation=ergebnistabelleQualitaet&amp;language=de&amp;levelindex=3&amp;levelid=1719518083070#abreadcrumb">here</a>)</p>
+</section>
+<section id="Plot-the-Development-of-International-Student-Ratio-on-the-Map-of-Germany-With-Finer-Granularity">
+<h3>Plot the Development of International Student Ratio on the Map of Germany With Finer Granularity<a class="headerlink" href="#Plot-the-Development-of-International-Student-Ratio-on-the-Map-of-Germany-With-Finer-Granularity" title="Link to this heading"></a></h3>
+<hr class="docutils" />
+<p>As before we merge the DataFrame with international student ratios with the geopandas DataFrame to visualize the data on the map of Germany. However, this time we will visualize the data on the level of individual Landkreise.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdf_merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="n">gdf</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="n">ratio_international</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;AGS&quot;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s2">&quot;Amtlicher Gemeindeschlüssel (AGS)&quot;</span><span class="p">)</span>
+<span class="n">gdf_merged</span><span class="o">.</span><span class="n">ratio_international</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0       5.445491
+1       5.879847
+2       6.071910
+3       6.458591
+4       7.097041
+          ...
+2781         NaN
+2782         NaN
+2783         NaN
+2784         NaN
+2785         NaN
+Name: ratio_international, Length: 2786, dtype: float64
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get a sorted list of unique years</span>
+<span class="n">years</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">2018</span><span class="p">,</span> <span class="mi">2020</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">year_to_check</span> <span class="ow">in</span> <span class="n">years</span><span class="p">:</span>
+    <span class="k">assert</span> <span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="n">year_to_check</span><span class="p">])</span><span class="o">.</span><span class="n">any</span><span class="p">()</span>
+
+<span class="c1"># get the global minimum and maximum of the ratio_international column</span>
+<span class="n">min_value</span> <span class="o">=</span> <span class="n">gdf_merged</span><span class="p">[</span><span class="s2">&quot;ratio_international&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">max_value</span> <span class="o">=</span> <span class="n">gdf_merged</span><span class="p">[</span><span class="s2">&quot;ratio_international&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">years</span><span class="p">),</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axes</span><span class="p">,</span> <span class="n">years</span><span class="p">):</span>
+    <span class="c1"># filter the GeoDataFrame for the current year</span>
+    <span class="n">gdf_year</span> <span class="o">=</span> <span class="n">gdf_merged</span><span class="p">[</span><span class="n">gdf_merged</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">year</span><span class="p">]</span>
+
+    <span class="c1"># plot the GeoDataFrame</span>
+    <span class="n">gdf_year</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
+        <span class="n">column</span><span class="o">=</span><span class="s2">&quot;ratio_international&quot;</span><span class="p">,</span>
+        <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">vmin</span><span class="o">=</span><span class="n">min_value</span><span class="p">,</span>
+        <span class="n">vmax</span><span class="o">=</span><span class="n">max_value</span><span class="p">,</span>
+        <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;viridis&quot;</span><span class="p">,</span>
+        <span class="n">missing_kwds</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;lightgrey&quot;</span><span class="p">},</span>
+        <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="c1"># set title and turn off axis</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+
+<span class="c1"># add a global colorbar</span>
+<span class="n">cm</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">ScalarMappable</span><span class="p">(</span><span class="n">norm</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="n">min_value</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">max_value</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;viridis&quot;</span><span class="p">),</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">years</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">cm</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="s2">&quot;International Student Ratio [%]&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+
+<span class="c1"># adjust the layout</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/nb_02_geo_visualization_int_students_germany_46_0.png" src="../_images/nb_02_geo_visualization_int_students_germany_46_0.png" />
+</div>
+</div>
+<p>As seen for the example of Aachen, there are a lot of missing values for specific regions - either due to a lack of data or due to the data being unknown or to be kept secret. This is important to keep in mind when working with any kind of GENESIS the data.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="01_table.html" class="btn btn-neutral float-left" title="The Table Class" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="03_find.html" class="btn btn-neutral float-right" title="Finding the Right Tables" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Michael Aydinbas.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

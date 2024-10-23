@@ -17,7 +17,7 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=71d9d8e6"></script>
+        <script src="../_static/documentation_options.js?v=d5a15cff"></script>
         <script src="../_static/doctools.js?v=9a2dae69"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -43,7 +43,7 @@
               <img src="../_static/pystatis_logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.3.2
+                0.3.3
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -104,7 +104,15 @@
   <section id="Setup-pystatis">
 <h1>Setup <code class="docutils literal notranslate"><span class="pre">pystatis</span></code><a class="headerlink" href="#Setup-pystatis" title="Link to this heading"></a></h1>
 <p>You don’t need to do much to use <code class="docutils literal notranslate"><span class="pre">pystatis</span></code>. Basically, the first time you import the package, it will create a <code class="docutils literal notranslate"><span class="pre">config.ini</span></code> file under <code class="docutils literal notranslate"><span class="pre">~/.pystatis</span></code>. This file is used for storing settings, for example your credentials fpr the supported databases.</p>
-<p>To set up your credentials, we need to ask you for your username and password. This is done by the <code class="docutils literal notranslate"><span class="pre">setup_credentials()</span></code> function. It will ask you interactivly for the credentials, or you can set the following environmental variables: - <code class="docutils literal notranslate"><span class="pre">PYSTATIS_GENESIS_API_USERNAME</span></code> - <code class="docutils literal notranslate"><span class="pre">PYSTATIS_GENESIS_API_PASSWORD</span></code> - <code class="docutils literal notranslate"><span class="pre">PYSTATIS_ZENSUS_API_USERNAME</span></code> - <code class="docutils literal notranslate"><span class="pre">PYSTATIS_ZENSUS_API_PASSWORD</span></code> - <code class="docutils literal notranslate"><span class="pre">PYSTATIS_REGIO_API_USERNAME</span></code> - <code class="docutils literal notranslate"><span class="pre">PYSTATIS_REGIO_API_PASSWORD</span></code></p>
+<p>To set up your credentials, we need to ask you for your username and password. This is done by the <code class="docutils literal notranslate"><span class="pre">setup_credentials()</span></code> function. It will ask you interactivly for the credentials, or you can set the following environmental variables:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">PYSTATIS_GENESIS_API_USERNAME</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PYSTATIS_GENESIS_API_PASSWORD</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PYSTATIS_ZENSUS_API_USERNAME</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PYSTATIS_ZENSUS_API_PASSWORD</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PYSTATIS_REGIO_API_USERNAME</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PYSTATIS_REGIO_API_PASSWORD</span></code></p></li>
+</ul>
 <p><strong>Note</strong>: Zensus 2022 supports a new authentication method using an API token. This token will be set as your username and the password remains blank so you can use the new token authentication method right away, just use the token as username and leave the password empty.</p>
 <p><code class="docutils literal notranslate"><span class="pre">dotenv</span></code> is uses here to load a local <code class="docutils literal notranslate"><span class="pre">.env</span></code> file that contains the above mentioned environmental variables so we don’t have to input them.</p>
 <div class="nbinput nblast docutils container">
@@ -113,17 +121,17 @@
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 
-<span class="kn">import</span> <span class="nn">dotenv</span>
+<span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
 
 <span class="kn">import</span> <span class="nn">pystatis</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;pystatis version: &quot;</span><span class="p">,</span> <span class="n">pystatis</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
-<span class="n">dotenv</span><span class="o">.</span><span class="n">load_dotenv</span><span class="p">()</span>
+<span class="n">load_dotenv</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># only execute if you want to delete your config file for test purposes</span>
@@ -133,10 +141,14 @@
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">init_config</span></code> is called when loading pystatis, so a config with empty credentials will be created in your user home directory by default.</p>
 <p>The only thing you have to do is to set up your user credentials.</p>
-<p>You can do so either by: 1. specifying the 6 environment variables <code class="docutils literal notranslate"><span class="pre">PYSTATIS_GENESIS_API_USERNAME|PASSWORD</span></code>, <code class="docutils literal notranslate"><span class="pre">PYSTATIS_ZENSUS_API_USERNAME|PASSWORD</span></code>, and <code class="docutils literal notranslate"><span class="pre">PYSTATIS_REGIO_API_USERNAME|PASSWORD</span></code> 2. calling the function <code class="docutils literal notranslate"><span class="pre">setup_credentials()</span></code> which will guide you through the process</p>
+<p>You can do so either by:</p>
+<ol class="arabic simple">
+<li><p>specifying the 6 environment variables <code class="docutils literal notranslate"><span class="pre">PYSTATIS_GENESIS_API_USERNAME|PASSWORD</span></code>, <code class="docutils literal notranslate"><span class="pre">PYSTATIS_ZENSUS_API_USERNAME|PASSWORD</span></code>, and <code class="docutils literal notranslate"><span class="pre">PYSTATIS_REGIO_API_USERNAME|PASSWORD</span></code></p></li>
+<li><p>calling the function <code class="docutils literal notranslate"><span class="pre">setup_credentials()</span></code> which will guide you through the process</p></li>
+</ol>
 <p>Even if you do 1. please call <code class="docutils literal notranslate"><span class="pre">setup_credentials()</span></code> once as it will read out the environment variables and write the credentials to the <code class="docutils literal notranslate"><span class="pre">config.ini</span></code> in your config dir.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pystatis</span><span class="o">.</span><span class="n">setup_credentials</span><span class="p">()</span>  <span class="c1"># also part of config module</span>
@@ -160,7 +172,9 @@
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># change your password</span>
-<span class="n">pystatis</span><span class="o">.</span><span class="n">profile</span><span class="o">.</span><span class="n">change_password</span><span class="p">(</span><span class="n">db_name</span><span class="o">=</span><span class="s2">&quot;genesis&quot;</span><span class="p">,</span> <span class="n">new_password</span><span class="o">=</span><span class="s2">&quot;DoNotUseThisAccidentally&quot;</span><span class="p">)</span>
+<span class="n">pystatis</span><span class="o">.</span><span class="n">profile</span><span class="o">.</span><span class="n">change_password</span><span class="p">(</span>
+    <span class="n">db_name</span><span class="o">=</span><span class="s2">&quot;genesis&quot;</span><span class="p">,</span> <span class="n">new_password</span><span class="o">=</span><span class="s2">&quot;DoNotUseThisAccidentally&quot;</span>
+<span class="p">)</span>
 
 <span class="c1"># use remove_result functionality</span>
 <span class="n">destatis_name_code</span> <span class="o">=</span> <span class="s2">&quot;42131-0001&quot;</span>

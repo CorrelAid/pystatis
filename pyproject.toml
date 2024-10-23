@@ -7,12 +7,12 @@ authors = [
     "Felix Schmitz <felix.schmitz@philosophy-economics.de>",
     "Frederik Hering <jobs.fhering@gmail.com>",
     "Marco Hübner <marco_huebner1@gmx.de>",
-    "Jonas Berger <jonas.bergner97@gmx.de>"
+    "Jonas Berger <jonas.bergner97@gmx.de>",
 ]
 maintainers = ["Michael Aydinbas <michael.aydinbas@gmail.com>"]
 description = "Python wrapper for GENESIS web service interface (API) of the Federal Statistical Office."
 name = "pystatis"
-version = "0.3.2"
+version = "0.3.3"
 readme = "README.md"
 repository = "https://github.com/CorrelAid/pystatis"
 documentation = "https://correlaid.github.io/pystatis/"
@@ -30,7 +30,7 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
     "Topic :: Scientific/Engineering",
     "Topic :: Scientific/Engineering :: Information Analysis",
-    "Topic :: Software Development :: Libraries :: Python Modules"
+    "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 
 [tool.poetry.dependencies]
@@ -61,7 +61,7 @@ python-dotenv = "^1.0.0"
 requests-toolbelt = "^1.0.0"
 sphinx = "^7.0"
 sphinx-rtd-theme = "^2.0.0"
-urllib3 = {extras = ["appengine"], version = "^2.2.1"}
+urllib3 = { extras = ["appengine"], version = "^2.2.1" }
 pytest-vcr = "^1.0.2"
 nbsphinx = "^0.9.5"
 

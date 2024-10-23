@@ -3,6 +3,7 @@
 import json
 import logging
 import re
+import sys
 import time
 
 import requests
@@ -64,7 +65,10 @@ def load_data(
             if response_status_code == 98:
                 job_response = start_job(endpoint, method, params)
                 job_id = get_job_id_from_response(job_response)
-                logger.info("Verarbeitung im Hintergrund erfolgreich gestartet. Job-ID: %s.", job_id)
+                logger.warning(
+                    "Verarbeitung im Hintergrund erfolgreich gestartet. Job-ID: %s.",
+                    job_id,
+                )
                 response = get_data_from_resultfile(job_id, db_name)
                 assert isinstance(response.content, bytes)  # nosec assert_used
                 content_type = response.headers.get("Content-Type", "text/csv").split("/")[-1]
@@ -104,6 +108,7 @@ def get_data_from_endpoint(endpoint: str, method: str, params: dict, db_name: st
 
         db_matches = db.identify_db_matches(table_name)
         db_name = db.select_db_by_credentials(db_matches)
+        logger.info(f"Database selected: {db_name}")
 
     db_host, db_user, db_pw = db.get_settings(db_name)
     url = f"{db_host}{endpoint}/{method}"
@@ -117,7 +122,13 @@ def get_data_from_endpoint(endpoint: str, method: str, params: dict, db_name: st
         }
     )
 
-    response = requests.get(url, params=params_, timeout=(5, 300))
+    try:
+        response = requests.get(url, params=params_, timeout=(5, 300))
+    except requests.exceptions.Timeout:
+        logger.error(
+            f"Initial request against {endpoint}/{method} timed out after 5 minutes. Probably a problem with the API. You can try again later or use the web interface."
+        )
+        raise SystemExit(1)
 
     response.encoding = "UTF-8"
     _check_invalid_status_code(response)

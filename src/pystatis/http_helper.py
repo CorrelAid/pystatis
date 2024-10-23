@@ -3,7 +3,6 @@
 import json
 import logging
 import re
-import sys
 import time
 
 import requests
@@ -124,11 +123,16 @@ def get_data_from_endpoint(endpoint: str, method: str, params: dict, db_name: st
 
     try:
         response = requests.get(url, params=params_, timeout=(5, 300))
-    except requests.exceptions.Timeout:
+    except requests.exceptions.Timeout as tout:
         logger.error(
-            f"Initial request against {endpoint}/{method} timed out after 5 minutes. Probably a problem with the API. You can try again later or use the web interface."
+            "Initial request against %s/%s timed out after %s minutes. "
+            "Probably a problem with the API. "
+            "You can try again later or use the web interface.",
+            endpoint,
+            method,
+            300 // 60,
         )
-        raise SystemExit(1)
+        raise SystemExit(1) from tout
 
     response.encoding = "UTF-8"
     _check_invalid_status_code(response)

@@ -18,7 +18,7 @@ report:
       vulnerabilities:
         70612:
           reason: We are not using jinja2 templates
-          expires: "2024-09-01"
+          expires: "2025-09-01"
 
 fail-scan-with-exit-code:
   dependency-vulnerabilities:

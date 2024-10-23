@@ -107,7 +107,7 @@ def get_data_from_endpoint(endpoint: str, method: str, params: dict, db_name: st
 
         db_matches = db.identify_db_matches(table_name)
         db_name = db.select_db_by_credentials(db_matches)
-        logger.info(f"Database selected: {db_name}")
+        logger.info("Database selected: %s", db_name)
 
     db_host, db_user, db_pw = db.get_settings(db_name)
     url = f"{db_host}{endpoint}/{method}"

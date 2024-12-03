@@ -16,7 +16,7 @@
   
         <script src="_static/jquery.js?v=5d32c60e"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=d5a15cff"></script>
+        <script src="_static/documentation_options.js?v=6c02275b"></script>
         <script src="_static/doctools.js?v=9a2dae69"></script>
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -39,7 +39,7 @@
               <img src="_static/pystatis_logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.3.3
+                0.4.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -136,8 +136,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#pystatis.table.Table"><code class="docutils literal notranslate"><span class="pre">Table</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#pystatis.table.Table.extract_ags_col"><code class="docutils literal notranslate"><span class="pre">Table.extract_ags_col()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#pystatis.table.Table.get_data"><code class="docutils literal notranslate"><span class="pre">Table.get_data()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#pystatis.table.Table.parse_genesis_and_regio_table"><code class="docutils literal notranslate"><span class="pre">Table.parse_genesis_and_regio_table()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#pystatis.table.Table.parse_zensus_table"><code class="docutils literal notranslate"><span class="pre">Table.parse_zensus_table()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pystatis.table.Table.parse_v4_table"><code class="docutils literal notranslate"><span class="pre">Table.parse_v4_table()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pystatis.table.Table.parse_v5_table"><code class="docutils literal notranslate"><span class="pre">Table.parse_v5_table()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#pystatis.table.Table.prettify_table"><code class="docutils literal notranslate"><span class="pre">Table.prettify_table()</span></code></a></li>
 </ul>
 </li>
@@ -162,8 +162,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#pystatis.Table"><code class="docutils literal notranslate"><span class="pre">Table</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#pystatis.Table.extract_ags_col"><code class="docutils literal notranslate"><span class="pre">Table.extract_ags_col()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pystatis.Table.get_data"><code class="docutils literal notranslate"><span class="pre">Table.get_data()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#pystatis.Table.parse_genesis_and_regio_table"><code class="docutils literal notranslate"><span class="pre">Table.parse_genesis_and_regio_table()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#pystatis.Table.parse_zensus_table"><code class="docutils literal notranslate"><span class="pre">Table.parse_zensus_table()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pystatis.Table.parse_v4_table"><code class="docutils literal notranslate"><span class="pre">Table.parse_v4_table()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pystatis.Table.parse_v5_table"><code class="docutils literal notranslate"><span class="pre">Table.parse_v5_table()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pystatis.Table.prettify_table"><code class="docutils literal notranslate"><span class="pre">Table.prettify_table()</span></code></a></li>
 </ul>
 </li>
@@ -562,18 +562,33 @@ One of “genesis”, “zensus”, “regio”.</p>
 <dt class="sig sig-object py" id="pystatis.find.Find.run">
 <span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.find.Find.run" title="Link to this definition"></a></dt>
 <dd><p>Queries the API and prints summary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pystatis.find.Find.summary">
 <span class="sig-name descname"><span class="pre">summary</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.find.Find.summary" title="Link to this definition"></a></dt>
 <dd><p>Prints summary of all results.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="id0">
 <span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
 <dd><p>Execute the search to find statistics, variables, tables and cubes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -584,7 +599,7 @@ One of “genesis”, “zensus”, “regio”.</p>
 <dd class="field-odd"><p>String that contains summary statistics.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>summary_string</p>
+<dd class="field-even"><p>str</p>
 </dd>
 </dl>
 </dd></dl>
@@ -600,6 +615,9 @@ One of “genesis”, “zensus”, “regio”.</p>
 <span class="sig-prename descclassname"><span class="pre">pystatis.helloworld.</span></span><span class="sig-name descname"><span class="pre">logincheck</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.helloworld.logincheck" title="Link to this definition"></a></dt>
 <dd><p>Wrapper method which constructs a URL for testing the Destatis API
 logincheck method, which tests the login credentials (from the config.ini).</p>
+<p>In addition, this method automatically terminates requests
+that have been running for longer than 15 minutes if too many requests are running in parallel.
+This method restores the ability to work by cleaning up if the limit has been exceeded.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>db_name</strong> (<em>str</em>) – Name of the database to login to</p>
@@ -902,12 +920,15 @@ table -&gt; explanation of symbols or at e.g.
 <a class="reference external" href="https://www-genesis.destatis.de/genesis/online?operation=ergebnistabelleQualitaet&amp;language=en&amp;levelindex=3&amp;levelid=1719342760835#abreadcrumb">https://www-genesis.destatis.de/genesis/online?operation=ergebnistabelleQualitaet&amp;language=en&amp;levelindex=3&amp;levelid=1719342760835#abreadcrumb</a>.</p></li>
 </ul>
 </dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pystatis.table.Table.parse_genesis_and_regio_table">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_genesis_and_regio_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.table.Table.parse_genesis_and_regio_table" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="pystatis.table.Table.parse_v4_table">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_v4_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.table.Table.parse_v4_table" title="Link to this definition"></a></dt>
 <dd><p>Parse ffcsv format for tables from GENESIS and Regionalstatistik into a more readable format</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -923,13 +944,14 @@ table -&gt; explanation of symbols or at e.g.
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pystatis.table.Table.parse_zensus_table">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_zensus_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.table.Table.parse_zensus_table" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="pystatis.table.Table.parse_v5_table">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_v5_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.table.Table.parse_v5_table" title="Link to this definition"></a></dt>
 <dd><p>Parse Zensus table ffcsv format into a more readable format</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>data</strong> (<em>DataFrame</em>)</p></li>
+<li><p><strong>db_name</strong> (<em>str</em>)</p></li>
 <li><p><strong>language</strong> (<em>str</em>)</p></li>
 </ul>
 </dd>
@@ -1058,18 +1080,33 @@ One of “genesis”, “zensus”, “regio”.</p>
 <dt class="sig sig-object py" id="pystatis.Find.run">
 <span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.Find.run" title="Link to this definition"></a></dt>
 <dd><p>Queries the API and prints summary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pystatis.Find.summary">
 <span class="sig-name descname"><span class="pre">summary</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.Find.summary" title="Link to this definition"></a></dt>
 <dd><p>Prints summary of all results.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="id10">
 <span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id10" title="Link to this definition"></a></dt>
 <dd><p>Execute the search to find statistics, variables, tables and cubes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -1080,7 +1117,7 @@ One of “genesis”, “zensus”, “regio”.</p>
 <dd class="field-odd"><p>String that contains summary statistics.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>summary_string</p>
+<dd class="field-even"><p>str</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1197,12 +1234,15 @@ table -&gt; explanation of symbols or at e.g.
 <a class="reference external" href="https://www-genesis.destatis.de/genesis/online?operation=ergebnistabelleQualitaet&amp;language=en&amp;levelindex=3&amp;levelid=1719342760835#abreadcrumb">https://www-genesis.destatis.de/genesis/online?operation=ergebnistabelleQualitaet&amp;language=en&amp;levelindex=3&amp;levelid=1719342760835#abreadcrumb</a>.</p></li>
 </ul>
 </dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pystatis.Table.parse_genesis_and_regio_table">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_genesis_and_regio_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.Table.parse_genesis_and_regio_table" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="pystatis.Table.parse_v4_table">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_v4_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.Table.parse_v4_table" title="Link to this definition"></a></dt>
 <dd><p>Parse ffcsv format for tables from GENESIS and Regionalstatistik into a more readable format</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1218,13 +1258,14 @@ table -&gt; explanation of symbols or at e.g.
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pystatis.Table.parse_zensus_table">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_zensus_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.Table.parse_zensus_table" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="pystatis.Table.parse_v5_table">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_v5_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.Table.parse_v5_table" title="Link to this definition"></a></dt>
 <dd><p>Parse Zensus table ffcsv format into a more readable format</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>data</strong> (<em>DataFrame</em>)</p></li>
+<li><p><strong>db_name</strong> (<em>str</em>)</p></li>
 <li><p><strong>language</strong> (<em>str</em>)</p></li>
 </ul>
 </dd>
@@ -1277,6 +1318,9 @@ and includes informative columns names</p>
 <span class="sig-prename descclassname"><span class="pre">pystatis.</span></span><span class="sig-name descname"><span class="pre">logincheck</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.logincheck" title="Link to this definition"></a></dt>
 <dd><p>Wrapper method which constructs a URL for testing the Destatis API
 logincheck method, which tests the login credentials (from the config.ini).</p>
+<p>In addition, this method automatically terminates requests
+that have been running for longer than 15 minutes if too many requests are running in parallel.
+This method restores the ability to work by cleaning up if the limit has been exceeded.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>db_name</strong> (<em>str</em>) – Name of the database to login to</p>

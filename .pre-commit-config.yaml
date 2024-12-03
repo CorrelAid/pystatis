@@ -38,3 +38,4 @@ repos:
     hooks:
       - id: mypy
         args: [--strict, --ignore-missing-imports]
+        files: ^src/

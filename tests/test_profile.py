@@ -1,9 +1,8 @@
-import re
 from configparser import RawConfigParser
 
 import pytest
 
-from pystatis import config, db
+from pystatis import config
 from pystatis.profile import change_password, remove_result
 from tests.test_http_helper import _generic_request_status
 
@@ -26,7 +25,7 @@ def test_change_password(mocker, config_):
         return_value=_generic_request_status(),
     )
 
-    response = change_password("genesis", "new_password")
+    change_password("genesis", "new_password")
 
     assert config_.get("genesis", "password") == "new_password"
 

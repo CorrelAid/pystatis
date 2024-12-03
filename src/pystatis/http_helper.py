@@ -10,6 +10,7 @@ import requests
 from pystatis import config, db
 from pystatis.cache import cache_data, hit_in_cash, normalize_name, read_from_cache
 from pystatis.exception import DestatisStatusError, NoNewerDataError, TableNotFoundError
+from pystatis.types import ParamDict
 
 logger = logging.getLogger(__name__)
 
@@ -20,7 +21,7 @@ JOB_TIMEOUT = 3000
 def load_data(
     endpoint: str,
     method: str,
-    params: dict,
+    params: ParamDict,
     db_name: str | None = None,
 ) -> bytes:
     """Load data identified by endpoint, method and params.
@@ -46,10 +47,13 @@ def load_data(
 
     if endpoint == "data":
         if hit_in_cash(cache_dir, name, params):
+            print("hit")
             data = read_from_cache(cache_dir, name, params)
         else:
             response = get_data_from_endpoint(endpoint, method, params, db_name)
-            content_type = response.headers.get("Content-Type", "text/csv").split("/")[-1]
+            content_type = response.headers.get("Content-Type", "text/csv").split("/")[
+                -1
+            ]
             data = response.content
 
             # status code 98 means that the table is too big
@@ -70,7 +74,9 @@ def load_data(
                 )
                 response = get_data_from_resultfile(job_id, db_name)
                 assert isinstance(response.content, bytes)  # nosec assert_used
-                content_type = response.headers.get("Content-Type", "text/csv").split("/")[-1]
+                content_type = response.headers.get("Content-Type", "text/csv").split(
+                    "/"
+                )[-1]
                 data = response.content
 
             cache_data(cache_dir, name, params, data, content_type)
@@ -85,7 +91,9 @@ def load_data(
     return data
 
 
-def get_data_from_endpoint(endpoint: str, method: str, params: dict, db_name: str | None = None) -> requests.Response:
+def get_data_from_endpoint(
+    endpoint: str, method: str, params: ParamDict, db_name: str | None = None
+) -> requests.Response:
     """
     Wrapper method which constructs a url for querying data from Destatis and
     sends a GET request.
@@ -101,6 +109,30 @@ def get_data_from_endpoint(endpoint: str, method: str, params: dict, db_name: st
         requests.Response: the response object holding the response from calling the Destatis endpoint.
     """
 
+    def get_response(db_name: str, params: ParamDict) -> requests.Response:
+        db_host, db_user, db_pw = db.get_settings(db_name)
+        url = f"{db_host}{endpoint}/{method}"
+
+        # Regio only supports older request calls with user name and password as query params
+        if db_name == "regio":
+            params_ = params.copy()
+
+            params_.update(
+                {
+                    "username": db_user,
+                    "password": db_pw,
+                }
+            )
+            return requests.get(url, params=params_, timeout=(5, 300))
+
+        else:
+            headers = {
+                "Content-Type": "application/x-www-form-urlencoded",
+                "username": db_user,
+                "password": db_pw,
+            }
+            return requests.post(url, headers=headers, data=params, timeout=(5, 300))
+
     # Determine database by matching regex to item code
     if db_name is None:
         table_name = params.get("name", params.get("selection", ""))
@@ -109,20 +141,9 @@ def get_data_from_endpoint(endpoint: str, method: str, params: dict, db_name: st
         db_name = db.select_db_by_credentials(db_matches)
         logger.info("Database selected: %s", db_name)
 
-    db_host, db_user, db_pw = db.get_settings(db_name)
-    url = f"{db_host}{endpoint}/{method}"
-
     # params is used to calculate hash for caching so don't alter params dict here!
-    params_ = params.copy()
-    params_.update(
-        {
-            "username": db_user,
-            "password": db_pw,
-        }
-    )
-
     try:
-        response = requests.get(url, params=params_, timeout=(5, 300))
+        response = get_response(db_name, params)
     except requests.exceptions.Timeout as tout:
         logger.error(
             "Initial request against %s/%s timed out after %s minutes. "
@@ -141,7 +162,7 @@ def get_data_from_endpoint(endpoint: str, method: str, params: dict, db_name: st
     return response
 
 
-def start_job(endpoint: str, method: str, params: dict) -> requests.Response:
+def start_job(endpoint: str, method: str, params: ParamDict) -> requests.Response:
     """Small helper function to start a job in the background.
 
     Args:
@@ -185,7 +206,9 @@ def get_job_id_from_response(response: requests.Response) -> str:
     return job_id
 
 
-def get_data_from_resultfile(job_id: str, db_name: str | None = None) -> requests.Response:
+def get_data_from_resultfile(
+    job_id: str, db_name: str | None = None
+) -> requests.Response:
     """Get data from a job once it is finished or when the timeout is reached.
 
     Args:
@@ -206,7 +229,9 @@ def get_data_from_resultfile(job_id: str, db_name: str | None = None) -> request
     time_ = time.perf_counter()
 
     while (time.perf_counter() - time_) < JOB_TIMEOUT:
-        response = get_data_from_endpoint(endpoint="catalogue", method="jobs", params=params, db_name=db_name)
+        response = get_data_from_endpoint(
+            endpoint="catalogue", method="jobs", params=params, db_name=db_name
+        )
 
         jobs = response.json().get("List")
         if len(jobs) > 0 and jobs[0].get("State") == "Fertig":
@@ -232,7 +257,9 @@ def get_data_from_resultfile(job_id: str, db_name: str | None = None) -> request
         "compress": "false",
         "format": "ffcsv",
     }
-    response = get_data_from_endpoint(endpoint="data", method="resultfile", params=params, db_name=db_name)
+    response = get_data_from_endpoint(
+        endpoint="data", method="resultfile", params=params, db_name=db_name
+    )
     return response
 
 
@@ -248,14 +275,16 @@ def _check_invalid_status_code(response: requests.Response) -> None:
     """
     if response.status_code // 100 in [4, 5]:
         try:
-            body: dict = response.json()
+            body: dict = response.json()  # type: ignore
         except json.JSONDecodeError:
             body = {}
 
         content = body.get("Content")
         code = body.get("Code")
         logger.error("Error Code: %s. Content: %s.", code, content)
-        raise requests.exceptions.HTTPError(f"The server returned a {response.status_code} status code.")
+        raise requests.exceptions.HTTPError(
+            f"The server returned a {response.status_code} status code."
+        )
 
 
 def _check_invalid_destatis_status_code(response: requests.Response) -> None:
@@ -281,7 +310,7 @@ def _check_invalid_destatis_status_code(response: requests.Response) -> None:
         _check_destatis_status(response_dict.get("Status", {}))
 
 
-def _check_destatis_status(destatis_status: dict) -> None:
+def _check_destatis_status(destatis_status: dict) -> None:  # type: ignore
     """
     Helper method which checks the status message from Destatis.
     If the status message is erroneous an error will be raised.
@@ -314,7 +343,9 @@ def _check_destatis_status(destatis_status: dict) -> None:
         raise DestatisStatusError(destatis_status_content)
 
     # check for destatis/ query errors
-    elif (destatis_status_code in [104, 50, 90]) or (destatis_status_type in error_en_de):
+    elif (destatis_status_code in [104, 50, 90]) or (
+        destatis_status_type in error_en_de
+    ):
         if destatis_status_code == 98:
             pass
         elif destatis_status_code == 50:

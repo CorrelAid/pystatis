@@ -19,7 +19,10 @@ def whoami(db_name: str) -> str:
     """
     url = f"{db.get_host(db_name)}" + "helloworld/whoami"
 
-    response = requests.get(url, timeout=(1, 15))
+    try:
+        response = requests.get(url, timeout=(1, 15))
+    except requests.exceptions.Timeout:
+        raise TimeoutError("Login request timed out after 15 minutes")
 
     _check_invalid_status_code(response)
 

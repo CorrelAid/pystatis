@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: null
+    body: name=4000W-2041&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=de&quality=off&format=ffcsv
     headers:
       Accept:
       - '*/*'
@@ -8,14 +8,18 @@ interactions:
       - gzip, deflate, br, zstd
       Connection:
       - keep-alive
+      Content-Length:
+      - '131'
+      Content-Type:
+      - application/x-www-form-urlencoded
       User-Agent:
       - python-requests/2.32.3
-    method: GET
-    uri: https://ergebnisse.zensus2022.de/api/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=4000W-2041&quality=off
+    method: POST
+    uri: https://ergebnisse.zensus2022.de/api/rest/2020/data/tablefile
   response:
     body:
       string: !!binary |
-        UEsDBBQACAgIAMQE7VgAAAAAAAAAAAAAAAAkAAAANDAwMFctMjA0MV8xNzIwODIzODg4Mzk3X2Rl
+        UEsDBBQACAgIAKWqg1kAAAAAAAAAAAAAAAAkAAAANDAwMFctMjA0MV8xNzMzMjU3MjcxMjU1X2Rl
         X2ZsYXQuY3N27Z3LThxHFIb3eYreRLKlwapT91KvjMDEElGkOBbeWQO0YKRhkObiSHkeP0G2WUSK
         Hyiv4OoeCJhUK6Z7Tln5qQ3MrRv4OKfq3OvvP/5crafr2Wo9O1u9P7s+b+p7z+fT02Zer2dXzfat
         7tHdizW9/zBdzqan85v37z3ffureC9P1ejk73az//dG7d7YXyQd3lQ/vKnvvmnxne5F6cFf18K6q
@@ -51,23 +55,23 @@ interactions:
         ZUc82WTkeaTfABwJWRzRwUUMWEWWubAZoXBOQ2fMrySnx0CFPvJAk0oDTY1kzCEntwhRUu9DsCkC
         OtWJtVomobGu2HODsGmj8XZWDh8sna1CavLLhU16g1dOuWtTGHmwLh8qqYwlHMNtXIC8Z64fhDvA
         QMaSAmyqYpirkz6eoMQ1Hk1NKalxklXjal6S84bKUpU8TtI5L0ZPsfoMUEsHCC+MBAyzBwAACtoA
-        AFBLAQIUABQACAgIAMQE7VgvjAQMswcAAAraAAAkAAAAAAAAAAAAAAAAAAAAAAA0MDAwVy0yMDQx
-        XzE3MjA4MjM4ODgzOTdfZGVfZmxhdC5jc3ZQSwUGAAAAAAEAAQBSAAAABQgAAAAA
+        AFBLAQIUABQACAgIAKWqg1kvjAQMswcAAAraAAAkAAAAAAAAAAAAAAAAAAAAAAA0MDAwVy0yMDQx
+        XzE3MzMyNTcyNzEyNTVfZGVfZmxhdC5jc3ZQSwUGAAAAAAEAAQBSAAAABQgAAAAA
     headers:
       Cache-Control:
       - max-age=0
       Connection:
       - keep-alive
       Content-Disposition:
-      - attachment; filename=4000W-2041_1720823888397_de_flat.zip
+      - attachment; filename=4000W-2041_1733257271255_de_flat.zip
       Content-Type:
       - application/zip
       Date:
-      - Fri, 12 Jul 2024 22:38:10 GMT
+      - Tue, 03 Dec 2024 20:21:13 GMT
       ETag:
-      - '"myra-7554e776"'
+      - '"myra-3abee016"'
       Expires:
-      - Fri, 12 Jul 2024 22:38:10 GMT
+      - Tue, 03 Dec 2024 20:21:13 GMT
       Referrer-Policy:
       - same-origin
       Server:
@@ -88,7 +92,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: null
+    body: name=4000W-2041&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=de&quality=off&format=ffcsv
     headers:
       Accept:
       - '*/*'
@@ -96,10 +100,14 @@ interactions:
       - gzip, deflate, br, zstd
       Connection:
       - keep-alive
+      Content-Length:
+      - '131'
+      Content-Type:
+      - application/x-www-form-urlencoded
       User-Agent:
       - python-requests/2.32.3
-    method: GET
-    uri: https://ergebnisse.zensus2022.de/api/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=4000W-2041&quality=off
+    method: POST
+    uri: https://ergebnisse.zensus2022.de/api/rest/2020/metadata/table
   response:
     body:
       string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"4000W-2041\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"4000W-2041\",\"Content\":\"Wohnungen:
@@ -118,24 +126,21 @@ interactions:
       Cache-Control:
       - max-age=0
       Connection:
-      - close
+      - keep-alive
       Content-Encoding:
       - gzip
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Fri, 12 Jul 2024 22:38:14 GMT
+      - Tue, 03 Dec 2024 20:21:17 GMT
       ETag:
-      - '"myra-6dbd3f21"'
+      - '"myra-332737c1"'
       Expires:
-      - Fri, 12 Jul 2024 22:38:14 GMT
+      - Tue, 03 Dec 2024 20:21:17 GMT
       Referrer-Policy:
       - same-origin
       Server:
       - myracloud
-      Set-Cookie:
-      - AL_BALANCE-S=$xc/twQLc9ZaMUGU5xAhojXIodrn9xE5LORJUwooXCuE9Gn96fbV; Path=/;
-        Secure; HttpOnly; SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
       Transfer-Encoding:
@@ -152,7 +157,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: null
+    body: name=4000W-2041&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=en&quality=off&format=ffcsv
     headers:
       Accept:
       - '*/*'
@@ -160,14 +165,18 @@ interactions:
       - gzip, deflate, br, zstd
       Connection:
       - keep-alive
+      Content-Length:
+      - '131'
+      Content-Type:
+      - application/x-www-form-urlencoded
       User-Agent:
       - python-requests/2.32.3
-    method: GET
-    uri: https://ergebnisse.zensus2022.de/api/rest/2020/data/tablefile?area=all&format=ffcsv&language=en&name=4000W-2041&quality=off
+    method: POST
+    uri: https://ergebnisse.zensus2022.de/api/rest/2020/data/tablefile
   response:
     body:
       string: !!binary |
-        UEsDBBQACAgIANkE7VgAAAAAAAAAAAAAAAAkAAAANDAwMFctMjA0MV8xNzIwODIzOTMxMTU0X2Vu
+        UEsDBBQACAgIAJi2g1kAAAAAAAAAAAAAAAAkAAAANDAwMFctMjA0MV8xNzMzMjYyNzY5NzU5X2Vu
         X2ZsYXQuY3N27Z3Lbhs3FIb3fYrZFEgWEXh4J2YVw467cFEgzW0XjOVJLUCWitE4gV8r2y4K9IX6
         CuVItpO6nBTRkBTwm5tYF4u2v5xDnjv//uPPTd/0i02/mG/ez9cXbf3V82Vz3i7rfnHV7t7aPvry
         Yk3vPzbdojlf3r7/1fPdd331QtP33eL8uv/vt355Z/ch/mBV/nBVPrpq8J3dh8SDVcXDVcXoqsF3
@@ -203,30 +212,27 @@ interactions:
         snmxEePF7Y1TfwFXUJqfoWJCIUpj9DRRcH4PWtglBzUuJNbcz2Tp8OD5wUoZwV7cBGHd7pWq8ieg
         saZYentAk0pCnqxp3bRwHg2s5zE/Q24VZLloOosZeFByamZcKE1QJt7U2PzIvEUU9yEJHk0Cs9Es
         6eii8P0UJU4yDaEQXEKl0aYW9ATnOpXtbPxeUmMsizI/7B9QSwcIeEDKOqwHAAAa3gAAUEsBAhQA
-        FAAICAgA2QTtWHhAyjqsBwAAGt4AACQAAAAAAAAAAAAAAAAAAAAAADQwMDBXLTIwNDFfMTcyMDgy
-        MzkzMTE1NF9lbl9mbGF0LmNzdlBLBQYAAAAAAQABAFIAAAD+BwAAAAA=
+        FAAICAgAmLaDWXhAyjqsBwAAGt4AACQAAAAAAAAAAAAAAAAAAAAAADQwMDBXLTIwNDFfMTczMzI2
+        Mjc2OTc1OV9lbl9mbGF0LmNzdlBLBQYAAAAAAQABAFIAAAD+BwAAAAA=
     headers:
       Cache-Control:
       - max-age=0
       Connection:
       - keep-alive
       Content-Disposition:
-      - attachment; filename=4000W-2041_1720823931154_en_flat.zip
+      - attachment; filename=4000W-2041_1733262769759_en_flat.zip
       Content-Type:
       - application/zip
       Date:
-      - Fri, 12 Jul 2024 22:38:53 GMT
+      - Tue, 03 Dec 2024 21:52:52 GMT
       ETag:
-      - '"myra-7554eaf4"'
+      - '"myra-3ace4ff6"'
       Expires:
-      - Fri, 12 Jul 2024 22:38:53 GMT
+      - Tue, 03 Dec 2024 21:52:52 GMT
       Referrer-Policy:
       - same-origin
       Server:
       - myracloud
-      Set-Cookie:
-      - AL_BALANCE-S=$xc/F900mKg3NHkuD9kKsNrpTA_qWrcbgJxKqdAyB0KIi!QUfTTa; Path=/;
-        Secure; HttpOnly; SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
       Transfer-Encoding:
@@ -243,7 +249,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: null
+    body: name=4000W-2041&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=en&quality=off&format=ffcsv
     headers:
       Accept:
       - '*/*'
@@ -251,10 +257,14 @@ interactions:
       - gzip, deflate, br, zstd
       Connection:
       - keep-alive
+      Content-Length:
+      - '131'
+      Content-Type:
+      - application/x-www-form-urlencoded
       User-Agent:
       - python-requests/2.32.3
-    method: GET
-    uri: https://ergebnisse.zensus2022.de/api/rest/2020/metadata/table?area=all&format=ffcsv&language=en&name=4000W-2041&quality=off
+    method: POST
+    uri: https://ergebnisse.zensus2022.de/api/rest/2020/metadata/table
   response:
     body:
       string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"successfull\",\"Type\":\"information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"4000W-2041\",\"area\":\"all\",\"language\":\"en\"},\"Object\":{\"Code\":\"4000W-2041\",\"Content\":\"Dwellings:
@@ -275,24 +285,21 @@ interactions:
       Cache-Control:
       - max-age=0
       Connection:
-      - keep-alive
+      - close
       Content-Encoding:
       - gzip
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Fri, 12 Jul 2024 22:38:57 GMT
+      - Tue, 03 Dec 2024 21:52:55 GMT
       ETag:
-      - '"myra-6dbd429f"'
+      - '"myra-3336a7a0"'
       Expires:
-      - Fri, 12 Jul 2024 22:38:57 GMT
+      - Tue, 03 Dec 2024 21:52:55 GMT
       Referrer-Policy:
       - same-origin
       Server:
       - myracloud
-      Set-Cookie:
-      - AL_BALANCE-S=$xc/KziFpVxpw6mKG3aUkaUNzx3QfZBIuWdZ3VPPmnUEnQHHeBwg; Path=/;
-        Secure; HttpOnly; SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
       Transfer-Encoding:

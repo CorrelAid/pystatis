@@ -4,8 +4,20 @@ import pytest
 @pytest.fixture(scope="module")
 def vcr_config():
     return {
-        "filter_headers": ["authorization"],
+        "filter_headers": ["authorization", "username", "password"],
         "filter_query_parameters": ["username", "password"],
+        # see https://vcrpy.readthedocs.io/en/latest/configuration.html,
+        # need to add body here as Genesis v5 uses POST requests
+        # and params now go into the body and not the query
+        "match_on": [
+            "method",
+            "scheme",
+            "host",
+            "port",
+            "path",
+            "query",
+            "body",
+        ],
     }
 
 

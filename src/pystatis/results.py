@@ -1,6 +1,7 @@
 """Helper class for find endpoint to get the codes and metadata of the results."""
 
 import json
+from typing import Any
 
 import pandas as pd
 
@@ -48,28 +49,28 @@ class Results:
         else:
             return 0
 
-    def get_code(self, row_numbers: list) -> list:
+    def get_code(self, row_numbers: list[int]) -> list[str]:
         """
         Returns the code for a given list of tables.
 
         Args:
-            row_numbers (list): A list that contains the row
+            row_numbers (list[int]): A list that contains the row
                 numbers from the results objects. This is not the
                 object code.
 
         Returns:
-            table codes (list): Contains the corresponding tables codes.
+            table codes (list[str]): Contains the corresponding tables codes.
         """
 
         codes = self.df.iloc[row_numbers]["Code"]
         return list(codes)
 
-    def get_metadata(self, row_numbers: list) -> None:
+    def show_metadata(self, row_numbers: list[int]) -> None:
         """
         Prints meta data for a given list of tables.
 
         Args:
-            row_numbers (list): A list that contains the
+            row_numbers (list[int]): A list that contains the
                 row_numbers from the results objects.
                 This is not the object code.
         """
@@ -91,7 +92,9 @@ class Results:
                         structure_dict["Head"]["Content"],
                         f"{'-' * 20}",
                         "Columns:",
-                        "\n".join([col["Content"] for col in structure_dict["Columns"]]),
+                        "\n".join(
+                            [col["Content"] for col in structure_dict["Columns"]]
+                        ),
                         f"{'-' * 20}",
                         "Rows:",
                         "\n".join([row["Content"] for row in structure_dict["Rows"]]),
@@ -125,7 +128,10 @@ class Results:
                         f"{'-' * 20}",
                         "Content:",
                         "\n".join(
-                            [f"{structure_dict[content]} {content}" for content in ["Cubes", "Variables", "Updated"]]
+                            [
+                                f"{structure_dict[content]} {content}"
+                                for content in ["Cubes", "Variables", "Updated"]
+                            ]
                         ),
                         f"{'-' * 40}",
                     ]
@@ -151,7 +157,7 @@ class Results:
             print(output)
 
     @staticmethod
-    def _get_metadata_results(category: str, code: str, db_name: str) -> dict:
+    def _get_metadata_results(category: str, code: str, db_name: str) -> dict[str, Any]:
         """
         Based on the category and code query parameters the metadata will be generated.
 

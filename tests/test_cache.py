@@ -5,7 +5,14 @@ from pathlib import Path
 import pytest
 
 from pystatis import config
-from pystatis.cache import _build_file_path, cache_data, clear_cache, hit_in_cash, normalize_name, read_from_cache
+from pystatis.cache import (
+    _build_file_path,
+    cache_data,
+    clear_cache,
+    hit_in_cash,
+    normalize_name,
+    read_from_cache,
+)
 
 
 @pytest.fixture()

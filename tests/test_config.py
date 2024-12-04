@@ -17,7 +17,10 @@ def config_() -> ConfigParser:
 
 
 def test_config_path():
-    assert config._build_config_file_path() == Path(config.DEFAULT_CONFIG_DIR) / "config.ini"
+    assert (
+        config._build_config_file_path()
+        == Path(config.DEFAULT_CONFIG_DIR) / "config.ini"
+    )
     assert config.get_cache_dir() == str(Path(config.DEFAULT_CONFIG_DIR) / "data")
 
 

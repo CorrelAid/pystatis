@@ -1,455 +1,157 @@
 interactions:
 - request:
-    body: null
+    body: name=13111-0005&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=de&quality=off&format=ffcsv
     headers:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br
+      - gzip, deflate, br, zstd
       Connection:
       - keep-alive
+      Content-Length:
+      - '131'
+      Content-Type:
+      - application/x-www-form-urlencoded
       User-Agent:
       - python-requests/2.32.3
-    method: GET
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=13111-0005&quality=off
+    method: POST
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile
   response:
     body:
-      string: "Statistik_Code;Statistik_Label;Zeit_Code;Zeit_Label;Zeit;1_Merkmal_Code;1_Merkmal_Label;1_Auspraegung_Code;1_Auspraegung_Label;2_Merkmal_Code;2_Merkmal_Label;2_Auspraegung_Code;2_Auspraegung_Label;ERW065__Sozialvers.pflichtig_Beschaeftigte_am_Arbeitsort__Anzahl\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;08;Baden-W\xFCrttemberg;GES;Geschlecht;GESM;m\xE4nnlich;2640998\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;08;Baden-W\xFCrttemberg;GES;Geschlecht;GESW;weiblich;2202425\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;08;Baden-W\xFCrttemberg;GES;Geschlecht;;Insgesamt;4843423\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;09;Bayern;GES;Geschlecht;GESM;m\xE4nnlich;3132399\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;09;Bayern;GES;Geschlecht;GESW;weiblich;2680481\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;09;Bayern;GES;Geschlecht;;Insgesamt;5812880\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;11;Berlin;GES;Geschlecht;GESM;m\xE4nnlich;823399\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;11;Berlin;GES;Geschlecht;GESW;weiblich;799379\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;11;Berlin;GES;Geschlecht;;Insgesamt;1622778\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;12;Brandenburg;GES;Geschlecht;GESM;m\xE4nnlich;456603\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;12;Brandenburg;GES;Geschlecht;GESW;weiblich;420198\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;12;Brandenburg;GES;Geschlecht;;Insgesamt;876801\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;04;Bremen;GES;Geschlecht;GESM;m\xE4nnlich;189812\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;04;Bremen;GES;Geschlecht;GESW;weiblich;151988\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;04;Bremen;GES;Geschlecht;;Insgesamt;341800\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;02;Hamburg;GES;Geschlecht;GESM;m\xE4nnlich;550809\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;02;Hamburg;GES;Geschlecht;GESW;weiblich;477730\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;02;Hamburg;GES;Geschlecht;;Insgesamt;1028539\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;06;Hessen;GES;Geschlecht;GESM;m\xE4nnlich;1468306\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;06;Hessen;GES;Geschlecht;GESW;weiblich;1231421\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;06;Hessen;GES;Geschlecht;;Insgesamt;2699727\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;13;Mecklenburg-Vorpommern;GES;Geschlecht;GESM;m\xE4nnlich;288328\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;13;Mecklenburg-Vorpommern;GES;Geschlecht;GESW;weiblich;292443\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;13;Mecklenburg-Vorpommern;GES;Geschlecht;;Insgesamt;580771\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;03;Niedersachsen;GES;Geschlecht;GESM;m\xE4nnlich;1671005\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;03;Niedersachsen;GES;Geschlecht;GESW;weiblich;1432496\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;03;Niedersachsen;GES;Geschlecht;;Insgesamt;3103501\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;05;Nordrhein-Westfalen;GES;Geschlecht;GESM;m\xE4nnlich;3923561\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;05;Nordrhein-Westfalen;GES;Geschlecht;GESW;weiblich;3296143\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;05;Nordrhein-Westfalen;GES;Geschlecht;;Insgesamt;7219704\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;07;Rheinland-Pfalz;GES;Geschlecht;GESM;m\xE4nnlich;781942\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;07;Rheinland-Pfalz;GES;Geschlecht;GESW;weiblich;689498\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;07;Rheinland-Pfalz;GES;Geschlecht;;Insgesamt;1471440\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;10;Saarland;GES;Geschlecht;GESM;m\xE4nnlich;210651\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;10;Saarland;GES;Geschlecht;GESW;weiblich;182243\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;10;Saarland;GES;Geschlecht;;Insgesamt;392894\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;14;Sachsen;GES;Geschlecht;GESM;m\xE4nnlich;851460\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;14;Sachsen;GES;Geschlecht;GESW;weiblich;790866\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;14;Sachsen;GES;Geschlecht;;Insgesamt;1642326\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;15;Sachsen-Anhalt;GES;Geschlecht;GESM;m\xE4nnlich;411225\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;15;Sachsen-Anhalt;GES;Geschlecht;GESW;weiblich;393968\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;15;Sachsen-Anhalt;GES;Geschlecht;;Insgesamt;805193\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;01;Schleswig-Holstein;GES;Geschlecht;GESM;m\xE4nnlich;540705\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;01;Schleswig-Holstein;GES;Geschlecht;GESW;weiblich;497983\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;01;Schleswig-Holstein;GES;Geschlecht;;Insgesamt;1038688\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;16;Th\xFCringen;GES;Geschlecht;GESM;m\xE4nnlich;416629\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;16;Th\xFCringen;GES;Geschlecht;GESW;weiblich;385996\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2021;DLAND;Bundesl\xE4nder;16;Th\xFCringen;GES;Geschlecht;;Insgesamt;802625\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;08;Baden-W\xFCrttemberg;GES;Geschlecht;GESM;m\xE4nnlich;2645423\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;08;Baden-W\xFCrttemberg;GES;Geschlecht;GESW;weiblich;2203257\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;08;Baden-W\xFCrttemberg;GES;Geschlecht;;Insgesamt;4848680\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;09;Bayern;GES;Geschlecht;GESM;m\xE4nnlich;3149082\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;09;Bayern;GES;Geschlecht;GESW;weiblich;2683202\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;09;Bayern;GES;Geschlecht;;Insgesamt;5832284\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;11;Berlin;GES;Geschlecht;GESM;m\xE4nnlich;834365\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;11;Berlin;GES;Geschlecht;GESW;weiblich;805545\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;11;Berlin;GES;Geschlecht;;Insgesamt;1639910\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;12;Brandenburg;GES;Geschlecht;GESM;m\xE4nnlich;456435\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;12;Brandenburg;GES;Geschlecht;GESW;weiblich;418642\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;12;Brandenburg;GES;Geschlecht;;Insgesamt;875077\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;04;Bremen;GES;Geschlecht;GESM;m\xE4nnlich;189599\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;04;Bremen;GES;Geschlecht;GESW;weiblich;151463\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;04;Bremen;GES;Geschlecht;;Insgesamt;341062\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;02;Hamburg;GES;Geschlecht;GESM;m\xE4nnlich;553003\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;02;Hamburg;GES;Geschlecht;GESW;weiblich;478643\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;02;Hamburg;GES;Geschlecht;;Insgesamt;1031646\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;06;Hessen;GES;Geschlecht;GESM;m\xE4nnlich;1470450\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;06;Hessen;GES;Geschlecht;GESW;weiblich;1230773\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;06;Hessen;GES;Geschlecht;;Insgesamt;2701223\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;13;Mecklenburg-Vorpommern;GES;Geschlecht;GESM;m\xE4nnlich;287028\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;13;Mecklenburg-Vorpommern;GES;Geschlecht;GESW;weiblich;290980\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;13;Mecklenburg-Vorpommern;GES;Geschlecht;;Insgesamt;578008\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;03;Niedersachsen;GES;Geschlecht;GESM;m\xE4nnlich;1671490\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;03;Niedersachsen;GES;Geschlecht;GESW;weiblich;1432099\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;03;Niedersachsen;GES;Geschlecht;;Insgesamt;3103589\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;05;Nordrhein-Westfalen;GES;Geschlecht;GESM;m\xE4nnlich;3928941\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;05;Nordrhein-Westfalen;GES;Geschlecht;GESW;weiblich;3302709\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;05;Nordrhein-Westfalen;GES;Geschlecht;;Insgesamt;7231650\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;07;Rheinland-Pfalz;GES;Geschlecht;GESM;m\xE4nnlich;785307\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;07;Rheinland-Pfalz;GES;Geschlecht;GESW;weiblich;688676\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;07;Rheinland-Pfalz;GES;Geschlecht;;Insgesamt;1473983\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;10;Saarland;GES;Geschlecht;GESM;m\xE4nnlich;210485\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;10;Saarland;GES;Geschlecht;GESW;weiblich;181905\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;10;Saarland;GES;Geschlecht;;Insgesamt;392390\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;14;Sachsen;GES;Geschlecht;GESM;m\xE4nnlich;851052\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;14;Sachsen;GES;Geschlecht;GESW;weiblich;787365\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;14;Sachsen;GES;Geschlecht;;Insgesamt;1638417\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;15;Sachsen-Anhalt;GES;Geschlecht;GESM;m\xE4nnlich;410434\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;15;Sachsen-Anhalt;GES;Geschlecht;GESW;weiblich;391479\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;15;Sachsen-Anhalt;GES;Geschlecht;;Insgesamt;801913\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;01;Schleswig-Holstein;GES;Geschlecht;GESM;m\xE4nnlich;541430\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;01;Schleswig-Holstein;GES;Geschlecht;GESW;weiblich;498492\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;01;Schleswig-Holstein;GES;Geschlecht;;Insgesamt;1039922\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;16;Th\xFCringen;GES;Geschlecht;GESM;m\xE4nnlich;417535\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;16;Th\xFCringen;GES;Geschlecht;GESW;weiblich;385199\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2022;DLAND;Bundesl\xE4nder;16;Th\xFCringen;GES;Geschlecht;;Insgesamt;802734\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;08;Baden-W\xFCrttemberg;GES;Geschlecht;GESM;m\xE4nnlich;2652390\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;08;Baden-W\xFCrttemberg;GES;Geschlecht;GESW;weiblich;2206682\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;08;Baden-W\xFCrttemberg;GES;Geschlecht;;Insgesamt;4859072\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;09;Bayern;GES;Geschlecht;GESM;m\xE4nnlich;3170731\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;09;Bayern;GES;Geschlecht;GESW;weiblich;2694852\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;09;Bayern;GES;Geschlecht;;Insgesamt;5865583\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;11;Berlin;GES;Geschlecht;GESM;m\xE4nnlich;842923\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;11;Berlin;GES;Geschlecht;GESW;weiblich;810988\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;11;Berlin;GES;Geschlecht;;Insgesamt;1653911\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;12;Brandenburg;GES;Geschlecht;GESM;m\xE4nnlich;460531\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;12;Brandenburg;GES;Geschlecht;GESW;weiblich;421675\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;12;Brandenburg;GES;Geschlecht;;Insgesamt;882206\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;04;Bremen;GES;Geschlecht;GESM;m\xE4nnlich;190705\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;04;Bremen;GES;Geschlecht;GESW;weiblich;151538\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;04;Bremen;GES;Geschlecht;;Insgesamt;342243\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;02;Hamburg;GES;Geschlecht;GESM;m\xE4nnlich;557251\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;02;Hamburg;GES;Geschlecht;GESW;weiblich;481288\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;02;Hamburg;GES;Geschlecht;;Insgesamt;1038539\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;06;Hessen;GES;Geschlecht;GESM;m\xE4nnlich;1476844\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;06;Hessen;GES;Geschlecht;GESW;weiblich;1234332\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;06;Hessen;GES;Geschlecht;;Insgesamt;2711176\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;13;Mecklenburg-Vorpommern;GES;Geschlecht;GESM;m\xE4nnlich;290130\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;13;Mecklenburg-Vorpommern;GES;Geschlecht;GESW;weiblich;294243\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;13;Mecklenburg-Vorpommern;GES;Geschlecht;;Insgesamt;584373\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;03;Niedersachsen;GES;Geschlecht;GESM;m\xE4nnlich;1676284\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;03;Niedersachsen;GES;Geschlecht;GESW;weiblich;1433673\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;03;Niedersachsen;GES;Geschlecht;;Insgesamt;3109957\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;05;Nordrhein-Westfalen;GES;Geschlecht;GESM;m\xE4nnlich;3932899\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;05;Nordrhein-Westfalen;GES;Geschlecht;GESW;weiblich;3299942\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;05;Nordrhein-Westfalen;GES;Geschlecht;;Insgesamt;7232841\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;07;Rheinland-Pfalz;GES;Geschlecht;GESM;m\xE4nnlich;788784\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;07;Rheinland-Pfalz;GES;Geschlecht;GESW;weiblich;690871\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;07;Rheinland-Pfalz;GES;Geschlecht;;Insgesamt;1479655\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;10;Saarland;GES;Geschlecht;GESM;m\xE4nnlich;210623\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;10;Saarland;GES;Geschlecht;GESW;weiblich;181279\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;10;Saarland;GES;Geschlecht;;Insgesamt;391902\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;14;Sachsen;GES;Geschlecht;GESM;m\xE4nnlich;853474\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;14;Sachsen;GES;Geschlecht;GESW;weiblich;787728\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;14;Sachsen;GES;Geschlecht;;Insgesamt;1641202\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;15;Sachsen-Anhalt;GES;Geschlecht;GESM;m\xE4nnlich;412263\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;15;Sachsen-Anhalt;GES;Geschlecht;GESW;weiblich;391932\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;15;Sachsen-Anhalt;GES;Geschlecht;;Insgesamt;804195\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;01;Schleswig-Holstein;GES;Geschlecht;GESM;m\xE4nnlich;543402\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;01;Schleswig-Holstein;GES;Geschlecht;GESW;weiblich;500149\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;01;Schleswig-Holstein;GES;Geschlecht;;Insgesamt;1043551\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;16;Th\xFCringen;GES;Geschlecht;GESM;m\xE4nnlich;418124\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;16;Th\xFCringen;GES;Geschlecht;GESW;weiblich;385171\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2022;DLAND;Bundesl\xE4nder;16;Th\xFCringen;GES;Geschlecht;;Insgesamt;803295\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;08;Baden-W\xFCrttemberg;GES;Geschlecht;GESM;m\xE4nnlich;2684743\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;08;Baden-W\xFCrttemberg;GES;Geschlecht;GESW;weiblich;2230469\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;08;Baden-W\xFCrttemberg;GES;Geschlecht;;Insgesamt;4915212\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;09;Bayern;GES;Geschlecht;GESM;m\xE4nnlich;3212011\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;09;Bayern;GES;Geschlecht;GESW;weiblich;2727679\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;09;Bayern;GES;Geschlecht;;Insgesamt;5939690\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;11;Berlin;GES;Geschlecht;GESM;m\xE4nnlich;853188\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;11;Berlin;GES;Geschlecht;GESW;weiblich;817392\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;11;Berlin;GES;Geschlecht;;Insgesamt;1670580\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;12;Brandenburg;GES;Geschlecht;GESM;m\xE4nnlich;467281\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;12;Brandenburg;GES;Geschlecht;GESW;weiblich;424799\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;12;Brandenburg;GES;Geschlecht;;Insgesamt;892080\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;04;Bremen;GES;Geschlecht;GESM;m\xE4nnlich;194322\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;04;Bremen;GES;Geschlecht;GESW;weiblich;154161\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;04;Bremen;GES;Geschlecht;;Insgesamt;348483\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;02;Hamburg;GES;Geschlecht;GESM;m\xE4nnlich;566582\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;02;Hamburg;GES;Geschlecht;GESW;weiblich;488664\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;02;Hamburg;GES;Geschlecht;;Insgesamt;1055246\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;06;Hessen;GES;Geschlecht;GESM;m\xE4nnlich;1495635\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;06;Hessen;GES;Geschlecht;GESW;weiblich;1248814\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;06;Hessen;GES;Geschlecht;;Insgesamt;2744449\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;13;Mecklenburg-Vorpommern;GES;Geschlecht;GESM;m\xE4nnlich;293325\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;13;Mecklenburg-Vorpommern;GES;Geschlecht;GESW;weiblich;296643\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;13;Mecklenburg-Vorpommern;GES;Geschlecht;;Insgesamt;589968\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;03;Niedersachsen;GES;Geschlecht;GESM;m\xE4nnlich;1704826\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;03;Niedersachsen;GES;Geschlecht;GESW;weiblich;1454795\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;03;Niedersachsen;GES;Geschlecht;;Insgesamt;3159621\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;05;Nordrhein-Westfalen;GES;Geschlecht;GESM;m\xE4nnlich;3990486\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;05;Nordrhein-Westfalen;GES;Geschlecht;GESW;weiblich;3350803\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;05;Nordrhein-Westfalen;GES;Geschlecht;;Insgesamt;7341289\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;07;Rheinland-Pfalz;GES;Geschlecht;GESM;m\xE4nnlich;799621\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;07;Rheinland-Pfalz;GES;Geschlecht;GESW;weiblich;699991\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;07;Rheinland-Pfalz;GES;Geschlecht;;Insgesamt;1499612\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;10;Saarland;GES;Geschlecht;GESM;m\xE4nnlich;213196\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;10;Saarland;GES;Geschlecht;GESW;weiblich;182980\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;10;Saarland;GES;Geschlecht;;Insgesamt;396176\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;14;Sachsen;GES;Geschlecht;GESM;m\xE4nnlich;864386\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;14;Sachsen;GES;Geschlecht;GESW;weiblich;795681\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;14;Sachsen;GES;Geschlecht;;Insgesamt;1660067\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;15;Sachsen-Anhalt;GES;Geschlecht;GESM;m\xE4nnlich;417533\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;15;Sachsen-Anhalt;GES;Geschlecht;GESW;weiblich;395433\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;15;Sachsen-Anhalt;GES;Geschlecht;;Insgesamt;812966\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;01;Schleswig-Holstein;GES;Geschlecht;GESM;m\xE4nnlich;552579\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;01;Schleswig-Holstein;GES;Geschlecht;GESW;weiblich;507209\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;01;Schleswig-Holstein;GES;Geschlecht;;Insgesamt;1059788\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;16;Th\xFCringen;GES;Geschlecht;GESM;m\xE4nnlich;423277\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;16;Th\xFCringen;GES;Geschlecht;GESW;weiblich;388543\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2022;DLAND;Bundesl\xE4nder;16;Th\xFCringen;GES;Geschlecht;;Insgesamt;811820\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;08;Baden-W\xFCrttemberg;GES;Geschlecht;GESM;m\xE4nnlich;2671719\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;08;Baden-W\xFCrttemberg;GES;Geschlecht;GESW;weiblich;2229911\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;08;Baden-W\xFCrttemberg;GES;Geschlecht;;Insgesamt;4901630\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;09;Bayern;GES;Geschlecht;GESM;m\xE4nnlich;3177153\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;09;Bayern;GES;Geschlecht;GESW;weiblich;2722031\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;09;Bayern;GES;Geschlecht;;Insgesamt;5899184\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;11;Berlin;GES;Geschlecht;GESM;m\xE4nnlich;852180\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;11;Berlin;GES;Geschlecht;GESW;weiblich;819787\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;11;Berlin;GES;Geschlecht;;Insgesamt;1671967\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;12;Brandenburg;GES;Geschlecht;GESM;m\xE4nnlich;461568\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;12;Brandenburg;GES;Geschlecht;GESW;weiblich;422111\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;12;Brandenburg;GES;Geschlecht;;Insgesamt;883679\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;04;Bremen;GES;Geschlecht;GESM;m\xE4nnlich;193283\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;04;Bremen;GES;Geschlecht;GESW;weiblich;154305\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;04;Bremen;GES;Geschlecht;;Insgesamt;347588\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;02;Hamburg;GES;Geschlecht;GESM;m\xE4nnlich;566674\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;02;Hamburg;GES;Geschlecht;GESW;weiblich;490474\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;02;Hamburg;GES;Geschlecht;;Insgesamt;1057148\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;06;Hessen;GES;Geschlecht;GESM;m\xE4nnlich;1487997\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;06;Hessen;GES;Geschlecht;GESW;weiblich;1249048\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;06;Hessen;GES;Geschlecht;;Insgesamt;2737045\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;13;Mecklenburg-Vorpommern;GES;Geschlecht;GESM;m\xE4nnlich;286897\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;13;Mecklenburg-Vorpommern;GES;Geschlecht;GESW;weiblich;291317\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;13;Mecklenburg-Vorpommern;GES;Geschlecht;;Insgesamt;578214\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;03;Niedersachsen;GES;Geschlecht;GESM;m\xE4nnlich;1682843\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;03;Niedersachsen;GES;Geschlecht;GESW;weiblich;1447308\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;03;Niedersachsen;GES;Geschlecht;;Insgesamt;3130151\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;05;Nordrhein-Westfalen;GES;Geschlecht;GESM;m\xE4nnlich;3966347\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;05;Nordrhein-Westfalen;GES;Geschlecht;GESW;weiblich;3347851\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;05;Nordrhein-Westfalen;GES;Geschlecht;;Insgesamt;7314198\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;07;Rheinland-Pfalz;GES;Geschlecht;GESM;m\xE4nnlich;788992\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;07;Rheinland-Pfalz;GES;Geschlecht;GESW;weiblich;696080\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;07;Rheinland-Pfalz;GES;Geschlecht;;Insgesamt;1485072\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;10;Saarland;GES;Geschlecht;GESM;m\xE4nnlich;210976\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;10;Saarland;GES;Geschlecht;GESW;weiblich;182596\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;10;Saarland;GES;Geschlecht;;Insgesamt;393572\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;14;Sachsen;GES;Geschlecht;GESM;m\xE4nnlich;857486\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;14;Sachsen;GES;Geschlecht;GESW;weiblich;792018\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;14;Sachsen;GES;Geschlecht;;Insgesamt;1649504\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;15;Sachsen-Anhalt;GES;Geschlecht;GESM;m\xE4nnlich;411613\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;15;Sachsen-Anhalt;GES;Geschlecht;GESW;weiblich;392092\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;15;Sachsen-Anhalt;GES;Geschlecht;;Insgesamt;803705\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;01;Schleswig-Holstein;GES;Geschlecht;GESM;m\xE4nnlich;545424\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;01;Schleswig-Holstein;GES;Geschlecht;GESW;weiblich;502377\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;01;Schleswig-Holstein;GES;Geschlecht;;Insgesamt;1047801\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;16;Th\xFCringen;GES;Geschlecht;GESM;m\xE4nnlich;417959\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;16;Th\xFCringen;GES;Geschlecht;GESW;weiblich;385717\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.12.2022;DLAND;Bundesl\xE4nder;16;Th\xFCringen;GES;Geschlecht;;Insgesamt;803676\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;08;Baden-W\xFCrttemberg;GES;Geschlecht;GESM;m\xE4nnlich;2675597\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;08;Baden-W\xFCrttemberg;GES;Geschlecht;GESW;weiblich;2229001\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;08;Baden-W\xFCrttemberg;GES;Geschlecht;;Insgesamt;4904598\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;09;Bayern;GES;Geschlecht;GESM;m\xE4nnlich;3186317\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;09;Bayern;GES;Geschlecht;GESW;weiblich;2721595\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;09;Bayern;GES;Geschlecht;;Insgesamt;5907912\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;11;Berlin;GES;Geschlecht;GESM;m\xE4nnlich;851644\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;11;Berlin;GES;Geschlecht;GESW;weiblich;818636\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;11;Berlin;GES;Geschlecht;;Insgesamt;1670280\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;12;Brandenburg;GES;Geschlecht;GESM;m\xE4nnlich;461190\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;12;Brandenburg;GES;Geschlecht;GESW;weiblich;419018\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;12;Brandenburg;GES;Geschlecht;;Insgesamt;880208\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;04;Bremen;GES;Geschlecht;GESM;m\xE4nnlich;193616\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;04;Bremen;GES;Geschlecht;GESW;weiblich;153629\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;04;Bremen;GES;Geschlecht;;Insgesamt;347245\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;02;Hamburg;GES;Geschlecht;GESM;m\xE4nnlich;568680\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;02;Hamburg;GES;Geschlecht;GESW;weiblich;492690\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;02;Hamburg;GES;Geschlecht;;Insgesamt;1061370\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;06;Hessen;GES;Geschlecht;GESM;m\xE4nnlich;1491388\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;06;Hessen;GES;Geschlecht;GESW;weiblich;1249011\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;06;Hessen;GES;Geschlecht;;Insgesamt;2740399\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;13;Mecklenburg-Vorpommern;GES;Geschlecht;GESM;m\xE4nnlich;285200\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;13;Mecklenburg-Vorpommern;GES;Geschlecht;GESW;weiblich;290046\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;13;Mecklenburg-Vorpommern;GES;Geschlecht;;Insgesamt;575246\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;03;Niedersachsen;GES;Geschlecht;GESM;m\xE4nnlich;1682896\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;03;Niedersachsen;GES;Geschlecht;GESW;weiblich;1444189\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;03;Niedersachsen;GES;Geschlecht;;Insgesamt;3127085\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;05;Nordrhein-Westfalen;GES;Geschlecht;GESM;m\xE4nnlich;3959856\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;05;Nordrhein-Westfalen;GES;Geschlecht;GESW;weiblich;3337796\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;05;Nordrhein-Westfalen;GES;Geschlecht;;Insgesamt;7297652\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;07;Rheinland-Pfalz;GES;Geschlecht;GESM;m\xE4nnlich;789679\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;07;Rheinland-Pfalz;GES;Geschlecht;GESW;weiblich;693689\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;07;Rheinland-Pfalz;GES;Geschlecht;;Insgesamt;1483368\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;10;Saarland;GES;Geschlecht;GESM;m\xE4nnlich;210997\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;10;Saarland;GES;Geschlecht;GESW;weiblich;182056\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;10;Saarland;GES;Geschlecht;;Insgesamt;393053\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;14;Sachsen;GES;Geschlecht;GESM;m\xE4nnlich;853622\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;14;Sachsen;GES;Geschlecht;GESW;weiblich;787033\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;14;Sachsen;GES;Geschlecht;;Insgesamt;1640655\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;15;Sachsen-Anhalt;GES;Geschlecht;GESM;m\xE4nnlich;410018\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;15;Sachsen-Anhalt;GES;Geschlecht;GESW;weiblich;389218\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;15;Sachsen-Anhalt;GES;Geschlecht;;Insgesamt;799236\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;01;Schleswig-Holstein;GES;Geschlecht;GESM;m\xE4nnlich;545823\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;01;Schleswig-Holstein;GES;Geschlecht;GESW;weiblich;502264\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;01;Schleswig-Holstein;GES;Geschlecht;;Insgesamt;1048087\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;16;Th\xFCringen;GES;Geschlecht;GESM;m\xE4nnlich;416844\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;16;Th\xFCringen;GES;Geschlecht;GESW;weiblich;384082\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;31.03.2023;DLAND;Bundesl\xE4nder;16;Th\xFCringen;GES;Geschlecht;;Insgesamt;800926\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;08;Baden-W\xFCrttemberg;GES;Geschlecht;GESM;m\xE4nnlich;2680378\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;08;Baden-W\xFCrttemberg;GES;Geschlecht;GESW;weiblich;2228939\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;08;Baden-W\xFCrttemberg;GES;Geschlecht;;Insgesamt;4909317\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;09;Bayern;GES;Geschlecht;GESM;m\xE4nnlich;3201247\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;09;Bayern;GES;Geschlecht;GESW;weiblich;2723955\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;09;Bayern;GES;Geschlecht;;Insgesamt;5925202\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;11;Berlin;GES;Geschlecht;GESM;m\xE4nnlich;859558\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;11;Berlin;GES;Geschlecht;GESW;weiblich;820531\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;11;Berlin;GES;Geschlecht;;Insgesamt;1680089\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;12;Brandenburg;GES;Geschlecht;GESM;m\xE4nnlich;463652\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;12;Brandenburg;GES;Geschlecht;GESW;weiblich;419637\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;12;Brandenburg;GES;Geschlecht;;Insgesamt;883289\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;04;Bremen;GES;Geschlecht;GESM;m\xE4nnlich;192393\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;04;Bremen;GES;Geschlecht;GESW;weiblich;152487\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;04;Bremen;GES;Geschlecht;;Insgesamt;344880\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;02;Hamburg;GES;Geschlecht;GESM;m\xE4nnlich;569842\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;02;Hamburg;GES;Geschlecht;GESW;weiblich;491984\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;02;Hamburg;GES;Geschlecht;;Insgesamt;1061826\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;06;Hessen;GES;Geschlecht;GESM;m\xE4nnlich;1490847\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;06;Hessen;GES;Geschlecht;GESW;weiblich;1248213\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;06;Hessen;GES;Geschlecht;;Insgesamt;2739060\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;13;Mecklenburg-Vorpommern;GES;Geschlecht;GESM;m\xE4nnlich;288503\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;13;Mecklenburg-Vorpommern;GES;Geschlecht;GESW;weiblich;292563\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;13;Mecklenburg-Vorpommern;GES;Geschlecht;;Insgesamt;581066\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;03;Niedersachsen;GES;Geschlecht;GESM;m\xE4nnlich;1685041\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;03;Niedersachsen;GES;Geschlecht;GESW;weiblich;1442326\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;03;Niedersachsen;GES;Geschlecht;;Insgesamt;3127367\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;05;Nordrhein-Westfalen;GES;Geschlecht;GESM;m\xE4nnlich;3954470\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;05;Nordrhein-Westfalen;GES;Geschlecht;GESW;weiblich;3326804\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;05;Nordrhein-Westfalen;GES;Geschlecht;;Insgesamt;7281274\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;07;Rheinland-Pfalz;GES;Geschlecht;GESM;m\xE4nnlich;792437\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;07;Rheinland-Pfalz;GES;Geschlecht;GESW;weiblich;694394\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;07;Rheinland-Pfalz;GES;Geschlecht;;Insgesamt;1486831\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;10;Saarland;GES;Geschlecht;GESM;m\xE4nnlich;211058\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;10;Saarland;GES;Geschlecht;GESW;weiblich;181380\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;10;Saarland;GES;Geschlecht;;Insgesamt;392438\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;14;Sachsen;GES;Geschlecht;GESM;m\xE4nnlich;857419\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;14;Sachsen;GES;Geschlecht;GESW;weiblich;786277\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;14;Sachsen;GES;Geschlecht;;Insgesamt;1643696\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;15;Sachsen-Anhalt;GES;Geschlecht;GESM;m\xE4nnlich;410872\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;15;Sachsen-Anhalt;GES;Geschlecht;GESW;weiblich;388203\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;15;Sachsen-Anhalt;GES;Geschlecht;;Insgesamt;799075\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;01;Schleswig-Holstein;GES;Geschlecht;GESM;m\xE4nnlich;548871\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;01;Schleswig-Holstein;GES;Geschlecht;GESW;weiblich;503521\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;01;Schleswig-Holstein;GES;Geschlecht;;Insgesamt;1052392\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;16;Th\xFCringen;GES;Geschlecht;GESM;m\xE4nnlich;416965\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;16;Th\xFCringen;GES;Geschlecht;GESW;weiblich;382579\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.06.2023;DLAND;Bundesl\xE4nder;16;Th\xFCringen;GES;Geschlecht;;Insgesamt;799544\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;08;Baden-W\xFCrttemberg;GES;Geschlecht;GESM;m\xE4nnlich;2705576\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;08;Baden-W\xFCrttemberg;GES;Geschlecht;GESW;weiblich;2250476\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;08;Baden-W\xFCrttemberg;GES;Geschlecht;;Insgesamt;4956052\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;09;Bayern;GES;Geschlecht;GESM;m\xE4nnlich;3233887\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;09;Bayern;GES;Geschlecht;GESW;weiblich;2751368\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;09;Bayern;GES;Geschlecht;;Insgesamt;5985255\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;11;Berlin;GES;Geschlecht;GESM;m\xE4nnlich;865423\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;11;Berlin;GES;Geschlecht;GESW;weiblich;824378\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;11;Berlin;GES;Geschlecht;;Insgesamt;1689801\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;12;Brandenburg;GES;Geschlecht;GESM;m\xE4nnlich;466229\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;12;Brandenburg;GES;Geschlecht;GESW;weiblich;421052\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;12;Brandenburg;GES;Geschlecht;;Insgesamt;887281\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;04;Bremen;GES;Geschlecht;GESM;m\xE4nnlich;194687\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;04;Bremen;GES;Geschlecht;GESW;weiblich;154384\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;04;Bremen;GES;Geschlecht;;Insgesamt;349071\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;02;Hamburg;GES;Geschlecht;GESM;m\xE4nnlich;578706\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;02;Hamburg;GES;Geschlecht;GESW;weiblich;497391\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;02;Hamburg;GES;Geschlecht;;Insgesamt;1076097\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;06;Hessen;GES;Geschlecht;GESM;m\xE4nnlich;1507840\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;06;Hessen;GES;Geschlecht;GESW;weiblich;1261091\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;06;Hessen;GES;Geschlecht;;Insgesamt;2768931\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;13;Mecklenburg-Vorpommern;GES;Geschlecht;GESM;m\xE4nnlich;291579\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;13;Mecklenburg-Vorpommern;GES;Geschlecht;GESW;weiblich;294804\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;13;Mecklenburg-Vorpommern;GES;Geschlecht;;Insgesamt;586383\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;03;Niedersachsen;GES;Geschlecht;GESM;m\xE4nnlich;1710361\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;03;Niedersachsen;GES;Geschlecht;GESW;weiblich;1462705\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;03;Niedersachsen;GES;Geschlecht;;Insgesamt;3173066\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;05;Nordrhein-Westfalen;GES;Geschlecht;GESM;m\xE4nnlich;4006273\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;05;Nordrhein-Westfalen;GES;Geschlecht;GESW;weiblich;3370215\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;05;Nordrhein-Westfalen;GES;Geschlecht;;Insgesamt;7376488\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;07;Rheinland-Pfalz;GES;Geschlecht;GESM;m\xE4nnlich;802007\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;07;Rheinland-Pfalz;GES;Geschlecht;GESW;weiblich;702229\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;07;Rheinland-Pfalz;GES;Geschlecht;;Insgesamt;1504236\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;10;Saarland;GES;Geschlecht;GESM;m\xE4nnlich;212856\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;10;Saarland;GES;Geschlecht;GESW;weiblich;182642\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;10;Saarland;GES;Geschlecht;;Insgesamt;395498\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;14;Sachsen;GES;Geschlecht;GESM;m\xE4nnlich;865733\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;14;Sachsen;GES;Geschlecht;GESW;weiblich;791835\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;14;Sachsen;GES;Geschlecht;;Insgesamt;1657568\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;15;Sachsen-Anhalt;GES;Geschlecht;GESM;m\xE4nnlich;416483\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;15;Sachsen-Anhalt;GES;Geschlecht;GESW;weiblich;391794\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;15;Sachsen-Anhalt;GES;Geschlecht;;Insgesamt;808277\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;01;Schleswig-Holstein;GES;Geschlecht;GESM;m\xE4nnlich;556470\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;01;Schleswig-Holstein;GES;Geschlecht;GESW;weiblich;509301\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;01;Schleswig-Holstein;GES;Geschlecht;;Insgesamt;1065771\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;16;Th\xFCringen;GES;Geschlecht;GESM;m\xE4nnlich;421326\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;16;Th\xFCringen;GES;Geschlecht;GESW;weiblich;385454\n13111;Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten;STAG;Stichtag;30.09.2023;DLAND;Bundesl\xE4nder;16;Th\xFCringen;GES;Geschlecht;;Insgesamt;806780\n"
+      string: !!binary |
+        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
+        EAAAAAA=
     headers:
       Connection:
       - Keep-Alive
       Content-Disposition:
-      - attachement;filename=13111-0005_flat.csv
+      - attachment; filename=13111-0005_1733257045589_de_flat.zip
+      Content-Length:
+      - '4394'
       Content-Type:
-      - text/csv
+      - application/zip
       Date:
-      - Sat, 29 Jun 2024 21:07:43 GMT
+      - Tue, 03 Dec 2024 20:17:23 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
       - Apache
-      Transfer-Encoding:
-      - chunked
     status:
       code: 200
       message: '200'
 - request:
-    body: null
+    body: name=13111-0005&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=de&quality=off&format=ffcsv
     headers:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br
+      - gzip, deflate, br, zstd
       Connection:
       - keep-alive
+      Content-Length:
+      - '131'
+      Content-Type:
+      - application/x-www-form-urlencoded
       User-Agent:
       - python-requests/2.32.3
-    method: GET
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=13111-0005&quality=off
+    method: POST
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table
   response:
     body:
       string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"13111-0005\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"13111-0005\",\"Content\":\"Sozialversicherungspflichtig
-        Besch\xE4ftigte am Arbeitsort:\\nBundesl\xE4nder, Stichtag, Geschlecht\",\"Time\":{\"From\":\"31.03.2008\",\"To\":\"30.09.2023\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"13111\",\"Content\":\"Statistik
-        d. sozialversicherungspfl. Besch\xE4ftigten\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Structure\":[{\"Code\":\"ERW065\",\"Content\":\"Sozialvers.pflichtig
-        Besch\xE4ftigte am Arbeitsort\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"STAG\",\"Content\":\"Stichtag\",\"Type\":\"Merkmal\",\"Values\":\"8\",\"Selected\":\"8\",\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Rows\":[{\"Code\":\"GES\",\"Content\":\"Geschlecht\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Subtitel\":{\"Code\":\"DLAND\",\"Content\":\"Bundesl\xE4nder\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        Besch\xE4ftigte am Arbeitsort:\\nBundesl\xE4nder, Stichtag, Geschlecht\",\"Time\":{\"From\":\"31.03.2008\",\"To\":\"31.03.2024\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"13111\",\"Content\":\"Statistik
+        d. sozialversicherungspfl. Besch\xE4ftigten\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"ERW065\",\"Content\":\"Sozialvers.pflichtig
+        Besch\xE4ftigte am Arbeitsort\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"STAG\",\"Content\":\"Stichtag\",\"Type\":\"Merkmal\",\"Values\":\"8\",\"Selected\":\"8\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Rows\":[{\"Code\":\"GES\",\"Content\":\"Geschlecht\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Subtitel\":{\"Code\":\"DLAND\",\"Content\":\"Bundesl\xE4nder\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
         parent\"},\"Subheading\":null},\"Updated\":\"28.12.2022 17:14:03h\"},\"Copyright\":\"\xA9
         Statistisches Bundesamt (Destatis), 2024\"}"
     headers:
       Connection:
       - Keep-Alive
       Content-Length:
-      - '1319'
+      - '1404'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Sat, 29 Jun 2024 21:07:45 GMT
+      - Tue, 03 Dec 2024 20:17:25 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
@@ -458,458 +160,159 @@ interactions:
       code: 200
       message: '200'
 - request:
-    body: null
+    body: name=13111-0005&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=en&quality=off&format=ffcsv
     headers:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br
+      - gzip, deflate, br, zstd
       Connection:
       - keep-alive
+      Content-Length:
+      - '131'
+      Content-Type:
+      - application/x-www-form-urlencoded
       User-Agent:
       - python-requests/2.32.3
-    method: GET
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile?area=all&format=ffcsv&language=en&name=13111-0005&quality=off
+    method: POST
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile
   response:
     body:
-      string: "statistics_code;statistics_label;time_code;time_label;time;1_variable_code;1_variable_label;1_variable_code;1_variable_code;2_variable_code;2_variable_label;2_variable_code;2_variable_code;ERW065__Employees_subj._to_social_insur._at_place_of_work__number\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;08;Baden-W\xFCrttemberg;GES;Sex;GESM;Male;2640998\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;08;Baden-W\xFCrttemberg;GES;Sex;GESW;Female;2202425\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;08;Baden-W\xFCrttemberg;GES;Sex;;Total;4843423\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;09;Bayern;GES;Sex;GESM;Male;3132399\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;09;Bayern;GES;Sex;GESW;Female;2680481\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;09;Bayern;GES;Sex;;Total;5812880\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;11;Berlin;GES;Sex;GESM;Male;823399\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;11;Berlin;GES;Sex;GESW;Female;799379\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;11;Berlin;GES;Sex;;Total;1622778\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;12;Brandenburg;GES;Sex;GESM;Male;456603\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;12;Brandenburg;GES;Sex;GESW;Female;420198\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;12;Brandenburg;GES;Sex;;Total;876801\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;04;Bremen;GES;Sex;GESM;Male;189812\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;04;Bremen;GES;Sex;GESW;Female;151988\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;04;Bremen;GES;Sex;;Total;341800\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;02;Hamburg;GES;Sex;GESM;Male;550809\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;02;Hamburg;GES;Sex;GESW;Female;477730\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;02;Hamburg;GES;Sex;;Total;1028539\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;06;Hessen;GES;Sex;GESM;Male;1468306\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;06;Hessen;GES;Sex;GESW;Female;1231421\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;06;Hessen;GES;Sex;;Total;2699727\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;13;Mecklenburg-Vorpommern;GES;Sex;GESM;Male;288328\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;13;Mecklenburg-Vorpommern;GES;Sex;GESW;Female;292443\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;13;Mecklenburg-Vorpommern;GES;Sex;;Total;580771\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;03;Niedersachsen;GES;Sex;GESM;Male;1671005\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;03;Niedersachsen;GES;Sex;GESW;Female;1432496\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;03;Niedersachsen;GES;Sex;;Total;3103501\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;05;Nordrhein-Westfalen;GES;Sex;GESM;Male;3923561\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;05;Nordrhein-Westfalen;GES;Sex;GESW;Female;3296143\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;05;Nordrhein-Westfalen;GES;Sex;;Total;7219704\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;07;Rheinland-Pfalz;GES;Sex;GESM;Male;781942\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;07;Rheinland-Pfalz;GES;Sex;GESW;Female;689498\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;07;Rheinland-Pfalz;GES;Sex;;Total;1471440\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;10;Saarland;GES;Sex;GESM;Male;210651\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;10;Saarland;GES;Sex;GESW;Female;182243\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;10;Saarland;GES;Sex;;Total;392894\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;14;Sachsen;GES;Sex;GESM;Male;851460\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;14;Sachsen;GES;Sex;GESW;Female;790866\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;14;Sachsen;GES;Sex;;Total;1642326\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;15;Sachsen-Anhalt;GES;Sex;GESM;Male;411225\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;15;Sachsen-Anhalt;GES;Sex;GESW;Female;393968\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;15;Sachsen-Anhalt;GES;Sex;;Total;805193\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;01;Schleswig-Holstein;GES;Sex;GESM;Male;540705\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;01;Schleswig-Holstein;GES;Sex;GESW;Female;497983\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;01;Schleswig-Holstein;GES;Sex;;Total;1038688\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;16;Th\xFCringen;GES;Sex;GESM;Male;416629\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;16;Th\xFCringen;GES;Sex;GESW;Female;385996\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2021-12-31;DLAND;L\xE4nder;16;Th\xFCringen;GES;Sex;;Total;802625\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;08;Baden-W\xFCrttemberg;GES;Sex;GESM;Male;2645423\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;08;Baden-W\xFCrttemberg;GES;Sex;GESW;Female;2203257\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;08;Baden-W\xFCrttemberg;GES;Sex;;Total;4848680\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;09;Bayern;GES;Sex;GESM;Male;3149082\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;09;Bayern;GES;Sex;GESW;Female;2683202\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;09;Bayern;GES;Sex;;Total;5832284\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;11;Berlin;GES;Sex;GESM;Male;834365\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;11;Berlin;GES;Sex;GESW;Female;805545\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;11;Berlin;GES;Sex;;Total;1639910\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;12;Brandenburg;GES;Sex;GESM;Male;456435\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;12;Brandenburg;GES;Sex;GESW;Female;418642\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;12;Brandenburg;GES;Sex;;Total;875077\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;04;Bremen;GES;Sex;GESM;Male;189599\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;04;Bremen;GES;Sex;GESW;Female;151463\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;04;Bremen;GES;Sex;;Total;341062\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;02;Hamburg;GES;Sex;GESM;Male;553003\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;02;Hamburg;GES;Sex;GESW;Female;478643\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;02;Hamburg;GES;Sex;;Total;1031646\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;06;Hessen;GES;Sex;GESM;Male;1470450\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;06;Hessen;GES;Sex;GESW;Female;1230773\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;06;Hessen;GES;Sex;;Total;2701223\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;13;Mecklenburg-Vorpommern;GES;Sex;GESM;Male;287028\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;13;Mecklenburg-Vorpommern;GES;Sex;GESW;Female;290980\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;13;Mecklenburg-Vorpommern;GES;Sex;;Total;578008\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;03;Niedersachsen;GES;Sex;GESM;Male;1671490\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;03;Niedersachsen;GES;Sex;GESW;Female;1432099\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;03;Niedersachsen;GES;Sex;;Total;3103589\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;05;Nordrhein-Westfalen;GES;Sex;GESM;Male;3928941\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;05;Nordrhein-Westfalen;GES;Sex;GESW;Female;3302709\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;05;Nordrhein-Westfalen;GES;Sex;;Total;7231650\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;07;Rheinland-Pfalz;GES;Sex;GESM;Male;785307\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;07;Rheinland-Pfalz;GES;Sex;GESW;Female;688676\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;07;Rheinland-Pfalz;GES;Sex;;Total;1473983\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;10;Saarland;GES;Sex;GESM;Male;210485\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;10;Saarland;GES;Sex;GESW;Female;181905\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;10;Saarland;GES;Sex;;Total;392390\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;14;Sachsen;GES;Sex;GESM;Male;851052\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;14;Sachsen;GES;Sex;GESW;Female;787365\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;14;Sachsen;GES;Sex;;Total;1638417\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;15;Sachsen-Anhalt;GES;Sex;GESM;Male;410434\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;15;Sachsen-Anhalt;GES;Sex;GESW;Female;391479\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;15;Sachsen-Anhalt;GES;Sex;;Total;801913\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;01;Schleswig-Holstein;GES;Sex;GESM;Male;541430\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;01;Schleswig-Holstein;GES;Sex;GESW;Female;498492\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;01;Schleswig-Holstein;GES;Sex;;Total;1039922\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;16;Th\xFCringen;GES;Sex;GESM;Male;417535\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;16;Th\xFCringen;GES;Sex;GESW;Female;385199\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-03-31;DLAND;L\xE4nder;16;Th\xFCringen;GES;Sex;;Total;802734\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;08;Baden-W\xFCrttemberg;GES;Sex;GESM;Male;2652390\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;08;Baden-W\xFCrttemberg;GES;Sex;GESW;Female;2206682\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;08;Baden-W\xFCrttemberg;GES;Sex;;Total;4859072\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;09;Bayern;GES;Sex;GESM;Male;3170731\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;09;Bayern;GES;Sex;GESW;Female;2694852\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;09;Bayern;GES;Sex;;Total;5865583\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;11;Berlin;GES;Sex;GESM;Male;842923\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;11;Berlin;GES;Sex;GESW;Female;810988\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;11;Berlin;GES;Sex;;Total;1653911\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;12;Brandenburg;GES;Sex;GESM;Male;460531\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;12;Brandenburg;GES;Sex;GESW;Female;421675\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;12;Brandenburg;GES;Sex;;Total;882206\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;04;Bremen;GES;Sex;GESM;Male;190705\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;04;Bremen;GES;Sex;GESW;Female;151538\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;04;Bremen;GES;Sex;;Total;342243\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;02;Hamburg;GES;Sex;GESM;Male;557251\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;02;Hamburg;GES;Sex;GESW;Female;481288\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;02;Hamburg;GES;Sex;;Total;1038539\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;06;Hessen;GES;Sex;GESM;Male;1476844\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;06;Hessen;GES;Sex;GESW;Female;1234332\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;06;Hessen;GES;Sex;;Total;2711176\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;13;Mecklenburg-Vorpommern;GES;Sex;GESM;Male;290130\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;13;Mecklenburg-Vorpommern;GES;Sex;GESW;Female;294243\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;13;Mecklenburg-Vorpommern;GES;Sex;;Total;584373\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;03;Niedersachsen;GES;Sex;GESM;Male;1676284\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;03;Niedersachsen;GES;Sex;GESW;Female;1433673\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;03;Niedersachsen;GES;Sex;;Total;3109957\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;05;Nordrhein-Westfalen;GES;Sex;GESM;Male;3932899\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;05;Nordrhein-Westfalen;GES;Sex;GESW;Female;3299942\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;05;Nordrhein-Westfalen;GES;Sex;;Total;7232841\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;07;Rheinland-Pfalz;GES;Sex;GESM;Male;788784\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;07;Rheinland-Pfalz;GES;Sex;GESW;Female;690871\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;07;Rheinland-Pfalz;GES;Sex;;Total;1479655\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;10;Saarland;GES;Sex;GESM;Male;210623\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;10;Saarland;GES;Sex;GESW;Female;181279\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;10;Saarland;GES;Sex;;Total;391902\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;14;Sachsen;GES;Sex;GESM;Male;853474\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;14;Sachsen;GES;Sex;GESW;Female;787728\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;14;Sachsen;GES;Sex;;Total;1641202\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;15;Sachsen-Anhalt;GES;Sex;GESM;Male;412263\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;15;Sachsen-Anhalt;GES;Sex;GESW;Female;391932\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;15;Sachsen-Anhalt;GES;Sex;;Total;804195\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;01;Schleswig-Holstein;GES;Sex;GESM;Male;543402\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;01;Schleswig-Holstein;GES;Sex;GESW;Female;500149\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;01;Schleswig-Holstein;GES;Sex;;Total;1043551\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;16;Th\xFCringen;GES;Sex;GESM;Male;418124\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;16;Th\xFCringen;GES;Sex;GESW;Female;385171\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-06-30;DLAND;L\xE4nder;16;Th\xFCringen;GES;Sex;;Total;803295\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;08;Baden-W\xFCrttemberg;GES;Sex;GESM;Male;2684743\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;08;Baden-W\xFCrttemberg;GES;Sex;GESW;Female;2230469\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;08;Baden-W\xFCrttemberg;GES;Sex;;Total;4915212\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;09;Bayern;GES;Sex;GESM;Male;3212011\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;09;Bayern;GES;Sex;GESW;Female;2727679\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;09;Bayern;GES;Sex;;Total;5939690\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;11;Berlin;GES;Sex;GESM;Male;853188\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;11;Berlin;GES;Sex;GESW;Female;817392\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;11;Berlin;GES;Sex;;Total;1670580\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;12;Brandenburg;GES;Sex;GESM;Male;467281\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;12;Brandenburg;GES;Sex;GESW;Female;424799\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;12;Brandenburg;GES;Sex;;Total;892080\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;04;Bremen;GES;Sex;GESM;Male;194322\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;04;Bremen;GES;Sex;GESW;Female;154161\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;04;Bremen;GES;Sex;;Total;348483\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;02;Hamburg;GES;Sex;GESM;Male;566582\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;02;Hamburg;GES;Sex;GESW;Female;488664\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;02;Hamburg;GES;Sex;;Total;1055246\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;06;Hessen;GES;Sex;GESM;Male;1495635\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;06;Hessen;GES;Sex;GESW;Female;1248814\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;06;Hessen;GES;Sex;;Total;2744449\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;13;Mecklenburg-Vorpommern;GES;Sex;GESM;Male;293325\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;13;Mecklenburg-Vorpommern;GES;Sex;GESW;Female;296643\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;13;Mecklenburg-Vorpommern;GES;Sex;;Total;589968\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;03;Niedersachsen;GES;Sex;GESM;Male;1704826\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;03;Niedersachsen;GES;Sex;GESW;Female;1454795\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;03;Niedersachsen;GES;Sex;;Total;3159621\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;05;Nordrhein-Westfalen;GES;Sex;GESM;Male;3990486\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;05;Nordrhein-Westfalen;GES;Sex;GESW;Female;3350803\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;05;Nordrhein-Westfalen;GES;Sex;;Total;7341289\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;07;Rheinland-Pfalz;GES;Sex;GESM;Male;799621\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;07;Rheinland-Pfalz;GES;Sex;GESW;Female;699991\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;07;Rheinland-Pfalz;GES;Sex;;Total;1499612\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;10;Saarland;GES;Sex;GESM;Male;213196\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;10;Saarland;GES;Sex;GESW;Female;182980\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;10;Saarland;GES;Sex;;Total;396176\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;14;Sachsen;GES;Sex;GESM;Male;864386\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;14;Sachsen;GES;Sex;GESW;Female;795681\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;14;Sachsen;GES;Sex;;Total;1660067\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;15;Sachsen-Anhalt;GES;Sex;GESM;Male;417533\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;15;Sachsen-Anhalt;GES;Sex;GESW;Female;395433\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;15;Sachsen-Anhalt;GES;Sex;;Total;812966\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;01;Schleswig-Holstein;GES;Sex;GESM;Male;552579\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;01;Schleswig-Holstein;GES;Sex;GESW;Female;507209\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;01;Schleswig-Holstein;GES;Sex;;Total;1059788\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;16;Th\xFCringen;GES;Sex;GESM;Male;423277\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;16;Th\xFCringen;GES;Sex;GESW;Female;388543\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-09-30;DLAND;L\xE4nder;16;Th\xFCringen;GES;Sex;;Total;811820\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;08;Baden-W\xFCrttemberg;GES;Sex;GESM;Male;2671719\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;08;Baden-W\xFCrttemberg;GES;Sex;GESW;Female;2229911\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;08;Baden-W\xFCrttemberg;GES;Sex;;Total;4901630\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;09;Bayern;GES;Sex;GESM;Male;3177153\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;09;Bayern;GES;Sex;GESW;Female;2722031\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;09;Bayern;GES;Sex;;Total;5899184\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;11;Berlin;GES;Sex;GESM;Male;852180\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;11;Berlin;GES;Sex;GESW;Female;819787\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;11;Berlin;GES;Sex;;Total;1671967\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;12;Brandenburg;GES;Sex;GESM;Male;461568\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;12;Brandenburg;GES;Sex;GESW;Female;422111\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;12;Brandenburg;GES;Sex;;Total;883679\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;04;Bremen;GES;Sex;GESM;Male;193283\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;04;Bremen;GES;Sex;GESW;Female;154305\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;04;Bremen;GES;Sex;;Total;347588\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;02;Hamburg;GES;Sex;GESM;Male;566674\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;02;Hamburg;GES;Sex;GESW;Female;490474\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;02;Hamburg;GES;Sex;;Total;1057148\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;06;Hessen;GES;Sex;GESM;Male;1487997\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;06;Hessen;GES;Sex;GESW;Female;1249048\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;06;Hessen;GES;Sex;;Total;2737045\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;13;Mecklenburg-Vorpommern;GES;Sex;GESM;Male;286897\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;13;Mecklenburg-Vorpommern;GES;Sex;GESW;Female;291317\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;13;Mecklenburg-Vorpommern;GES;Sex;;Total;578214\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;03;Niedersachsen;GES;Sex;GESM;Male;1682843\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;03;Niedersachsen;GES;Sex;GESW;Female;1447308\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;03;Niedersachsen;GES;Sex;;Total;3130151\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;05;Nordrhein-Westfalen;GES;Sex;GESM;Male;3966347\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;05;Nordrhein-Westfalen;GES;Sex;GESW;Female;3347851\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;05;Nordrhein-Westfalen;GES;Sex;;Total;7314198\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;07;Rheinland-Pfalz;GES;Sex;GESM;Male;788992\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;07;Rheinland-Pfalz;GES;Sex;GESW;Female;696080\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;07;Rheinland-Pfalz;GES;Sex;;Total;1485072\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;10;Saarland;GES;Sex;GESM;Male;210976\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;10;Saarland;GES;Sex;GESW;Female;182596\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;10;Saarland;GES;Sex;;Total;393572\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;14;Sachsen;GES;Sex;GESM;Male;857486\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;14;Sachsen;GES;Sex;GESW;Female;792018\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;14;Sachsen;GES;Sex;;Total;1649504\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;15;Sachsen-Anhalt;GES;Sex;GESM;Male;411613\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;15;Sachsen-Anhalt;GES;Sex;GESW;Female;392092\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;15;Sachsen-Anhalt;GES;Sex;;Total;803705\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;01;Schleswig-Holstein;GES;Sex;GESM;Male;545424\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;01;Schleswig-Holstein;GES;Sex;GESW;Female;502377\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;01;Schleswig-Holstein;GES;Sex;;Total;1047801\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;16;Th\xFCringen;GES;Sex;GESM;Male;417959\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;16;Th\xFCringen;GES;Sex;GESW;Female;385717\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2022-12-31;DLAND;L\xE4nder;16;Th\xFCringen;GES;Sex;;Total;803676\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;08;Baden-W\xFCrttemberg;GES;Sex;GESM;Male;2675597\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;08;Baden-W\xFCrttemberg;GES;Sex;GESW;Female;2229001\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;08;Baden-W\xFCrttemberg;GES;Sex;;Total;4904598\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;09;Bayern;GES;Sex;GESM;Male;3186317\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;09;Bayern;GES;Sex;GESW;Female;2721595\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;09;Bayern;GES;Sex;;Total;5907912\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;11;Berlin;GES;Sex;GESM;Male;851644\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;11;Berlin;GES;Sex;GESW;Female;818636\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;11;Berlin;GES;Sex;;Total;1670280\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;12;Brandenburg;GES;Sex;GESM;Male;461190\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;12;Brandenburg;GES;Sex;GESW;Female;419018\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;12;Brandenburg;GES;Sex;;Total;880208\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;04;Bremen;GES;Sex;GESM;Male;193616\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;04;Bremen;GES;Sex;GESW;Female;153629\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;04;Bremen;GES;Sex;;Total;347245\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;02;Hamburg;GES;Sex;GESM;Male;568680\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;02;Hamburg;GES;Sex;GESW;Female;492690\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;02;Hamburg;GES;Sex;;Total;1061370\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;06;Hessen;GES;Sex;GESM;Male;1491388\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;06;Hessen;GES;Sex;GESW;Female;1249011\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;06;Hessen;GES;Sex;;Total;2740399\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;13;Mecklenburg-Vorpommern;GES;Sex;GESM;Male;285200\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;13;Mecklenburg-Vorpommern;GES;Sex;GESW;Female;290046\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;13;Mecklenburg-Vorpommern;GES;Sex;;Total;575246\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;03;Niedersachsen;GES;Sex;GESM;Male;1682896\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;03;Niedersachsen;GES;Sex;GESW;Female;1444189\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;03;Niedersachsen;GES;Sex;;Total;3127085\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;05;Nordrhein-Westfalen;GES;Sex;GESM;Male;3959856\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;05;Nordrhein-Westfalen;GES;Sex;GESW;Female;3337796\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;05;Nordrhein-Westfalen;GES;Sex;;Total;7297652\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;07;Rheinland-Pfalz;GES;Sex;GESM;Male;789679\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;07;Rheinland-Pfalz;GES;Sex;GESW;Female;693689\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;07;Rheinland-Pfalz;GES;Sex;;Total;1483368\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;10;Saarland;GES;Sex;GESM;Male;210997\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;10;Saarland;GES;Sex;GESW;Female;182056\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;10;Saarland;GES;Sex;;Total;393053\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;14;Sachsen;GES;Sex;GESM;Male;853622\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;14;Sachsen;GES;Sex;GESW;Female;787033\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;14;Sachsen;GES;Sex;;Total;1640655\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;15;Sachsen-Anhalt;GES;Sex;GESM;Male;410018\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;15;Sachsen-Anhalt;GES;Sex;GESW;Female;389218\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;15;Sachsen-Anhalt;GES;Sex;;Total;799236\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;01;Schleswig-Holstein;GES;Sex;GESM;Male;545823\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;01;Schleswig-Holstein;GES;Sex;GESW;Female;502264\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;01;Schleswig-Holstein;GES;Sex;;Total;1048087\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;16;Th\xFCringen;GES;Sex;GESM;Male;416844\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;16;Th\xFCringen;GES;Sex;GESW;Female;384082\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-03-31;DLAND;L\xE4nder;16;Th\xFCringen;GES;Sex;;Total;800926\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;08;Baden-W\xFCrttemberg;GES;Sex;GESM;Male;2680378\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;08;Baden-W\xFCrttemberg;GES;Sex;GESW;Female;2228939\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;08;Baden-W\xFCrttemberg;GES;Sex;;Total;4909317\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;09;Bayern;GES;Sex;GESM;Male;3201247\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;09;Bayern;GES;Sex;GESW;Female;2723955\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;09;Bayern;GES;Sex;;Total;5925202\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;11;Berlin;GES;Sex;GESM;Male;859558\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;11;Berlin;GES;Sex;GESW;Female;820531\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;11;Berlin;GES;Sex;;Total;1680089\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;12;Brandenburg;GES;Sex;GESM;Male;463652\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;12;Brandenburg;GES;Sex;GESW;Female;419637\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;12;Brandenburg;GES;Sex;;Total;883289\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;04;Bremen;GES;Sex;GESM;Male;192393\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;04;Bremen;GES;Sex;GESW;Female;152487\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;04;Bremen;GES;Sex;;Total;344880\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;02;Hamburg;GES;Sex;GESM;Male;569842\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;02;Hamburg;GES;Sex;GESW;Female;491984\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;02;Hamburg;GES;Sex;;Total;1061826\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;06;Hessen;GES;Sex;GESM;Male;1490847\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;06;Hessen;GES;Sex;GESW;Female;1248213\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;06;Hessen;GES;Sex;;Total;2739060\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;13;Mecklenburg-Vorpommern;GES;Sex;GESM;Male;288503\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;13;Mecklenburg-Vorpommern;GES;Sex;GESW;Female;292563\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;13;Mecklenburg-Vorpommern;GES;Sex;;Total;581066\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;03;Niedersachsen;GES;Sex;GESM;Male;1685041\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;03;Niedersachsen;GES;Sex;GESW;Female;1442326\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;03;Niedersachsen;GES;Sex;;Total;3127367\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;05;Nordrhein-Westfalen;GES;Sex;GESM;Male;3954470\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;05;Nordrhein-Westfalen;GES;Sex;GESW;Female;3326804\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;05;Nordrhein-Westfalen;GES;Sex;;Total;7281274\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;07;Rheinland-Pfalz;GES;Sex;GESM;Male;792437\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;07;Rheinland-Pfalz;GES;Sex;GESW;Female;694394\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;07;Rheinland-Pfalz;GES;Sex;;Total;1486831\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;10;Saarland;GES;Sex;GESM;Male;211058\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;10;Saarland;GES;Sex;GESW;Female;181380\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;10;Saarland;GES;Sex;;Total;392438\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;14;Sachsen;GES;Sex;GESM;Male;857419\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;14;Sachsen;GES;Sex;GESW;Female;786277\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;14;Sachsen;GES;Sex;;Total;1643696\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;15;Sachsen-Anhalt;GES;Sex;GESM;Male;410872\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;15;Sachsen-Anhalt;GES;Sex;GESW;Female;388203\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;15;Sachsen-Anhalt;GES;Sex;;Total;799075\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;01;Schleswig-Holstein;GES;Sex;GESM;Male;548871\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;01;Schleswig-Holstein;GES;Sex;GESW;Female;503521\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;01;Schleswig-Holstein;GES;Sex;;Total;1052392\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;16;Th\xFCringen;GES;Sex;GESM;Male;416965\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;16;Th\xFCringen;GES;Sex;GESW;Female;382579\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-06-30;DLAND;L\xE4nder;16;Th\xFCringen;GES;Sex;;Total;799544\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;08;Baden-W\xFCrttemberg;GES;Sex;GESM;Male;2705576\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;08;Baden-W\xFCrttemberg;GES;Sex;GESW;Female;2250476\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;08;Baden-W\xFCrttemberg;GES;Sex;;Total;4956052\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;09;Bayern;GES;Sex;GESM;Male;3233887\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;09;Bayern;GES;Sex;GESW;Female;2751368\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;09;Bayern;GES;Sex;;Total;5985255\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;11;Berlin;GES;Sex;GESM;Male;865423\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;11;Berlin;GES;Sex;GESW;Female;824378\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;11;Berlin;GES;Sex;;Total;1689801\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;12;Brandenburg;GES;Sex;GESM;Male;466229\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;12;Brandenburg;GES;Sex;GESW;Female;421052\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;12;Brandenburg;GES;Sex;;Total;887281\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;04;Bremen;GES;Sex;GESM;Male;194687\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;04;Bremen;GES;Sex;GESW;Female;154384\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;04;Bremen;GES;Sex;;Total;349071\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;02;Hamburg;GES;Sex;GESM;Male;578706\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;02;Hamburg;GES;Sex;GESW;Female;497391\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;02;Hamburg;GES;Sex;;Total;1076097\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;06;Hessen;GES;Sex;GESM;Male;1507840\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;06;Hessen;GES;Sex;GESW;Female;1261091\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;06;Hessen;GES;Sex;;Total;2768931\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;13;Mecklenburg-Vorpommern;GES;Sex;GESM;Male;291579\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;13;Mecklenburg-Vorpommern;GES;Sex;GESW;Female;294804\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;13;Mecklenburg-Vorpommern;GES;Sex;;Total;586383\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;03;Niedersachsen;GES;Sex;GESM;Male;1710361\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;03;Niedersachsen;GES;Sex;GESW;Female;1462705\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;03;Niedersachsen;GES;Sex;;Total;3173066\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;05;Nordrhein-Westfalen;GES;Sex;GESM;Male;4006273\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;05;Nordrhein-Westfalen;GES;Sex;GESW;Female;3370215\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;05;Nordrhein-Westfalen;GES;Sex;;Total;7376488\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;07;Rheinland-Pfalz;GES;Sex;GESM;Male;802007\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;07;Rheinland-Pfalz;GES;Sex;GESW;Female;702229\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;07;Rheinland-Pfalz;GES;Sex;;Total;1504236\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;10;Saarland;GES;Sex;GESM;Male;212856\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;10;Saarland;GES;Sex;GESW;Female;182642\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;10;Saarland;GES;Sex;;Total;395498\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;14;Sachsen;GES;Sex;GESM;Male;865733\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;14;Sachsen;GES;Sex;GESW;Female;791835\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;14;Sachsen;GES;Sex;;Total;1657568\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;15;Sachsen-Anhalt;GES;Sex;GESM;Male;416483\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;15;Sachsen-Anhalt;GES;Sex;GESW;Female;391794\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;15;Sachsen-Anhalt;GES;Sex;;Total;808277\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;01;Schleswig-Holstein;GES;Sex;GESM;Male;556470\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;01;Schleswig-Holstein;GES;Sex;GESW;Female;509301\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;01;Schleswig-Holstein;GES;Sex;;Total;1065771\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;16;Th\xFCringen;GES;Sex;GESM;Male;421326\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;16;Th\xFCringen;GES;Sex;GESW;Female;385454\n13111;Employees
-        subj. to social insurance contributions;STAG;Reference date;2023-09-30;DLAND;L\xE4nder;16;Th\xFCringen;GES;Sex;;Total;806780\n"
+      string: !!binary |
+        UEsDBBQACAgIAHK2g1kAAAAAAAAAAAAAAAAkAAAAMTMxMTEtMDAwNV8xNzMzMjYyNjk3MzY3X2Vu
+        X2ZsYXQuY3N21V3Nchy3Eb7nKfgCdAGN/5qTXVakg+1KWa7o6FpRY2vj5dK1u7TjPE/eIqnKwQ+U
+        VzDG5GJmyekZANThgw+2JJIi2wC6v+7++uv//+d/x9PmtD2etjfH72/uPvTd5Pe7zft+1522t/3D
+        h/781fiHnfz+l81hu3m/e/z45PcPnzX5g83pdNi+vz89/9TxIw9fRE/+Vnr6txL7t85+5OGLftns
+        7vuHf39/v9+eHn95+a2e/NmfX/kXqaSU3avbn3d3v/X98ep4//4fn12d7q6Odzfbze5quz/eHzb7
+        m/7q5m7/8E23d/tj9/a7z1933/Y/9Id++OCHzSn+gILUtaRrJbsvv/r8my+7r37/9/5Df+ik6N5u
+        NofdZv+he/3qbfe2/+fw36+7rze7+GVSOm+7/f3t+/i5r759J6xZ+4k+u9qcrn7ebeK3vvvh6te7
+        w0+f3hJhr5V4Yonw3RebD/3++t3v/z2cTv3wI/84teld99f+9k+riHxQAdAsNXNAJh7QzcdjNOzz
+        /cfN7pRM6r67O212nQuBFOIZzRgjdPfFob/t90+NUNqRNoBGhJmLRt2bze37+8nterRCCmdFcG2Y
+        IVX3dX/z067fD6Zc//3u8PPd7W1/eHY2xlvlFZpRNO8EQnQCv02NuHj4NmhvCM0UPf9WXPftx367
+        H1zz9d9+2Oz+NWuTDU4YjWYSzb+cXJPiPxLNJOaUnl2486sJ2ggJF2SoCgVEp4YYYeaumO3e9Mdj
+        P+8AJNloC9zVYqCZ7L7oD7vtfuZIoks25NHsYC6XPiOYZ/HS6mAEnPNi4qXtvvsYoeV2/yNzu5Q3
+        Gs8VM2h5OVA6UsEg4rGXBEplPZw/ZqLKmhcTGg+RzXsxIbu3Nx93/fHX7Y/Xb+52x1O/fe4IhLHe
+        w/llBsUUJJpKaAt355hnVJI/ByHgTosBBHnewYnBKjyTZgMqxSw6mvOQuc2gA221UIjnMxeIVlyd
+        9iThXF1uLnAZU7X2iNhz9tXwaU1MoPGQAeOp10COsw7wzdcgAh2EBLxbBe7r8YJ5r0kgHsqc7+LL
+        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
+        AAEAUgAAAJEQAAAAAA==
     headers:
       Connection:
       - Keep-Alive
       Content-Disposition:
-      - attachement;filename=13111-0005_flat.csv
+      - attachment; filename=13111-0005_1733262697367_en_flat.zip
+      Content-Length:
+      - '4345'
       Content-Type:
-      - text/csv
+      - application/zip
       Date:
-      - Sat, 29 Jun 2024 21:13:34 GMT
+      - Tue, 03 Dec 2024 21:51:35 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
       - Apache
-      Transfer-Encoding:
-      - chunked
     status:
       code: 200
       message: '200'
 - request:
-    body: null
+    body: name=13111-0005&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=en&quality=off&format=ffcsv
     headers:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br
+      - gzip, deflate, br, zstd
       Connection:
       - keep-alive
+      Content-Length:
+      - '131'
+      Content-Type:
+      - application/x-www-form-urlencoded
       User-Agent:
       - python-requests/2.32.3
-    method: GET
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table?area=all&format=ffcsv&language=en&name=13111-0005&quality=off
+    method: POST
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table
   response:
     body:
       string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"successfull\",\"Type\":\"information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"13111-0005\",\"area\":\"all\",\"language\":\"en\"},\"Object\":{\"Code\":\"13111-0005\",\"Content\":\"Employees
         subject to social insurance contributions at their\\nplace of work: L\xE4nder,
-        reference date, sex\",\"Time\":{\"From\":\"2008-03-31\",\"To\":\"2023-09-30\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"13111\",\"Content\":\"Employees
-        subj. to social insurance contributions\",\"Type\":\"statistic\",\"Values\":null,\"Selected\":null,\"Structure\":[{\"Code\":\"ERW065\",\"Content\":\"Employees
-        subj. to social insur. at place of work\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        reference date, sex\",\"Time\":{\"From\":\"2008-03-31\",\"To\":\"2024-03-31\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"13111\",\"Content\":\"Employees
+        subj. to social insurance contributions\",\"Type\":\"statistic\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"ERW065\",\"Content\":\"Employees
+        subj. to social insur. at place of work\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
         parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"STAG\",\"Content\":\"Reference
-        date\",\"Type\":\"variable\",\"Values\":\"8\",\"Selected\":\"8\",\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Rows\":[{\"Code\":\"GES\",\"Content\":\"Sex\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Subtitel\":{\"Code\":\"DLAND\",\"Content\":\"L\xE4nder\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        date\",\"Type\":\"variable\",\"Values\":\"8\",\"Selected\":\"8\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Rows\":[{\"Code\":\"GES\",\"Content\":\"Sex\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Subtitel\":{\"Code\":\"DLAND\",\"Content\":\"L\xE4nder\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
         parent\"},\"Subheading\":null},\"Updated\":\"2022-12-28 17:14:03h\"},\"Copyright\":\"\xA9
         Federal Statistical Office, Wiesbaden 2024\"}"
     headers:
       Connection:
       - Keep-Alive
       Content-Length:
-      - '1327'
+      - '1412'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Sat, 29 Jun 2024 21:13:36 GMT
+      - Tue, 03 Dec 2024 21:51:37 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:

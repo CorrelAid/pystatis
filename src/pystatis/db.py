@@ -32,7 +32,9 @@ def identify_db_matches(table_name: str) -> list[str]:
     if db_matches:
         return db_matches
     else:
-        raise ValueError(f"Could not determine the database for the table '{table_name}'.")
+        raise ValueError(
+            f"Could not determine the database for the table '{table_name}'."
+        )
 
 
 def select_db_by_credentials(db_matches: list[str]) -> str:

@@ -1,6 +1,7 @@
 """Implements find endpoint to retrieve results based on query"""
 
 import json
+from typing import Any
 
 import pandas as pd
 
@@ -51,7 +52,7 @@ class Find:
 
         self.is_run = False
 
-    def run(self):
+    def run(self) -> None:
         """
         Execute the search to find statistics, variables, tables and cubes.
         """
@@ -64,10 +65,10 @@ class Find:
 
         print(self.summary())
 
-    def summary(self):
+    def summary(self) -> str:
         """
         Returns:
-            summary_string: String that contains summary statistics.
+            str: String that contains summary statistics.
         """
 
         if self.is_run:
@@ -98,7 +99,7 @@ class Find:
         else:
             return "No data found. Please use .run() to retrieve data."
 
-    def _get_find_results(self, category: str, **kwargs) -> "Results":
+    def _get_find_results(self, category: str, **kwargs: Any) -> "Results":
         """
         Based on the query (term), category and additional query parameters a Result object will be created.
 

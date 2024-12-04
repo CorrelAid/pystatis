@@ -70,7 +70,7 @@ jobs:
       - name: Run bandit
         run: poetry run bandit -r src
       - name: Run Safety CLI to check for vulnerabilities
-        uses: pyupio/safety-action@v1
+        uses: pyupio/safety-action@v1.0.1
         with:
           api-key: ${{ secrets.SAFETY_API_KEY }}
           args: "--short-report --policy-file=.safety-policy.yml"

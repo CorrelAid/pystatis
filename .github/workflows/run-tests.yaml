@@ -31,7 +31,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - name: Run poetry image
-        uses: abatilo/actions-poetry@v3.0.0
+        uses: abatilo/actions-poetry@v3.0.1
         with:
           poetry-version: ${{ vars.POETRY_VERSION }}
       - name: Install dependencies
@@ -58,26 +58,21 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - name: Run poetry image
-        uses: abatilo/actions-poetry@v3.0.0
+        uses: abatilo/actions-poetry@v3.0.1
         with:
           poetry-version: ${{ vars.POETRY_VERSION }}
       - name: Install dependencies
         run: poetry install --with dev
-      - name: Run black
-        run: poetry run black . --check
-      - name: Run isort
-        run: poetry run isort . --check-only
-      - name: Run flake8
-        run: poetry run flake8 src --output-file=flake8_report.txt
-      - name: Run pylint
-        run: poetry run pylint src --recursive=y
+      - name: Ruff format check
+        run: poetry run ruff format --check src
+      - name: Ruff lint check
+        run: poetry run ruff check src
       - name: Run bandit
         run: poetry run bandit -r src
       - name: Run Safety CLI to check for vulnerabilities
-        uses: pyupio/safety-action@v1
+        uses: pyupio/safety-action@v1.0.1
         with:
           api-key: ${{ secrets.SAFETY_API_KEY }}
-          continue-on-error: true # Do not fail this action if vulnerabilities are found
           args: "--short-report --policy-file=.safety-policy.yml"
       - name: Run mypy
         run: poetry run mypy src
@@ -93,7 +88,7 @@ jobs:
         with:
           python-version: ${{ vars.PYTHON_VERSION}}
       - name: Run poetry image
-        uses: abatilo/actions-poetry@v3.0.0
+        uses: abatilo/actions-poetry@v3.0.1
         with:
           poetry-version: ${{ vars.POETRY_VERSION }}
       - name: Install dependencies
@@ -114,7 +109,7 @@ jobs:
         run: |
           poetry run pytest --cov=src/pystatis --cov-report=xml --vcr-record=none tests
       - name: Upload coverage reports to Codecov with GitHub Action
-        uses: codecov/codecov-action@v4.5.0
+        uses: codecov/codecov-action@v5.0.7
         with:
           verbose: true
         env:

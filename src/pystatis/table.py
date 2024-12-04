@@ -210,7 +210,7 @@ class Table:
         time = pd.DataFrame({data[time_label_col].iloc[-1]: data[time_col]})
 
         # Whenever there is a column with a regional code, we add this column to the final output
-        # As the position is unknown, we pohave to identify this column by looking for the AGS code
+        # As the position is unknown, we have to identify this column by looking for the AGS code
         ags_codes = list(
             set(config.REGIO_AND_GENESIS_AGS_CODES) - set(config.EXCLUDE_AGS_CODES)
         )

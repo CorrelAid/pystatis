@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../">
 <head>
@@ -6,23 +8,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Geovisualization of Data on the Map of Germany &mdash; pystatis</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
 
   
     <link rel="shortcut icon" href="../_static/pystatis_logo.ico"/>
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=d5a15cff"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=6c02275b"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -42,9 +40,6 @@
             pystatis
               <img src="../_static/pystatis_logo.png" class="logo" alt="Logo"/>
           </a>
-              <div class="version">
-                0.3.3
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -368,7 +363,10 @@ Die Tabelle ist zu groß, um direkt abgerufen zu werden. Es wird eine Verarbeitu
 
 <span class="c1"># filter and display example subselection of the data</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">students</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">total_sex</span> <span class="o">&amp;</span> <span class="n">all_subjects</span><span class="p">]</span>
-<span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Amtlicher Gemeindeschlüssel (AGS)&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;07131&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Semester&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;WS 2015/16&quot;</span><span class="p">)]</span>
+<span class="n">df</span><span class="p">[</span>
+    <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Amtlicher Gemeindeschlüssel (AGS)&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;07131&quot;</span><span class="p">)</span>
+    <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Semester&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;WS 2015/16&quot;</span><span class="p">)</span>
+<span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -446,9 +444,13 @@ Die Tabelle ist zu groß, um direkt abgerufen zu werden. Es wird eine Verarbeitu
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate the ratio of international students in percent</span>
 <span class="n">ratio_international</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">students</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">total_sex</span> <span class="o">&amp;</span> <span class="n">all_subjects</span><span class="p">]</span>
-    <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">,</span> <span class="s2">&quot;Amtlicher Gemeindeschlüssel (AGS)&quot;</span><span class="p">,</span> <span class="s2">&quot;Semester&quot;</span><span class="p">])[</span>
-        <span class="s2">&quot;Studierende_(im_Kreisgebiet)__Anzahl&quot;</span>
-    <span class="p">]</span>
+    <span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
+        <span class="n">by</span><span class="o">=</span><span class="p">[</span>
+            <span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Amtlicher Gemeindeschlüssel (AGS)&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Semester&quot;</span><span class="p">,</span>
+        <span class="p">]</span>
+    <span class="p">)[</span><span class="s2">&quot;Studierende_(im_Kreisgebiet)__Anzahl&quot;</span><span class="p">]</span>
     <span class="o">.</span><span class="n">apply</span><span class="p">(</span>
         <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">x</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
     <span class="p">)</span>  <span class="c1"># filter to ensure that all 3 columns are present</span>
@@ -492,12 +494,18 @@ Name: ratio_international, Length: 3766, dtype: float64
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a DataFrame with the ratio of international students</span>
 <span class="n">ratio_international</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">ratio_international</span><span class="p">)</span>
 <span class="c1"># add the year as a column</span>
-<span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">semester</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">7</span><span class="p">])</span> <span class="k">for</span> <span class="n">semester</span> <span class="ow">in</span> <span class="n">ratio_international</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span>
+<span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="nb">int</span><span class="p">(</span><span class="n">semester</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">7</span><span class="p">])</span> <span class="k">for</span> <span class="n">semester</span> <span class="ow">in</span> <span class="n">ratio_international</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="p">]</span>
 <span class="c1"># reset the index and sort the values in a time series manner</span>
 <span class="n">ratio_international</span> <span class="o">=</span> <span class="n">ratio_international</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-<span class="n">ratio_international</span> <span class="o">=</span> <span class="n">ratio_international</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">])</span>
+<span class="n">ratio_international</span> <span class="o">=</span> <span class="n">ratio_international</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span>
+    <span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">]</span>
+<span class="p">)</span>
 <span class="c1"># remove leading whitespaces</span>
-<span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ratio_international</span><span class="p">[</span>
+    <span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span>
+<span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
 
 <span class="n">ratio_international</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;`Kreise und kreisfreie Städte` == &#39;Bayern&#39;&quot;</span><span class="p">)</span>
 </pre></div>
@@ -628,8 +636,12 @@ Name: ratio_international, Length: 3766, dtype: float64
 
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">region</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">regions</span><span class="p">):</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-        <span class="n">ratio_international</span><span class="p">[</span><span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">region</span><span class="p">]</span><span class="o">.</span><span class="n">year</span><span class="p">,</span>
-        <span class="n">ratio_international</span><span class="p">[</span><span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">region</span><span class="p">]</span><span class="o">.</span><span class="n">ratio_international</span><span class="p">,</span>
+        <span class="n">ratio_international</span><span class="p">[</span>
+            <span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">region</span>
+        <span class="p">]</span><span class="o">.</span><span class="n">year</span><span class="p">,</span>
+        <span class="n">ratio_international</span><span class="p">[</span>
+            <span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">region</span>
+        <span class="p">]</span><span class="o">.</span><span class="n">ratio_international</span><span class="p">,</span>
         <span class="n">label</span><span class="o">=</span><span class="n">region</span><span class="p">,</span>
         <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span>
         <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
@@ -637,8 +649,12 @@ Name: ratio_international, Length: 3766, dtype: float64
     <span class="p">)</span>
     <span class="c1"># annotate the last point in the line plot with the region</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span>
-        <span class="n">ratio_international</span><span class="p">[</span><span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">region</span><span class="p">]</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
-        <span class="n">ratio_international</span><span class="p">[</span><span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">region</span><span class="p">]</span><span class="o">.</span><span class="n">ratio_international</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+        <span class="n">ratio_international</span><span class="p">[</span>
+            <span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">region</span>
+        <span class="p">]</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+        <span class="n">ratio_international</span><span class="p">[</span>
+            <span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">region</span>
+        <span class="p">]</span><span class="o">.</span><span class="n">ratio_international</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
         <span class="n">region</span><span class="p">,</span>
         <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
         <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
@@ -650,7 +666,7 @@ Name: ratio_international, Length: 3766, dtype: float64
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;International Student Ratio [%]&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
 
 <span class="c1"># enhance the legend</span>
-<span class="c1">#ax.legend(title=&quot;Region&quot;, title_fontsize=&quot;13&quot;, fontsize=&quot;12&quot;, loc=&quot;upper left&quot;, bbox_to_anchor=(1, 1))</span>
+<span class="c1"># ax.legend(title=&quot;Region&quot;, title_fontsize=&quot;13&quot;, fontsize=&quot;12&quot;, loc=&quot;upper left&quot;, bbox_to_anchor=(1, 1))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
@@ -716,7 +732,10 @@ Name: ratio_international, Length: 3766, dtype: float64
 
 <span class="c1"># add a global colorbar</span>
 <span class="n">cm</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">ScalarMappable</span><span class="p">(</span><span class="n">norm</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="n">min_value</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">max_value</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;viridis&quot;</span><span class="p">),</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">years</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">ScalarMappable</span><span class="p">(</span>
+        <span class="n">norm</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="n">min_value</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">max_value</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;viridis&quot;</span>
+    <span class="p">),</span>
+    <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">years</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span>
 <span class="p">)</span>
 <span class="n">cm</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="s2">&quot;International Student Ratio [%]&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
 
@@ -848,12 +867,19 @@ Name: AGS, Length: 400, dtype: object
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate the ratio of international students in percent</span>
 <span class="n">ratio_international</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">students</span><span class="o">.</span><span class="n">data</span><span class="p">[</span>
-        <span class="p">(</span><span class="n">students</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Geschlecht</span> <span class="o">==</span> <span class="s2">&quot;Insgesamt&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">students</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;Fächergruppe (mit Insgesamt)&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Insgesamt&quot;</span><span class="p">)</span>
+        <span class="p">(</span><span class="n">students</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Geschlecht</span> <span class="o">==</span> <span class="s2">&quot;Insgesamt&quot;</span><span class="p">)</span>
+        <span class="o">&amp;</span> <span class="p">(</span><span class="n">students</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;Fächergruppe (mit Insgesamt)&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Insgesamt&quot;</span><span class="p">)</span>
     <span class="p">]</span>
-    <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">,</span> <span class="s2">&quot;Amtlicher Gemeindeschlüssel (AGS)&quot;</span><span class="p">,</span> <span class="s2">&quot;Semester&quot;</span><span class="p">])[</span>
-        <span class="s2">&quot;Studierende_(im_Kreisgebiet)__Anzahl&quot;</span>
-    <span class="p">]</span>
-    <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">x</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>  <span class="c1"># filter to ensure that all 3 columns are present</span>
+    <span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
+        <span class="n">by</span><span class="o">=</span><span class="p">[</span>
+            <span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Amtlicher Gemeindeschlüssel (AGS)&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Semester&quot;</span><span class="p">,</span>
+        <span class="p">]</span>
+    <span class="p">)[</span><span class="s2">&quot;Studierende_(im_Kreisgebiet)__Anzahl&quot;</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">x</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span> <span class="k">else</span> <span class="kc">None</span>
+    <span class="p">)</span>  <span class="c1"># filter to ensure that all 3 columns are present</span>
 <span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
 <span class="n">ratio_international</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">&quot;ratio_international&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">ratio_international</span>
@@ -888,12 +914,18 @@ Name: ratio_international, Length: 3766, dtype: float64
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a DataFrame with the ratio of international students</span>
 <span class="n">ratio_international</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">ratio_international</span><span class="p">)</span>
 <span class="c1"># add the year as a column</span>
-<span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">semester</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">7</span><span class="p">])</span> <span class="k">for</span> <span class="n">semester</span> <span class="ow">in</span> <span class="n">ratio_international</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span>
+<span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="nb">int</span><span class="p">(</span><span class="n">semester</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">7</span><span class="p">])</span> <span class="k">for</span> <span class="n">semester</span> <span class="ow">in</span> <span class="n">ratio_international</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="p">]</span>
 <span class="c1"># reset the index and sort the values in a time series manner</span>
 <span class="n">ratio_international</span> <span class="o">=</span> <span class="n">ratio_international</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-<span class="n">ratio_international</span> <span class="o">=</span> <span class="n">ratio_international</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">])</span>
+<span class="n">ratio_international</span> <span class="o">=</span> <span class="n">ratio_international</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span>
+    <span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">]</span>
+<span class="p">)</span>
 <span class="c1"># remove leading whitespaces</span>
-<span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ratio_international</span><span class="p">[</span>
+    <span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span>
+<span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
 
 <span class="n">ratio_international</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;`Kreise und kreisfreie Städte` == &#39;Köln, kreisfreie Stadt&#39;&quot;</span><span class="p">)</span>
 </pre></div>
@@ -1013,8 +1045,12 @@ Name: ratio_international, Length: 3766, dtype: float64
 
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">region</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">regions</span><span class="p">):</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-        <span class="n">ratio_international</span><span class="p">[</span><span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">region</span><span class="p">]</span><span class="o">.</span><span class="n">year</span><span class="p">,</span>
-        <span class="n">ratio_international</span><span class="p">[</span><span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">region</span><span class="p">]</span><span class="o">.</span><span class="n">ratio_international</span><span class="p">,</span>
+        <span class="n">ratio_international</span><span class="p">[</span>
+            <span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">region</span>
+        <span class="p">]</span><span class="o">.</span><span class="n">year</span><span class="p">,</span>
+        <span class="n">ratio_international</span><span class="p">[</span>
+            <span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">region</span>
+        <span class="p">]</span><span class="o">.</span><span class="n">ratio_international</span><span class="p">,</span>
         <span class="n">label</span><span class="o">=</span><span class="n">region</span><span class="p">,</span>
         <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span>
         <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
@@ -1027,7 +1063,13 @@ Name: ratio_international, Length: 3766, dtype: float64
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;International Student Ratio [%]&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
 
 <span class="c1"># enhance the legend</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Region&quot;</span><span class="p">,</span> <span class="n">title_fontsize</span><span class="o">=</span><span class="s2">&quot;13&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s2">&quot;12&quot;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper left&quot;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Region&quot;</span><span class="p">,</span>
+    <span class="n">title_fontsize</span><span class="o">=</span><span class="s2">&quot;13&quot;</span><span class="p">,</span>
+    <span class="n">fontsize</span><span class="o">=</span><span class="s2">&quot;12&quot;</span><span class="p">,</span>
+    <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper left&quot;</span><span class="p">,</span>
+    <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+<span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
@@ -1062,8 +1104,12 @@ Name: ratio_international, Length: 3766, dtype: float64
 
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">region</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">regions</span><span class="p">):</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-        <span class="n">ratio_international</span><span class="p">[</span><span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">region</span><span class="p">]</span><span class="o">.</span><span class="n">year</span><span class="p">,</span>
-        <span class="n">ratio_international</span><span class="p">[</span><span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">region</span><span class="p">]</span><span class="o">.</span><span class="n">ratio_international</span><span class="p">,</span>
+        <span class="n">ratio_international</span><span class="p">[</span>
+            <span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">region</span>
+        <span class="p">]</span><span class="o">.</span><span class="n">year</span><span class="p">,</span>
+        <span class="n">ratio_international</span><span class="p">[</span>
+            <span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">region</span>
+        <span class="p">]</span><span class="o">.</span><span class="n">ratio_international</span><span class="p">,</span>
         <span class="n">label</span><span class="o">=</span><span class="n">region</span><span class="p">,</span>
         <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span>
         <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
@@ -1076,7 +1122,13 @@ Name: ratio_international, Length: 3766, dtype: float64
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;International Student Ratio [%]&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
 
 <span class="c1"># enhance the legend</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Region&quot;</span><span class="p">,</span> <span class="n">title_fontsize</span><span class="o">=</span><span class="s2">&quot;13&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s2">&quot;12&quot;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper left&quot;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Region&quot;</span><span class="p">,</span>
+    <span class="n">title_fontsize</span><span class="o">=</span><span class="s2">&quot;13&quot;</span><span class="p">,</span>
+    <span class="n">fontsize</span><span class="o">=</span><span class="s2">&quot;12&quot;</span><span class="p">,</span>
+    <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper left&quot;</span><span class="p">,</span>
+    <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+<span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
@@ -1095,7 +1147,9 @@ Name: ratio_international, Length: 3766, dtype: float64
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ratio_international</span><span class="p">[</span><span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Aachen, Kreis&quot;</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ratio_international</span><span class="p">[</span>
+    <span class="n">ratio_international</span><span class="p">[</span><span class="s2">&quot;Kreise und kreisfreie Städte&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Aachen, Kreis&quot;</span>
+<span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1207,7 +1261,12 @@ Name: ratio_international, Length: 3766, dtype: float64
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdf_merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="n">gdf</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="n">ratio_international</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;AGS&quot;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s2">&quot;Amtlicher Gemeindeschlüssel (AGS)&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdf_merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+    <span class="n">left</span><span class="o">=</span><span class="n">gdf</span><span class="p">,</span>
+    <span class="n">right</span><span class="o">=</span><span class="n">ratio_international</span><span class="p">,</span>
+    <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;AGS&quot;</span><span class="p">,</span>
+    <span class="n">right_on</span><span class="o">=</span><span class="s2">&quot;Amtlicher Gemeindeschlüssel (AGS)&quot;</span><span class="p">,</span>
+<span class="p">)</span>
 <span class="n">gdf_merged</span><span class="o">.</span><span class="n">ratio_international</span>
 </pre></div>
 </div>
@@ -1269,7 +1328,10 @@ Name: ratio_international, Length: 2786, dtype: float64
 
 <span class="c1"># add a global colorbar</span>
 <span class="n">cm</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">ScalarMappable</span><span class="p">(</span><span class="n">norm</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="n">min_value</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">max_value</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;viridis&quot;</span><span class="p">),</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">years</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">ScalarMappable</span><span class="p">(</span>
+        <span class="n">norm</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="n">min_value</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">max_value</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;viridis&quot;</span>
+    <span class="p">),</span>
+    <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">years</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span>
 <span class="p">)</span>
 <span class="n">cm</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="s2">&quot;International Student Ratio [%]&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
 

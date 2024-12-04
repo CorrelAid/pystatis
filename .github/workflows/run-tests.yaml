@@ -31,7 +31,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - name: Run poetry image
-        uses: abatilo/actions-poetry@v3.0.0
+        uses: abatilo/actions-poetry@v3.0.1
         with:
           poetry-version: ${{ vars.POETRY_VERSION }}
       - name: Install dependencies
@@ -58,7 +58,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - name: Run poetry image
-        uses: abatilo/actions-poetry@v3.0.0
+        uses: abatilo/actions-poetry@v3.0.1
         with:
           poetry-version: ${{ vars.POETRY_VERSION }}
       - name: Install dependencies
@@ -88,7 +88,7 @@ jobs:
         with:
           python-version: ${{ vars.PYTHON_VERSION}}
       - name: Run poetry image
-        uses: abatilo/actions-poetry@v3.0.0
+        uses: abatilo/actions-poetry@v3.0.1
         with:
           poetry-version: ${{ vars.POETRY_VERSION }}
       - name: Install dependencies

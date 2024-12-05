@@ -1837,13 +1837,13 @@ files = [
 
 [[package]]
 name = "notebook"
-version = "7.3.0"
+version = "7.3.1"
 description = "Jupyter Notebook - A web-based notebook environment for interactive computing"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "notebook-7.3.0-py3-none-any.whl", hash = "sha256:affa2fdbc10661aa05790ba105836871666b3919559abb5bc92dd8d9f0cbeee3"},
-    {file = "notebook-7.3.0.tar.gz", hash = "sha256:e1dc37db32620b04043ae78866a40b087c43308d85067699db99e6f9e22846bc"},
+    {file = "notebook-7.3.1-py3-none-any.whl", hash = "sha256:212e1486b2230fe22279043f33c7db5cf9a01d29feb063a85cb139747b7c9483"},
+    {file = "notebook-7.3.1.tar.gz", hash = "sha256:84381c2a82d867517fd25b86e986dae1fe113a70b98f03edff9b94e499fec8fa"},
 ]
 
 [package.dependencies]

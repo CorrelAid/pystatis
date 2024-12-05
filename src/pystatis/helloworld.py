@@ -19,7 +19,10 @@ def whoami(db_name: str) -> str:
     """
     url = f"{db.get_host(db_name)}" + "helloworld/whoami"
 
-    response = requests.get(url, timeout=(1, 15))
+    try:
+        response = requests.get(url, timeout=(1, 15))
+    except requests.exceptions.Timeout:
+        raise TimeoutError("Login request timed out after 15 minutes")
 
     _check_invalid_status_code(response)
 
@@ -31,6 +34,10 @@ def logincheck(db_name: str) -> str:
     Wrapper method which constructs a URL for testing the Destatis API
     logincheck method, which tests the login credentials (from the config.ini).
 
+    In addition, this method automatically terminates requests
+    that have been running for longer than 15 minutes if too many requests are running in parallel.
+    This method restores the ability to work by cleaning up if the limit has been exceeded.
+
     Args:
         db_name (str): Name of the database to login to
 
@@ -40,12 +47,16 @@ def logincheck(db_name: str) -> str:
     db_host, db_user, db_pw = db.get_settings(db_name)
     url = f"{db_host}helloworld/logincheck"
 
-    params = {
+    headers = {
+        "Content-Type": "application/x-www-form-urlencoded",
         "username": db_user,
         "password": db_pw,
     }
+    params = {
+        "language": "de",
+    }
 
-    response = requests.get(url, params=params, timeout=(1, 15))
+    response = requests.post(url, headers=headers, data=params, timeout=(1, 15))
 
     # NOTE: Cannot use get_data_from_endpoint due to colliding
     # and misleading usage of "Status" key in API response

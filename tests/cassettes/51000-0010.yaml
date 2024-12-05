@@ -1,815 +1,231 @@
 interactions:
 - request:
-    body: null
+    body: name=51000-0010&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=de&quality=off&format=ffcsv
     headers:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br
+      - gzip, deflate, br, zstd
       Connection:
       - keep-alive
+      Content-Length:
+      - '131'
+      Content-Type:
+      - application/x-www-form-urlencoded
       User-Agent:
       - python-requests/2.32.3
-    method: GET
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=51000-0010&quality=off
+    method: POST
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile
   response:
     body:
-      string: "Statistik_Code;Statistik_Label;Zeit_Code;Zeit_Label;Zeit;1_Merkmal_Code;1_Merkmal_Label;1_Auspraegung_Code;1_Auspraegung_Label;2_Merkmal_Code;2_Merkmal_Label;2_Auspraegung_Code;2_Auspraegung_Label;3_Merkmal_Code;3_Merkmal_Label;3_Auspraegung_Code;3_Auspraegung_Label;GEWA__Ausfuhr:_Gewicht__t;WERTA__Ausfuhr:_Wert__Tsd._EUR;WERTAS__Ausfuhr:_Wert_(US-Dollar)__Tsd._US_$;GEWE__Einfuhr:_Gewicht__t;WERTE__Einfuhr:_Wert__Tsd._EUR;WERTES__Einfuhr:_Wert_(US-Dollar)__Tsd._US_$\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH017;Belgien (ab 1999);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;48,0;2077;2246;32,7;2720;2941\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH002;Belgien und Luxemburg (bis
-        1998);WAM4;Warenverzeichnis Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde,
-        Esel, Maultiere und Maulesel, lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH068;Bulgarien;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;1,0;167;179;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH008;D\xE4nemark;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;29,4;3057;3305;15,5;3475;3751\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH053;Estland (ab 1992);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;0,5;7;8;0,5;25;27\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH014;Finnland;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;0,5;19;20;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH001;Frankreich;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;52,8;5853;6379;16,5;1940;2090\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH009;Griechenland;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;0,0;0;0;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH007;Irland;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;3,5;7592;8272;7,8;604;654\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH005;Italien;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;149,3;3167;3402;12,6;813;876\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH092;Kroatien (ab 05/1992);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;0,0;0;0;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH054;Lettland (ab 1992);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;0,0;0;0;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH055;Litauen (ab 1992);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;0,0;0;0;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH018;Luxemburg (ab 1999);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;0,5;30;31;0,5;500;538\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH046;Malta;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;3,5;46;50;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH003;Niederlande;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;56,3;5616;6008;28,0;6725;7161\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH015;\xD6sterreich;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;5,0;261;281;3,5;129;141\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH060;Polen;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;16,3;888;963;12,0;2911;3105\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH010;Portugal;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;8,1;1486;1593;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH066;Rum\xE4nien;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;15,5;1646;1802;1,5;90;98\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH013;Schweden;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;8,3;2936;3187;5,7;1767;1913\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH063;Slowakei (ab 1993);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;6,5;171;185;3,7;1060;1161\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH091;Slowenien (ab 05/1992);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;0,0;0;0;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH011;Spanien;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;11,5;737;800;1,9;127;138\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH061;Tschechien (ab 1993);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;2,0;2540;2757;1,0;819;895\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH064;Ungarn;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;34,1;1472;1594;2,0;638;695\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH600;Zypern;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH959;Nicht ermittelte L\xE4nder
-        (innergem. Warenverkehr);WAM4;Warenverzeichnis Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde,
-        Esel, Maultiere und Maulesel, lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH006;Vereinigtes K\xF6nigreich;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;79,4;6973;7461;33,0;2262;2435\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH070;Albanien;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH043;Andorra;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH073;Belarus (ab 05/1992);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;5,1;211;229;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH093;Bosnien und Herzegowina
-        (ab 1993);WAM4;Warenverzeichnis Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde,
-        Esel, Maultiere und Maulesel, lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH041;F\xE4r\xF6er;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH044;Gibraltar;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH024;Island;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;195,7;5881;6359\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH090;Jugoslawien (05/1992 bis
-        12/1992);WAM4;Warenverzeichnis Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde,
-        Esel, Maultiere und Maulesel, lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH048;Jugoslawien (bis 04/1992);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH021;Kanarische Inseln (bis 1996);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH095;Kosovo (ab 06/2005);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH037;Liechtenstein (ab 1995);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;0,5;80;86;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH074;Republik Moldau (ab 05/1992);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH097;Montenegro (ab 06/2005);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH096;Nordmazedonien (ab 1992);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH028;Norwegen;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;13,4;591;640;3,1;47;51\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH075;Russische F\xF6deration
-        (ab 05/1992);WAM4;Warenverzeichnis Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde,
-        Esel, Maultiere und Maulesel, lebend;-;-;-;0,6;3;3\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH047;San Marino (ab 1994);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH039;Schweiz;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;509,8;32597;35163;211,2;2327;2519\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH098;Serbien (ab 06/2005);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;0,5;1;1\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH094;Serbien und Montenegro (01/1993
-        bis 05/2005);WAM4;Warenverzeichnis Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde,
-        Esel, Maultiere und Maulesel, lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH056;Sowjetunion (bis 04/1992);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH027;Svalbard (bis 1996);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH062;Tschechoslowakei (bis 1992);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH052;T\xFCrkei;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;0,6;2;2\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH072;Ukraine (ab 05/1992);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;1,3;2;2;12,4;141;153\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH045;Heiliger Stuhl (Vatikanstadt);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH220;\xC4gypten;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;29,8;1588;1708;5,6;51;54\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH208;Algerien;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH330;Angola;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH310;\xC4quatorialguinea;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH334;\xC4thiopien;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH284;Benin;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH391;Botsuana;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH357;Britisches Territorium im
-        Indischen Ozean;WAM4;Warenverzeichnis Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde,
-        Esel, Maultiere und Maulesel, lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH236;Burkina Faso;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH328;Burundi;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH020;Ceuta (ab 1999);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH022;Ceuta und Melilla (bis 1998);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH272;Cote d'Ivoire;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH338;Dschibuti;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH336;Eritrea (ab 1994);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH393;Eswatini;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH314;Gabun;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH252;Gambia;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH276;Ghana;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH260;Guinea;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH257;Guinea-Bissau;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH302;Kamerun;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH247;Cabo Verde;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH346;Kenia;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH375;Komoren;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH322;Demokratische Republik Kongo;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH318;Kongo;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH395;Lesotho;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH268;Liberia;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH216;Libyen;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH370;Madagaskar;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH386;Malawi;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH232;Mali;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH204;Marokko;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH228;Mauretanien;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH373;Mauritius;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH377;Mayotte (bis 2013);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH023;Melilla (ab 1999);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH366;Mosambik;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH389;Namibia;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH240;Niger;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH288;Nigeria;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH372;Reunion (bis 1996);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH324;Ruanda;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH378;Sambia;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH311;Sao Tome und Principe;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH248;Senegal;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH355;Seychellen;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH264;Sierra Leone;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH382;Simbabwe;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH342;Somalia;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH329;St. Helena, Ascension und
-        Tristan da Cunha;WAM4;Warenverzeichnis Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde,
-        Esel, Maultiere und Maulesel, lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH388;S\xFCdafrika;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH225;S\xFCdsudan (ab 2013);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH224;Sudan;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH352;Vereinigte Republik Tansania;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH280;Togo;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH244;Tschad;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH212;Tunesien;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH350;Uganda;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH206;Westsahara (ab 2013);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH306;Zentralafrikanische Republik;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH457;Amerikanische Jungferninseln;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH446;Anguilla;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH459;Antigua und Barbuda;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH528;Argentinien;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;0,5;4;4;49,5;1081;1180\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH474;Aruba;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH453;Bahamas;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH469;Barbados;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH421;Belize;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH413;Bermuda;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH516;Plurinationaler Staat Bolivien;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH475;Bonaire, Sint Eustatius
-        und Saba (ab 2013);WAM4;Warenverzeichnis Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde,
-        Esel, Maultiere und Maulesel, lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH508;Brasilien;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;0,5;11;11\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH468;Britische Jungferninseln;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH512;Chile;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;0,5;121;131;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH436;Costa Rica;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH477;Curacao (ab 2013);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH460;Dominica;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH456;Dominikanische Republik;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH500;Ecuador;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH428;El Salvador;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH529;Falklandinseln;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH496;Franz\xF6sisch-Guayana (bis
-        1996);WAM4;Warenverzeichnis Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde,
-        Esel, Maultiere und Maulesel, lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH473;Grenada;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH406;Gr\xF6nland;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH458;Guadeloupe (bis 1996);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH416;Guatemala;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH488;Guyana;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH452;Haiti;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH424;Honduras;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH464;Jamaika;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH463;Kaimaninseln;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH404;Kanada;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;29,0;2069;2247;1,0;28;30\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH480;Kolumbien;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH448;Kuba;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH462;Martinique (bis 1996);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH412;Mexiko;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;125,2;21139;22732;3,5;130;140\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH470;Montserrat (ab 1995);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH432;Nicaragua;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH478;Niederl\xE4ndische Antillen
-        (bis 2012);WAM4;Warenverzeichnis Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde,
-        Esel, Maultiere und Maulesel, lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH442;Panama;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;0,5;2;2;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH520;Paraguay;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;7,5;40;43;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH504;Peru;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH481;St. Barthelemy (ab 2013);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH449;St. Kitts und Nevis;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH465;St. Lucia;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH479;Sint Maarten (niederl\xE4ndischer
-        Teil) (ab 2013);WAM4;Warenverzeichnis Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde,
-        Esel, Maultiere und Maulesel, lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH408;St. Pierre und Miquelon;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH467;St. Vincent und die Grenadinen;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH492;Suriname;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH472;Trinidad und Tobago;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH454;Turks- und Caicosinseln;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH524;Uruguay;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;5,0;348;369;12,2;165;179\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH484;Bolivarische Republik Venezuela;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH400;Vereinigte Staaten von Amerika;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;716,9;141390;153008;69,7;1626;1755\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH660;Afghanistan;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH077;Armenien (ab 05/1992);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH078;Aserbaidschan (ab 05/1992);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH640;Bahrain;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH666;Bangladesch;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH625;Besetzte pal\xE4stinensische
-        Gebiete (ab 1995);WAM4;Warenverzeichnis Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde,
-        Esel, Maultiere und Maulesel, lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH675;Bhutan;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH703;Brunei Darussalam;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH720;China;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH076;Georgien (ab 05/1992);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH740;Hongkong;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH664;Indien;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;2,5;289;312;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH700;Indonesien;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH612;Irak;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH616;Islamische Republik Iran;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH624;Israel;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;1,5;43;47;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH732;Japan;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;25,4;3429;3700;0,5;26;28\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH653;Jemen;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH628;Jordanien;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH696;Kambodscha;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH079;Kasachstan (ab 05/1992);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH644;Katar;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;9,5;410;442;0,5;4;4\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH083;Kirgisistan (ab 05/1992);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;0,7;3;3;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH724;Demokratische Volksrepublik
-        Korea;WAM4;Warenverzeichnis Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde,
-        Esel, Maultiere und Maulesel, lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH728;Republik Korea;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;55,5;4128;4466;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH636;Kuwait;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;0,5;4;5\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH684;Demokratische Volksrepublik
-        Laos;WAM4;Warenverzeichnis Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde,
-        Esel, Maultiere und Maulesel, lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH604;Libanon;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH743;Macau;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH701;Malaysia;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH667;Malediven;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH716;Mongolei;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH676;Myanmar;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH672;Nepal;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH649;Oman;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;3,4;103;110;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH662;Pakistan;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;4,2;235;253;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH708;Philippinen;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH632;Saudi-Arabien;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;0,5;6;6;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH706;Singapur;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;6,6;508;549;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH669;Sri Lanka;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH608;Arabische Republik Syrien;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH082;Tadschikistan (ab 05/1992);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH736;Taiwan;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH680;Thailand;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;18,5;1007;1090;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH626;Timor-Leste (ab 2001);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH080;Turkmenistan (ab 05/1992);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH081;Usbekistan (ab 05/1992);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;1,5;21;23;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH647;Vereinigte Arabische Emirate;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;28,0;2243;2412;0,5;8;9\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH690;Vietnam;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH832;Amerikanische \xDCberseeinseln,
-        kleinere (ab 2001);WAM4;Warenverzeichnis Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde,
-        Esel, Maultiere und Maulesel, lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH810;Amerikanisch-Ozeanien (bis
-        2000);WAM4;Warenverzeichnis Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde,
-        Esel, Maultiere und Maulesel, lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH830;Amerikanisch-Samoa (ab 2001);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH891;Antarktis (ab 2001);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH800;Australien;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;74,6;17292;18618;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH802;Australisch-Ozeanien (bis
-        2000);WAM4;Warenverzeichnis Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde,
-        Esel, Maultiere und Maulesel, lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH892;Bouvetinsel (ab 2001);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH837;Cookinseln (ab 2001);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH815;Fidschi;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH894;Franz\xF6sische S\xFCdgebiete
-        (ab 2001);WAM4;Warenverzeichnis Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde,
-        Esel, Maultiere und Maulesel, lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH822;Franz\xF6sisch-Polynesien;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH831;Guam (ab 2001);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH835;Heard und McDonaldinseln
-        (ab 2001);WAM4;Warenverzeichnis Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde,
-        Esel, Maultiere und Maulesel, lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH812;Kiribati;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH833;Kokosinseln (Keelinginseln)
-        (ab 2001);WAM4;Warenverzeichnis Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde,
-        Esel, Maultiere und Maulesel, lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH824;Marshallinseln (ab 1992);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH823;F\xF6derierte Staaten von
-        Mikronesien (ab 1992);WAM4;Warenverzeichnis Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde,
-        Esel, Maultiere und Maulesel, lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH803;Nauru;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH809;Neukaledonien;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH804;Neuseeland;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;2,3;249;269;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH814;Neuseel\xE4ndisch-Ozeanien
-        (bis 2000);WAM4;Warenverzeichnis Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde,
-        Esel, Maultiere und Maulesel, lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH838;Niue (ab 2001);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH820;N\xF6rdliche Marianen (ab
-        1994);WAM4;Warenverzeichnis Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde,
-        Esel, Maultiere und Maulesel, lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH836;Norfolkinseln (ab 2001);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH825;Palau (ab 1995);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH801;Papua-Neuguinea;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH813;Pitcairn;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH890;Polargebiete (bis 2000);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH806;Salomonen;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH819;Samoa;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH893;S\xFCdgeorgien u.d.S\xFCdlichen
-        Sandwichinseln (ab 2001);WAM4;Warenverzeichnis Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde,
-        Esel, Maultiere und Maulesel, lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH839;Tokelau (ab 2001);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH817;Tonga;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH807;Tuvalu;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH816;Vanuatu;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH811;Wallis und Futuna;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH834;Weihnachtsinsel (ab 2001);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH953;Hohe See (ab 2013);WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH950;Schiffs- und Luftfahrzeugbedarf;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH958;Nicht ermittelte L\xE4nder
-        und Gebiete;WAM4;Warenverzeichnis Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde,
-        Esel, Maultiere und Maulesel, lebend;-;-;-;-;-;-\n51000;Au\xDFenhandel;JAHR;Jahr;2023;DINSG;Deutschland
-        insgesamt;DG;Deutschland;STLAH;L\xE4nder;STLAH977;Vertrauliche L\xE4nder;WAM4;Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller);WA0101;Pferde, Esel, Maultiere und Maulesel,
-        lebend;-;-;-;-;-;-\n"
+      string: !!binary |
+        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
     headers:
       Connection:
       - Keep-Alive
       Content-Disposition:
-      - attachement;filename=51000-0010_flat.csv
+      - attachment; filename=51000-0010_1733257072409_de_flat.zip
       Content-Type:
-      - text/csv
+      - application/zip
       Date:
-      - Sat, 29 Jun 2024 21:08:03 GMT
+      - Tue, 03 Dec 2024 20:17:44 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
@@ -820,45 +236,49 @@ interactions:
       code: 200
       message: '200'
 - request:
-    body: null
+    body: name=51000-0010&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=de&quality=off&format=ffcsv
     headers:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br
+      - gzip, deflate, br, zstd
       Connection:
       - keep-alive
+      Content-Length:
+      - '131'
+      Content-Type:
+      - application/x-www-form-urlencoded
       User-Agent:
       - python-requests/2.32.3
-    method: GET
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=51000-0010&quality=off
+    method: POST
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table
   response:
     body:
       string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"51000-0010\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"51000-0010\",\"Content\":\"Aus-
-        und Einfuhr (Au\xDFenhandel): Deutschland, Jahre,\\nWare (4-/6-Steller), L\xE4nder\",\"Time\":{\"From\":\"2008\",\"To\":\"2023\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"51000\",\"Content\":\"Au\xDFenhandel\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Deutschland
-        insgesamt\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Structure\":[{\"Code\":\"WAM4\",\"Content\":\"Warenverzeichnis
-        Au\xDFenhandelsstatistik (4-Steller)\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Structure\":null,\"Updated\":\"see
+        und Einfuhr (Au\xDFenhandel): Deutschland, Jahre,\\nWare (4-/6-Steller), L\xE4nder\",\"Time\":{\"From\":\"2008\",\"To\":\"2023\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"51000\",\"Content\":\"Au\xDFenhandel\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Deutschland
+        insgesamt\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":[{\"Code\":\"WAM4\",\"Content\":\"Warenverzeichnis
+        Au\xDFenhandelsstatistik (4-Steller)\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
         parent\"}],\"Updated\":\"see parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"GEWA\",\"Content\":\"Ausfuhr:
-        Gewicht\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"WERTA\",\"Content\":\"Ausfuhr: Wert\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"WERTAS\",\"Content\":\"Ausfuhr: Wert (US-Dollar)\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"GEWE\",\"Content\":\"Einfuhr: Gewicht\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"WERTE\",\"Content\":\"Einfuhr: Wert\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"WERTES\",\"Content\":\"Einfuhr: Wert (US-Dollar)\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        Gewicht\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"WERTA\",\"Content\":\"Ausfuhr: Wert\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"WERTAS\",\"Content\":\"Ausfuhr: Wert (US-Dollar)\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"GEWE\",\"Content\":\"Einfuhr: Gewicht\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"WERTE\",\"Content\":\"Einfuhr: Wert\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"WERTES\",\"Content\":\"Einfuhr: Wert (US-Dollar)\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
         parent\"}],\"Rows\":[{\"Code\":\"STLAH\",\"Content\":\"L\xE4nderverzeichnis
-        f\xFCr die Au\xDFenhandelsstatistik\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Subtitel\":{\"Code\":\"JAHR\",\"Content\":\"Jahr\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Structure\":null,\"Updated\":\"see
+        f\xFCr die Au\xDFenhandelsstatistik\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Subtitel\":{\"Code\":\"JAHR\",\"Content\":\"Jahr\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
         parent\"},\"Subheading\":null},\"Updated\":\"28.12.2022 17:13:16h\"},\"Copyright\":\"\xA9
         Statistisches Bundesamt (Destatis), 2024\"}"
     headers:
       Connection:
       - Keep-Alive
       Content-Length:
-      - '2106'
+      - '2293'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Sat, 29 Jun 2024 21:08:09 GMT
+      - Tue, 03 Dec 2024 20:17:52 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
@@ -867,1080 +287,232 @@ interactions:
       code: 200
       message: '200'
 - request:
-    body: null
+    body: name=51000-0010&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=en&quality=off&format=ffcsv
     headers:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br
+      - gzip, deflate, br, zstd
       Connection:
       - keep-alive
+      Content-Length:
+      - '131'
+      Content-Type:
+      - application/x-www-form-urlencoded
       User-Agent:
       - python-requests/2.32.3
-    method: GET
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile?area=all&format=ffcsv&language=en&name=51000-0010&quality=off
+    method: POST
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile
   response:
     body:
-      string: 'statistics_code;statistics_label;time_code;time_label;time;1_variable_code;1_variable_label;1_variable_code;1_variable_code;2_variable_code;2_variable_label;2_variable_code;2_variable_code;3_variable_code;3_variable_label;3_variable_code;3_variable_code;GEWA__Exports:_Net_mass__t;WERTA__Exports:_Value__Tsd._EUR;WERTAS__Exports:_Value_(US-Dollar)__Tsd._US_$;GEWE__Imports:_Net_mass__t;WERTE__Imports:_Value__Tsd._EUR;WERTES__Imports:_Value_(US-Dollar)__Tsd._US_$
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH017;Belgium
-        (since 1999);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;48.0;2077;2246;32.7;2720;2941
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH002;Belgium
-        and Luxembourg (until 1998);WAM4;Commodity Class. Foreign Trade Stat.(4-digit
-        cod.);WA0101;Live horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH068;Bulgaria;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;1.0;167;179;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH008;Denmark;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;29.4;3057;3305;15.5;3475;3751
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH053;Estonia
-        (since 1992);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;0.5;7;8;0.5;25;27
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH014;Finland;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;0.5;19;20;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH001;France;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;52.8;5853;6379;16.5;1940;2090
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH009;Greece;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;0.0;0;0;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH007;Ireland;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;3.5;7592;8272;7.8;604;654
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH005;Italy;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;149.3;3167;3402;12.6;813;876
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH092;Croatia
-        (since 05/1992);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;0.0;0;0;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH054;Latvia
-        (since 1992);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;0.0;0;0;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH055;Lithuania
-        (since 1992);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;0.0;0;0;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH018;Luxembourg
-        (since 1999);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;0.5;30;31;0.5;500;538
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH046;Malta;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;3.5;46;50;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH003;Netherlands;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;56.3;5616;6008;28.0;6725;7161
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH015;Austria;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;5.0;261;281;3.5;129;141
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH060;Poland;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;16.3;888;963;12.0;2911;3105
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH010;Portugal;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;8.1;1486;1593;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH066;Romania;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;15.5;1646;1802;1.5;90;98
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH013;Sweden;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;8.3;2936;3187;5.7;1767;1913
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH063;Slovakia
-        (since 1993);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;6.5;171;185;3.7;1060;1161
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH091;Slovenia
-        (since 05/1992);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;0.0;0;0;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH011;Spain;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;11.5;737;800;1.9;127;138
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH061;Czechia
-        (since 1993);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;2.0;2540;2757;1.0;819;895
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH064;Hungary;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;34.1;1472;1594;2.0;638;695
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH600;Cyprus;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH959;Countries
-        not specified (intra-Community trade);WAM4;Commodity Class. Foreign Trade
-        Stat.(4-digit cod.);WA0101;Live horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH006;United
-        Kingdom;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;79.4;6973;7461;33.0;2262;2435
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH070;Albania;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH043;Andorra;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH073;Belarus
-        (since 05/1992);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;5.1;211;229;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH093;Bosnia
-        and Herzegovina (since 1993);WAM4;Commodity Class. Foreign Trade Stat.(4-digit
-        cod.);WA0101;Live horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH041;Faroe
-        Islands;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH044;Gibraltar;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH024;Iceland;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;195.7;5881;6359
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH090;Yugoslavia
-        (05/1992 - 12/1992);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH048;Yugoslavia
-        (until 04/1992);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH021;Canary
-        Islands (until 1996);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH095;Kosovo
-        (since 06/2005);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH037;Liechtenstein
-        (since 1995);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;0.5;80;86;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH074;Moldova,
-        Republic of (since 05/1992);WAM4;Commodity Class. Foreign Trade Stat.(4-digit
-        cod.);WA0101;Live horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH097;Montenegro
-        (since 06/2005);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH096;North
-        Macedonia (since 1992);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH028;Norway;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;13.4;591;640;3.1;47;51
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH075;Russian
-        Federation (since 05/1992);WAM4;Commodity Class. Foreign Trade Stat.(4-digit
-        cod.);WA0101;Live horses, asses, mules and hinnies;-;-;-;0.6;3;3
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH047;San
-        Marino (since 1994);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH039;Switzerland;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;509.8;32597;35163;211.2;2327;2519
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH098;Serbia
-        (since 06/2005);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;0.5;1;1
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH094;Serbia
-        and Montenegro (01/1993 - 05/2005);WAM4;Commodity Class. Foreign Trade Stat.(4-digit
-        cod.);WA0101;Live horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH056;Soviet
-        Union (until 04/1992);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH027;Svalbard
-        (until 1996);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH062;Czechoslovakia
-        (until 1992);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH052;Turkey;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;0.6;2;2
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH072;Ukraine
-        (since 05/1992);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;1.3;2;2;12.4;141;153
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH045;Holy
-        See (Vatican City State);WAM4;Commodity Class. Foreign Trade Stat.(4-digit
-        cod.);WA0101;Live horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH220;Egypt;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;29.8;1588;1708;5.6;51;54
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH208;Algeria;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH330;Angola;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH310;Equatorial
-        Guinea;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH334;Ethiopia;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH284;Benin;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH391;Botswana;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH357;British
-        Indian Ocean Territory;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH236;Burkina
-        Faso;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses,
-        asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH328;Burundi;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH020;Ceuta
-        (since 1999);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH022;Ceuta
-        and Mellila (until 1998);WAM4;Commodity Class. Foreign Trade Stat.(4-digit
-        cod.);WA0101;Live horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH272;Cote
-        d''Ivoire;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH338;Djibouti;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH336;Eritrea
-        (since 1994);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH393;Eswatini;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH314;Gabon;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH252;Gambia;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH276;Ghana;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH260;Guinea;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH257;Guinea-Bissau;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH302;Cameroon;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH247;Cabo
-        Verde;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH346;Kenya;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH375;Comoros;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH322;Congo,
-        Democratic Republic of;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH318;Congo;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH395;Lesotho;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH268;Liberia;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH216;Libya;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH370;Madagascar;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH386;Malawi;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH232;Mali;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH204;Morocco;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH228;Mauritania;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH373;Mauritius;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH377;Mayotte
-        (until 2013);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH023;Melilla
-        (since 1999);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH366;Mozambique;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH389;Namibia;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH240;Niger;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH288;Nigeria;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH372;Reunion
-        (until 1996);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH324;Rwanda;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH378;Zambia;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH311;Sao
-        Tome and Principe;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH248;Senegal;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH355;Seychelles;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH264;Sierra
-        Leone;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH382;Zimbabwe;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH342;Somalia;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH329;Saint
-        Helena, Ascension and Tristan da Cunha;WAM4;Commodity Class. Foreign Trade
-        Stat.(4-digit cod.);WA0101;Live horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH388;South
-        Africa;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH225;South
-        Sudan (since 2013);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH224;Sudan;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH352;Tanzania,
-        United Republic of;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH280;Togo;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH244;Chad;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH212;Tunisia;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH350;Uganda;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH206;Western
-        Sahara (since 2013);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH306;Central
-        African Republic;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH457;Virgin
-        Islands (US);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH446;Anguilla;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH459;Antigua
-        and Barbuda;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH528;Argentina;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;0.5;4;4;49.5;1081;1180
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH474;Aruba;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH453;Bahamas;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH469;Barbados;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH421;Belize;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH413;Bermuda;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH516;Plurinational
-        State of Bolivia;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH475;Bonaire,
-        Sint Eustatius and Saba (since 2013);WAM4;Commodity Class. Foreign Trade Stat.(4-digit
-        cod.);WA0101;Live horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH508;Brazil;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;0.5;11;11
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH468;Virgin
-        Islands, British;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH512;Chile;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;0.5;121;131;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH436;Costa
-        Rica;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses,
-        asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH477;Curacao
-        (since 2013);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH460;Dominica;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH456;Dominican
-        Republic;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH500;Ecuador;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH428;El
-        Salvador;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH529;Falkland
-        Islands (Malvinas);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH496;French
-        Guiana (until 1996);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH473;Grenada;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH406;Greenland;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH458;Guadeloupe
-        (until 1996);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH416;Guatemala;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH488;Guyana;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH452;Haiti;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH424;Honduras;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH464;Jamaica;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH463;Cayman
-        Islands;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH404;Canada;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;29.0;2069;2247;1.0;28;30
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH480;Colombia;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH448;Cuba;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH462;Martinique
-        (until 1996);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH412;Mexico;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;125.2;21139;22732;3.5;130;140
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH470;Montserrat
-        (since 1995);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH432;Nicaragua;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH478;Netherlands
-        Antilles (until 2012);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH442;Panama;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;0.5;2;2;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH520;Paraguay;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;7.5;40;43;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH504;Peru;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH481;St.
-        Barthelemy (since 2013);WAM4;Commodity Class. Foreign Trade Stat.(4-digit
-        cod.);WA0101;Live horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH449;St.
-        Kitts and Nevis;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH465;St.
-        Lucia;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH479;Sint
-        Maarten (Dutch part) (since 2013);WAM4;Commodity Class. Foreign Trade Stat.(4-digit
-        cod.);WA0101;Live horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH408;Saint
-        Pierre and Miquelon;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH467;St.
-        Vincent and the Grenadines;WAM4;Commodity Class. Foreign Trade Stat.(4-digit
-        cod.);WA0101;Live horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH492;Suriname;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH472;Trinidad
-        and Tobago;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH454;Turks
-        and Caicos Islands;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH524;Uruguay;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;5.0;348;369;12.2;165;179
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH484;Bolivarian
-        Republic of Venezuela;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH400;United
-        States;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;716.9;141390;153008;69.7;1626;1755
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH660;Afghanistan;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH077;Armenia
-        (since 05/1992);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH078;Azerbaijan
-        (since 05/1992);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH640;Bahrain;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH666;Bangladesh;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH625;Occupied
-        Palestinian Territory (since 1995);WAM4;Commodity Class. Foreign Trade Stat.(4-digit
-        cod.);WA0101;Live horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH675;Bhutan;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH703;Brunei
-        Darussalam;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH720;China;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH076;Georgia
-        (since 05/1992);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH740;Hong
-        Kong;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses,
-        asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH664;India;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;2.5;289;312;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH700;Indonesia;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH612;Iraq;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH616;Iran,
-        Islamic Republic of;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH624;Israel;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;1.5;43;47;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH732;Japan;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;25.4;3429;3700;0.5;26;28
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH653;Yemen;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH628;Jordan;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH696;Cambodia;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH079;Kazakhstan
-        (since 05/1992);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH644;Qatar;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;9.5;410;442;0.5;4;4
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH083;Kyrgyzstan
-        (since 05/1992);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;0.7;3;3;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH724;Korea,
-        Democratic People''s Republic of;WAM4;Commodity Class. Foreign Trade Stat.(4-digit
-        cod.);WA0101;Live horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH728;Korea,
-        Republic of;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;55.5;4128;4466;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH636;Kuwait;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;0.5;4;5
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH684;Lao
-        People''s Democratic Republic;WAM4;Commodity Class. Foreign Trade Stat.(4-digit
-        cod.);WA0101;Live horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH604;Lebanon;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH743;Macao;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH701;Malaysia;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH667;Maldives;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH716;Mongolia;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH676;Myanmar;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH672;Nepal;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH649;Oman;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;3.4;103;110;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH662;Pakistan;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;4.2;235;253;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH708;Philippines;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH632;Saudi
-        Arabia;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;0.5;6;6;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH706;Singapore;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;6.6;508;549;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH669;Sri
-        Lanka;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH608;Syrian
-        Arab Republic;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH082;Tajikistan
-        (since 05/1992);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH736;Taiwan;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH680;Thailand;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;18.5;1007;1090;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH626;Timor-Leste
-        (since 2001);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH080;Turkmenistan
-        (since 05/1992);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH081;Uzbekistan
-        (since 05/1992);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;1.5;21;23;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH647;United
-        Arab Emirates;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;28.0;2243;2412;0.5;8;9
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH690;Viet-Nam;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH832;United
-        States Minor Outlying Islands (since 2001);WAM4;Commodity Class. Foreign Trade
-        Stat.(4-digit cod.);WA0101;Live horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH810;American
-        Oceania (until 2000);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH830;American
-        Samoa (since 2001);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH891;Antarctica
-        (since 2001);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH800;Australia;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;74.6;17292;18618;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH802;Australian
-        Oceania (until 2000);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH892;Bouvet
-        Island (since 2001);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH837;Cook
-        Islands (since 2001);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH815;Fiji;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH894;French
-        Southern Territories (from 2001);WAM4;Commodity Class. Foreign Trade Stat.(4-digit
-        cod.);WA0101;Live horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH822;French
-        Polynesia;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH831;Guam
-        (since 2001);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH835;Heard
-        Island and McDonald Islands (since 2001);WAM4;Commodity Class. Foreign Trade
-        Stat.(4-digit cod.);WA0101;Live horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH812;Kiribati;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH833;Cocos
-        Islands (or Keeling Islands) (since 2001);WAM4;Commodity Class. Foreign Trade
-        Stat.(4-digit cod.);WA0101;Live horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH824;Marshall
-        Islands (since 1992);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH823;Micronesia,
-        Federated States of (since 1992);WAM4;Commodity Class. Foreign Trade Stat.(4-digit
-        cod.);WA0101;Live horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH803;Nauru;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH809;New
-        Caledonia;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH804;New
-        Zealand;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;2.3;249;269;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH814;New
-        Zealand Oceania (until 2000);WAM4;Commodity Class. Foreign Trade Stat.(4-digit
-        cod.);WA0101;Live horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH838;Niue
-        (since 2001);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH820;Northern
-        Mariana Islands (since 1994);WAM4;Commodity Class. Foreign Trade Stat.(4-digit
-        cod.);WA0101;Live horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH836;Norfolk
-        Island (since 2001);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH825;Palau
-        (since 1995);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH801;Papua
-        New Guinea;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH813;Pitcairn;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH890;Polar
-        Regions (until 2000);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH806;Solomon
-        Islands;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH819;Samoa;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH893;South
-        Georgia, South Sandwich Islands (since 2001);WAM4;Commodity Class. Foreign
-        Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH839;Tokelau
-        (since 2001);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH817;Tonga;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH807;Tuvalu;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH816;Vanuatu;WAM4;Commodity
-        Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live horses, asses, mules
-        and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH811;Wallis
-        and Futuna;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH834;Christmas
-        Island (since 2001);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH953;High
-        seas (since 2013);WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH950;Stores
-        and provisions;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH958;Countries
-        and territories not specified;WAM4;Commodity Class. Foreign Trade Stat.(4-digit
-        cod.);WA0101;Live horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        51000;Foreign trade;JAHR;Year;2023;DINSG;Germany;DG;Germany;STLAH;Countries;STLAH977;Confidential
-        countries;WAM4;Commodity Class. Foreign Trade Stat.(4-digit cod.);WA0101;Live
-        horses, asses, mules and hinnies;-;-;-;-;-;-
-
-        '
+      string: !!binary |
+        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
+        AQABAFIAAACDKwAAAAA=
     headers:
       Connection:
       - Keep-Alive
       Content-Disposition:
-      - attachement;filename=51000-0010_flat.csv
+      - attachment; filename=51000-0010_1733262725399_en_flat.zip
       Content-Type:
-      - text/csv
+      - application/zip
       Date:
-      - Sat, 29 Jun 2024 21:13:53 GMT
+      - Tue, 03 Dec 2024 21:51:57 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
@@ -1951,46 +523,50 @@ interactions:
       code: 200
       message: '200'
 - request:
-    body: null
+    body: name=51000-0010&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=en&quality=off&format=ffcsv
     headers:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br
+      - gzip, deflate, br, zstd
       Connection:
       - keep-alive
+      Content-Length:
+      - '131'
+      Content-Type:
+      - application/x-www-form-urlencoded
       User-Agent:
       - python-requests/2.32.3
-    method: GET
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table?area=all&format=ffcsv&language=en&name=51000-0010&quality=off
+    method: POST
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table
   response:
     body:
       string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"successfull\",\"Type\":\"information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"51000-0010\",\"area\":\"all\",\"language\":\"en\"},\"Object\":{\"Code\":\"51000-0010\",\"Content\":\"Exports
         and imports (foreign trade): Germany, years,\\ncommodity (4-/6-digit codes),
         countries\",\"Time\":{\"From\":\"2008\",\"To\":\"2023\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"51000\",\"Content\":\"Foreign
-        trade\",\"Type\":\"statistic\",\"Values\":null,\"Selected\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Germany\",\"Type\":\"variable\",\"Values\":\"1\",\"Selected\":\"1\",\"Structure\":[{\"Code\":\"WAM4\",\"Content\":\"Commodity
-        Class. Foreign Trade Stat.(4-digit cod.)\",\"Type\":\"variable\",\"Values\":\"1\",\"Selected\":\"1\",\"Structure\":null,\"Updated\":\"see
+        trade\",\"Type\":\"statistic\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Germany\",\"Type\":\"variable\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":[{\"Code\":\"WAM4\",\"Content\":\"Commodity
+        Class. Foreign Trade Stat.(4-digit cod.)\",\"Type\":\"variable\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
         parent\"}],\"Updated\":\"see parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"GEWA\",\"Content\":\"Exports:
-        Net mass\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"WERTA\",\"Content\":\"Exports: Value\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"WERTAS\",\"Content\":\"Exports: Value (US-Dollar)\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"GEWE\",\"Content\":\"Imports: Net mass\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"WERTE\",\"Content\":\"Imports: Value\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"WERTES\",\"Content\":\"Imports: Value (US-Dollar)\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        Net mass\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"WERTA\",\"Content\":\"Exports: Value\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"WERTAS\",\"Content\":\"Exports: Value (US-Dollar)\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"GEWE\",\"Content\":\"Imports: Net mass\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"WERTE\",\"Content\":\"Imports: Value\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"WERTES\",\"Content\":\"Imports: Value (US-Dollar)\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
         parent\"}],\"Rows\":[{\"Code\":\"STLAH\",\"Content\":\"Country Nomenclature
-        for External Trade Statistics\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Subtitel\":{\"Code\":\"JAHR\",\"Content\":\"Year\",\"Type\":\"variable\",\"Values\":\"1\",\"Selected\":\"1\",\"Structure\":null,\"Updated\":\"see
+        for External Trade Statistics\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Subtitel\":{\"Code\":\"JAHR\",\"Content\":\"Year\",\"Type\":\"variable\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
         parent\"},\"Subheading\":null},\"Updated\":\"2022-12-28 17:13:16h\"},\"Copyright\":\"\xA9
         Federal Statistical Office, Wiesbaden 2024\"}"
     headers:
       Connection:
       - Keep-Alive
       Content-Length:
-      - '2120'
+      - '2307'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Sat, 29 Jun 2024 21:13:59 GMT
+      - Tue, 03 Dec 2024 21:52:05 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:

@@ -3,12 +3,12 @@
 import json
 import re
 from io import StringIO
+from typing import Any
 
 import numpy as np
 import pandas as pd
 
 from pystatis import config, db
-from pystatis.config import LANG_TO_COL_MAPPING
 from pystatis.http_helper import load_data
 
 
@@ -26,7 +26,7 @@ class Table:
         self.name: str = name
         self.raw_data = ""
         self.data = pd.DataFrame()
-        self.metadata: dict = {}
+        self.metadata: dict[str, Any] = {}
 
     # pylint: disable=too-many-arguments
     # pylint: disable=too-many-locals
@@ -43,7 +43,7 @@ class Table:
         stand: str = "",
         language: str = "de",
         quality: str = "off",
-    ):
+    ) -> None:
         """Downloads raw data and metadata from GENESIS-Online.
 
         Additional keyword arguments are passed on to the GENESIS-Online GET request for tablefile.
@@ -118,8 +118,11 @@ class Table:
 
         db_matches = db.identify_db_matches(self.name)
         db_name = db.select_db_by_credentials(db_matches)
+        db_version = config.VERSION_MAPPING[db_name]
 
-        raw_data_bytes = load_data(endpoint="data", method="tablefile", params=params, db_name=db_name)
+        raw_data_bytes = load_data(
+            endpoint="data", method="tablefile", params=params, db_name=db_name
+        )
         assert isinstance(raw_data_bytes, bytes)  # nosec assert_used
         raw_data_str = raw_data_bytes.decode("utf-8-sig")
 
@@ -129,12 +132,20 @@ class Table:
         # so we have to do this workaround to get a proper data frame later
         raw_data_lines = raw_data_str.splitlines(keepends=True)
         raw_data_header = raw_data_lines[0]
-        raw_data_str = raw_data_header + "".join(line for line in raw_data_lines[1:] if line[:4].isdigit())
+        raw_data_str = raw_data_header + "".join(
+            line for line in raw_data_lines[1:] if line[:4].isdigit()
+        )
         data_buffer = StringIO(raw_data_str)
 
         # find AGS column, if present, to set dtype correctly and avoid mixed types
-        ags_codes = config.ZENSUS_AGS_CODES if db_name == "zensus" else config.REGIO_AND_GENESIS_AGS_CODES
-        pos_of_ags_col = np.where(pd.Series(raw_data_lines[1].split(";")).isin(ags_codes))[0]
+        ags_codes = (
+            config.ZENSUS_AGS_CODES
+            if db_name == "zensus"
+            else config.REGIO_AND_GENESIS_AGS_CODES
+        )
+        pos_of_ags_col = np.where(
+            pd.Series(raw_data_lines[1].split(";")).isin(ags_codes)
+        )[0]
 
         self.data = pd.read_csv(
             data_buffer,
@@ -142,8 +153,10 @@ class Table:
             na_values=["...", ".", "-", "/", "x"],
             decimal="," if language == "de" else ".",
             dtype={raw_data_header.split(";")[pos + 2]: str for pos in pos_of_ags_col},
-            parse_dates=[config.LANG_TO_COL_MAPPING[db_name][language]["time"]],
-            date_format="%d.%m.%Y" if (language == "de" and db_name != "zensus") else "%Y-%m-%d",
+            parse_dates=[config.LANG_TO_COL_MAPPING[db_version][language]["time"]],
+            date_format="%d.%m.%Y"
+            if (language == "de" and db_name != "zensus")
+            else "%Y-%m-%d",
         )
 
         if prettify:
@@ -173,34 +186,36 @@ class Table:
             and includes informative columns names
         """
         match db_name:
-            case "genesis" | "regio":
-                pretty_data = Table.parse_genesis_and_regio_table(data, language)
-            case "zensus":
-                pretty_data = Table.parse_zensus_table(data, language)
+            case "regio":
+                pretty_data = Table.parse_v4_table(data, language)
+            case "genesis" | "zensus":
+                pretty_data = Table.parse_v5_table(data, db_name, language)
             case _:
                 pretty_data = data
 
         return pretty_data
 
     @staticmethod
-    def parse_genesis_and_regio_table(data: pd.DataFrame, language: str) -> pd.DataFrame:
+    def parse_v4_table(data: pd.DataFrame, language: str) -> pd.DataFrame:
         """
         Parse ffcsv format for tables from GENESIS and Regionalstatistik into a more readable format
         """
 
-        column_name_dict = LANG_TO_COL_MAPPING["genesis"][language]
+        column_name_dict = config.LANG_TO_COL_MAPPING["v4"][language]
         time_col = column_name_dict["time"]
         time_label_col = column_name_dict["time_label"]
         variable_label_col = column_name_dict["variable_label"]
         value_label_col = column_name_dict["value_label"]
-        ags_label_col = column_name_dict["ags"]
+        ags_label_col = config.ARS_OR_AGS_MAPPING["regio"][language]
 
         # Extracts time column with name from last element of Zeit_Label column
         time = pd.DataFrame({data[time_label_col].iloc[-1]: data[time_col]})
 
         # Whenever there is a column with a regional code, we add this column to the final output
         # As the position is unknown, we have to identify this column by looking for the AGS code
-        ags_codes = list(set(config.REGIO_AND_GENESIS_AGS_CODES) - set(config.EXCLUDE_AGS_CODES))
+        ags_codes = list(
+            set(config.REGIO_AND_GENESIS_AGS_CODES) - set(config.EXCLUDE_AGS_CODES)
+        )
         pos_of_ags_col, ags_code = Table.extract_ags_col(data, ags_codes, ags_label_col)
 
         # Extracts new column names from last values of the variable label columns
@@ -213,22 +228,35 @@ class Table:
 
         # Given a name like BEV036__Bevoelkerung_in_Hauptwohnsitzhaushalten__1000
         # extracts the label and the unit and omits the code
-        values.columns = [re.split(r"_{2,}", name, maxsplit=1)[1] for name in values.columns]
+        values.columns = [
+            re.split(r"_{2,}", name, maxsplit=1)[1] for name in values.columns
+        ]
 
-        pretty_data = pd.concat([time, attributes, values], axis=1).dropna(axis=0, how="all")
+        # remove single "_" between words in values.columns but keep "__" as separator
+        values.columns = [
+            name.split("__")[0].replace("_", " ") + "__" + name.split("__")[1]
+            for name in values.columns
+        ]
+
+        pretty_data = pd.concat([time, attributes, values], axis=1).dropna(
+            axis=0, how="all"
+        )
         if ags_code is not None:
             # Genesis has always the same time attribute as first column,
             # and each attribute always has 4 columns so pos_of_ags_col // 4
             # adjusts the original counter to the shorter column list of pretty_data
-            pretty_data.insert(loc=pos_of_ags_col // 4, column=ags_code.name, value=ags_code)
+            pretty_data.insert(
+                loc=pos_of_ags_col // 4, column=ags_code.name, value=ags_code
+            )
 
         return pretty_data
 
     @staticmethod
-    def parse_zensus_table(data: pd.DataFrame, language: str) -> pd.DataFrame:
+    def parse_v5_table(data: pd.DataFrame, db_name: str, language: str) -> pd.DataFrame:
         """Parse Zensus table ffcsv format into a more readable format"""
-        column_name_dict = LANG_TO_COL_MAPPING["zensus"][language]
-        ars_label_code = column_name_dict["ars"]
+        column_name_dict = config.LANG_TO_COL_MAPPING["v5"][language]
+        # Zensus and Genesis are both now on v5 but Genesis has different regional codes than Zensus
+        ars_label_code = config.ARS_OR_AGS_MAPPING[db_name][language]
         time_col = column_name_dict["time"]
         time_label_col = column_name_dict["time_label"]
         value_col = column_name_dict["value"]
@@ -244,18 +272,24 @@ class Table:
 
         # add the unit to the column names for the value columns
         data[value_variable_label_col] = data[value_variable_label_col].str.cat(
-            data[value_unit_col].fillna("Unknown_Unit"), sep="__"
+            data[value_unit_col].astype(str).fillna("Unknown_Unit"), sep="__"
         )
 
         if quality:
             # with quality = 'on' we have an additional column value_q
             # to still use pivot table we have to combine value and value_q
             # so we can later split them again
-            data[value_col] = [[v, q] for v, q in zip(data[value_col], data[value_q_col])]
+            data[value_col] = [
+                [v, q] for v, q in zip(data[value_col], data[value_q_col])
+            ]
             data = data.drop(columns=[value_q_col])
 
         pivot_table = data.pivot(
-            index=[col for col in data.columns if col not in data.filter(regex=r"^value").columns],
+            index=[
+                col
+                for col in data.columns
+                if col not in data.filter(regex=r"^value").columns
+            ],
             columns=value_variable_label_col,
             values=value_col,
         )
@@ -277,26 +311,41 @@ class Table:
         time = pd.DataFrame({time_label: pivot_table[time_col]})
 
         # If AGS column is present, add it to the final output
-        ags_codes = list(set(config.ZENSUS_AGS_CODES) - set(config.EXCLUDE_AGS_CODES))
-        pos_of_ags_col, ags_code = Table.extract_ags_col(pivot_table, ags_codes, ars_label_code)
+        ags_codes = list(
+            set(
+                config.ZENSUS_AGS_CODES
+                if db_name == "zensus"
+                else config.REGIO_AND_GENESIS_AGS_CODES
+            )
+            - set(config.EXCLUDE_AGS_CODES)
+        )
+        pos_of_ags_col, ags_code = Table.extract_ags_col(
+            pivot_table, ags_codes, ars_label_code
+        )
 
         attributes = pivot_table.filter(regex=r"\d+_" + variable_attribute_label_col)
         # avoid taking label from first row
         # as this can contain value for whole Germany
         # even if table is for regional areas
-        attributes.columns = pivot_table.filter(regex=r"\d+_" + variable_label_col).iloc[1].tolist()
+        attributes.columns = (
+            pivot_table.filter(regex=r"\d+_" + variable_label_col).iloc[1].tolist()
+        )
 
         pretty_data = pd.concat([time, attributes, pivot_table[value_columns]], axis=1)
         if ags_code is not None:
             # Genesis has always the same time attribute as first column, and
             # each attribute always has 4 columns so pos_of_ags_col // 4
             # adjusts the original counter to the shorter column list of pretty_data
-            pretty_data.insert(loc=pos_of_ags_col // 4, column=ags_code.name, value=ags_code)
+            pretty_data.insert(
+                loc=pos_of_ags_col // 4, column=ags_code.name, value=ags_code
+            )
 
         return pretty_data
 
     @staticmethod
-    def extract_ags_col(data: pd.DataFrame, codes: list[str], label: str) -> tuple[np.ndarray, pd.Series | None]:
+    def extract_ags_col(
+        data: pd.DataFrame, codes: list[str], label: str
+    ) -> tuple[np.ndarray, pd.Series | None]:
         """Extracts the AGS column from the data if present.
 
         Args:
@@ -312,6 +361,8 @@ class Table:
         pos_of_ags_col = np.where(data.iloc[1].isin(codes))[0]
         if pos_of_ags_col.size > 0:
             pos_of_ags_col = pos_of_ags_col[0]
-            ags_code = pd.Series(data=data.iloc[:, pos_of_ags_col + 2], name=label, dtype=str)
+            ags_code = pd.Series(
+                data=data.iloc[:, pos_of_ags_col + 2], name=label, dtype=str
+            )
 
         return pos_of_ags_col, ags_code

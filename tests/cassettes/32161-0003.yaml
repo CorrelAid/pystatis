@@ -1,62 +1,60 @@
 interactions:
 - request:
-    body: null
+    body: name=32161-0003&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=de&quality=off&format=ffcsv
     headers:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br
+      - gzip, deflate, br, zstd
       Connection:
       - keep-alive
+      Content-Length:
+      - '131'
+      Content-Type:
+      - application/x-www-form-urlencoded
       User-Agent:
       - python-requests/2.32.3
-    method: GET
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=32161-0003&quality=off
+    method: POST
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile
   response:
     body:
-      string: "Statistik_Code;Statistik_Label;Zeit_Code;Zeit_Label;Zeit;1_Merkmal_Code;1_Merkmal_Label;1_Auspraegung_Code;1_Auspraegung_Label;2_Merkmal_Code;2_Merkmal_Label;2_Auspraegung_Code;2_Auspraegung_Label;BETR01__Betriebe__Anzahl;ABF014__Erzeugte_Abfallmenge__1000_t;ERW012__Beschaeftigte__1000;ERF001__Erfassungsgrad_der_Betriebe__Prozent;ERF002__Erfassungsgrad_der_Beschaeftigten__Prozent\n32161;Erhebung
-        \xFCber die Abfallerzeugung;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;WZ08T1;WZ2008
-        (2-Steller): Abfallerzeugung;WZ08-01-03;Land- und Forstwirtschaft, Fischerei;366;423,9;32,9;0,4;14,2\n32161;Erhebung
-        \xFCber die Abfallerzeugung;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;WZ08T1;WZ2008
-        (2-Steller): Abfallerzeugung;WZ08-05-02;Bergbau und Gewinnung von Steinen
-        und Erden;49;463,3;22,5;2,3;46,0\n32161;Erhebung \xFCber die Abfallerzeugung;JAHR;Jahr;2018;DINSG;Deutschland
-        insgesamt;DG;Deutschland;WZ08T1;WZ2008 (2-Steller): Abfallerzeugung;WZ08-10-01;Ern\xE4hrungsgewerbe
-        und Tabakverarbeitung;1451;6318,3;404,4;4,7;55,7\n32161;Erhebung \xFCber die
-        Abfallerzeugung;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;WZ08T1;WZ2008
-        (2-Steller): Abfallerzeugung;WZ08-13-03;Textil- und Bekleidungsgewerbe, Ledergewerbe;503;229,7;86,7;6,9;70,1\n32161;Erhebung
-        \xFCber die Abfallerzeugung;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;WZ08T1;WZ2008
-        (2-Steller): Abfallerzeugung;WZ08-16;H.v. Holz-, Flecht-, Korb-u.Korkwaren
-        (ohne M\xF6bel);348;3582,6;57,9;3,6;51,1\n32161;Erhebung \xFCber die Abfallerzeugung;JAHR;Jahr;2018;DINSG;Deutschland
-        insgesamt;DG;Deutschland;WZ08T1;WZ2008 (2-Steller): Abfallerzeugung;WZ08-17-03;Papier-
-        und Druckgewerbe;1039;6552,3;178,0;8,9;71,5\n32161;Erhebung \xFCber die Abfallerzeugung;JAHR;Jahr;2018;DINSG;Deutschland
-        insgesamt;DG;Deutschland;WZ08T1;WZ2008 (2-Steller): Abfallerzeugung;WZ08-19;Kokerei
-        und Mineral\xF6lverarbeitung;50;486,5;18,5;37,6;89,4\n32161;Erhebung \xFCber
-        die Abfallerzeugung;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;WZ08T1;WZ2008
-        (2-Steller): Abfallerzeugung;WZ08-20-03;Chem. u. pharm. Erzeugn., Gummi-,
-        Kunststoffwaren;2987;7729,4;752,5;23,7;84,6\n32161;Erhebung \xFCber die Abfallerzeugung;JAHR;Jahr;2018;DINSG;Deutschland
-        insgesamt;DG;Deutschland;WZ08T1;WZ2008 (2-Steller): Abfallerzeugung;WZ08-23;H.v.Glas,-waren,Keramik,Verarb.
-        v.Steinen u.Erden;940;3768,9;149,8;9,1;69,3\n32161;Erhebung \xFCber die Abfallerzeugung;JAHR;Jahr;2018;DINSG;Deutschland
-        insgesamt;DG;Deutschland;WZ08T1;WZ2008 (2-Steller): Abfallerzeugung;WZ08-24-03;Metallerzeugung
-        u. -bearb., Herstell. v.Metallerz.;1912;12270,4;609,0;4,4;55,3\n32161;Erhebung
-        \xFCber die Abfallerzeugung;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;WZ08T1;WZ2008
-        (2-Steller): Abfallerzeugung;WZ08-26-03;DV-Ger\xE4te,elektr. u. opt.Erzeugn.,Fahrzeugbau,etc.;5402;8375,5;2531,1;10,4;79,2\n32161;Erhebung
-        \xFCber die Abfallerzeugung;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;WZ08T1;WZ2008
-        (2-Steller): Abfallerzeugung;WZ08-31-02;Herstellung von M\xF6beln und sonstigen
-        Waren;995;547,5;201,0;3,8;57,7\n32161;Erhebung \xFCber die Abfallerzeugung;JAHR;Jahr;2018;DINSG;Deutschland
-        insgesamt;DG;Deutschland;WZ08T1;WZ2008 (2-Steller): Abfallerzeugung;WZ08-35-01;Energieversorgung,
-        Wasserversorgung;526;13554,5;179,4;2,5;64,2\n32161;Erhebung \xFCber die Abfallerzeugung;JAHR;Jahr;2018;DINSG;Deutschland
-        insgesamt;DG;Deutschland;WZ08T1;WZ2008 (2-Steller): Abfallerzeugung;WZ08-45-04;Dienstleistungen;3377;3613,5;3844,6;0,1;17,5\n"
+      string: !!binary |
+        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
+        LmNzdlBLBQYAAAAAAQABAFIAAAAKBQAAAAA=
     headers:
       Connection:
       - Keep-Alive
       Content-Disposition:
-      - attachement;filename=32161-0003_flat.csv
+      - attachment; filename=32161-0003_1733257056900_de_flat.zip
       Content-Length:
-      - '3460'
+      - '1394'
       Content-Type:
-      - text/csv
+      - application/zip
       Date:
-      - Sat, 29 Jun 2024 21:07:54 GMT
+      - Tue, 03 Dec 2024 20:17:35 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
@@ -65,44 +63,48 @@ interactions:
       code: 200
       message: '200'
 - request:
-    body: null
+    body: name=32161-0003&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=de&quality=off&format=ffcsv
     headers:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br
+      - gzip, deflate, br, zstd
       Connection:
       - keep-alive
+      Content-Length:
+      - '131'
+      Content-Type:
+      - application/x-www-form-urlencoded
       User-Agent:
       - python-requests/2.32.3
-    method: GET
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=32161-0003&quality=off
+    method: POST
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table
   response:
     body:
       string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"32161-0003\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"32161-0003\",\"Content\":\"Betriebe,
         erzeugte Abfallmenge, Besch\xE4ftigte, Erfassungsgrad\\nder Betriebe, Erfassungsgrad
-        der Besch\xE4ftigten: Deutschland,\\nJahre, Wirtschaftszweige\",\"Time\":{\"From\":\"2010\",\"To\":\"2018\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"32161\",\"Content\":\"Erhebung
-        \xFCber die Abfallerzeugung\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Deutschland
-        insgesamt\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"BETR01\",\"Content\":\"Betriebe\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"ABF014\",\"Content\":\"Erzeugte Abfallmenge\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"ERW012\",\"Content\":\"Besch\xE4ftigte\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"ERF001\",\"Content\":\"Erfassungsgrad der Betriebe\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"ERF002\",\"Content\":\"Erfassungsgrad der Besch\xE4ftigten\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        der Besch\xE4ftigten: Deutschland,\\nJahre, Wirtschaftszweige\",\"Time\":{\"From\":\"2010\",\"To\":\"2022\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"32161\",\"Content\":\"Erhebung
+        \xFCber die Abfallerzeugung\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Deutschland
+        insgesamt\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"BETR01\",\"Content\":\"Betriebe\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"ABF014\",\"Content\":\"Erzeugte Abfallmenge\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"ERW012\",\"Content\":\"Besch\xE4ftigte\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"ERF001\",\"Content\":\"Erfassungsgrad der Betriebe\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"ERF002\",\"Content\":\"Erfassungsgrad der Besch\xE4ftigten\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
         parent\"}],\"Rows\":[{\"Code\":\"WZ08T1\",\"Content\":\"WZ2008 (2-Steller):
-        Abfallerzeugung\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Subtitel\":{\"Code\":\"JAHR\",\"Content\":\"Jahr\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Structure\":null,\"Updated\":\"see
+        Abfallerzeugung\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Subtitel\":{\"Code\":\"JAHR\",\"Content\":\"Jahr\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
         parent\"},\"Subheading\":null},\"Updated\":\"28.12.2022 17:46:57h\"},\"Copyright\":\"\xA9
         Statistisches Bundesamt (Destatis), 2024\"}"
     headers:
       Connection:
       - Keep-Alive
       Content-Length:
-      - '1901'
+      - '2054'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Sat, 29 Jun 2024 21:07:56 GMT
+      - Tue, 03 Dec 2024 20:17:37 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
@@ -111,87 +113,60 @@ interactions:
       code: 200
       message: '200'
 - request:
-    body: null
+    body: name=32161-0003&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=en&quality=off&format=ffcsv
     headers:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br
+      - gzip, deflate, br, zstd
       Connection:
       - keep-alive
+      Content-Length:
+      - '131'
+      Content-Type:
+      - application/x-www-form-urlencoded
       User-Agent:
       - python-requests/2.32.3
-    method: GET
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile?area=all&format=ffcsv&language=en&name=32161-0003&quality=off
+    method: POST
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile
   response:
     body:
-      string: 'statistics_code;statistics_label;time_code;time_label;time;1_variable_code;1_variable_label;1_variable_code;1_variable_code;2_variable_code;2_variable_label;2_variable_code;2_variable_code;BETR01__Local_units__number;ABF014__Quantity_of_waste_produced__1000_t;ERW012__Persons_employed__1000;ERF001__Coverage_of_local_units__percent;ERF002__Coverage_of_persons_employed__percent
-
-        32161;Survey of waste production;JAHR;Year;2018;DINSG;Germany;DG;Germany;WZ08T1;WZ2008
-        (2-digit codes): Waste production;WZ08-01-03;Agriculture and forestry, fishing;366;423.9;32.9;0.4;14.2
-
-        32161;Survey of waste production;JAHR;Year;2018;DINSG;Germany;DG;Germany;WZ08T1;WZ2008
-        (2-digit codes): Waste production;WZ08-05-02;Mining and quarrying;49;463.3;22.5;2.3;46.0
-
-        32161;Survey of waste production;JAHR;Year;2018;DINSG;Germany;DG;Germany;WZ08T1;WZ2008
-        (2-digit codes): Waste production;WZ08-10-01;Manufacture of food products,
-        beverages, tobacco;1451;6318.3;404.4;4.7;55.7
-
-        32161;Survey of waste production;JAHR;Year;2018;DINSG;Germany;DG;Germany;WZ08T1;WZ2008
-        (2-digit codes): Waste production;WZ08-13-03;Manuf. of textiles, textile prod.,
-        leather prod.;503;229.7;86.7;6.9;70.1
-
-        32161;Survey of waste production;JAHR;Year;2018;DINSG;Germany;DG;Germany;WZ08T1;WZ2008
-        (2-digit codes): Waste production;WZ08-16;Manuf. of wood, products of wood
-        and cork etc.;348;3582.6;57.9;3.6;51.1
-
-        32161;Survey of waste production;JAHR;Year;2018;DINSG;Germany;DG;Germany;WZ08T1;WZ2008
-        (2-digit codes): Waste production;WZ08-17-03;Manufacture of paper products,
-        printing;1039;6552.3;178.0;8.9;71.5
-
-        32161;Survey of waste production;JAHR;Year;2018;DINSG;Germany;DG;Germany;WZ08T1;WZ2008
-        (2-digit codes): Waste production;WZ08-19;Manufacture of coke and refined
-        petroleum products;50;486.5;18.5;37.6;89.4
-
-        32161;Survey of waste production;JAHR;Year;2018;DINSG;Germany;DG;Germany;WZ08T1;WZ2008
-        (2-digit codes): Waste production;WZ08-20-03;Chemical, pharmaceutical, rubber,
-        plastic products;2987;7729.4;752.5;23.7;84.6
-
-        32161;Survey of waste production;JAHR;Year;2018;DINSG;Germany;DG;Germany;WZ08T1;WZ2008
-        (2-digit codes): Waste production;WZ08-23;Manufacture of other non-metallic
-        mineral products;940;3768.9;149.8;9.1;69.3
-
-        32161;Survey of waste production;JAHR;Year;2018;DINSG;Germany;DG;Germany;WZ08T1;WZ2008
-        (2-digit codes): Waste production;WZ08-24-03;Manufacture of basic metals and
-        metal products;1912;12270.4;609.0;4.4;55.3
-
-        32161;Survey of waste production;JAHR;Year;2018;DINSG;Germany;DG;Germany;WZ08T1;WZ2008
-        (2-digit codes): Waste production;WZ08-26-03;Computer, electr. a.optical prod.,
-        motor vehicles;5402;8375.5;2531.1;10.4;79.2
-
-        32161;Survey of waste production;JAHR;Year;2018;DINSG;Germany;DG;Germany;WZ08T1;WZ2008
-        (2-digit codes): Waste production;WZ08-31-02;Manufacture of furniture and
-        other manufacturing;995;547.5;201.0;3.8;57.7
-
-        32161;Survey of waste production;JAHR;Year;2018;DINSG;Germany;DG;Germany;WZ08T1;WZ2008
-        (2-digit codes): Waste production;WZ08-35-01;Electricity, gas, steam, air
-        cond., water supply;526;13554.5;179.4;2.5;64.2
-
-        32161;Survey of waste production;JAHR;Year;2018;DINSG;Germany;DG;Germany;WZ08T1;WZ2008
-        (2-digit codes): Waste production;WZ08-45-04;Services;3377;3613.5;3844.6;0.1;17.5
-
-        '
+      string: !!binary |
+        UEsDBBQACAgIAHi2g1kAAAAAAAAAAAAAAAAkAAAAMzIxNjEtMDAwM18xNzMzMjYyNzA4ODgxX2Vu
+        X2ZsYXQuY3N21ZrdcuMmFMfv+xS6bGdsDR9CH+Uqu5vdttN22mRnMu1NBsvYZlYSKkLO+tl60Ufa
+        V1iEFNtRtpmYK7hJEEKIn4G/zjmcL//+12mmRadF2d2Xcs3p2XXFVryiWtR8vGVLp0oK7/dMCbaq
+        pvtn12OrswqmtRKrXj9verozPoRmvaJ5r+h/e/3mnfGhPat6Pv697xuhp+LTV83q7JPfYQRTSG97
+        teeHSG6iB9ZpHrVKrvtSC9nQX65+uqF/caYoAgjRdz//fvuBfuCqZs2BvjsV7/4G+Udo/iEA8uh7
+        tFyLrdDR8Obuhx+ju3m/Q/slhkuA6G+s6Tes1L3iwxA2vTIIwwVr1pHUO66i+thENFuaEhKnFAIA
+        Ik2v3rwHMKF/9qzRQj+D4OswGRGEcW4Z6fXNHYCI/sFVJ5su4nVbyUOoXDguaMtVyRttwN4DAOlb
+        ueeKbW0HlSxZFQ1ruAuTD4KE0KavV1zRN9cfbwzfr6EzpShOnk4aejJprV8rE4Kl+dXnlFKuH1t2
+        i2jFx+GbopYrVpbSUOap4QxEVhwhE4InRk9lxZGLxCgMWXHkgwQk3sqK64YbvnDhyAoylJi+3fFa
+        mB9+EbU7Znorea/Ha9WvzOyY+ooNFuaRnWaogDEMRVjcMTM0UXoqLc5kCMcgDHVxRsQgT73VF2eq
+        PAvKcAHEmmeiMUaXNcb+6ZlSB+sO4HRyBwKQkBc4IDH2v8ca8dLQQ/FcXmBIkLeb/IVR4zwoQwHi
+        Qa6sORQPb9f8sxaVtXzGkn0iXkQVZ9bbspcUIRjjULa4I2NG/A5qOGKlwXgfbnxJmnmrG64rEQWl
+        KYlRx4TecrUXJTfmWgJInIUiFrPBJ6AopsF7KgOzAQPj1wSxveerBBX+xiJnY4Xp3Lzyej+i5Kg6
+        p5DHinXG+6i5ZlVnTRhbPLkjEBQoMZ+KQLatEyPJE+Mse7y3naiSuR/pqwK4rcu88Nj5d1qFWZwG
+        pCaYDAHU64qXWonSaMEi2jJjwZi2rF5ETCjTQTMYMQ9MGxOm69u2OlAIM5yEExZwpDSvmE57PVUU
+        19mLSRia4siXmod8FRVXJByU0wCLuW6W8tN4zKv4RjR8bUaslax4X59964p0itEFoCluiMbY9Nr/
+        cKPCeSiK4rgwPQ5COAEVcH6u5LecpGdhlgcp14sjymONJS6l+hRxXcYUFTkJSEsu5ksTvy2Ty4mC
+        Sc9yQMsKf/XjYhrj4ZCAtAPAwYu72hprq6+OyWYbqXinlbG+NqLb2aMeY2IFk9r5eii/ZeK1HCDG
+        YYjDqyem8Pg89JUMkAQV6kDPYjljxmkjm6UN4lRDYMdYTOpJhKrAWTiHo46MBPt9OOqGVcyXp6+i
+        4Yjnc96UE1GGgrIsYPaN+HDL2umkd8w+bZUwUmHUkmQQG7xAhOQyNph6nlx1GU4RTFLFZVi5x4nc
+        F5FkYR2yoNRmkcq67fWQLcpt9DeOWCxbm0j6mChSSy1VtOc7UVa8o2mBsoDStx0pEcGJ30FRVzII
+        QhESV0JCUn9DG65QObhQXb4CUEsHCCIb7JF9BAAA7zsAAFBLAQIUABQACAgIAHi2g1kiG+yRfQQA
+        AO87AAAkAAAAAAAAAAAAAAAAAAAAAAAzMjE2MS0wMDAzXzE3MzMyNjI3MDg4ODFfZW5fZmxhdC5j
+        c3ZQSwUGAAAAAAEAAQBSAAAAzwQAAAAA
     headers:
       Connection:
       - Keep-Alive
       Content-Disposition:
-      - attachement;filename=32161-0003_flat.csv
+      - attachment; filename=32161-0003_1733262708881_en_flat.zip
       Content-Length:
-      - '3179'
+      - '1335'
       Content-Type:
-      - text/csv
+      - application/zip
       Date:
-      - Sat, 29 Jun 2024 21:13:44 GMT
+      - Tue, 03 Dec 2024 21:51:46 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
@@ -200,44 +175,48 @@ interactions:
       code: 200
       message: '200'
 - request:
-    body: null
+    body: name=32161-0003&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=en&quality=off&format=ffcsv
     headers:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br
+      - gzip, deflate, br, zstd
       Connection:
       - keep-alive
+      Content-Length:
+      - '131'
+      Content-Type:
+      - application/x-www-form-urlencoded
       User-Agent:
       - python-requests/2.32.3
-    method: GET
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table?area=all&format=ffcsv&language=en&name=32161-0003&quality=off
+    method: POST
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table
   response:
     body:
       string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"successfull\",\"Type\":\"information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"32161-0003\",\"area\":\"all\",\"language\":\"en\"},\"Object\":{\"Code\":\"32161-0003\",\"Content\":\"Local
         units, quantity of waste produced, persons employed,\\ncoverage of local units,
-        coverage of persons employed:\\nGermany, years, economic activities\",\"Time\":{\"From\":\"2010\",\"To\":\"2018\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"32161\",\"Content\":\"Survey
-        of waste production\",\"Type\":\"statistic\",\"Values\":null,\"Selected\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Germany\",\"Type\":\"variable\",\"Values\":\"1\",\"Selected\":\"1\",\"Structure\":null,\"Updated\":\"see
+        coverage of persons employed:\\nGermany, years, economic activities\",\"Time\":{\"From\":\"2010\",\"To\":\"2022\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"32161\",\"Content\":\"Survey
+        of waste production\",\"Type\":\"statistic\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Germany\",\"Type\":\"variable\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
         parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"BETR01\",\"Content\":\"Local
-        units\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"ABF014\",\"Content\":\"Quantity of waste produced\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"ERW012\",\"Content\":\"Persons employed\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"ERF001\",\"Content\":\"Coverage of local units\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"ERF002\",\"Content\":\"Coverage of persons employed\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        units\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"ABF014\",\"Content\":\"Quantity of waste produced\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"ERW012\",\"Content\":\"Persons employed\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"ERF001\",\"Content\":\"Coverage of local units\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"ERF002\",\"Content\":\"Coverage of persons employed\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
         parent\"}],\"Rows\":[{\"Code\":\"WZ08T1\",\"Content\":\"WZ2008 (2-digit codes):
-        Waste production\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Subtitel\":{\"Code\":\"JAHR\",\"Content\":\"Year\",\"Type\":\"variable\",\"Values\":\"1\",\"Selected\":\"1\",\"Structure\":null,\"Updated\":\"see
+        Waste production\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Subtitel\":{\"Code\":\"JAHR\",\"Content\":\"Year\",\"Type\":\"variable\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
         parent\"},\"Subheading\":null},\"Updated\":\"2022-12-28 17:46:57h\"},\"Copyright\":\"\xA9
         Federal Statistical Office, Wiesbaden 2024\"}"
     headers:
       Connection:
       - Keep-Alive
       Content-Length:
-      - '1897'
+      - '2050'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Sat, 29 Jun 2024 21:13:46 GMT
+      - Tue, 03 Dec 2024 21:51:49 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:

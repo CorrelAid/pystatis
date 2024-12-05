@@ -28,6 +28,7 @@ version = release
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
+    "nbsphinx",
     "myst_parser",
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",  # used to generate overview tables
@@ -36,6 +37,7 @@ extensions = [
 
 templates_path = ["_templates"]
 exclude_patterns = []
+nbsphinx_execute = "never"
 
 
 # -- Options for HTML output -------------------------------------------------

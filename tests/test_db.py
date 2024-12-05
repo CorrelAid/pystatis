@@ -3,6 +3,7 @@ from configparser import ConfigParser
 import pytest
 
 from pystatis import config, db
+from pystatis.exception import PystatisConfigError
 
 
 @pytest.fixture()
@@ -39,6 +40,11 @@ def test_identify_db_matches(config_, name, expected_db):
     assert db.identify_db_matches(name)[0] == expected_db
 
 
+def test_identify_db_matches_no_match(config_):
+    with pytest.raises(ValueError):
+        db.identify_db_matches("test")
+
+
 def test_identify_db_with_multiple_matches(config_):
     config_.set("genesis", "username", "test")
     config_.set("genesis", "password", "test")
@@ -57,3 +63,8 @@ def test_identify_db_with_multiple_matches(config_):
         if db.check_credentials(db_name):
             break
     assert db_name == "regio"
+
+
+def test_select_db_by_credentials(config_):
+    with pytest.raises(PystatisConfigError):
+        db.select_db_by_credentials([])

@@ -10,16 +10,6 @@ repos:
       - id: trailing-whitespace
         args: [--markdown-linebreak-ext=md]
       - id: check-merge-conflict
-  - repo: https://github.com/pycqa/isort
-    rev: 5.12.0
-    hooks:
-      - id: isort
-        name: isort (python)
-        args: ["--profile", "black", "--filter-files", "--line-length", "120"]
-  - repo: https://github.com/psf/black
-    rev: 23.10.0
-    hooks:
-      - id: black
   - repo: https://github.com/python-jsonschema/check-jsonschema
     rev: 0.27.0
     hooks:
@@ -28,25 +18,24 @@ repos:
         files: ^\.github/workflows/
         types: [yaml]
         args: ["--schemafile", "https://json.schemastore.org/github-workflow"]
-  - repo: https://github.com/thclark/pre-commit-sphinx
-    rev: 0.0.1
-    hooks:
-      - id: build-docs
-        name: "Check if documentation compiles"
-        args:
-          [
-            "--cache-dir",
-            "docs/build/doctrees",
-            "--html-dir",
-            "docs/build/html",
-            "--source-dir",
-            "docs/source",
-          ]
-        language_version: python3
-        additional_dependencies: [myst-parser]
   - repo: https://github.com/Lucas-C/pre-commit-hooks-safety
     rev: v1.3.3
     hooks:
       - id: python-safety-dependencies-check
         files: pyproject.toml
         args: ["--short-report", "--policy-file=.safety-policy-v2.yml"]
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    # Ruff version.
+    rev: v0.8.1
+    hooks:
+      # Run the linter.
+      - id: ruff
+        args: [--fix]
+      # Run the formatter.
+      - id: ruff-format
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.13.0 # Use the sha / tag you want to point at
+    hooks:
+      - id: mypy
+        args: [--strict, --ignore-missing-imports]
+        files: ^src/

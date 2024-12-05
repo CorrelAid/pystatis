@@ -12,6 +12,7 @@ from pathlib import Path
 from typing import Optional
 
 from pystatis import config
+from pystatis.types import ParamDict
 
 logger = logging.getLogger(__name__)
 
@@ -21,7 +22,7 @@ JOB_ID_PATTERN = r"_\d+"
 def cache_data(
     cache_dir: str,
     name: Optional[str],
-    params: dict,
+    params: ParamDict,
     data: bytes,
     content_type: str,
 ) -> None:
@@ -73,7 +74,7 @@ def cache_data(
 def read_from_cache(
     cache_dir: str,
     name: Optional[str],
-    params: dict,
+    params: ParamDict,
 ) -> bytes:
     """Read and return compressed data from cache.
 
@@ -103,7 +104,7 @@ def read_from_cache(
     return data
 
 
-def _build_file_path(cache_dir: str, name: str, params: dict) -> Path:
+def _build_file_path(cache_dir: str, name: str, params: ParamDict) -> Path:
     """Builds a unique cache directory name from name and hashed params dictionary.
 
     The way this method works is that it creates a path under cache dir that is unique
@@ -123,8 +124,10 @@ def _build_file_path(cache_dir: str, name: str, params: dict) -> Path:
     # we use 10 digits because this is enough security to avoid hash collisions
     if "job" in params_:
         del params_["job"]
+
     params_hash = hashlib.blake2s(digest_size=10, usedforsecurity=False)
     params_hash.update(json.dumps(params_).encode("UTF-8"))
+
     data_dir = Path(cache_dir) / name / params_hash.hexdigest()
 
     return data_dir
@@ -148,7 +151,7 @@ def normalize_name(name: str) -> str:
 def hit_in_cash(
     cache_dir: str,
     name: Optional[str],
-    params: dict,
+    params: ParamDict,
 ) -> bool:
     """Check if data is already cached.
 

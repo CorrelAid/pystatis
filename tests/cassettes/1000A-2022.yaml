@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: null
+    body: name=1000A-2022&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=de&quality=on&format=ffcsv
     headers:
       Accept:
       - '*/*'
@@ -8,14 +8,18 @@ interactions:
       - gzip, deflate, br, zstd
       Connection:
       - keep-alive
+      Content-Length:
+      - '130'
+      Content-Type:
+      - application/x-www-form-urlencoded
       User-Agent:
       - python-requests/2.32.3
-    method: GET
-    uri: https://ergebnisse.zensus2022.de/api/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=1000A-2022&quality=on
+    method: POST
+    uri: https://ergebnisse.zensus2022.de/api/rest/2020/data/tablefile
   response:
     body:
       string: !!binary |
-        UEsDBBQACAgIAEsF7VgAAAAAAAAAAAAAAAAkAAAAMTAwMEEtMjAyMl8xNzIwODI0MTQyMzQyX2Rl
+        UEsDBBQACAgIAA6sg1kAAAAAAAAAAAAAAAAkAAAAMTAwMEEtMjAyMl8xNzMzMjU3OTQ5NDg3X2Rl
         X2ZsYXQuY3N27X3Lkh3HkeW+vwJLaYG28Ee87K7IIY3SdIuSieyRdjKQqiZgAkF1oaC27u/pb+jN
         yGwW/KD5hclLyEy3OKybGZGRftJvggsJr3rAEeHhfvz4Of/3f/+ftw8vHl69fXj19ds/fP3dH+9O
         Fz9//eKru9enh1ff3r3/rR9+9PdfPNEf/vLi/tWLr17/7fcvfv7+T138wouHh/tXX717+P//6N9/
@@ -247,8 +251,8 @@ interactions:
         JSd1F6QNpp2zBWLRlH2V0SZOA4WUg6+4bFA33/Qjb85nmvr26C9z2xIJK1epj7WoPAQJuKpasgof
         o3q8+MDCmWpUd13YbjbeHCToXW1UOojXYC7G/INWY1V/QMhuVk0cHClzM4+QcvE32xhtOF3PHnC+
         Bl+7ol46uFm2xouJQ5By8LJ6AbmnRKnuOjR7knykqkruAmVLVp0alFJ9dWYIWjhLqTmLtzANeese
-        jRWn/7ReefP/H1BLBwgz2hS2cDMAAIj4BQBQSwECFAAUAAgICABLBe1YM9oUtnAzAACI+AUAJAAA
-        AAAAAAAAAAAAAAAAAAAAMTAwMEEtMjAyMl8xNzIwODI0MTQyMzQyX2RlX2ZsYXQuY3N2UEsFBgAA
+        jRWn/7ReefP/H1BLBwgz2hS2cDMAAIj4BQBQSwECFAAUAAgICAAOrINZM9oUtnAzAACI+AUAJAAA
+        AAAAAAAAAAAAAAAAAAAAMTAwMEEtMjAyMl8xNzMzMjU3OTQ5NDg3X2RlX2ZsYXQuY3N2UEsFBgAA
         AAABAAEAUgAAAMIzAAAAAA==
     headers:
       Cache-Control:
@@ -256,22 +260,19 @@ interactions:
       Connection:
       - keep-alive
       Content-Disposition:
-      - attachment; filename=1000A-2022_1720824142342_de_flat.zip
+      - attachment; filename=1000A-2022_1733257949487_de_flat.zip
       Content-Type:
       - application/zip
       Date:
-      - Fri, 12 Jul 2024 22:42:24 GMT
+      - Tue, 03 Dec 2024 20:32:31 GMT
       ETag:
-      - '"myra-7555556f"'
+      - '"myra-3abefd99"'
       Expires:
-      - Fri, 12 Jul 2024 22:42:24 GMT
+      - Tue, 03 Dec 2024 20:32:31 GMT
       Referrer-Policy:
       - same-origin
       Server:
       - myracloud
-      Set-Cookie:
-      - AL_BALANCE-S=$xc/ESh0rkBUh!CtPUm0fp_mnniU1jwY0_yrluOENzE5vlw97TUi; Path=/;
-        Secure; HttpOnly; SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
       Transfer-Encoding:
@@ -288,7 +289,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: null
+    body: name=1000A-2022&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=de&quality=on&format=ffcsv
     headers:
       Accept:
       - '*/*'
@@ -296,10 +297,14 @@ interactions:
       - gzip, deflate, br, zstd
       Connection:
       - keep-alive
+      Content-Length:
+      - '130'
+      Content-Type:
+      - application/x-www-form-urlencoded
       User-Agent:
       - python-requests/2.32.3
-    method: GET
-    uri: https://ergebnisse.zensus2022.de/api/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=1000A-2022&quality=on
+    method: POST
+    uri: https://ergebnisse.zensus2022.de/api/rest/2020/metadata/table
   response:
     body:
       string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"1000A-2022\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"1000A-2022\",\"Content\":\"Personen:
@@ -325,18 +330,15 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Fri, 12 Jul 2024 22:42:28 GMT
+      - Tue, 03 Dec 2024 20:32:35 GMT
       ETag:
-      - '"myra-6dbdad1a"'
+      - '"myra-33275544"'
       Expires:
-      - Fri, 12 Jul 2024 22:42:28 GMT
+      - Tue, 03 Dec 2024 20:32:35 GMT
       Referrer-Policy:
       - same-origin
       Server:
       - myracloud
-      Set-Cookie:
-      - AL_BALANCE-S=$xc/O_zMGNvMb7Ll5rTlIVt4ipdWaF5smnFqBmQ0Da4szyiY0fM9; Path=/;
-        Secure; HttpOnly; SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
       Transfer-Encoding:

@@ -1,262 +1,109 @@
 interactions:
 - request:
-    body: null
+    body: name=52111-0001&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=de&quality=on&format=ffcsv
     headers:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br
+      - gzip, deflate, br, zstd
       Connection:
       - keep-alive
+      Content-Length:
+      - '130'
+      Content-Type:
+      - application/x-www-form-urlencoded
       User-Agent:
       - python-requests/2.32.3
-    method: GET
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=52111-0001&quality=on
+    method: POST
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile
   response:
     body:
-      string: "Statistik_Code;Statistik_Label;Zeit_Code;Zeit_Label;Zeit;1_Merkmal_Code;1_Merkmal_Label;1_Auspraegung_Code;1_Auspraegung_Label;2_Merkmal_Code;2_Merkmal_Label;2_Auspraegung_Code;2_Auspraegung_Label;3_Merkmal_Code;3_Merkmal_Label;3_Auspraegung_Code;3_Auspraegung_Label;UNT002__Unternehmen_(EU)__Anzahl;UNT002__Unternehmen_(EU)__q\n52111;Unternehmensregister-System
-        (URS);JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0000B0010;0
-        bis unter 10 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-B;Bergbau
-        und Gewinnung von Steinen und Erden;1065;e\n52111;Unternehmensregister-System
-        (URS);JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0000B0010;0
-        bis unter 10 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-C;Verarbeitendes
-        Gewerbe;146011;e\n52111;Unternehmensregister-System (URS);JAHR;Jahr;2021;DINSG;Deutschland
-        insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0000B0010;0
-        bis unter 10 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-D;Energieversorgung;63403;e\n52111;Unternehmensregister-System
-        (URS);JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0000B0010;0
-        bis unter 10 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-E;Wasserversorg.,Entsorg.,Beseitig.v.Umweltverschm.;6958;e\n52111;Unternehmensregister-System
-        (URS);JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0000B0010;0
-        bis unter 10 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-F;Baugewerbe;331140;e\n52111;Unternehmensregister-System
-        (URS);JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0000B0010;0
-        bis unter 10 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-G;Handel,
-        Instandhaltung und Reparatur von Kfz;483244;e\n52111;Unternehmensregister-System
-        (URS);JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0000B0010;0
-        bis unter 10 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-H;Verkehr
-        und Lagerei;78234;e\n52111;Unternehmensregister-System (URS);JAHR;Jahr;2021;DINSG;Deutschland
-        insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0000B0010;0
-        bis unter 10 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-I;Gastgewerbe;194548;e\n52111;Unternehmensregister-System
-        (URS);JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0000B0010;0
-        bis unter 10 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-J;Information
-        und Kommunikation;112509;e\n52111;Unternehmensregister-System (URS);JAHR;Jahr;2021;DINSG;Deutschland
-        insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0000B0010;0
-        bis unter 10 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-K;Erbringung
-        von Finanz- und Versicherungsleistungen;67697;e\n52111;Unternehmensregister-System
-        (URS);JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0000B0010;0
-        bis unter 10 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-L;Grundst\xFCcks-
-        und Wohnungswesen;183556;e\n52111;Unternehmensregister-System (URS);JAHR;Jahr;2021;DINSG;Deutschland
-        insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0000B0010;0
-        bis unter 10 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-M;Freiberufliche,
-        wiss. u. techn. Dienstleistungen;437450;e\n52111;Unternehmensregister-System
-        (URS);JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0000B0010;0
-        bis unter 10 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-N;Sonstige
-        wirtschaftliche Dienstleistungen;189705;e\n52111;Unternehmensregister-System
-        (URS);JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0000B0010;0
-        bis unter 10 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-P;Erziehung
-        und Unterricht;57980;e\n52111;Unternehmensregister-System (URS);JAHR;Jahr;2021;DINSG;Deutschland
-        insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0000B0010;0
-        bis unter 10 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-Q;Gesundheits-
-        und Sozialwesen;206906;e\n52111;Unternehmensregister-System (URS);JAHR;Jahr;2021;DINSG;Deutschland
-        insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0000B0010;0
-        bis unter 10 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-R;Kunst,
-        Unterhaltung und Erholung;89178;e\n52111;Unternehmensregister-System (URS);JAHR;Jahr;2021;DINSG;Deutschland
-        insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0000B0010;0
-        bis unter 10 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-S;Erbringung
-        von sonstigen Dienstleistungen;198588;e\n52111;Unternehmensregister-System
-        (URS);JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0010B0050;10
-        bis unter 50 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-B;Bergbau
-        und Gewinnung von Steinen und Erden;396;e\n52111;Unternehmensregister-System
-        (URS);JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0010B0050;10
-        bis unter 50 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-C;Verarbeitendes
-        Gewerbe;42653;e\n52111;Unternehmensregister-System (URS);JAHR;Jahr;2021;DINSG;Deutschland
-        insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0010B0050;10
-        bis unter 50 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-D;Energieversorgung;586;e\n52111;Unternehmensregister-System
-        (URS);JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0010B0050;10
-        bis unter 50 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-E;Wasserversorg.,Entsorg.,Beseitig.v.Umweltverschm.;2160;e\n52111;Unternehmensregister-System
-        (URS);JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0010B0050;10
-        bis unter 50 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-F;Baugewerbe;42119;e\n52111;Unternehmensregister-System
-        (URS);JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0010B0050;10
-        bis unter 50 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-G;Handel,
-        Instandhaltung und Reparatur von Kfz;58104;e\n52111;Unternehmensregister-System
-        (URS);JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0010B0050;10
-        bis unter 50 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-H;Verkehr
-        und Lagerei;18051;e\n52111;Unternehmensregister-System (URS);JAHR;Jahr;2021;DINSG;Deutschland
-        insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0010B0050;10
-        bis unter 50 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-I;Gastgewerbe;25464;e\n52111;Unternehmensregister-System
-        (URS);JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0010B0050;10
-        bis unter 50 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-J;Information
-        und Kommunikation;10383;e\n52111;Unternehmensregister-System (URS);JAHR;Jahr;2021;DINSG;Deutschland
-        insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0010B0050;10
-        bis unter 50 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-K;Erbringung
-        von Finanz- und Versicherungsleistungen;1932;e\n52111;Unternehmensregister-System
-        (URS);JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0010B0050;10
-        bis unter 50 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-L;Grundst\xFCcks-
-        und Wohnungswesen;4411;e\n52111;Unternehmensregister-System (URS);JAHR;Jahr;2021;DINSG;Deutschland
-        insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0010B0050;10
-        bis unter 50 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-M;Freiberufliche,
-        wiss. u. techn. Dienstleistungen;28006;e\n52111;Unternehmensregister-System
-        (URS);JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0010B0050;10
-        bis unter 50 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-N;Sonstige
-        wirtschaftliche Dienstleistungen;19517;e\n52111;Unternehmensregister-System
-        (URS);JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0010B0050;10
-        bis unter 50 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-P;Erziehung
-        und Unterricht;12004;e\n52111;Unternehmensregister-System (URS);JAHR;Jahr;2021;DINSG;Deutschland
-        insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0010B0050;10
-        bis unter 50 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-Q;Gesundheits-
-        und Sozialwesen;40508;e\n52111;Unternehmensregister-System (URS);JAHR;Jahr;2021;DINSG;Deutschland
-        insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0010B0050;10
-        bis unter 50 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-R;Kunst,
-        Unterhaltung und Erholung;5711;e\n52111;Unternehmensregister-System (URS);JAHR;Jahr;2021;DINSG;Deutschland
-        insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0010B0050;10
-        bis unter 50 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-S;Erbringung
-        von sonstigen Dienstleistungen;13512;e\n52111;Unternehmensregister-System
-        (URS);JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0050B0250;50
-        bis unter 250 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-B;Bergbau
-        und Gewinnung von Steinen und Erden;113;e\n52111;Unternehmensregister-System
-        (URS);JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0050B0250;50
-        bis unter 250 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-C;Verarbeitendes
-        Gewerbe;13463;e\n52111;Unternehmensregister-System (URS);JAHR;Jahr;2021;DINSG;Deutschland
-        insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0050B0250;50
-        bis unter 250 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-D;Energieversorgung;430;e\n52111;Unternehmensregister-System
-        (URS);JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0050B0250;50
-        bis unter 250 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-E;Wasserversorg.,Entsorg.,Beseitig.v.Umweltverschm.;704;e\n52111;Unternehmensregister-System
-        (URS);JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0050B0250;50
-        bis unter 250 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-F;Baugewerbe;3765;e\n52111;Unternehmensregister-System
-        (URS);JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0050B0250;50
-        bis unter 250 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-G;Handel,
-        Instandhaltung und Reparatur von Kfz;9779;e\n52111;Unternehmensregister-System
-        (URS);JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0050B0250;50
-        bis unter 250 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-H;Verkehr
-        und Lagerei;3559;e\n52111;Unternehmensregister-System (URS);JAHR;Jahr;2021;DINSG;Deutschland
-        insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0050B0250;50
-        bis unter 250 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-I;Gastgewerbe;2183;e\n52111;Unternehmensregister-System
-        (URS);JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0050B0250;50
-        bis unter 250 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-J;Information
-        und Kommunikation;2615;e\n52111;Unternehmensregister-System (URS);JAHR;Jahr;2021;DINSG;Deutschland
-        insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0050B0250;50
-        bis unter 250 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-K;Erbringung
-        von Finanz- und Versicherungsleistungen;880;e\n52111;Unternehmensregister-System
-        (URS);JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0050B0250;50
-        bis unter 250 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-L;Grundst\xFCcks-
-        und Wohnungswesen;500;e\n52111;Unternehmensregister-System (URS);JAHR;Jahr;2021;DINSG;Deutschland
-        insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0050B0250;50
-        bis unter 250 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-M;Freiberufliche,
-        wiss. u. techn. Dienstleistungen;3264;e\n52111;Unternehmensregister-System
-        (URS);JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0050B0250;50
-        bis unter 250 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-N;Sonstige
-        wirtschaftliche Dienstleistungen;4995;e\n52111;Unternehmensregister-System
-        (URS);JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0050B0250;50
-        bis unter 250 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-P;Erziehung
-        und Unterricht;2145;e\n52111;Unternehmensregister-System (URS);JAHR;Jahr;2021;DINSG;Deutschland
-        insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0050B0250;50
-        bis unter 250 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-Q;Gesundheits-
-        und Sozialwesen;7907;e\n52111;Unternehmensregister-System (URS);JAHR;Jahr;2021;DINSG;Deutschland
-        insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0050B0250;50
-        bis unter 250 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-R;Kunst,
-        Unterhaltung und Erholung;800;e\n52111;Unternehmensregister-System (URS);JAHR;Jahr;2021;DINSG;Deutschland
-        insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0050B0250;50
-        bis unter 250 abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-S;Erbringung
-        von sonstigen Dienstleistungen;2199;e\n52111;Unternehmensregister-System (URS);JAHR;Jahr;2021;DINSG;Deutschland
-        insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0250UM;250
-        und mehr abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-B;Bergbau
-        und Gewinnung von Steinen und Erden;18;e\n52111;Unternehmensregister-System
-        (URS);JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0250UM;250
-        und mehr abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-C;Verarbeitendes
-        Gewerbe;4231;e\n52111;Unternehmensregister-System (URS);JAHR;Jahr;2021;DINSG;Deutschland
-        insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0250UM;250
-        und mehr abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-D;Energieversorgung;204;e\n52111;Unternehmensregister-System
-        (URS);JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0250UM;250
-        und mehr abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-E;Wasserversorg.,Entsorg.,Beseitig.v.Umweltverschm.;150;e\n52111;Unternehmensregister-System
-        (URS);JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0250UM;250
-        und mehr abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-F;Baugewerbe;382;e\n52111;Unternehmensregister-System
-        (URS);JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0250UM;250
-        und mehr abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-G;Handel,
-        Instandhaltung und Reparatur von Kfz;1747;e\n52111;Unternehmensregister-System
-        (URS);JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0250UM;250
-        und mehr abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-H;Verkehr
-        und Lagerei;674;e\n52111;Unternehmensregister-System (URS);JAHR;Jahr;2021;DINSG;Deutschland
-        insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0250UM;250
-        und mehr abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-I;Gastgewerbe;276;e\n52111;Unternehmensregister-System
-        (URS);JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0250UM;250
-        und mehr abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-J;Information
-        und Kommunikation;629;e\n52111;Unternehmensregister-System (URS);JAHR;Jahr;2021;DINSG;Deutschland
-        insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0250UM;250
-        und mehr abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-K;Erbringung
-        von Finanz- und Versicherungsleistungen;693;e\n52111;Unternehmensregister-System
-        (URS);JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0250UM;250
-        und mehr abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-L;Grundst\xFCcks-
-        und Wohnungswesen;89;e\n52111;Unternehmensregister-System (URS);JAHR;Jahr;2021;DINSG;Deutschland
-        insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0250UM;250
-        und mehr abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-M;Freiberufliche,
-        wiss. u. techn. Dienstleistungen;572;e\n52111;Unternehmensregister-System
-        (URS);JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0250UM;250
-        und mehr abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-N;Sonstige
-        wirtschaftliche Dienstleistungen;1175;e\n52111;Unternehmensregister-System
-        (URS);JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0250UM;250
-        und mehr abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-P;Erziehung
-        und Unterricht;555;e\n52111;Unternehmensregister-System (URS);JAHR;Jahr;2021;DINSG;Deutschland
-        insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0250UM;250
-        und mehr abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-Q;Gesundheits-
-        und Sozialwesen;2891;e\n52111;Unternehmensregister-System (URS);JAHR;Jahr;2021;DINSG;Deutschland
-        insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0250UM;250
-        und mehr abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-R;Kunst,
-        Unterhaltung und Erholung;173;e\n52111;Unternehmensregister-System (URS);JAHR;Jahr;2021;DINSG;Deutschland
-        insgesamt;DG;Deutschland;BESG12;Besch\xE4ftigtengr\xF6\xDFenklassen;BESAB0250UM;250
-        und mehr abh\xE4ngig Besch\xE4ftigte;WZ08U6;WZ2008 (Abschnitte): URS;WZ08-S;Erbringung
-        von sonstigen Dienstleistungen;404;e\n"
+      string: !!binary |
+        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
+        AFIAAABtBQAAAAA=
     headers:
       Connection:
       - Keep-Alive
       Content-Disposition:
-      - attachement;filename=52111-0001_flat.csv
+      - attachment; filename=52111-0001_1733257282144_de_flat.zip
+      Content-Length:
+      - '1493'
       Content-Type:
-      - text/csv
+      - application/zip
       Date:
-      - Sat, 29 Jun 2024 21:14:50 GMT
+      - Tue, 03 Dec 2024 20:21:20 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
       - Apache
-      Transfer-Encoding:
-      - chunked
     status:
       code: 200
       message: '200'
 - request:
-    body: null
+    body: name=52111-0001&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=de&quality=on&format=ffcsv
     headers:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br
+      - gzip, deflate, br, zstd
       Connection:
       - keep-alive
+      Content-Length:
+      - '130'
+      Content-Type:
+      - application/x-www-form-urlencoded
       User-Agent:
       - python-requests/2.32.3
-    method: GET
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=52111-0001&quality=on
+    method: POST
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table
   response:
     body:
       string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"52111-0001\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"52111-0001\",\"Content\":\"Unternehmen
         (EU) (Unternehmensregister-System):\\nDeutschland, Jahre, Wirtschaftszweige
-        (Abschnitte),\\nBesch\xE4ftigtengr\xF6\xDFenklassen\",\"Time\":{\"From\":\"2019\",\"To\":\"2021\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"52111\",\"Content\":\"Unternehmensregister-System
-        (URS)\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Deutschland
-        insgesamt\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Structure\":[{\"Code\":\"UNT002\",\"Content\":\"Unternehmen
-        (EU)\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Updated\":\"see parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"BESG12\",\"Content\":\"Besch\xE4ftigtengr\xF6\xDFenklassen\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        (Abschnitte),\\nBesch\xE4ftigtengr\xF6\xDFenklassen\",\"Time\":{\"From\":\"2019\",\"To\":\"2022\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"52111\",\"Content\":\"Unternehmensregister-System
+        (URS)\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Deutschland
+        insgesamt\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":[{\"Code\":\"UNT002\",\"Content\":\"Unternehmen
+        (EU)\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Updated\":\"see parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"BESG12\",\"Content\":\"Besch\xE4ftigtengr\xF6\xDFenklassen\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
         parent\"}],\"Rows\":[{\"Code\":\"WZ08U6\",\"Content\":\"WZ2008 (Abschnitte):
-        URS\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Subtitel\":{\"Code\":\"JAHR\",\"Content\":\"Jahr\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Structure\":null,\"Updated\":\"see
+        URS\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Subtitel\":{\"Code\":\"JAHR\",\"Content\":\"Jahr\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
         parent\"},\"Subheading\":null},\"Updated\":\"28.12.2022 17:12:43h\"},\"Copyright\":\"\xA9
         Statistisches Bundesamt (Destatis), 2024\"}"
     headers:
       Connection:
       - Keep-Alive
       Content-Length:
-      - '1457'
+      - '1559'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Sat, 29 Jun 2024 21:14:52 GMT
+      - Tue, 03 Dec 2024 20:21:22 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:

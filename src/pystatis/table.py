@@ -155,7 +155,7 @@ class Table:
             dtype={raw_data_header.split(";")[pos + 2]: str for pos in pos_of_ags_col},
             parse_dates=[config.LANG_TO_COL_MAPPING[db_version][language]["time"]],
             date_format="%d.%m.%Y"
-            if (language == "de" and db_name != "zensus")
+            if (language == "de" and db_name == "regio")
             else "%Y-%m-%d",
         )
 

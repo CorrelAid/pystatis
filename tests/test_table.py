@@ -746,7 +746,18 @@ def test_prettify(
 @pytest.mark.vcr()
 @pytest.mark.parametrize(
     "table_name, time_col, language",
-    [("12411-01-01-4", "Stichtag", "de"), ("12411-01-01-4", "Stichtag", "en")],
+    [
+        ("12411-01-01-4", "Stichtag", "de"),
+        ("12411-01-01-4", "Stichtag", "en"),
+        ("13111-0005", "Stichtag", "de"),
+        ("13111-0005", "Reference date", "en"),
+        ("71311-0001", "Stichtag zum Quartalsende", "de"),
+        ("71311-0001", "Reference date end-of-quarter", "en"),
+        ("1000A-0000", "Stichtag", "de"),
+        ("1000A-0000", "Reference date", "en"),
+        ("2000S-2003", "Stichtag", "de"),
+        ("2000S-2003", "Reference date", "en"),
+    ],
 )
 def test_dtype_time_column(mocker, table_name: str, time_col: str, language: str):
     mocker.patch.object(pystatis.db, "check_credentials", return_value=True)

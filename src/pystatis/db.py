@@ -72,6 +72,12 @@ def get_user(db_name: str) -> str:
     return config.config[db_name]["username"]  # type: ignore
 
 
+def set_user(db_name: str, new_username: str) -> None:
+    config.config.set(db_name, "username", new_username)
+    config.write_config()
+    check_credentials_are_valid(db_name)
+
+
 def get_pw(db_name: str) -> str:
     return config.config[db_name]["password"]  # type: ignore
 
@@ -79,6 +85,7 @@ def get_pw(db_name: str) -> str:
 def set_pw(db_name: str, new_pw: str) -> None:
     config.config.set(db_name, "password", new_pw)
     config.write_config()
+    check_credentials_are_valid(db_name)
 
 
 def get_settings(db_name: str) -> tuple[str, str, str]:
@@ -96,7 +103,7 @@ def check_credentials(db_name: str) -> bool:
     Returns:
         TRUE if credentials were found, FALSE otherwise.
     """
-    return get_user(db_name) != "" and get_pw(db_name) != ""
+    return get_user(db_name) != ""
 
 
 def check_credentials_are_valid(db_name: str) -> bool:

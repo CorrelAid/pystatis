@@ -8,7 +8,7 @@ import time
 import requests
 
 from pystatis import config, db
-from pystatis.cache import cache_data, hit_in_cash, normalize_name, read_from_cache
+from pystatis import cache
 from pystatis.exception import DestatisStatusError, NoNewerDataError, TableNotFoundError
 from pystatis.types import ParamDict
 
@@ -43,12 +43,12 @@ def load_data(
     name = params.get("name")
 
     if name is not None:
-        name = normalize_name(name)
+        name = cache.normalize_name(name)
 
     if endpoint == "data":
-        if hit_in_cash(cache_dir, name, params):
+        if cache.hit_in_cash(cache_dir, name, params):
             print("hit")
-            data = read_from_cache(cache_dir, name, params)
+            data = cache.read_from_cache(cache_dir, name, params)
         else:
             response = get_data_from_endpoint(endpoint, method, params, db_name)
             content_type = response.headers.get("Content-Type", "text/csv").split("/")[
@@ -79,16 +79,16 @@ def load_data(
                 )[-1]
                 data = response.content
 
-            cache_data(cache_dir, name, params, data, content_type)
+            cache.cache_data(cache_dir, name, params, data, content_type)
 
             # bytes response in case of zip content type cannot be directly decoded, so we have to load the zip first!
             if content_type == "zip":
-                data = read_from_cache(cache_dir, name, params)
+                data = cache.read_from_cache(cache_dir, name, params)
     else:
         response = get_data_from_endpoint(endpoint, method, params, db_name)
         data = response.content
 
-    return data
+    return data  # type: ignore
 
 
 def get_data_from_endpoint(
@@ -157,7 +157,10 @@ def get_data_from_endpoint(
 
     response.encoding = "UTF-8"
     _check_invalid_status_code(response)
-    _check_invalid_destatis_status_code(response)
+
+    # logincheck endpoint only returns string status with failure/success information. No further check necessary.
+    if method != "logincheck":
+        _check_invalid_destatis_status_code(response)
 
     return response
 

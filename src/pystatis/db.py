@@ -1,10 +1,12 @@
 """Module provides functions to set the active database and get active database properties."""
 
+import json
 import logging
 
 from pystatis import config
-from pystatis.cache import normalize_name
+from pystatis import cache
 from pystatis.exception import PystatisConfigError
+from pystatis import http_helper
 
 logger = logging.getLogger(__name__)
 
@@ -24,7 +26,7 @@ def identify_db_matches(table_name: str) -> list[str]:
     regex_db = config.get_db_identifiers()
 
     # Strip optional leading * and trailing job id
-    table_name = normalize_name(table_name).lstrip("*")
+    table_name = cache.normalize_name(table_name).lstrip("*")
 
     # Get list of matching dbs
     db_matches = [db_name for db_name, reg in regex_db.items() if reg.match(table_name)]
@@ -63,15 +65,15 @@ def select_db_by_credentials(db_matches: list[str]) -> str:
 
 
 def get_host(db_name: str) -> str:
-    return config.config[db_name]["base_url"]
+    return config.config[db_name]["base_url"]  # type: ignore
 
 
 def get_user(db_name: str) -> str:
-    return config.config[db_name]["username"]
+    return config.config[db_name]["username"]  # type: ignore
 
 
 def get_pw(db_name: str) -> str:
-    return config.config[db_name]["password"]
+    return config.config[db_name]["password"]  # type: ignore
 
 
 def set_pw(db_name: str, new_pw: str) -> None:
@@ -95,3 +97,26 @@ def check_credentials(db_name: str) -> bool:
         TRUE if credentials were found, FALSE otherwise.
     """
     return get_user(db_name) != "" and get_pw(db_name) != ""
+
+
+def check_credentials_are_valid(db_name: str) -> bool:
+    """
+    Checks if the provided user and password is valid by calling the respective endpoint.
+
+    Args:
+        db_name: Name of database to check credentials for.
+
+    Returns:
+        TRUE if credentials are valid, FALSE otherwise.
+    """
+    credential_check_dict = json.loads(
+        http_helper.load_data(
+            endpoint="helloworld",
+            method="logincheck",
+            params=dict(),
+            db_name=db_name,
+        ).decode("UTF-8")
+    )
+    credential_check_status = credential_check_dict.get("Status", "")
+    # Do not check for full sentence to be more robust against slight changes in response.
+    return "erfolgreich" in credential_check_status

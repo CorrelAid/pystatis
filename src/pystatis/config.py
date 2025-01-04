@@ -25,6 +25,9 @@ import re
 from configparser import ConfigParser
 from pathlib import Path
 
+from pystatis import db
+from pystatis.exception import PystatisConfigError
+
 PKG_NAME = __name__.split(".", maxsplit=1)[0]
 DEFAULT_CONFIG_DIR = str(Path().home() / f".{PKG_NAME}")
 SUPPORTED_DB = ["genesis", "zensus", "regio"]
@@ -158,11 +161,23 @@ def config_exists() -> bool:
 
 def setup_credentials() -> None:
     """Setup credentials for all supported databases."""
-    for db in get_supported_db():
-        config.set(db, "username", _get_user_input(db, "username"))
-        config.set(db, "password", _get_user_input(db, "password"))
+    for db_name in get_supported_db():
+        config.set(db_name, "username", _get_user_input(db_name, "username"))
+        config.set(db_name, "password", _get_user_input(db_name, "password"))
 
     write_config()
+    for section in config.sections():
+        config.remove_section(section)
+    init_config()
+
+    logger.info(
+        "Check if provided credentials are valid.",
+    )
+    for db_name in get_supported_db():
+        if not db.check_credentials_are_valid(db_name):
+            raise PystatisConfigError(
+                f"Provided credentials for database '{db_name}' are not valid! Please provide the correct credentials."
+            )
 
     logger.info(
         "Config was updated with latest credentials. Path: %s.",

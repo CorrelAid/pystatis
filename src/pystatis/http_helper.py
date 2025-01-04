@@ -8,7 +8,7 @@ import time
 import requests
 
 from pystatis import config, db
-from pystatis.cache import cache_data, hit_in_cash, normalize_name, read_from_cache
+from pystatis import cache
 from pystatis.exception import DestatisStatusError, NoNewerDataError, TableNotFoundError
 from pystatis.types import ParamDict
 
@@ -43,17 +43,15 @@ def load_data(
     name = params.get("name")
 
     if name is not None:
-        name = normalize_name(name)
+        name = cache.normalize_name(name)
 
     if endpoint == "data":
-        if hit_in_cash(cache_dir, name, params):
-            data = read_from_cache(cache_dir, name, params)
+        if cache.hit_in_cash(cache_dir, name, params):
+            data = cache.read_from_cache(cache_dir, name, params)
             logger.info("Data was loaded from cache.")
         else:
             response = get_data_from_endpoint(endpoint, method, params, db_name)
-            content_type = response.headers.get("Content-Type", "text/csv").split("/")[
-                -1
-            ]
+            content_type = response.headers.get("Content-Type", "text/csv").split("/")[-1]
             data = response.content
 
             # status code 98 means that the table is too big
@@ -77,21 +75,19 @@ def load_data(
                 time.sleep(5)
                 response = get_data_from_resultfile(job_id, db_name)
                 assert isinstance(response.content, bytes)  # nosec assert_used
-                content_type = response.headers.get("Content-Type", "text/csv").split(
-                    "/"
-                )[-1]
+                content_type = response.headers.get("Content-Type", "text/csv").split("/")[-1]
                 data = response.content
 
-            cache_data(cache_dir, name, params, data, content_type)
+            cache.cache_data(cache_dir, name, params, data, content_type)
 
             # bytes response in case of zip content type cannot be directly decoded, so we have to load the zip first!
             if content_type == "zip":
-                data = read_from_cache(cache_dir, name, params)
+                data = cache.read_from_cache(cache_dir, name, params)
     else:
         response = get_data_from_endpoint(endpoint, method, params, db_name)
         data = response.content
 
-    return data
+    return data  # type: ignore
 
 
 def get_data_from_endpoint(
@@ -148,7 +144,10 @@ def get_data_from_endpoint(
 
     response.encoding = "UTF-8"
     _check_invalid_status_code(response)
-    _check_invalid_destatis_status_code(response)
+
+    # logincheck endpoint only returns string status with failure/success information. No further check necessary.
+    if method != "logincheck":
+        _check_invalid_destatis_status_code(response)
 
     return response
 
@@ -197,9 +196,7 @@ def get_job_id_from_response(response: requests.Response) -> str:
     return job_id
 
 
-def get_data_from_resultfile(
-    job_id: str, db_name: str | None = None
-) -> requests.Response:
+def get_data_from_resultfile(job_id: str, db_name: str | None = None) -> requests.Response:
     """Get data from a job once it is finished or when the timeout is reached.
 
     Args:
@@ -220,9 +217,7 @@ def get_data_from_resultfile(
     time_ = time.perf_counter()
 
     while (time.perf_counter() - time_) < JOB_TIMEOUT:
-        response = get_data_from_endpoint(
-            endpoint="catalogue", method="jobs", params=params, db_name=db_name
-        )
+        response = get_data_from_endpoint(endpoint="catalogue", method="jobs", params=params, db_name=db_name)
 
         jobs = response.json().get("List")
         if len(jobs) > 0 and jobs[0].get("State") == "Fertig":
@@ -250,9 +245,7 @@ def get_data_from_resultfile(
         "compress": "false",
         "format": "ffcsv",
     }
-    response = get_data_from_endpoint(
-        endpoint="data", method="resultfile", params=params, db_name=db_name
-    )
+    response = get_data_from_endpoint(endpoint="data", method="resultfile", params=params, db_name=db_name)
     return response
 
 
@@ -275,9 +268,7 @@ def _check_invalid_status_code(response: requests.Response) -> None:
         content = body.get("Content")
         code = body.get("Code")
         logger.error("Error Code: %s. Content: %s.", code, content)
-        raise requests.exceptions.HTTPError(
-            f"The server returned a {response.status_code} status code."
-        )
+        raise requests.exceptions.HTTPError(f"The server returned a {response.status_code} status code.")
 
 
 def _check_invalid_destatis_status_code(response: requests.Response) -> None:
@@ -336,9 +327,7 @@ def _check_destatis_status(destatis_status: dict) -> None:  # type: ignore
         raise DestatisStatusError(destatis_status_content)
 
     # check for destatis/ query errors
-    elif (destatis_status_code in [104, 50, 90]) or (
-        destatis_status_type in error_en_de
-    ):
+    elif (destatis_status_code in [104, 50, 90]) or (destatis_status_type in error_en_de):
         if destatis_status_code == 98:
             pass
         elif destatis_status_code == 50:

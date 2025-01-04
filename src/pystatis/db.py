@@ -74,8 +74,8 @@ def get_user(db_name: str) -> str:
 
 def set_user(db_name: str, new_username: str) -> None:
     config.config.set(db_name, "username", new_username)
-    config.write_config()
     check_credentials_are_valid(db_name)
+    config.write_config()
 
 
 def get_pw(db_name: str) -> str:
@@ -84,8 +84,8 @@ def get_pw(db_name: str) -> str:
 
 def set_pw(db_name: str, new_pw: str) -> None:
     config.config.set(db_name, "password", new_pw)
-    config.write_config()
     check_credentials_are_valid(db_name)
+    config.write_config()
 
 
 def get_settings(db_name: str) -> tuple[str, str, str]:

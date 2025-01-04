@@ -135,13 +135,7 @@ config = ConfigParser(interpolation=None)
 
 
 def init_config() -> None:
-    """Create a new config .ini file in the given directory.
-
-    One-time function to be called for new users to create a new `config.ini` with default values (empty credentials).
-
-    Args:
-        config_dir (str, optional): Path to the root config directory. Defaults to the user home directory.
-    """
+    """Initialize the config variable by either creating a new config .ini file or load an existing config."""
     if not config_exists():
         create_default_config()
         write_config()
@@ -164,20 +158,12 @@ def setup_credentials() -> None:
     for db_name in get_supported_db():
         config.set(db_name, "username", _get_user_input(db_name, "username"))
         config.set(db_name, "password", _get_user_input(db_name, "password"))
-
-    write_config()
-    for section in config.sections():
-        config.remove_section(section)
-    init_config()
-
-    logger.info(
-        "Check if provided credentials are valid.",
-    )
-    for db_name in get_supported_db():
         if not db.check_credentials_are_valid(db_name):
             raise PystatisConfigError(
                 f"Provided credentials for database '{db_name}' are not valid! Please provide the correct credentials."
             )
+
+    write_config()
 
     logger.info(
         "Config was updated with latest credentials. Path: %s.",

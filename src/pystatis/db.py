@@ -54,7 +54,7 @@ def select_db_by_credentials(db_matches: list[str]) -> str:
     """
     for db_name in db_matches:
         # Return first hit with existing credentials.
-        if check_credentials(db_name):
+        if check_credentials_are_set(db_name):
             return db_name
 
     raise PystatisConfigError(
@@ -93,9 +93,11 @@ def get_settings(db_name: str) -> tuple[str, str, str]:
     return get_host(db_name), get_user(db_name), get_pw(db_name)
 
 
-def check_credentials(db_name: str) -> bool:
+def check_credentials_are_set(db_name: str) -> bool:
     """
-    Checks if a username and password is stored for the specified database.
+    Checks if a username is stored for the specified database.
+
+    We only check for the username and not for the password to be compatible with token-only authentication.
 
     Args:
         db_name: Name of database to check credentials for.

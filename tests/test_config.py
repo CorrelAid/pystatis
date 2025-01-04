@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pytest
 
-from pystatis import config
+from pystatis import config, db
 
 
 @pytest.fixture()
@@ -64,19 +64,22 @@ def test_missing_file(config_, caplog):
         assert record.levelname == "CRITICAL"
 
 
-def test_setup_credentials(config_):
-    for db in config.get_supported_db():
+def test_setup_credentials(mocker, config_):
+    mocker.patch.object(db, "check_credentials_are_valid", return_value=True)
+    for db_name in config.get_supported_db():
         for field in ["username", "password"]:
             if field == "username":
-                os.environ[f"PYSTATIS_{db.upper()}_API_{field.upper()}"] = "test"
+                os.environ[f"PYSTATIS_{db_name.upper()}_API_{field.upper()}"] = "test"
             else:
-                os.environ[f"PYSTATIS_{db.upper()}_API_{field.upper()}"] = "test123!"
+                os.environ[f"PYSTATIS_{db_name.upper()}_API_{field.upper()}"] = (
+                    "test123!"
+                )
 
     config.setup_credentials()
 
-    for db in config.get_supported_db():
-        assert config_[db]["username"] == "test"
-        assert config_[db]["password"] == "test123!"
+    for db_name in config.get_supported_db():
+        assert config_[db_name]["username"] == "test"
+        assert config_[db_name]["password"] == "test123!"
 
 
 def test_supported_db():

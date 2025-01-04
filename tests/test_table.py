@@ -60,7 +60,7 @@ pystatis.clear_cache()
 def test_get_data(
     mocker, table_name: str, expected_shape: tuple[int, int], language: str
 ):
-    mocker.patch.object(pystatis.db, "check_credentials", return_value=True)
+    mocker.patch.object(pystatis.db, "check_credentials_are_set", return_value=True)
     table = pystatis.Table(name=table_name)
     table.get_data(prettify=False, language=language, compress=False)
 
@@ -84,7 +84,7 @@ def test_get_data(
 def test_get_data_with_quality_on_and_prettify_false(
     mocker, table_name: str, expected_shape: tuple[int, int]
 ):
-    mocker.patch.object(pystatis.db, "check_credentials", return_value=True)
+    mocker.patch.object(pystatis.db, "check_credentials_are_set", return_value=True)
     table = pystatis.Table(name=table_name)
     table.get_data(prettify=False, quality="on", compress=False)
 
@@ -151,7 +151,7 @@ def test_get_data_with_quality_on_and_prettify_true(
     expected_shape: tuple[int, int],
     expected_columns: tuple[str],
 ):
-    mocker.patch.object(pystatis.db, "check_credentials", return_value=True)
+    mocker.patch.object(pystatis.db, "check_credentials_are_set", return_value=True)
     table = pystatis.Table(name=table_name)
     table.get_data(prettify=True, quality="on", compress=False)
 
@@ -713,7 +713,7 @@ def test_prettify(
     expected_columns: tuple[str],
     language: str,
 ):
-    mocker.patch.object(pystatis.db, "check_credentials", return_value=True)
+    mocker.patch.object(pystatis.db, "check_credentials_are_set", return_value=True)
     table = pystatis.Table(name=table_name)
     table.get_data(prettify=True, language=language, compress=False)
 
@@ -741,7 +741,7 @@ def test_prettify(
     ],
 )
 def test_dtype_time_column(mocker, table_name: str, time_col: str, language: str):
-    mocker.patch.object(pystatis.db, "check_credentials", return_value=True)
+    mocker.patch.object(pystatis.db, "check_credentials_are_set", return_value=True)
     table = pystatis.Table(name=table_name)
     table.get_data(prettify=True, language=language, compress=False)
 

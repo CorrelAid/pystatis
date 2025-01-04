@@ -50,7 +50,7 @@ def test_identify_db_with_multiple_matches(config_):
     config_.set("genesis", "password", "test")
     db_match = db.identify_db_matches("1234567890")
     for db_name in db_match:
-        if db.check_credentials(db_name):
+        if db.check_credentials_are_set(db_name):
             break
     assert db_name == "genesis"
 
@@ -60,7 +60,7 @@ def test_identify_db_with_multiple_matches(config_):
     config_.set("regio", "password", "test")
     db_match = db.identify_db_matches("1234567890")
     for db_name in db_match:
-        if db.check_credentials(db_name):
+        if db.check_credentials_are_set(db_name):
             break
     assert db_name == "regio"
 

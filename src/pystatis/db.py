@@ -103,6 +103,8 @@ def check_credentials_are_valid(db_name: str) -> bool:
     """
     Checks if the provided user and password is valid by calling the respective endpoint.
 
+    Since the API returns a 200 status code for valid and invalid credentials, we need to parse the response text itself.
+
     Args:
         db_name: Name of database to check credentials for.
 
@@ -119,4 +121,4 @@ def check_credentials_are_valid(db_name: str) -> bool:
     )
     credential_check_status = credential_check_dict.get("Status", "")
     # Do not check for full sentence to be more robust against slight changes in response.
-    return "erfolgreich" in credential_check_status
+    return "erfolgreich" in credential_check_status.lower()

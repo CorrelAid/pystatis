@@ -4,7 +4,8 @@ from pathlib import Path
 
 import pytest
 
-from pystatis import config, db
+from pystatis import config, db, http_helper
+from pystatis.db import check_credentials_are_valid
 
 
 @pytest.fixture()
@@ -80,6 +81,19 @@ def test_setup_credentials(mocker, config_):
     for db_name in config.get_supported_db():
         assert config_[db_name]["username"] == "test"
         assert config_[db_name]["password"] == "test123!"
+
+
+@pytest.mark.parametrize(
+    "mock_return, check_result",
+    [
+        (b'{"Status": "erfolgreich"}', True),
+        (b'{"Status": "fehlgeschlagen"}', False),
+    ],
+)
+def test_check_credentials_are_valid(mocker, mock_return: bytes, check_result: bool):
+    mocker.patch.object(http_helper, "load_data", return_value=mock_return)
+    # Db name not important since we mock the request result anyway.
+    assert check_credentials_are_valid("genesis") == check_result
 
 
 def test_supported_db():

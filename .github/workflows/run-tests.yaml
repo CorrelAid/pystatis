@@ -21,61 +21,53 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.10", "3.11"]
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
         os: [ubuntu-latest, macOS-latest, windows-latest]
 
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v5
+      - name: Set up Python and uv
+        uses: astral-sh/setup-uv@v5
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Run poetry image
-        uses: abatilo/actions-poetry@v3.0.1
-        with:
-          poetry-version: ${{ vars.POETRY_VERSION }}
+          enable-cache: true
       - name: Install dependencies
         run: |
-          poetry install --with dev
+          uv sync --group dev
       - name: Run tests
         run: |
-          poetry run pytest --cov=pystatis --vcr-record=none tests
+          uv run pytest --cov=pystatis --vcr-record=none tests
 
   code-quality:
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     timeout-minutes: 10
     strategy:
       fail-fast: false
       matrix:
-        # only support specific python version, as guidelines differ beween (minor) versions
-        python-version: ["3.11.7"]
-        os: [ubuntu-latest]
+        python-version: ["3.10"]
 
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v5
+      - name: Set up Python and uv
+        uses: astral-sh/setup-uv@v5
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Run poetry image
-        uses: abatilo/actions-poetry@v3.0.1
-        with:
-          poetry-version: ${{ vars.POETRY_VERSION }}
+          enable-cache: true
       - name: Install dependencies
-        run: poetry install --with dev
+        run: uv sync --group dev
       - name: Ruff format check
-        run: poetry run ruff format --check src
+        run: uv run ruff format --check src
       - name: Ruff lint check
-        run: poetry run ruff check src
+        run: uv run ruff check src
       - name: Run bandit
-        run: poetry run bandit -r src
+        run: uv run bandit -r src
       - name: Run Safety CLI to check for vulnerabilities
         uses: pyupio/safety-action@v1.0.1
         with:
           api-key: ${{ secrets.SAFETY_API_KEY }}
           args: "--short-report --policy-file=.safety-policy.yml"
       - name: Run mypy
-        run: poetry run mypy src
+        run: uv run mypy src
 
   sphinx-documentation-and-coverage:
     runs-on: ubuntu-latest
@@ -83,22 +75,19 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Python ${{ vars.PYTHON_VERSION}}
-        uses: actions/setup-python@v5
+      - name: Set up Python and uv
+        uses: astral-sh/setup-uv@v5
         with:
-          python-version: ${{ vars.PYTHON_VERSION}}
-      - name: Run poetry image
-        uses: abatilo/actions-poetry@v3.0.1
-        with:
-          poetry-version: ${{ vars.POETRY_VERSION }}
+          python-version: "3.10"
+          enable-cache: true
       - name: Install dependencies
         run: |
-          poetry install --with dev
+          uv sync --group dev
       - name: Build documentation
         run: |
           cd docs
-          poetry run make clean
-          poetry run make html
+          uv run make clean
+          uv run make html
       - name: Upload documentation as artifacts
         uses: actions/upload-artifact@v4
         with:
@@ -107,7 +96,7 @@ jobs:
           retention-days: 5
       - name: Generate and filter test coverage report
         run: |
-          poetry run pytest --cov=src/pystatis --cov-report=xml --vcr-record=none tests
+          uv run pytest --cov=src/pystatis --cov-report=xml --vcr-record=none tests
       - name: Upload coverage reports to Codecov with GitHub Action
         uses: codecov/codecov-action@v5.1.0
         with:

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.0
+
+- migrate from poetry to uv
+
 ## 0.3.1
 
 - support new Zensus 2022 web interface / API by changing base_url in default config to new value <https://ergebnisse.zensus2022.de/api/rest/2020/>

@@ -1,21 +1,20 @@
-[tool.poetry]
-authors = [
-    "Michael Aydinbas <michael.aydinbas@gmail.com>",
-    "Ariz Weber <ariz.weber@protonmail.com>",
-    "CorrelAid <info@correlaid.org>",
-    "Daniel Pleus <danielpleus@gmail.com>",
-    "Felix Schmitz <felix.schmitz@philosophy-economics.de>",
-    "Frederik Hering <jobs.fhering@gmail.com>",
-    "Marco Hübner <marco_huebner1@gmx.de>",
-    "Jonas Berger <jonas.bergner97@gmx.de>",
-]
-maintainers = ["Michael Aydinbas <michael.aydinbas@gmail.com>"]
-description = "Python wrapper for GENESIS web service interface (API) of the Federal Statistical Office."
+[project]
 name = "pystatis"
-version = "0.4.0"
+version = "0.5.0"
+description = "Python wrapper for GENESIS web service interface (API) of the Federal Statistical Office."
+authors = [
+    { name = "Michael Aydinbas", email = "michael.aydinbas@gmail.com" },
+    { name = "Ariz Weber", email = "ariz.weber@protonmail.com" },
+    { name = "CorrelAid", email = "info@correlaid.org" },
+    { name = "Daniel Pleus", email = "danielpleus@gmail.com" },
+    { name = "Felix Schmitz", email = "felix.schmitz@philosophy-economics.de" },
+    { name = "Frederik Hering", email = "jobs.fhering@gmail.com" },
+    { name = "Marco Hübner", email = "marco_huebner1@gmx.de" },
+    { name = "Jonas Berger", email = "jonas.bergner97@gmx.de" },
+]
+requires-python = "~=3.10"
 readme = "README.md"
-repository = "https://github.com/CorrelAid/pystatis"
-documentation = "https://correlaid.github.io/pystatis/"
+maintainers = [{ name = "Michael Aydinbas", email = "michael.aydinbas@gmail.com" }]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Science/Research",
@@ -32,46 +31,46 @@ classifiers = [
     "Topic :: Scientific/Engineering :: Information Analysis",
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
+dependencies = [
+    "requests>=2.27.1,<3",
+    "pandas~=2.0",
+    "tabulate>=0.9.0,<0.10",
+]
 
-[tool.poetry.dependencies]
-python = "^3.10"
-requests = "^2.27.1"
-pandas = "^2.0"
-tabulate = "^0.9.0"
+[project.urls]
+Repository = "https://github.com/CorrelAid/pystatis"
+Documentation = "https://correlaid.github.io/pystatis/"
 
-[tool.poetry.group.dev]
-optional = true
-
-[tool.poetry.group.dev.dependencies]
-bandit = "^1.7.4"
-ruff = "^0.8.1"
-jupyter = "^1.0.0"
-jupytext = "^1.16.1"
-mypy = "^1.0"
-myst-parser = "^4.0.0"
-notebook = "^7.3.0"
-pre-commit = "^4.0.1"
-pylint = "^3.0"
-pytest = "^8.0.0"
-pytest-cov = "^6.0.0"
-pytest-mock = "^3.8.2"
-python-dotenv = "^1.0.0"
-requests-toolbelt = "^1.0.0"
-sphinx = "^7.0"
-sphinx-rtd-theme = "^3.0.0"
-urllib3 = { extras = ["appengine"], version = "^2.2.1" }
-pytest-vcr = "^1.0.2"
-nbsphinx = "^0.9.5"
-
+[dependency-groups]
+dev = [
+    "bandit>=1.7.4,<2",
+    "ruff>=0.8.1,<0.9",
+    "jupyter>=1.0.0,<2",
+    "jupytext>=1.16.1,<2",
+    "mypy~=1.0",
+    "myst-parser>=4.0.0,<5",
+    "notebook>=7.3.0,<8",
+    "pre-commit>=4.0.1,<5",
+    "pylint~=3.0",
+    "pytest>=8.0.0,<9",
+    "pytest-cov>=6.0.0,<7",
+    "pytest-mock>=3.8.2,<4",
+    "python-dotenv>=1.0.0,<2",
+    "requests-toolbelt>=1.0.0,<2",
+    "sphinx~=7.0",
+    "sphinx-rtd-theme>=3.0.0,<4",
+    "urllib3[appengine]>=2.2.1,<3",
+    "pytest-vcr>=1.0.2,<2",
+    "nbsphinx>=0.9.5,<0.10",
+]
 
 [build-system]
-build-backend = "poetry.core.masonry.api"
-requires = ["poetry-core>=1.0.0"]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
 [tool.pytest.ini_options]
 addopts = "-s -v"
 log_cli = false
-
 
 [tool.safety]
 full_report = true

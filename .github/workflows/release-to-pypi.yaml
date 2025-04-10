@@ -10,27 +10,19 @@ on:
 
 jobs:
   publish:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        python-version: ["${{ vars.PYTHON_VERSION }}"]
-        poetry-version: ["${{ vars.POETRY_VERSION }}"]
-        os: [ubuntu-latest]
+    runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Set up Python and uv
+        uses: astral-sh/setup-uv@v5
         with:
-          python-version: ${{ matrix.python-version }}
-      - name: Run poetry image
-        uses: abatilo/actions-poetry@v3.0.1
-        with:
-          poetry-version: ${{ vars.POETRY_VERSION }}
-      - name: Publish to PyPI and build before
+          python-version: "3.10"
+          enable-cache: true
+      - name: Publish to PyPI
         env:
           PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
         run: |
-          poetry config pypi-token.pypi $PYPI_TOKEN
-          poetry publish --build
+          uv build
+          uv publish --token $PYPI_TOKEN

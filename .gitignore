@@ -131,3 +131,5 @@ dmypy.json
 
 # VSC
 .vscode
+
+.DS_Store

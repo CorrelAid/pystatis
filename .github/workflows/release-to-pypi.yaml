@@ -21,8 +21,6 @@ jobs:
           python-version: "3.13"
           enable-cache: true
       - name: Publish to PyPI
-        env:
-          PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
         run: |
           uv build
-          uv publish --token $PYPI_TOKEN
+          uv publish

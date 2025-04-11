@@ -45,7 +45,7 @@ Documentation = "https://correlaid.github.io/pystatis/"
 [dependency-groups]
 dev = [
     "bandit>=1.7.4,<2",
-    "ruff>=0.8.1,<0.9",
+    "ruff>=0.11.5,<0.12",
     "jupyter>=1.0.0,<2",
     "jupytext>=1.16.1,<2",
     "mypy~=1.0",

@@ -59,7 +59,6 @@ dev = [
     "requests-toolbelt>=1.0.0,<2",
     "sphinx~=7.0",
     "sphinx-rtd-theme>=3.0.0,<4",
-    "urllib3[appengine]>=2.2.1,<3",
     "pytest-vcr>=1.0.2,<2",
     "nbsphinx>=0.9.5,<0.10",
 ]

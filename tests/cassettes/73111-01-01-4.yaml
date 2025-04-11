@@ -1,875 +1,372 @@
 interactions:
 - request:
-    body: null
+    body: name=73111-01-01-4&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=de&quality=off&format=ffcsv
     headers:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br, zstd
+      - gzip, deflate
       Connection:
       - keep-alive
+      Content-Length:
+      - '134'
+      Content-Type:
+      - application/x-www-form-urlencoded
       User-Agent:
       - python-requests/2.32.3
-    method: GET
-    uri: https://www.regionalstatistik.de/genesisws/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=73111-01-01-4&quality=off
+    method: POST
+    uri: https://www.regionalstatistik.de/genesisws/rest/2020/data/tablefile
   response:
     body:
-      string: "Statistik_Code;Statistik_Label;Zeit_Code;Zeit_Label;Zeit;1_Merkmal_Code;1_Merkmal_Label;1_Auspraegung_Code;1_Auspraegung_Label;LSNW01__Lohn-_und_Einkommensteuerpflichtige__Anzahl;EKF002__Gesamtbetrag_der_Einkuenfte__Tsd._EUR;LSNW02__Lohn-_und_Einkommensteuer__Tsd._EUR\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;DG;Deutschland;42494194;1864827959;334496028\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;01;
-        \ Schleswig-Holstein;1480728;64505523;11226050\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;01001;      Flensburg, kreisfreie Stadt;46437;1574516;261830\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;01002;
-        \     Kiel, kreisfreie Stadt;126831;4761360;804342\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;01003;      L\xFCbeck, kreisfreie Stadt, Hansestadt;110083;4201514;712026\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;01004;
-        \     Neum\xFCnster, kreisfreie Stadt;38702;1371843;207116\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;01051;
-        \     Dithmarschen, Kreis;65179;2692870;436629\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;01053;      Herzogtum Lauenburg, Kreis;99843;4652098;840556\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;01054;
-        \     Nordfriesland, Kreis;86216;3886756;677645\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;01055;      Ostholstein, Kreis;104693;4451141;767145\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;01056;
-        \     Pinneberg, Kreis;165931;7886866;1453851\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;01057;      Pl\xF6n, Kreis;65145;2915514;499420\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;01058;
-        \     Rendsburg-Eckernf\xF6rde, Kreis;137136;6391624;1119611\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;01059;
-        \     Schleswig-Flensburg, Kreis;98367;4094706;661982\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;01060;      Segeberg, Kreis;143343;6386278;1096084\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;01061;
-        \     Steinburg, Kreis;65974;2705840;432997\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;01062;      Stormarn, Kreis;126848;6532598;1254817\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;02;
-        \ Hamburg;1009528;48492449;10227082\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;03;  Niedersachsen;4050092;171056971;29162027\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;031;
-        \   Braunschweig, Statistische Region;809968;34708491;6111862\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;03101;
-        \     Braunschweig, kreisfreie Stadt;134267;6132008;1179377\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;03102;
-        \     Salzgitter, kreisfreie Stadt;50384;1724676;259832\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;03103;      Wolfsburg, kreisfreie Stadt;67290;3186879;637880\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;03151;
-        \     Gifhorn, Landkreis;89793;4290532;781796\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;03152;      G\xF6ttingen, Landkreis;-;-;-\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;03153;
-        \     Goslar, Landkreis;66336;2482667;389836\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;03154;      Helmstedt, Landkreis;47526;2043502;351276\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;03155;
-        \     Northeim, Landkreis;65235;2661733;438566\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;03156;      Osterode am Harz, Landkreis;-;-;-\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;03157;
-        \     Peine, Landkreis;68640;2870916;470418\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;03158;      Wolfenb\xFCttel, Landkreis;60389;2713009;474393\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;03159;
-        \     G\xF6ttingen, Landkreis;160108;6602568;1128487\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;032;    Hannover, Statistische Region;1098508;46246298;8028674\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;03241;
-        \     Region Hannover, Landkreis;599446;26030200;4735579\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;03241001;
-        \     Hannover, Landeshauptstadt;282914;11928781;2256664\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;03251;
-        \     Diepholz, Landkreis;111416;4852964;811456\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;03252;      Hameln-Pyrmont, Landkreis;75914;2929790;473607\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;03254;
-        \     Hildesheim, Landkreis;138336;5610888;926558\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;03255;      Holzminden, Landkreis;34122;1277273;198455\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;03256;
-        \     Nienburg (Weser), Landkreis;59861;2345522;367356\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;03257;      Schaumburg, Landkreis;79413;3199662;515663\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;033;
-        \   L\xFCneburg, Statistische Region;870291;38059820;6489086\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;03351;
-        \     Celle, Landkreis;88802;3571250;578671\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;03352;      Cuxhaven, Landkreis;98566;4102242;659111\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;03353;
-        \     Harburg, Landkreis;136063;6900236;1308441\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;03354;      L\xFCchow-Dannenberg, Landkreis;23093;824698;120404\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;03355;
-        \     L\xFCneburg, Landkreis;92933;4130321;729934\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;03356;      Osterholz, Landkreis;57809;2607656;448953\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;03357;
-        \     Rotenburg (W\xFCmme), Landkreis;82467;3477176;562759\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;03358;
-        \     Heidekreis;70747;2753643;433214\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;03359;      Stade, Landkreis;104125;4759084;822151\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;03360;
-        \     Uelzen, Landkreis;46219;1779038;274569\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;03361;      Verden, Landkreis;69467;3154475;550881\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;034;
-        \   Weser-Ems, Statistische Region;1271325;52042363;8532404\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;03401;
-        \     Delmenhorst, kreisfreie Stadt;37267;1281934;185899\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;03402;
-        \     Emden, kreisfreie Stadt;23791;863426;134936\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;03403;      Oldenburg (Oldenburg), kreisfreie Stadt;91372;3928918;720890\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;03404;
-        \     Osnabr\xFCck, kreisfreie Stadt;87290;3630743;674652\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;03405;
-        \     Wilhelmshaven, kreisfreie Stadt;38067;1300375;202376\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;03451;
-        \     Ammerland, Landkreis;62619;2757062;470036\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;03452;      Aurich, Landkreis;93874;3543947;540429\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;03453;
-        \     Cloppenburg, Landkreis;84165;3403390;534185\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;03454;      Emsland, Landkreis;160456;6843333;1111624\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;03455;
-        \     Friesland, Landkreis;50366;1999003;313761\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;03456;      Grafschaft Bentheim, Landkreis;66045;2675212;426554\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;03457;
-        \     Leer, Landkreis;80110;3079811;472249\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;03458;      Oldenburg, Landkreis;67853;3016211;514775\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;03459;
-        \     Osnabr\xFCck, Landkreis;181927;7692937;1251834\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;03460;      Vechta, Landkreis;73223;3275896;565532\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;03461;
-        \     Wesermarsch, Landkreis;44621;1684063;253575\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;03462;      Wittmund, Landkreis;28279;1066101;159099\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;04;
-        \ Bremen;333204;12902519;2240295\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;04011;      Bremen, kreisfreie Stadt;279943;11236834;1999094\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;04012;
-        \     Bremerhaven, kreisfreie Stadt;53261;1665685;241201\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;05;
-        \ Nordrhein-Westfalen;8903836;391470536;70142589\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;051;    D\xFCsseldorf, Regierungsbezirk;2571831;114589148;21364251\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;05111;
-        \     D\xFCsseldorf, kreisfreie Stadt;332254;18224080;4163188\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;05112;
-        \     Duisburg, kreisfreie Stadt;230858;7815978;1180795\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;05113;      Essen, kreisfreie Stadt;277287;12021342;2251103\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;05114;
-        \     Krefeld, kreisfreie Stadt;112497;4763894;883742\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;05116;      M\xF6nchengladbach, kreisfreie Stadt;126828;5059077;864085\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;05117;
-        \     M\xFClheim an der Ruhr, kreisfreie Stadt;83712;3960958;769461\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;05119;
-        \     Oberhausen, kreisfreie Stadt;97985;3641085;562268\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;05120;      Remscheid, kreisfreie Stadt;54332;2172978;352248\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;05122;
-        \     Solingen, kreisfreie Stadt;78629;3401368;594131\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;05124;      Wuppertal, kreisfreie Stadt;170733;6791685;1160915\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;05154;
-        \     Kleve, Kreis;150079;6218776;1030910\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;05158;      Mettmann, Kreis;249595;12070100;2282966\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;05162;
-        \     Rhein-Kreis Neuss;232353;11863839;2384385\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;05166;      Viersen, Kreis;148201;6738213;1207313\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;05170;
-        \     Wesel, Kreis;226488;9845776;1676740\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;053;    K\xF6ln, Regierungsbezirk;2283093;105089713;19624941\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;05314;
-        \     Bonn, kreisfreie Stadt;171358;8702977;1794266\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;05315;      K\xF6ln, kreisfreie Stadt;571089;26898578;5492860\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;05316;
-        \     Leverkusen, kreisfreie Stadt;84789;3610298;637509\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;05334;      St\xE4dteregion Aachen, Kreis;271198;11354929;2021804\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;05334002;
-        \     Aachen, kreisfreie Stadt;125353;5269932;1020041\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;05354;      Aachen, Kreis;-;-;-\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;05358;
-        \     D\xFCren, Kreis;130463;5548425;923870\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;05362;      Rhein-Erft-Kreis;243864;11135480;1981547\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;05366;
-        \     Euskirchen, Kreis;97486;4180434;684679\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;05370;      Heinsberg, Kreis;122802;5123225;838605\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;05374;
-        \     Oberbergischer Kreis;134999;5762279;955726\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;05378;      Rheinisch-Bergischer Kreis;145868;7751393;1534276\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;05382;
-        \     Rhein-Sieg-Kreis;309177;15021696;2759797\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;055;    M\xFCnster, Regierungsbezirk;1283858;55579730;9495594\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;05512;
-        \     Bottrop, kreisfreie Stadt;55826;2328994;392029\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;05513;      Gelsenkirchen, kreisfreie Stadt;113187;3844240;578594\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;05515;
-        \     M\xFCnster, kreisfreie Stadt;164403;7974343;1586180\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;05554;
-        \     Borken, Kreis;182762;8159044;1369031\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;05558;      Coesfeld, Kreis;110857;5340817;944874\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;05562;
-        \     Recklinghausen, Kreis;295093;12039282;1992127\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;05566;      Steinfurt, Kreis;223025;9617687;1567147\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;05570;
-        \     Warendorf, Kreis;138705;6275323;1065613\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;057;    Detmold, Regierungsbezirk;1007817;43664431;7384788\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;05711;
-        \     Bielefeld, kreisfreie Stadt;166601;6995294;1238128\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;05754;
-        \     G\xFCtersloh, Kreis;187305;8498432;1486556\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;05758;      Herford, Kreis;120886;5277822;871384\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;05762;
-        \     H\xF6xter, Kreis;67408;2827580;437295\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;05766;      Lippe, Kreis;164302;6978800;1130383\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;05770;
-        \     Minden-L\xFCbbecke, Kreis;150833;6512616;1091815\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;05774;      Paderborn, Kreis;150482;6573886;1129227\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;059;
-        \   Arnsberg, Regierungsbezirk;1757237;72547513;12273016\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;05911;
-        \     Bochum, kreisfreie Stadt;182922;7226328;1257212\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;05913;      Dortmund, kreisfreie Stadt;287622;11375632;1985427\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;05914;
-        \     Hagen, kreisfreie Stadt;89308;3239668;503971\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;05915;      Hamm, kreisfreie Stadt;83995;3091824;468244\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;05916;
-        \     Herne, kreisfreie Stadt;72487;2483816;370851\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;05954;      Ennepe-Ruhr-Kreis;164447;7400829;1343903\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;05958;
-        \     Hochsauerlandkreis;130893;5753985;984859\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;05962;      M\xE4rkischer Kreis;198858;8393102;1385728\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;05966;
-        \     Olpe, Kreis;68276;3190724;550241\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;05970;      Siegen-Wittgenstein, Kreis;135858;5944025;1020372\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;05974;
-        \     Soest, Kreis;149041;6589308;1117670\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;05978;      Unna, Kreis;193530;7858274;1284539\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;06;
-        \ Hessen;3222379;148624602;28102376\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;064;    Darmstadt, Regierungsbezirk;2086546;102557508;20566683\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;06411;
-        \     Darmstadt, kreisfreie Stadt, Wissenschaftsstadt;84550;3956534;799461\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;06412;
-        \     Frankfurt am Main, kreisfreie Stadt;398261;20870553;4700701\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;06413;
-        \     Offenbach am Main, kreisfreie Stadt;68974;2418752;397308\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;06414;
-        \     Wiesbaden, kreisfreie Stadt, Landeshauptstadt;148224;7050365;1436662\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;06431;
-        \     Bergstra\xDFe, Landkreis;139672;6511478;1183005\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;06432;      Darmstadt-Dieburg, Landkreis;154450;7400692;1396032\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;06433;
-        \     Gro\xDF-Gerau, Landkreis;143646;5879188;992550\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;06434;      Hochtaunuskreis;121313;8346159;2055192\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;06435;
-        \     Main-Kinzig-Kreis;216293;9688623;1713352\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;06436;      Main-Taunus-Kreis;126218;7387707;1597085\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;06437;
-        \     Odenwaldkreis;48823;1897822;295146\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;06438;      Offenbach, Landkreis;183423;8734683;1664180\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;06439;
-        \     Rheingau-Taunus-Kreis;95520;4813072;915624\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;06440;      Wetteraukreis;157179;7601881;1420385\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;065;
-        \   Gie\xDFen, Regierungsbezirk;520272;21538594;3630770\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;06531;      Gie\xDFen, Landkreis;134269;5593000;974542\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;06532;
-        \     Lahn-Dill-Kreis;123909;5127294;840273\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;06533;      Limburg-Weilburg, Landkreis;85082;3744753;639232\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;06534;
-        \     Marburg-Biedenkopf, Landkreis;125102;5067958;877372\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;06535;
-        \     Vogelsbergkreis;51910;2005589;299350\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;066;    Kassel, Regierungsbezirk;615561;24528500;3904923\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;06611;
-        \     Kassel, kreisfreie Stadt, documenta-Stadt;103605;3979103;693166\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;06631;
-        \     Fulda, Landkreis;112665;4656437;749195\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;06632;      Hersfeld-Rotenburg, Landkreis;61876;2314041;349265\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;06633;
-        \     Kassel, Landkreis;119352;5011450;805161\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;06634;      Schwalm-Eder-Kreis;91790;3691351;572363\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;06635;
-        \     Waldeck-Frankenberg, Landkreis;78186;3106348;476733\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;06636;
-        \     Werra-Mei\xDFner-Kreis;48087;1769770;259039\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;07;  Rheinland-Pfalz;2063724;88308535;15208560\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;071;
-        \   Koblenz, Statistische Region;754637;32023792;5376970\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;07111;
-        \     Koblenz, kreisfreie Stadt;60205;2514154;451773\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;07131;      Ahrweiler, Landkreis;67832;2892998;481473\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;07132;
-        \     Altenkirchen (Westerwald), Landkreis;63153;2632223;437664\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;07133;
-        \     Bad Kreuznach, Landkreis;78792;3285286;540385\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;07134;      Birkenfeld, Landkreis;38393;1447252;217730\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;07135;
-        \     Cochem-Zell, Landkreis;30836;1231971;190687\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;07137;      Mayen-Koblenz, Landkreis;108279;4713227;792597\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;07138;
-        \     Neuwied, Landkreis;91069;3944219;699117\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;07140;      Rhein-Hunsr\xFCck-Kreis;52617;2264405;368460\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;07141;
-        \     Rhein-Lahn-Kreis;61826;2570804;422069\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;07143;      Westerwaldkreis;101635;4527253;775014\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;072;
-        \   Trier, Statistische Region;247597;9647117;1602278\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;07211;      Trier, kreisfreie Stadt;51553;1896726;339332\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;07231;
-        \     Bernkastel-Wittlich, Landkreis;55731;2253724;356509\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;07232;
-        \     Eifelkreis Bitburg-Pr\xFCm;43258;1617328;261274\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;07233;      Vulkaneifel, Landkreis;30221;1196188;181986\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;07235;
-        \     Trier-Saarburg, Landkreis;66834;2683151;463178\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;073;    Rheinhessen-Pfalz, Statistische Region;1061490;46637626;8229312\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;07311;
-        \     Frankenthal (Pfalz), kreisfreie Stadt;24606;950335;153529\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;07312;
-        \     Kaiserslautern, kreisfreie Stadt;49240;1832893;312922\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;07313;
-        \     Landau in der Pfalz, kreisfreie Stadt;24693;1061136;192404\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;07314;
-        \     Ludwigshafen am Rhein, kreisfreie Stadt;87029;3192629;513283\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;07315;
-        \     Mainz, kreisfreie Stadt;117042;5428551;1072765\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;07316;      Neustadt an der Weinstra\xDFe, kreisfreie
-        Stadt;30568;1337218;253247\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;07317;      Pirmasens, kreisfreie Stadt;19434;630222;96256\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;07318;
-        \     Speyer, kreisfreie Stadt;25875;1240042;237671\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;07319;      Worms, kreisfreie Stadt;42415;1640677;270889\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;07320;
-        \     Zweibr\xFCcken, kreisfreie Stadt;18222;629298;98321\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;07331;
-        \     Alzey-Worms, Landkreis;65954;3004722;511739\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;07332;      Bad D\xFCrkheim, Landkreis;70084;3476422;648379\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;07333;
-        \     Donnersbergkreis;37677;1551594;247073\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;07334;      Germersheim, Landkreis;65179;2887366;479656\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;07335;
-        \     Kaiserslautern, Landkreis;51372;2139713;340794\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;07336;      Kusel, Landkreis;33813;1300024;190963\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;07337;
-        \     S\xFCdliche Weinstra\xDFe, Landkreis;56328;2606742;453064\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;07338;
-        \     Rhein-Pfalz-Kreis;85076;4062555;764447\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;07339;      Mainz-Bingen, Landkreis;109812;5737082;1092454\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;07340;
-        \     S\xFCdwestpfalz, Landkreis;47071;1928407;299456\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;08;  Baden-W\xFCrttemberg;5747124;274872226;50951718\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;081;
-        \   Stuttgart, Regierungsbezirk;2156992;106450629;20052245\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;08111;
-        \     Stuttgart, Stadtkreis;328602;17382320;3674011\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;08115;      B\xF6blingen, Landkreis;203097;10691298;2040934\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;08116;
-        \     Esslingen, Landkreis;281375;13967865;2616943\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;08117;      G\xF6ppingen, Landkreis;131439;5990594;1055726\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;08118;
-        \     Ludwigsburg, Landkreis;286093;14654540;2806641\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;08119;      Rems-Murr-Kreis, Landkreis;222385;10927758;1998527\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;08121;
-        \     Heilbronn, Stadtkreis;65858;2832499;515175\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;08125;      Heilbronn, Landkreis;178634;8834461;1616142\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;08126;
-        \     Hohenlohekreis, Landkreis;59061;2814052;518148\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;08127;      Schw\xE4bisch Hall, Landkreis;101507;4758693;839506\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;08128;
-        \     Main-Tauber-Kreis, Landkreis;67267;2888628;465525\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;08135;      Heidenheim, Landkreis;68538;2941422;493686\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;08136;
-        \     Ostalbkreis, Landkreis;163136;7766498;1411280\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;082;    Karlsruhe, Regierungsbezirk;1437825;67565485;12568720\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;08211;
-        \     Baden-Baden, Stadtkreis;28976;1525465;327417\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;08212;      Karlsruhe, Stadtkreis;160400;7500245;1485864\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;08215;
-        \     Karlsruhe, Landkreis;231833;11083417;1986404\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;08216;      Rastatt, Landkreis;119117;5397423;912563\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;08221;
-        \     Heidelberg, Stadtkreis;75274;4092882;953092\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;08222;      Mannheim, Stadtkreis;162701;6764212;1261046\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;08225;
-        \     Neckar-Odenwald-Kreis, Landkreis;72654;3122400;504159\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;08226;
-        \     Rhein-Neckar-Kreis, Landkreis;282430;14135073;2709610\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;08231;
-        \     Pforzheim, Stadtkreis;61613;2442570;412067\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;08235;      Calw, Landkreis;81105;3737796;637049\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;08236;
-        \     Enzkreis, Landkreis;101971;4930794;888251\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;08237;      Freudenstadt, Landkreis;59751;2833207;491199\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;083;
-        \   Freiburg, Regierungsbezirk;1180932;54411102;9846419\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;08311;      Freiburg im Breisgau, Stadtkreis;121550;5442202;1072809\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;08315;
-        \     Breisgau-Hochschwarzwald, Landkreis;137723;6518566;1178901\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;08316;
-        \     Emmendingen, Landkreis;87506;3977050;695612\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;08317;      Ortenaukreis, Landkreis;223281;9730077;1654197\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;08325;
-        \     Rottweil, Landkreis;73256;3309082;566620\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;08326;      Schwarzwald-Baar-Kreis, Landkreis;109166;4741896;812467\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;08327;
-        \     Tuttlingen, Landkreis;71150;3486516;634293\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;08335;      Konstanz, Landkreis;151331;6985149;1294577\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;08336;
-        \     L\xF6rrach, Landkreis;120079;6157678;1204870\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;08337;      Waldshut, Landkreis;85890;4062886;732072\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;084;
-        \   T\xFCbingen, Regierungsbezirk;971375;46445010;8484334\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;08415;
-        \     Reutlingen, Landkreis;147690;6934872;1246805\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;08416;      T\xFCbingen, Landkreis;116810;5765283;1102556\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;08417;
-        \     Zollernalbkreis, Landkreis;95687;4383843;763740\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;08421;      Ulm, Stadtkreis;68241;3470853;705881\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;08425;
-        \     Alb-Donau-Kreis, Landkreis;102883;4854827;846876\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;08426;      Biberach, Landkreis;104628;5127887;918517\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;08435;
-        \     Bodenseekreis, Landkreis;119148;6001583;1174087\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;08436;      Ravensburg, Landkreis;149135;6972324;1246012\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;08437;
-        \     Sigmaringen, Landkreis;67153;2933538;479860\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;09;  Bayern;7025171;341305990;65418831\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;091;
-        \   Oberbayern, Regierungsbezirk;2606121;145593369;31435168\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09161;
-        \     Ingolstadt, kreisfreie Stadt;74004;3777256;757956\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;09162;      M\xFCnchen, kreisfreie Stadt;884538;52989519;12597904\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09163;
-        \     Rosenheim, kreisfreie Stadt;34386;1504595;272018\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;09171;      Alt\xF6tting, Landkreis;58601;2600193;445007\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09172;
-        \     Berchtesgadener Land, Landkreis;53641;2275430;383411\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09173;
-        \     Bad T\xF6lz-Wolfratshausen, Landkreis;68643;3599567;731373\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09174;
-        \     Dachau, Landkreis;83981;4474515;868879\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;09175;      Ebersberg, Landkreis;77158;4558053;957170\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09176;
-        \     Eichst\xE4tt, Landkreis;68484;3606887;675464\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;09177;      Erding, Landkreis;75597;3876186;733349\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09178;
-        \     Freising, Landkreis;100738;4983902;952757\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;09179;      F\xFCrstenfeldbruck, Landkreis;117825;6309890;1234172\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09180;
-        \     Garmisch-Partenkirchen, Landkreis;47232;2159941;389549\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09181;
-        \     Landsberg am Lech, Landkreis;63713;3404464;672871\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;09182;      Miesbach, Landkreis;54401;3252934;720466\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09183;
-        \     M\xFChldorf a.Inn, Landkreis;60674;2757214;476194\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;09184;      M\xFCnchen, Landkreis;187109;13305612;3339803\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09185;
-        \     Neuburg-Schrobenhausen, Landkreis;51205;2407519;424934\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09186;
-        \     Pfaffenhofen a.d.Ilm, Landkreis;68969;3577100;675210\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09187;
-        \     Rosenheim, Landkreis;136947;6876127;1303083\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;09188;      Starnberg, Landkreis;72847;5521819;1444016\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09189;
-        \     Traunstein, Landkreis;92408;4248283;736408\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;09190;      Weilheim-Schongau, Landkreis;73020;3526363;643172\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;092;
-        \   Niederbayern, Regierungsbezirk;645843;28321961;4815318\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09261;
-        \     Landshut, kreisfreie Stadt;39244;1947872;389065\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;09262;      Passau, kreisfreie Stadt;27740;1110640;198737\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09263;
-        \     Straubing, kreisfreie Stadt;24797;1047941;185059\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;09271;      Deggendorf, Landkreis;62125;2826604;505159\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09272;
-        \     Freyung-Grafenau, Landkreis;40308;1535614;228525\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;09273;      Kelheim, Landkreis;63948;2963699;521596\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09274;
-        \     Landshut, Landkreis;83732;4001755;699186\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;09275;      Passau, Landkreis;98307;3962673;625770\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09276;
-        \     Regen, Landkreis;39428;1562203;236458\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;09277;      Rottal-Inn, Landkreis;62076;2697344;441922\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09278;
-        \     Straubing-Bogen, Landkreis;51445;2333249;386256\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;09279;      Dingolfing-Landau, Landkreis;52693;2332366;397585\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;093;
-        \   Oberpfalz, Regierungsbezirk;578845;25594083;4395299\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;09361;      Amberg, kreisfreie Stadt;21807;901406;153539\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09362;
-        \     Regensburg, kreisfreie Stadt;84723;3984441;792944\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;09363;      Weiden i.d.OPf., kreisfreie Stadt;22735;915174;159798\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09371;
-        \     Amberg-Sulzbach, Landkreis;53088;2242804;357500\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;09372;      Cham, Landkreis;64824;2725983;437068\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09373;
-        \     Neumarkt i.d.OPf., Landkreis;70290;3259669;569179\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;09374;      Neustadt a.d.Waldnaab, Landkreis;47968;1985007;315668\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09375;
-        \     Regensburg, Landkreis;98981;4891018;875309\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;09376;      Schwandorf, Landkreis;77738;3217175;509377\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09377;
-        \     Tirschenreuth, Landkreis;36691;1471404;224916\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;094;    Oberfranken, Regierungsbezirk;551800;23095771;3847127\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09461;
-        \     Bamberg, kreisfreie Stadt;40889;1790866;332708\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;09462;      Bayreuth, kreisfreie Stadt;39066;1586264;284912\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09463;
-        \     Coburg, kreisfreie Stadt;21890;986134;193688\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;09464;      Hof, kreisfreie Stadt;22952;820793;129618\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09471;
-        \     Bamberg, Landkreis;76999;3374512;550005\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;09472;      Bayreuth, Landkreis;53560;2270108;360124\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09473;
-        \     Coburg, Landkreis;44357;1814852;286640\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;09474;      Forchheim, Landkreis;61509;2988264;537293\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09475;
-        \     Hof, Landkreis;47540;1824137;279447\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;09476;      Kronach, Landkreis;33929;1287502;192576\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09477;
-        \     Kulmbach, Landkreis;37838;1543849;249642\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;09478;      Lichtenfels, Landkreis;34628;1337282;206318\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09479;
-        \     Wunsiedel i.Fichtelgebirge, Landkreis;36643;1471208;244155\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;095;
-        \   Mittelfranken, Regierungsbezirk;948048;43210163;7783644\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09561;
-        \     Ansbach, kreisfreie Stadt;22185;912801;150549\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;09562;      Erlangen, kreisfreie Stadt;63306;3210349;649074\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09563;
-        \     F\xFCrth, kreisfreie Stadt;70078;3060271;550790\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;09564;      N\xFCrnberg, kreisfreie Stadt;282517;11953794;2182698\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09565;
-        \     Schwabach, kreisfreie Stadt;21958;1121716;227518\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;09571;      Ansbach, Landkreis;95474;4154773;665405\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09572;
-        \     Erlangen-H\xF6chstadt, Landkreis;72303;4063749;811942\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09573;
-        \     F\xFCrth, Landkreis;63072;3025786;538372\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;09574;      N\xFCrnberger Land, Landkreis;90320;4336002;788656\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09575;
-        \     Neustadt a.d.Aisch-Bad Windsheim, Landkreis;51799;2226595;354119\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09576;
-        \     Roth, Landkreis;66367;3143059;552873\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;09577;      Wei\xDFenburg-Gunzenhausen, Landkreis;48669;2001267;311647\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;096;
-        \   Unterfranken, Regierungsbezirk;689770;29912217;5123652\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09661;
-        \     Aschaffenburg, kreisfreie Stadt;37964;1753893;339138\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09662;
-        \     Schweinfurt, kreisfreie Stadt;27988;1058272;181725\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09663;
-        \     W\xFCrzburg, kreisfreie Stadt;72487;3111617;590126\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09671;
-        \     Aschaffenburg, Landkreis;90219;4243166;770226\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;09672;      Bad Kissingen, Landkreis;52468;2138179;339107\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09673;
-        \     Rh\xF6n-Grabfeld, Landkreis;40174;1685098;265683\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;09674;      Ha\xDFberge, Landkreis;44203;1758834;271500\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09675;
-        \     Kitzingen, Landkreis;47587;2065571;352737\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;09676;      Miltenberg, Landkreis;66005;2800910;469051\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09677;
-        \     Main-Spessart, Landkreis;65851;2814729;451810\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;09678;      Schweinfurt, Landkreis;60907;2593255;422957\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09679;
-        \     W\xFCrzburg, Landkreis;83917;3888694;669594\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;097;    Schwaben, Regierungsbezirk;1004744;45578426;8018623\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09761;
-        \     Augsburg, kreisfreie Stadt;155365;6273288;1080545\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;09762;      Kaufbeuren, kreisfreie Stadt;22876;944274;153759\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09763;
-        \     Kempten (Allg\xE4u), kreisfreie Stadt;37367;1520976;264162\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09764;
-        \     Memmingen, kreisfreie Stadt;23180;1030006;183654\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;09771;      Aichach-Friedberg, Landkreis;70312;3566784;660183\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09772;
-        \     Augsburg, Landkreis;133742;6561733;1205341\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;09773;      Dillingen a.d.Donau, Landkreis;50778;2305005;391029\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09774;
-        \     G\xFCnzburg, Landkreis;66713;3030705;526297\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;09775;      Neu-Ulm, Landkreis;94991;4284336;762341\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09776;
-        \     Lindau (Bodensee), Landkreis;44025;2028530;375394\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;09777;      Ostallg\xE4u, Landkreis;74206;3365853;576619\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09778;
-        \     Unterallg\xE4u, Landkreis;76627;3515037;604253\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;09779;      Donau-Ries, Landkreis;71315;3395141;586519\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;09780;
-        \     Oberallg\xE4u, Landkreis;83247;3756757;648527\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;10;  Saarland;479482;18658738;3003966\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;10041;
-        \     Saarbr\xFCcken, Regionalverband;156821;5971183;987793\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;10041100;
-        \     Saarbr\xFCcken, Landeshauptstadt;85784;3278718;577348\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;10042;
-        \     Merzig-Wadern, Landkreis;46959;1733134;276789\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;10043;      Neunkirchen, Landkreis;63407;2367239;356565\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;10044;
-        \     Saarlouis, Landkreis;97165;3783247;594823\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;10045;      Saarpfalz-Kreis;71936;3029745;509752\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;10046;
-        \     St. Wendel, Landkreis;43194;1774191;278244\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;11;  Berlin;1907871;78214293;14906761\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;11001001;
-        \     Berlin-Mitte;.;.;.\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;11002002;      Berlin-Friedrichshain-Kreuzberg;.;.;.\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;11003003;
-        \     Berlin-Pankow;.;.;.\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;11004004;      Berlin-Charlottenburg-Wilmersdorf;.;.;.\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;11005005;
-        \     Berlin-Spandau;.;.;.\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;11006006;      Berlin-Steglitz-Zehlendorf;.;.;.\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;11007007;
-        \     Berlin-Tempelhof-Sch\xF6neberg;.;.;.\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;11008008;      Berlin-Neuk\xF6lln;.;.;.\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;11009009;
-        \     Berlin-Treptow-K\xF6penick;.;.;.\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;11010010;      Berlin-Marzahn-Hellersdorf;.;.;.\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;11011011;
-        \     Berlin-Lichtenberg;.;.;.\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;11012012;      Berlin-Reinickendorf;.;.;.\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;12;
-        \ Brandenburg;1278352;49782362;7962536\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;12051;      Brandenburg an der Havel, kreisfreie
-        Stadt;35478;1155957;163418\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;12052;      Cottbus, kreisfreie Stadt;51110;1737098;258056\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;12053;
-        \     Frankfurt (Oder), kreisfreie Stadt;28204;913836;126796\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;12054;
-        \     Potsdam, kreisfreie Stadt;96652;4200032;786473\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;12060;      Barnim, Landkreis;96316;3872635;619605\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;12061;
-        \     Dahme-Spreewald, Landkreis;89923;3620849;584515\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;12062;      Elbe-Elster, Landkreis;49157;1598635;208033\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;12063;
-        \     Havelland, Landkreis;82661;3428113;569685\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;12064;      M\xE4rkisch-Oderland, Landkreis;98920;3929117;615566\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;12065;
-        \     Oberhavel, Landkreis;109819;4683101;788659\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;12066;      Oberspreewald-Lausitz, Landkreis;54692;1805571;240825\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;12067;
-        \     Oder-Spree, Landkreis;90546;3409040;522007\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;12068;      Ostprignitz-Ruppin, Landkreis;48576;1648079;233264\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;12069;
-        \     Potsdam-Mittelmark, Landkreis;109458;5266211;985302\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;12070;
-        \     Prignitz, Landkreis;36621;1218389;175451\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;12071;      Spree-Nei\xDFe, Landkreis;56328;1988170;279608\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;12072;
-        \     Teltow-Fl\xE4ming, Landkreis;88170;3452330;547361\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;12073;      Uckermark, Landkreis;55721;1855197;257912\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;13;
-        \ Mecklenburg-Vorpommern;786875;27872999;4165163\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;13001;      Greifswald, Hansestadt, kreisfreie Stadt;-;-;-\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;13002;
-        \     Neubrandenburg, Stadt,  kreisfreie Stadt;-;-;-\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;13003;      Rostock, kreisfreie Stadt;110117;3755473;585843\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;13004;
-        \     Schwerin, kreisfreie Stadt;49081;1778333;279350\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;13005;      Stralsund, Hansestadt,  kreisfreie Stadt;-;-;-\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;13006;
-        \     Wismar, Hansestadt,  kreisfreie Stadt;-;-;-\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;13051;      Bad Doberan, Landkreis;-;-;-\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;13052;
-        \     Landkreis Demmin;-;-;-\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;13053;      G\xFCstrow, Landkreis;-;-;-\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;13054;
-        \     Landkreis Ludwigslust;-;-;-\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;13055;      Mecklenburg-Strelitz, Landkreis;-;-;-\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;13056;
-        \     Landkreis M\xFCritz;-;-;-\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;13057;      Nordvorpommern, Landkreis;-;-;-\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;13058;
-        \     Landkreis Nordwestmecklenburg;-;-;-\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;13059;      Ostvorpommern, Landkreis;-;-;-\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;13060;
-        \     Landkreis Parchim;-;-;-\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;13061;      R\xFCgen, Landkreis;-;-;-\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;13062;
-        \     Landkreis Uecker-Randow;-;-;-\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;13071;      Mecklenburgische Seenplatte, Landkreis;124410;4286252;613036\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;13072;
-        \     Landkreis Rostock;103282;4030039;627846\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;13073;      Vorpommern-R\xFCgen, Landkreis;109810;3767988;552454\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;13074;
-        \     Nordwestmecklenburg, Landkreis;76135;2763843;406772\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;13075;
-        \     Vorpommern-Greifswald, Landkreis;111379;3761465;543393\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;13076;
-        \     Ludwigslust-Parchim, Landkreis;102661;3729606;556469\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;14;
-        \ Sachsen;2053205;73071516;10803917\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;141;    Chemnitz, Regierungsbezirk;-;-;-\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;14161;
-        \     Chemnitz, kreisfreie Stadt;-;-;-\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;14166;      Plauen, kreisfreie Stadt;-;-;-\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;14167;
-        \     Zwickau, kreisfreie Stadt;-;-;-\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;14171;      Annaberg, Landkreis;-;-;-\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;14173;
-        \     Chemnitzer Land, Landkreis;-;-;-\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;14177;      Freiberg, Landkreis;-;-;-\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;14178;
-        \     Vogtlandkreis;-;-;-\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;14181;      Mittlerer Erzgebirgskreis;-;-;-\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;14182;
-        \     Mittweida, Landkreis;-;-;-\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;14188;      Stollberg, Landkreis;-;-;-\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;14191;
-        \     Aue-Schwarzenberg, Landkreis;-;-;-\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;14193;      Zwickauer Land, Landkreis;-;-;-\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;142;
-        \   Dresden, Regierungsbezirk;-;-;-\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;14262;      Dresden, kreisfreie Stadt;-;-;-\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;14263;
-        \     G\xF6rlitz, kreisfreie Stadt;-;-;-\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;14264;      Hoyerswerda, kreisfreie Stadt;-;-;-\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;14272;
-        \     Bautzen, Landkreis;-;-;-\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;14280;      Mei\xDFen, Landkreis;-;-;-\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;14284;
-        \     Niederschlesischer Oberlausitzkreis;-;-;-\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;14285;      Riesa-Gro\xDFenhain, Landkreis;-;-;-\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;14286;
-        \     L\xF6bau-Zittau, Landkreis;-;-;-\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;14287;      S\xE4chsische Schweiz, Landkreis;-;-;-\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;14290;
-        \     Wei\xDFeritzkreis;-;-;-\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;14292;      Kamenz, Landkreis;-;-;-\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;143;
-        \   Leipzig, Regierungsbezirk;-;-;-\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;14365;      Leipzig, kreisfreie Stadt;-;-;-\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;14374;
-        \     Delitzsch, Landkreis;-;-;-\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;14375;      D\xF6beln, Landkreis;-;-;-\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;14379;
-        \     Leipziger Land, Landkreis;-;-;-\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;14383;      Muldentalkreis;-;-;-\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;14389;
-        \     Torgau-Oschatz, Landkreis;-;-;-\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;145;    Chemnitz, Statistische Region;699167;23857654;3270170\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;14511;
-        \     Chemnitz, kreisfreie Stadt;123292;4213225;614606\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;14521;      Erzgebirgskreis;161794;5392107;693080\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;14522;
-        \     Mittelsachsen, Landkreis;148882;5099019;690434\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;14523;      Vogtlandkreis;109894;3654824;485067\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;14524;
-        \     Zwickau, Landkreis;155305;5498480;786982\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;146;    Dresden, Statistische Region;806183;29223765;4357637\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;14612;
-        \     Dresden, kreisfreie Stadt;295623;11244542;1843379\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;14625;      Bautzen, Landkreis;148741;5280849;733673\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;14626;
-        \     G\xF6rlitz, Landkreis;120155;3801248;487771\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;14627;      Mei\xDFen, Landkreis;119838;4474572;666193\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;14628;
-        \     S\xE4chsische Schweiz-Osterzgebirge, Landkreis;121826;4422554;626621\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;147;
-        \   Leipzig, Statistische Region;547855;19990097;3176110\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;14713;
-        \     Leipzig, kreisfreie Stadt;319349;11297070;1854257\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;14729;      Leipzig, Landkreis;129828;5122304;799562\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;14730;
-        \     Nordsachsen, Landkreis;98678;3570723;522291\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;15;  Sachsen-Anhalt;1083760;37983286;5523383\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;15001;
-        \     Dessau-Ro\xDFlau, kreisfreie Stadt;39152;1371650;198647\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;15002;
-        \     Halle (Saale), kreisfreie Stadt;119756;4067900;636649\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;15003;
-        \     Magdeburg, kreisfreie Stadt, Landeshauptstadt;122197;4324247;690691\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;15081;
-        \     Altmarkkreis Salzwedel;40671;1439681;201233\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;15082;      Anhalt-Bitterfeld, Landkreis;79351;2658028;361216\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;15083;
-        \     B\xF6rde, Landkreis;85492;3256914;481716\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;15084;      Burgenlandkreis;88604;2990778;408509\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;15085;
-        \     Harz, Landkreis;102886;3588833;509862\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;15086;      Jerichower Land, Landkreis;43748;1636395;243488\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;15087;
-        \     Mansfeld-S\xFCdharz, Landkreis;63183;2081696;276332\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;15088;
-        \     Saalekreis;93893;3480030;505778\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;15089;      Salzlandkreis;89012;3085063;448896\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;15090;
-        \     Stendal, Landkreis;53039;1834522;254731\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;15091;      Wittenberg, Landkreis;62776;2167548;305635\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;151;
-        \   Dessau, Statistische Region;-;-;-\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;15101;      Dessau, kreisfreie Stadt;-;-;-\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;15151;
-        \     Anhalt-Zerbst, Kreis;-;-;-\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;15153;      Bernburg, Kreis;-;-;-\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;15154;
-        \     Bitterfeld, Kreis;-;-;-\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;15159;      K\xF6then, Kreis;-;-;-\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;15171;
-        \     Wittenberg, Kreis;-;-;-\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;152;    Halle, Statistische Region;-;-;-\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;15202;
-        \     Halle (Saale), kreisfreie Stadt;-;-;-\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;15256;      Burgenlandkreis;-;-;-\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;15260;
-        \     Mansfelder Land, Kreis;-;-;-\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;15261;      Merseburg-Querfurt, Kreis;-;-;-\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;15265;
-        \     Saalkreis;-;-;-\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;15266;      Sangerhausen, Kreis;-;-;-\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;15268;
-        \     Wei\xDFenfels, Kreis;-;-;-\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;153;    Magdeburg, Statistische Region;-;-;-\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;15303;
-        \     Magdeburg, kreisfreie Stadt;-;-;-\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;15352;      Aschersleben-Sta\xDFfurt, Kreis;-;-;-\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;15355;
-        \     B\xF6rdekreis;-;-;-\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;15357;      Halberstadt, Kreis;-;-;-\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;15358;
-        \     Jerichower Land, Kreis;-;-;-\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;15362;      Ohrekreis;-;-;-\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;15363;      Stendal, Kreis;-;-;-\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;15364;
-        \     Quedlinburg, Kreis;-;-;-\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;15367;      Sch\xF6nebeck, Kreis;-;-;-\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;15369;
-        \     Wernigerode, Kreis;-;-;-\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;15370;      Altmarkkreis Salzwedel, Kreis;-;-;-\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;16;
-        \ Th\xFCringen;1068863;37705414;5450776\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;16051;      Erfurt, kreisfreie Stadt;113375;4180306;680372\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;16052;
-        \     Gera, kreisfreie Stadt;47229;1544999;212316\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;16053;      Jena, kreisfreie Stadt;56722;2276464;413244\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;16054;
-        \     Suhl, kreisfreie Stadt;19269;660130;93039\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;16055;      Weimar, kreisfreie Stadt;32983;1227598;201879\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;16056;
-        \     Eisenach, kreisfreie Stadt;-;-;-\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;16061;      Eichsfeld, Landkreis;49147;1866695;267384\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;16062;
-        \     Nordhausen, Landkreis;39069;1339452;186745\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;16063;      Wartburgkreis;79192;2866564;410887\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;16064;
-        \     Unstrut-Hainich-Kreis;47035;1639549;229201\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;16065;      Kyffh\xE4userkreis;34338;1148612;151100\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;16066;
-        \     Schmalkalden-Meiningen, Landkreis;64238;2205468;299293\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;16067;
-        \     Gotha, Landkreis;69016;2371680;327574\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;16068;      S\xF6mmerda, Landkreis;34045;1187949;162893\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;16069;
-        \     Hildburghausen, Landkreis;32496;1121579;151824\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;16070;      Ilm-Kreis;52203;1845506;266645\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;16071;
-        \     Weimarer Land, Landkreis;41263;1534443;226819\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;16072;      Sonneberg, Landkreis;29749;978725;127256\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;16073;
-        \     Saalfeld-Rudolstadt, Landkreis;52189;1757186;241274\n73111;Lohn- und
-        Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;16074;
-        \     Saale-Holzland-Kreis;41387;1514119;218490\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;16075;      Saale-Orla-Kreis;41093;1328641;171189\n73111;Lohn-
-        und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise und kreisfreie St\xE4dte;16076;
-        \     Greiz, Landkreis;48944;1651764;218301\n73111;Lohn- und Einkommensteuerstatistik;JAHR;Jahr;2020;KREISE;Kreise
-        und kreisfreie St\xE4dte;16077;      Altenburger Land, Landkreis;43881;1457985;193052\n"
+      string: !!binary |
+        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
+        AA==
     headers:
       Cache-Control:
       - max-age=172800
       Connection:
       - Keep-Alive
       Content-Disposition:
-      - attachement;filename=73111-01-01-4_flat.csv
+      - attachment; filename=73111-01-01-4_1744313736704_de_flat.zip
       Content-Type:
-      - text/csv
+      - application/zip
       Date:
-      - Tue, 03 Dec 2024 20:19:54 GMT
+      - Thu, 10 Apr 2025 19:35:36 GMT
       Expires:
-      - Thu, 05 Dec 2024 20:19:43 GMT
+      - Sat, 12 Apr 2025 19:35:25 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
@@ -888,32 +385,36 @@ interactions:
       code: 200
       message: ''
 - request:
-    body: null
+    body: name=73111-01-01-4&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=de&quality=off&format=ffcsv
     headers:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br, zstd
+      - gzip, deflate
       Connection:
       - keep-alive
+      Content-Length:
+      - '134'
+      Content-Type:
+      - application/x-www-form-urlencoded
       User-Agent:
       - python-requests/2.32.3
-    method: GET
-    uri: https://www.regionalstatistik.de/genesisws/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=73111-01-01-4&quality=off
+    method: POST
+    uri: https://www.regionalstatistik.de/genesisws/rest/2020/metadata/table
   response:
     body:
       string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"73111-01-01-4\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"73111-01-01-4\",\"Content\":\"Lohn-
         und Einkommensteuerpflichtige, Gesamtbetrag der\\nEink\xFCnfte, Lohn- und
         Einkommensteuer - Jahressumme -\\nregionale Tiefe: Kreise und krfr. St\xE4dte\",\"Time\":{\"From\":\"1992\",\"To\":\"2020\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"73111\",\"Content\":\"Lohn-
-        und Einkommensteuerstatistik\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},\"Columns\":[{\"Code\":\"LSNW01\",\"Content\":\"Lohn- und Einkommensteuerpflichtige\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"EKF002\",\"Content\":\"Gesamtbetrag der Eink\xFCnfte\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"LSNW02\",\"Content\":\"Lohn- und Einkommensteuer\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        und Einkommensteuerstatistik\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},\"Columns\":[{\"Code\":\"LSNW01\",\"Content\":\"Lohn- und Einkommensteuerpflichtige\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"EKF002\",\"Content\":\"Gesamtbetrag der Eink\xFCnfte\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"LSNW02\",\"Content\":\"Lohn- und Einkommensteuer\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
         parent\"}],\"Rows\":[{\"Code\":\"KREISE\",\"Content\":\"Kreise und kreisfreie
-        St\xE4dte\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Subtitel\":null,\"Subheading\":{\"Code\":\"JAHR\",\"Content\":\"Jahr\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Structure\":null,\"Updated\":\"see
+        St\xE4dte\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Subtitel\":null,\"Subheading\":{\"Code\":\"JAHR\",\"Content\":\"Jahr\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
         parent\"}},\"Updated\":\"17.11.2023 11:58:37h\"},\"Copyright\":\"\xA9 Statistische
-        \xC4mter des Bundes und der L\xE4nder, Deutschland, 2024.\\nDieses Werk ist
+        \xC4mter des Bundes und der L\xE4nder, Deutschland, 2025.\\nDieses Werk ist
         lizenziert unter der Datenlizenz Deutschland\\n- Namensnennung - Version 2.0.\"}"
     headers:
       Cache-Control:
@@ -921,13 +422,13 @@ interactions:
       Connection:
       - Keep-Alive
       Content-Length:
-      - '1639'
+      - '1741'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Tue, 03 Dec 2024 20:19:58 GMT
+      - Thu, 10 Apr 2025 19:35:41 GMT
       Expires:
-      - Thu, 05 Dec 2024 20:19:54 GMT
+      - Sat, 12 Apr 2025 19:35:36 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:

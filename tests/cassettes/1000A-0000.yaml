@@ -5,7 +5,7 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br, zstd
+      - gzip, deflate
       Connection:
       - keep-alive
       Content-Length:
@@ -19,7 +19,7 @@ interactions:
   response:
     body:
       string: !!binary |
-        UEsDBBQACAgIAJeqg1kAAAAAAAAAAAAAAAAkAAAAMTAwMEEtMDAwMF8xNzMzMjU3MjQ3NTIxX2Rl
+        UEsDBBQACAgIAKysiloAAAAAAAAAAAAAAAAkAAAAMTAwMEEtMDAwMF8xNzQ0MzEzODQ0MzYyX2Rl
         X2ZsYXQuY3N2zL3LcuRGti0476+IodJMzII/AZiPkiKTlEhm8pIp0UyTYwiGMwKXCICNh1jit1wz
         TfQNnDTNehAf1L/Qe7k7IphVdU9PerB1cEopKZLc9HTs59pr/T//1/89jNVYD2N9P/zXfbfy7t0/
         N9XSN26stz7+p/Crw7904r/+qPq6Wjbpv7/75/ipd/+iGse+Xk7jv3/08F/ib/qjaiYf//e/prYe
@@ -3460,34 +3460,30 @@ interactions:
         J8V//K+hqw96bXTTBWZwZ5HAswqj4vN+i9Hg0U9fNtvF5xjpR96xo8xJ1CQ9q9sW9f59PfBEXiAV
         5qByQuHunKLzZofao1l7kXV+nF7YMquozt+NU9P9/w4vCokSaS5HxRdDxjmzIMaopbg9irvclM1L
         iL+JOz2oSJkyjj7Q12RhOu+0RFWc1AMoSD7+1rf/Yc6U0gLXC3PUUEqX/ozLugQzVub/u4n9fwFQ
-        SwcIY5H+Neb9AgBz8RwAUEsBAhQAFAAICAgAl6qDWWOR/jXm/QIAc/EcACQAAAAAAAAAAAAAAAAA
-        AAAAADEwMDBBLTAwMDBfMTczMzI1NzI0NzUyMV9kZV9mbGF0LmNzdlBLBQYAAAAAAQABAFIAAAA4
+        SwcIY5H+Neb9AgBz8RwAUEsBAhQAFAAICAgArKyKWmOR/jXm/QIAc/EcACQAAAAAAAAAAAAAAAAA
+        AAAAADEwMDBBLTAwMDBfMTc0NDMxMzg0NDM2Ml9kZV9mbGF0LmNzdlBLBQYAAAAAAQABAFIAAAA4
         /gIAAAA=
     headers:
-      Cache-Control:
-      - max-age=0
       Connection:
-      - keep-alive
+      - Keep-Alive
       Content-Disposition:
-      - attachment; filename=1000A-0000_1733257247521_de_flat.zip
+      - attachment; filename=1000A-0000_1744313844362_de_flat.zip
       Content-Type:
       - application/zip
       Date:
-      - Tue, 03 Dec 2024 20:20:49 GMT
-      ETag:
-      - '"myra-3abedfb9"'
-      Expires:
-      - Tue, 03 Dec 2024 20:20:49 GMT
+      - Thu, 10 Apr 2025 19:37:22 GMT
+      Keep-Alive:
+      - timeout=10, max=500
       Referrer-Policy:
       - same-origin
       Server:
-      - myracloud
+      - Apache
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
       Transfer-Encoding:
       - chunked
       Vary:
-      - user-agent
+      - User-Agent
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
@@ -3503,7 +3499,7 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br, zstd
+      - gzip, deflate
       Connection:
       - keep-alive
       Content-Length:
@@ -3517,7 +3513,7 @@ interactions:
   response:
     body:
       string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"1000A-0000\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"1000A-0000\",\"Content\":\"Personen:
-        Bev\xF6lkerungszahl\",\"Time\":{\"From\":\"09.05.2011\",\"To\":\"15.05.2022\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"1000A\",\"Content\":\"Bev\xF6lkerung
+        Bev\xF6lkerungszahl\",\"Time\":{\"From\":\"15.05.2022\",\"To\":\"15.05.2022\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"1000A\",\"Content\":\"Bev\xF6lkerung
         kompakt (Gebietsstand 15.05.2022)\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
         parent\"},\"Columns\":[{\"Code\":\"STAG\",\"Content\":\"Stichtag\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
         parent\"}],\"Rows\":[{\"Code\":\"GEODL1\",\"Content\":\"Deutschland\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"PRS001\",\"Content\":\"Personen\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
@@ -3525,33 +3521,27 @@ interactions:
         (Gebietsstand 15.05.2022)\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"PRS018\",\"Content\":\"Personen\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
         parent\"}],\"Updated\":\"see parent\"}],\"Subtitel\":null,\"Subheading\":null},\"Updated\":\"20.08.2024
         10:27:35h\"},\"Copyright\":\"\xA9 Statistische \xC4mter des Bundes und der
-        L\xE4nder, Deutschland, 2024. Lizenziert unter der Datenlizenz Deutschland
+        L\xE4nder, Deutschland, 2025. Lizenziert unter der Datenlizenz Deutschland
         - Namensnennung - Version 2.0\"}"
     headers:
-      Cache-Control:
-      - max-age=0
       Connection:
-      - keep-alive
-      Content-Encoding:
-      - gzip
+      - Keep-Alive
+      Content-Length:
+      - '1565'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Tue, 03 Dec 2024 20:20:53 GMT
-      ETag:
-      - '"myra-3327377b"'
-      Expires:
-      - Tue, 03 Dec 2024 20:20:53 GMT
+      - Thu, 10 Apr 2025 19:37:27 GMT
+      Keep-Alive:
+      - timeout=10, max=500
       Referrer-Policy:
       - same-origin
       Server:
-      - myracloud
+      - Apache
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
-      Transfer-Encoding:
-      - chunked
       Vary:
-      - user-agent, accept-encoding
+      - User-Agent
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
@@ -3567,7 +3557,7 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br, zstd
+      - gzip, deflate
       Connection:
       - keep-alive
       Content-Length:
@@ -3581,7 +3571,7 @@ interactions:
   response:
     body:
       string: !!binary |
-        UEsDBBQACAgIAIy2g1kAAAAAAAAAAAAAAAAkAAAAMTAwMEEtMDAwMF8xNzMzMjYyNzQ1NjIxX2Vu
+        UEsDBBQACAgIACOtiloAAAAAAAAAAAAAAAAkAAAAMTAwMEEtMDAwMF8xNzQ0MzE0MDY2MjIxX2Vu
         X2ZsYXQuY3N21L3LcuRGlja4n6eIpdJMzIJfAZivyCKTlEhm5k+mRDNt2hAMZwSaCICDi1jis/xm
         2ugZuBmazSIeaF5hzufuiGBWdfesxqyOOrqkSmWyHAF3P7fv8v/8X//3MFZjPYz1/fAf993Ku3f/
         vamWvnFjvfXxX4V/OvyiE//xe9XX1bJJ//7df4+/690vVOPY18tp/Nffevg38Q/9XjWTj//5H1Nb
@@ -7066,33 +7056,29 @@ interactions:
         xLDAIUYDhhQ1Wg3LEct9XLz63G7Pjl3/gkW/J8t9JeX0i6bvkSE9NiF2fViMD57UvuiyXVK0aCdg
         qm7tmGRGqdqkq6KmzGja7Wkt/6/YZHlIoJoSaDddT8s4A7ZLuszbRWI0ZExSQe6VwfNgxLMQytAH
         Ct9RnNYZyUNTLmdNAoLSv4z9v+N0qpAsmlrzDSWErNxFhLR5zEGo/1k++C9QSwcIpZ6kZaYHAwDQ
-        5x8AUEsBAhQAFAAICAgAjLaDWaWepGWmBwMA0OcfACQAAAAAAAAAAAAAAAAAAAAAADEwMDBBLTAw
-        MDBfMTczMzI2Mjc0NTYyMV9lbl9mbGF0LmNzdlBLBQYAAAAAAQABAFIAAAD4BwMAAAA=
+        5x8AUEsBAhQAFAAICAgAI62KWqWepGWmBwMA0OcfACQAAAAAAAAAAAAAAAAAAAAAADEwMDBBLTAw
+        MDBfMTc0NDMxNDA2NjIyMV9lbl9mbGF0LmNzdlBLBQYAAAAAAQABAFIAAAD4BwMAAAA=
     headers:
-      Cache-Control:
-      - max-age=0
       Connection:
-      - keep-alive
+      - Keep-Alive
       Content-Disposition:
-      - attachment; filename=1000A-0000_1733262745621_en_flat.zip
+      - attachment; filename=1000A-0000_1744314066221_en_flat.zip
       Content-Type:
       - application/zip
       Date:
-      - Tue, 03 Dec 2024 21:52:28 GMT
-      ETag:
-      - '"myra-3ace4f99"'
-      Expires:
-      - Tue, 03 Dec 2024 21:52:28 GMT
+      - Thu, 10 Apr 2025 19:41:03 GMT
+      Keep-Alive:
+      - timeout=10, max=500
       Referrer-Policy:
       - same-origin
       Server:
-      - myracloud
+      - Apache
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
       Transfer-Encoding:
       - chunked
       Vary:
-      - user-agent
+      - User-Agent
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
@@ -7108,7 +7094,7 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br, zstd
+      - gzip, deflate
       Connection:
       - keep-alive
       Content-Length:
@@ -7122,7 +7108,7 @@ interactions:
   response:
     body:
       string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"successfull\",\"Type\":\"information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"1000A-0000\",\"area\":\"all\",\"language\":\"en\"},\"Object\":{\"Code\":\"1000A-0000\",\"Content\":\"Persons:
-        Official population\",\"Time\":{\"From\":\"2011-05-09\",\"To\":\"2022-05-15\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"1000A\",\"Content\":\"Population
+        Official population\",\"Time\":{\"From\":\"2022-05-15\",\"To\":\"2022-05-15\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"1000A\",\"Content\":\"Population
         in brief (territory on 15 May 2022)\",\"Type\":\"statistic\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
         parent\"},\"Columns\":[{\"Code\":\"STAG\",\"Content\":\"Reference date\",\"Type\":\"variable\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
         parent\"}],\"Rows\":[{\"Code\":\"GEODL1\",\"Content\":\"Germany\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"PRS001\",\"Content\":\"Persons\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
@@ -7130,33 +7116,27 @@ interactions:
         (territory on 15 May 2022, LAU-2)\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"PRS018\",\"Content\":\"Persons\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
         parent\"}],\"Updated\":\"see parent\"}],\"Subtitel\":null,\"Subheading\":null},\"Updated\":\"2024-08-20
         10:27:35h\"},\"Copyright\":\"\xA9 Statistical Offices of the Federation and
-        the L\xE4nder, Germany, 2024. Licensed under Data licence Germany - attribution
+        the L\xE4nder, Germany, 2025. Licensed under Data licence Germany - attribution
         - Version 2.0\"}"
     headers:
-      Cache-Control:
-      - max-age=0
       Connection:
-      - keep-alive
-      Content-Encoding:
-      - gzip
+      - Keep-Alive
+      Content-Length:
+      - '1575'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Tue, 03 Dec 2024 21:52:32 GMT
-      ETag:
-      - '"myra-3336a75b"'
-      Expires:
-      - Tue, 03 Dec 2024 21:52:32 GMT
+      - Thu, 10 Apr 2025 19:41:08 GMT
+      Keep-Alive:
+      - timeout=10, max=500
       Referrer-Policy:
       - same-origin
       Server:
-      - myracloud
+      - Apache
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
-      Transfer-Encoding:
-      - chunked
       Vary:
-      - user-agent, accept-encoding
+      - User-Agent
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:

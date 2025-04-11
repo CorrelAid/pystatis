@@ -171,11 +171,11 @@ To contribute to this project, please follow these steps:
 
 1. Install [miniforge](https://github.com/conda-forge/miniforge).
 2. Create a new virtual environment using `conda`: Run `conda create -n pystatis python=3.11`. You can choose another Python version as long as it is supported by this package, see the pyproject.toml for supported Python versions.
-3. Install [poetry](https://python-poetry.org/docs/) inside your conda environment: Run `conda install poetry`.
+3. Install [uv](https://github.com/astral-sh/uv) with `pip install uv`.
 4. Clone the repository via git.
 5. Change into the project root directory.
-6. Run `poetry install` to install all dependencies into the current conda environment (run `poetry env info` to see the details of the current environment). Run `poetry install --with dev` to receive all additional developer dependencies. `poetry` has installed all dependencies for you, as well as the package `pystatis` itself.
-7. Install pre-commit: Run `poetry run pre-commit install`. This will activate the pre-commit hooks that will run prior every commit to ensure code quality.
+6. Run `uv sync` to install all dependencies. Run `uv sync --group dev` to receive all additional developer dependencies.
+7. Install pre-commit: Run `uv run pre-commit install`. This will activate the pre-commit hooks that will run prior every commit to ensure code quality.
 
 ### Workflow
 
@@ -183,19 +183,19 @@ To contribute to this project, please follow these steps:
 2. Create a new branch by running `git checkout -b <new-branch>` or `git switch -c <new-branch>`. If possible, add an issue number to the branch name.
 3. Do your changes.
 4. Delete the cassettes folder under tests to make sure that the tests are loading the latest data from the API.
-5. Run `poetry run pytest tests -s -vv --vcr-record=new_episodes` to see if all existing tests still run through. It is important to use `poetry run` to call `pytest` so that `poetry` uses the created virtual environment and not the system's default Python interpreter. Alternatively, you can run `poetry shell` to let `poetry` activate the virtual environment for the current session. Afterwards, you can run `pytest` as usual without any prefix. You can leave the poetry shell with the `exit` command.
+5. Run `uv run pytest tests -sx -vv --vcr-record=new_episodes` to see if all existing tests still run through.
 6. Add new tests depending on your changes.
-7. Run `poetry run pytest tests -s -vv --vcr-record=new_episodes` again to make sure your tests are also passed.
+7. Run `uv run pytest tests -sx -vv --vcr-record=new_episodes` again to make sure your tests are also passed.
 8. Commit your changes. This will trigger all pre-commit hooks as defined in `.pre-commit-config.yaml`. If any of these pre-hooks fails, your commit is declined and you have to fix the issues first.
 9. Before you create a PR make sure that you have the latest changes from dev. Run `git switch dev`, run `git pull`, switch back to your branch with `git switch -` and either do a `git rebase -i dev` or `git merge dev` to get the latest changes in your current working branch. Solve all merge conflicts.
 10. Push your final changes.
 11. Create a new PR, always against `dev` as target.
 
-To learn more about `poetry`, see [Dependency Management With Python Poetry](https://realpython.com/dependency-management-python-poetry/#command-reference) by realpython.com.
+To learn more about `uv`, see the [official uv documentation](https://docs.astral.sh/uv/).
 
 ### Documentation process
 
-Documentation can also be built locally by ensuring that [pandoc is installed](https://pandoc.org/installing.html), e.g. via `conda install pandoc`, and then running
+Documentation can also be built locally by ensuring that [pandoc is installed](https://pandoc.org/installing.html), e.g. via `uv pip install pandoc`, and then running
 
 ```bash
 cd docs && make clean && make html

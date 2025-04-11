@@ -1,5 +1,3 @@
-import subprocess
-
 # Configuration file for the Sphinx documentation builder.
 #
 # For the full list of built-in configuration values, see the documentation:
@@ -7,6 +5,9 @@ import subprocess
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
+from pathlib import Path
+
+import tomllib
 
 project = "pystatis"
 copyright = "2022, Michael Aydinbas"
@@ -20,7 +21,13 @@ authors = [
     "Marco Hübner <marco_huebner1@gmx.de>",
 ]
 maintainers = ["Michael Aydinbas <michael.aydinbas@gmail.com>"]
-release = subprocess.check_output(["poetry", "version"], text=True).strip().split()[-1]
+
+# Read version from pyproject.toml
+pyproject_path = Path(__file__).parent.parent.parent / "pyproject.toml"
+with open(pyproject_path, "rb") as f:
+    pyproject_data = tomllib.load(f)
+
+release = pyproject_data["project"]["version"]
 version = release
 
 

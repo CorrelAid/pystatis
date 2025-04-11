@@ -5,7 +5,7 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br, zstd
+      - gzip, deflate
       Connection:
       - keep-alive
       Content-Length:
@@ -19,7 +19,7 @@ interactions:
   response:
     body:
       string: !!binary |
-        UEsDBBQACAgIAESqg1kAAAAAAAAAAAAAAAAkAAAAOTExMTEtMDAwMV8xNzMzMjU3MDg5MTUxX2Rl
+        UEsDBBQACAgIADuqiloAAAAAAAAAAAAAAAAkAAAAOTExMTEtMDAwMV8xNzQ0MzEyNjc1MzYyX2Rl
         X2ZsYXQuY3N25L3NctvIti4476fA5ETYEVAa/yBa0QPJlnxtl2x1yWXv48kJ0ARFlEhAFwAtb43P
         M9ToRuyJn8GTdkQP+ED9Cp0rEwmCFKkfID4UcPcZnKiSVBJzJ5C51re+n//v//l/8yIs4ryIv+b/
         9TWdRIe1f5+H42h+WMSLSH5L/NP6i4fmf30Lszgcz8vv1/5d/lTtC2FRZPF4Wdz90fV35H9kbf1W
@@ -1324,17 +1324,17 @@ interactions:
         rFG3BvaOssgi0euq6vERlQW/b0DoFFbbnKvRwY7lRpeWH/gRiNGLrZr6O2mCTiZrb9ZB7keY6S24
         BWhVrRtQmR+5/GgWH+qsLLzGtEzMCwTEPLt4Pn12GPspKLoHu18zebW+WFTV6kpgMPyQ+qOQ/8l/
         TfFdfDiZhni6ml/WhZsToV5hai6yw7RG1vcu+P8CUEsHCC2/yE00IgEALEwRAFBLAQIUABQACAgI
-        AESqg1ktv8hNNCIBACxMEQAkAAAAAAAAAAAAAAAAAAAAAAA5MTExMS0wMDAxXzE3MzMyNTcwODkx
-        NTFfZGVfZmxhdC5jc3ZQSwUGAAAAAAEAAQBSAAAAhiIBAAAA
+        ADuqilotv8hNNCIBACxMEQAkAAAAAAAAAAAAAAAAAAAAAAA5MTExMS0wMDAxXzE3NDQzMTI2NzUz
+        NjJfZGVfZmxhdC5jc3ZQSwUGAAAAAAEAAQBSAAAAhiIBAAAA
     headers:
       Connection:
       - Keep-Alive
       Content-Disposition:
-      - attachment; filename=91111-0001_1733257089151_de_flat.zip
+      - attachment; filename=91111-0001_1744312675362_de_flat.zip
       Content-Type:
       - application/zip
       Date:
-      - Tue, 03 Dec 2024 20:18:06 GMT
+      - Thu, 10 Apr 2025 19:17:52 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
@@ -1350,7 +1350,7 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br, zstd
+      - gzip, deflate
       Connection:
       - keep-alive
       Content-Length:
@@ -1371,7 +1371,7 @@ interactions:
         parent\"}],\"Rows\":[{\"Code\":\"IND006\",\"Content\":\"Indikatoren: Nachhaltige
         Entwicklung\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
         parent\"}],\"Subtitel\":null,\"Subheading\":null},\"Updated\":\"02.02.2023
-        14:24:51h\"},\"Copyright\":\"\xA9 Statistisches Bundesamt (Destatis), 2024\"}"
+        14:24:51h\"},\"Copyright\":\"\xA9 Statistisches Bundesamt (Destatis), 2025\"}"
     headers:
       Connection:
       - Keep-Alive
@@ -1380,7 +1380,7 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Tue, 03 Dec 2024 20:18:10 GMT
+      - Thu, 10 Apr 2025 19:17:55 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
@@ -1394,7 +1394,7 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br, zstd
+      - gzip, deflate
       Connection:
       - keep-alive
       Content-Length:
@@ -1408,7 +1408,7 @@ interactions:
   response:
     body:
       string: !!binary |
-        UEsDBBQACAgIAIu2g1kAAAAAAAAAAAAAAAAkAAAAOTExMTEtMDAwMV8xNzMzMjYyNzQyNjQ0X2Vu
+        UEsDBBQACAgIACGtiloAAAAAAAAAAAAAAAAkAAAAOTExMTEtMDAwMV8xNzQ0MzE0MDYyMjczX2Vu
         X2ZsYXQuY3N23L3LdtxIsi0476/ApGop11G48EagWT2QSKZa3UeZXFKeeozuAiNAEiVEIAqIEKVv
         60F/Uv9Cu7kDIEAGyQjHNtGVd1BHyTcuAHOzbfvx//0//2+zzbZFsy0Wzf9aVMv8ZPDfZXaZlyfb
         YpXrT6l/3X3wxPtfX7O6yC7L9vOD/9ZfNfhAtt3WxeVu+/BL7z6jv8m/91P9+z/Vf/Sn7v2M/qav
@@ -2580,18 +2580,18 @@ interactions:
         FRr4DzsZ9seUEjnQEyyEkY2518AvHQMd+QiiFafwypqRPZvE0+PUda0JOebmlXWcAqQAys3iGqt9
         oR/uEFUd4VGQ6YAthL0tFUWxONndlMTCI1hPIfvXRprUwH5mDpQFrxj9Ls/T/ehG0Ts1QhsahHb+
         cfHh3BchhQE68DRF5nK6LDabB7OVus4202xtsFn5z2R/6o/x+ZvsmHSF5w6p2wRB8OaLDFm+vf1k
-        /wNQSwcIo50FBLQEAQCliQ8AUEsBAhQAFAAICAgAi7aDWaOdBQS0BAEApYkPACQAAAAAAAAAAAAA
-        AAAAAAAAADkxMTExLTAwMDFfMTczMzI2Mjc0MjY0NF9lbl9mbGF0LmNzdlBLBQYAAAAAAQABAFIA
+        /wNQSwcIo50FBLQEAQCliQ8AUEsBAhQAFAAICAgAIa2KWqOdBQS0BAEApYkPACQAAAAAAAAAAAAA
+        AAAAAAAAADkxMTExLTAwMDFfMTc0NDMxNDA2MjI3M19lbl9mbGF0LmNzdlBLBQYAAAAAAQABAFIA
         AAAGBQEAAAA=
     headers:
       Connection:
       - Keep-Alive
       Content-Disposition:
-      - attachment; filename=91111-0001_1733262742644_en_flat.zip
+      - attachment; filename=91111-0001_1744314062273_en_flat.zip
       Content-Type:
       - application/zip
       Date:
-      - Tue, 03 Dec 2024 21:52:19 GMT
+      - Thu, 10 Apr 2025 19:40:59 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
@@ -2607,7 +2607,7 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br, zstd
+      - gzip, deflate
       Connection:
       - keep-alive
       Content-Length:
@@ -2627,7 +2627,7 @@ interactions:
         parent\"}],\"Rows\":[{\"Code\":\"IND006\",\"Content\":\"Indicators: Sustainable
         development\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
         parent\"}],\"Subtitel\":null,\"Subheading\":null},\"Updated\":\"2023-02-02
-        14:24:51h\"},\"Copyright\":\"\xA9 Federal Statistical Office, Wiesbaden 2024\"}"
+        14:24:51h\"},\"Copyright\":\"\xA9 Federal Statistical Office, Wiesbaden 2025\"}"
     headers:
       Connection:
       - Keep-Alive
@@ -2636,7 +2636,7 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Tue, 03 Dec 2024 21:52:23 GMT
+      - Thu, 10 Apr 2025 19:41:02 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:

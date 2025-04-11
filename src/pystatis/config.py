@@ -35,11 +35,7 @@ REGEX_DB = {
         r"^((\d{5}-.{1,2}($|-.*$))|(A.*$)|([0-9A-Z]{10}$)|(\d{5}\w-Z-\d{1,2}))"
     ),
 }
-VERSION_MAPPING = {
-    "genesis": "v5",
-    "zensus": "v5",
-    "regio": "v4",
-}
+
 ARS_OR_AGS_MAPPING = {
     "zensus": {
         "de": "Amtlicher Regionalschlüssel (ARS)",
@@ -55,45 +51,27 @@ ARS_OR_AGS_MAPPING = {
     },
 }
 LANG_TO_COL_MAPPING = {
-    "v4": {
-        "de": {
-            "time_label": "Zeit_Label",
-            "time": "Zeit",
-            "variable_label": "Merkmal_Label",
-            "value_label": "Auspraegung_Label",
-            "value_code": "Auspraegung_Code",
-        },
-        "en": {
-            "time_label": "time_label",
-            "time": "time",
-            "variable_label": "variable_label",
-            "value_label": "variable_code.2",
-            "value_code": "variable_code.1",
-        },
-    },
     # Curently, response does not change colum names between languages.
     # Keep this dictionary for consistency and future proofing.
-    "v5": {
-        "de": {
-            "time_label": "time_label",
-            "time": "time",
-            "variable_label": "variable_label",
-            "variable_attribute_label": "variable_attribute_label",
-            "value_variable_label": "value_variable_label",
-            "value": "value",
-            "value_unit": "value_unit",
-            "value_q": "value_q",
-        },
-        "en": {
-            "time_label": "time_label",
-            "time": "time",
-            "variable_label": "variable_label",
-            "variable_attribute_label": "variable_attribute_label",
-            "value_variable_label": "value_variable_label",
-            "value": "value",
-            "value_unit": "value_unit",
-            "value_q": "value_q",
-        },
+    "de": {
+        "time_label": "time_label",
+        "time": "time",
+        "variable_label": "variable_label",
+        "variable_attribute_label": "variable_attribute_label",
+        "value_variable_label": "value_variable_label",
+        "value": "value",
+        "value_unit": "value_unit",
+        "value_q": "value_q",
+    },
+    "en": {
+        "time_label": "time_label",
+        "time": "time",
+        "variable_label": "variable_label",
+        "variable_attribute_label": "variable_attribute_label",
+        "value_variable_label": "value_variable_label",
+        "value": "value",
+        "value_unit": "value_unit",
+        "value_q": "value_q",
     },
 }
 ZENSUS_AGS_CODES = [
@@ -106,6 +84,7 @@ ZENSUS_AGS_CODES = [
     "GEOGM2",
     "GEOGM3",
     "GEOGM4",
+    "GEOGM5",
     "GEOLK1",
     "GEOLK3",
     "GEOLK4",
@@ -115,9 +94,38 @@ ZENSUS_AGS_CODES = [
     "GEOVB2",
     "GEOVB3",
     "GEOVB4",
+    "GEOVB5",
 ]
-REGIO_AND_GENESIS_AGS_CODES = ["DG", "DLAND", "DLANDU", "REGBEZ", "KREISE", "GEMEIN"]
-EXCLUDE_AGS_CODES = ["GEODL1", "GEODL3", "DG"]
+GENESIS_AGS_CODES = [
+    "DLAND",
+    "DINSG",
+    "DLANDR",
+    "DLANDS",
+    "DLANDU",
+    "DLANDX",
+    "KREISE",
+    "REGBEZ",
+]
+REGIO_AGS_CODES = [
+    "DG",
+    "DINSG",
+    "DLAND",
+    "DLANDU",
+    "FAMTGEM",
+    "FDINSG",
+    "FDLAND",
+    "FGEMEIN",
+    "FKREISE",
+    "FREGBEZ",
+    "GEMEIN",
+    "GRSTADT",
+    "KREISE",
+    "NUTS-2",
+    "PGEM-2DI",
+    "PGEMEIN",
+    "REGBEZ",
+]
+AGS_CODES = ZENSUS_AGS_CODES + GENESIS_AGS_CODES + REGIO_AGS_CODES
 
 logger = logging.getLogger(__name__)
 config = ConfigParser(interpolation=None)

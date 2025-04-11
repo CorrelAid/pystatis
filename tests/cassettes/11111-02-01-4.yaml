@@ -1,847 +1,187 @@
 interactions:
 - request:
-    body: null
+    body: name=11111-02-01-4&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=de&quality=off&format=ffcsv
     headers:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br, zstd
+      - gzip, deflate
       Connection:
       - keep-alive
+      Content-Length:
+      - '134'
+      Content-Type:
+      - application/x-www-form-urlencoded
       User-Agent:
       - python-requests/2.32.3
-    method: GET
-    uri: https://www.regionalstatistik.de/genesisws/rest/2020/data/tablefile?area=all&format=ffcsv&language=de&name=11111-02-01-4&quality=off
+    method: POST
+    uri: https://www.regionalstatistik.de/genesisws/rest/2020/data/tablefile
   response:
     body:
-      string: "Statistik_Code;Statistik_Label;Zeit_Code;Zeit_Label;Zeit;1_Merkmal_Code;1_Merkmal_Label;1_Auspraegung_Code;1_Auspraegung_Label;GEM001__Zahl_der_Gemeinden__Anzahl\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;DG;Deutschland;10786\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;01;
-        \ Schleswig-Holstein;1106\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;01001;      Flensburg, kreisfreie Stadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;01002;
-        \     Kiel, kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;01003;      L\xFCbeck, kreisfreie Stadt, Hansestadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;01004;
-        \     Neum\xFCnster, kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;01051;      Dithmarschen, Kreis;116\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;01053;
-        \     Herzogtum Lauenburg, Kreis;132\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;01054;      Nordfriesland, Kreis;133\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;01055;
-        \     Ostholstein, Kreis;36\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;01056;      Pinneberg, Kreis;49\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;01057;
-        \     Pl\xF6n, Kreis;85\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;01058;      Rendsburg-Eckernf\xF6rde, Kreis;165\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;01059;
-        \     Schleswig-Flensburg, Kreis;125\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;01060;      Segeberg, Kreis;95\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;01061;
-        \     Steinburg, Kreis;111\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;01062;      Stormarn, Kreis;55\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;02;
-        \ Hamburg;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;03;  Niedersachsen;941\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;031;    Braunschweig, Statistische Region;163\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;03101;
-        \     Braunschweig, kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;03102;      Salzgitter, kreisfreie Stadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;03103;
-        \     Wolfsburg, kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;03151;      Gifhorn, Landkreis;41\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;03152;
-        \     G\xF6ttingen, Landkreis;-\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;03153;      Goslar, Landkreis;7\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;03154;
-        \     Helmstedt, Landkreis;23\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;03155;      Northeim, Landkreis;11\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;03156;
-        \     Osterode am Harz, Landkreis;-\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;03157;      Peine, Landkreis;7\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;03158;
-        \     Wolfenb\xFCttel, Landkreis;32\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;03159;      G\xF6ttingen, Landkreis;39\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;032;
-        \   Hannover, Statistische Region;200\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;03241;      Region Hannover, Landkreis;21\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;03241001;
-        \     Hannover, Landeshauptstadt;.\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;03251;      Diepholz, Landkreis;45\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;03252;
-        \     Hameln-Pyrmont, Landkreis;8\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;03254;      Hildesheim, Landkreis;20\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;03255;
-        \     Holzminden, Landkreis;32\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;03256;      Nienburg (Weser), Landkreis;36\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;03257;
-        \     Schaumburg, Landkreis;38\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;033;    L\xFCneburg, Statistische Region;331\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;03351;
-        \     Celle, Landkreis;21\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;03352;      Cuxhaven, Landkreis;29\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;03353;
-        \     Harburg, Landkreis;42\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;03354;      L\xFCchow-Dannenberg, Landkreis;27\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;03355;
-        \     L\xFCneburg, Landkreis;43\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;03356;      Osterholz, Landkreis;11\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;03357;
-        \     Rotenburg (W\xFCmme), Landkreis;57\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;03358;      Heidekreis;23\n11111;Feststellung des
-        Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;03359;
-        \     Stade, Landkreis;40\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;03360;      Uelzen, Landkreis;27\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;03361;
-        \     Verden, Landkreis;11\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;034;    Weser-Ems, Statistische Region;247\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;03401;
-        \     Delmenhorst, kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;03402;      Emden, kreisfreie Stadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;03403;
-        \     Oldenburg (Oldenburg), kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;03404;      Osnabr\xFCck, kreisfreie Stadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;03405;
-        \     Wilhelmshaven, kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;03451;      Ammerland, Landkreis;6\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;03452;
-        \     Aurich, Landkreis;24\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;03453;      Cloppenburg, Landkreis;13\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;03454;
-        \     Emsland, Landkreis;60\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;03455;      Friesland, Landkreis;8\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;03456;
-        \     Grafschaft Bentheim, Landkreis;25\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;03457;      Leer, Landkreis;19\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;03458;
-        \     Oldenburg, Landkreis;15\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;03459;      Osnabr\xFCck, Landkreis;34\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;03460;
-        \     Vechta, Landkreis;10\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;03461;      Wesermarsch, Landkreis;9\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;03462;
-        \     Wittmund, Landkreis;19\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;04;  Bremen;2\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;04011;      Bremen, kreisfreie Stadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;04012;
-        \     Bremerhaven, kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;05;  Nordrhein-Westfalen;396\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;051;
-        \   D\xFCsseldorf, Regierungsbezirk;66\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;05111;      D\xFCsseldorf, kreisfreie Stadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;05112;
-        \     Duisburg, kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;05113;      Essen, kreisfreie Stadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;05114;
-        \     Krefeld, kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;05116;      M\xF6nchengladbach, kreisfreie Stadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;05117;
-        \     M\xFClheim an der Ruhr, kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;05119;      Oberhausen, kreisfreie Stadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;05120;
-        \     Remscheid, kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;05122;      Solingen, kreisfreie Stadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;05124;
-        \     Wuppertal, kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;05154;      Kleve, Kreis;16\n11111;Feststellung des
-        Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;05158;
-        \     Mettmann, Kreis;10\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;05162;      Rhein-Kreis Neuss;8\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;05166;
-        \     Viersen, Kreis;9\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;05170;      Wesel, Kreis;13\n11111;Feststellung des
-        Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;053;
-        \   K\xF6ln, Regierungsbezirk;99\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;05314;      Bonn, kreisfreie Stadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;05315;
-        \     K\xF6ln, kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;05316;      Leverkusen, kreisfreie Stadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;05334;
-        \     St\xE4dteregion Aachen, Kreis;10\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;05334002;      Aachen, kreisfreie Stadt;.\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;05354;
-        \     Aachen, Kreis;-\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;05358;      D\xFCren, Kreis;15\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;05362;
-        \     Rhein-Erft-Kreis;10\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;05366;      Euskirchen, Kreis;11\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;05370;
-        \     Heinsberg, Kreis;10\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;05374;      Oberbergischer Kreis;13\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;05378;
-        \     Rheinisch-Bergischer Kreis;8\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;05382;      Rhein-Sieg-Kreis;19\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;055;
-        \   M\xFCnster, Regierungsbezirk;78\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;05512;      Bottrop, kreisfreie Stadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;05513;
-        \     Gelsenkirchen, kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;05515;      M\xFCnster, kreisfreie Stadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;05554;
-        \     Borken, Kreis;17\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;05558;      Coesfeld, Kreis;11\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;05562;
-        \     Recklinghausen, Kreis;10\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;05566;      Steinfurt, Kreis;24\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;05570;
-        \     Warendorf, Kreis;13\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;057;    Detmold, Regierungsbezirk;70\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;05711;
-        \     Bielefeld, kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;05754;      G\xFCtersloh, Kreis;13\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;05758;
-        \     Herford, Kreis;9\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;05762;      H\xF6xter, Kreis;10\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;05766;
-        \     Lippe, Kreis;16\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;05770;      Minden-L\xFCbbecke, Kreis;11\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;05774;
-        \     Paderborn, Kreis;10\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;059;    Arnsberg, Regierungsbezirk;83\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;05911;
-        \     Bochum, kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;05913;      Dortmund, kreisfreie Stadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;05914;
-        \     Hagen, kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;05915;      Hamm, kreisfreie Stadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;05916;
-        \     Herne, kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;05954;      Ennepe-Ruhr-Kreis;9\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;05958;
-        \     Hochsauerlandkreis;12\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;05962;      M\xE4rkischer Kreis;15\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;05966;
-        \     Olpe, Kreis;7\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;05970;      Siegen-Wittgenstein, Kreis;11\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;05974;
-        \     Soest, Kreis;14\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;05978;      Unna, Kreis;10\n11111;Feststellung des
-        Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;06;
-        \ Hessen;422\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;064;    Darmstadt, Regierungsbezirk;184\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;06411;
-        \     Darmstadt, kreisfreie Stadt, Wissenschaftsstadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;06412;
-        \     Frankfurt am Main, kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;06413;      Offenbach am Main, kreisfreie Stadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;06414;
-        \     Wiesbaden, kreisfreie Stadt, Landeshauptstadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;06431;
-        \     Bergstra\xDFe, Landkreis;22\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;06432;      Darmstadt-Dieburg, Landkreis;23\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;06433;
-        \     Gro\xDF-Gerau, Landkreis;14\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;06434;      Hochtaunuskreis;13\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;06435;
-        \     Main-Kinzig-Kreis;29\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;06436;      Main-Taunus-Kreis;12\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;06437;
-        \     Odenwaldkreis;12\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;06438;      Offenbach, Landkreis;13\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;06439;
-        \     Rheingau-Taunus-Kreis;17\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;06440;      Wetteraukreis;25\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;065;
-        \   Gie\xDFen, Regierungsbezirk;101\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;06531;      Gie\xDFen, Landkreis;18\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;06532;
-        \     Lahn-Dill-Kreis;23\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;06533;      Limburg-Weilburg, Landkreis;19\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;06534;
-        \     Marburg-Biedenkopf, Landkreis;22\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;06535;      Vogelsbergkreis;19\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;066;
-        \   Kassel, Regierungsbezirk;137\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;06611;      Kassel, kreisfreie Stadt, documenta-Stadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;06631;
-        \     Fulda, Landkreis;23\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;06632;      Hersfeld-Rotenburg, Landkreis;20\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;06633;
-        \     Kassel, Landkreis;28\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;06634;      Schwalm-Eder-Kreis;27\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;06635;
-        \     Waldeck-Frankenberg, Landkreis;22\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;06636;      Werra-Mei\xDFner-Kreis;16\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;07;
-        \ Rheinland-Pfalz;2301\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;071;    Koblenz, Statistische Region;1111\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;07111;
-        \     Koblenz, kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;07131;      Ahrweiler, Landkreis;74\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;07132;
-        \     Altenkirchen (Westerwald), Landkreis;118\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;07133;      Bad Kreuznach, Landkreis;118\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;07134;
-        \     Birkenfeld, Landkreis;96\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;07135;      Cochem-Zell, Landkreis;89\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;07137;
-        \     Mayen-Koblenz, Landkreis;87\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;07138;      Neuwied, Landkreis;62\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;07140;
-        \     Rhein-Hunsr\xFCck-Kreis;137\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;07141;      Rhein-Lahn-Kreis;137\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;07143;
-        \     Westerwaldkreis;192\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;072;    Trier, Statistische Region;555\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;07211;
-        \     Trier, kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;07231;      Bernkastel-Wittlich, Landkreis;107\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;07232;
-        \     Eifelkreis Bitburg-Pr\xFCm;234\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;07233;      Vulkaneifel, Landkreis;109\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;07235;
-        \     Trier-Saarburg, Landkreis;104\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;073;    Rheinhessen-Pfalz, Statistische Region;635\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;07311;
-        \     Frankenthal (Pfalz), kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;07312;      Kaiserslautern, kreisfreie Stadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;07313;
-        \     Landau in der Pfalz, kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;07314;      Ludwigshafen am Rhein, kreisfreie Stadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;07315;
-        \     Mainz, kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;07316;      Neustadt an der Weinstra\xDFe, kreisfreie
-        Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;07317;      Pirmasens, kreisfreie Stadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;07318;
-        \     Speyer, kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;07319;      Worms, kreisfreie Stadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;07320;
-        \     Zweibr\xFCcken, kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;07331;      Alzey-Worms, Landkreis;69\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;07332;
-        \     Bad D\xFCrkheim, Landkreis;48\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;07333;      Donnersbergkreis;81\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;07334;
-        \     Germersheim, Landkreis;31\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;07335;      Kaiserslautern, Landkreis;50\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;07336;
-        \     Kusel, Landkreis;98\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;07337;      S\xFCdliche Weinstra\xDFe, Landkreis;75\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;07338;
-        \     Rhein-Pfalz-Kreis;25\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;07339;      Mainz-Bingen, Landkreis;64\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;07340;
-        \     S\xFCdwestpfalz, Landkreis;84\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;08;  Baden-W\xFCrttemberg;1101\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;081;
-        \   Stuttgart, Regierungsbezirk;343\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;08111;      Stuttgart, Stadtkreis;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;08115;
-        \     B\xF6blingen, Landkreis;26\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;08116;      Esslingen, Landkreis;44\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;08117;
-        \     G\xF6ppingen, Landkreis;38\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;08118;      Ludwigsburg, Landkreis;39\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;08119;
-        \     Rems-Murr-Kreis, Landkreis;31\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;08121;      Heilbronn, Stadtkreis;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;08125;
-        \     Heilbronn, Landkreis;46\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;08126;      Hohenlohekreis, Landkreis;16\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;08127;
-        \     Schw\xE4bisch Hall, Landkreis;30\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;08128;      Main-Tauber-Kreis, Landkreis;18\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;08135;
-        \     Heidenheim, Landkreis;11\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;08136;      Ostalbkreis, Landkreis;42\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;082;
-        \   Karlsruhe, Regierungsbezirk;210\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;08211;      Baden-Baden, Stadtkreis;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;08212;
-        \     Karlsruhe, Stadtkreis;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;08215;      Karlsruhe, Landkreis;32\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;08216;
-        \     Rastatt, Landkreis;23\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;08221;      Heidelberg, Stadtkreis;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;08222;
-        \     Mannheim, Stadtkreis;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;08225;      Neckar-Odenwald-Kreis, Landkreis;27\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;08226;
-        \     Rhein-Neckar-Kreis, Landkreis;54\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;08231;      Pforzheim, Stadtkreis;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;08235;
-        \     Calw, Landkreis;25\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;08236;      Enzkreis, Landkreis;28\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;08237;
-        \     Freudenstadt, Landkreis;16\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;083;    Freiburg, Regierungsbezirk;294\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;08311;
-        \     Freiburg im Breisgau, Stadtkreis;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;08315;      Breisgau-Hochschwarzwald, Landkreis;50\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;08316;
-        \     Emmendingen, Landkreis;24\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;08317;      Ortenaukreis, Landkreis;51\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;08325;
-        \     Rottweil, Landkreis;21\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;08326;      Schwarzwald-Baar-Kreis, Landkreis;20\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;08327;
-        \     Tuttlingen, Landkreis;35\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;08335;      Konstanz, Landkreis;25\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;08336;
-        \     L\xF6rrach, Landkreis;35\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;08337;      Waldshut, Landkreis;32\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;084;
-        \   T\xFCbingen, Regierungsbezirk;254\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;08415;      Reutlingen, Landkreis;26\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;08416;
-        \     T\xFCbingen, Landkreis;15\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;08417;      Zollernalbkreis, Landkreis;25\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;08421;
-        \     Ulm, Stadtkreis;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;08425;      Alb-Donau-Kreis, Landkreis;55\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;08426;
-        \     Biberach, Landkreis;45\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;08435;      Bodenseekreis, Landkreis;23\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;08436;
-        \     Ravensburg, Landkreis;39\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;08437;      Sigmaringen, Landkreis;25\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09;
-        \ Bayern;2056\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;091;    Oberbayern, Regierungsbezirk;500\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09161;
-        \     Ingolstadt, kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09162;      M\xFCnchen, kreisfreie Stadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09163;
-        \     Rosenheim, kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09171;      Alt\xF6tting, Landkreis;24\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09172;
-        \     Berchtesgadener Land, Landkreis;15\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09173;      Bad T\xF6lz-Wolfratshausen, Landkreis;21\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09174;
-        \     Dachau, Landkreis;17\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09175;      Ebersberg, Landkreis;21\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09176;
-        \     Eichst\xE4tt, Landkreis;30\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09177;      Erding, Landkreis;26\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09178;
-        \     Freising, Landkreis;24\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09179;      F\xFCrstenfeldbruck, Landkreis;23\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09180;
-        \     Garmisch-Partenkirchen, Landkreis;22\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09181;      Landsberg am Lech, Landkreis;31\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09182;
-        \     Miesbach, Landkreis;17\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09183;      M\xFChldorf a.Inn, Landkreis;31\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09184;
-        \     M\xFCnchen, Landkreis;29\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09185;      Neuburg-Schrobenhausen, Landkreis;18\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09186;
-        \     Pfaffenhofen a.d.Ilm, Landkreis;19\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09187;      Rosenheim, Landkreis;46\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09188;
-        \     Starnberg, Landkreis;14\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09189;      Traunstein, Landkreis;35\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09190;
-        \     Weilheim-Schongau, Landkreis;34\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;092;    Niederbayern, Regierungsbezirk;258\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09261;
-        \     Landshut, kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09262;      Passau, kreisfreie Stadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09263;
-        \     Straubing, kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09271;      Deggendorf, Landkreis;26\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09272;
-        \     Freyung-Grafenau, Landkreis;25\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09273;      Kelheim, Landkreis;24\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09274;
-        \     Landshut, Landkreis;35\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09275;      Passau, Landkreis;38\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09276;
-        \     Regen, Landkreis;24\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09277;      Rottal-Inn, Landkreis;31\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09278;
-        \     Straubing-Bogen, Landkreis;37\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09279;      Dingolfing-Landau, Landkreis;15\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;093;
-        \   Oberpfalz, Regierungsbezirk;226\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09361;      Amberg, kreisfreie Stadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09362;
-        \     Regensburg, kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09363;      Weiden i.d.OPf., kreisfreie Stadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09371;
-        \     Amberg-Sulzbach, Landkreis;27\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09372;      Cham, Landkreis;39\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09373;
-        \     Neumarkt i.d.OPf., Landkreis;19\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09374;      Neustadt a.d.Waldnaab, Landkreis;38\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09375;
-        \     Regensburg, Landkreis;41\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09376;      Schwandorf, Landkreis;33\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09377;
-        \     Tirschenreuth, Landkreis;26\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;094;    Oberfranken, Regierungsbezirk;214\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09461;
-        \     Bamberg, kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09462;      Bayreuth, kreisfreie Stadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09463;
-        \     Coburg, kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09464;      Hof, kreisfreie Stadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09471;
-        \     Bamberg, Landkreis;36\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09472;      Bayreuth, Landkreis;33\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09473;
-        \     Coburg, Landkreis;17\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09474;      Forchheim, Landkreis;29\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09475;
-        \     Hof, Landkreis;27\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09476;      Kronach, Landkreis;18\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09477;
-        \     Kulmbach, Landkreis;22\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09478;      Lichtenfels, Landkreis;11\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09479;
-        \     Wunsiedel i.Fichtelgebirge, Landkreis;17\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;095;    Mittelfranken, Regierungsbezirk;210\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09561;
-        \     Ansbach, kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09562;      Erlangen, kreisfreie Stadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09563;
-        \     F\xFCrth, kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09564;      N\xFCrnberg, kreisfreie Stadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09565;
-        \     Schwabach, kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09571;      Ansbach, Landkreis;58\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09572;
-        \     Erlangen-H\xF6chstadt, Landkreis;25\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09573;      F\xFCrth, Landkreis;14\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09574;
-        \     N\xFCrnberger Land, Landkreis;27\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09575;      Neustadt a.d.Aisch-Bad Windsheim, Landkreis;38\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09576;
-        \     Roth, Landkreis;16\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09577;      Wei\xDFenburg-Gunzenhausen, Landkreis;27\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;096;
-        \   Unterfranken, Regierungsbezirk;308\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09661;      Aschaffenburg, kreisfreie Stadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09662;
-        \     Schweinfurt, kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09663;      W\xFCrzburg, kreisfreie Stadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09671;
-        \     Aschaffenburg, Landkreis;32\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09672;      Bad Kissingen, Landkreis;26\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09673;
-        \     Rh\xF6n-Grabfeld, Landkreis;37\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09674;      Ha\xDFberge, Landkreis;26\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09675;
-        \     Kitzingen, Landkreis;31\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09676;      Miltenberg, Landkreis;32\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09677;
-        \     Main-Spessart, Landkreis;40\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09678;      Schweinfurt, Landkreis;29\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09679;
-        \     W\xFCrzburg, Landkreis;52\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;097;    Schwaben, Regierungsbezirk;340\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09761;
-        \     Augsburg, kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09762;      Kaufbeuren, kreisfreie Stadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09763;
-        \     Kempten (Allg\xE4u), kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09764;      Memmingen, kreisfreie Stadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09771;
-        \     Aichach-Friedberg, Landkreis;24\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09772;      Augsburg, Landkreis;46\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09773;
-        \     Dillingen a.d.Donau, Landkreis;27\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09774;      G\xFCnzburg, Landkreis;34\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09775;
-        \     Neu-Ulm, Landkreis;17\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09776;      Lindau (Bodensee), Landkreis;19\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09777;
-        \     Ostallg\xE4u, Landkreis;45\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09778;      Unterallg\xE4u, Landkreis;52\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;09779;
-        \     Donau-Ries, Landkreis;44\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;09780;      Oberallg\xE4u, Landkreis;28\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;10;
-        \ Saarland;52\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;10041;      Saarbr\xFCcken, Regionalverband;10\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;10041100;
-        \     Saarbr\xFCcken, Landeshauptstadt;.\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;10042;      Merzig-Wadern, Landkreis;7\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;10043;
-        \     Neunkirchen, Landkreis;7\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;10044;      Saarlouis, Landkreis;13\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;10045;
-        \     Saarpfalz-Kreis;7\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;10046;      St. Wendel, Landkreis;8\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;11;
-        \ Berlin;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;11001001;      Berlin-Mitte;.\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;11002002;
-        \     Berlin-Friedrichshain-Kreuzberg;.\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;11003003;      Berlin-Pankow;.\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;11004004;
-        \     Berlin-Charlottenburg-Wilmersdorf;.\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;11005005;      Berlin-Spandau;.\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;11006006;
-        \     Berlin-Steglitz-Zehlendorf;.\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;11007007;      Berlin-Tempelhof-Sch\xF6neberg;.\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;11008008;
-        \     Berlin-Neuk\xF6lln;.\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;11009009;      Berlin-Treptow-K\xF6penick;.\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;11010010;
-        \     Berlin-Marzahn-Hellersdorf;.\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;11011011;      Berlin-Lichtenberg;.\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;11012012;
-        \     Berlin-Reinickendorf;.\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;12;  Brandenburg;413\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;12051;      Brandenburg an der Havel, kreisfreie
-        Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;12052;      Cottbus, kreisfreie Stadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;12053;
-        \     Frankfurt (Oder), kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;12054;      Potsdam, kreisfreie Stadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;12060;
-        \     Barnim, Landkreis;25\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;12061;      Dahme-Spreewald, Landkreis;37\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;12062;
-        \     Elbe-Elster, Landkreis;33\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;12063;      Havelland, Landkreis;26\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;12064;
-        \     M\xE4rkisch-Oderland, Landkreis;45\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;12065;      Oberhavel, Landkreis;19\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;12066;
-        \     Oberspreewald-Lausitz, Landkreis;25\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;12067;      Oder-Spree, Landkreis;37\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;12068;
-        \     Ostprignitz-Ruppin, Landkreis;23\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;12069;      Potsdam-Mittelmark, Landkreis;38\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;12070;
-        \     Prignitz, Landkreis;26\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;12071;      Spree-Nei\xDFe, Landkreis;29\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;12072;
-        \     Teltow-Fl\xE4ming, Landkreis;16\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;12073;      Uckermark, Landkreis;30\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;13;
-        \ Mecklenburg-Vorpommern;726\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;13001;      Greifswald, Hansestadt, kreisfreie Stadt;-\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;13002;
-        \     Neubrandenburg, Stadt,  kreisfreie Stadt;-\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;13003;      Rostock, kreisfreie Stadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;13004;
-        \     Schwerin, kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;13005;      Stralsund, Hansestadt,  kreisfreie Stadt;-\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;13006;
-        \     Wismar, Hansestadt,  kreisfreie Stadt;-\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;13051;      Bad Doberan, Landkreis;-\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;13052;
-        \     Landkreis Demmin;-\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;13053;      G\xFCstrow, Landkreis;-\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;13054;
-        \     Landkreis Ludwigslust;-\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;13055;      Mecklenburg-Strelitz, Landkreis;-\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;13056;
-        \     Landkreis M\xFCritz;-\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;13057;      Nordvorpommern, Landkreis;-\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;13058;
-        \     Landkreis Nordwestmecklenburg;-\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;13059;      Ostvorpommern, Landkreis;-\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;13060;
-        \     Landkreis Parchim;-\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;13061;      R\xFCgen, Landkreis;-\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;13062;
-        \     Landkreis Uecker-Randow;-\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;13071;      Mecklenburgische Seenplatte, Landkreis;148\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;13072;
-        \     Landkreis Rostock;112\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;13073;      Vorpommern-R\xFCgen, Landkreis;101\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;13074;
-        \     Nordwestmecklenburg, Landkreis;83\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;13075;      Vorpommern-Greifswald, Landkreis;138\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;13076;
-        \     Ludwigslust-Parchim, Landkreis;142\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;14;  Sachsen;419\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;141;    Chemnitz, Regierungsbezirk;-\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;14161;
-        \     Chemnitz, kreisfreie Stadt;-\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;14166;      Plauen, kreisfreie Stadt;-\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;14167;
-        \     Zwickau, kreisfreie Stadt;-\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;14171;      Annaberg, Landkreis;-\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;14173;
-        \     Chemnitzer Land, Landkreis;-\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;14177;      Freiberg, Landkreis;-\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;14178;
-        \     Vogtlandkreis;-\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;14181;      Mittlerer Erzgebirgskreis;-\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;14182;
-        \     Mittweida, Landkreis;-\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;14188;      Stollberg, Landkreis;-\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;14191;
-        \     Aue-Schwarzenberg, Landkreis;-\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;14193;      Zwickauer Land, Landkreis;-\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;142;
-        \   Dresden, Regierungsbezirk;-\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;14262;      Dresden, kreisfreie Stadt;-\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;14263;
-        \     G\xF6rlitz, kreisfreie Stadt;-\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;14264;      Hoyerswerda, kreisfreie Stadt;-\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;14272;
-        \     Bautzen, Landkreis;-\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;14280;      Mei\xDFen, Landkreis;-\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;14284;
-        \     Niederschlesischer Oberlausitzkreis;-\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;14285;      Riesa-Gro\xDFenhain, Landkreis;-\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;14286;
-        \     L\xF6bau-Zittau, Landkreis;-\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;14287;      S\xE4chsische Schweiz, Landkreis;-\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;14290;
-        \     Wei\xDFeritzkreis;-\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;14292;      Kamenz, Landkreis;-\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;143;
-        \   Leipzig, Regierungsbezirk;-\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;14365;      Leipzig, kreisfreie Stadt;-\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;14374;
-        \     Delitzsch, Landkreis;-\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;14375;      D\xF6beln, Landkreis;-\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;14379;
-        \     Leipziger Land, Landkreis;-\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;14383;      Muldentalkreis;-\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;14389;
-        \     Torgau-Oschatz, Landkreis;-\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;145;    Chemnitz, Statistische Region;183\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;14511;
-        \     Chemnitz, kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;14521;      Erzgebirgskreis;59\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;14522;
-        \     Mittelsachsen, Landkreis;53\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;14523;      Vogtlandkreis;37\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;14524;
-        \     Zwickau, Landkreis;33\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;146;    Dresden, Statistische Region;175\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;14612;
-        \     Dresden, kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;14625;      Bautzen, Landkreis;57\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;14626;
-        \     G\xF6rlitz, Landkreis;53\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;14627;      Mei\xDFen, Landkreis;28\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;14628;
-        \     S\xE4chsische Schweiz-Osterzgebirge, Landkreis;36\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;147;
-        \   Leipzig, Statistische Region;61\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;14713;      Leipzig, kreisfreie Stadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;14729;
-        \     Leipzig, Landkreis;30\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;14730;      Nordsachsen, Landkreis;30\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;15;
-        \ Sachsen-Anhalt;218\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;15001;      Dessau-Ro\xDFlau, kreisfreie Stadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;15002;
-        \     Halle (Saale), kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;15003;      Magdeburg, kreisfreie Stadt, Landeshauptstadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;15081;
-        \     Altmarkkreis Salzwedel;13\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;15082;      Anhalt-Bitterfeld, Landkreis;10\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;15083;
-        \     B\xF6rde, Landkreis;34\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;15084;      Burgenlandkreis;33\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;15085;
-        \     Harz, Landkreis;20\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;15086;      Jerichower Land, Landkreis;8\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;15087;
-        \     Mansfeld-S\xFCdharz, Landkreis;22\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;15088;      Saalekreis;20\n11111;Feststellung des
-        Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;15089;
-        \     Salzlandkreis;21\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;15090;      Stendal, Landkreis;25\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;15091;
-        \     Wittenberg, Landkreis;9\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;151;    Dessau, Statistische Region;-\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;15101;
-        \     Dessau, kreisfreie Stadt;-\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;15151;      Anhalt-Zerbst, Kreis;-\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;15153;
-        \     Bernburg, Kreis;-\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;15154;      Bitterfeld, Kreis;-\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;15159;
-        \     K\xF6then, Kreis;-\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;15171;      Wittenberg, Kreis;-\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;152;
-        \   Halle, Statistische Region;-\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;15202;      Halle (Saale), kreisfreie Stadt;-\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;15256;
-        \     Burgenlandkreis;-\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;15260;      Mansfelder Land, Kreis;-\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;15261;
-        \     Merseburg-Querfurt, Kreis;-\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;15265;      Saalkreis;-\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;15266;      Sangerhausen, Kreis;-\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;15268;
-        \     Wei\xDFenfels, Kreis;-\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;153;    Magdeburg, Statistische Region;-\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;15303;
-        \     Magdeburg, kreisfreie Stadt;-\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;15352;      Aschersleben-Sta\xDFfurt, Kreis;-\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;15355;
-        \     B\xF6rdekreis;-\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;15357;      Halberstadt, Kreis;-\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;15358;
-        \     Jerichower Land, Kreis;-\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;15362;      Ohrekreis;-\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;15363;      Stendal, Kreis;-\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;15364;
-        \     Quedlinburg, Kreis;-\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;15367;      Sch\xF6nebeck, Kreis;-\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;15369;
-        \     Wernigerode, Kreis;-\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;15370;      Altmarkkreis Salzwedel, Kreis;-\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;16;
-        \ Th\xFCringen;631\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;16051;      Erfurt, kreisfreie Stadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;16052;
-        \     Gera, kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;16053;      Jena, kreisfreie Stadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;16054;
-        \     Suhl, kreisfreie Stadt;1\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;16055;      Weimar, kreisfreie Stadt;1\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;16056;
-        \     Eisenach, kreisfreie Stadt;-\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;16061;      Eichsfeld, Landkreis;68\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;16062;
-        \     Nordhausen, Landkreis;15\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;16063;      Wartburgkreis;32\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;16064;
-        \     Unstrut-Hainich-Kreis;30\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;16065;      Kyffh\xE4userkreis;28\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;16066;
-        \     Schmalkalden-Meiningen, Landkreis;39\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;16067;      Gotha, Landkreis;30\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;16068;
-        \     S\xF6mmerda, Landkreis;38\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;16069;      Hildburghausen, Landkreis;32\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;16070;
-        \     Ilm-Kreis;16\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;16071;      Weimarer Land, Landkreis;39\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;16072;
-        \     Sonneberg, Landkreis;8\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;16073;      Saalfeld-Rudolstadt, Landkreis;26\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;16074;
-        \     Saale-Holzland-Kreis;91\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;16075;      Saale-Orla-Kreis;59\n11111;Feststellung
-        des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise und kreisfreie St\xE4dte;16076;
-        \     Greiz, Landkreis;45\n11111;Feststellung des Gebietsstandes;STAG;Stichtag;31.12.2022;KREISE;Kreise
-        und kreisfreie St\xE4dte;16077;      Altenburger Land, Landkreis;30\n"
+      string: !!binary |
+        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
     headers:
       Cache-Control:
       - max-age=172800
       Connection:
       - Keep-Alive
       Content-Disposition:
-      - attachement;filename=11111-02-01-4_flat.csv
+      - attachment; filename=11111-02-01-4_1744312684828_de_flat.zip
+      Content-Length:
+      - '8071'
       Content-Type:
-      - text/csv
+      - application/zip
       Date:
-      - Tue, 03 Dec 2024 20:18:17 GMT
+      - Thu, 10 Apr 2025 19:18:04 GMT
       Expires:
-      - Thu, 05 Dec 2024 20:18:11 GMT
+      - Sat, 12 Apr 2025 19:17:56 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
       - webserver
       Strict-Transport-Security:
       - max-age=31536000;includeSubdomains; preload
-      Transfer-Encoding:
-      - chunked
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
@@ -852,29 +192,33 @@ interactions:
       code: 200
       message: ''
 - request:
-    body: null
+    body: name=11111-02-01-4&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=de&quality=off&format=ffcsv
     headers:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br, zstd
+      - gzip, deflate
       Connection:
       - keep-alive
+      Content-Length:
+      - '134'
+      Content-Type:
+      - application/x-www-form-urlencoded
       User-Agent:
       - python-requests/2.32.3
-    method: GET
-    uri: https://www.regionalstatistik.de/genesisws/rest/2020/metadata/table?area=all&format=ffcsv&language=de&name=11111-02-01-4&quality=off
+    method: POST
+    uri: https://www.regionalstatistik.de/genesisws/rest/2020/metadata/table
   response:
     body:
       string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"11111-02-01-4\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"11111-02-01-4\",\"Content\":\"Zahl
-        der Gemeinden - Stichtag 31.12. - regionale Tiefe:\\nKreise und krfr. St\xE4dte\",\"Time\":{\"From\":\"31.12.1995\",\"To\":\"31.12.2022\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"11111\",\"Content\":\"Feststellung
-        des Gebietsstandes\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},\"Columns\":[{\"Code\":\"GEM001\",\"Content\":\"Zahl der Gemeinden\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
+        der Gemeinden - Stichtag 31.12. - regionale Tiefe:\\nKreise und krfr. St\xE4dte\",\"Time\":{\"From\":\"31.12.1995\",\"To\":\"31.12.2023\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"11111\",\"Content\":\"Feststellung
+        des Gebietsstandes\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},\"Columns\":[{\"Code\":\"GEM001\",\"Content\":\"Zahl der Gemeinden\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
         parent\"}],\"Rows\":[{\"Code\":\"KREISE\",\"Content\":\"Kreise und kreisfreie
-        St\xE4dte\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Subtitel\":null,\"Subheading\":{\"Code\":\"STAG\",\"Content\":\"Stichtag\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Structure\":null,\"Updated\":\"see
+        St\xE4dte\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Subtitel\":null,\"Subheading\":{\"Code\":\"STAG\",\"Content\":\"Stichtag\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
         parent\"}},\"Updated\":\"21.11.2023 13:47:55h\"},\"Copyright\":\"\xA9 Statistische
-        \xC4mter des Bundes und der L\xE4nder, Deutschland, 2024.\\nDieses Werk ist
+        \xC4mter des Bundes und der L\xE4nder, Deutschland, 2025.\\nDieses Werk ist
         lizenziert unter der Datenlizenz Deutschland\\n- Namensnennung - Version 2.0.\"}"
     headers:
       Cache-Control:
@@ -882,13 +226,13 @@ interactions:
       Connection:
       - Keep-Alive
       Content-Length:
-      - '1277'
+      - '1345'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Tue, 03 Dec 2024 20:18:22 GMT
+      - Thu, 10 Apr 2025 19:18:10 GMT
       Expires:
-      - Thu, 05 Dec 2024 20:18:17 GMT
+      - Sat, 12 Apr 2025 19:18:05 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:

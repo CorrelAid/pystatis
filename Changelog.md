@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.5.0
+
+- migrate from `poetry` to `uv`
+- switch Regionalstatistik from Genesis v4 to v5, now supporting new tablefile zip format
+- remove support for older database versions (v4) and streamline code as all databases are using the same tablefile format
+- improve the way we add regional municipality codes to the data: always add AGS columns (__Code and label) for tables that have at least two different values for AGS, and drop them for tables with only a single AGS code
+
 ## 0.3.1
 
 - support new Zensus 2022 web interface / API by changing base_url in default config to new value <https://ergebnisse.zensus2022.de/api/rest/2020/>

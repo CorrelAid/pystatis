@@ -1,11 +1,9 @@
 """Module contains business logic related to destatis tables."""
 
 import json
-import re
 from io import StringIO
 from typing import Any
 
-import numpy as np
 import pandas as pd
 
 from pystatis import config, db
@@ -62,33 +60,61 @@ class Table:
             regionalvariable (str, optional): "code" of the regional classification (RKMerkmal),
                 to which the selection using `regionalkey` is to be applied.
                 Accepts 1-6 characters.
-                Possible values:
+                Can be used with any table that uses a regional attribute.
+
+                The following attribute codes are handled by `pystatis` by adding an extra column for the official municipality key (AGS):
+
+                - GENESIS-Online (for all tables, see /catalogue/variables):
+                    - "DLAND" (Bundesländer, 16)
+                    - "DINSG" (Deutschland insgesamt, 1) -> will not return extra AGS column
+                    - "DLANDR" (Bundesländer mit Restposition, 17)
+                    - "DLANDS" (Bundesländer mit Seehäfen, 6)
+                    - "DLANDU" (Bundesländer und Ausland, 17)
+                    - "DLANDX" (Bundesländer mit Ausland und Restposition, 18)
+                    - "KREISE" (Kreise, 476)
+                    - "REGBEZ" (Regierungsbezirke, 38)
 
                 - Regionalstatistik (only for tables ending with "B", see /catalogue/variables):
-                    - "DG" (Deutschland, 1) -> will not return extra column
+                    - "DG" (Deutschland, 1) -> will not return ARS column
+                    - "DINSG" (Deutschland räumlich insgesamt, 1) -> will not return ARS column
                     - "DLAND" (Bundesländer, 16)
-                    - "REGBEZ" (Regierungsbezirke, 44)
+                    - "DLANDU" Bundesländer, 19)
+                    - "FAMTGEM" (Gemeinden und Gemeindeverbände, 12779)
+                    - "FDINSG" (Flächenländer insgesamt, 1) -> will not return ARS column
+                    - "FDLAND" (Bundesländer, 13)
+                    - "FGEMEIN" (Gemeinden, 4795)
+                    - "FKREISE" (Kreise und kreisfreie Städte, 411)
+                    - "FREGBEZ" (Regierungsbezirke / Statistische Regionen, 41)
+                    - "GEMEIN" (Gemeinden, 13565)
+                    - "GRSTADT" (Großstadt, 15)
                     - "KREISE" (Kreise und kreisfreie Städte, 489)
-                    - "GEMEIN" (Gemeinden, 13564)
+                    - "NUTS-2" (NUTS-II Regionen, 38)
+                    - "PGEM-2DI" (Gemeinden Pendler, 6857)
+                    - "PGEMEIN" (Gemeinden Pendler, 6857)
+                    - "REGBEZ" (Regierungsbezirke / Statistische Regionen, 44)
+
                 - Zensusdatenbank (for all tables, see /catalogue/variables):
-                    - "GEODL1" (Deutschland, 1) -> will not return extra column
-                    - "GEODL3" (Deutschland, 1) -> will not return extra column
                     - "GEOBL1" (Bundesländer, 16)
                     - "GEOBL3" (Bundesländer, 16)
                     - "GEOBZ1" (Bezirke (Hamburg und Berlin), 19)
+                    - "GEODL1" (Deutschland, 1) -> will not return extra ARS column
+                    - "GEODL3" (Deutschland, 1) -> will not return extra ARS column
                     - "GEOGM1" (Gemeinden, 11340)
                     - "GEOGM2" (Gemeinden mit min. 10_000 Einwohnern, 1574)
                     - "GEOGM3" (Gemeinden mit min. 10_000 Einwohnern, 1574)
                     - "GEOGM4" (Gemeinden (Gebietsstand 15.05.2022), 10787)
-                    - "GEOLK1" (Landkreise und kreisfreie Städte, 412)
+                    - "GEOGM5" (Gemeinden > 10.000 Einwohner (Stand 15.05.2022), 1578)
+                    - "GEOLK1" (Landkreise u. krsfr. Städte (Stand 09.05.11), 412)
                     - "GEOLK3" (Landkreise und kreisfreie Städte, 412)
                     - "GEOLK4" (Landkreise u. krsfr. Städte (Stand 15.05.22), 400)
                     - "GEORB1" (Regierungsbezirke/Statistische Regionen, 36)
                     - "GEORB3" (Regierungsbezirke/Statistische Regionen, 36)
-                    - "GEOVB1" (Gemeindeverbände, 1333)
+                    - "GEOVB1" (Gemeindeverbände (Gebietsstand 09.05.2011), 1333)
                     - "GEOVB2" (Gemeindeverbände mit mindestens 10 000 Einwohnern, 338)
                     - "GEOVB3" (Gemeindeverbände mit mindestens 10 000 Einwohnern, 157)
                     - "GEOVB4" (Gemeindeverbände (Gebietsstand 15.05.2022), 1207)
+                    - "GEOVB5" (Gemeindeverbände > 10.000 Einw. (Stand 15.05.2022), 588)
+
             regionalkey (str, optional): Official municipality key (AGS).
                 Multiple values can be passed as a comma-separated list.
                 Accepts 1-12 characters. "*" can be used as wildcard.
@@ -118,13 +144,14 @@ class Table:
 
         db_matches = db.identify_db_matches(self.name)
         db_name = db.select_db_by_credentials(db_matches)
-        db_version = config.VERSION_MAPPING[db_name]
 
         raw_data_bytes = load_data(
             endpoint="data", method="tablefile", params=params, db_name=db_name
         )
-        assert isinstance(raw_data_bytes, bytes)  # nosec assert_used
-        raw_data_str = raw_data_bytes.decode("utf-8-sig")
+        try:
+            raw_data_str = raw_data_bytes.decode("utf-8-sig")
+        except (AttributeError, UnicodeDecodeError) as e:
+            raise ValueError("Failed to decode the raw data as UTF-8") from e
 
         self.raw_data = raw_data_str
 
@@ -137,151 +164,151 @@ class Table:
         )
         data_buffer = StringIO(raw_data_str)
 
-        # find AGS column, if present, to set dtype correctly and avoid mixed types
-        ags_codes = (
-            config.ZENSUS_AGS_CODES
-            if db_name == "zensus"
-            else config.REGIO_AND_GENESIS_AGS_CODES
-        )
-        pos_of_ags_col = np.where(
-            pd.Series(raw_data_lines[1].split(";")).isin(ags_codes)
-        )[0]
-
         self.data = pd.read_csv(
             data_buffer,
             sep=";",
             na_values=["...", ".", "-", "/", "x"],
             decimal="," if language == "de" else ".",
-            dtype={raw_data_header.split(";")[pos + 2]: str for pos in pos_of_ags_col},
-            parse_dates=[config.LANG_TO_COL_MAPPING[db_version][language]["time"]],
-            date_format="%d.%m.%Y" if language == "de" else "%Y-%m-%d",
+            dtype={"1_variable_code": str, "1_variable_attribute_code": str},
+            parse_dates=[config.LANG_TO_COL_MAPPING[language]["time"]],
+            date_format="%Y-%m-%d",
         )
 
         if prettify:
-            self.data = self.prettify_table(
-                data=self.data,
-                db_name=db.identify_db_matches(self.name)[0],
-                language=language,
-            )
+            self.data = Table.parse_v5_table(self.data, db_name, language)
 
         metadata = load_data(endpoint="metadata", method="table", params=params)
         metadata = json.loads(metadata)
-        assert isinstance(metadata, dict)  # nosec assert_used
+        if not isinstance(metadata, dict):
+            raise TypeError(
+                f"Expected dict for metadata, got {type(metadata).__name__}"
+            )
 
         self.metadata = metadata
 
     @staticmethod
-    def prettify_table(data: pd.DataFrame, db_name: str, language: str) -> pd.DataFrame:
-        """Reformat the data into a more readable table
+    def parse_v5_table(data: pd.DataFrame, db_name: str, language: str) -> pd.DataFrame:
+        """Transform raw table data into a more readable format.
+
+        This method takes the raw data from GENESIS/Zensus/Regio databases and transforms it
+        into a more user-friendly format by:
+        1. Handling quality indicators if present
+        2. Pivoting the data to have value columns instead of rows
+        3. Organizing time, regional codes, and attributes into separate columns
+        4. Combining everything into a clean, readable DataFrame
 
         Args:
-            data (pd.DataFrame): A pandas dataframe created from raw_data
-            db_name (str): The name of the database.
-            language (str): The requested language. One of "de" or "en".
+            data: Raw DataFrame from the database
+            db_name: Database name ('genesis', 'zensus', or 'regio')
+            language: Language code ('de' or 'en')
 
         Returns:
-            pd.DataFrame: Formatted dataframe that omits all unnecessary Code columns
-            and includes informative columns names
+            A restructured DataFrame with a more user-friendly format
         """
-        match db_name:
-            case "regio":
-                pretty_data = Table.parse_v4_table(data, language)
-            case "genesis" | "zensus":
-                pretty_data = Table.parse_v5_table(data, db_name, language)
-            case _:
-                pretty_data = data
+        # Get column mappings based on language
+        column_mapping = config.LANG_TO_COL_MAPPING[language]
+
+        # Get regional code label (ARS or AGS) based on database and language
+        regional_code_label = config.ARS_OR_AGS_MAPPING[db_name][language]
+
+        # Extract column names from mapping
+        time_col = column_mapping["time"]
+        time_label_col = column_mapping["time_label"]
+        value_col = column_mapping["value"]
+        value_q_col = column_mapping["value_q"]
+        value_unit_col = column_mapping["value_unit"]
+        value_variable_label_col = column_mapping["value_variable_label"]
+        variable_attribute_label_col = column_mapping["variable_attribute_label"]
+        variable_label_col = column_mapping["variable_label"]
+
+        # Check if quality indicators are present
+        has_quality_indicators = value_q_col in data.columns
+
+        # Prepare data for pivoting
+        data = Table._prepare_data_for_pivot(
+            data,
+            value_variable_label_col,
+            value_unit_col,
+            value_col,
+            value_q_col,
+            has_quality_indicators,
+        )
+
+        # Create pivot table and get value columns
+        pivot_table, value_columns = Table._create_pivot_table(
+            data, value_variable_label_col, value_col, has_quality_indicators
+        )
+
+        # Extract time information
+        time_df = Table._extract_time_info(data, pivot_table, time_label_col, time_col)
+
+        # Extract regional code information - checks all variable columns for AGS codes
+        regional_code_df, is_single_region, regional_code_prefix = (
+            Table._extract_regional_codes(pivot_table, regional_code_label)
+        )
+
+        # Extract attribute information
+        attributes_df = Table._extract_attributes(
+            pivot_table,
+            variable_attribute_label_col,
+            variable_label_col,
+            regional_code_prefix,
+        )
+
+        # Prepare components for concatenation
+        components = [time_df, attributes_df, pivot_table[value_columns]]
+
+        # Insert regional code DataFrame if needed (when it's a regional code and has multiple regions)
+        if regional_code_prefix and not is_single_region:
+            # Insert regional columns after time column
+            components.insert(1, regional_code_df)
+
+        # Combine all components into final DataFrame
+        pretty_data = pd.concat(components, axis=1)
 
         return pretty_data
 
     @staticmethod
-    def parse_v4_table(data: pd.DataFrame, language: str) -> pd.DataFrame:
-        """
-        Parse ffcsv format for tables from GENESIS and Regionalstatistik into a more readable format
-        """
-
-        column_name_dict = config.LANG_TO_COL_MAPPING["v4"][language]
-        time_col = column_name_dict["time"]
-        time_label_col = column_name_dict["time_label"]
-        variable_label_col = column_name_dict["variable_label"]
-        value_label_col = column_name_dict["value_label"]
-        ags_label_col = config.ARS_OR_AGS_MAPPING["regio"][language]
-
-        # Extracts time column with name from last element of Zeit_Label column
-        time = pd.DataFrame({data[time_label_col].iloc[-1]: data[time_col]})
-
-        # Whenever there is a column with a regional code, we add this column to the final output
-        # As the position is unknown, we have to identify this column by looking for the AGS code
-        ags_codes = list(
-            set(config.REGIO_AND_GENESIS_AGS_CODES) - set(config.EXCLUDE_AGS_CODES)
-        )
-        pos_of_ags_col, ags_code = Table.extract_ags_col(data, ags_codes, ags_label_col)
-
-        # Extracts new column names from last values of the variable label columns
-        # and assigns these to the relevant attribute columns (variable level)
-        attributes = data.filter(like=value_label_col)
-        attributes.columns = data.filter(like=variable_label_col).iloc[-1].tolist()
-
-        # Selects all columns containing the values
-        values = data.filter(like="__")
-
-        # Given a name like BEV036__Bevoelkerung_in_Hauptwohnsitzhaushalten__1000
-        # extracts the label and the unit and omits the code
-        values.columns = [
-            re.split(r"_{2,}", name, maxsplit=1)[1] for name in values.columns
-        ]
-
-        # remove single "_" between words in values.columns but keep "__" as separator
-        values.columns = [
-            name.split("__")[0].replace("_", " ") + "__" + name.split("__")[1]
-            for name in values.columns
-        ]
-
-        pretty_data = pd.concat([time, attributes, values], axis=1).dropna(
-            axis=0, how="all"
-        )
-        if ags_code is not None:
-            # Genesis has always the same time attribute as first column,
-            # and each attribute always has 4 columns so pos_of_ags_col // 4
-            # adjusts the original counter to the shorter column list of pretty_data
-            pretty_data.insert(
-                loc=pos_of_ags_col // 4, column=ags_code.name, value=ags_code
-            )
-
-        return pretty_data
-
-    @staticmethod
-    def parse_v5_table(data: pd.DataFrame, db_name: str, language: str) -> pd.DataFrame:
-        """Parse Zensus table ffcsv format into a more readable format"""
-        column_name_dict = config.LANG_TO_COL_MAPPING["v5"][language]
-        # Zensus and Genesis are both now on v5 but Genesis has different regional codes than Zensus
-        ars_label_code = config.ARS_OR_AGS_MAPPING[db_name][language]
-        time_col = column_name_dict["time"]
-        time_label_col = column_name_dict["time_label"]
-        value_col = column_name_dict["value"]
-        value_q_col = column_name_dict["value_q"]
-        value_unit_col = column_name_dict["value_unit"]
-        value_variable_label_col = column_name_dict["value_variable_label"]
-        variable_attribute_label_col = column_name_dict["variable_attribute_label"]
-        variable_label_col = column_name_dict["variable_label"]
-
-        quality = False
-        if value_q_col in data.columns:
-            quality = True
-
-        # add the unit to the column names for the value columns
+    def _prepare_data_for_pivot(
+        data: pd.DataFrame,
+        value_variable_label_col: str,
+        value_unit_col: str,
+        value_col: str,
+        value_q_col: str,
+        has_quality_indicators: bool,
+    ) -> pd.DataFrame:
+        """Prepare data for pivoting by adding units to column names and handling quality indicators."""
+        # Add the unit to the column names for the value columns
         data[value_variable_label_col] = data[value_variable_label_col].str.cat(
             data[value_unit_col].astype(str).fillna("Unknown_Unit"), sep="__"
         )
 
-        if quality:
-            # with quality = 'on' we have an additional column value_q
-            # to still use pivot table we have to combine value and value_q
+        if has_quality_indicators:
+            # With quality = 'on' we have an additional column value_q
+            # To still use pivot table we have to combine value and value_q
             # so we can later split them again
             data[value_col] = [
                 [v, q] for v, q in zip(data[value_col], data[value_q_col])
             ]
             data = data.drop(columns=[value_q_col])
 
+        return data
+
+    @staticmethod
+    def _create_pivot_table(
+        data: pd.DataFrame,
+        value_variable_label_col: str,
+        value_col: str,
+        has_quality_indicators: bool,
+    ) -> tuple[pd.DataFrame, list[str]]:
+        """Create a pivot table from the prepared data.
+
+        Returns:
+            A tuple containing:
+            - The pivot table with reset index
+            - A list of value column names
+        """
+        # Create pivot table with all non-value columns as index
         pivot_table = data.pivot(
             index=[
                 col
@@ -292,75 +319,150 @@ class Table:
             values=value_col,
         )
 
-        if quality:
+        # Store the value column names before resetting the index
+        value_columns = pivot_table.columns.to_list()
+
+        # Handle quality indicators if present
+        if has_quality_indicators:
             for col in pivot_table.columns:
+                # Insert quality column right after the value column
                 pivot_table.insert(
                     pivot_table.columns.to_list().index(col) + 1,
                     col + "__q",
                     pivot_table[col].apply(lambda x: x[1]),
                 )
+                # Extract the actual value from the combined [value, quality] list
                 pivot_table[col] = pivot_table[col].apply(lambda x: x[0])
 
-        value_columns = pivot_table.columns.to_list()
+            # Update value columns list to include both value and quality columns
+            # The quality columns have already been added to the pivot table
+            value_columns = pivot_table.columns.to_list()
+
+        # Reset index to convert index columns back to regular columns
         pivot_table.reset_index(inplace=True)
         pivot_table.columns.name = None
 
-        time_label = data[time_label_col].iloc[0]
-        time = pd.DataFrame({time_label: pivot_table[time_col]})
-
-        # If AGS column is present, add it to the final output
-        ags_codes = list(
-            set(
-                config.ZENSUS_AGS_CODES
-                if db_name == "zensus"
-                else config.REGIO_AND_GENESIS_AGS_CODES
-            )
-            - set(config.EXCLUDE_AGS_CODES)
-        )
-        pos_of_ags_col, ags_code = Table.extract_ags_col(
-            pivot_table, ags_codes, ars_label_code
-        )
-
-        attributes = pivot_table.filter(regex=r"\d+_" + variable_attribute_label_col)
-        # avoid taking label from first row
-        # as this can contain value for whole Germany
-        # even if table is for regional areas
-        attributes.columns = (
-            pivot_table.filter(regex=r"\d+_" + variable_label_col).iloc[1].tolist()
-        )
-
-        pretty_data = pd.concat([time, attributes, pivot_table[value_columns]], axis=1)
-        if ags_code is not None:
-            # Genesis has always the same time attribute as first column, and
-            # each attribute always has 4 columns so pos_of_ags_col // 4
-            # adjusts the original counter to the shorter column list of pretty_data
-            pretty_data.insert(
-                loc=pos_of_ags_col // 4, column=ags_code.name, value=ags_code
-            )
-
-        return pretty_data
+        # Return the pivot table and the value column names
+        return pivot_table, value_columns
 
     @staticmethod
-    def extract_ags_col(
-        data: pd.DataFrame, codes: list[str], label: str
-    ) -> tuple[np.ndarray, pd.Series | None]:
-        """Extracts the AGS column from the data if present.
+    def _extract_time_info(
+        data: pd.DataFrame,
+        pivot_table: pd.DataFrame,
+        time_label_col: str,
+        time_col: str,
+    ) -> pd.DataFrame:
+        """Extract time information into a separate DataFrame."""
+        time_label = data[time_label_col].iloc[0]
+        return pd.DataFrame({time_label: pivot_table[time_col]})
 
-        Args:
-            data (pd.DataFrame): The data frame to extract the AGS column from.
-            codes (list[str]): The AGS codes to look for in the data.
-            label (str): The label of the AGS column.
+    @staticmethod
+    def _extract_regional_codes(
+        pivot_table: pd.DataFrame, regional_code_label: str
+    ) -> tuple[pd.DataFrame, bool, str]:
+        """Extract regional code information into a separate DataFrame.
+
+        Checks all variable code columns to find a column containing a known AGS code.
 
         Returns:
-            pd.Series | None: The AGS column if present, otherwise None.
+            Tuple containing:
+            - DataFrame with regional code columns
+            - Boolean indicating if there's only a single region
+            - String with the column prefix of the regional code column (e.g., "1" for "1_variable_code")
+                or empty string if no regional code was found
         """
-        ags_code = None
-        # don't compare very first row, as it can often be Germany as a summary
-        pos_of_ags_col = np.where(data.iloc[1].isin(codes))[0]
-        if pos_of_ags_col.size > 0:
-            pos_of_ags_col = pos_of_ags_col[0]
-            ags_code = pd.Series(
-                data=data.iloc[:, pos_of_ags_col + 2], name=label, dtype=str
-            )
+        # Get all variable code columns
+        var_code_cols = pivot_table.filter(regex=r"\d+_variable_code")
 
-        return pos_of_ags_col, ags_code
+        if var_code_cols.empty or len(pivot_table) == 0:
+            return pd.DataFrame(), False, ""
+
+        # Check each variable code column for known AGS codes
+        for col_name in var_code_cols.columns:
+            # Get all non-NaN values in the column
+            var_codes = pivot_table[col_name].dropna().unique()
+
+            # Check if any of the codes in the column is a known AGS code
+            if any(code in config.AGS_CODES for code in var_codes):
+                # Found a regional code, get the corresponding attribute code and label columns
+                # The column index is extracted from the column name (e.g., "1_variable_code" -> "1")
+                col_prefix = col_name.split("_")[0]
+                attr_code_col = f"{col_prefix}_variable_attribute_code"
+                attr_label_col = f"{col_prefix}_variable_attribute_label"
+
+                # Create the regional DataFrame
+                regional_df = pd.DataFrame(
+                    {
+                        regional_code_label + "__Code": pivot_table[attr_code_col],
+                        regional_code_label: pivot_table[attr_label_col],
+                    }
+                )
+                is_single_region = regional_df[regional_code_label].unique().size == 1
+
+                # Return the regional code information, single region flag, and column prefix
+                return regional_df, is_single_region, col_prefix
+
+        # No regional code found in any column
+        return pd.DataFrame(), False, ""
+
+    @staticmethod
+    def _extract_attributes(
+        pivot_table: pd.DataFrame,
+        variable_attribute_label_col: str,
+        variable_label_col: str,
+        regional_code_prefix: str = "",
+    ) -> pd.DataFrame:
+        """Extract attribute information into a separate DataFrame.
+
+        Args:
+            pivot_table: The pivot table containing the data
+            variable_attribute_label_col: The column name pattern for attribute labels
+            variable_label_col: The column name pattern for variable labels
+            regional_code_prefix: The column prefix of the regional code column (e.g., "1" for "1_variable_code")
+                or empty string if no regional code was found
+
+        Returns:
+            DataFrame containing attribute columns
+        """
+        # Get all attribute columns
+        all_attribute_cols = pivot_table.filter(
+            regex=r"\d+_" + variable_attribute_label_col
+        )
+
+        # If a regional code was found, exclude that specific column
+        if regional_code_prefix:
+            regional_col = f"{regional_code_prefix}_{variable_attribute_label_col}"
+            attributes = all_attribute_cols.loc[
+                :, all_attribute_cols.columns != regional_col
+            ]
+        else:
+            attributes = all_attribute_cols
+
+        # Get the variable labels for each attribute column
+        var_label_cols = pivot_table.filter(regex=r"\d+_" + variable_label_col)
+
+        # Create a mapping from column prefix to variable label
+        label_mapping = {}
+
+        # Find the first row with valid labels
+        for _, row in var_label_cols.iterrows():
+            if not row.isna().any():
+                for col_name, label in zip(var_label_cols.columns, row):
+                    prefix = col_name.split("_")[0]
+                    # Skip the regional code column if one was found
+                    if not regional_code_prefix or prefix != regional_code_prefix:
+                        label_mapping[prefix] = label
+                break
+
+        # Map each attribute column to its corresponding variable label
+        valid_labels = []
+        for col_name in attributes.columns:
+            prefix = col_name.split("_")[0]
+            if prefix in label_mapping:
+                valid_labels.append(label_mapping[prefix])
+
+        # Set column names if valid labels were found
+        if valid_labels and len(valid_labels) == len(attributes.columns):
+            attributes.columns = valid_labels
+
+        return attributes

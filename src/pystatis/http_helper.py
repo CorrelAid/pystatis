@@ -113,25 +113,13 @@ def get_data_from_endpoint(
         db_host, db_user, db_pw = db.get_settings(db_name)
         url = f"{db_host}{endpoint}/{method}"
 
-        # Regio only supports older request calls with user name and password as query params
-        if db_name == "regio":
-            params_ = params.copy()
+        headers = {
+            "Content-Type": "application/x-www-form-urlencoded",
+            "username": db_user,
+            "password": db_pw,
+        }
 
-            params_.update(
-                {
-                    "username": db_user,
-                    "password": db_pw,
-                }
-            )
-            return requests.get(url, params=params_, timeout=(5, 300))
-
-        else:
-            headers = {
-                "Content-Type": "application/x-www-form-urlencoded",
-                "username": db_user,
-                "password": db_pw,
-            }
-            return requests.post(url, headers=headers, data=params, timeout=(5, 300))
+        return requests.post(url, headers=headers, data=params, timeout=(5, 300))
 
     # Determine database by matching regex to item code
     if db_name is None:

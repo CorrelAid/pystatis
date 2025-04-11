@@ -12,7 +12,7 @@ authors = [
     { name = "Marco Hübner", email = "marco_huebner1@gmx.de" },
     { name = "Jonas Berger", email = "jonas.bergner97@gmx.de" },
 ]
-requires-python = "~=3.10"
+requires-python = ">=3.11"
 readme = "README.md"
 maintainers = [{ name = "Michael Aydinbas", email = "michael.aydinbas@gmail.com" }]
 classifiers = [
@@ -25,8 +25,9 @@ classifiers = [
     "Operating System :: Unix",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3 :: Only",
-    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
     "Topic :: Scientific/Engineering",
     "Topic :: Scientific/Engineering :: Information Analysis",
     "Topic :: Software Development :: Libraries :: Python Modules",

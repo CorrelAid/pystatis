@@ -179,7 +179,10 @@ class Table:
 
         metadata = load_data(endpoint="metadata", method="table", params=params)
         metadata = json.loads(metadata)
-        assert isinstance(metadata, dict)  # nosec assert_used
+        if not isinstance(metadata, dict):
+            raise TypeError(
+                f"Expected dict for metadata, got {type(metadata).__name__}"
+            )
 
         self.metadata = metadata
 

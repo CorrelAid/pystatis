@@ -98,7 +98,7 @@ jobs:
         run: |
           uv run pytest --cov=src/pystatis --cov-report=xml --vcr-record=none tests
       - name: Upload coverage reports to Codecov with GitHub Action
-        uses: codecov/codecov-action@v5.1.0
+        uses: codecov/codecov-action@v5.4.0
         with:
           verbose: true
         env:

@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jobs: Loading Large Tables &mdash; pystatis</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
 
@@ -15,7 +15,7 @@
     <link rel="shortcut icon" href="../_static/pystatis_logo.ico"/>
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=6c02275b"></script>
+      <script src="../_static/documentation_options.js?v=1dd76d02"></script>
       <script src="../_static/doctools.js?v=9a2dae69"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -106,30 +106,20 @@
 </ol>
 <p><em>``pystatis`` is handling all these details and the whole process for you!. Thus, you will only notice a larger runtime when requesting larger tables (currently about 1 minute of extra timeout).</em></p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
 
-<span class="kn">from</span> <span class="nn">pystatis</span> <span class="kn">import</span> <span class="n">Table</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pystatis</span><span class="w"> </span><span class="kn">import</span> <span class="n">Table</span>
 
 <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <p>Let’s assume we want to download the table “AI001-2-5”. If the table is not cached yet, a warning message tells us that a background job has been started.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;AI001-2-5&quot;</span><span class="p">)</span>
-<span class="n">t</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<p>Requesting the same table again will provide the table instantly from the cache.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;AI001-2-5&quot;</span><span class="p">)</span>
@@ -142,6 +132,46 @@
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
+WARNING:pystatis.http_helper:Die Tabelle ist zu groß, um direkt abgerufen zu werden. Es wird eine Verarbeitung im Hintergrund gestartet.
+INFO:pystatis.http_helper:Database selected: regio
+INFO:pystatis.http_helper:Code 99: Der Bearbeitungsauftrag wurde erstellt. Die Tabelle kann in Kürze als Ergebnis mit folgendem Namen abgerufen werden: AI001-2-5_411043199
+WARNING:pystatis.http_helper:Verarbeitung im Hintergrund erfolgreich gestartet. Job-ID: AI001-2-5_411043199.
+INFO:pystatis.http_helper:Code 0: erfolgreich
+INFO:pystatis.http_helper:Code 0: erfolgreich
+INFO:pystatis.http_helper:Code 0: erfolgreich
+INFO:pystatis.http_helper:Code 0: erfolgreich
+INFO:pystatis.http_helper:Code 0: erfolgreich
+INFO:pystatis.http_helper:Code 0: erfolgreich
+INFO:pystatis.http_helper:Verarbeitung im Hintergrund abgeschlossen. Ergebnis kann jetzt abgerufen werden über /data/resultfile und Job-ID: AI001-2-5_411043199.
+INFO:pystatis.cache:Data was successfully cached under /Users/miay/.pystatis/data/AI001-2-5/d973b28b323fa878b812/20250412.zip.
+INFO:pystatis.http_helper:Database selected: regio
+INFO:pystatis.http_helper:Code 0: erfolgreich
+</pre></div></div>
+</div>
+<p>Requesting the same table again will provide the table instantly from the cache.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;AI001-2-5&quot;</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+hit
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+INFO:pystatis.http_helper:Database selected: regio
 INFO:pystatis.http_helper:Code 0: erfolgreich
 </pre></div></div>
 </div>
@@ -177,92 +207,109 @@ INFO:pystatis.http_helper:Code 0: erfolgreich
     <tr style="text-align: right;">
       <th></th>
       <th>Jahr</th>
+      <th>Amtlicher Gemeindeschlüssel (AGS)__Code</th>
       <th>Amtlicher Gemeindeschlüssel (AGS)</th>
-      <th>Gemeinden</th>
-      <th>Anteil_der_Flaeche_fuer_Siedlung_an_Gesamtflaeche__Prozent</th>
-      <th>Anteil_der_Flaeche_fuer_Verkehr_an_Gesamtflaeche__Prozent</th>
-      <th>Anteil_der_Flaeche_fuer_Landwirtschaft_an_Gesamtflaeche__Prozent</th>
-      <th>Anteil_der_Flaeche_fuer_Wald_an_Gesamtflaeche__Prozent</th>
-      <th>Anteil_Sport-,_Freizeit-,_Erholungsflaeche_an_Gesamtflaeche__Prozent</th>
-      <th>Anteil_Siedlungs-_und_Verkehrsflaeche_an_Gesamtflaeche__Prozent</th>
-      <th>Siedlungs-_und_Verkehrsflaeche_je_EW__qm</th>
-      <th>Freiraumflaeche_je_EW__qm</th>
+      <th>Anteil Siedlungs- und Verkehrsfläche an Gesamtfläche__Prozent</th>
+      <th>Anteil Sport-, Freizeit-, Erholungsfläche an Gesamtfläche__Prozent</th>
+      <th>Anteil der Fläche für Landwirtschaft an Gesamtfläche__Prozent</th>
+      <th>Anteil der Fläche für Siedlung an Gesamtfläche__Prozent</th>
+      <th>Anteil der Fläche für Verkehr an Gesamtfläche__Prozent</th>
+      <th>Anteil der Fläche für Wald an Gesamtfläche__Prozent</th>
+      <th>Freiraumfläche je EW__qm</th>
+      <th>Siedlungs- und Verkehrsfläche je EW__qm</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
       <td>2022</td>
-      <td>DG</td>
-      <td>Deutschland</td>
-      <td>9.5</td>
-      <td>5.1</td>
-      <td>50.4</td>
-      <td>29.9</td>
-      <td>1.5</td>
-      <td>14.1</td>
-      <td>599.4</td>
-      <td>3623.7</td>
+      <td>01001000</td>
+      <td>Flensburg, kreisfreie Stadt</td>
+      <td>53.5</td>
+      <td>4.4</td>
+      <td>22.1</td>
+      <td>39.8</td>
+      <td>13.8</td>
+      <td>6.6</td>
+      <td>284.1</td>
+      <td>327.9</td>
     </tr>
     <tr>
       <th>1</th>
       <td>2022</td>
-      <td>01</td>
-      <td>Schleswig-Holstein</td>
-      <td>9.3</td>
-      <td>4.4</td>
-      <td>68.3</td>
+      <td>01002000</td>
+      <td>Kiel, kreisfreie Stadt, Landeshauptstadt</td>
+      <td>58.8</td>
       <td>10.3</td>
-      <td>1.3</td>
-      <td>13.4</td>
-      <td>718.3</td>
-      <td>4618.0</td>
+      <td>23.4</td>
+      <td>44.9</td>
+      <td>13.9</td>
+      <td>5.6</td>
+      <td>197.4</td>
+      <td>281.5</td>
     </tr>
     <tr>
       <th>2</th>
       <td>2022</td>
-      <td>01001</td>
-      <td>Flensburg, kreisfreie Stadt</td>
-      <td>39.8</td>
-      <td>13.8</td>
-      <td>22.1</td>
-      <td>6.6</td>
-      <td>4.4</td>
-      <td>53.5</td>
-      <td>327.9</td>
-      <td>284.1</td>
+      <td>01003000</td>
+      <td>Lübeck, kreisfreie Stadt, Hansestadt</td>
+      <td>37.9</td>
+      <td>6.2</td>
+      <td>30.2</td>
+      <td>28.9</td>
+      <td>9.2</td>
+      <td>14.7</td>
+      <td>607.5</td>
+      <td>371.9</td>
     </tr>
     <tr>
       <th>3</th>
       <td>2022</td>
-      <td>01002</td>
-      <td>Kiel, kreisfreie Stadt</td>
-      <td>44.9</td>
-      <td>13.9</td>
-      <td>23.4</td>
-      <td>5.6</td>
-      <td>10.3</td>
-      <td>58.8</td>
-      <td>281.5</td>
-      <td>197.4</td>
+      <td>01004000</td>
+      <td>Neumünster, kreisfreie Stadt</td>
+      <td>51.8</td>
+      <td>5.5</td>
+      <td>37.7</td>
+      <td>41.7</td>
+      <td>10.1</td>
+      <td>4.3</td>
+      <td>434.2</td>
+      <td>467.1</td>
     </tr>
     <tr>
       <th>4</th>
       <td>2022</td>
-      <td>01003</td>
-      <td>Lübeck, kreisfreie Stadt, Hansestadt</td>
-      <td>28.9</td>
-      <td>9.2</td>
-      <td>30.2</td>
+      <td>01051001</td>
+      <td>Albersdorf</td>
+      <td>19.7</td>
+      <td>1.4</td>
+      <td>62.7</td>
+      <td>14.0</td>
+      <td>5.7</td>
       <td>14.7</td>
-      <td>6.2</td>
-      <td>37.9</td>
-      <td>371.9</td>
-      <td>607.5</td>
+      <td>3640.3</td>
+      <td>894.6</td>
     </tr>
   </tbody>
 </table>
 </div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+(13564, 11)
+</pre></div></div>
 </div>
 </section>
 

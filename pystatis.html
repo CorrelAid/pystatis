@@ -7,14 +7,14 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>pystatis package &mdash; pystatis</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
     <link rel="shortcut icon" href="_static/pystatis_logo.ico"/>
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=6c02275b"></script>
+      <script src="_static/documentation_options.js?v=1dd76d02"></script>
       <script src="_static/doctools.js?v=9a2dae69"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -129,11 +129,8 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#module-pystatis.table">pystatis.table module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#pystatis.table.Table"><code class="docutils literal notranslate"><span class="pre">Table</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#pystatis.table.Table.extract_ags_col"><code class="docutils literal notranslate"><span class="pre">Table.extract_ags_col()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#pystatis.table.Table.get_data"><code class="docutils literal notranslate"><span class="pre">Table.get_data()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#pystatis.table.Table.parse_v4_table"><code class="docutils literal notranslate"><span class="pre">Table.parse_v4_table()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#pystatis.table.Table.parse_v5_table"><code class="docutils literal notranslate"><span class="pre">Table.parse_v5_table()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#pystatis.table.Table.prettify_table"><code class="docutils literal notranslate"><span class="pre">Table.prettify_table()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -155,11 +152,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#pystatis.Table"><code class="docutils literal notranslate"><span class="pre">Table</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#pystatis.Table.extract_ags_col"><code class="docutils literal notranslate"><span class="pre">Table.extract_ags_col()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pystatis.Table.get_data"><code class="docutils literal notranslate"><span class="pre">Table.get_data()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#pystatis.Table.parse_v4_table"><code class="docutils literal notranslate"><span class="pre">Table.parse_v4_table()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pystatis.Table.parse_v5_table"><code class="docutils literal notranslate"><span class="pre">Table.parse_v5_table()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#pystatis.Table.prettify_table"><code class="docutils literal notranslate"><span class="pre">Table.prettify_table()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#pystatis.clear_cache"><code class="docutils literal notranslate"><span class="pre">clear_cache()</span></code></a></li>
@@ -821,27 +815,6 @@ Should only apply for manually saved data, visible in ‘Meine Tabellen’ in th
 </dd>
 </dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="pystatis.table.Table.extract_ags_col">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">extract_ags_col</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.table.Table.extract_ags_col" title="Link to this definition"></a></dt>
-<dd><p>Extracts the AGS column from the data if present.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> (<em>pd.DataFrame</em>) – The data frame to extract the AGS column from.</p></li>
-<li><p><strong>codes</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – The AGS codes to look for in the data.</p></li>
-<li><p><strong>label</strong> (<em>str</em>) – The label of the AGS column.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The AGS column if present, otherwise None.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>pd.Series | None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="pystatis.table.Table.get_data">
 <span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prettify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">area</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">startyear</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">endyear</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeslices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regionalvariable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regionalkey</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stand</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'de'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quality</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'off'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.table.Table.get_data" title="Link to this definition"></a></dt>
 <dd><p>Downloads raw data and metadata from GENESIS-Online.</p>
@@ -862,39 +835,68 @@ This parameter is cumulative to <cite>startyear</cite> and <cite>endyear</cite>.
 <li><p><strong>regionalvariable</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>“code” of the regional classification (RKMerkmal),
 to which the selection using <cite>regionalkey</cite> is to be applied.
 Accepts 1-6 characters.
-Possible values:</p>
+Can be used with any table that uses a regional attribute.</p>
+<p>The following attribute codes are handled by <cite>pystatis</cite> by adding an extra column for the official municipality key (AGS):</p>
 <ul>
 <li><dl class="simple">
-<dt>Regionalstatistik (only for tables ending with “B”, see /catalogue/variables):</dt><dd><ul>
-<li><p>”DG” (Deutschland, 1) -&gt; will not return extra column</p></li>
+<dt>GENESIS-Online (for all tables, see /catalogue/variables):</dt><dd><ul>
 <li><p>”DLAND” (Bundesländer, 16)</p></li>
-<li><p>”REGBEZ” (Regierungsbezirke, 44)</p></li>
+<li><p>”DINSG” (Deutschland insgesamt, 1) -&gt; will not return extra AGS column</p></li>
+<li><p>”DLANDR” (Bundesländer mit Restposition, 17)</p></li>
+<li><p>”DLANDS” (Bundesländer mit Seehäfen, 6)</p></li>
+<li><p>”DLANDU” (Bundesländer und Ausland, 17)</p></li>
+<li><p>”DLANDX” (Bundesländer mit Ausland und Restposition, 18)</p></li>
+<li><p>”KREISE” (Kreise, 476)</p></li>
+<li><p>”REGBEZ” (Regierungsbezirke, 38)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Regionalstatistik (only for tables ending with “B”, see /catalogue/variables):</dt><dd><ul>
+<li><p>”DG” (Deutschland, 1) -&gt; will not return ARS column</p></li>
+<li><p>”DINSG” (Deutschland räumlich insgesamt, 1) -&gt; will not return ARS column</p></li>
+<li><p>”DLAND” (Bundesländer, 16)</p></li>
+<li><p>”DLANDU” Bundesländer, 19)</p></li>
+<li><p>”FAMTGEM” (Gemeinden und Gemeindeverbände, 12779)</p></li>
+<li><p>”FDINSG” (Flächenländer insgesamt, 1) -&gt; will not return ARS column</p></li>
+<li><p>”FDLAND” (Bundesländer, 13)</p></li>
+<li><p>”FGEMEIN” (Gemeinden, 4795)</p></li>
+<li><p>”FKREISE” (Kreise und kreisfreie Städte, 411)</p></li>
+<li><p>”FREGBEZ” (Regierungsbezirke / Statistische Regionen, 41)</p></li>
+<li><p>”GEMEIN” (Gemeinden, 13565)</p></li>
+<li><p>”GRSTADT” (Großstadt, 15)</p></li>
 <li><p>”KREISE” (Kreise und kreisfreie Städte, 489)</p></li>
-<li><p>”GEMEIN” (Gemeinden, 13564)</p></li>
+<li><p>”NUTS-2” (NUTS-II Regionen, 38)</p></li>
+<li><p>”PGEM-2DI” (Gemeinden Pendler, 6857)</p></li>
+<li><p>”PGEMEIN” (Gemeinden Pendler, 6857)</p></li>
+<li><p>”REGBEZ” (Regierungsbezirke / Statistische Regionen, 44)</p></li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
 <dt>Zensusdatenbank (for all tables, see /catalogue/variables):</dt><dd><ul>
-<li><p>”GEODL1” (Deutschland, 1) -&gt; will not return extra column</p></li>
-<li><p>”GEODL3” (Deutschland, 1) -&gt; will not return extra column</p></li>
 <li><p>”GEOBL1” (Bundesländer, 16)</p></li>
 <li><p>”GEOBL3” (Bundesländer, 16)</p></li>
 <li><p>”GEOBZ1” (Bezirke (Hamburg und Berlin), 19)</p></li>
+<li><p>”GEODL1” (Deutschland, 1) -&gt; will not return extra ARS column</p></li>
+<li><p>”GEODL3” (Deutschland, 1) -&gt; will not return extra ARS column</p></li>
 <li><p>”GEOGM1” (Gemeinden, 11340)</p></li>
 <li><p>”GEOGM2” (Gemeinden mit min. 10_000 Einwohnern, 1574)</p></li>
 <li><p>”GEOGM3” (Gemeinden mit min. 10_000 Einwohnern, 1574)</p></li>
 <li><p>”GEOGM4” (Gemeinden (Gebietsstand 15.05.2022), 10787)</p></li>
-<li><p>”GEOLK1” (Landkreise und kreisfreie Städte, 412)</p></li>
+<li><p>”GEOGM5” (Gemeinden &gt; 10.000 Einwohner (Stand 15.05.2022), 1578)</p></li>
+<li><p>”GEOLK1” (Landkreise u. krsfr. Städte (Stand 09.05.11), 412)</p></li>
 <li><p>”GEOLK3” (Landkreise und kreisfreie Städte, 412)</p></li>
 <li><p>”GEOLK4” (Landkreise u. krsfr. Städte (Stand 15.05.22), 400)</p></li>
 <li><p>”GEORB1” (Regierungsbezirke/Statistische Regionen, 36)</p></li>
 <li><p>”GEORB3” (Regierungsbezirke/Statistische Regionen, 36)</p></li>
-<li><p>”GEOVB1” (Gemeindeverbände, 1333)</p></li>
+<li><p>”GEOVB1” (Gemeindeverbände (Gebietsstand 09.05.2011), 1333)</p></li>
 <li><p>”GEOVB2” (Gemeindeverbände mit mindestens 10 000 Einwohnern, 338)</p></li>
 <li><p>”GEOVB3” (Gemeindeverbände mit mindestens 10 000 Einwohnern, 157)</p></li>
 <li><p>”GEOVB4” (Gemeindeverbände (Gebietsstand 15.05.2022), 1207)</p></li>
+<li><p>”GEOVB5” (Gemeindeverbände &gt; 10.000 Einw. (Stand 15.05.2022), 588)</p></li>
 </ul>
 </dd>
 </dl>
@@ -922,58 +924,28 @@ table -&gt; explanation of symbols or at e.g.
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pystatis.table.Table.parse_v4_table">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_v4_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.table.Table.parse_v4_table" title="Link to this definition"></a></dt>
-<dd><p>Parse ffcsv format for tables from GENESIS and Regionalstatistik into a more readable format</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> (<em>DataFrame</em>)</p></li>
-<li><p><strong>language</strong> (<em>str</em>)</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>DataFrame</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="pystatis.table.Table.parse_v5_table">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_v5_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.table.Table.parse_v5_table" title="Link to this definition"></a></dt>
-<dd><p>Parse Zensus table ffcsv format into a more readable format</p>
+<dd><p>Transform raw table data into a more readable format.</p>
+<p>This method takes the raw data from GENESIS/Zensus/Regio databases and transforms it
+into a more user-friendly format by:
+1. Handling quality indicators if present
+2. Pivoting the data to have value columns instead of rows
+3. Organizing time, regional codes, and attributes into separate columns
+4. Combining everything into a clean, readable DataFrame</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> (<em>DataFrame</em>)</p></li>
-<li><p><strong>db_name</strong> (<em>str</em>)</p></li>
-<li><p><strong>language</strong> (<em>str</em>)</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>DataFrame</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pystatis.table.Table.prettify_table">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">prettify_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.table.Table.prettify_table" title="Link to this definition"></a></dt>
-<dd><p>Reformat the data into a more readable table</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> (<em>pd.DataFrame</em>) – A pandas dataframe created from raw_data</p></li>
-<li><p><strong>db_name</strong> (<em>str</em>) – The name of the database.</p></li>
-<li><p><strong>language</strong> (<em>str</em>) – The requested language. One of “de” or “en”.</p></li>
+<li><p><strong>data</strong> (<em>DataFrame</em>) – Raw DataFrame from the database</p></li>
+<li><p><strong>db_name</strong> (<em>str</em>) – Database name (‘genesis’, ‘zensus’, or ‘regio’)</p></li>
+<li><p><strong>language</strong> (<em>str</em>) – Language code (‘de’ or ‘en’)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Formatted dataframe that omits all unnecessary Code columns
-and includes informative columns names</p>
+<dd class="field-even"><p>A restructured DataFrame with a more user-friendly format</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>pd.DataFrame</p>
+<dd class="field-odd"><p><em>DataFrame</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1135,27 +1107,6 @@ One of “genesis”, “zensus”, “regio”.</p>
 </dd>
 </dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="pystatis.Table.extract_ags_col">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">extract_ags_col</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.Table.extract_ags_col" title="Link to this definition"></a></dt>
-<dd><p>Extracts the AGS column from the data if present.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> (<em>pd.DataFrame</em>) – The data frame to extract the AGS column from.</p></li>
-<li><p><strong>codes</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – The AGS codes to look for in the data.</p></li>
-<li><p><strong>label</strong> (<em>str</em>) – The label of the AGS column.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The AGS column if present, otherwise None.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>pd.Series | None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="pystatis.Table.get_data">
 <span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prettify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">area</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">startyear</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">endyear</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeslices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regionalvariable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regionalkey</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stand</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'de'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quality</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'off'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.Table.get_data" title="Link to this definition"></a></dt>
 <dd><p>Downloads raw data and metadata from GENESIS-Online.</p>
@@ -1176,39 +1127,68 @@ This parameter is cumulative to <cite>startyear</cite> and <cite>endyear</cite>.
 <li><p><strong>regionalvariable</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>“code” of the regional classification (RKMerkmal),
 to which the selection using <cite>regionalkey</cite> is to be applied.
 Accepts 1-6 characters.
-Possible values:</p>
+Can be used with any table that uses a regional attribute.</p>
+<p>The following attribute codes are handled by <cite>pystatis</cite> by adding an extra column for the official municipality key (AGS):</p>
 <ul>
 <li><dl class="simple">
-<dt>Regionalstatistik (only for tables ending with “B”, see /catalogue/variables):</dt><dd><ul>
-<li><p>”DG” (Deutschland, 1) -&gt; will not return extra column</p></li>
+<dt>GENESIS-Online (for all tables, see /catalogue/variables):</dt><dd><ul>
 <li><p>”DLAND” (Bundesländer, 16)</p></li>
-<li><p>”REGBEZ” (Regierungsbezirke, 44)</p></li>
+<li><p>”DINSG” (Deutschland insgesamt, 1) -&gt; will not return extra AGS column</p></li>
+<li><p>”DLANDR” (Bundesländer mit Restposition, 17)</p></li>
+<li><p>”DLANDS” (Bundesländer mit Seehäfen, 6)</p></li>
+<li><p>”DLANDU” (Bundesländer und Ausland, 17)</p></li>
+<li><p>”DLANDX” (Bundesländer mit Ausland und Restposition, 18)</p></li>
+<li><p>”KREISE” (Kreise, 476)</p></li>
+<li><p>”REGBEZ” (Regierungsbezirke, 38)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Regionalstatistik (only for tables ending with “B”, see /catalogue/variables):</dt><dd><ul>
+<li><p>”DG” (Deutschland, 1) -&gt; will not return ARS column</p></li>
+<li><p>”DINSG” (Deutschland räumlich insgesamt, 1) -&gt; will not return ARS column</p></li>
+<li><p>”DLAND” (Bundesländer, 16)</p></li>
+<li><p>”DLANDU” Bundesländer, 19)</p></li>
+<li><p>”FAMTGEM” (Gemeinden und Gemeindeverbände, 12779)</p></li>
+<li><p>”FDINSG” (Flächenländer insgesamt, 1) -&gt; will not return ARS column</p></li>
+<li><p>”FDLAND” (Bundesländer, 13)</p></li>
+<li><p>”FGEMEIN” (Gemeinden, 4795)</p></li>
+<li><p>”FKREISE” (Kreise und kreisfreie Städte, 411)</p></li>
+<li><p>”FREGBEZ” (Regierungsbezirke / Statistische Regionen, 41)</p></li>
+<li><p>”GEMEIN” (Gemeinden, 13565)</p></li>
+<li><p>”GRSTADT” (Großstadt, 15)</p></li>
 <li><p>”KREISE” (Kreise und kreisfreie Städte, 489)</p></li>
-<li><p>”GEMEIN” (Gemeinden, 13564)</p></li>
+<li><p>”NUTS-2” (NUTS-II Regionen, 38)</p></li>
+<li><p>”PGEM-2DI” (Gemeinden Pendler, 6857)</p></li>
+<li><p>”PGEMEIN” (Gemeinden Pendler, 6857)</p></li>
+<li><p>”REGBEZ” (Regierungsbezirke / Statistische Regionen, 44)</p></li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
 <dt>Zensusdatenbank (for all tables, see /catalogue/variables):</dt><dd><ul>
-<li><p>”GEODL1” (Deutschland, 1) -&gt; will not return extra column</p></li>
-<li><p>”GEODL3” (Deutschland, 1) -&gt; will not return extra column</p></li>
 <li><p>”GEOBL1” (Bundesländer, 16)</p></li>
 <li><p>”GEOBL3” (Bundesländer, 16)</p></li>
 <li><p>”GEOBZ1” (Bezirke (Hamburg und Berlin), 19)</p></li>
+<li><p>”GEODL1” (Deutschland, 1) -&gt; will not return extra ARS column</p></li>
+<li><p>”GEODL3” (Deutschland, 1) -&gt; will not return extra ARS column</p></li>
 <li><p>”GEOGM1” (Gemeinden, 11340)</p></li>
 <li><p>”GEOGM2” (Gemeinden mit min. 10_000 Einwohnern, 1574)</p></li>
 <li><p>”GEOGM3” (Gemeinden mit min. 10_000 Einwohnern, 1574)</p></li>
 <li><p>”GEOGM4” (Gemeinden (Gebietsstand 15.05.2022), 10787)</p></li>
-<li><p>”GEOLK1” (Landkreise und kreisfreie Städte, 412)</p></li>
+<li><p>”GEOGM5” (Gemeinden &gt; 10.000 Einwohner (Stand 15.05.2022), 1578)</p></li>
+<li><p>”GEOLK1” (Landkreise u. krsfr. Städte (Stand 09.05.11), 412)</p></li>
 <li><p>”GEOLK3” (Landkreise und kreisfreie Städte, 412)</p></li>
 <li><p>”GEOLK4” (Landkreise u. krsfr. Städte (Stand 15.05.22), 400)</p></li>
 <li><p>”GEORB1” (Regierungsbezirke/Statistische Regionen, 36)</p></li>
 <li><p>”GEORB3” (Regierungsbezirke/Statistische Regionen, 36)</p></li>
-<li><p>”GEOVB1” (Gemeindeverbände, 1333)</p></li>
+<li><p>”GEOVB1” (Gemeindeverbände (Gebietsstand 09.05.2011), 1333)</p></li>
 <li><p>”GEOVB2” (Gemeindeverbände mit mindestens 10 000 Einwohnern, 338)</p></li>
 <li><p>”GEOVB3” (Gemeindeverbände mit mindestens 10 000 Einwohnern, 157)</p></li>
 <li><p>”GEOVB4” (Gemeindeverbände (Gebietsstand 15.05.2022), 1207)</p></li>
+<li><p>”GEOVB5” (Gemeindeverbände &gt; 10.000 Einw. (Stand 15.05.2022), 588)</p></li>
 </ul>
 </dd>
 </dl>
@@ -1236,58 +1216,28 @@ table -&gt; explanation of symbols or at e.g.
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pystatis.Table.parse_v4_table">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_v4_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.Table.parse_v4_table" title="Link to this definition"></a></dt>
-<dd><p>Parse ffcsv format for tables from GENESIS and Regionalstatistik into a more readable format</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> (<em>DataFrame</em>)</p></li>
-<li><p><strong>language</strong> (<em>str</em>)</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>DataFrame</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="pystatis.Table.parse_v5_table">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_v5_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.Table.parse_v5_table" title="Link to this definition"></a></dt>
-<dd><p>Parse Zensus table ffcsv format into a more readable format</p>
+<dd><p>Transform raw table data into a more readable format.</p>
+<p>This method takes the raw data from GENESIS/Zensus/Regio databases and transforms it
+into a more user-friendly format by:
+1. Handling quality indicators if present
+2. Pivoting the data to have value columns instead of rows
+3. Organizing time, regional codes, and attributes into separate columns
+4. Combining everything into a clean, readable DataFrame</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> (<em>DataFrame</em>)</p></li>
-<li><p><strong>db_name</strong> (<em>str</em>)</p></li>
-<li><p><strong>language</strong> (<em>str</em>)</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>DataFrame</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pystatis.Table.prettify_table">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">prettify_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.Table.prettify_table" title="Link to this definition"></a></dt>
-<dd><p>Reformat the data into a more readable table</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> (<em>pd.DataFrame</em>) – A pandas dataframe created from raw_data</p></li>
-<li><p><strong>db_name</strong> (<em>str</em>) – The name of the database.</p></li>
-<li><p><strong>language</strong> (<em>str</em>) – The requested language. One of “de” or “en”.</p></li>
+<li><p><strong>data</strong> (<em>DataFrame</em>) – Raw DataFrame from the database</p></li>
+<li><p><strong>db_name</strong> (<em>str</em>) – Database name (‘genesis’, ‘zensus’, or ‘regio’)</p></li>
+<li><p><strong>language</strong> (<em>str</em>) – Language code (‘de’ or ‘en’)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Formatted dataframe that omits all unnecessary Code columns
-and includes informative columns names</p>
+<dd class="field-even"><p>A restructured DataFrame with a more user-friendly format</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>pd.DataFrame</p>
+<dd class="field-odd"><p><em>DataFrame</em></p>
 </dd>
 </dl>
 </dd></dl>

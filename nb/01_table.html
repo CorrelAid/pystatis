@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Table Class &mdash; pystatis</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
 
@@ -15,7 +15,7 @@
     <link rel="shortcut icon" href="../_static/pystatis_logo.ico"/>
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=6c02275b"></script>
+      <script src="../_static/documentation_options.js?v=1dd76d02"></script>
       <script src="../_static/doctools.js?v=9a2dae69"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -111,12 +111,12 @@
            <div itemprop="articleBody">
              
   <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
 
-<span class="kn">from</span> <span class="nn">pystatis</span> <span class="kn">import</span> <span class="n">Table</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pystatis</span><span class="w"> </span><span class="kn">import</span> <span class="n">Table</span>
 
 <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
 </pre></div>
@@ -127,7 +127,7 @@
 <p>The <code class="docutils literal notranslate"><span class="pre">Table</span></code> class in <code class="docutils literal notranslate"><span class="pre">pystatis</span></code> is the main interface for users to interact with the different databases and download the data/tables in form of <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <code class="docutils literal notranslate"><span class="pre">DataFrames</span></code>.</p>
 <p>To use the class, you have to pass only a single parameter: the <code class="docutils literal notranslate"><span class="pre">name</span></code> of the table you want to download.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;81000-0001&quot;</span><span class="p">)</span>
@@ -137,51 +137,588 @@
 <section id="Downloading-data">
 <h2>Downloading data<a class="headerlink" href="#Downloading-data" title="Link to this heading"></a></h2>
 <p>However, creating a new <code class="docutils literal notranslate"><span class="pre">Table</span></code> instance does not automatically retrieve the data from the database (or cache). Instead, you have to call another method: <code class="docutils literal notranslate"><span class="pre">get_data()</span></code>. The reason for this decision was to give you full control over the download process and avoid unnecessary downloads of big tables unless you are certain you want to start the download.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+INFO:pystatis.http_helper:Database selected: genesis
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+hit
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+INFO:pystatis.http_helper:Code 0: erfolgreich
+</pre></div></div>
+</div>
 <p>You can access the name of a table via the <code class="docutils literal notranslate"><span class="pre">.name</span></code> attribute.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">name</span>
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;81000-0001&#39;
+</pre></div></div>
+</div>
 <p>After a successful download (or cache retrieval), you can always access the raw data, that is the original response from the web API as a string, via the <code class="docutils literal notranslate"><span class="pre">.raw_data</span></code> attribute.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">raw_data</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+statistics_code;statistics_label;time_code;time_label;time;1_variable_code;1_variable_label;1_variable_attribute_code;1_variable_attribute_label;2_variable_code;2_variable_label;2_variable_attribute_code;2_variable_attribute_label;value;value_unit;value_variable_code;value_variable_label
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;jew. ME;BIP004;Bruttoinlandsprodukt je Einwohner
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;jew. ME;STR020;Gütersteuern
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;Prozent;BIP005;Bruttoinlandsprodukt (Veränderung in %)
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);3390,028;jew. ME;VGR014;Bruttoinlandsprodukt
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;jew. ME;STR006;Gütersteuern abzügl. Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);3023,844;jew. ME;BWS001;Bruttowertschöpfung
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;jew. ME;SUB003;Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2016;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);100,390;jew. ME;BIP004;Bruttoinlandsprodukt je Einwohner
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2016;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);96,750;jew. ME;STR020;Gütersteuern
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2016;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);2,3;Prozent;BIP005;Bruttoinlandsprodukt (Veränderung in %)
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2016;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);99,410;jew. ME;VGR014;Bruttoinlandsprodukt
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2016;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);96,820;jew. ME;STR006;Gütersteuern abzügl. Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2016;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);99,730;jew. ME;BWS001;Bruttowertschöpfung
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2016;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);16,700;jew. ME;SUB003;Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2015;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);37774,000;jew. ME;BIP004;Bruttoinlandsprodukt je Einwohner
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2015;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);333,770;jew. ME;STR020;Gütersteuern
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2015;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);3,4;Prozent;BIP005;Bruttoinlandsprodukt (Veränderung in %)
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2015;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);3085,650;jew. ME;VGR014;Bruttoinlandsprodukt
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2015;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);333,713;jew. ME;STR006;Gütersteuern abzügl. Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2015;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);2751,937;jew. ME;BWS001;Bruttowertschöpfung
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2015;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);0,057;jew. ME;SUB003;Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;jew. ME;BIP004;Bruttoinlandsprodukt je Einwohner
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;jew. ME;STR020;Gütersteuern
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;Prozent;BIP005;Bruttoinlandsprodukt (Veränderung in %)
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);3282,849;jew. ME;VGR014;Bruttoinlandsprodukt
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;jew. ME;STR006;Gütersteuern abzügl. Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);2933,002;jew. ME;BWS001;Bruttowertschöpfung
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;jew. ME;SUB003;Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2023;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);49525,000;jew. ME;BIP004;Bruttoinlandsprodukt je Einwohner
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2023;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);397,741;jew. ME;STR020;Gütersteuern
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2023;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);5,9;Prozent;BIP005;Bruttoinlandsprodukt (Veränderung in %)
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2023;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);4185,550;jew. ME;VGR014;Bruttoinlandsprodukt
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2023;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);364,696;jew. ME;STR006;Gütersteuern abzügl. Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2023;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);3820,854;jew. ME;BWS001;Bruttowertschöpfung
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2023;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);33,045;jew. ME;SUB003;Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2023;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;jew. ME;BIP004;Bruttoinlandsprodukt je Einwohner
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2023;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;jew. ME;STR020;Gütersteuern
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2023;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;Prozent;BIP005;Bruttoinlandsprodukt (Veränderung in %)
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2023;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);3943,367;jew. ME;VGR014;Bruttoinlandsprodukt
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2023;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;jew. ME;STR006;Gütersteuern abzügl. Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2023;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);3570,771;jew. ME;BWS001;Bruttowertschöpfung
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2023;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;jew. ME;SUB003;Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2024;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);102,640;jew. ME;BIP004;Bruttoinlandsprodukt je Einwohner
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2024;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);96,290;jew. ME;STR020;Gütersteuern
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2024;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);-0,2;Prozent;BIP005;Bruttoinlandsprodukt (Veränderung in %)
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2024;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);104,560;jew. ME;VGR014;Bruttoinlandsprodukt
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2024;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);96,190;jew. ME;STR006;Gütersteuern abzügl. Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2024;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);105,540;jew. ME;BWS001;Bruttowertschöpfung
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2024;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);488,000;jew. ME;SUB003;Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;jew. ME;BIP004;Bruttoinlandsprodukt je Einwohner
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;jew. ME;STR020;Gütersteuern
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;Prozent;BIP005;Bruttoinlandsprodukt (Veränderung in %)
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);3522,407;jew. ME;VGR014;Bruttoinlandsprodukt
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;jew. ME;STR006;Gütersteuern abzügl. Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);3177,092;jew. ME;BWS001;Bruttowertschöpfung
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;jew. ME;SUB003;Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2016;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;jew. ME;BIP004;Bruttoinlandsprodukt je Einwohner
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2016;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;jew. ME;STR020;Gütersteuern
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2016;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;Prozent;BIP005;Bruttoinlandsprodukt (Veränderung in %)
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2016;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);3429,267;jew. ME;VGR014;Bruttoinlandsprodukt
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2016;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;jew. ME;STR006;Gütersteuern abzügl. Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2016;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);3090,630;jew. ME;BWS001;Bruttowertschöpfung
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2016;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;jew. ME;SUB003;Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);41386,000;jew. ME;BIP004;Bruttoinlandsprodukt je Einwohner
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);364,778;jew. ME;STR020;Gütersteuern
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);3,0;Prozent;BIP005;Bruttoinlandsprodukt (Veränderung in %)
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);3431,130;jew. ME;VGR014;Bruttoinlandsprodukt
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);364,714;jew. ME;STR006;Gütersteuern abzügl. Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);3066,416;jew. ME;BWS001;Bruttowertschöpfung
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);0,064;jew. ME;SUB003;Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);103,570;jew. ME;BIP004;Bruttoinlandsprodukt je Einwohner
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);99,100;jew. ME;STR020;Gütersteuern
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);1,1;Prozent;BIP005;Bruttoinlandsprodukt (Veränderung in %)
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);103,250;jew. ME;VGR014;Bruttoinlandsprodukt
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);99,180;jew. ME;STR006;Gütersteuern abzügl. Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);103,750;jew. ME;BWS001;Bruttowertschöpfung
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);19,510;jew. ME;SUB003;Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;jew. ME;BIP004;Bruttoinlandsprodukt je Einwohner
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;jew. ME;STR020;Gütersteuern
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;Prozent;BIP005;Bruttoinlandsprodukt (Veränderung in %)
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);3625,206;jew. ME;VGR014;Bruttoinlandsprodukt
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;jew. ME;STR006;Gütersteuern abzügl. Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);3272,541;jew. ME;BWS001;Bruttowertschöpfung
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;jew. ME;SUB003;Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2024;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);50819,000;jew. ME;BIP004;Bruttoinlandsprodukt je Einwohner
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2024;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);406,056;jew. ME;STR020;Gütersteuern
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2024;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);2,9;Prozent;BIP005;Bruttoinlandsprodukt (Veränderung in %)
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2024;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);4305,260;jew. ME;VGR014;Bruttoinlandsprodukt
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2024;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);405,818;jew. ME;STR006;Gütersteuern abzügl. Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2024;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);3899,442;jew. ME;BWS001;Bruttowertschöpfung
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2024;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);0,238;jew. ME;SUB003;Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);103,630;jew. ME;BIP004;Bruttoinlandsprodukt je Einwohner
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);103,200;jew. ME;STR020;Gütersteuern
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);3,7;Prozent;BIP005;Bruttoinlandsprodukt (Veränderung in %)
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);103,670;jew. ME;VGR014;Bruttoinlandsprodukt
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);102,510;jew. ME;STR006;Gütersteuern abzügl. Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);103,800;jew. ME;BWS001;Bruttowertschöpfung
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);472,320;jew. ME;SUB003;Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;jew. ME;BIP004;Bruttoinlandsprodukt je Einwohner
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;jew. ME;STR020;Gütersteuern
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;Prozent;BIP005;Bruttoinlandsprodukt (Veränderung in %)
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);3726,798;jew. ME;VGR014;Bruttoinlandsprodukt
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;jew. ME;STR006;Gütersteuern abzügl. Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);3345,263;jew. ME;BWS001;Bruttowertschöpfung
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;jew. ME;SUB003;Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;jew. ME;BIP004;Bruttoinlandsprodukt je Einwohner
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;jew. ME;STR020;Gütersteuern
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;Prozent;BIP005;Bruttoinlandsprodukt (Veränderung in %)
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);3465,133;jew. ME;VGR014;Bruttoinlandsprodukt
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;jew. ME;STR006;Gütersteuern abzügl. Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);3087,923;jew. ME;BWS001;Bruttowertschöpfung
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;jew. ME;SUB003;Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2023;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;jew. ME;BIP004;Bruttoinlandsprodukt je Einwohner
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2023;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;jew. ME;STR020;Gütersteuern
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2023;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;Prozent;BIP005;Bruttoinlandsprodukt (Veränderung in %)
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2023;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);3615,547;jew. ME;VGR014;Bruttoinlandsprodukt
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2023;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;jew. ME;STR006;Gütersteuern abzügl. Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2023;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);3279,669;jew. ME;BWS001;Bruttowertschöpfung
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2023;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;jew. ME;SUB003;Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);40300,000;jew. ME;BIP004;Bruttoinlandsprodukt je Einwohner
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);355,876;jew. ME;STR020;Gütersteuern
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);4,2;Prozent;BIP005;Bruttoinlandsprodukt (Veränderung in %)
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);3331,110;jew. ME;VGR014;Bruttoinlandsprodukt
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);355,792;jew. ME;STR006;Gütersteuern abzügl. Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);2975,318;jew. ME;BWS001;Bruttowertschöpfung
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);0,084;jew. ME;SUB003;Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2016;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;jew. ME;BIP004;Bruttoinlandsprodukt je Einwohner
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2016;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;jew. ME;STR020;Gütersteuern
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2016;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;Prozent;BIP005;Bruttoinlandsprodukt (Veränderung in %)
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2016;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);3156,368;jew. ME;VGR014;Bruttoinlandsprodukt
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2016;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;jew. ME;STR006;Gütersteuern abzügl. Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2016;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);2817,555;jew. ME;BWS001;Bruttowertschöpfung
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2016;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;jew. ME;SUB003;Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;jew. ME;BIP004;Bruttoinlandsprodukt je Einwohner
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;jew. ME;STR020;Gütersteuern
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;Prozent;BIP005;Bruttoinlandsprodukt (Veränderung in %)
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);3449,620;jew. ME;VGR014;Bruttoinlandsprodukt
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;jew. ME;STR006;Gütersteuern abzügl. Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);3098,997;jew. ME;BWS001;Bruttowertschöpfung
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;jew. ME;SUB003;Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;jew. ME;BIP004;Bruttoinlandsprodukt je Einwohner
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;jew. ME;STR020;Gütersteuern
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;Prozent;BIP005;Bruttoinlandsprodukt (Veränderung in %)
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);3596,919;jew. ME;VGR014;Bruttoinlandsprodukt
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;jew. ME;STR006;Gütersteuern abzügl. Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);3237,832;jew. ME;BWS001;Bruttowertschöpfung
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;jew. ME;SUB003;Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2015;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);98,930;jew. ME;BIP004;Bruttoinlandsprodukt je Einwohner
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2015;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);95,290;jew. ME;STR020;Gütersteuern
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2015;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);1,7;Prozent;BIP005;Bruttoinlandsprodukt (Veränderung in %)
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2015;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);97,180;jew. ME;VGR014;Bruttoinlandsprodukt
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2015;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);95,360;jew. ME;STR006;Gütersteuern abzügl. Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2015;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);97,410;jew. ME;BWS001;Bruttowertschöpfung
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2015;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);17,960;jew. ME;SUB003;Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);44190,000;jew. ME;BIP004;Bruttoinlandsprodukt je Einwohner
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);391,305;jew. ME;STR020;Gütersteuern
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);6,6;Prozent;BIP005;Bruttoinlandsprodukt (Veränderung in %)
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);3676,460;jew. ME;VGR014;Bruttoinlandsprodukt
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);388,217;jew. ME;STR006;Gütersteuern abzügl. Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);3288,243;jew. ME;BWS001;Bruttowertschöpfung
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);3,088;jew. ME;SUB003;Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);47183,000;jew. ME;BIP004;Bruttoinlandsprodukt je Einwohner
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);402,996;jew. ME;STR020;Gütersteuern
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);7,5;Prozent;BIP005;Bruttoinlandsprodukt (Veränderung in %)
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);3953,850;jew. ME;VGR014;Bruttoinlandsprodukt
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);391,028;jew. ME;STR006;Gütersteuern abzügl. Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);3562,822;jew. ME;BWS001;Bruttowertschöpfung
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);11,968;jew. ME;SUB003;Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2023;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);103,130;jew. ME;BIP004;Bruttoinlandsprodukt je Einwohner
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2023;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);97,000;jew. ME;STR020;Gütersteuern
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2023;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);-0,3;Prozent;BIP005;Bruttoinlandsprodukt (Veränderung in %)
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2023;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);104,810;jew. ME;VGR014;Bruttoinlandsprodukt
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2023;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);95,990;jew. ME;STR006;Gütersteuern abzügl. Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2023;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);105,830;jew. ME;BWS001;Bruttowertschöpfung
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2023;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);548,520;jew. ME;SUB003;Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2024;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;jew. ME;BIP004;Bruttoinlandsprodukt je Einwohner
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2024;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;jew. ME;STR020;Gütersteuern
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2024;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;Prozent;BIP005;Bruttoinlandsprodukt (Veränderung in %)
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2024;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);4175,831;jew. ME;VGR014;Bruttoinlandsprodukt
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2024;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;jew. ME;STR006;Gütersteuern abzügl. Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2024;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);3810,379;jew. ME;BWS001;Bruttowertschöpfung
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2024;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;jew. ME;SUB003;Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);42541,000;jew. ME;BIP004;Bruttoinlandsprodukt je Einwohner
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);375,707;jew. ME;STR020;Gütersteuern
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);3,0;Prozent;BIP005;Bruttoinlandsprodukt (Veränderung in %)
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);3534,880;jew. ME;VGR014;Bruttoinlandsprodukt
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);375,607;jew. ME;STR006;Gütersteuern abzügl. Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);3159,273;jew. ME;BWS001;Bruttowertschöpfung
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);0,100;jew. ME;SUB003;Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;jew. ME;BIP004;Bruttoinlandsprodukt je Einwohner
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;jew. ME;STR020;Gütersteuern
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;Prozent;BIP005;Bruttoinlandsprodukt (Veränderung in %)
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);3561,733;jew. ME;VGR014;Bruttoinlandsprodukt
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;jew. ME;STR006;Gütersteuern abzügl. Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);3215,209;jew. ME;BWS001;Bruttowertschöpfung
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;jew. ME;SUB003;Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2015;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;jew. ME;BIP004;Bruttoinlandsprodukt je Einwohner
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2015;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;jew. ME;STR020;Gütersteuern
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2015;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;Prozent;BIP005;Bruttoinlandsprodukt (Veränderung in %)
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2015;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);3352,341;jew. ME;VGR014;Bruttoinlandsprodukt
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2015;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;jew. ME;STR006;Gütersteuern abzügl. Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2015;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);3018,733;jew. ME;BWS001;Bruttowertschöpfung
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2015;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;jew. ME;SUB003;Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;jew. ME;BIP004;Bruttoinlandsprodukt je Einwohner
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;jew. ME;STR020;Gütersteuern
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;Prozent;BIP005;Bruttoinlandsprodukt (Veränderung in %)
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);3576,221;jew. ME;VGR014;Bruttoinlandsprodukt
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;jew. ME;STR006;Gütersteuern abzügl. Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);3216,759;jew. ME;BWS001;Bruttowertschöpfung
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;jew. ME;SUB003;Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);102,740;jew. ME;BIP004;Bruttoinlandsprodukt je Einwohner
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);98,670;jew. ME;STR020;Gütersteuern
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);2,7;Prozent;BIP005;Bruttoinlandsprodukt (Veränderung in %)
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);102,110;jew. ME;VGR014;Bruttoinlandsprodukt
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);98,730;jew. ME;STR006;Gütersteuern abzügl. Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);102,520;jew. ME;BWS001;Bruttowertschöpfung
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2017;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);25,610;jew. ME;SUB003;Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;jew. ME;BIP004;Bruttoinlandsprodukt je Einwohner
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;jew. ME;STR020;Gütersteuern
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;Prozent;BIP005;Bruttoinlandsprodukt (Veränderung in %)
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);3368,339;jew. ME;VGR014;Bruttoinlandsprodukt
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;jew. ME;STR006;Gütersteuern abzügl. Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);3010,957;jew. ME;BWS001;Bruttowertschöpfung
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;jew. ME;SUB003;Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2015;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;jew. ME;BIP004;Bruttoinlandsprodukt je Einwohner
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2015;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;jew. ME;STR020;Gütersteuern
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2015;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;Prozent;BIP005;Bruttoinlandsprodukt (Veränderung in %)
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2015;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);3034,516;jew. ME;VGR014;Bruttoinlandsprodukt
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2015;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;jew. ME;STR006;Gütersteuern abzügl. Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2015;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);2700,857;jew. ME;BWS001;Bruttowertschöpfung
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2015;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;jew. ME;SUB003;Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);104,350;jew. ME;BIP004;Bruttoinlandsprodukt je Einwohner
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);102,510;jew. ME;STR020;Gütersteuern
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);1,0;Prozent;BIP005;Bruttoinlandsprodukt (Veränderung in %)
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);104,270;jew. ME;VGR014;Bruttoinlandsprodukt
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);102,570;jew. ME;STR006;Gütersteuern abzügl. Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);104,480;jew. ME;BWS001;Bruttowertschöpfung
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2019;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);30,490;jew. ME;SUB003;Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);41481,000;jew. ME;BIP004;Bruttoinlandsprodukt je Einwohner
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);351,277;jew. ME;STR020;Gütersteuern
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);-2,4;Prozent;BIP005;Bruttoinlandsprodukt (Veränderung in %)
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);3449,620;jew. ME;VGR014;Bruttoinlandsprodukt
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);350,623;jew. ME;STR006;Gütersteuern abzügl. Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);3098,997;jew. ME;BWS001;Bruttowertschöpfung
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);0,654;jew. ME;SUB003;Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);104,290;jew. ME;BIP004;Bruttoinlandsprodukt je Einwohner
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);101,530;jew. ME;STR020;Gütersteuern
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);1,4;Prozent;BIP005;Bruttoinlandsprodukt (Veränderung in %)
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);105,090;jew. ME;VGR014;Bruttoinlandsprodukt
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);100,740;jew. ME;STR006;Gütersteuern abzügl. Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);105,600;jew. ME;BWS001;Bruttowertschöpfung
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2022;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);529,840;jew. ME;SUB003;Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);100,000;jew. ME;BIP004;Bruttoinlandsprodukt je Einwohner
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);100,000;jew. ME;STR020;Gütersteuern
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);-4,1;Prozent;BIP005;Bruttoinlandsprodukt (Veränderung in %)
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);100,000;jew. ME;VGR014;Bruttoinlandsprodukt
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);100,000;jew. ME;STR006;Gütersteuern abzügl. Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);100,000;jew. ME;BWS001;Bruttowertschöpfung
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2020;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPKM;preisbereinigt, Kettenindex (2020=100);100,000;jew. ME;SUB003;Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2024;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;jew. ME;BIP004;Bruttoinlandsprodukt je Einwohner
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2024;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;jew. ME;STR020;Gütersteuern
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2024;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;Prozent;BIP005;Bruttoinlandsprodukt (Veränderung in %)
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2024;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);3606,923;jew. ME;VGR014;Bruttoinlandsprodukt
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2024;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;jew. ME;STR006;Gütersteuern abzügl. Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2024;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);3270,681;jew. ME;BWS001;Bruttowertschöpfung
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2024;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVK;preisbereinigt, verkettete Volumenang. (Mrd. EUR);-;jew. ME;SUB003;Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2016;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);38812,000;jew. ME;BIP004;Bruttoinlandsprodukt je Einwohner
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2016;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);343,124;jew. ME;STR020;Gütersteuern
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2016;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);3,6;Prozent;BIP005;Bruttoinlandsprodukt (Veränderung in %)
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2016;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);3196,110;jew. ME;VGR014;Bruttoinlandsprodukt
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2016;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);343,064;jew. ME;STR006;Gütersteuern abzügl. Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2016;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);2853,046;jew. ME;BWS001;Bruttowertschöpfung
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2016;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRJPM;in jeweiligen Preisen (Mrd. EUR);0,060;jew. ME;SUB003;Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;jew. ME;BIP004;Bruttoinlandsprodukt je Einwohner
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;jew. ME;STR020;Gütersteuern
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;Prozent;BIP005;Bruttoinlandsprodukt (Veränderung in %)
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);3576,094;jew. ME;VGR014;Bruttoinlandsprodukt
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;jew. ME;STR006;Gütersteuern abzügl. Gütersubventionen
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);3216,677;jew. ME;BWS001;Bruttowertschöpfung
+81000;Volkswirtschaftliche Gesamtrechnungen des Bundes;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;VGRPB5;Preisbasis (jeweilige Preise / preisbereinigt);VGRPVU;preisbereinigt, unverkettete Volumenang.(Mrd. EUR);-;jew. ME;SUB003;Gütersubventionen
+
+</pre></div></div>
+</div>
 <p>More likely, you are interested in the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, which is accessible via the <code class="docutils literal notranslate"><span class="pre">.data</span></code> attribute.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<p>Finally, you can also access the metadata for this table via the <code class="docutils literal notranslate"><span class="pre">.metadata</span></code> attribute.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Jahr</th>
+      <th>Preisbasis (jeweilige Preise / preisbereinigt)</th>
+      <th>Bruttoinlandsprodukt (Veränderung in %)__Prozent</th>
+      <th>Bruttoinlandsprodukt je Einwohner__jew. ME</th>
+      <th>Bruttoinlandsprodukt__jew. ME</th>
+      <th>Bruttowertschöpfung__jew. ME</th>
+      <th>Gütersteuern abzügl. Gütersubventionen__jew. ME</th>
+      <th>Gütersteuern__jew. ME</th>
+      <th>Gütersubventionen__jew. ME</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2015</td>
+      <td>in jeweiligen Preisen (Mrd. EUR)</td>
+      <td>3.4</td>
+      <td>37774.00</td>
+      <td>3085.650</td>
+      <td>2751.937</td>
+      <td>333.713</td>
+      <td>333.770</td>
+      <td>0.057</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2015</td>
+      <td>preisbereinigt, Kettenindex (2020=100)</td>
+      <td>1.7</td>
+      <td>98.93</td>
+      <td>97.180</td>
+      <td>97.410</td>
+      <td>95.360</td>
+      <td>95.290</td>
+      <td>17.960</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2015</td>
+      <td>preisbereinigt, verkettete Volumenang. (Mrd. EUR)</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3352.341</td>
+      <td>3018.733</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2015</td>
+      <td>preisbereinigt, unverkettete Volumenang.(Mrd. EUR)</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3034.516</td>
+      <td>2700.857</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2016</td>
+      <td>in jeweiligen Preisen (Mrd. EUR)</td>
+      <td>3.6</td>
+      <td>38812.00</td>
+      <td>3196.110</td>
+      <td>2853.046</td>
+      <td>343.064</td>
+      <td>343.124</td>
+      <td>0.060</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>Finally, you can also access the metadata for this table via the <code class="docutils literal notranslate"><span class="pre">.metadata</span></code> attribute.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
 
 <span class="n">pprint</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">metadata</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#39;Copyright&#39;: &#39;© Statistisches Bundesamt (Destatis), 2025&#39;,
+ &#39;Ident&#39;: {&#39;Method&#39;: &#39;table&#39;, &#39;Service&#39;: &#39;metadata&#39;},
+ &#39;Object&#39;: {&#39;Code&#39;: &#39;81000-0001&#39;,
+            &#39;Content&#39;: &#39;VGR des Bundes - Bruttowertschöpfung, &#39;
+                       &#39;Bruttoinlandsprodukt\n&#39;
+                       &#39;(nominal/preisbereinigt): Deutschland, Jahre&#39;,
+            &#39;Structure&#39;: {&#39;Columns&#39;: [{&#39;Code&#39;: &#39;JAHR&#39;,
+                                       &#39;Content&#39;: &#39;Jahr&#39;,
+                                       &#39;Functions&#39;: None,
+                                       &#39;Selected&#39;: &#39;10&#39;,
+                                       &#39;Structure&#39;: None,
+                                       &#39;Type&#39;: &#39;Merkmal&#39;,
+                                       &#39;Updated&#39;: &#39;see parent&#39;,
+                                       &#39;Values&#39;: &#39;10&#39;}],
+                          &#39;Head&#39;: {&#39;Code&#39;: &#39;81000&#39;,
+                                   &#39;Content&#39;: &#39;Volkswirtschaftliche &#39;
+                                              &#39;Gesamtrechnungen des Bundes&#39;,
+                                   &#39;Functions&#39;: None,
+                                   &#39;Selected&#39;: None,
+                                   &#39;Structure&#39;: [{&#39;Code&#39;: &#39;DINSG&#39;,
+                                                  &#39;Content&#39;: &#39;Deutschland &#39;
+                                                             &#39;insgesamt&#39;,
+                                                  &#39;Functions&#39;: None,
+                                                  &#39;Selected&#39;: &#39;1&#39;,
+                                                  &#39;Structure&#39;: None,
+                                                  &#39;Type&#39;: &#39;Merkmal&#39;,
+                                                  &#39;Updated&#39;: &#39;see parent&#39;,
+                                                  &#39;Values&#39;: &#39;1&#39;}],
+                                   &#39;Type&#39;: &#39;Statistik&#39;,
+                                   &#39;Updated&#39;: &#39;see parent&#39;,
+                                   &#39;Values&#39;: None},
+                          &#39;Rows&#39;: [{&#39;Code&#39;: &#39;BWS001&#39;,
+                                    &#39;Content&#39;: &#39;Bruttowertschöpfung&#39;,
+                                    &#39;Functions&#39;: None,
+                                    &#39;Selected&#39;: None,
+                                    &#39;Structure&#39;: None,
+                                    &#39;Type&#39;: &#39;Merkmal&#39;,
+                                    &#39;Updated&#39;: &#39;see parent&#39;,
+                                    &#39;Values&#39;: None},
+                                   {&#39;Code&#39;: &#39;STR006&#39;,
+                                    &#39;Content&#39;: &#39;Gütersteuern abzügl. &#39;
+                                               &#39;Gütersubventionen&#39;,
+                                    &#39;Functions&#39;: None,
+                                    &#39;Selected&#39;: None,
+                                    &#39;Structure&#39;: None,
+                                    &#39;Type&#39;: &#39;Merkmal&#39;,
+                                    &#39;Updated&#39;: &#39;see parent&#39;,
+                                    &#39;Values&#39;: None},
+                                   {&#39;Code&#39;: &#39;STR020&#39;,
+                                    &#39;Content&#39;: &#39;Gütersteuern&#39;,
+                                    &#39;Functions&#39;: None,
+                                    &#39;Selected&#39;: None,
+                                    &#39;Structure&#39;: None,
+                                    &#39;Type&#39;: &#39;Merkmal&#39;,
+                                    &#39;Updated&#39;: &#39;see parent&#39;,
+                                    &#39;Values&#39;: None},
+                                   {&#39;Code&#39;: &#39;SUB003&#39;,
+                                    &#39;Content&#39;: &#39;Gütersubventionen&#39;,
+                                    &#39;Functions&#39;: None,
+                                    &#39;Selected&#39;: None,
+                                    &#39;Structure&#39;: None,
+                                    &#39;Type&#39;: &#39;Merkmal&#39;,
+                                    &#39;Updated&#39;: &#39;see parent&#39;,
+                                    &#39;Values&#39;: None},
+                                   {&#39;Code&#39;: &#39;VGR014&#39;,
+                                    &#39;Content&#39;: &#39;Bruttoinlandsprodukt&#39;,
+                                    &#39;Functions&#39;: None,
+                                    &#39;Selected&#39;: None,
+                                    &#39;Structure&#39;: None,
+                                    &#39;Type&#39;: &#39;Merkmal&#39;,
+                                    &#39;Updated&#39;: &#39;see parent&#39;,
+                                    &#39;Values&#39;: None},
+                                   {&#39;Code&#39;: &#39;BIP005&#39;,
+                                    &#39;Content&#39;: &#39;Bruttoinlandsprodukt &#39;
+                                               &#39;(Veränderung in %)&#39;,
+                                    &#39;Functions&#39;: None,
+                                    &#39;Selected&#39;: None,
+                                    &#39;Structure&#39;: None,
+                                    &#39;Type&#39;: &#39;Merkmal&#39;,
+                                    &#39;Updated&#39;: &#39;see parent&#39;,
+                                    &#39;Values&#39;: None},
+                                   {&#39;Code&#39;: &#39;BIP004&#39;,
+                                    &#39;Content&#39;: &#39;Bruttoinlandsprodukt je &#39;
+                                               &#39;Einwohner&#39;,
+                                    &#39;Functions&#39;: None,
+                                    &#39;Selected&#39;: None,
+                                    &#39;Structure&#39;: None,
+                                    &#39;Type&#39;: &#39;Merkmal&#39;,
+                                    &#39;Updated&#39;: &#39;see parent&#39;,
+                                    &#39;Values&#39;: None}],
+                          &#39;Subheading&#39;: {&#39;Code&#39;: &#39;VGRPB5&#39;,
+                                         &#39;Content&#39;: &#39;Preisbasis (jeweilige &#39;
+                                                    &#39;Preise / preisbereinigt)&#39;,
+                                         &#39;Functions&#39;: None,
+                                         &#39;Selected&#39;: None,
+                                         &#39;Structure&#39;: None,
+                                         &#39;Type&#39;: &#39;Merkmal&#39;,
+                                         &#39;Updated&#39;: &#39;see parent&#39;,
+                                         &#39;Values&#39;: None},
+                          &#39;Subtitel&#39;: None},
+            &#39;Time&#39;: {&#39;From&#39;: &#39;1991&#39;, &#39;To&#39;: &#39;2024&#39;},
+            &#39;Updated&#39;: &#39;27.08.2024 17:20:21h&#39;,
+            &#39;Valid&#39;: &#39;false&#39;},
+ &#39;Parameter&#39;: {&#39;area&#39;: &#39;Alle&#39;,
+               &#39;language&#39;: &#39;de&#39;,
+               &#39;name&#39;: &#39;81000-0001&#39;,
+               &#39;password&#39;: &#39;********************&#39;,
+               &#39;username&#39;: &#39;********************&#39;},
+ &#39;Status&#39;: {&#39;Code&#39;: 0, &#39;Content&#39;: &#39;erfolgreich&#39;, &#39;Type&#39;: &#39;Information&#39;}}
+</pre></div></div>
 </div>
 </section>
 <section id="How-pystatis-prepares-the-data-for-you">
@@ -238,8 +775,8 @@
 </tbody>
 </table>
 <p>The same table has the following pandas representation after being “prettified” by <code class="docutils literal notranslate"><span class="pre">pystatis</span></code>:</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="s2">&quot;11111-02-01-4&quot;</span><span class="p">)</span>
@@ -247,6 +784,78 @@
 <span class="n">t</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+INFO:pystatis.http_helper:Database selected: regio
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+hit
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+INFO:pystatis.http_helper:Code 0: erfolgreich
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Stichtag</th>
+      <th>Amtlicher Gemeindeschlüssel (AGS)__Code</th>
+      <th>Amtlicher Gemeindeschlüssel (AGS)</th>
+      <th>Zahl der Gemeinden__Anzahl</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2023-12-31</td>
+      <td>DG</td>
+      <td>Deutschland</td>
+      <td>10775.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2023-12-31</td>
+      <td>01</td>
+      <td>Schleswig-Holstein</td>
+      <td>1104.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
 </div>
 <p>As you can see and hopefully agree, the pandas version (what we call “prettified”) provides the same information, actually even more, because the header column names have become meaningful and there is a lot less noise that you need to filter out before you can get to the actual data.</p>
 <p>For Zensus <code class="docutils literal notranslate"><span class="pre">pystatis</span></code> is basically doing the same, but in a slightly different way because since the release of Zensus 2022 the API no longer returns each measurement as a single column but only a single column for all values. <code class="docutils literal notranslate"><span class="pre">pystatis</span></code> is transforming this long data format back into a wide data format, so you can work with a tidy data set. See the following example of Table “4000W-1002” to understand what is going on.</p>
@@ -346,8 +955,8 @@
 </tr>
 </tbody>
 </table>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="s2">&quot;4000W-1002&quot;</span><span class="p">)</span>
@@ -355,6 +964,64 @@
 <span class="n">t</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+INFO:pystatis.cache:Data was successfully cached under /Users/miay/.pystatis/data/4000W-1002/3d1d8e69a7d4397b08b0/20250412.zip.
+INFO:pystatis.http_helper:Database selected: zensus
+INFO:pystatis.http_helper:Code 0: erfolgreich
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Stichtag</th>
+      <th>Fläche der Wohnung (10 m²-Intervalle)</th>
+      <th>Wohnungen in Gebäuden mit Wohnraum__%</th>
+      <th>Wohnungen in Gebäuden mit Wohnraum__Anzahl</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2022-05-15</td>
+      <td>Insgesamt</td>
+      <td>100.0</td>
+      <td>43106589.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2022-05-15</td>
+      <td>Unter 30 m²</td>
+      <td>2.1</td>
+      <td>909120.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
 </div>
 <p>As you can see, <code class="docutils literal notranslate"><span class="pre">pystatis</span></code> is not only increasing readability and making data access easy, it also reduces the amount of data you have to work with. Going from a long format back to a tidy wide format means cutting the number of rows to 1/3 because all three measurements get back their own column.</p>
 <p><code class="docutils literal notranslate"><span class="pre">pystatis</span></code> is doing the following things (by default) when parsing the original raw string:</p>
@@ -371,20 +1038,129 @@
 <section id="All-get_data()-parameters-explained">
 <h2>All <code class="docutils literal notranslate"><span class="pre">get_data()</span></code> parameters explained<a class="headerlink" href="#All-get_data()-parameters-explained" title="Link to this heading"></a></h2>
 <p>You can find a list of all parameters in the <a class="reference external" href="https://correlaid.github.io/pystatis/dev/pystatis.html#pystatis.table.Table.get_data">documentation</a> or in the docstring. All parameters are keyword parameters only (fancy Python star syntax: <code class="docutils literal notranslate"><span class="pre">f(*,</span> <span class="pre">everything</span> <span class="pre">from</span> <span class="pre">here</span> <span class="pre">on</span> <span class="pre">has</span> <span class="pre">to</span> <span class="pre">be</span> <span class="pre">a</span> <span class="pre">keyword</span> <span class="pre">only</span> <span class="pre">parameter)</span></code>).</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">?</span>t.get_data
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">Signature:</span>
+t.get_data(
+    *,
+    prettify: bool = <span class="ansi-bold" style="color: rgb(0,135,0)">True</span>,
+    area: str = <span class="ansi-yellow-fg">&#39;all&#39;</span>,
+    startyear: str = <span class="ansi-yellow-fg">&#39;&#39;</span>,
+    endyear: str = <span class="ansi-yellow-fg">&#39;&#39;</span>,
+    timeslices: str = <span class="ansi-yellow-fg">&#39;&#39;</span>,
+    regionalvariable: str = <span class="ansi-yellow-fg">&#39;&#39;</span>,
+    regionalkey: str = <span class="ansi-yellow-fg">&#39;&#39;</span>,
+    stand: str = <span class="ansi-yellow-fg">&#39;&#39;</span>,
+    language: str = <span class="ansi-yellow-fg">&#39;de&#39;</span>,
+    quality: str = <span class="ansi-yellow-fg">&#39;off&#39;</span>,
+) -&gt; <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>
+<span class="ansi-red-fg">Docstring:</span>
+Downloads raw data and metadata from GENESIS-Online.
+
+Additional keyword arguments are passed on to the GENESIS-Online GET request for tablefile.
+
+Args:
+    prettify (bool, optional): Reformats the table into a readable format. Defaults to True.
+    area (str, optional): Area to search for the object in GENESIS-Online. Defaults to &#34;all&#34;.
+    startyear (str, optional): Data beginning with that year will be returned.
+        Parameter is cumulative to `timeslices`. Supports 4 digits (jjjj) or 4+2 digits (jjjj/jj).
+        Accepts values between &#34;1900&#34; and &#34;2100&#34;.
+    endyear (str, optional): Data ending with that year will be returned.
+        Parameter is cumulative to `timeslices`. Supports 4 digits (jjjj) or 4+2 digits (jjjj/jj).
+        Accepts values between &#34;1900&#34; and &#34;2100&#34;.
+    timeslices (str, optional): Number of time slices to be returned.
+        This parameter is cumulative to `startyear` and `endyear`.
+    regionalvariable (str, optional): &#34;code&#34; of the regional classification (RKMerkmal),
+        to which the selection using `regionalkey` is to be applied.
+        Accepts 1-6 characters.
+        Can be used with any table that uses a regional attribute.
+
+        The following attribute codes are handled by `pystatis` by adding an extra column for the official municipality key (AGS):
+
+        - GENESIS-Online (for all tables, see /catalogue/variables):
+            - &#34;DLAND&#34; (Bundesländer, 16)
+            - &#34;DINSG&#34; (Deutschland insgesamt, 1) -&gt; will not return extra AGS column
+            - &#34;DLANDR&#34; (Bundesländer mit Restposition, 17)
+            - &#34;DLANDS&#34; (Bundesländer mit Seehäfen, 6)
+            - &#34;DLANDU&#34; (Bundesländer und Ausland, 17)
+            - &#34;DLANDX&#34; (Bundesländer mit Ausland und Restposition, 18)
+            - &#34;KREISE&#34; (Kreise, 476)
+            - &#34;REGBEZ&#34; (Regierungsbezirke, 38)
+
+        - Regionalstatistik (only for tables ending with &#34;B&#34;, see /catalogue/variables):
+            - &#34;DG&#34; (Deutschland, 1) -&gt; will not return ARS column
+            - &#34;DINSG&#34; (Deutschland räumlich insgesamt, 1) -&gt; will not return ARS column
+            - &#34;DLAND&#34; (Bundesländer, 16)
+            - &#34;DLANDU&#34; Bundesländer, 19)
+            - &#34;FAMTGEM&#34; (Gemeinden und Gemeindeverbände, 12779)
+            - &#34;FDINSG&#34; (Flächenländer insgesamt, 1) -&gt; will not return ARS column
+            - &#34;FDLAND&#34; (Bundesländer, 13)
+            - &#34;FGEMEIN&#34; (Gemeinden, 4795)
+            - &#34;FKREISE&#34; (Kreise und kreisfreie Städte, 411)
+            - &#34;FREGBEZ&#34; (Regierungsbezirke / Statistische Regionen, 41)
+            - &#34;GEMEIN&#34; (Gemeinden, 13565)
+            - &#34;GRSTADT&#34; (Großstadt, 15)
+            - &#34;KREISE&#34; (Kreise und kreisfreie Städte, 489)
+            - &#34;NUTS-2&#34; (NUTS-II Regionen, 38)
+            - &#34;PGEM-2DI&#34; (Gemeinden Pendler, 6857)
+            - &#34;PGEMEIN&#34; (Gemeinden Pendler, 6857)
+            - &#34;REGBEZ&#34; (Regierungsbezirke / Statistische Regionen, 44)
+
+        - Zensusdatenbank (for all tables, see /catalogue/variables):
+            - &#34;GEOBL1&#34; (Bundesländer, 16)
+            - &#34;GEOBL3&#34; (Bundesländer, 16)
+            - &#34;GEOBZ1&#34; (Bezirke (Hamburg und Berlin), 19)
+            - &#34;GEODL1&#34; (Deutschland, 1) -&gt; will not return extra ARS column
+            - &#34;GEODL3&#34; (Deutschland, 1) -&gt; will not return extra ARS column
+            - &#34;GEOGM1&#34; (Gemeinden, 11340)
+            - &#34;GEOGM2&#34; (Gemeinden mit min. 10_000 Einwohnern, 1574)
+            - &#34;GEOGM3&#34; (Gemeinden mit min. 10_000 Einwohnern, 1574)
+            - &#34;GEOGM4&#34; (Gemeinden (Gebietsstand 15.05.2022), 10787)
+            - &#34;GEOGM5&#34; (Gemeinden &gt; 10.000 Einwohner (Stand 15.05.2022), 1578)
+            - &#34;GEOLK1&#34; (Landkreise u. krsfr. Städte (Stand 09.05.11), 412)
+            - &#34;GEOLK3&#34; (Landkreise und kreisfreie Städte, 412)
+            - &#34;GEOLK4&#34; (Landkreise u. krsfr. Städte (Stand 15.05.22), 400)
+            - &#34;GEORB1&#34; (Regierungsbezirke/Statistische Regionen, 36)
+            - &#34;GEORB3&#34; (Regierungsbezirke/Statistische Regionen, 36)
+            - &#34;GEOVB1&#34; (Gemeindeverbände (Gebietsstand 09.05.2011), 1333)
+            - &#34;GEOVB2&#34; (Gemeindeverbände mit mindestens 10 000 Einwohnern, 338)
+            - &#34;GEOVB3&#34; (Gemeindeverbände mit mindestens 10 000 Einwohnern, 157)
+            - &#34;GEOVB4&#34; (Gemeindeverbände (Gebietsstand 15.05.2022), 1207)
+            - &#34;GEOVB5&#34; (Gemeindeverbände &gt; 10.000 Einw. (Stand 15.05.2022), 588)
+
+    regionalkey (str, optional): Official municipality key (AGS).
+        Multiple values can be passed as a comma-separated list.
+        Accepts 1-12 characters. &#34;*&#34; can be used as wildcard.
+    stand (str, optional): Only download the table if it is newer than the status date.
+        &#34;tt.mm.jjjj hh:mm&#34; or &#34;tt.mm.jjjj&#34;. Example: &#34;24.12.2001 19:15&#34;.
+    language (str, optional): Messages and data descriptions are supplied in this language.
+        For GENESIS and Zensus, [&#39;de&#39;, &#39;en&#39;] are supported. For Regionalstatistik, only &#39;de&#39; is supported.
+    quality (str): One of &#34;on&#34; or &#34;off&#34;. If &#34;on&#34;, quality symbols are part of the download and
+        additional columns (__q) are displayed. Defaults to &#34;off&#34;.
+        The explanation of the quality labels can be found online after retrieving the table values,
+        table -&gt; explanation of symbols or at e.g.
+        https://www-genesis.destatis.de/genesis/online?operation=ergebnistabelleQualitaet&amp;language=en&amp;levelindex=3&amp;levelid=1719342760835#abreadcrumb.
+<span class="ansi-red-fg">File:</span>      ~/git/github/CorrelAid/pystatis/src/pystatis/table.py
+<span class="ansi-red-fg">Type:</span>      method
+</pre></div></div>
+</div>
 <section id="prettify">
 <h3><code class="docutils literal notranslate"><span class="pre">prettify</span></code><a class="headerlink" href="#prettify" title="Link to this heading"></a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">prettify</span></code> is a boolean and can only be <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>. The default is <code class="docutils literal notranslate"><span class="pre">True</span></code> because <code class="docutils literal notranslate"><span class="pre">prettify</span></code> is basically doing all the above mentioned work behind the scenes to transform the raw data into the nicer tidy version. However, as we don’t know what specific requirements you have, it can always be the case that we are not doing what you want to do or we are doing it in a wrong way. Instead of starting from scratch with the raw string, <code class="docutils literal notranslate"><span class="pre">prettify=False</span></code> will still give you a pandas
 <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> but without the transformations described in the previous sections. Basically, <code class="docutils literal notranslate"><span class="pre">prettify=False</span></code> gives you the raw data as a pandas <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> instead of a string without any transformation from our side.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="s2">&quot;1000A-0000&quot;</span><span class="p">)</span>
@@ -393,7 +1169,122 @@
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+INFO:pystatis.http_helper:Database selected: zensus
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+hit
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+INFO:pystatis.http_helper:Code 0: erfolgreich
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>statistics_code</th>
+      <th>statistics_label</th>
+      <th>time_code</th>
+      <th>time_label</th>
+      <th>time</th>
+      <th>1_variable_code</th>
+      <th>1_variable_label</th>
+      <th>1_variable_attribute_code</th>
+      <th>1_variable_attribute_label</th>
+      <th>value</th>
+      <th>value_unit</th>
+      <th>value_variable_code</th>
+      <th>value_variable_label</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1000A</td>
+      <td>Bevölkerung kompakt (Gebietsstand 15.05.2022)</td>
+      <td>STAG</td>
+      <td>Stichtag</td>
+      <td>2022-05-15</td>
+      <td>GEODL1</td>
+      <td>Deutschland</td>
+      <td>DG</td>
+      <td>Deutschland</td>
+      <td>82719540</td>
+      <td>Anzahl</td>
+      <td>PRS001</td>
+      <td>Personen</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1000A</td>
+      <td>Bevölkerung kompakt (Gebietsstand 15.05.2022)</td>
+      <td>STAG</td>
+      <td>Stichtag</td>
+      <td>2022-05-15</td>
+      <td>GEOGM4</td>
+      <td>Gemeinden (Gebietsstand 15.05.2022)</td>
+      <td>092760130130</td>
+      <td>Lindberg</td>
+      <td>2294</td>
+      <td>Anzahl</td>
+      <td>PRS018</td>
+      <td>Personen</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1000A</td>
+      <td>Bevölkerung kompakt (Gebietsstand 15.05.2022)</td>
+      <td>STAG</td>
+      <td>Stichtag</td>
+      <td>2022-05-15</td>
+      <td>GEOGM4</td>
+      <td>Gemeinden (Gebietsstand 15.05.2022)</td>
+      <td>073355011022</td>
+      <td>Landstuhl, Sickingenstadt, Stadt</td>
+      <td>8305</td>
+      <td>Anzahl</td>
+      <td>PRS018</td>
+      <td>Personen</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
@@ -401,20 +1292,116 @@
 <span class="n">t</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="s2">&quot;1000A-0000&quot;</span><span class="p">)</span>
 <span class="n">t</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">prettify</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">t</span><span class="o">.</span><span class="n">data</span><span class="p">[</span>
-    <span class="n">t</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;Amtlicher Regionalschlüssel (ARS)&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span>
-        <span class="p">[</span><span class="s2">&quot;092760130130&quot;</span><span class="p">,</span> <span class="s2">&quot;073355011022&quot;</span><span class="p">,</span> <span class="s2">&quot;130765654053&quot;</span><span class="p">]</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;Amtlicher Regionalschlüssel (ARS)__Code&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span>
+        <span class="p">[</span><span class="s2">&quot;092760130130&quot;</span><span class="p">,</span> <span class="s2">&quot;073355011022&quot;</span><span class="p">,</span> <span class="s2">&quot;DG&quot;</span><span class="p">]</span>
     <span class="p">)</span>
 <span class="p">]</span>
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+INFO:pystatis.http_helper:Database selected: zensus
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+hit
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+INFO:pystatis.http_helper:Code 0: erfolgreich
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Stichtag</th>
+      <th>Amtlicher Regionalschlüssel (ARS)__Code</th>
+      <th>Amtlicher Regionalschlüssel (ARS)</th>
+      <th>Personen__Anzahl</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2022-05-15</td>
+      <td>DG</td>
+      <td>Deutschland</td>
+      <td>82719540</td>
+    </tr>
+    <tr>
+      <th>4816</th>
+      <td>2022-05-15</td>
+      <td>073355011022</td>
+      <td>Landstuhl, Sickingenstadt, Stadt</td>
+      <td>8305</td>
+    </tr>
+    <tr>
+      <th>6934</th>
+      <td>2022-05-15</td>
+      <td>092760130130</td>
+      <td>Lindberg</td>
+      <td>2294</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 10787 entries, 0 to 10786
+Data columns (total 4 columns):
+ #   Column                                   Non-Null Count  Dtype
+---  ------                                   --------------  -----
+ 0   Stichtag                                 10787 non-null  datetime64[ns]
+ 1   Amtlicher Regionalschlüssel (ARS)__Code  10787 non-null  object
+ 2   Amtlicher Regionalschlüssel (ARS)        10787 non-null  object
+ 3   Personen__Anzahl                         10787 non-null  int64
+dtypes: datetime64[ns](1), int64(1), object(2)
+memory usage: 337.2+ KB
+</pre></div></div>
 </div>
 </section>
 <section id="area">
@@ -446,8 +1433,8 @@
 <p>All three parameters can be used to fetch data of a certain time range for the given Table. The default is Table specific and has to be checked for each Table, often it is just the latest period of time available.</p>
 <p>The important thing here is that <code class="docutils literal notranslate"><span class="pre">timeslices</span></code> is <strong>cumulative</strong> to the other two options, meaning that <code class="docutils literal notranslate"><span class="pre">timeslices=N</span></code> will give you N years after <code class="docutils literal notranslate"><span class="pre">startyear</span></code> or before <code class="docutils literal notranslate"><span class="pre">endyear</span></code>.</p>
 <p>Let’s say you are interested in school-leaving qualifications over the years in Germany. Then Table <a class="reference external" href="https://www-genesis.destatis.de/genesis//online?operation=table&amp;code=21111-0004">21111-0004</a> might be of interest to you. The description of the table mentions that data is available for the years 1997/98 - 2021/22. But what will the API return if you specify no time parameter?</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="s2">&quot;21111-0004&quot;</span><span class="p">)</span>
@@ -456,9 +1443,28 @@
 </pre></div>
 </div>
 </div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+INFO:pystatis.cache:Data was successfully cached under /Users/miay/.pystatis/data/21111-0004/7f787b175d83ae25ee55/20250412.zip.
+INFO:pystatis.http_helper:Database selected: genesis
+INFO:pystatis.http_helper:Code 0: erfolgreich
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([&#39;2021-P1Y&#39;, &#39;2022-P1Y&#39;], dtype=object)
+</pre></div></div>
+</div>
 <p>As you can see, <code class="docutils literal notranslate"><span class="pre">pystatis</span></code> only returns you, for whatever reason, the years 2020/21 and 2021/22. How can you get the ten latest years? Let’s see:</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">timeslices</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
@@ -466,8 +1472,29 @@
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+INFO:pystatis.cache:Data was successfully cached under /Users/miay/.pystatis/data/21111-0004/188b2885044566b1329d/20250412.zip.
+INFO:pystatis.http_helper:Database selected: genesis
+INFO:pystatis.http_helper:Code 0: erfolgreich
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([&#39;2013-P1Y&#39;, &#39;2014-P1Y&#39;, &#39;2015-P1Y&#39;, &#39;2016-P1Y&#39;, &#39;2017-P1Y&#39;,
+       &#39;2018-P1Y&#39;, &#39;2019-P1Y&#39;, &#39;2020-P1Y&#39;, &#39;2021-P1Y&#39;, &#39;2022-P1Y&#39;],
+      dtype=object)
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">startyear</span><span class="o">=</span><span class="s2">&quot;2012&quot;</span><span class="p">)</span>
@@ -475,9 +1502,30 @@
 </pre></div>
 </div>
 </div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+INFO:pystatis.cache:Data was successfully cached under /Users/miay/.pystatis/data/21111-0004/2cd6fefd6a6c423b70bd/20250412.zip.
+INFO:pystatis.http_helper:Database selected: genesis
+INFO:pystatis.http_helper:Code 0: erfolgreich
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([&#39;2012-P1Y&#39;, &#39;2013-P1Y&#39;, &#39;2014-P1Y&#39;, &#39;2015-P1Y&#39;, &#39;2016-P1Y&#39;,
+       &#39;2017-P1Y&#39;, &#39;2018-P1Y&#39;, &#39;2019-P1Y&#39;, &#39;2020-P1Y&#39;, &#39;2021-P1Y&#39;,
+       &#39;2022-P1Y&#39;], dtype=object)
+</pre></div></div>
+</div>
 <p>If you are only interested in a time period somewhere in between, you need to use both <code class="docutils literal notranslate"><span class="pre">startyear</span></code> and <code class="docutils literal notranslate"><span class="pre">endyear</span></code>:</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">startyear</span><span class="o">=</span><span class="s2">&quot;2012&quot;</span><span class="p">,</span> <span class="n">endyear</span><span class="o">=</span><span class="s2">&quot;2015&quot;</span><span class="p">)</span>
@@ -485,8 +1533,27 @@
 </pre></div>
 </div>
 </div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+INFO:pystatis.cache:Data was successfully cached under /Users/miay/.pystatis/data/21111-0004/23e95897ca6a80fd2617/20250412.zip.
+INFO:pystatis.http_helper:Database selected: genesis
+INFO:pystatis.http_helper:Code 0: erfolgreich
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([&#39;2012-P1Y&#39;, &#39;2013-P1Y&#39;, &#39;2014-P1Y&#39;, &#39;2015-P1Y&#39;], dtype=object)
+</pre></div></div>
+</div>
 <p>You might expect that using <code class="docutils literal notranslate"><span class="pre">startyear</span></code> and <code class="docutils literal notranslate"><span class="pre">timeslices</span></code> might give the same result, but it turns out that this is not the case and quite misleading. In fact, <code class="docutils literal notranslate"><span class="pre">timeslices</span></code> is always coming on top of whatever you have selected with <code class="docutils literal notranslate"><span class="pre">startyear</span></code> and <code class="docutils literal notranslate"><span class="pre">endyear</span></code>. Is that confusing? We definitely think so!</p>
-<div class="nbinput nblast docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
@@ -497,7 +1564,26 @@
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+INFO:pystatis.cache:Data was successfully cached under /Users/miay/.pystatis/data/21111-0004/3286f8f1af46f895cd26/20250412.zip.
+INFO:pystatis.http_helper:Database selected: genesis
+INFO:pystatis.http_helper:Code 0: erfolgreich
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([&#39;2012-P1Y&#39;, &#39;2013-P1Y&#39;, &#39;2014-P1Y&#39;, &#39;2015-P1Y&#39;, &#39;2020-P1Y&#39;,
+       &#39;2021-P1Y&#39;, &#39;2022-P1Y&#39;], dtype=object)
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
@@ -508,13 +1594,35 @@
 </pre></div>
 </div>
 </div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+INFO:pystatis.cache:Data was successfully cached under /Users/miay/.pystatis/data/21111-0004/6e1a814d2cac7d1233f1/20250412.zip.
+INFO:pystatis.http_helper:Database selected: genesis
+INFO:pystatis.http_helper:Code 0: erfolgreich
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([&#39;1997-P1Y&#39;, &#39;1998-P1Y&#39;, &#39;1999-P1Y&#39;, &#39;2000-P1Y&#39;, &#39;2001-P1Y&#39;,
+       &#39;2002-P1Y&#39;, &#39;2003-P1Y&#39;, &#39;2004-P1Y&#39;, &#39;2005-P1Y&#39;, &#39;2006-P1Y&#39;,
+       &#39;2007-P1Y&#39;, &#39;2008-P1Y&#39;, &#39;2009-P1Y&#39;, &#39;2010-P1Y&#39;, &#39;2011-P1Y&#39;,
+       &#39;2012-P1Y&#39;, &#39;2013-P1Y&#39;, &#39;2014-P1Y&#39;, &#39;2015-P1Y&#39;, &#39;2020-P1Y&#39;,
+       &#39;2021-P1Y&#39;, &#39;2022-P1Y&#39;], dtype=object)
+</pre></div></div>
+</div>
 </section>
 <section id="regionalvariable-and-regionalkey">
 <h3><code class="docutils literal notranslate"><span class="pre">regionalvariable</span></code> and <code class="docutils literal notranslate"><span class="pre">regionalkey</span></code><a class="headerlink" href="#regionalvariable-and-regionalkey" title="Link to this heading"></a></h3>
 <p>Tables that end with a “B” in Regionalstatistik are special: They allow to change the regional depth of the data, meaning that you can fetch data for different regional areas depending on these two variables. The same is true for all Zensus tables.</p>
 <p>To select a specific region area, you can either specify <code class="docutils literal notranslate"><span class="pre">regionalvariable</span></code> and pass one of the reserved codes for this geo variable, or you can directly select a specific region via its key. Let’s see some examples, so let’s analyze Table <a class="reference external" href="https://www.regionalstatistik.de/genesis//online?operation=table&amp;code=12613-01-01-5-B">12613-01-01-5-B</a>:</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="s2">&quot;12613-01-01-5-B&quot;</span><span class="p">)</span>
@@ -523,9 +1631,94 @@
 </pre></div>
 </div>
 </div>
-<p>Instead of fetching the data for all municipalities, we can choose a different regional depth (see the codes <a class="reference external" href="https://correlaid.github.io/pystatis/dev/pystatis.html#module-pystatis.table">here</a>), for example “KRESIE”, one level above “GEMEINDE”, which is the default for this table.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+INFO:pystatis.cache:Data was successfully cached under /Users/miay/.pystatis/data/12613-01-01-5-B/f2058cbcdbbce74f2ba4/20250412.zip.
+INFO:pystatis.http_helper:Database selected: regio
+INFO:pystatis.http_helper:Code 0: erfolgreich
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Jahr</th>
+      <th>Amtlicher Gemeindeschlüssel (AGS)__Code</th>
+      <th>Amtlicher Gemeindeschlüssel (AGS)</th>
+      <th>Geschlecht</th>
+      <th>Gestorbene__Anzahl</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2023</td>
+      <td>01001000</td>
+      <td>Flensburg, kreisfreie Stadt</td>
+      <td>Insgesamt</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2023</td>
+      <td>01001000</td>
+      <td>Flensburg, kreisfreie Stadt</td>
+      <td>männlich</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2023</td>
+      <td>01001000</td>
+      <td>Flensburg, kreisfreie Stadt</td>
+      <td>weiblich</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2023</td>
+      <td>01002000</td>
+      <td>Kiel, kreisfreie Stadt, Landeshauptstadt</td>
+      <td>Insgesamt</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2023</td>
+      <td>01002000</td>
+      <td>Kiel, kreisfreie Stadt, Landeshauptstadt</td>
+      <td>männlich</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>Instead of fetching the data for all municipalities, we can choose a different regional depth (see the codes <a class="reference external" href="https://correlaid.github.io/pystatis/dev/pystatis.html#module-pystatis.table">here</a>), for example “KREISE”, one level above “GEMEINDE”, which is the default for this table.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="s2">&quot;12613-01-01-5-B&quot;</span><span class="p">)</span>
@@ -534,9 +1727,94 @@
 </pre></div>
 </div>
 </div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+INFO:pystatis.cache:Data was successfully cached under /Users/miay/.pystatis/data/12613-01-01-5-B/2827c2eaae48cfa74268/20250412.zip.
+INFO:pystatis.http_helper:Database selected: regio
+INFO:pystatis.http_helper:Code 0: erfolgreich
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Jahr</th>
+      <th>Amtlicher Gemeindeschlüssel (AGS)__Code</th>
+      <th>Amtlicher Gemeindeschlüssel (AGS)</th>
+      <th>Geschlecht</th>
+      <th>Gestorbene__Anzahl</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2023</td>
+      <td>01001</td>
+      <td>Flensburg, kreisfreie Stadt</td>
+      <td>Insgesamt</td>
+      <td>1165.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2023</td>
+      <td>01001</td>
+      <td>Flensburg, kreisfreie Stadt</td>
+      <td>männlich</td>
+      <td>609.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2023</td>
+      <td>01001</td>
+      <td>Flensburg, kreisfreie Stadt</td>
+      <td>weiblich</td>
+      <td>556.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2023</td>
+      <td>01002</td>
+      <td>Kiel, kreisfreie Stadt</td>
+      <td>Insgesamt</td>
+      <td>2758.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2023</td>
+      <td>01002</td>
+      <td>Kiel, kreisfreie Stadt</td>
+      <td>männlich</td>
+      <td>1364.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
 <p><code class="docutils literal notranslate"><span class="pre">regionalkey</span></code> can be used to fetch only certain areas, see <a class="reference external" href="https://datengui.de/statistik-erklaert/ags">https://datengui.de/statistik-erklaert/ags</a>. We now fetch only municipalities in Baden-Württemberg:</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="s2">&quot;12613-01-01-5-B&quot;</span><span class="p">)</span>
@@ -545,12 +1823,97 @@
 </pre></div>
 </div>
 </div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+INFO:pystatis.cache:Data was successfully cached under /Users/miay/.pystatis/data/12613-01-01-5-B/a9ac273e2f2278e1df8b/20250412.zip.
+INFO:pystatis.http_helper:Database selected: regio
+INFO:pystatis.http_helper:Code 0: erfolgreich
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Jahr</th>
+      <th>Amtlicher Gemeindeschlüssel (AGS)__Code</th>
+      <th>Amtlicher Gemeindeschlüssel (AGS)</th>
+      <th>Geschlecht</th>
+      <th>Gestorbene__Anzahl</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2023</td>
+      <td>08111000</td>
+      <td>Stuttgart, Landeshauptstadt</td>
+      <td>Insgesamt</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2023</td>
+      <td>08111000</td>
+      <td>Stuttgart, Landeshauptstadt</td>
+      <td>männlich</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2023</td>
+      <td>08111000</td>
+      <td>Stuttgart, Landeshauptstadt</td>
+      <td>weiblich</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2023</td>
+      <td>08115001</td>
+      <td>Aidlingen</td>
+      <td>Insgesamt</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2023</td>
+      <td>08115001</td>
+      <td>Aidlingen</td>
+      <td>männlich</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
 </section>
 <section id="stand">
 <h3><code class="docutils literal notranslate"><span class="pre">stand</span></code><a class="headerlink" href="#stand" title="Link to this heading"></a></h3>
 <p>Can be used to only download tables that have a version newer than the given date.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="s2">&quot;21111-0004&quot;</span><span class="p">)</span>
@@ -559,16 +1922,124 @@
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+INFO:pystatis.http_helper:Database selected: genesis
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+hit
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+INFO:pystatis.http_helper:Code 0: erfolgreich
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Schuljahr</th>
+      <th>Geschlecht</th>
+      <th>Schulart (mit Abschlussmöglichkeit)</th>
+      <th>Schulabschlüsse</th>
+      <th>Absolventen und Abgänger__Anzahl</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2021-P1Y</td>
+      <td>Insgesamt</td>
+      <td>Insgesamt</td>
+      <td>Insgesamt</td>
+      <td>769411.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2021-P1Y</td>
+      <td>Insgesamt</td>
+      <td>Insgesamt</td>
+      <td>Ohne Hauptschulabschluss</td>
+      <td>52262.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2021-P1Y</td>
+      <td>Insgesamt</td>
+      <td>Insgesamt</td>
+      <td>Hauptschulabschluss</td>
+      <td>125224.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2021-P1Y</td>
+      <td>Insgesamt</td>
+      <td>Insgesamt</td>
+      <td>Mittlerer Schulabschluss</td>
+      <td>331806.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2021-P1Y</td>
+      <td>Insgesamt</td>
+      <td>Insgesamt</td>
+      <td>Fachhochschulreife</td>
+      <td>770.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;Object&quot;</span><span class="p">][</span><span class="s2">&quot;Updated&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;24.11.2023 14:49:25h&#39;
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">stand</span><span class="o">=</span><span class="s2">&quot;01.01.2023&quot;</span><span class="p">)</span>  <span class="c1"># before updated date, so should return data</span>
@@ -576,8 +2047,93 @@
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+INFO:pystatis.cache:Data was successfully cached under /Users/miay/.pystatis/data/21111-0004/6d26e280578c1022c09e/20250412.zip.
+INFO:pystatis.http_helper:Database selected: genesis
+INFO:pystatis.http_helper:Code 0: erfolgreich
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Schuljahr</th>
+      <th>Geschlecht</th>
+      <th>Schulart (mit Abschlussmöglichkeit)</th>
+      <th>Schulabschlüsse</th>
+      <th>Absolventen und Abgänger__Anzahl</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2021-P1Y</td>
+      <td>Insgesamt</td>
+      <td>Insgesamt</td>
+      <td>Insgesamt</td>
+      <td>769411.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2021-P1Y</td>
+      <td>Insgesamt</td>
+      <td>Insgesamt</td>
+      <td>Ohne Hauptschulabschluss</td>
+      <td>52262.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2021-P1Y</td>
+      <td>Insgesamt</td>
+      <td>Insgesamt</td>
+      <td>Hauptschulabschluss</td>
+      <td>125224.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2021-P1Y</td>
+      <td>Insgesamt</td>
+      <td>Insgesamt</td>
+      <td>Mittlerer Schulabschluss</td>
+      <td>331806.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2021-P1Y</td>
+      <td>Insgesamt</td>
+      <td>Insgesamt</td>
+      <td>Fachhochschulreife</td>
+      <td>770.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">stand</span><span class="o">=</span><span class="s2">&quot;01.12.2024&quot;</span><span class="p">)</span>  <span class="c1"># after updated date, so error</span>
@@ -585,12 +2141,60 @@
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NoNewerDataError</span>                          Traceback (most recent call last)
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[32]</span><span class="ansi-green-fg">, line 1</span>
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">1</span> <span class="ansi-yellow-bg">t</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">get_data</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">stand</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-fg ansi-yellow-bg">&#34;</span><span class="ansi-yellow-fg ansi-yellow-bg">01.12.2024</span><span class="ansi-yellow-fg ansi-yellow-bg">&#34;</span><span class="ansi-yellow-bg">)</span>  <span style="color: rgb(95,135,135)"># after updated date, so error</span>
+<span class="ansi-green-fg">      2</span> t.data.head()
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">~/git/github/CorrelAid/pystatis/src/pystatis/table.py:148</span>, in <span class="ansi-cyan-fg">Table.get_data</span><span class="ansi-blue-fg">(self, prettify, area, startyear, endyear, timeslices, regionalvariable, regionalkey, stand, language, quality)</span>
+<span class="ansi-green-fg">    145</span> db_matches = db.identify_db_matches(<span style="color: rgb(0,135,0)">self</span>.name)
+<span class="ansi-green-fg">    146</span> db_name = db.select_db_by_credentials(db_matches)
+<span class="ansi-green-fg">--&gt; </span><span class="ansi-green-fg">148</span> raw_data_bytes = <span class="ansi-yellow-bg">load_data</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">endpoint</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-fg ansi-yellow-bg">&#34;</span><span class="ansi-yellow-fg ansi-yellow-bg">data</span><span class="ansi-yellow-fg ansi-yellow-bg">&#34;</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">method</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-fg ansi-yellow-bg">&#34;</span><span class="ansi-yellow-fg ansi-yellow-bg">tablefile</span><span class="ansi-yellow-fg ansi-yellow-bg">&#34;</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">params</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">params</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">db_name</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">db_name</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">    149</span> <span class="ansi-bold" style="color: rgb(0,135,0)">try</span>:
+<span class="ansi-green-fg">    150</span>     raw_data_str = raw_data_bytes.decode(<span class="ansi-yellow-fg">&#34;</span><span class="ansi-yellow-fg">utf-8-sig</span><span class="ansi-yellow-fg">&#34;</span>)
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">~/git/github/CorrelAid/pystatis/src/pystatis/http_helper.py:53</span>, in <span class="ansi-cyan-fg">load_data</span><span class="ansi-blue-fg">(endpoint, method, params, db_name)</span>
+<span class="ansi-green-fg">     51</span>     data = read_from_cache(cache_dir, name, params)
+<span class="ansi-green-fg">     52</span> <span class="ansi-bold" style="color: rgb(0,135,0)">else</span>:
+<span class="ansi-green-fg">---&gt; </span><span class="ansi-green-fg">53</span>     response = <span class="ansi-yellow-bg">get_data_from_endpoint</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">endpoint</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">method</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">params</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">db_name</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">     54</span>     content_type = response.headers.get(<span class="ansi-yellow-fg">&#34;</span><span class="ansi-yellow-fg">Content-Type</span><span class="ansi-yellow-fg">&#34;</span>, <span class="ansi-yellow-fg">&#34;</span><span class="ansi-yellow-fg">text/csv</span><span class="ansi-yellow-fg">&#34;</span>).split(<span class="ansi-yellow-fg">&#34;</span><span class="ansi-yellow-fg">/</span><span class="ansi-yellow-fg">&#34;</span>)[
+<span class="ansi-green-fg">     55</span>         -<span class="ansi-green-fg">1</span>
+<span class="ansi-green-fg">     56</span>     ]
+<span class="ansi-green-fg">     57</span>     data = response.content
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">~/git/github/CorrelAid/pystatis/src/pystatis/http_helper.py:148</span>, in <span class="ansi-cyan-fg">get_data_from_endpoint</span><span class="ansi-blue-fg">(endpoint, method, params, db_name)</span>
+<span class="ansi-green-fg">    146</span> response.encoding = <span class="ansi-yellow-fg">&#34;</span><span class="ansi-yellow-fg">UTF-8</span><span class="ansi-yellow-fg">&#34;</span>
+<span class="ansi-green-fg">    147</span> _check_invalid_status_code(response)
+<span class="ansi-green-fg">--&gt; </span><span class="ansi-green-fg">148</span> <span class="ansi-yellow-bg">_check_invalid_destatis_status_code</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">response</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">    150</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> response
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">~/git/github/CorrelAid/pystatis/src/pystatis/http_helper.py:298</span>, in <span class="ansi-cyan-fg">_check_invalid_destatis_status_code</span><span class="ansi-blue-fg">(response)</span>
+<span class="ansi-green-fg">    295</span>     response_dict = <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>
+<span class="ansi-green-fg">    297</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> response_dict <span class="ansi-bold" style="color: rgb(175,0,255)">is</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>:
+<span class="ansi-green-fg">--&gt; </span><span class="ansi-green-fg">298</span>     <span class="ansi-yellow-bg">_check_destatis_status</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">response_dict</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">get</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-fg ansi-yellow-bg">&#34;</span><span class="ansi-yellow-fg ansi-yellow-bg">Status</span><span class="ansi-yellow-fg ansi-yellow-bg">&#34;</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">{</span><span class="ansi-yellow-bg">}</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg">)</span>
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">~/git/github/CorrelAid/pystatis/src/pystatis/http_helper.py:340</span>, in <span class="ansi-cyan-fg">_check_destatis_status</span><span class="ansi-blue-fg">(destatis_status)</span>
+<span class="ansi-green-fg">    338</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">pass</span>
+<span class="ansi-green-fg">    339</span> <span class="ansi-bold" style="color: rgb(0,135,0)">elif</span> destatis_status_code == <span class="ansi-green-fg">50</span>:
+<span class="ansi-green-fg">--&gt; </span><span class="ansi-green-fg">340</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> NoNewerDataError(destatis_status_content)
+<span class="ansi-green-fg">    341</span> <span class="ansi-bold" style="color: rgb(0,135,0)">elif</span> destatis_status_code == <span class="ansi-green-fg">90</span>:
+<span class="ansi-green-fg">    342</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> TableNotFoundError(destatis_status_content)
+
+<span class="ansi-red-fg">NoNewerDataError</span>: Keine aktualisierten Daten vorhanden. (Mindestens ein Parameter enthält ungültige Werte. Er wurde angepasst, um den Service starten zu können.: stand)
+</pre></div></div>
+</div>
 </section>
 <section id="language">
 <h3><code class="docutils literal notranslate"><span class="pre">language</span></code><a class="headerlink" href="#language" title="Link to this heading"></a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">language</span></code> can either be “de” or “en, with “de” being the default, obviously. Regionalstatistik is not supporting “en” and will not translate any data, Genesis and Zensus have some support for English, but you have to check for yourself, if the data is translated and to what extend.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="s2">&quot;81000-0001&quot;</span><span class="p">)</span>
@@ -599,8 +2203,83 @@
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+INFO:pystatis.http_helper:Database selected: genesis
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+hit
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+INFO:pystatis.http_helper:Code 0: erfolgreich
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Jahr</th>
+      <th>Preisbasis (jeweilige Preise / preisbereinigt)</th>
+      <th>Bruttoinlandsprodukt (Veränderung in %)__Prozent</th>
+      <th>Bruttoinlandsprodukt je Einwohner__jew. ME</th>
+      <th>Bruttoinlandsprodukt__jew. ME</th>
+      <th>Bruttowertschöpfung__jew. ME</th>
+      <th>Gütersteuern abzügl. Gütersubventionen__jew. ME</th>
+      <th>Gütersteuern__jew. ME</th>
+      <th>Gütersubventionen__jew. ME</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2015</td>
+      <td>in jeweiligen Preisen (Mrd. EUR)</td>
+      <td>3.4</td>
+      <td>37774.0</td>
+      <td>3085.65</td>
+      <td>2751.937</td>
+      <td>333.713</td>
+      <td>333.77</td>
+      <td>0.057</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="s2">&quot;81000-0001&quot;</span><span class="p">)</span>
@@ -609,12 +2288,73 @@
 </pre></div>
 </div>
 </div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+INFO:pystatis.cache:Data was successfully cached under /Users/miay/.pystatis/data/81000-0001/e70f84061d5d48f4285a/20250412.zip.
+INFO:pystatis.http_helper:Database selected: genesis
+INFO:pystatis.http_helper:Code 0: successfull
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Price base (current prices / price-adjusted)</th>
+      <th>Gross domestic product (change in %)__percent</th>
+      <th>Gross domestic product per inhabitant__unit app.</th>
+      <th>Gross domestic product__unit app.</th>
+      <th>Gross value added__unit app.</th>
+      <th>Subsidies on products__unit app.</th>
+      <th>Taxes on products less subsidies__unit app.</th>
+      <th>Taxes on products__unit app.</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2015</td>
+      <td>At current prices (bn EUR)</td>
+      <td>3.4</td>
+      <td>37774.0</td>
+      <td>3085.65</td>
+      <td>2751.937</td>
+      <td>0.057</td>
+      <td>333.713</td>
+      <td>333.77</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
 </section>
 <section id="quality">
 <h3><code class="docutils literal notranslate"><span class="pre">quality</span></code><a class="headerlink" href="#quality" title="Link to this heading"></a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">quality</span></code> can be either “on” or “off”, with “off” being the default. When switching to “on”, the downloaded table has additional quality columns “__q” for each value column with quality symbols. Check <a class="reference external" href="https://www-genesis.destatis.de/genesis/online?operation=ergebnistabelleQualitaet&amp;language=en&amp;levelindex=3&amp;levelid=1719342760835#abreadcrumb.">Explanation of symbols</a> Not supported for all tables or databases.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="s2">&quot;52111-0001&quot;</span><span class="p">)</span>
@@ -623,8 +2363,75 @@
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+INFO:pystatis.http_helper:Database selected: genesis
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+hit
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+INFO:pystatis.http_helper:Code 0: erfolgreich
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Jahr</th>
+      <th>Beschäftigtengrößenklassen</th>
+      <th>WZ2008 (Abschnitte): URS</th>
+      <th>Unternehmen (EU)__Anzahl</th>
+      <th>Unternehmen (EU)__Anzahl__q</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2022</td>
+      <td>0 bis unter 10 abhängig Beschäftigte</td>
+      <td>Bergbau und Gewinnung von Steinen und Erden</td>
+      <td>1051</td>
+      <td>e</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="s2">&quot;12211-Z-11&quot;</span><span class="p">)</span>
@@ -633,8 +2440,77 @@
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+INFO:pystatis.http_helper:Database selected: regio
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+hit
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+INFO:pystatis.http_helper:Code 0: erfolgreich
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Jahr</th>
+      <th>Amtlicher Gemeindeschlüssel (AGS)__Code</th>
+      <th>Amtlicher Gemeindeschlüssel (AGS)</th>
+      <th>Art der Lebensform</th>
+      <th>Lebensformen__1000</th>
+      <th>Lebensformen__1000__q</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2019</td>
+      <td>DG</td>
+      <td>Deutschland</td>
+      <td>Alleinstehende</td>
+      <td>18653.0</td>
+      <td>e</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="s2">&quot;1000A-0000&quot;</span><span class="p">)</span>
@@ -642,6 +2518,59 @@
 <span class="n">t</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+INFO:pystatis.cache:Data was successfully cached under /Users/miay/.pystatis/data/1000A-0000/ec488574ddc014f6340b/20250412.zip.
+INFO:pystatis.http_helper:Database selected: zensus
+INFO:pystatis.http_helper:Code 0: erfolgreich
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Stichtag</th>
+      <th>Amtlicher Regionalschlüssel (ARS)__Code</th>
+      <th>Amtlicher Regionalschlüssel (ARS)</th>
+      <th>Personen__Anzahl</th>
+      <th>Personen__Anzahl__q</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2022-05-15</td>
+      <td>DG</td>
+      <td>Deutschland</td>
+      <td>82719540</td>
+      <td>e</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
 </div>
 </section>
 </section>

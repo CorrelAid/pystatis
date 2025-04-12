@@ -63,7 +63,7 @@ def test_get_response_from_endpoint(mocker):
         "pystatis.http_helper.requests", return_value=_generic_request_status()
     )
     mocker.patch("pystatis.db.get_settings", return_value=("host", "user", "pw"))
-    mocker.patch("pystatis.db.check_credentials", return_value=True)
+    mocker.patch("pystatis.db.check_credentials_are_set", return_value=True)
 
     get_data_from_endpoint(
         endpoint="endpoint", method="method", params={"name": "21111-0001"}

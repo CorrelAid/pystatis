@@ -25,6 +25,9 @@ import re
 from configparser import ConfigParser
 from pathlib import Path
 
+from pystatis import db
+from pystatis.exception import PystatisConfigError
+
 PKG_NAME = __name__.split(".", maxsplit=1)[0]
 DEFAULT_CONFIG_DIR = str(Path().home() / f".{PKG_NAME}")
 SUPPORTED_DB = ["genesis", "zensus", "regio"]
@@ -132,13 +135,7 @@ config = ConfigParser(interpolation=None)
 
 
 def init_config() -> None:
-    """Create a new config .ini file in the given directory.
-
-    One-time function to be called for new users to create a new `config.ini` with default values (empty credentials).
-
-    Args:
-        config_dir (str, optional): Path to the root config directory. Defaults to the user home directory.
-    """
+    """Initialize the config variable by either creating a new config .ini file or load an existing config."""
     if not config_exists():
         create_default_config()
         write_config()
@@ -158,9 +155,13 @@ def config_exists() -> bool:
 
 def setup_credentials() -> None:
     """Setup credentials for all supported databases."""
-    for db in get_supported_db():
-        config.set(db, "username", _get_user_input(db, "username"))
-        config.set(db, "password", _get_user_input(db, "password"))
+    for db_name in get_supported_db():
+        config.set(db_name, "username", _get_user_input(db_name, "username"))
+        config.set(db_name, "password", _get_user_input(db_name, "password"))
+        if not db.check_credentials_are_valid(db_name):
+            raise PystatisConfigError(
+                f"Provided credentials for database '{db_name}' are not valid! Please provide the correct credentials."
+            )
 
     write_config()
 

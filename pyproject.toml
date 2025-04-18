@@ -1,6 +1,6 @@
 [project]
 name = "pystatis"
-version = "0.5.1"
+version = "0.5.2"
 description = "Python wrapper for GENESIS web service interface (API) of the Federal Statistical Office."
 authors = [
     { name = "Michael Aydinbas", email = "michael.aydinbas@gmail.com" },

@@ -47,8 +47,8 @@ def load_data(
 
     if endpoint == "data":
         if hit_in_cash(cache_dir, name, params):
-            print("hit")
             data = read_from_cache(cache_dir, name, params)
+            logger.info("Data was loaded from cache.")
         else:
             response = get_data_from_endpoint(endpoint, method, params, db_name)
             content_type = response.headers.get("Content-Type", "text/csv").split("/")[
@@ -232,6 +232,8 @@ def get_data_from_resultfile(
                 job_id,
             )
             break
+        else:
+            logger.info("Verarbeitung im Hintergrund läuft noch...")
 
         time.sleep(5)
     else:

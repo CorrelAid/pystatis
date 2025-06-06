@@ -1,3 +1,3 @@
-from typing import TypeAlias, Any
+from typing import TypeAlias
 
-ParamDict: TypeAlias = dict[str, Any]
+ParamDict: TypeAlias = dict[str, str]

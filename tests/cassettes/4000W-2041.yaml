@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: name=4000W-2041&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=de&quality=off&format=ffcsv
+    body: area=all&compress=False&endyear=&format=ffcsv&language=de&name=4000W-2041&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
     headers:
       Accept:
       - '*/*'
@@ -9,7 +9,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '131'
+      - '146'
       Content-Type:
       - application/x-www-form-urlencoded
       User-Agent:
@@ -19,7 +19,7 @@ interactions:
   response:
     body:
       string: !!binary |
-        UEsDBBQACAgIALmsiloAAAAAAAAAAAAAAAAkAAAANDAwMFctMjA0MV8xNzQ0MzEzODcwNTQxX2Rl
+        UEsDBBQACAgIAJ2yxloAAAAAAAAAAAAAAAAkAAAANDAwMFctMjA0MV8xNzQ5MjQxMjU4OTc1X2Rl
         X2ZsYXQuY3N27Z3LThxHFIb3eYreRLKlwapT91KvjMDEElGkOBbeWQO0YKRhkObiSHkeP0G2WUSK
         Hyiv4OoeCJhUK6Z7Tln5qQ3MrRv4OKfq3OvvP/5crafr2Wo9O1u9P7s+b+p7z+fT02Zer2dXzfat
         7tHdizW9/zBdzqan85v37z3ffureC9P1ejk73az//dG7d7YXyQd3lQ/vKnvvmnxne5F6cFf18K6q
@@ -55,19 +55,19 @@ interactions:
         ZUc82WTkeaTfABwJWRzRwUUMWEWWubAZoXBOQ2fMrySnx0CFPvJAk0oDTY1kzCEntwhRUu9DsCkC
         OtWJtVomobGu2HODsGmj8XZWDh8sna1CavLLhU16g1dOuWtTGHmwLh8qqYwlHMNtXIC8Z64fhDvA
         QMaSAmyqYpirkz6eoMQ1Hk1NKalxklXjal6S84bKUpU8TtI5L0ZPsfoMUEsHCC+MBAyzBwAACtoA
-        AFBLAQIUABQACAgIALmsilovjAQMswcAAAraAAAkAAAAAAAAAAAAAAAAAAAAAAA0MDAwVy0yMDQx
-        XzE3NDQzMTM4NzA1NDFfZGVfZmxhdC5jc3ZQSwUGAAAAAAEAAQBSAAAABQgAAAAA
+        AFBLAQIUABQACAgIAJ2yxlovjAQMswcAAAraAAAkAAAAAAAAAAAAAAAAAAAAAAA0MDAwVy0yMDQx
+        XzE3NDkyNDEyNTg5NzVfZGVfZmxhdC5jc3ZQSwUGAAAAAAEAAQBSAAAABQgAAAAA
     headers:
       Connection:
       - Keep-Alive
       Content-Disposition:
-      - attachment; filename=4000W-2041_1744313870541_de_flat.zip
+      - attachment; filename=4000W-2041_1749241258975_de_flat.zip
       Content-Length:
       - '2157'
       Content-Type:
       - application/zip
       Date:
-      - Thu, 10 Apr 2025 19:37:48 GMT
+      - Fri, 06 Jun 2025 20:20:56 GMT
       Keep-Alive:
       - timeout=10, max=500
       Referrer-Policy:
@@ -88,7 +88,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: name=4000W-2041&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=de&quality=off&format=ffcsv
+    body: area=all&compress=False&endyear=&format=ffcsv&language=de&name=4000W-2041&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
     headers:
       Accept:
       - '*/*'
@@ -97,7 +97,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '131'
+      - '146'
       Content-Type:
       - application/x-www-form-urlencoded
       User-Agent:
@@ -126,7 +126,7 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Thu, 10 Apr 2025 19:37:52 GMT
+      - Fri, 06 Jun 2025 20:21:01 GMT
       Keep-Alive:
       - timeout=10, max=500
       Referrer-Policy:
@@ -147,7 +147,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: name=4000W-2041&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=en&quality=off&format=ffcsv
+    body: area=all&compress=False&endyear=&format=ffcsv&language=en&name=4000W-2041&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
     headers:
       Accept:
       - '*/*'
@@ -156,7 +156,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '131'
+      - '146'
       Content-Type:
       - application/x-www-form-urlencoded
       User-Agent:
@@ -166,7 +166,7 @@ interactions:
   response:
     body:
       string: !!binary |
-        UEsDBBQACAgIADCtiloAAAAAAAAAAAAAAAAkAAAANDAwMFctMjA0MV8xNzQ0MzE0MDkzNjQ4X2Vu
+        UEsDBBQACAgIAPOzxloAAAAAAAAAAAAAAAAkAAAANDAwMFctMjA0MV8xNzQ5MjQxODk5Nzg5X2Vu
         X2ZsYXQuY3N27Z3Lbhs3FIb3fYrZFEgWEXh4J2YVw467cFEgzW0XjOVJLUCWitE4gV8r2y4K9IX6
         CuVItpO6nBTRkBTwm5tYF4u2v5xDnjv//uPPTd/0i02/mG/ez9cXbf3V82Vz3i7rfnHV7t7aPvry
         Yk3vPzbdojlf3r7/1fPdd331QtP33eL8uv/vt355Z/ch/mBV/nBVPrpq8J3dh8SDVcXDVcXoqsF3
@@ -202,19 +202,19 @@ interactions:
         snmxEePF7Y1TfwFXUJqfoWJCIUpj9DRRcH4PWtglBzUuJNbcz2Tp8OD5wUoZwV7cBGHd7pWq8ieg
         saZYentAk0pCnqxp3bRwHg2s5zE/Q24VZLloOosZeFByamZcKE1QJt7U2PzIvEUU9yEJHk0Cs9Es
         6eii8P0UJU4yDaEQXEKl0aYW9ATnOpXtbPxeUmMsizI/7B9QSwcIeEDKOqwHAAAa3gAAUEsBAhQA
-        FAAICAgAMK2KWnhAyjqsBwAAGt4AACQAAAAAAAAAAAAAAAAAAAAAADQwMDBXLTIwNDFfMTc0NDMx
-        NDA5MzY0OF9lbl9mbGF0LmNzdlBLBQYAAAAAAQABAFIAAAD+BwAAAAA=
+        FAAICAgA87PGWnhAyjqsBwAAGt4AACQAAAAAAAAAAAAAAAAAAAAAADQwMDBXLTIwNDFfMTc0OTI0
+        MTg5OTc4OV9lbl9mbGF0LmNzdlBLBQYAAAAAAQABAFIAAAD+BwAAAAA=
     headers:
       Connection:
       - Keep-Alive
       Content-Disposition:
-      - attachment; filename=4000W-2041_1744314093648_en_flat.zip
+      - attachment; filename=4000W-2041_1749241899789_en_flat.zip
       Content-Length:
       - '2150'
       Content-Type:
       - application/zip
       Date:
-      - Thu, 10 Apr 2025 19:41:31 GMT
+      - Fri, 06 Jun 2025 20:31:37 GMT
       Keep-Alive:
       - timeout=10, max=500
       Referrer-Policy:
@@ -235,7 +235,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: name=4000W-2041&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=en&quality=off&format=ffcsv
+    body: area=all&compress=False&endyear=&format=ffcsv&language=en&name=4000W-2041&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
     headers:
       Accept:
       - '*/*'
@@ -244,7 +244,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '131'
+      - '146'
       Content-Type:
       - application/x-www-form-urlencoded
       User-Agent:
@@ -275,7 +275,7 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Thu, 10 Apr 2025 19:41:35 GMT
+      - Fri, 06 Jun 2025 20:31:42 GMT
       Keep-Alive:
       - timeout=10, max=500
       Referrer-Policy:

@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: name=91111-0001&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=de&quality=off&format=ffcsv
+    body: area=all&compress=False&endyear=&format=ffcsv&language=de&name=91111-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
     headers:
       Accept:
       - '*/*'
@@ -9,7 +9,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '131'
+      - '146'
       Content-Type:
       - application/x-www-form-urlencoded
       User-Agent:
@@ -19,7 +19,7 @@ interactions:
   response:
     body:
       string: !!binary |
-        UEsDBBQACAgIADuqiloAAAAAAAAAAAAAAAAkAAAAOTExMTEtMDAwMV8xNzQ0MzEyNjc1MzYyX2Rl
+        UEsDBBQACAgIAKSwxloAAAAAAAAAAAAAAAAkAAAAOTExMTEtMDAwMV8xNzQ5MjQwMzA4NzY2X2Rl
         X2ZsYXQuY3N25L3NctvIti4476fA5ETYEVAa/yBa0QPJlnxtl2x1yWXv48kJ0ARFlEhAFwAtb43P
         M9ToRuyJn8GTdkQP+ED9Cp0rEwmCFKkfID4UcPcZnKiSVBJzJ5C51re+n//v//l/8yIs4ryIv+b/
         9TWdRIe1f5+H42h+WMSLSH5L/NP6i4fmf30Lszgcz8vv1/5d/lTtC2FRZPF4Wdz90fV35H9kbf1W
@@ -1324,17 +1324,17 @@ interactions:
         rFG3BvaOssgi0euq6vERlQW/b0DoFFbbnKvRwY7lRpeWH/gRiNGLrZr6O2mCTiZrb9ZB7keY6S24
         BWhVrRtQmR+5/GgWH+qsLLzGtEzMCwTEPLt4Pn12GPspKLoHu18zebW+WFTV6kpgMPyQ+qOQ/8l/
         TfFdfDiZhni6ml/WhZsToV5hai6yw7RG1vcu+P8CUEsHCC2/yE00IgEALEwRAFBLAQIUABQACAgI
-        ADuqilotv8hNNCIBACxMEQAkAAAAAAAAAAAAAAAAAAAAAAA5MTExMS0wMDAxXzE3NDQzMTI2NzUz
-        NjJfZGVfZmxhdC5jc3ZQSwUGAAAAAAEAAQBSAAAAhiIBAAAA
+        AKSwxlotv8hNNCIBACxMEQAkAAAAAAAAAAAAAAAAAAAAAAA5MTExMS0wMDAxXzE3NDkyNDAzMDg3
+        NjZfZGVfZmxhdC5jc3ZQSwUGAAAAAAEAAQBSAAAAhiIBAAAA
     headers:
       Connection:
       - Keep-Alive
       Content-Disposition:
-      - attachment; filename=91111-0001_1744312675362_de_flat.zip
+      - attachment; filename=91111-0001_1749240308766_de_flat.zip
       Content-Type:
       - application/zip
       Date:
-      - Thu, 10 Apr 2025 19:17:52 GMT
+      - Fri, 06 Jun 2025 20:05:06 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
@@ -1345,7 +1345,7 @@ interactions:
       code: 200
       message: '200'
 - request:
-    body: name=91111-0001&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=de&quality=off&format=ffcsv
+    body: area=all&compress=False&endyear=&format=ffcsv&language=de&name=91111-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
     headers:
       Accept:
       - '*/*'
@@ -1354,7 +1354,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '131'
+      - '146'
       Content-Type:
       - application/x-www-form-urlencoded
       User-Agent:
@@ -1380,7 +1380,7 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Thu, 10 Apr 2025 19:17:55 GMT
+      - Fri, 06 Jun 2025 20:05:09 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
@@ -1389,7 +1389,7 @@ interactions:
       code: 200
       message: '200'
 - request:
-    body: name=91111-0001&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=en&quality=off&format=ffcsv
+    body: area=all&compress=False&endyear=&format=ffcsv&language=en&name=91111-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
     headers:
       Accept:
       - '*/*'
@@ -1398,7 +1398,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '131'
+      - '146'
       Content-Type:
       - application/x-www-form-urlencoded
       User-Agent:
@@ -1408,7 +1408,7 @@ interactions:
   response:
     body:
       string: !!binary |
-        UEsDBBQACAgIACGtiloAAAAAAAAAAAAAAAAkAAAAOTExMTEtMDAwMV8xNzQ0MzE0MDYyMjczX2Vu
+        UEsDBBQACAgIAOSzxloAAAAAAAAAAAAAAAAkAAAAOTExMTEtMDAwMV8xNzQ5MjQxODY4NjMzX2Vu
         X2ZsYXQuY3N23L3LdtxIsi0476/ApGop11G48EagWT2QSKZa3UeZXFKeeozuAiNAEiVEIAqIEKVv
         60F/Uv9Cu7kDIEAGyQjHNtGVd1BHyTcuAHOzbfvx//0//2+zzbZFsy0Wzf9aVMv8ZPDfZXaZlyfb
         YpXrT6l/3X3wxPtfX7O6yC7L9vOD/9ZfNfhAtt3WxeVu+/BL7z6jv8m/91P9+z/Vf/Sn7v2M/qav
@@ -2580,18 +2580,18 @@ interactions:
         FRr4DzsZ9seUEjnQEyyEkY2518AvHQMd+QiiFafwypqRPZvE0+PUda0JOebmlXWcAqQAys3iGqt9
         oR/uEFUd4VGQ6YAthL0tFUWxONndlMTCI1hPIfvXRprUwH5mDpQFrxj9Ls/T/ehG0Ts1QhsahHb+
         cfHh3BchhQE68DRF5nK6LDabB7OVus4202xtsFn5z2R/6o/x+ZvsmHSF5w6p2wRB8OaLDFm+vf1k
-        /wNQSwcIo50FBLQEAQCliQ8AUEsBAhQAFAAICAgAIa2KWqOdBQS0BAEApYkPACQAAAAAAAAAAAAA
-        AAAAAAAAADkxMTExLTAwMDFfMTc0NDMxNDA2MjI3M19lbl9mbGF0LmNzdlBLBQYAAAAAAQABAFIA
+        /wNQSwcIo50FBLQEAQCliQ8AUEsBAhQAFAAICAgA5LPGWqOdBQS0BAEApYkPACQAAAAAAAAAAAAA
+        AAAAAAAAADkxMTExLTAwMDFfMTc0OTI0MTg2ODYzM19lbl9mbGF0LmNzdlBLBQYAAAAAAQABAFIA
         AAAGBQEAAAA=
     headers:
       Connection:
       - Keep-Alive
       Content-Disposition:
-      - attachment; filename=91111-0001_1744314062273_en_flat.zip
+      - attachment; filename=91111-0001_1749241868633_en_flat.zip
       Content-Type:
       - application/zip
       Date:
-      - Thu, 10 Apr 2025 19:40:59 GMT
+      - Fri, 06 Jun 2025 20:31:05 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
@@ -2602,7 +2602,7 @@ interactions:
       code: 200
       message: '200'
 - request:
-    body: name=91111-0001&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=en&quality=off&format=ffcsv
+    body: area=all&compress=False&endyear=&format=ffcsv&language=en&name=91111-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
     headers:
       Accept:
       - '*/*'
@@ -2611,7 +2611,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '131'
+      - '146'
       Content-Type:
       - application/x-www-form-urlencoded
       User-Agent:
@@ -2636,7 +2636,7 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Thu, 10 Apr 2025 19:41:02 GMT
+      - Fri, 06 Jun 2025 20:31:09 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:

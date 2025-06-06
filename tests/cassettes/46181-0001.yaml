@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: name=46181-0001&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=de&quality=off&format=ffcsv
+    body: area=all&compress=False&endyear=&format=ffcsv&language=de&name=46181-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
     headers:
       Accept:
       - '*/*'
@@ -9,7 +9,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '131'
+      - '146'
       Content-Type:
       - application/x-www-form-urlencoded
       User-Agent:
@@ -19,30 +19,30 @@ interactions:
   response:
     body:
       string: !!binary |
-        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
+        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
     headers:
       Connection:
       - Keep-Alive
       Content-Disposition:
-      - attachment; filename=46181-0001_1744311741363_de_flat.zip
+      - attachment; filename=46181-0001_1749240285028_de_flat.zip
       Content-Length:
-      - '727'
+      - '725'
       Content-Type:
       - application/zip
       Date:
-      - Thu, 10 Apr 2025 19:02:19 GMT
+      - Fri, 06 Jun 2025 20:04:43 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
@@ -51,7 +51,7 @@ interactions:
       code: 200
       message: '200'
 - request:
-    body: name=46181-0001&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=de&quality=off&format=ffcsv
+    body: area=all&compress=False&endyear=&format=ffcsv&language=de&name=46181-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
     headers:
       Accept:
       - '*/*'
@@ -60,7 +60,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '131'
+      - '146'
       Content-Type:
       - application/x-www-form-urlencoded
       User-Agent:
@@ -89,7 +89,7 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Thu, 10 Apr 2025 19:02:21 GMT
+      - Fri, 06 Jun 2025 20:04:45 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
@@ -98,7 +98,7 @@ interactions:
       code: 200
       message: '200'
 - request:
-    body: name=46181-0001&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=en&quality=off&format=ffcsv
+    body: area=all&compress=False&endyear=&format=ffcsv&language=en&name=46181-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
     headers:
       Accept:
       - '*/*'
@@ -107,7 +107,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '131'
+      - '146'
       Content-Type:
       - application/x-www-form-urlencoded
       User-Agent:
@@ -117,30 +117,30 @@ interactions:
   response:
     body:
       string: !!binary |
-        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
+        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
     headers:
       Connection:
       - Keep-Alive
       Content-Disposition:
-      - attachment; filename=46181-0001_1744314004989_en_flat.zip
+      - attachment; filename=46181-0001_1749241846558_en_flat.zip
       Content-Length:
-      - '737'
+      - '736'
       Content-Type:
       - application/zip
       Date:
-      - Thu, 10 Apr 2025 19:40:03 GMT
+      - Fri, 06 Jun 2025 20:30:45 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
@@ -149,7 +149,7 @@ interactions:
       code: 200
       message: '200'
 - request:
-    body: name=46181-0001&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=en&quality=off&format=ffcsv
+    body: area=all&compress=False&endyear=&format=ffcsv&language=en&name=46181-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
     headers:
       Accept:
       - '*/*'
@@ -158,7 +158,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '131'
+      - '146'
       Content-Type:
       - application/x-www-form-urlencoded
       User-Agent:
@@ -187,7 +187,7 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Thu, 10 Apr 2025 19:40:05 GMT
+      - Fri, 06 Jun 2025 20:30:46 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:

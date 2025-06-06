@@ -72,6 +72,9 @@ def load_data(
                     "Verarbeitung im Hintergrund erfolgreich gestartet. Job-ID: %s.",
                     job_id,
                 )
+                # in rare cases it seems that asking catalogue/jobs endpoint for the state of the newly created job fails because no job could be found
+                # so we add 5 seconds here to make sure that the job was created in the meantime
+                time.sleep(5)
                 response = get_data_from_resultfile(job_id, db_name)
                 assert isinstance(response.content, bytes)  # nosec assert_used
                 content_type = response.headers.get("Content-Type", "text/csv").split(

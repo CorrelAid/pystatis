@@ -1655,7 +1655,7 @@ wheels = [
 
 [[package]]
 name = "pystatis"
-version = "0.5.2"
+version = "0.5.3"
 source = { editable = "." }
 dependencies = [
     { name = "pandas" },
@@ -1700,7 +1700,7 @@ dev = [
     { name = "mypy", specifier = "~=1.0" },
     { name = "myst-parser", specifier = ">=4.0.0,<5" },
     { name = "nbsphinx", specifier = ">=0.9.5,<0.10" },
-    { name = "notebook", specifier = ">=7.3.0,<8" },
+    { name = "notebook", specifier = ">=7.4.3,<8" },
     { name = "pre-commit", specifier = ">=4.0.1,<5" },
     { name = "pylint", specifier = "~=3.0" },
     { name = "pytest", specifier = ">=8.0.0,<9" },

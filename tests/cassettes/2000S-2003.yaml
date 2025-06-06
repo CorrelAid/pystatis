@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: name=2000S-2003&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=de&quality=off&format=ffcsv
+    body: area=all&compress=False&endyear=&format=ffcsv&language=de&name=2000S-2003&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
     headers:
       Accept:
       - '*/*'
@@ -9,7 +9,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '131'
+      - '146'
       Content-Type:
       - application/x-www-form-urlencoded
       User-Agent:
@@ -19,7 +19,7 @@ interactions:
   response:
     body:
       string: !!binary |
-        UEsDBBQACAgIALCsiloAAAAAAAAAAAAAAAAkAAAAMjAwMFMtMjAwM18xNzQ0MzEzODUzOTQ3X2Rl
+        UEsDBBQACAgIAJSyxloAAAAAAAAAAAAAAAAkAAAAMjAwMFMtMjAwM18xNzQ5MjQxMjQxODM1X2Rl
         X2ZsYXQuY3N27VvLTuNIFN3PV3gJ0gTqaTtTqzCx0hGQoNg0vUMOVCcWjoP8oKX5Hr5hNtPSLPJB
         8wtTTqAJJo4CtkmVE5CQXa+kDveeunXr1H///BvFbuxFsXcTXd9MbzlbevfdIfdZ7E34omr+9FLI
         4PWDG3ru0H+qX3pftFoqcOM49IZJ/LbpS82iE8qMirKjotxRV9YsOuHMqDg7Ks4ddWXNotOD6yd8
@@ -42,19 +42,19 @@ interactions:
         Tq4iyf8uiCG3A1095VRVLZqrJAeAGApfbnw/AKu4CKVXGdUFoRrCzjmVpAia0olktwhVIfoxDQSk
         2+Btj8mVENxtB55aKlMkieAVkOFVtSAWNCuDGHotQtH9lQkJwrIc/TAEBMt3L2dbIUfxe7+0Dlju
         NexbC9OU0w9tc3fwRp+HKNiHtGtzp1KKOmWgqHqprGVAtBZXJarMFha6ew51vObU6H9QSwcIUQ5k
-        hNYEAADSUwAAUEsBAhQAFAAICAgAsKyKWlEOZITWBAAA0lMAACQAAAAAAAAAAAAAAAAAAAAAADIw
-        MDBTLTIwMDNfMTc0NDMxMzg1Mzk0N19kZV9mbGF0LmNzdlBLBQYAAAAAAQABAFIAAAAoBQAAAAA=
+        hNYEAADSUwAAUEsBAhQAFAAICAgAlLLGWlEOZITWBAAA0lMAACQAAAAAAAAAAAAAAAAAAAAAADIw
+        MDBTLTIwMDNfMTc0OTI0MTI0MTgzNV9kZV9mbGF0LmNzdlBLBQYAAAAAAQABAFIAAAAoBQAAAAA=
     headers:
       Connection:
       - Keep-Alive
       Content-Disposition:
-      - attachment; filename=2000S-2003_1744313853947_de_flat.zip
+      - attachment; filename=2000S-2003_1749241241835_de_flat.zip
       Content-Length:
       - '1424'
       Content-Type:
       - application/zip
       Date:
-      - Thu, 10 Apr 2025 19:37:31 GMT
+      - Fri, 06 Jun 2025 20:20:40 GMT
       Keep-Alive:
       - timeout=10, max=500
       Referrer-Policy:
@@ -75,7 +75,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: name=2000S-2003&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=de&quality=off&format=ffcsv
+    body: area=all&compress=False&endyear=&format=ffcsv&language=de&name=2000S-2003&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
     headers:
       Accept:
       - '*/*'
@@ -84,7 +84,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '131'
+      - '146'
       Content-Type:
       - application/x-www-form-urlencoded
       User-Agent:
@@ -113,7 +113,7 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Thu, 10 Apr 2025 19:37:36 GMT
+      - Fri, 06 Jun 2025 20:20:44 GMT
       Keep-Alive:
       - timeout=10, max=500
       Referrer-Policy:
@@ -134,7 +134,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: name=2000S-2003&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=en&quality=off&format=ffcsv
+    body: area=all&compress=False&endyear=&format=ffcsv&language=en&name=2000S-2003&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
     headers:
       Accept:
       - '*/*'
@@ -143,7 +143,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '131'
+      - '146'
       Content-Type:
       - application/x-www-form-urlencoded
       User-Agent:
@@ -153,7 +153,7 @@ interactions:
   response:
     body:
       string: !!binary |
-        UEsDBBQACAgIACetiloAAAAAAAAAAAAAAAAkAAAAMjAwMFMtMjAwM18xNzQ0MzE0MDc1MTg3X2Vu
+        UEsDBBQACAgIAOqzxloAAAAAAAAAAAAAAAAkAAAAMjAwMFMtMjAwM18xNzQ5MjQxODgxOTgxX2Vu
         X2ZsYXQuY3N27VvdbuI4FL7fp/DlVFo0thMnYX3FLBGD2tIK0u3cVSG4raXERvnpimfbi32kfYV1
         yHTaUijQpGkcKFIV4p/EH+d85/j4nP/++TdJ/ZQnKQ+Sm0DOGH32PfSnLKQpj1jRtLx6uknRzYMf
         c38a/mx/9r3o9eyGn6Yxn2bp665PLcUgvDIrXp0Vb5x1bUsxyFiZ1Vid1dg469qWYtCDH2as+H+T
@@ -176,20 +176,20 @@ interactions:
         HqUSzPL6HbO5FFxHsnTrzsNqlbMNAUGzC5sbEKyuMOEQ0jLrQqvV2VxVmsPXGQ3QtLWuw9xr7Wvo
         BufVljoDUD0hv3nYSTBympucWzdcJVjHsTFs7j6uTubWKa2vLlxamujSCKdcn5y+Ks3feyXKNm2r
         JS7msRyjAf7Xm/nICJpGg2t/anUvSpQYk3ZAeMyL/2TXTPecpNq3AyvZfpjAoyurZWLo59NU2/K0
-        Px/RdpRaVB0OLFHKjixj8wHQ/1BLBwhOCy838AQAAGlUAABQSwECFAAUAAgICAAnrYpaTgsvN/AE
-        AABpVAAAJAAAAAAAAAAAAAAAAAAAAAAAMjAwMFMtMjAwM18xNzQ0MzE0MDc1MTg3X2VuX2ZsYXQu
+        Px/RdpRaVB0OLFHKjixj8wHQ/1BLBwhOCy838AQAAGlUAABQSwECFAAUAAgICADqs8ZaTgsvN/AE
+        AABpVAAAJAAAAAAAAAAAAAAAAAAAAAAAMjAwMFMtMjAwM18xNzQ5MjQxODgxOTgxX2VuX2ZsYXQu
         Y3N2UEsFBgAAAAABAAEAUgAAAEIFAAAAAA==
     headers:
       Connection:
       - Keep-Alive
       Content-Disposition:
-      - attachment; filename=2000S-2003_1744314075187_en_flat.zip
+      - attachment; filename=2000S-2003_1749241881981_en_flat.zip
       Content-Length:
       - '1450'
       Content-Type:
       - application/zip
       Date:
-      - Thu, 10 Apr 2025 19:41:13 GMT
+      - Fri, 06 Jun 2025 20:31:20 GMT
       Keep-Alive:
       - timeout=10, max=500
       Referrer-Policy:
@@ -210,7 +210,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: name=2000S-2003&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=en&quality=off&format=ffcsv
+    body: area=all&compress=False&endyear=&format=ffcsv&language=en&name=2000S-2003&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
     headers:
       Accept:
       - '*/*'
@@ -219,7 +219,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '131'
+      - '146'
       Content-Type:
       - application/x-www-form-urlencoded
       User-Agent:
@@ -249,7 +249,7 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Thu, 10 Apr 2025 19:41:17 GMT
+      - Fri, 06 Jun 2025 20:31:24 GMT
       Keep-Alive:
       - timeout=10, max=500
       Referrer-Policy:

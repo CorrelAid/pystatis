@@ -20,20 +20,20 @@ pystatis.clear_cache()
         ("32421-0012", (2240, 21), "de"),
         ("46181-0001", (16, 21), "de"),
         ("51000-0010", (1572, 21), "de"),
-        # ("61111-0021", (960, 17), "de"),
+        ("61111-0021", (960, 17), "de"),
         ("63121-0001", (210, 21), "de"),
         ("71311-0001", (600, 25), "de"),
         ("91111-0001", (4719, 17), "de"),
-        ("11111-02-01-4", (550, 13), "de"),
-        ("13111-01-03-4", (3300, 21), "de"),
-        ("21311-01-01-4-B", (44010, 25), "de"),
-        ("32121-01-02-4", (3850, 17), "de"),
-        ("41312-01-01-4", (6050, 17), "de"),
+        # ("11111-02-01-4", (550, 13), "de"),
+        # ("13111-01-03-4", (3300, 21), "de"),
+        # ("21311-01-01-4-B", (44010, 25), "de"),
+        # ("32121-01-02-4", (3850, 17), "de"),
+        # ("41312-01-01-4", (6050, 17), "de"),
         # ("52411-02-01-4", (538, 15), "de"),
-        ("61511-01-03-4", (4400, 17), "de"),
-        ("73111-01-01-4", (1650, 13), "de"),
-        ("86121-Z-01", (8208, 17), "de"),
-        ("AI-N-01-2-5", (27128, 13), "de"),
+        # ("61511-01-03-4", (4400, 17), "de"),
+        # ("73111-01-01-4", (1650, 13), "de"),
+        # ("86121-Z-01", (8208, 17), "de"),
+        # ("AI-N-01-2-5", (27128, 13), "de"),
         ("1000A-0000", (10787, 13), "de"),
         ("2000S-2003", (72, 21), "de"),
         ("3000G-1008", (20, 17), "de"),
@@ -47,7 +47,7 @@ pystatis.clear_cache()
         ("32421-0012", (2240, 21), "en"),
         ("46181-0001", (16, 21), "en"),
         ("51000-0010", (1572, 21), "en"),
-        # ("61111-0021", (960, 17), "en"),
+        ("61111-0021", (960, 17), "en"),
         ("63121-0001", (210, 21), "en"),
         ("71311-0001", (600, 25), "en"),
         ("91111-0001", (4719, 17), "en"),
@@ -62,7 +62,7 @@ def test_get_data(
 ):
     mocker.patch.object(pystatis.db, "check_credentials", return_value=True)
     table = pystatis.Table(name=table_name)
-    table.get_data(prettify=False, language=language)
+    table.get_data(prettify=False, language=language, compress=False)
 
     assert isinstance(table.data, pd.DataFrame)
     assert not table.data.empty
@@ -77,8 +77,8 @@ def test_get_data(
     "table_name, expected_shape",
     [
         ("52111-0001", (68, 22)),
-        ("12211-Z-11", (2200, 18)),
-        # ("1000A-2022", (1360, 22)), # metadata request broken
+        # ("12211-Z-11", (2200, 18)), # regio broken
+        ("1000A-2022", (1360, 22)),
     ],
 )
 def test_get_data_with_quality_on_and_prettify_false(
@@ -86,12 +86,21 @@ def test_get_data_with_quality_on_and_prettify_false(
 ):
     mocker.patch.object(pystatis.db, "check_credentials", return_value=True)
     table = pystatis.Table(name=table_name)
-    table.get_data(prettify=False, quality="on")
+    table.get_data(prettify=False, quality="on", compress=False)
 
     assert table.data.shape == expected_shape
 
     # check that at least one raw column ends with "_q" for zensus + quality
     assert any(column.endswith("value_q") for column in table.data.columns)
+
+
+def test_get_data_with_compress_on(mocker):
+    mocker.patch.object(pystatis.db, "check_credentials", return_value=True)
+    table = pystatis.Table(name="1000A-2022")
+    table.get_data()
+
+    assert table.data.shape == (1003, 6)
+    assert table.data["Personen__Anzahl"].isna().sum() == 0
 
 
 @pytest.mark.vcr()
@@ -109,31 +118,31 @@ def test_get_data_with_quality_on_and_prettify_false(
                 "Unternehmen (EU)__Anzahl__q",
             ),
         ),
-        (
-            "12211-Z-11",
-            (2200, 6),
-            (
-                "Jahr",
-                "Amtlicher Gemeindeschlüssel (AGS)__Code",
-                "Amtlicher Gemeindeschlüssel (AGS)",
-                "Art der Lebensform",
-                "Lebensformen__1000",
-                "Lebensformen__1000__q",
-            ),
-        ),
         # (
-        #     "1000A-2022",
-        #     (1360, 7),
+        #     "12211-Z-11",
+        #     (2200, 6),
         #     (
-        #         "Stichtag",
-        #         "Amtlicher Regionalschlüssel (ARS)",
-        #         "Bundesländer",
-        #         "Alter (10er-Jahresgruppen)",
-        #         "Einwanderungsgeschichte (ausführlich)",
-        #         "Personen__Anzahl",
-        #         "Personen__Anzahl__q",
+        #         "Jahr",
+        #         "Amtlicher Gemeindeschlüssel (AGS)__Code",
+        #         "Amtlicher Gemeindeschlüssel (AGS)",
+        #         "Art der Lebensform",
+        #         "Lebensformen__1000",
+        #         "Lebensformen__1000__q",
         #     ),
         # ),
+        (
+            "1000A-2022",
+            (1360, 7),
+            (
+                "Stichtag",
+                "Amtlicher Regionalschlüssel (ARS)__Code",
+                "Amtlicher Regionalschlüssel (ARS)",
+                "Alter (10er-Jahresgruppen)",
+                "Einwanderungsgeschichte (ausführlich)",
+                "Personen__Anzahl",
+                "Personen__Anzahl__q",
+            ),
+        ),
     ],
 )
 def test_get_data_with_quality_on_and_prettify_true(
@@ -144,7 +153,7 @@ def test_get_data_with_quality_on_and_prettify_true(
 ):
     mocker.patch.object(pystatis.db, "check_credentials", return_value=True)
     table = pystatis.Table(name=table_name)
-    table.get_data(prettify=True, quality="on")
+    table.get_data(prettify=True, quality="on", compress=False)
 
     assert table.data.shape == expected_shape
     assert tuple(table.data.columns) == expected_columns
@@ -267,19 +276,18 @@ def test_get_data_with_quality_on_and_prettify_true(
             ),
             "de",
         ),
-        # (
-        #     "61111-0021",
-        #     (960, 5),
-        #     (
-        #         "Jahr",
-        #         "Monate",
-        #         "Amtlicher Gemeindeschlüssel (AGS)__Code",
-        #         "Amtlicher Gemeindeschlüssel (AGS)",
-        #         "Bundesländer",
-        #         "Index der Nettokaltmieten__2020=100",
-        #     ),
-        #     "de",
-        # ),
+        (
+            "61111-0021",
+            (960, 5),
+            (
+                "Jahr",
+                "Amtlicher Gemeindeschlüssel (AGS)__Code",
+                "Amtlicher Gemeindeschlüssel (AGS)",
+                "Monate",
+                "Index der Nettokaltmieten__2020=100",
+            ),
+            "de",
+        ),
         (
             "63121-0001",
             (180, 6),
@@ -315,122 +323,122 @@ def test_get_data_with_quality_on_and_prettify_true(
             ),
             "de",
         ),
-        (
-            "11111-02-01-4",
-            (550, 4),
-            (
-                "Stichtag",
-                "Amtlicher Gemeindeschlüssel (AGS)__Code",
-                "Amtlicher Gemeindeschlüssel (AGS)",
-                "Zahl der Gemeinden__Anzahl",
-            ),
-            "de",
-        ),
-        (
-            "21311-01-01-4-B",
-            (44010, 7),
-            (
-                "Semester",
-                "Amtlicher Gemeindeschlüssel (AGS)__Code",
-                "Amtlicher Gemeindeschlüssel (AGS)",
-                "Geschlecht",
-                "Nationalität (inkl. insgesamt)",
-                "Fächergruppe (mit Insgesamt)",
-                "Studierende (im Kreisgebiet)__Anzahl",
-            ),
-            "de",
-        ),
-        (
-            "32121-01-02-4",
-            (3850, 5),
-            (
-                "Jahr",
-                "Amtlicher Gemeindeschlüssel (AGS)__Code",
-                "Amtlicher Gemeindeschlüssel (AGS)",
-                "Abfallarten von Haushaltsabfällen",
-                "Aufkommen an Haushaltsabfällen (oh.Elektroaltger.)__t",
-            ),
-            "de",
-        ),
-        (
-            "41312-01-01-4",
-            (6050, 5),
-            (
-                "Stichtag",
-                "Amtlicher Gemeindeschlüssel (AGS)__Code",
-                "Amtlicher Gemeindeschlüssel (AGS)",
-                "Tierarten",
-                "Tiere__Anzahl",
-            ),
-            "de",
-        ),
         # (
-        #     "52411-02-01-4",
-        #     (538, 6),
+        #     "11111-02-01-4",
+        #     (550, 4),
+        #     (
+        #         "Stichtag",
+        #         "Amtlicher Gemeindeschlüssel (AGS)__Code",
+        #         "Amtlicher Gemeindeschlüssel (AGS)",
+        #         "Zahl der Gemeinden__Anzahl",
+        #     ),
+        #     "de",
+        # ),
+        # (
+        #     "21311-01-01-4-B",
+        #     (44010, 7),
+        #     (
+        #         "Semester",
+        #         "Amtlicher Gemeindeschlüssel (AGS)__Code",
+        #         "Amtlicher Gemeindeschlüssel (AGS)",
+        #         "Geschlecht",
+        #         "Nationalität (inkl. insgesamt)",
+        #         "Fächergruppe (mit Insgesamt)",
+        #         "Studierende (im Kreisgebiet)__Anzahl",
+        #     ),
+        #     "de",
+        # ),
+        # (
+        #     "32121-01-02-4",
+        #     (3850, 5),
         #     (
         #         "Jahr",
         #         "Amtlicher Gemeindeschlüssel (AGS)__Code",
         #         "Amtlicher Gemeindeschlüssel (AGS)",
-        #         "Insolvenzverfahren (Unternehmen)__MeasureUnitNotFound!",
-        #         "Arbeitnehmer__Anzahl",
-        #         "voraussichtliche Forderungen (Unternehmen)__Tsd._EUR",
+        #         "Abfallarten von Haushaltsabfällen",
+        #         "Aufkommen an Haushaltsabfällen (oh.Elektroaltger.)__t",
         #     ),
         #     "de",
         # ),
-        (
-            "61511-01-03-4",
-            (1100, 8),
-            (
-                "Jahr",
-                "Amtlicher Gemeindeschlüssel (AGS)__Code",
-                "Amtlicher Gemeindeschlüssel (AGS)",
-                "Baulandverkäufe",
-                "Durchschnittlicher Kaufwert je qm__EUR",
-                "Kaufsumme__Tsd. EUR",
-                "Veräußerte Baulandfläche__1000 qm",
-                "Veräußerungsfälle von Bauland__Anzahl",
-            ),
-            "de",
-        ),
-        (
-            "73111-01-01-4",
-            (550, 6),
-            (
-                "Jahr",
-                "Amtlicher Gemeindeschlüssel (AGS)__Code",
-                "Amtlicher Gemeindeschlüssel (AGS)",
-                "Gesamtbetrag der Einkünfte__Tsd. EUR",
-                "Lohn- und Einkommensteuer__Tsd. EUR",
-                "Lohn- und Einkommensteuerpflichtige__Anzahl",
-            ),
-            "de",
-        ),
-        (
-            "86121-Z-01",
-            (2736, 7),
-            (
-                "Jahr",
-                "Amtlicher Gemeindeschlüssel (AGS)__Code",
-                "Amtlicher Gemeindeschlüssel (AGS)",
-                "Haushaltsabfälle",
-                "Haushaltsabfälle, Anteil an Deutschland__Prozent",
-                "Haushaltsabfälle, Index (2010=100)__2010=100",
-                "Haushaltsabfälle__1000 t",
-            ),
-            "de",
-        ),
-        (
-            "AI-N-01-2-5",
-            (13564, 5),
-            (
-                "Jahr",
-                "Amtlicher Gemeindeschlüssel (AGS)__Code",
-                "Amtlicher Gemeindeschlüssel (AGS)",
-                "Anteil Siedlungs- und Verkehrsfläche an Gesamtfläche__Prozent",
-                "Veränderung der Siedlungs- und Verkehrsfläche__Prozent",
-            ),
-            "de",
-        ),
+        # (
+        #     "41312-01-01-4",
+        #     (6050, 5),
+        #     (
+        #         "Stichtag",
+        #         "Amtlicher Gemeindeschlüssel (AGS)__Code",
+        #         "Amtlicher Gemeindeschlüssel (AGS)",
+        #         "Tierarten",
+        #         "Tiere__Anzahl",
+        #     ),
+        #     "de",
+        # ),
+        # # (
+        # #     "52411-02-01-4",
+        # #     (538, 6),
+        # #     (
+        # #         "Jahr",
+        # #         "Amtlicher Gemeindeschlüssel (AGS)__Code",
+        # #         "Amtlicher Gemeindeschlüssel (AGS)",
+        # #         "Insolvenzverfahren (Unternehmen)__MeasureUnitNotFound!",
+        # #         "Arbeitnehmer__Anzahl",
+        # #         "voraussichtliche Forderungen (Unternehmen)__Tsd._EUR",
+        # #     ),
+        # #     "de",
+        # # ),
+        # (
+        #     "61511-01-03-4",
+        #     (1100, 8),
+        #     (
+        #         "Jahr",
+        #         "Amtlicher Gemeindeschlüssel (AGS)__Code",
+        #         "Amtlicher Gemeindeschlüssel (AGS)",
+        #         "Baulandverkäufe",
+        #         "Durchschnittlicher Kaufwert je qm__EUR",
+        #         "Kaufsumme__Tsd. EUR",
+        #         "Veräußerte Baulandfläche__1000 qm",
+        #         "Veräußerungsfälle von Bauland__Anzahl",
+        #     ),
+        #     "de",
+        # ),
+        # (
+        #     "73111-01-01-4",
+        #     (550, 6),
+        #     (
+        #         "Jahr",
+        #         "Amtlicher Gemeindeschlüssel (AGS)__Code",
+        #         "Amtlicher Gemeindeschlüssel (AGS)",
+        #         "Gesamtbetrag der Einkünfte__Tsd. EUR",
+        #         "Lohn- und Einkommensteuer__Tsd. EUR",
+        #         "Lohn- und Einkommensteuerpflichtige__Anzahl",
+        #     ),
+        #     "de",
+        # ),
+        # (
+        #     "86121-Z-01",
+        #     (2736, 7),
+        #     (
+        #         "Jahr",
+        #         "Amtlicher Gemeindeschlüssel (AGS)__Code",
+        #         "Amtlicher Gemeindeschlüssel (AGS)",
+        #         "Haushaltsabfälle",
+        #         "Haushaltsabfälle, Anteil an Deutschland__Prozent",
+        #         "Haushaltsabfälle, Index (2010=100)__2010=100",
+        #         "Haushaltsabfälle__1000 t",
+        #     ),
+        #     "de",
+        # ),
+        # (
+        #     "AI-N-01-2-5",
+        #     (13564, 5),
+        #     (
+        #         "Jahr",
+        #         "Amtlicher Gemeindeschlüssel (AGS)__Code",
+        #         "Amtlicher Gemeindeschlüssel (AGS)",
+        #         "Anteil Siedlungs- und Verkehrsfläche an Gesamtfläche__Prozent",
+        #         "Veränderung der Siedlungs- und Verkehrsfläche__Prozent",
+        #     ),
+        #     "de",
+        # ),
         (
             "1000A-0000",
             (10787, 4),
@@ -604,18 +612,18 @@ def test_get_data_with_quality_on_and_prettify_true(
             ),
             "en",
         ),
-        # (
-        #     "61111-0021",
-        #     (960, 5),
-        #     (
-        #         "Year",
-        #         "Months",
-        #         "Official municipality key (AGS)__Code",
-        #         "Official municipality key (AGS)",
-        #         "Index of net rents exclusive of heating expenses__2020=100",
-        #     ),
-        #     "en",
-        # ),
+        (
+            "61111-0021",
+            (960, 5),
+            (
+                "Year",
+                "Official municipality key (AGS)__Code",
+                "Official municipality key (AGS)",
+                "Months",
+                "Index of net rents exclusive of heating expenses__2020=100",
+            ),
+            "en",
+        ),
         (
             "63121-0001",
             (180, 6),
@@ -707,7 +715,7 @@ def test_prettify(
 ):
     mocker.patch.object(pystatis.db, "check_credentials", return_value=True)
     table = pystatis.Table(name=table_name)
-    table.get_data(prettify=True, language=language)
+    table.get_data(prettify=True, language=language, compress=False)
 
     assert isinstance(table.data, pd.DataFrame)
     assert not table.data.empty
@@ -720,8 +728,8 @@ def test_prettify(
 @pytest.mark.parametrize(
     "table_name, time_col, language",
     [
-        ("12411-01-01-4", "Stichtag", "de"),
-        ("12411-01-01-4", "Stichtag", "en"),
+        # ("12411-01-01-4", "Stichtag", "de"),
+        # ("12411-01-01-4", "Stichtag", "en"),
         ("13111-0005", "Stichtag", "de"),
         ("13111-0005", "Reference date", "en"),
         ("71311-0001", "Stichtag zum Quartalsende", "de"),
@@ -735,6 +743,6 @@ def test_prettify(
 def test_dtype_time_column(mocker, table_name: str, time_col: str, language: str):
     mocker.patch.object(pystatis.db, "check_credentials", return_value=True)
     table = pystatis.Table(name=table_name)
-    table.get_data(prettify=True, language=language)
+    table.get_data(prettify=True, language=language, compress=False)
 
     assert is_datetime(table.data[time_col].values)

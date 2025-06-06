@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: name=3000G-1008&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=de&quality=off&format=ffcsv
+    body: area=all&compress=False&endyear=&format=ffcsv&language=de&name=3000G-1008&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
     headers:
       Accept:
       - '*/*'
@@ -9,7 +9,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '131'
+      - '146'
       Content-Type:
       - application/x-www-form-urlencoded
       User-Agent:
@@ -19,7 +19,7 @@ interactions:
   response:
     body:
       string: !!binary |
-        UEsDBBQACAgIALWsiloAAAAAAAAAAAAAAAAkAAAAMzAwMEctMTAwOF8xNzQ0MzEzODYyMDk0X2Rl
+        UEsDBBQACAgIAJmyxloAAAAAAAAAAAAAAAAkAAAAMzAwMEctMTAwOF8xNzQ5MjQxMjUwNjc3X2Rl
         X2ZsYXQuY3N21VbLjtowFN33K7KpBFKY2iZOgu4KRCaMoKSCkaaaDTJwFazmgRKHSnzPfMNsuuiC
         D+ov1DwqAu2odFcvEtn3lXPuUez749v3UgklSyUX5WyRLxFq+0TMMQElUzy6DquzEehsIwop5snJ
         X9sfo2oGoVQh55X6PfTsOSaxq6rsuip7s+ofPcekjUgqPL5nVSbVaXn5qSvbIfNdmxASQojz3Uu1
@@ -30,20 +30,20 @@ interactions:
         nG7DaDAKYJivEtQHXNskaerQXdf3qHHN/wxDlJl1Fdf4oo34K7SpZTHqZLuNFPWZR80bEgbPUTCC
         vW33qsdUx/ZMkuYSvdNhbeJ2DNIAHrIyxlKkSo+ZxCZm9L6OutPhHnN9g3p+ugYfJ9FH/Y0iT0+z
         ZO3ya0LbdszQ4iY2rsc484zT6D6YjOEei+zrgYzV2GCha0hcomZ4ma5J2q5Jkv0bOdqmPuG3XS8/
-        AVBLBwiQoUUVMgIAACERAABQSwECFAAUAAgICAC1rIpakKFFFTICAAAhEQAAJAAAAAAAAAAAAAAA
-        AAAAAAAAMzAwMEctMTAwOF8xNzQ0MzEzODYyMDk0X2RlX2ZsYXQuY3N2UEsFBgAAAAABAAEAUgAA
+        AVBLBwiQoUUVMgIAACERAABQSwECFAAUAAgICACZssZakKFFFTICAAAhEQAAJAAAAAAAAAAAAAAA
+        AAAAAAAAMzAwMEctMTAwOF8xNzQ5MjQxMjUwNjc3X2RlX2ZsYXQuY3N2UEsFBgAAAAABAAEAUgAA
         AIQCAAAAAA==
     headers:
       Connection:
       - Keep-Alive
       Content-Disposition:
-      - attachment; filename=3000G-1008_1744313862094_de_flat.zip
+      - attachment; filename=3000G-1008_1749241250677_de_flat.zip
       Content-Length:
       - '748'
       Content-Type:
       - application/zip
       Date:
-      - Thu, 10 Apr 2025 19:37:39 GMT
+      - Fri, 06 Jun 2025 20:20:48 GMT
       Keep-Alive:
       - timeout=10, max=500
       Referrer-Policy:
@@ -64,7 +64,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: name=3000G-1008&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=de&quality=off&format=ffcsv
+    body: area=all&compress=False&endyear=&format=ffcsv&language=de&name=3000G-1008&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
     headers:
       Accept:
       - '*/*'
@@ -73,7 +73,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '131'
+      - '146'
       Content-Type:
       - application/x-www-form-urlencoded
       User-Agent:
@@ -102,7 +102,7 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Thu, 10 Apr 2025 19:37:44 GMT
+      - Fri, 06 Jun 2025 20:20:52 GMT
       Keep-Alive:
       - timeout=10, max=500
       Referrer-Policy:
@@ -123,7 +123,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: name=3000G-1008&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=en&quality=off&format=ffcsv
+    body: area=all&compress=False&endyear=&format=ffcsv&language=en&name=3000G-1008&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
     headers:
       Accept:
       - '*/*'
@@ -132,7 +132,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '131'
+      - '146'
       Content-Type:
       - application/x-www-form-urlencoded
       User-Agent:
@@ -142,7 +142,7 @@ interactions:
   response:
     body:
       string: !!binary |
-        UEsDBBQACAgIACytiloAAAAAAAAAAAAAAAAkAAAAMzAwMEctMTAwOF8xNzQ0MzE0MDg0NTY0X2Vu
+        UEsDBBQACAgIAO+zxloAAAAAAAAAAAAAAAAkAAAAMzAwMEctMTAwOF8xNzQ5MjQxODkwNjcyX2Vu
         X2ZsYXQuY3N21ZjLjtowFIb3fQpvKoHEpLbJBXRWUNJQlSEVILWaDTLBA5ZMjGxnpjxbF32kvkJN
         gA7DdDRiV28i+9ziX1/i4+T3z1/GMiuMFYWZF2rJ4Wwu2YJLsGLDD6569GQEMn9gWrCFPPrP5oeo
         MwOzVotFZV+GPnkOSfSiKr2sSl+t+k/PIemByYofrvOqFPY4fH6rC1ud+a6NMc6gXwm5FOXKoIbl
@@ -153,20 +153,20 @@ interactions:
         AfUY5VVSO2HSIdh3ul/y4SiFj4pJt4m2PWZ3JiSOOwnxHcx3GKvjY3eKbJTqFNR0tHzeNN9SRzo0
         Id4fXIZ3eTqC4cGGlHAH7DBIPMb2UlDYpW0cd/0lBTNl3Z5BMA6wl2ROArrdKKFxx18Sxx48m+S3
         kEpeuK/MQthdfSSWwVnrbUI7CL1kdYXEOKERTXyn+SmdjGEgzF6oPflQY/8fQFXmeQfYiw5ij7le
-        KZa0SQdHVze5P1BLBwh8jO5OOwIAAFkSAABQSwECFAAUAAgICAAsrYpafIzuTjsCAABZEgAAJAAA
-        AAAAAAAAAAAAAAAAAAAAMzAwMEctMTAwOF8xNzQ0MzE0MDg0NTY0X2VuX2ZsYXQuY3N2UEsFBgAA
+        KZa0SQdHVze5P1BLBwh8jO5OOwIAAFkSAABQSwECFAAUAAgICADvs8ZafIzuTjsCAABZEgAAJAAA
+        AAAAAAAAAAAAAAAAAAAAMzAwMEctMTAwOF8xNzQ5MjQxODkwNjcyX2VuX2ZsYXQuY3N2UEsFBgAA
         AAABAAEAUgAAAI0CAAAAAA==
     headers:
       Connection:
       - Keep-Alive
       Content-Disposition:
-      - attachment; filename=3000G-1008_1744314084564_en_flat.zip
+      - attachment; filename=3000G-1008_1749241890672_en_flat.zip
       Content-Length:
       - '757'
       Content-Type:
       - application/zip
       Date:
-      - Thu, 10 Apr 2025 19:41:21 GMT
+      - Fri, 06 Jun 2025 20:31:28 GMT
       Keep-Alive:
       - timeout=10, max=500
       Referrer-Policy:
@@ -187,7 +187,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: name=3000G-1008&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=en&quality=off&format=ffcsv
+    body: area=all&compress=False&endyear=&format=ffcsv&language=en&name=3000G-1008&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
     headers:
       Accept:
       - '*/*'
@@ -196,7 +196,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '131'
+      - '146'
       Content-Type:
       - application/x-www-form-urlencoded
       User-Agent:
@@ -225,7 +225,7 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Thu, 10 Apr 2025 19:41:27 GMT
+      - Fri, 06 Jun 2025 20:31:33 GMT
       Keep-Alive:
       - timeout=10, max=500
       Referrer-Policy:

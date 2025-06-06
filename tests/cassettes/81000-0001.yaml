@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: name=81000-0001&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=de&quality=off&format=ffcsv
+    body: area=all&compress=False&endyear=&format=ffcsv&language=de&name=81000-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
     headers:
       Accept:
       - '*/*'
@@ -9,7 +9,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '131'
+      - '146'
       Content-Type:
       - application/x-www-form-urlencoded
       User-Agent:
@@ -19,66 +19,66 @@ interactions:
   response:
     body:
       string: !!binary |
-        UEsDBBQACAgIAG8Ci1oAAAAAAAAAAAAAAAAkAAAAODEwMDAtMDAwMV8xNzQ0MzIzNTcwNDY2X2Rl
-        X2ZsYXQuY3N25Z3PbhvJEcbveYq5BLCBstPd1X8xyCGCDWdtOBDs2DkalDQrcy1TBjm0g32efYZc
-        skAOfqB9hZ2hhLVoOwBHAqu/bl5kiRRp1k/d8011V33923//t+pn/XzVz09Xb04vz7r2xs8Xs5Pu
-        ou3n77urpzbffXmw1W8+zpbz2cnF9fM3fr76rRsPzPp+OT9Z99/+6pdnrl5kvnpX8/W7mv/7rt99
-        5upFH2cX6+7q65v1Yt5ff7v9X3312OaVf4paKdW+vrx4t/o0X/ar07ezH/uL+enbrnnSrWbv+2V3
-        +naxXpx3i+asWzVH68XwT/v0b39/0T6dvV22RhnVPvrhHy+ftI+69fgGF7PFWTNfrM43r28fbT3R
-        vn7y4vjItcfLbr46ma3mq+beT92nbn4xP++azaNd85fmw+bpbvi6mJ/39zevev2q3X6YmvXiY7d8
-        1/V913fNEMT6fbeYLc4f3nu+PHvYPH714n77oB3e/mHz/HF79MOxUrY9Wq77/nK+GD/N6sPy8mz9
-        rm9+6prH88Wny7eLbnlITF7+88X4WZ98/rXvlqu+W3fLxSHEf7y8/Llb9Fdjwn1/TNx73S0//zKE
-        thxCHT588+f79aNhToqUiX+MkOGtlP7+rKmfxvZEUX57ojSzk58//3p+8bC5fnh98nEYVPPLRXcA
-        k4iVYYrWfrm+/uulUvp6pHzqNjF//s+HH4cY66dxY6S8OlKK2/0MCe1lIDx7/g2EZ2P8i/nwkf7d
-        3Bv/HH8dwrnfDl9ouGZkUVk8GslTcGrv8ooXuCHOKap4QFIiq5WUjALG7ykalVU/AaEkCqykFBMv
-        fj1cHpUSkkonEv3T4+ftcBn745cX17+9aG7eK4UQLCmVSSaRSDBTCAIKiRQz2azaiIRCRUfeyeki
-        Uuzj0NecVxKBeJjgNCUOYnIIFLsi5YKQDoYy8mZRRSyEyd7UETz+nGoJjYZNNBRtEtNPaBp5l2ex
-        2Zg03G4oZcTUFZqG0PKsYZxbDJuccdlyTiQSnAIFq/e/6QkUs6OUdZMTCIXVQ87p5HJOpNjZW/LJ
-        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
-        AAAAUQoAAAAA
+        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
+        LmNzdlBLBQYAAAAAAQABAFIAAABiCgAAAAA=
     headers:
       Connection:
       - Keep-Alive
       Content-Disposition:
-      - attachment; filename=81000-0001_1744323570466_de_flat.zip
+      - attachment; filename=81000-0001_1749242963388_de_flat.zip
       Content-Length:
-      - '2745'
+      - '2762'
       Content-Type:
       - application/zip
       Date:
-      - Thu, 10 Apr 2025 22:19:24 GMT
+      - Fri, 06 Jun 2025 20:49:17 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
@@ -87,7 +87,7 @@ interactions:
       code: 200
       message: '200'
 - request:
-    body: name=81000-0001&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=de&quality=off&format=ffcsv
+    body: area=all&compress=False&endyear=&format=ffcsv&language=de&name=81000-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
     headers:
       Accept:
       - '*/*'
@@ -96,7 +96,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '131'
+      - '146'
       Content-Type:
       - application/x-www-form-urlencoded
       User-Agent:
@@ -131,7 +131,7 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Thu, 10 Apr 2025 22:19:30 GMT
+      - Fri, 06 Jun 2025 20:49:23 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:

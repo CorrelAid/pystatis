@@ -32,6 +32,7 @@ class Table:
         self,
         *,
         prettify: bool = True,
+        compress: bool = True,
         area: str = "all",
         startyear: str = "",
         endyear: str = "",
@@ -48,6 +49,8 @@ class Table:
 
         Args:
             prettify (bool, optional): Reformats the table into a readable format. Defaults to True.
+            compress (bool, optional): Suppresses empty rows and columns.
+                Will reduce table size and thus can help avoid creating jobs. Defaults to True.
             area (str, optional): Area to search for the object in GENESIS-Online. Defaults to "all".
             startyear (str, optional): Data beginning with that year will be returned.
                 Parameter is cumulative to `timeslices`. Supports 4 digits (jjjj) or 4+2 digits (jjjj/jj).
@@ -129,17 +132,18 @@ class Table:
                 https://www-genesis.destatis.de/genesis/online?operation=ergebnistabelleQualitaet&language=en&levelindex=3&levelid=1719342760835#abreadcrumb.
         """
         params = {
-            "name": self.name,
             "area": area,
-            "startyear": startyear,
+            "compress": "true" if compress else "false",
             "endyear": endyear,
-            "timeslices": timeslices,
-            "regionalvariable": regionalvariable,
-            "regionalkey": regionalkey,
-            "stand": stand,
-            "language": language,
-            "quality": quality,
             "format": "ffcsv",
+            "language": language,
+            "name": self.name,
+            "quality": quality,
+            "regionalkey": regionalkey,
+            "regionalvariable": regionalvariable,
+            "stand": stand,
+            "startyear": startyear,
+            "timeslices": timeslices,
         }
 
         db_matches = db.identify_db_matches(self.name)

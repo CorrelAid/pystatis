@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.3
+
+- Support for a new parameter in `Table.get_data(..., compress: bool = True)` that can be `True` or `False`. When set to `True`, it will suppress empty rows and columns in the table before downloading it, thus reducing the table size.
+- Added a small sleep time between creating a job and asking for the status of the job to avoid running into the error `pystatis.exception.DestatisStatusError: Es gibt keine Objekte zum angegebenen Selektionskriterium`
+- Update dependencies and GitHub Actions
+
 ## 0.5.0
 
 - migrate from `poetry` to `uv`

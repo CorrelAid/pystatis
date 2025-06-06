@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: name=12211-0001&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=de&quality=off&format=ffcsv
+    body: area=all&compress=False&endyear=&format=ffcsv&language=de&name=12211-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
     headers:
       Accept:
       - '*/*'
@@ -9,7 +9,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '131'
+      - '146'
       Content-Type:
       - application/x-www-form-urlencoded
       User-Agent:
@@ -19,57 +19,57 @@ interactions:
   response:
     body:
       string: !!binary |
-        UEsDBBQACAgIAAyoiloAAAAAAAAAAAAAAAAkAAAAMTIyMTEtMDAwMV8xNzQ0MzExNjI0NjI5X2Rl
-        X2ZsYXQuY3N23Z27bhtHFIb7PAXLpAgyZ+6Dqbyw4AtiF3YSlwIlLyTCFCWQSzvw8/gZ0qRI4QfK
-        K2QlmtRSkY68xCn+mcYwRXLJz3v869zn37//WXXTbrbqZqer49PL920ePJ5PT9p57mYX7eapm7/d
-        /jDT8cfpcjY9mX97fvB486rBD6Zdt5ydrLv/v/T2mc2b9J2r6rtX1Q9e9d5nNm8yd65q7l7VPHjV
-        e5/ZvOnjdL5uN38erxez7ttf9z/qzs9u3vkDaU2UX80+LC8/t4vVepVfPnn+Jr+cni+zVtrkpy9e
-        v32Wn7brbnV6Pp8u3k9mi9VZu5pedPnp3hP52dHb/Ky9ftSennfXD9/lT+3sZD47Pc9Pfv1N+Zif
-        zLt2uTpbrq+u2sXkxzW5n4O7+Onmaesap7J1k5PZarJe9C+cODW5/ir9P6n1KpNSKjdHfyjjc9N+
-        /PrX/EO7XC/O+q80eT5dX3WfLs8Xq1n3+Xy6Xp1P+49alAOoQtoAHr15pyzlo+Wndnmy6r5+6WZn
-        7aQnKp7R+gGh3hLOL1d14Bkz5DP5dX/N/gU3kFf9FS8X/eVqANWk3YBUbe9kcZBBNcHloAaQwW0h
-        jQnFKw4HSM7WIDgc4i/F6w1roRR1PYLDmyqk3uQXuxd+B6BRjXHZDAHNFtB5E9HERo7OBucBpUYO
-        kHxAUxo5uEC4bo2gjab+ixSvMeQa3cdJQ69N79zTFOEcGjk6Iq2K1xgWUJmyNYaD08HbSkSGvYe6
-        BpGxqrEu26GM2p0jY1IqW2Q4OuuDK15kOEAyVLbIsLaZTCUaw9poVB5RY0YHhMY1/bc3QyG1t78v
-        yKLJjCwgWUSlEWXEC5pE8ZyqKDvD2qomXbziDATYamvhsjGHwvQfq0LpSjLgcTEVrRrDW0PeVSIR
-        ewYXUh0OCOdlaZ900RLxKOC+qBcpG48xerhgRxTPUqxDXR631WBBFedVvvj6ZbH47iKY+/1V3pa9
-        esz3k4u2/x7GG7isihjcfs4BSGhk8BBr0EJW6fY8SziBkTJP1OBmJJ9zjVfZDUM4v6sNWeXKFxiO
-        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
-        SwUGAAAAAAEAAQBSAAAAXAgAAAAA
+        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
+        AA==
     headers:
       Connection:
       - Keep-Alive
       Content-Disposition:
-      - attachment; filename=12211-0001_1744311624629_de_flat.zip
+      - attachment; filename=12211-0001_1749240261468_de_flat.zip
       Content-Length:
-      - '2244'
+      - '2224'
       Content-Type:
       - application/zip
       Date:
-      - Thu, 10 Apr 2025 19:00:20 GMT
+      - Fri, 06 Jun 2025 20:04:17 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
@@ -78,7 +78,7 @@ interactions:
       code: 200
       message: '200'
 - request:
-    body: name=12211-0001&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=de&quality=off&format=ffcsv
+    body: area=all&compress=False&endyear=&format=ffcsv&language=de&name=12211-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
     headers:
       Accept:
       - '*/*'
@@ -87,7 +87,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '131'
+      - '146'
       Content-Type:
       - application/x-www-form-urlencoded
       User-Agent:
@@ -98,7 +98,7 @@ interactions:
     body:
       string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"12211-0001\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"12211-0001\",\"Content\":\"Bev\xF6lkerung,
         Erwerbst\xE4tige, Erwerbslose, Erwerbspersonen, Nichterwerbspersonen aus Hauptwohnsitzhaushalten:
-        Deutschland, Jahre, Geschlecht, Altersgruppen\",\"Time\":{\"From\":\"2020\",\"To\":\"2023\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"12211\",\"Content\":\"Mikrozensus\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Deutschland
+        Deutschland, Jahre, Geschlecht, Altersgruppen\",\"Time\":{\"From\":\"2020\",\"To\":\"2024\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"12211\",\"Content\":\"Mikrozensus\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Deutschland
         insgesamt\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
         parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"BEV036\",\"Content\":\"Bev\xF6lkerung
         in Hauptwohnsitzhaushalten\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
@@ -119,7 +119,7 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Thu, 10 Apr 2025 19:00:25 GMT
+      - Fri, 06 Jun 2025 20:04:21 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
@@ -128,7 +128,7 @@ interactions:
       code: 200
       message: '200'
 - request:
-    body: name=12211-0001&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=en&quality=off&format=ffcsv
+    body: area=all&compress=False&endyear=&format=ffcsv&language=en&name=12211-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
     headers:
       Accept:
       - '*/*'
@@ -137,7 +137,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '131'
+      - '146'
       Content-Type:
       - application/x-www-form-urlencoded
       User-Agent:
@@ -147,57 +147,57 @@ interactions:
   response:
     body:
       string: !!binary |
-        UEsDBBQACAgIAMCsiloAAAAAAAAAAAAAAAAkAAAAMTIyMTEtMDAwMV8xNzQ0MzEzODgwODYzX2Vu
-        X2ZsYXQuY3N23Z3JbhtHEIbveYo5JocovS/okwdWnARRYHiJkZNBU2ObABeBi2A9Ww55pLxCKHHR
-        UBaLgDuFqtLFlkRyqA9T+ll7//v3P4vlYDlaLEfDxfvh7LIrve/Hgw/duCxHk27z0N1X9z8s+v31
-        YD4afBhvH+99v3lW7weD5XI++rBafv3U+0c2LzIPrmoeXtUcveqjj2xeZB9c1T68qj161Ucf2bzo
-        ejBedZt/36+mo+X2y8O3evCzu1d+p43RulyMhvPZsJsuVovy27NfXpW/usG8GGVsef7rH69flBfd
-        fDKY3pTn91++OH9dXndfbv9/V37uJoNxV579/kaFVJ596ppP89nqatF8v5pedvNG++bHJvrmZn3d
-        RTOYXjaz627+w90LnG+9Ks43y1mzebZXmycW44IqWilV2vM/lQ3l5exqNV4bxmzajKbN1Xw0Gcxv
-        mnm3GF1202HXfJ6tFt3n2fhywZ1MxbwhO3/1TjldXnbzxWy6uMXqJlfj2c2kmy6bj/PZ5DHMz2fM
-        +Vzo0ZnydrqB6i6bqy2oWDRr+2y2nA9n09lkNByMxzfr2zcYLkfXXXN1b6kf52e3nGd3kGf8AY02
-        vkeoDgkf49veSV6EUbXRl6juCXdPLMbaKFhXADLtnXhZAfB+kq0qkEnqZJ6ArICmyUBVypvZcjD+
-        NjarWuuL7bHZHZsPNtEJChKUiz5QiwkSmg6RVEmQsKJm4JpgWWNev7lo/dC+Netwpudymb1PmROh
-        Q4IEpbVRkvUDQlNWrH4AWCYGJ1tAoHtmpAuIU63zxfXU0e0dEJuzTAEBoFyIXrKAAGjaarECAplh
-        trL1A7LGpAK9flRHaNa369/d9hTS3cu/doLTIhCZduRKgslHHM5gonn1FPIikG0abYTrylZxnXGO
-        MA3yfyCs30lF0UqxBfEpy5WE3c3QwUv/49/bVcxPwXsA/CMTshH6x3+K7FCh5WnCCb5AG4tgojmd
-        hAvISduMjoWuXJSLb68a+bcX5avHig2WMKmBw3QY+FNJCQIYeWkWwwD9gTNIJx8ohsgj6qhB874N
-        qvheVBX2FRWnvFjtALhM9la4gAB0wUtWEcgck3whgfDUgZ8lsLYCZaC8tjJrKwCUC1F2c8dxNO3l
-        FmehHG/y9BKCZY3JZHr9qI7TlGq1L/vnbeUjOVpPBIHpC7V04GMJzIOcMD/RKZCT90tmBBN8G9Xa
-        7e31y94Pv+wGDQRGMACXT9IDGACOvOiCxKWTY9AZhmiUWX42BJouUMSdHVhcjkNhBglOdkYVGASJ
-        UYvXEtAoGfSZVjtcYG5VS23zOJVdjfQt65h8XnilF0odOx4ZVkTbPJBNqbpypBzllaONdlCoIodi
-        LwoZuXOCQuVy5BHm4FgjjxinUiFV6/1aLnqLC/aOV8qi/RKAzGn560IAPkde98VDs09BUUDbDDw6
-        0OoIg2qDL6FHGHaEVkfJa4gAMp2dfF0B+FySrSvQrdNPwlUBjTNHemGpqXgb31pVTC+as/uKdw5C
-        m0ogKJXIx+yQ0HSgLe0gYUWt6EUEyxqNZ+CYVMGp1vj1+/S2Gew/2ZzUjSEAlNWePP2KhKajYP0A
-        sLTPwgUEMEdrGHS11rtYQI9JEL1gFSBzjry9FRNPePoVMkmjGCgKqml6HnnYmvI3tM8gKVpNweLy
-        4kf3ALpEvrAZCUwnBiuJEK0yaAZJktrGPCD3qqLcOT6Ay2jLYVMzEl2gncDBA0uRxz4BNKuUnnKF
-        OoSSEZpyhTq6QiRvp0dC05rWJ8HCUhwqwljmGBOPQb6qQWeoxSTKHcqBuHzksPYMiS4Yye4IdNss
-        j6ZXLLz9AiDRCVggxXy74k5wAhaqDLjIIcBB4zugE5iCBdAOUwpSM7CQbXrHo7BTo5vguXmWMNJB
-        5NI5MdAUJDr6NYxIYFw61bCs0ngGXkpNQHdkXiDtV85IS5gcATKKfFwYgYq2Foxhdy4xGBBGsT/B
-        DWnb1yWbKCsylb+9s1qTJzoqGbQlzmdU/v4228wgwKi1JOcig4/96jAJOHLPRCd5oztEpj2HXg40
-        PunJCeio1Sex0R2yTcPk+O2acOnRdW1hHwgKTEuw3YOICiUuDXHC8ARnILhuQKw6bu94VsWlLLRb
-        A4Iy9GVWJDSt5B6pDWB5Dt3oWNZoE4N8RG1iFjgbJyrCGTlELhfIe77w6IgHbfHAdOSxiBnLKj2H
-        E2VqpPJRD0sbpYUerc0zZEElkuV3nDI4qT7HUwxVgDY1HynzGkhQLmfyCVokNMmhCtTlymGtMtaf
-        mFY8lip/q/O0qxppZ2TGJLuDjE1WHFaGVWLEKHZCbVcFXn/oyI4ndhZlQ2IQOFQGRtq3t6vDe2kW
-        s+8PU8Q93khcQUlvxgTgvOgsBACmWTRfIFplYDDBWt+8fnytmbGR9lRsNDKd6M+kxOSj9znQ0Jxl
-        sEcQ1TYPN+XKdFKgrpOU5Q62QlxBka8kxaPL5IqCBHY46CPTSQGtMjMYQKvJ1UBn6aksdDUpdACi
-        MuRpDyw02sMXkKic8gwWf6FZo5PfuQGNxVtD23mOxKUDiwgHi06RH+OCROYdg9IK4o2LSdHLSZVW
-        ArvojBM4r3YCyin6U7SR0LSmnYNHwjLKM9AQLHPUmYE/UjWxe/w8X2d3d06agABQVnZ3B9tjs9Fu
-        l/RoBoRjkAypTh5DNbdMHM6gkXktf44WwHPC52jBOnDgUQfGs00fWMhKVdAG1IE95XYeRC4jusHs
-        BF0Wfc4CdNsSjwowFp5V1VP5/wFQSwcIZJJY7A8IAADnwAAAUEsBAhQAFAAICAgAwKyKWmSSWOwP
-        CAAA58AAACQAAAAAAAAAAAAAAAAAAAAAADEyMjExLTAwMDFfMTc0NDMxMzg4MDg2M19lbl9mbGF0
-        LmNzdlBLBQYAAAAAAQABAFIAAABhCAAAAAA=
+        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
+        UgAAAFEIAAAAAA==
     headers:
       Connection:
       - Keep-Alive
       Content-Disposition:
-      - attachment; filename=12211-0001_1744313880863_en_flat.zip
+      - attachment; filename=12211-0001_1749241824822_en_flat.zip
       Content-Length:
-      - '2249'
+      - '2233'
       Content-Type:
       - application/zip
       Date:
-      - Thu, 10 Apr 2025 19:37:57 GMT
+      - Fri, 06 Jun 2025 20:30:20 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
@@ -206,7 +206,7 @@ interactions:
       code: 200
       message: '200'
 - request:
-    body: name=12211-0001&area=all&startyear=&endyear=&timeslices=&regionalvariable=&regionalkey=&stand=&language=en&quality=off&format=ffcsv
+    body: area=all&compress=False&endyear=&format=ffcsv&language=en&name=12211-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
     headers:
       Accept:
       - '*/*'
@@ -215,7 +215,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '131'
+      - '146'
       Content-Type:
       - application/x-www-form-urlencoded
       User-Agent:
@@ -227,7 +227,7 @@ interactions:
       string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"successfull\",\"Type\":\"information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"12211-0001\",\"area\":\"all\",\"language\":\"en\"},\"Object\":{\"Code\":\"12211-0001\",\"Content\":\"Population,
         persons in employment, unemployed persons, econ.\\nactive population, econ.
         inactive population from primary\\nresidence households: Germany, years, sex,
-        age groups\",\"Time\":{\"From\":\"2020\",\"To\":\"2023\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"12211\",\"Content\":\"Microcensus\",\"Type\":\"statistic\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Germany\",\"Type\":\"variable\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        age groups\",\"Time\":{\"From\":\"2020\",\"To\":\"2024\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"12211\",\"Content\":\"Microcensus\",\"Type\":\"statistic\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Germany\",\"Type\":\"variable\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
         parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"BEV036\",\"Content\":\"Population
         in primary residence households\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
         parent\"},{\"Code\":\"ERW041\",\"Content\":\"Persons in employment from primary
@@ -251,7 +251,134 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Thu, 10 Apr 2025 19:38:01 GMT
+      - Fri, 06 Jun 2025 20:30:25 GMT
+      Keep-Alive:
+      - timeout=15, max=100
+      Server:
+      - Apache
+    status:
+      code: 200
+      message: '200'
+- request:
+    body: area=all&compress=True&endyear=&format=ffcsv&language=de&name=12211-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '145'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.32.3
+    method: POST
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile
+  response:
+    body:
+      string: !!binary |
+        UEsDBBQACAgIAI20xloAAAAAAAAAAAAAAAAkAAAAMTIyMTEtMDAwMV8xNzQ5MjQyMTg2NjU2X2Rl
+        X2ZsYXQuY3N23Z3Pbhs3EMbvfQod20NRcsghueApQoz8QZND+ifHQHYWthBZNqRVAuR58gy99NBD
+        Hqiv0I0VySs3nnqFAfqRl8DSSmv/8u1+OxwOh3//+de6m3XzdTc/W785u3rb5sHrxey0XeRuftlu
+        D938dPtmtm/ez1bz2eni6/HB6+2nBm/Mum41P910//7o7ZHtl+jOWenuWenes37zyPZL7s5Z3d2z
+        unvP+s0j2y+9ny027fbfN5vlvPv64+GvuvPezTe/s0TW5hfzd6urj+1yvVnn54+evsrPZxerTIZ8
+        fvzs5S9P8uN2063PLhaz5dvJfLk+b9ezyy4/PjiQn5z8kp+0X161Zxddzs/2H3z0868mpPxo0bWr
+        9flqc33dLiffbyz/GPnyh5vDzkwdZ2cmp/P1ZLPsPzhxPPnyd/QqJZutMSafvHptPOWT1Yd2dbpe
+        XK3byWyznjydba67D1cXy/W8+3jRv3Mx63/Tsgy40H/3Fs7ll/P+/O2W8Lo/49WyP13xlD66OMA0
+        Ow3rIWRveEs4PfnduJCn7fvPfyzetavN8rz/e8qm88xhoJ/d6dd9/tTNz/+327B/+SJffv60XC76
+        2+YhkMZMLectnd1r1zQR9iZUZ8S5PsejEU+dycTDa9TsHhOmQXtM6AJScBVdpSIpxYD4uFCmZNfU
+        fUuSDXU8NryZes5++Gz0O2eNXL7tSHw2mYpsRyIlNq4O2xEpQ3Ll245I6ClVYTuOp/1V6Ibe6nfe
+        2qTybUfiq8t2JFIKB4+Qgm1HpEzsy7cdkZBjBLSdcVkAMRLofQbMc/TguJpEnETpE2aIo6ijixbN
+        ZxT1C8EW7zGWp9Q/3IcmSvvHvvVle4wER6HhSkxG1JAYMn2jR+gaprJN5j/uQQI0mSOiNWlW0cAF
+        M8qADW5Ao0tKnDyi3yhTxgQX2CgT+oToO+OMlc2UOfMQkPe3pDVonqMHF8jD+o0epY8pIXqNHiF7
+        W3hsI+oXYvm54cF/R/JwxVFHs9jobS1J3wEWObaE6BlHE3nTEJxHHK8PhYiYVOlfvs4f2vnpg6fi
+        zZS4/63DMd3O9xJcWkUVjxNuYkUV1DJBxh+qkLTPAkLZi6KK3jOg44wLs75ZZ2htNLhlarqAUBfn
+        2LIt6erEy8HrArK1sJeospTRG9DHhSIlEVeQGhN1DARaSTnuoShNO/gI6Dp6eNYdSAjnOnqkzJCL
+        fXTVTKn8EFUU8SAVg2I44wI4cblIgqvb1oMLjJtH06P0ZCHn/RQJU4BzGUU6A1mnPRJQitrwirQV
+        4UyDG8/oYfZRW1OByQiE3oXCly6L+hnU5P7I4aEUrAXEoZMin3UHNyGW1yhL2UDajS4kmV21PY7l
+        KMvoyi9lEpdnxcJDGwnusMgey230KH3DFtFq9Ag5lF7KJOoXoyveY5inwWQeAobbOnS4sEYPrknV
+        lEsKlBxqaPwkEYZAcHNPivoxIaaBR2e6g5n2g9wwHCEGrmfeScKzlnGdRpWUTEKts9SDdOQCmt8o
+        q+gQa6NGM0qhG15HS1U8n3DHT6qgwI3KFCEjI7YOVAS0TRXFNeK6F7h0jSqeA15YrwpKztThOCJk
+        NHBjKl1A4vJnvj1P2WQ/tFQetIBA8xs9ON/UUuEuUnqGLB3W1NEXnh4W6RwhjqPGAUb+7UWOX22z
+        J3w7uWz7v+Gnss3lHqrkPG4Uo0JItoLuY/epxww3p60kGmgBzbh4LJpp5ByH8diOFc9PVOnIAvc2
+        VCW1AdJfdNV0rvzBkSxi+aUzgafR5DAMzOJ+bBTQ3EaPzZtqxkaihNZCZmH0CJkM3OYUmvqZKqa1
+        pdUVEc5mVPFcgt6zSQ/UNq6Sjh/STjH7ZAWO3eiqmCCjmvFZbbHYq3jHESu9sJuT6YFSNHU4jgTZ
+        j6Lg0jW6KgYGdZyxW/0ISe6AOK2tyAeeuVEkJapl4ZNI6QNiLY2qjg50aDUSsrR8sSKejRF3IkoX
+        lRi1ZFgT0lAFriMS+gbQdEYmrMQifrixlR4cGYu7ulsP07sIGeHoEQaHt8m4on6HG3CjmMz4Umhh
+        C44Et0GFKp6PFaVwxK1ULNcxEy5CBkLsxKsIaKKvwXGkqTjEoZQeXT8ahh5J6ZH6CLnQW1fNaMs3
+        HFlE0JTxOEQpP1XBJJWE54B34VIF7SMcyO41upA+lj8tLgKaBnGRwijGwQgzHKShynOX4a5I1rpK
+        VnEPqUzErNw7Fsjb5OFyLserYw46WQLZwchctZglQ/QIRb4UoIc8iqREDeqgR5HS7QvyoRxGVUfI
+        RuTjIeXytfJtRyzoitAjH0VSaghyIklZT1fDPmuijimA2s7IxVyFLNLWAvONqWga6R7IShpb3Sth
+        LL+L3kOUAzKVsQGbtH4LcZpaky9xTXW/EmpwlcQy4sSRbxDtRlNGQizAG22p39zyl6PB3elIGxHn
+        An145dbgk9YnuPTaUSAuscfNvx+F5D1hbl5/FE2iGApeIj/UhaIDde+xJeLljER1yJwHbhmmRmkx
+        N5HQU5FTBRn2e8Urfob/porBTPtbzQ/nD/x+Rq/8HSQkPJegB6N6oOQMZMtTXciQyl/4LgIS5N57
+        R8wdCB2kD7qJoFiOIh8R7pIwZVKfUJdqaFJGi9i1UFVHyK2yRraALWnRux6a23cCB7QbPUxvGdFp
+        FAFd8T2YRfmObsT8D1BLBwg7hhMYzwcAAGO/AABQSwECFAAUAAgICACNtMZaO4YTGM8HAABjvwAA
+        JAAAAAAAAAAAAAAAAAAAAAAAMTIyMTEtMDAwMV8xNzQ5MjQyMTg2NjU2X2RlX2ZsYXQuY3N2UEsF
+        BgAAAAABAAEAUgAAACEIAAAAAA==
+    headers:
+      Connection:
+      - Keep-Alive
+      Content-Disposition:
+      - attachment; filename=12211-0001_1749242186656_de_flat.zip
+      Content-Length:
+      - '2185'
+      Content-Type:
+      - application/zip
+      Date:
+      - Fri, 06 Jun 2025 20:36:22 GMT
+      Keep-Alive:
+      - timeout=15, max=100
+      Server:
+      - Apache
+    status:
+      code: 200
+      message: '200'
+- request:
+    body: area=all&compress=True&endyear=&format=ffcsv&language=de&name=12211-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '145'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.32.3
+    method: POST
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table
+  response:
+    body:
+      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"12211-0001\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"12211-0001\",\"Content\":\"Bev\xF6lkerung,
+        Erwerbst\xE4tige, Erwerbslose, Erwerbspersonen, Nichterwerbspersonen aus Hauptwohnsitzhaushalten:
+        Deutschland, Jahre, Geschlecht, Altersgruppen\",\"Time\":{\"From\":\"2020\",\"To\":\"2024\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"12211\",\"Content\":\"Mikrozensus\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Deutschland
+        insgesamt\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"BEV036\",\"Content\":\"Bev\xF6lkerung
+        in Hauptwohnsitzhaushalten\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"ERW041\",\"Content\":\"Erwerbst\xE4tige aus Hauptwohnsitzhaushalten\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"ERW042\",\"Content\":\"Erwerbslose aus Hauptwohnsitzhaushalten\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"ERW040\",\"Content\":\"Erwerbspersonen aus Hauptwohnsitzhaushalten\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"ERW043\",\"Content\":\"Nichterwerbspersonen aus Hauptwohnsitzhaushalten\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Rows\":[{\"Code\":\"GES\",\"Content\":\"Geschlecht\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"ALT068\",\"Content\":\"Altersgruppen
+        (u15-75m)\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Updated\":\"see parent\"}],\"Subtitel\":{\"Code\":\"JAHR\",\"Content\":\"Jahr\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},\"Subheading\":null},\"Updated\":\"28.12.2022 09:26:09h\"},\"Copyright\":\"\xA9
+        Statistisches Bundesamt (Destatis), 2025\"}"
+    headers:
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '2273'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Fri, 06 Jun 2025 20:36:26 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:

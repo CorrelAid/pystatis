@@ -65,11 +65,11 @@ def select_db_by_credentials(db_matches: list[str]) -> str:
 
 
 def get_host(db_name: str) -> str:
-    return config.config[db_name]["base_url"]  # type: ignore
+    return config.config[db_name]["base_url"]
 
 
 def get_user(db_name: str) -> str:
-    return config.config[db_name]["username"]  # type: ignore
+    return config.config[db_name]["username"]
 
 
 def set_user(db_name: str, new_username: str) -> None:
@@ -79,7 +79,7 @@ def set_user(db_name: str, new_username: str) -> None:
 
 
 def get_pw(db_name: str) -> str:
-    return config.config[db_name]["password"]  # type: ignore
+    return config.config[db_name]["password"]
 
 
 def set_pw(db_name: str, new_pw: str) -> None:

@@ -51,7 +51,9 @@ def load_data(
             logger.info("Data was loaded from cache.")
         else:
             response = get_data_from_endpoint(endpoint, method, params, db_name)
-            content_type = response.headers.get("Content-Type", "text/csv").split("/")[-1]
+            content_type = response.headers.get("Content-Type", "text/csv").split("/")[
+                -1
+            ]
             data = response.content
 
             # status code 98 means that the table is too big
@@ -75,7 +77,9 @@ def load_data(
                 time.sleep(5)
                 response = get_data_from_resultfile(job_id, db_name)
                 assert isinstance(response.content, bytes)  # nosec assert_used
-                content_type = response.headers.get("Content-Type", "text/csv").split("/")[-1]
+                content_type = response.headers.get("Content-Type", "text/csv").split(
+                    "/"
+                )[-1]
                 data = response.content
 
             cache.cache_data(cache_dir, name, params, data, content_type)
@@ -87,7 +91,7 @@ def load_data(
         response = get_data_from_endpoint(endpoint, method, params, db_name)
         data = response.content
 
-    return data  # type: ignore
+    return data
 
 
 def get_data_from_endpoint(
@@ -196,7 +200,9 @@ def get_job_id_from_response(response: requests.Response) -> str:
     return job_id
 
 
-def get_data_from_resultfile(job_id: str, db_name: str | None = None) -> requests.Response:
+def get_data_from_resultfile(
+    job_id: str, db_name: str | None = None
+) -> requests.Response:
     """Get data from a job once it is finished or when the timeout is reached.
 
     Args:
@@ -217,7 +223,9 @@ def get_data_from_resultfile(job_id: str, db_name: str | None = None) -> request
     time_ = time.perf_counter()
 
     while (time.perf_counter() - time_) < JOB_TIMEOUT:
-        response = get_data_from_endpoint(endpoint="catalogue", method="jobs", params=params, db_name=db_name)
+        response = get_data_from_endpoint(
+            endpoint="catalogue", method="jobs", params=params, db_name=db_name
+        )
 
         jobs = response.json().get("List")
         if len(jobs) > 0 and jobs[0].get("State") == "Fertig":
@@ -245,7 +253,9 @@ def get_data_from_resultfile(job_id: str, db_name: str | None = None) -> request
         "compress": "false",
         "format": "ffcsv",
     }
-    response = get_data_from_endpoint(endpoint="data", method="resultfile", params=params, db_name=db_name)
+    response = get_data_from_endpoint(
+        endpoint="data", method="resultfile", params=params, db_name=db_name
+    )
     return response
 
 
@@ -261,14 +271,16 @@ def _check_invalid_status_code(response: requests.Response) -> None:
     """
     if response.status_code // 100 in [4, 5]:
         try:
-            body: dict = response.json()  # type: ignore
+            body = response.json()
         except json.JSONDecodeError:
             body = {}
 
         content = body.get("Content")
         code = body.get("Code")
         logger.error("Error Code: %s. Content: %s.", code, content)
-        raise requests.exceptions.HTTPError(f"The server returned a {response.status_code} status code.")
+        raise requests.exceptions.HTTPError(
+            f"The server returned a {response.status_code} status code."
+        )
 
 
 def _check_invalid_destatis_status_code(response: requests.Response) -> None:
@@ -327,7 +339,9 @@ def _check_destatis_status(destatis_status: dict) -> None:  # type: ignore
         raise DestatisStatusError(destatis_status_content)
 
     # check for destatis/ query errors
-    elif (destatis_status_code in [104, 50, 90]) or (destatis_status_type in error_en_de):
+    elif (destatis_status_code in [104, 50, 90]) or (
+        destatis_status_type in error_en_de
+    ):
         if destatis_status_code == 98:
             pass
         elif destatis_status_code == 50:

@@ -95,7 +95,7 @@ def test_get_data_with_quality_on_and_prettify_false(
 
 
 def test_get_data_with_compress_on(mocker):
-    mocker.patch.object(pystatis.db, "check_credentials", return_value=True)
+    mocker.patch.object(pystatis.db, "check_credentials_are_set", return_value=True)
     table = pystatis.Table(name="1000A-2022")
     table.get_data()
 

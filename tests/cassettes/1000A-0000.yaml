@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: area=all&compress=False&endyear=&format=ffcsv&language=de&name=1000A-0000&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
+    body: area=all&compress=false&endyear=&format=ffcsv&language=de&name=1000A-0000&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
     headers:
       Accept:
       - '*/*'
@@ -19,7 +19,7 @@ interactions:
   response:
     body:
       string: !!binary |
-        UEsDBBQACAgIAJCyxloAAAAAAAAAAAAAAAAkAAAAMTAwMEEtMDAwMF8xNzQ5MjQxMjMyODc3X2Rl
+        UEsDBBQACAgIAIS6xloAAAAAAAAAAAAAAAAkAAAAMTAwMEEtMDAwMF8xNzQ5MjQ0ODA5NzQyX2Rl
         X2ZsYXQuY3N2zL3LcuRGti0476+IodJMzII/AZiPkiKTlEhm8pIp0UyTYwiGMwKXCICNh1jit1wz
         TfQNnDTNehAf1L/Qe7k7IphVdU9PerB1cEopKZLc9HTs59pr/T//1/89jNVYD2N9P/zXfbfy7t0/
         N9XSN26stz7+p/Crw7904r/+qPq6Wjbpv7/75/ipd/+iGse+Xk7jv3/08F/ib/qjaiYf//e/prYe
@@ -3460,18 +3460,18 @@ interactions:
         J8V//K+hqw96bXTTBWZwZ5HAswqj4vN+i9Hg0U9fNtvF5xjpR96xo8xJ1CQ9q9sW9f59PfBEXiAV
         5qByQuHunKLzZofao1l7kXV+nF7YMquozt+NU9P9/w4vCokSaS5HxRdDxjmzIMaopbg9irvclM1L
         iL+JOz2oSJkyjj7Q12RhOu+0RFWc1AMoSD7+1rf/Yc6U0gLXC3PUUEqX/ozLugQzVub/u4n9fwFQ
-        SwcIY5H+Neb9AgBz8RwAUEsBAhQAFAAICAgAkLLGWmOR/jXm/QIAc/EcACQAAAAAAAAAAAAAAAAA
-        AAAAADEwMDBBLTAwMDBfMTc0OTI0MTIzMjg3N19kZV9mbGF0LmNzdlBLBQYAAAAAAQABAFIAAAA4
+        SwcIY5H+Neb9AgBz8RwAUEsBAhQAFAAICAgAhLrGWmOR/jXm/QIAc/EcACQAAAAAAAAAAAAAAAAA
+        AAAAADEwMDBBLTAwMDBfMTc0OTI0NDgwOTc0Ml9kZV9mbGF0LmNzdlBLBQYAAAAAAQABAFIAAAA4
         /gIAAAA=
     headers:
       Connection:
       - Keep-Alive
       Content-Disposition:
-      - attachment; filename=1000A-0000_1749241232877_de_flat.zip
+      - attachment; filename=1000A-0000_1749244809742_de_flat.zip
       Content-Type:
       - application/zip
       Date:
-      - Fri, 06 Jun 2025 20:20:30 GMT
+      - Fri, 06 Jun 2025 21:20:07 GMT
       Keep-Alive:
       - timeout=10, max=500
       Referrer-Policy:
@@ -3494,7 +3494,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: area=all&compress=False&endyear=&format=ffcsv&language=de&name=1000A-0000&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
+    body: area=all&compress=false&endyear=&format=ffcsv&language=de&name=1000A-0000&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
     headers:
       Accept:
       - '*/*'
@@ -3531,7 +3531,7 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Fri, 06 Jun 2025 20:20:35 GMT
+      - Fri, 06 Jun 2025 21:20:12 GMT
       Keep-Alive:
       - timeout=10, max=500
       Referrer-Policy:
@@ -3552,7 +3552,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: area=all&compress=False&endyear=&format=ffcsv&language=en&name=1000A-0000&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
+    body: area=all&compress=false&endyear=&format=ffcsv&language=en&name=1000A-0000&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
     headers:
       Accept:
       - '*/*'
@@ -3571,7 +3571,7 @@ interactions:
   response:
     body:
       string: !!binary |
-        UEsDBBQACAgIAOazxloAAAAAAAAAAAAAAAAkAAAAMTAwMEEtMDAwMF8xNzQ5MjQxODczMTM3X2Vu
+        UEsDBBQACAgIALW6xloAAAAAAAAAAAAAAAAkAAAAMTAwMEEtMDAwMF8xNzQ5MjQ0OTAyOTkzX2Vu
         X2ZsYXQuY3N21L3LcuRGlja4n6eIpdJMzIJfAZivyCKTlEhm5k+mRDNt2hAMZwSaCICDi1jis/xm
         2ugZuBmazSIeaF5hzufuiGBWdfesxqyOOrqkSmWyHAF3P7fv8v/8X//3MFZjPYz1/fAf993Ku3f/
         vamWvnFjvfXxX4V/OvyiE//xe9XX1bJJ//7df4+/690vVOPY18tp/Nffevg38Q/9XjWTj//5H1Nb
@@ -7056,17 +7056,17 @@ interactions:
         xLDAIUYDhhQ1Wg3LEct9XLz63G7Pjl3/gkW/J8t9JeX0i6bvkSE9NiF2fViMD57UvuiyXVK0aCdg
         qm7tmGRGqdqkq6KmzGja7Wkt/6/YZHlIoJoSaDddT8s4A7ZLuszbRWI0ZExSQe6VwfNgxLMQytAH
         Ct9RnNYZyUNTLmdNAoLSv4z9v+N0qpAsmlrzDSWErNxFhLR5zEGo/1k++C9QSwcIpZ6kZaYHAwDQ
-        5x8AUEsBAhQAFAAICAgA5rPGWqWepGWmBwMA0OcfACQAAAAAAAAAAAAAAAAAAAAAADEwMDBBLTAw
-        MDBfMTc0OTI0MTg3MzEzN19lbl9mbGF0LmNzdlBLBQYAAAAAAQABAFIAAAD4BwMAAAA=
+        5x8AUEsBAhQAFAAICAgAtbrGWqWepGWmBwMA0OcfACQAAAAAAAAAAAAAAAAAAAAAADEwMDBBLTAw
+        MDBfMTc0OTI0NDkwMjk5M19lbl9mbGF0LmNzdlBLBQYAAAAAAQABAFIAAAD4BwMAAAA=
     headers:
       Connection:
       - Keep-Alive
       Content-Disposition:
-      - attachment; filename=1000A-0000_1749241873137_en_flat.zip
+      - attachment; filename=1000A-0000_1749244902993_en_flat.zip
       Content-Type:
       - application/zip
       Date:
-      - Fri, 06 Jun 2025 20:31:10 GMT
+      - Fri, 06 Jun 2025 21:21:40 GMT
       Keep-Alive:
       - timeout=10, max=500
       Referrer-Policy:
@@ -7089,7 +7089,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: area=all&compress=False&endyear=&format=ffcsv&language=en&name=1000A-0000&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
+    body: area=all&compress=false&endyear=&format=ffcsv&language=en&name=1000A-0000&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
     headers:
       Accept:
       - '*/*'
@@ -7126,7 +7126,7 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Fri, 06 Jun 2025 20:31:16 GMT
+      - Fri, 06 Jun 2025 21:21:45 GMT
       Keep-Alive:
       - timeout=10, max=500
       Referrer-Policy:

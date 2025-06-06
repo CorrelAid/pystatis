@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: area=all&compress=False&endyear=&format=ffcsv&language=de&name=32421-0012&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
+    body: area=all&compress=false&endyear=&format=ffcsv&language=de&name=32421-0012&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
     headers:
       Accept:
       - '*/*'
@@ -19,7 +19,7 @@ interactions:
   response:
     body:
       string: !!binary |
-        UEsDBBQACAgIAJSwxloAAAAAAAAAAAAAAAAkAAAAMzI0MjEtMDAxMl8xNzQ5MjQwMjgwODcyX2Rl
+        UEsDBBQACAgIAHK6xloAAAAAAAAAAAAAAAAkAAAAMzI0MjEtMDAxMl8xNzQ5MjQ0Nzc2OTYxX2Rl
         X2ZsYXQuY3N27Z3LkhzHlab38xRYSmZesIx7huWK1U022KTYbSRbWsqKRBIoY100VQXRxHU/Sr/F
         0GwWfKB5hYkEJLFIgeXHM93jfH+ENhIvAFjnjy88jp/r//s///f+4eLh8v7h8uv7P359+3K/e/T3
         Vxdf7a92D5fX+3f/6u1f/fQPd9Uf/3xxd3nx1dVf//2jv3/3qx79g4uHh7vLr948/OMv/enfvPtN
@@ -300,17 +300,17 @@ interactions:
         x0VDESkdnZicGUc8EeaJeaMmJRWTtuRFDvGLzOPqxTpsvFP8ZS2sm9ANzGdrTvyUvpuOQ5gcDY0k
         WGktqrENHbTow2O6IOi27m09konElE3p16du2jBWUlms0pK0QxcG6oliuQws9DhxNR1JQ9okm+JH
         SR/ajdJon9KCdG0YNkxyjN/m1YXvsLIgKcqVpSPWQRS2Dfk8TSNd13YkMDU5nZ//D1BLBwheWrU1
-        Rz4AAA7qCQBQSwECFAAUAAgICACUsMZaXlq1NUc+AAAO6gkAJAAAAAAAAAAAAAAAAAAAAAAAMzI0
-        MjEtMDAxMl8xNzQ5MjQwMjgwODcyX2RlX2ZsYXQuY3N2UEsFBgAAAAABAAEAUgAAAJk+AAAAAA==
+        Rz4AAA7qCQBQSwECFAAUAAgICAByusZaXlq1NUc+AAAO6gkAJAAAAAAAAAAAAAAAAAAAAAAAMzI0
+        MjEtMDAxMl8xNzQ5MjQ0Nzc2OTYxX2RlX2ZsYXQuY3N2UEsFBgAAAAABAAEAUgAAAJk+AAAAAA==
     headers:
       Connection:
       - Keep-Alive
       Content-Disposition:
-      - attachment; filename=32421-0012_1749240280872_de_flat.zip
+      - attachment; filename=32421-0012_1749244776961_de_flat.zip
       Content-Type:
       - application/zip
       Date:
-      - Fri, 06 Jun 2025 20:04:38 GMT
+      - Fri, 06 Jun 2025 21:19:34 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
@@ -321,7 +321,7 @@ interactions:
       code: 200
       message: '200'
 - request:
-    body: area=all&compress=False&endyear=&format=ffcsv&language=de&name=32421-0012&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
+    body: area=all&compress=false&endyear=&format=ffcsv&language=de&name=32421-0012&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
     headers:
       Accept:
       - '*/*'
@@ -359,7 +359,7 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Fri, 06 Jun 2025 20:04:41 GMT
+      - Fri, 06 Jun 2025 21:19:37 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
@@ -368,7 +368,7 @@ interactions:
       code: 200
       message: '200'
 - request:
-    body: area=all&compress=False&endyear=&format=ffcsv&language=en&name=32421-0012&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
+    body: area=all&compress=false&endyear=&format=ffcsv&language=en&name=32421-0012&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
     headers:
       Accept:
       - '*/*'
@@ -387,7 +387,7 @@ interactions:
   response:
     body:
       string: !!binary |
-        UEsDBBQACAgIANWzxloAAAAAAAAAAAAAAAAkAAAAMzI0MjEtMDAxMl8xNzQ5MjQxODQzNjA4X2Vu
+        UEsDBBQACAgIAKS6xloAAAAAAAAAAAAAAAAkAAAAMzI0MjEtMDAxMl8xNzQ5MjQ0ODY4MDY1X2Vu
         X2ZsYXQuY3N27Z3LkhzHlab38xRYqhfllnHPtFyx2GKDI4qSkWzJZiUrAkmwTFUoTlVBbPXz9FuM
         zGahB+pX6EigIIkY9cCPh0ec73fXRkayhMv5/Qu/nOt//p//+/B49Xj98Hj94uF3L+5eno5/8+83
         V9+ebo6P17endz96+09//Y/H5nd/uLq/vvr25unnf/Pv7/5ff/Mfrh4f76+/ffP4//5f//qTd7+o
@@ -663,17 +663,17 @@ interactions:
         YwCohLQCkpY8ziHmOfI+x7ENO0AuwBamtl0YJuA6m8NAq782D1OYrxHeUPB0aQ59GIgJI+5tCTlv
         cYwSPEoSYzerf1Zt14dD444OVZ5+GsKE3HUsb4aCtxyGDDw+0lrmrL/djKHfuVMDFWfow7QDsmQ8
         12tw9OEU4VGTP4LHy5/Ywkbeypo6yVawGbDkWMjLfwFQSwcIk0wjNRk9AABu7wkAUEsBAhQAFAAI
-        CAgA1bPGWpNMIzUZPQAAbu8JACQAAAAAAAAAAAAAAAAAAAAAADMyNDIxLTAwMTJfMTc0OTI0MTg0
-        MzYwOF9lbl9mbGF0LmNzdlBLBQYAAAAAAQABAFIAAABrPQAAAAA=
+        CAgApLrGWpNMIzUZPQAAbu8JACQAAAAAAAAAAAAAAAAAAAAAADMyNDIxLTAwMTJfMTc0OTI0NDg2
+        ODA2NV9lbl9mbGF0LmNzdlBLBQYAAAAAAQABAFIAAABrPQAAAAA=
     headers:
       Connection:
       - Keep-Alive
       Content-Disposition:
-      - attachment; filename=32421-0012_1749241843608_en_flat.zip
+      - attachment; filename=32421-0012_1749244868065_en_flat.zip
       Content-Type:
       - application/zip
       Date:
-      - Fri, 06 Jun 2025 20:30:41 GMT
+      - Fri, 06 Jun 2025 21:21:05 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:
@@ -684,7 +684,7 @@ interactions:
       code: 200
       message: '200'
 - request:
-    body: area=all&compress=False&endyear=&format=ffcsv&language=en&name=32421-0012&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
+    body: area=all&compress=false&endyear=&format=ffcsv&language=en&name=32421-0012&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
     headers:
       Accept:
       - '*/*'
@@ -724,188 +724,7 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Fri, 06 Jun 2025 20:30:43 GMT
-      Keep-Alive:
-      - timeout=15, max=100
-      Server:
-      - Apache
-    status:
-      code: 200
-      message: '200'
-- request:
-    body: area=all&compress=True&endyear=&format=ffcsv&language=de&name=32421-0012&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '145'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      User-Agent:
-      - python-requests/2.32.3
-    method: POST
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile
-  response:
-    body:
-      string: !!binary |
-        UEsDBBQACAgIAJa0xloAAAAAAAAAAAAAAAAkAAAAMzI0MjEtMDAxMl8xNzQ5MjQyMjA0MTg4X2Rl
-        X2ZsYXQuY3N27V3JchtHEr3PV+BoRyQZXVsv0SdRlka2ZHpC0thHByi1SIRAwINFCus8n+K/GEXM
-        QR80vzBdoBxuyhLQS1XnS9AXiRtA5qvXVVm5vPzff/673kw3s/Vm9mL984vly6psfD6fXlTzcjO7
-        rm6+tfvojy+W6uc309VsejH/+P3G5zc/1fjCdLNZzS62mz//6B/fuXmR/uRd9afvqr/4rp/9zs2L
-        zCfvaj59V/PFd/3sd25e9GY631Y3//68Xcw2Hz+8/as++drulX8z2mpVPlhdVRfbxeXkoqohv77e
-        VKvJ6/nsevp2tnq9nl7Xnz7bLF+9qsrv7j16Wn43vVqVOtGm/ObJvfNvyrPt4mW1nn/4rf5vVSpb
-        Ppu+uFpXi/LZ84d/f6rK3WsvV9tffrn52smjh49/Kh+d1P9OvnpezeZX0/nyslrMqtWmmjycb5er
-        18urebV4O12vq9V696u/Lh98e372VJcPZov1dPPuolpVsxdXVfn98ycnz5+endwrn9dfubiebTbV
-        vLZkNqn/mskj//pqPvfWvVkuJveq1XK9rN+7PC035eMnPyaJKn+sVm+rxUv/M581+27DpJIkmXzE
-        Sh/EavLV/R/0yYd//2s7qxlXLTbV11HgM+X31YvX9S+42K4uT35crn5ZXtdvMSKaj588P/ln+fjD
-        b/NN9RHOd6eTB/VLX314/xHK08n2+rJafXhfo7upalwX8+klAPmkowfJycSV58vVy/otZ4uTn+o3
-        fOV/2biQfvsnSL9d1Gfp4mX97ptTD6m3tLqq4cKho2TgIJnI/HyXNXSXVf1Hb8qMVHqn97pbWGQO
-        lC+HnZGzJw/Ks/oveLmOtas7ygp4nyw+DDkVKShLOj1JDeLvQerZD+fls2W9087qn518v8OK+zga
-        0U7MdXa/PwYn9xb++JNwEquUNPf2IRK3gqzB5GGSlo+q9Zd243bPXX9gipSsY/aLWQFQzvlHCpIa
-        Spdnq6n/c/0WHeC07gmRIZ0wbzoYSOiCClCuJKY8n1X1R+s9vl27h8kH0B7fCqDNFhPvH6yWL0/f
-        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
-        AMYUAAAAAA==
-    headers:
-      Connection:
-      - Keep-Alive
-      Content-Disposition:
-      - attachment; filename=32421-0012_1749242204188_de_flat.zip
-      Content-Length:
-      - '5422'
-      Content-Type:
-      - application/zip
-      Date:
-      - Fri, 06 Jun 2025 20:36:42 GMT
-      Keep-Alive:
-      - timeout=15, max=100
-      Server:
-      - Apache
-    status:
-      code: 200
-      message: '200'
-- request:
-    body: area=all&compress=True&endyear=&format=ffcsv&language=de&name=32421-0012&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '145'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      User-Agent:
-      - python-requests/2.32.3
-    method: POST
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table
-  response:
-    body:
-      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"32421-0012\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"32421-0012\",\"Content\":\"Verwendung
-        klimawirksamer Stoffe: Bundesl\xE4nder, Jahre,\\nStoffgruppen, Einsatzbereiche\",\"Time\":{\"From\":\"2022\",\"To\":\"2023\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"32421\",\"Content\":\"Erhebung
-        bestimmter klimawirksamer Stoffe\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},\"Columns\":[{\"Code\":\"KLV001\",\"Content\":\"Verwendung klimawirksamer
-        Stoffe\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"KLV002\",\"Content\":\"Verwendung klimawirksamer Stoffe
-        (CO2-\xC4quivalente)\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Rows\":[{\"Code\":\"STFGR1\",\"Content\":\"Stoffgruppen\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"EINBR2\",\"Content\":\"Einsatzbereiche\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Updated\":\"see parent\"}],\"Subtitel\":{\"Code\":\"JAHR\",\"Content\":\"Jahr\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},\"Subheading\":{\"Code\":\"DLAND\",\"Content\":\"Bundesl\xE4nder\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}},\"Updated\":\"26.02.2024 12:51:33h\"},\"Copyright\":\"\xA9 Statistisches
-        Bundesamt (Destatis), 2025\"}"
-    headers:
-      Connection:
-      - Keep-Alive
-      Content-Length:
-      - '1690'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Fri, 06 Jun 2025 20:36:44 GMT
+      - Fri, 06 Jun 2025 21:21:08 GMT
       Keep-Alive:
       - timeout=15, max=100
       Server:

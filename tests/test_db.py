@@ -27,6 +27,11 @@ def test_set_db_pw(config_):
     assert db.get_pw("genesis") == "test_pw"
 
 
+def test_set_db_user(config_):
+    db.set_user("genesis", "test_user")
+    assert db.get_user("genesis") == "test_user"
+
+
 @pytest.mark.parametrize(
     "name, expected_db",
     [

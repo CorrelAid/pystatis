@@ -94,12 +94,19 @@ def test_get_data_with_quality_on_and_prettify_false(
     assert any(column.endswith("value_q") for column in table.data.columns)
 
 
-def test_get_data_with_compress_on(mocker):
+@pytest.mark.vcr()
+@pytest.mark.parametrize(
+    "table_name, expected_shape",
+    [
+        ("1000A-2022", (1003, 6)),
+    ],
+)
+def test_get_data_with_compress_on(mocker, table_name: str, expected_shape: tuple):
     mocker.patch.object(pystatis.db, "check_credentials_are_set", return_value=True)
-    table = pystatis.Table(name="1000A-2022")
+    table = pystatis.Table(name=table_name)
     table.get_data()
 
-    assert table.data.shape == (1003, 6)
+    assert table.data.shape == expected_shape
     assert table.data["Personen__Anzahl"].isna().sum() == 0
 
 

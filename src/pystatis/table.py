@@ -42,6 +42,12 @@ class Table:
         stand: str = "",
         language: str = "de",
         quality: str = "off",
+        classifyingvariable1: str = "",
+        classifyingkey1: str = "",
+        classifyingvariable2: str = "",
+        classifyingkey2: str = "",
+        classifyingvariable3: str = "",
+        classifyingkey3: str = "",
     ) -> None:
         """Downloads raw data and metadata from GENESIS-Online.
 
@@ -145,6 +151,19 @@ class Table:
             "startyear": startyear,
             "timeslices": timeslices,
         }
+
+        if classifyingvariable1:
+            params['classifyingvariable1'] = classifyingvariable1
+        if classifyingkey1:
+            params['classifyingkey1'] = classifyingkey1
+        if classifyingvariable2:
+            params['classifyingvariable2'] = classifyingvariable2
+        if classifyingkey2:
+            params['classifyingkey2'] = classifyingkey2
+        if classifyingvariable3:
+            params['classifyingvariable3'] = classifyingvariable3
+        if classifyingkey3:
+            params['classifyingkey3'] = classifyingkey3
 
         db_matches = db.identify_db_matches(self.name)
         db_name = db.select_db_by_credentials(db_matches)

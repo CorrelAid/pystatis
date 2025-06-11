@@ -14,7 +14,7 @@
     <link rel="shortcut icon" href="_static/pystatis_logo.ico"/>
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=2a2fe768"></script>
+      <script src="_static/documentation_options.js?v=e1a677a5"></script>
       <script src="_static/doctools.js?v=9a2dae69"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -133,7 +133,7 @@
 <li><p>Create a new branch by running <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">&lt;new-branch&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">switch</span> <span class="pre">-c</span> <span class="pre">&lt;new-branch&gt;</span></code>. If possible, add an issue number to the branch name.</p></li>
 <li><p>Make your changes.</p></li>
 <li><p>Delete the cassettes folder under tests to make sure that the tests are loading the latest data from the API.</p></li>
-<li><p>Run <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">run</span> <span class="pre">pytest</span> <span class="pre">tests</span> <span class="pre">-sx</span> <span class="pre">-vv</span> <span class="pre">--vcr-record=new_episodes</span></code> to see if all existing tests still run through.</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">run</span> <span class="pre">pytest</span> <span class="pre">tests</span> <span class="pre">-sx</span> <span class="pre">-vv</span> <span class="pre">--vcr-record=none</span></code> to see if all existing tests still run through.</p></li>
 <li><p>Add new tests depending on your changes.</p></li>
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">run</span> <span class="pre">pytest</span> <span class="pre">tests</span> <span class="pre">-sx</span> <span class="pre">-vv</span> <span class="pre">--vcr-record=new_episodes</span></code> again to make sure your tests are also passed.</p></li>
 <li><p>Commit your changes. This will trigger all pre-commit hooks as defined in <code class="docutils literal notranslate"><span class="pre">.pre-commit-config.yaml</span></code>. If any of these pre-hooks fails, your commit is declined, and you have to resolve the issues first.</p></li>

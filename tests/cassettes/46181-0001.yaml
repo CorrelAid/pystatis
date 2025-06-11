@@ -1,198 +1,200 @@
 interactions:
-- request:
-    body: area=all&compress=false&endyear=&format=ffcsv&language=de&name=46181-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '146'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      User-Agent:
-      - python-requests/2.32.3
-    method: POST
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile
-  response:
-    body:
-      string: !!binary |
-        UEsDBBQACAgIAHS6xloAAAAAAAAAAAAAAAAkAAAANDYxODEtMDAwMV8xNzQ5MjQ0NzgwMjQxX2Rl
-        X2ZsYXQuY3N27ZdNbhoxFID3PcUcoFT+GXtAbwUiBdKIRARYdIMMvDBWBqeyPSxysG5aqYscqFfo
-        DAPiL5Eq1NDQ6Wbkeb/2p+dn++e3H84rr53XEzeaPEwRtv4TNcYEvJ5joVqONkKgo4WyWo2TlX7r
-        v7DaEijvrR6n/tB0oymc2F5Uth+VvRj1WU3hxPei8v2o/MWoz2oKp4VKUiy+o9RovxruptqTLT3f
-        hZJWKdygdQ8GzQLtPcY2mGsfNFLn0ASpmQYNFWdKuKy3e3CpYguMMA7NTve2BU1MvZvEicrstHEz
-        dGruobmjgOFFr96jMCzCO2V9LrrqdFvD68bgFlqY4AxNjNq77Tlcz022zHweuf3wcwhtlX7xK5Pc
-        dKzNNDUzaNcHN/3hp0anSxi0LJrHp+/jbFWT2GZB0UzRVt73rTJO+0qQfgjqqcuntk4HgghGCIG6
-        eVRxkqcjlEMD756+2szZY7CG9J/Zmhmr8YgzmWMraFTu59Aa9AkJN+SyTC7BbCtng+PRsT+C7uNF
-        r7uEd6WNRnOH1vwtdCLir11u/xozSjihIjpFub3dnUqhY3aocCpCUd7OdcBDCsaiqFbupnRARVAa
-        lrffHOCgoeBRxM6nSE7TSjiR8jyq5CQ8hKxJQXm5q+S4s5pLfib3m7fDjBFJI1Y9n/vNSVq1lK9/
-        cp0RDlqr0rC48JW3SI7bXyGJquWtpCPfXEIykj+5frvcfgFQSwcIdLFwDxsCAADMEwAAUEsBAhQA
-        FAAICAgAdLrGWnSxcA8bAgAAzBMAACQAAAAAAAAAAAAAAAAAAAAAADQ2MTgxLTAwMDFfMTc0OTI0
-        NDc4MDI0MV9kZV9mbGF0LmNzdlBLBQYAAAAAAQABAFIAAABtAgAAAAA=
-    headers:
-      Connection:
-      - Keep-Alive
-      Content-Disposition:
-      - attachment; filename=46181-0001_1749244780241_de_flat.zip
-      Content-Length:
-      - '725'
-      Content-Type:
-      - application/zip
-      Date:
-      - Fri, 06 Jun 2025 21:19:38 GMT
-      Keep-Alive:
-      - timeout=15, max=100
-      Server:
-      - Apache
-    status:
-      code: 200
-      message: '200'
-- request:
-    body: area=all&compress=false&endyear=&format=ffcsv&language=de&name=46181-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '146'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      User-Agent:
-      - python-requests/2.32.3
-    method: POST
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table
-  response:
-    body:
-      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"46181-0001\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"46181-0001\",\"Content\":\"Bef\xF6rderte
-        Personen, Bef\xF6rderungsleistung\\n(Personenfernverkehr mit Bussen): Deutschland,
-        Jahre,\\nVerkehrsart, Hauptverkehrsverbindung\",\"Time\":{\"From\":\"2022\",\"To\":\"2023\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"46181\",\"Content\":\"Personenverkehr
-        mit Bussen und Bahnen\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Deutschland
-        insgesamt\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"VER013\",\"Content\":\"Bef\xF6rderte
-        Personen\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"GUT004\",\"Content\":\"Bef\xF6rderungsleistung\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Rows\":[{\"Code\":\"VERAR1\",\"Content\":\"Verkehrsart\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"VERVZ4\",\"Content\":\"Hauptverkehrsverbindung\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Updated\":\"see parent\"}],\"Subtitel\":{\"Code\":\"JAHR\",\"Content\":\"Jahr\",\"Type\":\"Merkmal\",\"Values\":\"2\",\"Selected\":\"2\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},\"Subheading\":null},\"Updated\":\"12.03.2025 13:38:55h\"},\"Copyright\":\"\xA9
-        Statistisches Bundesamt (Destatis), 2025\"}"
-    headers:
-      Connection:
-      - Keep-Alive
-      Content-Length:
-      - '1709'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Fri, 06 Jun 2025 21:19:40 GMT
-      Keep-Alive:
-      - timeout=15, max=100
-      Server:
-      - Apache
-    status:
-      code: 200
-      message: '200'
-- request:
-    body: area=all&compress=false&endyear=&format=ffcsv&language=en&name=46181-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '146'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      User-Agent:
-      - python-requests/2.32.3
-    method: POST
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile
-  response:
-    body:
-      string: !!binary |
-        UEsDBBQACAgIAKW6xloAAAAAAAAAAAAAAAAkAAAANDYxODEtMDAwMV8xNzQ5MjQ0ODcwODg4X2Vu
-        X2ZsYXQuY3N27ZfdbtowFMfv9xS+3KSC/BE7IF9RtaPsg1YUkLob5DiGWgsOsh0knm0Xe6S9wkjS
-        lZRSaWIaZKM3kXOOz7H909/H9o9v350XXjuvpZvINFa88p+ISCXc67kqXUVrY+RoshRWiyh58Ff+
-        y14Vg/De6ijzz7tuPGUQ3sqKt7PiF7Pu9JRBZCsr2c5KXsy601MGLUWSqfI7yYz2D82nQ23Zisg3
-        AUMtxG+Ec8rMlAXeCuMWqfUgWoEoc2dApkLeA2FiYIVO+IfO1YDfKWE5hpjwi17/tsu7ys6FWfGL
-        TXN8OegMEB+uFgqk003e3PGp1++Or89Ht/xaSuGaz0YFb01qGk7eqzhLVAycskstlXuXR4+/BPyz
-        0CaPmk61BFYla62khl91RjfD8cfzXh9i3jNeWSN8JftZ2dS+WM40tUrPTGVqFFIMIeQmm0fK5mNB
-        RDZwHJDCWq3iV2pVarhNQoJZDm6xJtL4Oufd0RDCgA8fJ7hQdh24XqJUfwgP7w3v/eWgX+AbqFmW
-        CAuS1Mwa8brI/Fps8xFkAbFZEGz+bXw0JAcQ3X/HDUECEQ0PJLv67lnE+4VNJJWhCaIBPelSthML
-        oxiHYfu1VO3GQxEKTrwU7eSCAkrCENdeNscpNQQyVmvVHAULZW1GETl5zex1thNG6n0nqiU1DBkK
-        cav2N6IjVXHGDnK6/XNcULuFgvK2eOKy2WvXBTBsnbis9nu/UYZh/nz7Tdn9BFBLBwhdjpWdJgIA
-        ACQUAABQSwECFAAUAAgICAClusZaXY6VnSYCAAAkFAAAJAAAAAAAAAAAAAAAAAAAAAAANDYxODEt
-        MDAwMV8xNzQ5MjQ0ODcwODg4X2VuX2ZsYXQuY3N2UEsFBgAAAAABAAEAUgAAAHgCAAAAAA==
-    headers:
-      Connection:
-      - Keep-Alive
-      Content-Disposition:
-      - attachment; filename=46181-0001_1749244870888_en_flat.zip
-      Content-Length:
-      - '736'
-      Content-Type:
-      - application/zip
-      Date:
-      - Fri, 06 Jun 2025 21:21:09 GMT
-      Keep-Alive:
-      - timeout=15, max=100
-      Server:
-      - Apache
-    status:
-      code: 200
-      message: '200'
-- request:
-    body: area=all&compress=false&endyear=&format=ffcsv&language=en&name=46181-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '146'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      User-Agent:
-      - python-requests/2.32.3
-    method: POST
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table
-  response:
-    body:
-      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"successfull\",\"Type\":\"information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"46181-0001\",\"area\":\"all\",\"language\":\"en\"},\"Object\":{\"Code\":\"46181-0001\",\"Content\":\"Passengers
-        carried, transport performance (passenger\\nlong-distance transport by bus):
-        Germany, years,\\ntype of transport, main traffic relation\",\"Time\":{\"From\":\"2022\",\"To\":\"2023\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"46181\",\"Content\":\"Passenger
-        transport by bus, coach and rail\",\"Type\":\"statistic\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Germany\",\"Type\":\"variable\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"VER013\",\"Content\":\"Passengers
-        carried\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"GUT004\",\"Content\":\"Transport performance\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Rows\":[{\"Code\":\"VERAR1\",\"Content\":\"Type of transport\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"VERVZ4\",\"Content\":\"Main
-        traffic relation\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Updated\":\"see parent\"}],\"Subtitel\":{\"Code\":\"JAHR\",\"Content\":\"Year\",\"Type\":\"variable\",\"Values\":\"2\",\"Selected\":\"2\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},\"Subheading\":null},\"Updated\":\"2025-03-12 13:38:55h\"},\"Copyright\":\"\xA9
-        Federal Statistical Office, Wiesbaden 2025\"}"
-    headers:
-      Connection:
-      - Keep-Alive
-      Content-Length:
-      - '1717'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Fri, 06 Jun 2025 21:21:11 GMT
-      Keep-Alive:
-      - timeout=15, max=100
-      Server:
-      - Apache
-    status:
-      code: 200
-      message: '200'
+  - request:
+      body: area=all&compress=false&endyear=&format=ffcsv&language=de&name=46181-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=&job=false
+      headers:
+        Accept:
+          - "*/*"
+        Accept-Encoding:
+          - gzip, deflate
+        Connection:
+          - keep-alive
+        Content-Length:
+          - "146"
+        Content-Type:
+          - application/x-www-form-urlencoded
+        User-Agent:
+          - python-requests/2.32.3
+      method: POST
+      uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile
+    response:
+      body:
+        string: !!binary |
+          UEsDBBQACAgIAHS6xloAAAAAAAAAAAAAAAAkAAAANDYxODEtMDAwMV8xNzQ5MjQ0NzgwMjQxX2Rl
+          X2ZsYXQuY3N27ZdNbhoxFID3PcUcoFT+GXtAbwUiBdKIRARYdIMMvDBWBqeyPSxysG5aqYscqFfo
+          DAPiL5Eq1NDQ6Wbkeb/2p+dn++e3H84rr53XEzeaPEwRtv4TNcYEvJ5joVqONkKgo4WyWo2TlX7r
+          v7DaEijvrR6n/tB0oymc2F5Uth+VvRj1WU3hxPei8v2o/MWoz2oKp4VKUiy+o9RovxruptqTLT3f
+          hZJWKdygdQ8GzQLtPcY2mGsfNFLn0ASpmQYNFWdKuKy3e3CpYguMMA7NTve2BU1MvZvEicrstHEz
+          dGruobmjgOFFr96jMCzCO2V9LrrqdFvD68bgFlqY4AxNjNq77Tlcz022zHweuf3wcwhtlX7xK5Pc
+          dKzNNDUzaNcHN/3hp0anSxi0LJrHp+/jbFWT2GZB0UzRVt73rTJO+0qQfgjqqcuntk4HgghGCIG6
+          eVRxkqcjlEMD756+2szZY7CG9J/Zmhmr8YgzmWMraFTu59Aa9AkJN+SyTC7BbCtng+PRsT+C7uNF
+          r7uEd6WNRnOH1vwtdCLir11u/xozSjihIjpFub3dnUqhY3aocCpCUd7OdcBDCsaiqFbupnRARVAa
+          lrffHOCgoeBRxM6nSE7TSjiR8jyq5CQ8hKxJQXm5q+S4s5pLfib3m7fDjBFJI1Y9n/vNSVq1lK9/
+          cp0RDlqr0rC48JW3SI7bXyGJquWtpCPfXEIykj+5frvcfgFQSwcIdLFwDxsCAADMEwAAUEsBAhQA
+          FAAICAgAdLrGWnSxcA8bAgAAzBMAACQAAAAAAAAAAAAAAAAAAAAAADQ2MTgxLTAwMDFfMTc0OTI0
+          NDc4MDI0MV9kZV9mbGF0LmNzdlBLBQYAAAAAAQABAFIAAABtAgAAAAA=
+      headers:
+        Connection:
+          - Keep-Alive
+        Content-Disposition:
+          - attachment; filename=46181-0001_1749244780241_de_flat.zip
+        Content-Length:
+          - "725"
+        Content-Type:
+          - application/zip
+        Date:
+          - Fri, 06 Jun 2025 21:19:38 GMT
+        Keep-Alive:
+          - timeout=15, max=100
+        Server:
+          - Apache
+      status:
+        code: 200
+        message: "200"
+  - request:
+      body: area=all&compress=false&endyear=&format=ffcsv&language=de&name=46181-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=&job=false
+      headers:
+        Accept:
+          - "*/*"
+        Accept-Encoding:
+          - gzip, deflate
+        Connection:
+          - keep-alive
+        Content-Length:
+          - "146"
+        Content-Type:
+          - application/x-www-form-urlencoded
+        User-Agent:
+          - python-requests/2.32.3
+      method: POST
+      uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table
+    response:
+      body:
+        string:
+          "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"46181-0001\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"46181-0001\",\"Content\":\"Bef\xF6rderte
+          Personen, Bef\xF6rderungsleistung\\n(Personenfernverkehr mit Bussen): Deutschland,
+          Jahre,\\nVerkehrsart, Hauptverkehrsverbindung\",\"Time\":{\"From\":\"2022\",\"To\":\"2023\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"46181\",\"Content\":\"Personenverkehr
+          mit Bussen und Bahnen\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Deutschland
+          insgesamt\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"VER013\",\"Content\":\"Bef\xF6rderte
+          Personen\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"},{\"Code\":\"GUT004\",\"Content\":\"Bef\xF6rderungsleistung\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"}],\"Rows\":[{\"Code\":\"VERAR1\",\"Content\":\"Verkehrsart\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"VERVZ4\",\"Content\":\"Hauptverkehrsverbindung\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"}],\"Updated\":\"see parent\"}],\"Subtitel\":{\"Code\":\"JAHR\",\"Content\":\"Jahr\",\"Type\":\"Merkmal\",\"Values\":\"2\",\"Selected\":\"2\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"},\"Subheading\":null},\"Updated\":\"12.03.2025 13:38:55h\"},\"Copyright\":\"\xA9
+          Statistisches Bundesamt (Destatis), 2025\"}"
+      headers:
+        Connection:
+          - Keep-Alive
+        Content-Length:
+          - "1709"
+        Content-Type:
+          - application/json;charset=UTF-8
+        Date:
+          - Fri, 06 Jun 2025 21:19:40 GMT
+        Keep-Alive:
+          - timeout=15, max=100
+        Server:
+          - Apache
+      status:
+        code: 200
+        message: "200"
+  - request:
+      body: area=all&compress=false&endyear=&format=ffcsv&language=en&name=46181-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=&job=false
+      headers:
+        Accept:
+          - "*/*"
+        Accept-Encoding:
+          - gzip, deflate
+        Connection:
+          - keep-alive
+        Content-Length:
+          - "146"
+        Content-Type:
+          - application/x-www-form-urlencoded
+        User-Agent:
+          - python-requests/2.32.3
+      method: POST
+      uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile
+    response:
+      body:
+        string: !!binary |
+          UEsDBBQACAgIAKW6xloAAAAAAAAAAAAAAAAkAAAANDYxODEtMDAwMV8xNzQ5MjQ0ODcwODg4X2Vu
+          X2ZsYXQuY3N27ZfdbtowFMfv9xS+3KSC/BE7IF9RtaPsg1YUkLob5DiGWgsOsh0knm0Xe6S9wkjS
+          lZRSaWIaZKM3kXOOz7H909/H9o9v350XXjuvpZvINFa88p+ISCXc67kqXUVrY+RoshRWiyh58Ff+
+          y14Vg/De6ijzz7tuPGUQ3sqKt7PiF7Pu9JRBZCsr2c5KXsy601MGLUWSqfI7yYz2D82nQ23Zisg3
+          AUMtxG+Ec8rMlAXeCuMWqfUgWoEoc2dApkLeA2FiYIVO+IfO1YDfKWE5hpjwi17/tsu7ys6FWfGL
+          TXN8OegMEB+uFgqk003e3PGp1++Or89Ht/xaSuGaz0YFb01qGk7eqzhLVAycskstlXuXR4+/BPyz
+          0CaPmk61BFYla62khl91RjfD8cfzXh9i3jNeWSN8JftZ2dS+WM40tUrPTGVqFFIMIeQmm0fK5mNB
+          RDZwHJDCWq3iV2pVarhNQoJZDm6xJtL4Oufd0RDCgA8fJ7hQdh24XqJUfwgP7w3v/eWgX+AbqFmW
+          CAuS1Mwa8brI/Fps8xFkAbFZEGz+bXw0JAcQ3X/HDUECEQ0PJLv67lnE+4VNJJWhCaIBPelSthML
+          oxiHYfu1VO3GQxEKTrwU7eSCAkrCENdeNscpNQQyVmvVHAULZW1GETl5zex1thNG6n0nqiU1DBkK
+          cav2N6IjVXHGDnK6/XNcULuFgvK2eOKy2WvXBTBsnbis9nu/UYZh/nz7Tdn9BFBLBwhdjpWdJgIA
+          ACQUAABQSwECFAAUAAgICAClusZaXY6VnSYCAAAkFAAAJAAAAAAAAAAAAAAAAAAAAAAANDYxODEt
+          MDAwMV8xNzQ5MjQ0ODcwODg4X2VuX2ZsYXQuY3N2UEsFBgAAAAABAAEAUgAAAHgCAAAAAA==
+      headers:
+        Connection:
+          - Keep-Alive
+        Content-Disposition:
+          - attachment; filename=46181-0001_1749244870888_en_flat.zip
+        Content-Length:
+          - "736"
+        Content-Type:
+          - application/zip
+        Date:
+          - Fri, 06 Jun 2025 21:21:09 GMT
+        Keep-Alive:
+          - timeout=15, max=100
+        Server:
+          - Apache
+      status:
+        code: 200
+        message: "200"
+  - request:
+      body: area=all&compress=false&endyear=&format=ffcsv&language=en&name=46181-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=&job=false
+      headers:
+        Accept:
+          - "*/*"
+        Accept-Encoding:
+          - gzip, deflate
+        Connection:
+          - keep-alive
+        Content-Length:
+          - "146"
+        Content-Type:
+          - application/x-www-form-urlencoded
+        User-Agent:
+          - python-requests/2.32.3
+      method: POST
+      uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table
+    response:
+      body:
+        string:
+          "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"successfull\",\"Type\":\"information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"46181-0001\",\"area\":\"all\",\"language\":\"en\"},\"Object\":{\"Code\":\"46181-0001\",\"Content\":\"Passengers
+          carried, transport performance (passenger\\nlong-distance transport by bus):
+          Germany, years,\\ntype of transport, main traffic relation\",\"Time\":{\"From\":\"2022\",\"To\":\"2023\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"46181\",\"Content\":\"Passenger
+          transport by bus, coach and rail\",\"Type\":\"statistic\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Germany\",\"Type\":\"variable\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"VER013\",\"Content\":\"Passengers
+          carried\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"},{\"Code\":\"GUT004\",\"Content\":\"Transport performance\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"}],\"Rows\":[{\"Code\":\"VERAR1\",\"Content\":\"Type of transport\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"VERVZ4\",\"Content\":\"Main
+          traffic relation\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"}],\"Updated\":\"see parent\"}],\"Subtitel\":{\"Code\":\"JAHR\",\"Content\":\"Year\",\"Type\":\"variable\",\"Values\":\"2\",\"Selected\":\"2\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"},\"Subheading\":null},\"Updated\":\"2025-03-12 13:38:55h\"},\"Copyright\":\"\xA9
+          Federal Statistical Office, Wiesbaden 2025\"}"
+      headers:
+        Connection:
+          - Keep-Alive
+        Content-Length:
+          - "1717"
+        Content-Type:
+          - application/json;charset=UTF-8
+        Date:
+          - Fri, 06 Jun 2025 21:21:11 GMT
+        Keep-Alive:
+          - timeout=15, max=100
+        Server:
+          - Apache
+      status:
+        code: 200
+        message: "200"
 version: 1

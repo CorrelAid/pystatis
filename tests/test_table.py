@@ -1,3 +1,6 @@
+import logging
+import time
+
 import pandas as pd
 import pytest
 from pandas.api.types import is_datetime64_any_dtype as is_datetime
@@ -57,9 +60,7 @@ pystatis.clear_cache()
         ("4000W-2041", (180, 21), "en"),
     ],
 )
-def test_get_data(
-    mocker, table_name: str, expected_shape: tuple[int, int], language: str
-):
+def test_get_data(mocker, table_name: str, expected_shape: tuple[int, int], language: str):
     mocker.patch.object(pystatis.db, "check_credentials_are_set", return_value=True)
     table = pystatis.Table(name=table_name)
     table.get_data(prettify=False, language=language, compress=False)
@@ -753,3 +754,25 @@ def test_dtype_time_column(mocker, table_name: str, time_col: str, language: str
     table.get_data(prettify=True, language=language, compress=False)
 
     assert is_datetime(table.data[time_col].values)
+
+
+@pytest.mark.vcr()
+@pytest.mark.parametrize(
+    "table_name",
+    [
+        ("12531-0043"),
+    ],
+)
+def test_get_data_with_job(mocker, caplog, table_name):
+    mocker.patch.object(pystatis.db, "check_credentials_are_set", return_value=True)
+    mocker.patch.object(time, "sleep", return_value=0)
+    caplog.set_level(logging.DEBUG)
+
+    table = pystatis.Table(name=table_name)
+    table.get_data()
+
+    assert "Die Tabelle ist zu groß, um direkt abgerufen zu werden" in caplog.text
+    assert "Verarbeitung im Hintergrund erfolgreich gestartet" in caplog.text
+    assert "Verarbeitung im Hintergrund abgeschlossen" in caplog.text
+
+    assert not table.data.empty

@@ -144,6 +144,7 @@ class Table:
             "stand": stand,
             "startyear": startyear,
             "timeslices": timeslices,
+            "job": "false",
         }
 
         db_matches = db.identify_db_matches(self.name)
@@ -184,9 +185,7 @@ class Table:
         metadata = load_data(endpoint="metadata", method="table", params=params)
         metadata = json.loads(metadata)
         if not isinstance(metadata, dict):
-            raise TypeError(
-                f"Expected dict for metadata, got {type(metadata).__name__}"
-            )
+            raise TypeError(f"Expected dict for metadata, got {type(metadata).__name__}")
 
         self.metadata = metadata
 
@@ -247,8 +246,8 @@ class Table:
         time_df = Table._extract_time_info(data, pivot_table, time_label_col, time_col)
 
         # Extract regional code information - checks all variable columns for AGS codes
-        regional_code_df, is_single_region, regional_code_prefix = (
-            Table._extract_regional_codes(pivot_table, regional_code_label)
+        regional_code_df, is_single_region, regional_code_prefix = Table._extract_regional_codes(
+            pivot_table, regional_code_label
         )
 
         # Extract attribute information
@@ -291,9 +290,7 @@ class Table:
             # With quality = 'on' we have an additional column value_q
             # To still use pivot table we have to combine value and value_q
             # so we can later split them again
-            data[value_col] = [
-                [v, q] for v, q in zip(data[value_col], data[value_q_col])
-            ]
+            data[value_col] = [[v, q] for v, q in zip(data[value_col], data[value_q_col])]
             data = data.drop(columns=[value_q_col])
 
         return data
@@ -314,11 +311,7 @@ class Table:
         """
         # Create pivot table with all non-value columns as index
         pivot_table = data.pivot(
-            index=[
-                col
-                for col in data.columns
-                if col not in data.filter(regex=r"^value").columns
-            ],
+            index=[col for col in data.columns if col not in data.filter(regex=r"^value").columns],
             columns=value_variable_label_col,
             values=value_col,
         )
@@ -429,16 +422,12 @@ class Table:
             DataFrame containing attribute columns
         """
         # Get all attribute columns
-        all_attribute_cols = pivot_table.filter(
-            regex=r"\d+_" + variable_attribute_label_col
-        )
+        all_attribute_cols = pivot_table.filter(regex=r"\d+_" + variable_attribute_label_col)
 
         # If a regional code was found, exclude that specific column
         if regional_code_prefix:
             regional_col = f"{regional_code_prefix}_{variable_attribute_label_col}"
-            attributes = all_attribute_cols.loc[
-                :, all_attribute_cols.columns != regional_col
-            ]
+            attributes = all_attribute_cols.loc[:, all_attribute_cols.columns != regional_col]
         else:
             attributes = all_attribute_cols
 

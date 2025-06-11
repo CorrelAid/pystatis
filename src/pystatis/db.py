@@ -3,10 +3,8 @@
 import json
 import logging
 
-from pystatis import config
-from pystatis import cache
+from pystatis import cache, config, http_helper
 from pystatis.exception import PystatisConfigError
-from pystatis import http_helper
 
 logger = logging.getLogger(__name__)
 
@@ -34,9 +32,7 @@ def identify_db_matches(table_name: str) -> list[str]:
     if db_matches:
         return db_matches
     else:
-        raise ValueError(
-            f"Could not determine the database for the table '{table_name}'."
-        )
+        raise ValueError(f"Could not determine the database for the table '{table_name}'.")
 
 
 def select_db_by_credentials(db_matches: list[str]) -> str:

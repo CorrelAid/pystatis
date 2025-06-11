@@ -92,9 +92,7 @@ class Results:
                         structure_dict["Head"]["Content"],
                         f"{'-' * 20}",
                         "Columns:",
-                        "\n".join(
-                            [col["Content"] for col in structure_dict["Columns"]]
-                        ),
+                        "\n".join([col["Content"] for col in structure_dict["Columns"]]),
                         f"{'-' * 20}",
                         "Rows:",
                         "\n".join([row["Content"] for row in structure_dict["Rows"]]),

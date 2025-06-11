@@ -1,77 +1,78 @@
 interactions:
-- request:
-    body: area=all&compress=false&endyear=&format=ffcsv&language=de&name=52411-02-01-4&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '149'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      User-Agent:
-      - python-requests/2.32.3
-    method: POST
-    uri: https://www.regionalstatistik.de/genesisws/rest/2020/data/tablefile
-  response:
-    body:
-      string: "<!doctype html>\r\n\r\n<html lang=\"de\">\r\n<head>\r\n  <meta charset=\"utf-8\">\r\n\r\n
-        \ <title></title>\r\n  <meta name=\"description\" content=\"\">\r\n  <meta
-        name=\"author\" content=\"\">\r\n\r\n\t<style>\r\n@font-face {\r\n  font-family
-        \  : 'Statis Sans';\r\n  src           : url( \"/error/StatisSans-Regular.woff2\"
-        ) format( \"woff2\"    ),\r\n                  url( \"/error/StatisSans-Regular.ttf\"
-        \  ) format( \"truetype\" );\r\n  font-weight   : 400;\r\n  font-style    :
-        normal;\r\n}\r\n@font-face {\r\n  font-family   : 'Statis Sans';\r\n  src
-        \          : url( \"/error/StatisSans-SemiBold.woff2\" ) format( \"woff2\"
-        ),\r\n                  url( \"/error/StatisSans-SemiBold.ttf\"   ) format(
-        \"truetype\" );\r\n  font-weight   : 600;\r\n  font-style    : normal;\r\n}\r\n\r\n
-        \ \r\n\t* \r\n\t{\r\n\t\tmargin: 0;\r\n\t\tpadding: 0;\r\n\t\tbox-sizing:
-        border-box;\r\n\t\tfont-size: 18px;\r\n\t\tcolor: rgb(54, 75, 99);\r\n\t}\r\n\r\n\thtml\r\n\t{\r\n\t\tfont-family:
-        Lato, \"Lucida Grande\", Tahoma, Sans-Serif;\r\n\t}\r\n\r\n\tbody\r\n\t{\r\n\t\t/*
-        padding-top: 390px; */\r\n\t\tbackground-image: url(\"data:image/svg+xml,%3C%3Fxml
-        version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1867px' height='933px' viewBox='0
-        0 1867 933' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3EPath
-        14%3C/title%3E%3Cg id='GO-Pages' stroke='none' stroke-width='1' fill='none'
-        fill-rule='evenodd' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath
-        d='M6,685.512992 C58.5597871,598.43306 106.123333,512.226427 148.690636,426.893094
-        C212.541592,298.893094 269.2125,876.130922 445.827305,654.783653 C622.442111,433.436383
-        808.232292,124.893094 915,229.893094 C1021.76771,334.893094 1118.4247,467.526743
-        1296,404.147482 C1473.5753,340.76822 1522.15746,6 1646.82938,6 C1729.944,6
-        1801.47106,312.964365 1861.41057,926.893094' id='Path-14' stroke='%235B9AD7'
-        stroke-width='11'%3E%3C/path%3E%3C/g%3E%3C/svg%3E\");\r\n\t\tbackground-repeat:
-        no-repeat;\r\n\t\tbackground-size: cover;\r\n\t}\r\n\t  \r\n\t#content\r\n\t{\r\n\t\tmargin:
-        0 auto;\r\n\t\tmax-width: 800px;\r\n\t\twidth: 80vw;\r\n\t\theight: 100vh;\r\n\t\tbackground-color:
-        rgba(255, 255, 255, 0.8);\r\n\t\tpadding: 80px;\r\n\t\tpadding-top: 390px;\r\n\t\tpadding-top:
-        30vh;\r\n\t}\r\n\t  \r\n\ta, p, span\r\n\t{\r\n\t\tfont-family: Statis Sans;\r\n\t\tfont-size:
-        24px;\r\n\t\tcolor: #364B63;\r\n\t\tletter-spacing: 0.27px;\r\n\t}\r\n\r\n\th1\r\n\t{\r\n\t\tfont-family:
-        Statis Sans;\r\n\t\tfont-size: 130px;\r\n\t\tcolor: #364B63;\r\n\t\tletter-spacing:
-        1.44px;\r\n\t}\r\n  \r\n\t</style>\r\n\r\n</head>\r\n\r\n<body>\r\n\r\n<div
-        id=\"content\">\r\n\t<h1 style=\"font-size: 48px; margin-bottom: 40px; font-weight:
-        bold;\">Ups, ein Fehler!</h1>\r\n\t<p>\r\n\t\t<span style=\"display: block;
-        margin-bottom: 12px;\">Aktuelle Zahlen und Fakten finden Sie hier:</span>\r\n\t\t<a
-        href=\"https://www.regionalstatistik.de\">https://www.regionalstatistik.de</a><br>\r\n\t</p>\r\n</div>\r\n
-        \ \r\n</body>\r\n</html>"
-    headers:
-      Connection:
-      - close
-      Content-Length:
-      - '2709'
-      Date:
-      - Wed, 11 Jun 2025 06:30:56 GMT
-      Server:
-      - webserver
-      Strict-Transport-Security:
-      - max-age=31536000;includeSubdomains; preload
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-XSS-Protection:
-      - 1; mode=block
-    status:
-      code: 500
-      message: ''
+  - request:
+      body: area=all&compress=false&endyear=&format=ffcsv&language=de&name=52411-02-01-4&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=&job=false
+      headers:
+        Accept:
+          - "*/*"
+        Accept-Encoding:
+          - gzip, deflate
+        Connection:
+          - keep-alive
+        Content-Length:
+          - "149"
+        Content-Type:
+          - application/x-www-form-urlencoded
+        User-Agent:
+          - python-requests/2.32.3
+      method: POST
+      uri: https://www.regionalstatistik.de/genesisws/rest/2020/data/tablefile
+    response:
+      body:
+        string:
+          "<!doctype html>\r\n\r\n<html lang=\"de\">\r\n<head>\r\n  <meta charset=\"utf-8\">\r\n\r\n
+          \ <title></title>\r\n  <meta name=\"description\" content=\"\">\r\n  <meta
+          name=\"author\" content=\"\">\r\n\r\n\t<style>\r\n@font-face {\r\n  font-family
+          \  : 'Statis Sans';\r\n  src           : url( \"/error/StatisSans-Regular.woff2\"
+          ) format( \"woff2\"    ),\r\n                  url( \"/error/StatisSans-Regular.ttf\"
+          \  ) format( \"truetype\" );\r\n  font-weight   : 400;\r\n  font-style    :
+          normal;\r\n}\r\n@font-face {\r\n  font-family   : 'Statis Sans';\r\n  src
+          \          : url( \"/error/StatisSans-SemiBold.woff2\" ) format( \"woff2\"
+          ),\r\n                  url( \"/error/StatisSans-SemiBold.ttf\"   ) format(
+          \"truetype\" );\r\n  font-weight   : 600;\r\n  font-style    : normal;\r\n}\r\n\r\n
+          \ \r\n\t* \r\n\t{\r\n\t\tmargin: 0;\r\n\t\tpadding: 0;\r\n\t\tbox-sizing:
+          border-box;\r\n\t\tfont-size: 18px;\r\n\t\tcolor: rgb(54, 75, 99);\r\n\t}\r\n\r\n\thtml\r\n\t{\r\n\t\tfont-family:
+          Lato, \"Lucida Grande\", Tahoma, Sans-Serif;\r\n\t}\r\n\r\n\tbody\r\n\t{\r\n\t\t/*
+          padding-top: 390px; */\r\n\t\tbackground-image: url(\"data:image/svg+xml,%3C%3Fxml
+          version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1867px' height='933px' viewBox='0
+          0 1867 933' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3EPath
+          14%3C/title%3E%3Cg id='GO-Pages' stroke='none' stroke-width='1' fill='none'
+          fill-rule='evenodd' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath
+          d='M6,685.512992 C58.5597871,598.43306 106.123333,512.226427 148.690636,426.893094
+          C212.541592,298.893094 269.2125,876.130922 445.827305,654.783653 C622.442111,433.436383
+          808.232292,124.893094 915,229.893094 C1021.76771,334.893094 1118.4247,467.526743
+          1296,404.147482 C1473.5753,340.76822 1522.15746,6 1646.82938,6 C1729.944,6
+          1801.47106,312.964365 1861.41057,926.893094' id='Path-14' stroke='%235B9AD7'
+          stroke-width='11'%3E%3C/path%3E%3C/g%3E%3C/svg%3E\");\r\n\t\tbackground-repeat:
+          no-repeat;\r\n\t\tbackground-size: cover;\r\n\t}\r\n\t  \r\n\t#content\r\n\t{\r\n\t\tmargin:
+          0 auto;\r\n\t\tmax-width: 800px;\r\n\t\twidth: 80vw;\r\n\t\theight: 100vh;\r\n\t\tbackground-color:
+          rgba(255, 255, 255, 0.8);\r\n\t\tpadding: 80px;\r\n\t\tpadding-top: 390px;\r\n\t\tpadding-top:
+          30vh;\r\n\t}\r\n\t  \r\n\ta, p, span\r\n\t{\r\n\t\tfont-family: Statis Sans;\r\n\t\tfont-size:
+          24px;\r\n\t\tcolor: #364B63;\r\n\t\tletter-spacing: 0.27px;\r\n\t}\r\n\r\n\th1\r\n\t{\r\n\t\tfont-family:
+          Statis Sans;\r\n\t\tfont-size: 130px;\r\n\t\tcolor: #364B63;\r\n\t\tletter-spacing:
+          1.44px;\r\n\t}\r\n  \r\n\t</style>\r\n\r\n</head>\r\n\r\n<body>\r\n\r\n<div
+          id=\"content\">\r\n\t<h1 style=\"font-size: 48px; margin-bottom: 40px; font-weight:
+          bold;\">Ups, ein Fehler!</h1>\r\n\t<p>\r\n\t\t<span style=\"display: block;
+          margin-bottom: 12px;\">Aktuelle Zahlen und Fakten finden Sie hier:</span>\r\n\t\t<a
+          href=\"https://www.regionalstatistik.de\">https://www.regionalstatistik.de</a><br>\r\n\t</p>\r\n</div>\r\n
+          \ \r\n</body>\r\n</html>"
+      headers:
+        Connection:
+          - close
+        Content-Length:
+          - "2709"
+        Date:
+          - Wed, 11 Jun 2025 06:30:56 GMT
+        Server:
+          - webserver
+        Strict-Transport-Security:
+          - max-age=31536000;includeSubdomains; preload
+        X-Content-Type-Options:
+          - nosniff
+        X-Frame-Options:
+          - SAMEORIGIN
+        X-XSS-Protection:
+          - 1; mode=block
+      status:
+        code: 500
+        message: ""
 version: 1

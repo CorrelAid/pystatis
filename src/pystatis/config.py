@@ -34,9 +34,7 @@ SUPPORTED_DB = ["genesis", "zensus", "regio"]
 REGEX_DB = {
     "genesis": re.compile(r"^((\d{5}-\d{4})|([0-9A-Z]{10}))$"),
     "zensus": re.compile(r"^\d{4}[A-Z]-\d{4}$"),
-    "regio": re.compile(
-        r"^((\d{5}-.{1,2}($|-.*$))|(A.*$)|([0-9A-Z]{10}$)|(\d{5}\w-Z-\d{1,2}))"
-    ),
+    "regio": re.compile(r"^((\d{5}-.{1,2}($|-.*$))|(A.*$)|([0-9A-Z]{10}$)|(\d{5}\w-Z-\d{1,2}))"),
 }
 
 ARS_OR_AGS_MAPPING = {

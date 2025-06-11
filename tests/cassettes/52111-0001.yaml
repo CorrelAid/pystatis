@@ -1,114 +1,115 @@
 interactions:
-- request:
-    body: area=all&compress=false&endyear=&format=ffcsv&language=de&name=52111-0001&quality=on&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '145'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      User-Agent:
-      - python-requests/2.32.3
-    method: POST
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile
-  response:
-    body:
-      string: !!binary |
-        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
-        AAAAAQABAFIAAABzBQAAAAA=
-    headers:
-      Connection:
-      - Keep-Alive
-      Content-Disposition:
-      - attachment; filename=52111-0001_1749244935181_de_flat.zip
-      Content-Length:
-      - '1499'
-      Content-Type:
-      - application/zip
-      Date:
-      - Fri, 06 Jun 2025 21:22:13 GMT
-      Keep-Alive:
-      - timeout=15, max=100
-      Server:
-      - Apache
-    status:
-      code: 200
-      message: '200'
-- request:
-    body: area=all&compress=false&endyear=&format=ffcsv&language=de&name=52111-0001&quality=on&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '145'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      User-Agent:
-      - python-requests/2.32.3
-    method: POST
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table
-  response:
-    body:
-      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"52111-0001\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"52111-0001\",\"Content\":\"Unternehmen
-        (EU) (Unternehmensregister-System):\\nDeutschland, Jahre, Wirtschaftszweige
-        (Abschnitte),\\nBesch\xE4ftigtengr\xF6\xDFenklassen\",\"Time\":{\"From\":\"2019\",\"To\":\"2022\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"52111\",\"Content\":\"Unternehmensregister-System
-        (URS)\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Deutschland
-        insgesamt\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":[{\"Code\":\"UNT002\",\"Content\":\"Unternehmen
-        (EU)\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Updated\":\"see parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"BESG12\",\"Content\":\"Besch\xE4ftigtengr\xF6\xDFenklassen\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Rows\":[{\"Code\":\"WZ08U6\",\"Content\":\"WZ2008 (Abschnitte):
-        URS\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Subtitel\":{\"Code\":\"JAHR\",\"Content\":\"Jahr\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},\"Subheading\":null},\"Updated\":\"28.12.2022 17:12:43h\"},\"Copyright\":\"\xA9
-        Statistisches Bundesamt (Destatis), 2025\"}"
-    headers:
-      Connection:
-      - Keep-Alive
-      Content-Length:
-      - '1559'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Fri, 06 Jun 2025 21:22:15 GMT
-      Keep-Alive:
-      - timeout=15, max=100
-      Server:
-      - Apache
-    status:
-      code: 200
-      message: '200'
+  - request:
+      body: area=all&compress=false&endyear=&format=ffcsv&language=de&name=52111-0001&quality=on&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=&job=false
+      headers:
+        Accept:
+          - "*/*"
+        Accept-Encoding:
+          - gzip, deflate
+        Connection:
+          - keep-alive
+        Content-Length:
+          - "145"
+        Content-Type:
+          - application/x-www-form-urlencoded
+        User-Agent:
+          - python-requests/2.32.3
+      method: POST
+      uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile
+    response:
+      body:
+        string: !!binary |
+          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
+          AAAAAQABAFIAAABzBQAAAAA=
+      headers:
+        Connection:
+          - Keep-Alive
+        Content-Disposition:
+          - attachment; filename=52111-0001_1749244935181_de_flat.zip
+        Content-Length:
+          - "1499"
+        Content-Type:
+          - application/zip
+        Date:
+          - Fri, 06 Jun 2025 21:22:13 GMT
+        Keep-Alive:
+          - timeout=15, max=100
+        Server:
+          - Apache
+      status:
+        code: 200
+        message: "200"
+  - request:
+      body: area=all&compress=false&endyear=&format=ffcsv&language=de&name=52111-0001&quality=on&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=&job=false
+      headers:
+        Accept:
+          - "*/*"
+        Accept-Encoding:
+          - gzip, deflate
+        Connection:
+          - keep-alive
+        Content-Length:
+          - "145"
+        Content-Type:
+          - application/x-www-form-urlencoded
+        User-Agent:
+          - python-requests/2.32.3
+      method: POST
+      uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table
+    response:
+      body:
+        string:
+          "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"52111-0001\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"52111-0001\",\"Content\":\"Unternehmen
+          (EU) (Unternehmensregister-System):\\nDeutschland, Jahre, Wirtschaftszweige
+          (Abschnitte),\\nBesch\xE4ftigtengr\xF6\xDFenklassen\",\"Time\":{\"From\":\"2019\",\"To\":\"2022\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"52111\",\"Content\":\"Unternehmensregister-System
+          (URS)\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Deutschland
+          insgesamt\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":[{\"Code\":\"UNT002\",\"Content\":\"Unternehmen
+          (EU)\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"}],\"Updated\":\"see parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"BESG12\",\"Content\":\"Besch\xE4ftigtengr\xF6\xDFenklassen\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"}],\"Rows\":[{\"Code\":\"WZ08U6\",\"Content\":\"WZ2008 (Abschnitte):
+          URS\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"}],\"Subtitel\":{\"Code\":\"JAHR\",\"Content\":\"Jahr\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"},\"Subheading\":null},\"Updated\":\"28.12.2022 17:12:43h\"},\"Copyright\":\"\xA9
+          Statistisches Bundesamt (Destatis), 2025\"}"
+      headers:
+        Connection:
+          - Keep-Alive
+        Content-Length:
+          - "1559"
+        Content-Type:
+          - application/json;charset=UTF-8
+        Date:
+          - Fri, 06 Jun 2025 21:22:15 GMT
+        Keep-Alive:
+          - timeout=15, max=100
+        Server:
+          - Apache
+      status:
+        code: 200
+        message: "200"
 version: 1

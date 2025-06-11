@@ -1,4 +1,5 @@
 from configparser import RawConfigParser
+from typing import Generator
 
 import pytest
 
@@ -8,7 +9,7 @@ from tests.test_http_helper import _generic_request_status
 
 
 @pytest.fixture()
-def config_() -> RawConfigParser:
+def config_() -> Generator[RawConfigParser, None, None]:
     old_config = config.load_config()
     config.delete_config()
     yield config.config

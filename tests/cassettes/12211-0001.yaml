@@ -1,262 +1,264 @@
 interactions:
-- request:
-    body: area=all&compress=false&endyear=&format=ffcsv&language=de&name=12211-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '146'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      User-Agent:
-      - python-requests/2.32.3
-    method: POST
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile
-  response:
-    body:
-      string: !!binary |
-        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
-        AA==
-    headers:
-      Connection:
-      - Keep-Alive
-      Content-Disposition:
-      - attachment; filename=12211-0001_1749244759523_de_flat.zip
-      Content-Length:
-      - '2224'
-      Content-Type:
-      - application/zip
-      Date:
-      - Fri, 06 Jun 2025 21:19:15 GMT
-      Keep-Alive:
-      - timeout=15, max=100
-      Server:
-      - Apache
-    status:
-      code: 200
-      message: '200'
-- request:
-    body: area=all&compress=false&endyear=&format=ffcsv&language=de&name=12211-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '146'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      User-Agent:
-      - python-requests/2.32.3
-    method: POST
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table
-  response:
-    body:
-      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"12211-0001\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"12211-0001\",\"Content\":\"Bev\xF6lkerung,
-        Erwerbst\xE4tige, Erwerbslose, Erwerbspersonen, Nichterwerbspersonen aus Hauptwohnsitzhaushalten:
-        Deutschland, Jahre, Geschlecht, Altersgruppen\",\"Time\":{\"From\":\"2020\",\"To\":\"2024\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"12211\",\"Content\":\"Mikrozensus\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Deutschland
-        insgesamt\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"BEV036\",\"Content\":\"Bev\xF6lkerung
-        in Hauptwohnsitzhaushalten\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"ERW041\",\"Content\":\"Erwerbst\xE4tige aus Hauptwohnsitzhaushalten\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"ERW042\",\"Content\":\"Erwerbslose aus Hauptwohnsitzhaushalten\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"ERW040\",\"Content\":\"Erwerbspersonen aus Hauptwohnsitzhaushalten\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"ERW043\",\"Content\":\"Nichterwerbspersonen aus Hauptwohnsitzhaushalten\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Rows\":[{\"Code\":\"GES\",\"Content\":\"Geschlecht\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"ALT068\",\"Content\":\"Altersgruppen
-        (u15-75m)\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Updated\":\"see parent\"}],\"Subtitel\":{\"Code\":\"JAHR\",\"Content\":\"Jahr\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},\"Subheading\":null},\"Updated\":\"28.12.2022 09:26:09h\"},\"Copyright\":\"\xA9
-        Statistisches Bundesamt (Destatis), 2025\"}"
-    headers:
-      Connection:
-      - Keep-Alive
-      Content-Length:
-      - '2273'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Fri, 06 Jun 2025 21:19:19 GMT
-      Keep-Alive:
-      - timeout=15, max=100
-      Server:
-      - Apache
-    status:
-      code: 200
-      message: '200'
-- request:
-    body: area=all&compress=false&endyear=&format=ffcsv&language=en&name=12211-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '146'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      User-Agent:
-      - python-requests/2.32.3
-    method: POST
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile
-  response:
-    body:
-      string: !!binary |
-        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
-        UgAAAFEIAAAAAA==
-    headers:
-      Connection:
-      - Keep-Alive
-      Content-Disposition:
-      - attachment; filename=12211-0001_1749244846659_en_flat.zip
-      Content-Length:
-      - '2233'
-      Content-Type:
-      - application/zip
-      Date:
-      - Fri, 06 Jun 2025 21:20:41 GMT
-      Keep-Alive:
-      - timeout=15, max=100
-      Server:
-      - Apache
-    status:
-      code: 200
-      message: '200'
-- request:
-    body: area=all&compress=false&endyear=&format=ffcsv&language=en&name=12211-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '146'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      User-Agent:
-      - python-requests/2.32.3
-    method: POST
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table
-  response:
-    body:
-      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"successfull\",\"Type\":\"information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"12211-0001\",\"area\":\"all\",\"language\":\"en\"},\"Object\":{\"Code\":\"12211-0001\",\"Content\":\"Population,
-        persons in employment, unemployed persons, econ.\\nactive population, econ.
-        inactive population from primary\\nresidence households: Germany, years, sex,
-        age groups\",\"Time\":{\"From\":\"2020\",\"To\":\"2024\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"12211\",\"Content\":\"Microcensus\",\"Type\":\"statistic\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Germany\",\"Type\":\"variable\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"BEV036\",\"Content\":\"Population
-        in primary residence households\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"ERW041\",\"Content\":\"Persons in employment from primary
-        residence hh.\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"ERW042\",\"Content\":\"Unemployed persons from primary
-        residence hh.\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"ERW040\",\"Content\":\"Economically active population
-        from prim.resid.hh.\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"ERW043\",\"Content\":\"Economically inactive population
-        fr.prim.resid.hh.\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Rows\":[{\"Code\":\"GES\",\"Content\":\"Sex\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"ALT068\",\"Content\":\"Age
-        groups (under 15 - 75 years and over)\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Updated\":\"see parent\"}],\"Subtitel\":{\"Code\":\"JAHR\",\"Content\":\"Year\",\"Type\":\"variable\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},\"Subheading\":null},\"Updated\":\"2022-12-28 09:26:09h\"},\"Copyright\":\"\xA9
-        Federal Statistical Office, Wiesbaden 2025\"}"
-    headers:
-      Connection:
-      - Keep-Alive
-      Content-Length:
-      - '2323'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Fri, 06 Jun 2025 21:20:46 GMT
-      Keep-Alive:
-      - timeout=15, max=100
-      Server:
-      - Apache
-    status:
-      code: 200
-      message: '200'
+  - request:
+      body: area=all&compress=false&endyear=&format=ffcsv&language=de&name=12211-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=&job=false
+      headers:
+        Accept:
+          - "*/*"
+        Accept-Encoding:
+          - gzip, deflate
+        Connection:
+          - keep-alive
+        Content-Length:
+          - "146"
+        Content-Type:
+          - application/x-www-form-urlencoded
+        User-Agent:
+          - python-requests/2.32.3
+      method: POST
+      uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile
+    response:
+      body:
+        string: !!binary |
+          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
+          AA==
+      headers:
+        Connection:
+          - Keep-Alive
+        Content-Disposition:
+          - attachment; filename=12211-0001_1749244759523_de_flat.zip
+        Content-Length:
+          - "2224"
+        Content-Type:
+          - application/zip
+        Date:
+          - Fri, 06 Jun 2025 21:19:15 GMT
+        Keep-Alive:
+          - timeout=15, max=100
+        Server:
+          - Apache
+      status:
+        code: 200
+        message: "200"
+  - request:
+      body: area=all&compress=false&endyear=&format=ffcsv&language=de&name=12211-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=&job=false
+      headers:
+        Accept:
+          - "*/*"
+        Accept-Encoding:
+          - gzip, deflate
+        Connection:
+          - keep-alive
+        Content-Length:
+          - "146"
+        Content-Type:
+          - application/x-www-form-urlencoded
+        User-Agent:
+          - python-requests/2.32.3
+      method: POST
+      uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table
+    response:
+      body:
+        string:
+          "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"12211-0001\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"12211-0001\",\"Content\":\"Bev\xF6lkerung,
+          Erwerbst\xE4tige, Erwerbslose, Erwerbspersonen, Nichterwerbspersonen aus Hauptwohnsitzhaushalten:
+          Deutschland, Jahre, Geschlecht, Altersgruppen\",\"Time\":{\"From\":\"2020\",\"To\":\"2024\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"12211\",\"Content\":\"Mikrozensus\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Deutschland
+          insgesamt\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"BEV036\",\"Content\":\"Bev\xF6lkerung
+          in Hauptwohnsitzhaushalten\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"},{\"Code\":\"ERW041\",\"Content\":\"Erwerbst\xE4tige aus Hauptwohnsitzhaushalten\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"},{\"Code\":\"ERW042\",\"Content\":\"Erwerbslose aus Hauptwohnsitzhaushalten\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"},{\"Code\":\"ERW040\",\"Content\":\"Erwerbspersonen aus Hauptwohnsitzhaushalten\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"},{\"Code\":\"ERW043\",\"Content\":\"Nichterwerbspersonen aus Hauptwohnsitzhaushalten\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"}],\"Rows\":[{\"Code\":\"GES\",\"Content\":\"Geschlecht\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"ALT068\",\"Content\":\"Altersgruppen
+          (u15-75m)\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"}],\"Updated\":\"see parent\"}],\"Subtitel\":{\"Code\":\"JAHR\",\"Content\":\"Jahr\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"},\"Subheading\":null},\"Updated\":\"28.12.2022 09:26:09h\"},\"Copyright\":\"\xA9
+          Statistisches Bundesamt (Destatis), 2025\"}"
+      headers:
+        Connection:
+          - Keep-Alive
+        Content-Length:
+          - "2273"
+        Content-Type:
+          - application/json;charset=UTF-8
+        Date:
+          - Fri, 06 Jun 2025 21:19:19 GMT
+        Keep-Alive:
+          - timeout=15, max=100
+        Server:
+          - Apache
+      status:
+        code: 200
+        message: "200"
+  - request:
+      body: area=all&compress=false&endyear=&format=ffcsv&language=en&name=12211-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=&job=false
+      headers:
+        Accept:
+          - "*/*"
+        Accept-Encoding:
+          - gzip, deflate
+        Connection:
+          - keep-alive
+        Content-Length:
+          - "146"
+        Content-Type:
+          - application/x-www-form-urlencoded
+        User-Agent:
+          - python-requests/2.32.3
+      method: POST
+      uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile
+    response:
+      body:
+        string: !!binary |
+          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
+          UgAAAFEIAAAAAA==
+      headers:
+        Connection:
+          - Keep-Alive
+        Content-Disposition:
+          - attachment; filename=12211-0001_1749244846659_en_flat.zip
+        Content-Length:
+          - "2233"
+        Content-Type:
+          - application/zip
+        Date:
+          - Fri, 06 Jun 2025 21:20:41 GMT
+        Keep-Alive:
+          - timeout=15, max=100
+        Server:
+          - Apache
+      status:
+        code: 200
+        message: "200"
+  - request:
+      body: area=all&compress=false&endyear=&format=ffcsv&language=en&name=12211-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=&job=false
+      headers:
+        Accept:
+          - "*/*"
+        Accept-Encoding:
+          - gzip, deflate
+        Connection:
+          - keep-alive
+        Content-Length:
+          - "146"
+        Content-Type:
+          - application/x-www-form-urlencoded
+        User-Agent:
+          - python-requests/2.32.3
+      method: POST
+      uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table
+    response:
+      body:
+        string:
+          "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"successfull\",\"Type\":\"information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"12211-0001\",\"area\":\"all\",\"language\":\"en\"},\"Object\":{\"Code\":\"12211-0001\",\"Content\":\"Population,
+          persons in employment, unemployed persons, econ.\\nactive population, econ.
+          inactive population from primary\\nresidence households: Germany, years, sex,
+          age groups\",\"Time\":{\"From\":\"2020\",\"To\":\"2024\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"12211\",\"Content\":\"Microcensus\",\"Type\":\"statistic\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Germany\",\"Type\":\"variable\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"BEV036\",\"Content\":\"Population
+          in primary residence households\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"},{\"Code\":\"ERW041\",\"Content\":\"Persons in employment from primary
+          residence hh.\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"},{\"Code\":\"ERW042\",\"Content\":\"Unemployed persons from primary
+          residence hh.\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"},{\"Code\":\"ERW040\",\"Content\":\"Economically active population
+          from prim.resid.hh.\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"},{\"Code\":\"ERW043\",\"Content\":\"Economically inactive population
+          fr.prim.resid.hh.\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"}],\"Rows\":[{\"Code\":\"GES\",\"Content\":\"Sex\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"ALT068\",\"Content\":\"Age
+          groups (under 15 - 75 years and over)\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"}],\"Updated\":\"see parent\"}],\"Subtitel\":{\"Code\":\"JAHR\",\"Content\":\"Year\",\"Type\":\"variable\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"},\"Subheading\":null},\"Updated\":\"2022-12-28 09:26:09h\"},\"Copyright\":\"\xA9
+          Federal Statistical Office, Wiesbaden 2025\"}"
+      headers:
+        Connection:
+          - Keep-Alive
+        Content-Length:
+          - "2323"
+        Content-Type:
+          - application/json;charset=UTF-8
+        Date:
+          - Fri, 06 Jun 2025 21:20:46 GMT
+        Keep-Alive:
+          - timeout=15, max=100
+        Server:
+          - Apache
+      status:
+        code: 200
+        message: "200"
 version: 1

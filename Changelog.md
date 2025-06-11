@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.5.4
+
+- Change handling of backend jobs: Switch from catalogue/jobs to catalogue/results.
+- Reactivate tests for Regionalstatistik.
+
 ## 0.5.3
 
 - Support for a new parameter in `Table.get_data(..., compress: bool = True)` that can be `True` or `False`. When set to `True`, it will suppress empty rows and columns in the table before downloading it, thus reducing the table size.

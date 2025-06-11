@@ -1,180 +1,181 @@
 interactions:
-- request:
-    body: area=all&compress=false&endyear=&format=ffcsv&language=de&name=4000W-2030&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '146'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      User-Agent:
-      - python-requests/2.32.3
-    method: POST
-    uri: https://ergebnisse.zensus2022.de/api/rest/2020/data/tablefile
-  response:
-    body:
-      string: !!binary |
-        UEsDBBQACAgIAA27xloAAAAAAAAAAAAAAAAkAAAANDAwMFctMjAzMF8xNzQ5MjQ1MDY3Njc1X2Rl
-        X2ZsYXQuY3N27V3LblzHEd3nK2ZpL2h0Vb99VyZESwIsWZCYSPFGGIljcQByJJBDB8kyP5KNl1ln
-        k0UW+pP8QH4h3UM5upeSeauny0BwQC2MIYczQxe763Hq1Kn//PNfl9vldn25Xb++fPn67clqGH19
-        tny1Ohu26/PV9VO7Rx+/OdDLn5YX6+Wrsw/Pj76+/qnRN5bb7cX61dX20x/9+Mz1i/jGu/LNd+Vf
-        fdfPPnP9InvjXe3Nd7W/+q6ffeb6RT8tz65W1/99ebVZbz88nH7Uje/tXvk7Z4x5Pjx/e7q52rxZ
-        bRZf3F+9Wq+2l8X8m5MF+a+M/4oN85fDs+Nv7g/Pyh/kdLt8M9TvHRh/QH64f/T9ve9ouLe62l6+
-        Pj0rrxvu3Z98+fzB/UfHNDwqb7xanKwuFh8+b/EFGbP491//fvDs9enFertdfTk8enh0zNaYQ7Y5
-        D/XR4tX6cnG12ZbXsbv++fKZh8dPeCi/7Pufr05W2z+/K7/5xft/vP9beYvy5MHRw8cH3z49ejh8
-        e7Eqx2h1utqcrC4XR+vNj8vz9dl6tTldXl0ORByGbzZ/WZ6e1d/SGD/8YXVxXn/R8qt+NMt6s/jl
-        szaL8/V299TF8ur8/8+Aw8PN5ZvV5fJ8O2+lR0cPnh6QPXzxYni0Or0Ym+brBdli9ZPFeXnioyUG
-        Z0NgcmBG2506X07di/JvqI/qD/zv/1923u59/+TJ0XfDjTP29eLe23fvVmf18en7n89+3Jar7E0G
-        s2DLsfvh+dHDg3I5Hxw9Hn7402o9NdfT1fr0w/Xk4CxZMEvVs0axnDWKxcPVRyMPR0nq4XZ318RD
-        4s/c3bg4WBCPrq13ISHaMVQ7hmrHMLVjlNpxdxg/XN1PD+Ond9dlD2hIk4shTS6GzFM7mpaIu7vT
-        nzrA8Y2O5A2g/bqCx/Efnxw8+/7xs+NimPJZ5dNGPzvYZBFdoHH1xLly4tzkxPmmi/uZHO/mJS5n
-        zpQ0EtCEVA8d+er9/PTWBuU8OeUIGT5SNWCqBkxTA2aJAUc5D/vkCNFC9ZZSvaU0vaYkvqe3ezef
-        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
-        AQBSAAAAjw4AAAAA
-    headers:
-      Connection:
-      - Keep-Alive
-      Content-Disposition:
-      - attachment; filename=4000W-2030_1749245067675_de_flat.zip
-      Content-Length:
-      - '3831'
-      Content-Type:
-      - application/zip
-      Date:
-      - Fri, 06 Jun 2025 21:24:25 GMT
-      Keep-Alive:
-      - timeout=10, max=500
-      Referrer-Policy:
-      - same-origin
-      Server:
-      - Apache
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains
-      Vary:
-      - User-Agent
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-XSS-Protection:
-      - 1; mode=block
-    status:
-      code: 200
-      message: OK
-- request:
-    body: area=all&compress=false&endyear=&format=ffcsv&language=de&name=4000W-2030&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '146'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      User-Agent:
-      - python-requests/2.32.3
-    method: POST
-    uri: https://ergebnisse.zensus2022.de/api/rest/2020/metadata/table
-  response:
-    body:
-      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"4000W-2030\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"4000W-2030\",\"Content\":\"Wohnungen:
-        Miete der Wohnung (100\u20AC - Schritte)/ Miete der Wohnung (2\u20AC/m\xB2-Schritte)
-        - Geb\xE4udetyp (Gr\xF6\xDFe)\",\"Time\":{\"From\":\"15.05.2022\",\"To\":\"15.05.2022\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"4000W\",\"Content\":\"Wohnungen
-        (Gebietsstand 15.05.2022)\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},\"Columns\":[{\"Code\":\"GEODL1\",\"Content\":\"Deutschland\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"WHG005\",\"Content\":\"Vermietete
-        Wohnungen in Geb\xE4uden mit Wohnraum\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Updated\":\"see parent\"}],\"Rows\":[{\"Code\":\"WHGMT1\",\"Content\":\"Miete
-        der Wohnung (100 \u20AC-Schritte)\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"GEBTP2\",\"Content\":\"Geb\xE4udetyp
-        (Gr\xF6\xDFe)\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Updated\":\"see parent\"}],\"Subtitel\":{\"Code\":\"STAG\",\"Content\":\"Stichtag\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},\"Subheading\":null},\"Updated\":\"08.07.2024 08:01:51h\"},\"Copyright\":\"\xA9
-        Statistische \xC4mter des Bundes und der L\xE4nder, Deutschland, 2025. Lizenziert
-        unter der Datenlizenz Deutschland - Namensnennung - Version 2.0\"}"
-    headers:
-      Connection:
-      - Keep-Alive
-      Content-Length:
-      - '1687'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Fri, 06 Jun 2025 21:24:30 GMT
-      Keep-Alive:
-      - timeout=10, max=500
-      Referrer-Policy:
-      - same-origin
-      Server:
-      - Apache
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains
-      Vary:
-      - User-Agent
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-XSS-Protection:
-      - 1; mode=block
-    status:
-      code: 200
-      message: OK
+  - request:
+      body: area=all&compress=false&endyear=&format=ffcsv&language=de&name=4000W-2030&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=&job=false
+      headers:
+        Accept:
+          - "*/*"
+        Accept-Encoding:
+          - gzip, deflate
+        Connection:
+          - keep-alive
+        Content-Length:
+          - "146"
+        Content-Type:
+          - application/x-www-form-urlencoded
+        User-Agent:
+          - python-requests/2.32.3
+      method: POST
+      uri: https://ergebnisse.zensus2022.de/api/rest/2020/data/tablefile
+    response:
+      body:
+        string: !!binary |
+          UEsDBBQACAgIAA27xloAAAAAAAAAAAAAAAAkAAAANDAwMFctMjAzMF8xNzQ5MjQ1MDY3Njc1X2Rl
+          X2ZsYXQuY3N27V3LblzHEd3nK2ZpL2h0Vb99VyZESwIsWZCYSPFGGIljcQByJJBDB8kyP5KNl1ln
+          k0UW+pP8QH4h3UM5upeSeauny0BwQC2MIYczQxe763Hq1Kn//PNfl9vldn25Xb++fPn67clqGH19
+          tny1Ohu26/PV9VO7Rx+/OdDLn5YX6+Wrsw/Pj76+/qnRN5bb7cX61dX20x/9+Mz1i/jGu/LNd+Vf
+          fdfPPnP9InvjXe3Nd7W/+q6ffeb6RT8tz65W1/99ebVZbz88nH7Uje/tXvk7Z4x5Pjx/e7q52rxZ
+          bRZf3F+9Wq+2l8X8m5MF+a+M/4oN85fDs+Nv7g/Pyh/kdLt8M9TvHRh/QH64f/T9ve9ouLe62l6+
+          Pj0rrxvu3Z98+fzB/UfHNDwqb7xanKwuFh8+b/EFGbP491//fvDs9enFertdfTk8enh0zNaYQ7Y5
+          D/XR4tX6cnG12ZbXsbv++fKZh8dPeCi/7Pufr05W2z+/K7/5xft/vP9beYvy5MHRw8cH3z49ejh8
+          e7Eqx2h1utqcrC4XR+vNj8vz9dl6tTldXl0ORByGbzZ/WZ6e1d/SGD/8YXVxXn/R8qt+NMt6s/jl
+          szaL8/V299TF8ur8/8+Aw8PN5ZvV5fJ8O2+lR0cPnh6QPXzxYni0Or0Ym+brBdli9ZPFeXnioyUG
+          Z0NgcmBG2506X07di/JvqI/qD/zv/1923u59/+TJ0XfDjTP29eLe23fvVmf18en7n89+3Jar7E0G
+          s2DLsfvh+dHDg3I5Hxw9Hn7402o9NdfT1fr0w/Xk4CxZMEvVs0axnDWKxcPVRyMPR0nq4XZ318RD
+          4s/c3bg4WBCPrq13ISHaMVQ7hmrHMLVjlNpxdxg/XN1PD+Ond9dlD2hIk4shTS6GzFM7mpaIu7vT
+          nzrA8Y2O5A2g/bqCx/Efnxw8+/7xs+NimPJZ5dNGPzvYZBFdoHH1xLly4tzkxPmmi/uZHO/mJS5n
+          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
+          AQBSAAAAjw4AAAAA
+      headers:
+        Connection:
+          - Keep-Alive
+        Content-Disposition:
+          - attachment; filename=4000W-2030_1749245067675_de_flat.zip
+        Content-Length:
+          - "3831"
+        Content-Type:
+          - application/zip
+        Date:
+          - Fri, 06 Jun 2025 21:24:25 GMT
+        Keep-Alive:
+          - timeout=10, max=500
+        Referrer-Policy:
+          - same-origin
+        Server:
+          - Apache
+        Strict-Transport-Security:
+          - max-age=31536000; includeSubDomains
+        Vary:
+          - User-Agent
+        X-Content-Type-Options:
+          - nosniff
+        X-Frame-Options:
+          - SAMEORIGIN
+        X-XSS-Protection:
+          - 1; mode=block
+      status:
+        code: 200
+        message: OK
+  - request:
+      body: area=all&compress=false&endyear=&format=ffcsv&language=de&name=4000W-2030&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=&job=false
+      headers:
+        Accept:
+          - "*/*"
+        Accept-Encoding:
+          - gzip, deflate
+        Connection:
+          - keep-alive
+        Content-Length:
+          - "146"
+        Content-Type:
+          - application/x-www-form-urlencoded
+        User-Agent:
+          - python-requests/2.32.3
+      method: POST
+      uri: https://ergebnisse.zensus2022.de/api/rest/2020/metadata/table
+    response:
+      body:
+        string:
+          "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"4000W-2030\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"4000W-2030\",\"Content\":\"Wohnungen:
+          Miete der Wohnung (100\u20AC - Schritte)/ Miete der Wohnung (2\u20AC/m\xB2-Schritte)
+          - Geb\xE4udetyp (Gr\xF6\xDFe)\",\"Time\":{\"From\":\"15.05.2022\",\"To\":\"15.05.2022\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"4000W\",\"Content\":\"Wohnungen
+          (Gebietsstand 15.05.2022)\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"},\"Columns\":[{\"Code\":\"GEODL1\",\"Content\":\"Deutschland\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"WHG005\",\"Content\":\"Vermietete
+          Wohnungen in Geb\xE4uden mit Wohnraum\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"}],\"Updated\":\"see parent\"}],\"Rows\":[{\"Code\":\"WHGMT1\",\"Content\":\"Miete
+          der Wohnung (100 \u20AC-Schritte)\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"GEBTP2\",\"Content\":\"Geb\xE4udetyp
+          (Gr\xF6\xDFe)\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"}],\"Updated\":\"see parent\"}],\"Subtitel\":{\"Code\":\"STAG\",\"Content\":\"Stichtag\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"},\"Subheading\":null},\"Updated\":\"08.07.2024 08:01:51h\"},\"Copyright\":\"\xA9
+          Statistische \xC4mter des Bundes und der L\xE4nder, Deutschland, 2025. Lizenziert
+          unter der Datenlizenz Deutschland - Namensnennung - Version 2.0\"}"
+      headers:
+        Connection:
+          - Keep-Alive
+        Content-Length:
+          - "1687"
+        Content-Type:
+          - application/json;charset=UTF-8
+        Date:
+          - Fri, 06 Jun 2025 21:24:30 GMT
+        Keep-Alive:
+          - timeout=10, max=500
+        Referrer-Policy:
+          - same-origin
+        Server:
+          - Apache
+        Strict-Transport-Security:
+          - max-age=31536000; includeSubDomains
+        Vary:
+          - User-Agent
+        X-Content-Type-Options:
+          - nosniff
+        X-Frame-Options:
+          - SAMEORIGIN
+        X-XSS-Protection:
+          - 1; mode=block
+      status:
+        code: 200
+        message: OK
 version: 1

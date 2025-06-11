@@ -1,13 +1,15 @@
 from configparser import ConfigParser
+from typing import Generator
 
 import pytest
 
+import pystatis
 from pystatis import config, db
 from pystatis.exception import PystatisConfigError
 
 
-@pytest.fixture()
-def config_() -> ConfigParser:
+@pytest.fixture(autouse=True)
+def config_() -> Generator[ConfigParser, None, None]:
     old_config = config.load_config()
     config.delete_config()
     yield config.config
@@ -15,19 +17,23 @@ def config_() -> ConfigParser:
     config.write_config()
 
 
-def test_get_db_settings(config_):
+def test_get_db_settings():
     settings = db.get_settings("genesis")
     assert isinstance(settings, tuple)
     assert len(settings) == 3
     assert all(isinstance(setting, str) for setting in settings)
 
 
-def test_set_db_pw(config_):
+def test_set_db_pw(
+    mocker,
+):
+    mocker.patch.object(pystatis.db, "check_credentials_are_valid", return_value=True)
     db.set_pw("genesis", "test_pw")
     assert db.get_pw("genesis") == "test_pw"
 
 
-def test_set_db_user(config_):
+def test_set_db_user(mocker):
+    mocker.patch.object(pystatis.db, "check_credentials_are_valid", return_value=True)
     db.set_user("genesis", "test_user")
     assert db.get_user("genesis") == "test_user"
 
@@ -41,11 +47,11 @@ def test_set_db_user(config_):
         ("21111-01-03-4-B", "regio"),
     ],
 )
-def test_identify_db_matches(config_, name, expected_db):
+def test_identify_db_matches(name, expected_db):
     assert db.identify_db_matches(name)[0] == expected_db
 
 
-def test_identify_db_matches_no_match(config_):
+def test_identify_db_matches_no_match():
     with pytest.raises(ValueError):
         db.identify_db_matches("test")
 
@@ -70,6 +76,6 @@ def test_identify_db_with_multiple_matches(config_):
     assert db_name == "regio"
 
 
-def test_select_db_by_credentials(config_):
+def test_select_db_by_credentials():
     with pytest.raises(PystatisConfigError):
         db.select_db_by_credentials([])

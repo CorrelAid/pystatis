@@ -1,263 +1,265 @@
 interactions:
-- request:
-    body: area=all&compress=false&endyear=&format=ffcsv&language=de&name=63121-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '146'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      User-Agent:
-      - python-requests/2.32.3
-    method: POST
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile
-  response:
-    body:
-      string: !!binary |
-        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
-        UgAAADUJAAAAAA==
-    headers:
-      Connection:
-      - Keep-Alive
-      Content-Disposition:
-      - attachment; filename=63121-0001_1749244797750_de_flat.zip
-      Content-Length:
-      - '2461'
-      Content-Type:
-      - application/zip
-      Date:
-      - Fri, 06 Jun 2025 21:19:55 GMT
-      Keep-Alive:
-      - timeout=15, max=100
-      Server:
-      - Apache
-    status:
-      code: 200
-      message: '200'
-- request:
-    body: area=all&compress=false&endyear=&format=ffcsv&language=de&name=63121-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '146'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      User-Agent:
-      - python-requests/2.32.3
-    method: POST
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table
-  response:
-    body:
-      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"63121-0001\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"63121-0001\",\"Content\":\"Einkommen
-        und Einnahmen sowie Ausgaben privater Haushalte\\n(Laufende Wirtschaftsrechnungen):
-        Deutschland, Jahre,\\nHaushaltsgr\xF6\xDFe\",\"Time\":{\"From\":\"2000\",\"To\":\"2022\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"63121\",\"Content\":\"Laufende
-        Wirtschaftsrechnungen: Haushaltsbuch\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Deutschland
-        insgesamt\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"HSHGR2\",\"Content\":\"Haushaltsgr\xF6\xDFe\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Rows\":[{\"Code\":\"HSH011\",\"Content\":\"Erfasste Haushalte\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"HSH012\",\"Content\":\"Hochgerechnete Haushalte\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"HSH015\",\"Content\":\"Durchschnittsbetrag je Haushalt
-        und Monat\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"EAART1\",\"Content\":\"Einnahme-
-        und Ausgabearten\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Updated\":\"see parent\"}],\"Subtitel\":{\"Code\":\"JAHR\",\"Content\":\"Jahr\",\"Type\":\"Merkmal\",\"Values\":\"5\",\"Selected\":\"5\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},\"Subheading\":null},\"Updated\":\"28.12.2022 17:19:39h\"},\"Copyright\":\"\xA9
-        Statistisches Bundesamt (Destatis), 2025\"}"
-    headers:
-      Connection:
-      - Keep-Alive
-      Content-Length:
-      - '1896'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Fri, 06 Jun 2025 21:19:58 GMT
-      Keep-Alive:
-      - timeout=15, max=100
-      Server:
-      - Apache
-    status:
-      code: 200
-      message: '200'
-- request:
-    body: area=all&compress=false&endyear=&format=ffcsv&language=en&name=63121-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '146'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      User-Agent:
-      - python-requests/2.32.3
-    method: POST
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile
-  response:
-    body:
-      string: !!binary |
-        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
-    headers:
-      Connection:
-      - Keep-Alive
-      Content-Disposition:
-      - attachment; filename=63121-0001_1749244889449_en_flat.zip
-      Content-Length:
-      - '2438'
-      Content-Type:
-      - application/zip
-      Date:
-      - Fri, 06 Jun 2025 21:21:26 GMT
-      Keep-Alive:
-      - timeout=15, max=100
-      Server:
-      - Apache
-    status:
-      code: 200
-      message: '200'
-- request:
-    body: area=all&compress=false&endyear=&format=ffcsv&language=en&name=63121-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '146'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      User-Agent:
-      - python-requests/2.32.3
-    method: POST
-    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table
-  response:
-    body:
-      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"successfull\",\"Type\":\"information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"63121-0001\",\"area\":\"all\",\"language\":\"en\"},\"Object\":{\"Code\":\"63121-0001\",\"Content\":\"Income
-        and expenditure of households (Continuous household\\nbudget surveys): Germany,
-        years, household size\",\"Time\":{\"From\":\"2000\",\"To\":\"2022\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"63121\",\"Content\":\"Continuous
-        household budget surveys: househ. book\",\"Type\":\"statistic\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Germany\",\"Type\":\"variable\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"HSHGR2\",\"Content\":\"Household
-        size\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Rows\":[{\"Code\":\"HSH011\",\"Content\":\"Households covered\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"HSH012\",\"Content\":\"Households extrapolated\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},{\"Code\":\"HSH015\",\"Content\":\"Average amount per household
-        and month\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"EAART1\",\"Content\":\"Types
-        of income and expenditure\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Updated\":\"see parent\"}],\"Subtitel\":{\"Code\":\"JAHR\",\"Content\":\"Year\",\"Type\":\"variable\",\"Values\":\"5\",\"Selected\":\"5\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},\"Subheading\":null},\"Updated\":\"2022-12-28 17:19:39h\"},\"Copyright\":\"\xA9
-        Federal Statistical Office, Wiesbaden 2025\"}"
-    headers:
-      Connection:
-      - Keep-Alive
-      Content-Length:
-      - '1870'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Fri, 06 Jun 2025 21:21:29 GMT
-      Keep-Alive:
-      - timeout=15, max=100
-      Server:
-      - Apache
-    status:
-      code: 200
-      message: '200'
+  - request:
+      body: area=all&compress=false&endyear=&format=ffcsv&language=de&name=63121-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=&job=false
+      headers:
+        Accept:
+          - "*/*"
+        Accept-Encoding:
+          - gzip, deflate
+        Connection:
+          - keep-alive
+        Content-Length:
+          - "146"
+        Content-Type:
+          - application/x-www-form-urlencoded
+        User-Agent:
+          - python-requests/2.32.3
+      method: POST
+      uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile
+    response:
+      body:
+        string: !!binary |
+          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
+          UgAAADUJAAAAAA==
+      headers:
+        Connection:
+          - Keep-Alive
+        Content-Disposition:
+          - attachment; filename=63121-0001_1749244797750_de_flat.zip
+        Content-Length:
+          - "2461"
+        Content-Type:
+          - application/zip
+        Date:
+          - Fri, 06 Jun 2025 21:19:55 GMT
+        Keep-Alive:
+          - timeout=15, max=100
+        Server:
+          - Apache
+      status:
+        code: 200
+        message: "200"
+  - request:
+      body: area=all&compress=false&endyear=&format=ffcsv&language=de&name=63121-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=&job=false
+      headers:
+        Accept:
+          - "*/*"
+        Accept-Encoding:
+          - gzip, deflate
+        Connection:
+          - keep-alive
+        Content-Length:
+          - "146"
+        Content-Type:
+          - application/x-www-form-urlencoded
+        User-Agent:
+          - python-requests/2.32.3
+      method: POST
+      uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table
+    response:
+      body:
+        string:
+          "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"63121-0001\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"63121-0001\",\"Content\":\"Einkommen
+          und Einnahmen sowie Ausgaben privater Haushalte\\n(Laufende Wirtschaftsrechnungen):
+          Deutschland, Jahre,\\nHaushaltsgr\xF6\xDFe\",\"Time\":{\"From\":\"2000\",\"To\":\"2022\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"63121\",\"Content\":\"Laufende
+          Wirtschaftsrechnungen: Haushaltsbuch\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Deutschland
+          insgesamt\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"HSHGR2\",\"Content\":\"Haushaltsgr\xF6\xDFe\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"}],\"Rows\":[{\"Code\":\"HSH011\",\"Content\":\"Erfasste Haushalte\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"},{\"Code\":\"HSH012\",\"Content\":\"Hochgerechnete Haushalte\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"},{\"Code\":\"HSH015\",\"Content\":\"Durchschnittsbetrag je Haushalt
+          und Monat\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"EAART1\",\"Content\":\"Einnahme-
+          und Ausgabearten\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"}],\"Updated\":\"see parent\"}],\"Subtitel\":{\"Code\":\"JAHR\",\"Content\":\"Jahr\",\"Type\":\"Merkmal\",\"Values\":\"5\",\"Selected\":\"5\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"},\"Subheading\":null},\"Updated\":\"28.12.2022 17:19:39h\"},\"Copyright\":\"\xA9
+          Statistisches Bundesamt (Destatis), 2025\"}"
+      headers:
+        Connection:
+          - Keep-Alive
+        Content-Length:
+          - "1896"
+        Content-Type:
+          - application/json;charset=UTF-8
+        Date:
+          - Fri, 06 Jun 2025 21:19:58 GMT
+        Keep-Alive:
+          - timeout=15, max=100
+        Server:
+          - Apache
+      status:
+        code: 200
+        message: "200"
+  - request:
+      body: area=all&compress=false&endyear=&format=ffcsv&language=en&name=63121-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=&job=false
+      headers:
+        Accept:
+          - "*/*"
+        Accept-Encoding:
+          - gzip, deflate
+        Connection:
+          - keep-alive
+        Content-Length:
+          - "146"
+        Content-Type:
+          - application/x-www-form-urlencoded
+        User-Agent:
+          - python-requests/2.32.3
+      method: POST
+      uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile
+    response:
+      body:
+        string: !!binary |
+          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
+      headers:
+        Connection:
+          - Keep-Alive
+        Content-Disposition:
+          - attachment; filename=63121-0001_1749244889449_en_flat.zip
+        Content-Length:
+          - "2438"
+        Content-Type:
+          - application/zip
+        Date:
+          - Fri, 06 Jun 2025 21:21:26 GMT
+        Keep-Alive:
+          - timeout=15, max=100
+        Server:
+          - Apache
+      status:
+        code: 200
+        message: "200"
+  - request:
+      body: area=all&compress=false&endyear=&format=ffcsv&language=en&name=63121-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=&job=false
+      headers:
+        Accept:
+          - "*/*"
+        Accept-Encoding:
+          - gzip, deflate
+        Connection:
+          - keep-alive
+        Content-Length:
+          - "146"
+        Content-Type:
+          - application/x-www-form-urlencoded
+        User-Agent:
+          - python-requests/2.32.3
+      method: POST
+      uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table
+    response:
+      body:
+        string:
+          "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"successfull\",\"Type\":\"information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"63121-0001\",\"area\":\"all\",\"language\":\"en\"},\"Object\":{\"Code\":\"63121-0001\",\"Content\":\"Income
+          and expenditure of households (Continuous household\\nbudget surveys): Germany,
+          years, household size\",\"Time\":{\"From\":\"2000\",\"To\":\"2022\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"63121\",\"Content\":\"Continuous
+          household budget surveys: househ. book\",\"Type\":\"statistic\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Germany\",\"Type\":\"variable\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"HSHGR2\",\"Content\":\"Household
+          size\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"}],\"Rows\":[{\"Code\":\"HSH011\",\"Content\":\"Households covered\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"},{\"Code\":\"HSH012\",\"Content\":\"Households extrapolated\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"},{\"Code\":\"HSH015\",\"Content\":\"Average amount per household
+          and month\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"EAART1\",\"Content\":\"Types
+          of income and expenditure\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"}],\"Updated\":\"see parent\"}],\"Subtitel\":{\"Code\":\"JAHR\",\"Content\":\"Year\",\"Type\":\"variable\",\"Values\":\"5\",\"Selected\":\"5\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"},\"Subheading\":null},\"Updated\":\"2022-12-28 17:19:39h\"},\"Copyright\":\"\xA9
+          Federal Statistical Office, Wiesbaden 2025\"}"
+      headers:
+        Connection:
+          - Keep-Alive
+        Content-Length:
+          - "1870"
+        Content-Type:
+          - application/json;charset=UTF-8
+        Date:
+          - Fri, 06 Jun 2025 21:21:29 GMT
+        Keep-Alive:
+          - timeout=15, max=100
+        Server:
+          - Apache
+      status:
+        code: 200
+        message: "200"
 version: 1

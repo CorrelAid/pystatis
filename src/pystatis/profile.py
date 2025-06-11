@@ -26,9 +26,7 @@ def change_password(db_name: str, new_password: str) -> str:
     }
 
     # change remote password
-    response_text = load_data(
-        endpoint="profile", method="password", params=params, db_name=db_name
-    )
+    response_text = load_data(endpoint="profile", method="password", params=params, db_name=db_name)
     # change local password
     db.set_pw(db_name, new_password)
 

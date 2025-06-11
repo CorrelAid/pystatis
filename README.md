@@ -183,7 +183,7 @@ To contribute to this project, please follow these steps:
 2. Create a new branch by running `git checkout -b <new-branch>` or `git switch -c <new-branch>`. If possible, add an issue number to the branch name.
 3. Make your changes.
 4. Delete the cassettes folder under tests to make sure that the tests are loading the latest data from the API.
-5. Run `uv run pytest tests -sx -vv --vcr-record=new_episodes` to see if all existing tests still run through.
+5. Run `uv run pytest tests -sx -vv --vcr-record=none` to see if all existing tests still run through.
 6. Add new tests depending on your changes.
 7. Run `uv run pytest tests -sx -vv --vcr-record=new_episodes` again to make sure your tests are also passed.
 8. Commit your changes. This will trigger all pre-commit hooks as defined in `.pre-commit-config.yaml`. If any of these pre-hooks fails, your commit is declined, and you have to resolve the issues first.

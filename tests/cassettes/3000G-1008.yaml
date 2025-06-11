@@ -1,248 +1,250 @@
 interactions:
-- request:
-    body: area=all&compress=false&endyear=&format=ffcsv&language=de&name=3000G-1008&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '146'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      User-Agent:
-      - python-requests/2.32.3
-    method: POST
-    uri: https://ergebnisse.zensus2022.de/api/rest/2020/data/tablefile
-  response:
-    body:
-      string: !!binary |
-        UEsDBBQACAgIAI26xloAAAAAAAAAAAAAAAAkAAAAMzAwMEctMTAwOF8xNzQ5MjQ0ODI3MDU2X2Rl
-        X2ZsYXQuY3N21VbLjtowFN33K7KpBFKY2iZOgu4KRCaMoKSCkaaaDTJwFazmgRKHSnzPfMNsuuiC
-        D+ov1DwqAu2odFcvEtn3lXPuUez749v3UgklSyUX5WyRLxFq+0TMMQElUzy6DquzEehsIwop5snJ
-        X9sfo2oGoVQh55X6PfTsOSaxq6rsuip7s+ofPcekjUgqPL5nVSbVaXn5qSvbIfNdmxASQojz3Uu1
-        RKuhVxJVqfuULS3K7wi/Y4SxJkwfuyFMdedWSsSwt7UIb1EOYRD1RxT6WKlysUp0HvTDi20Y9IIx
-        hSDDItbFi91LjIW11M8A5bbKYgjGwSRshd0phKIE3rY78H6fRgg9Y0ulsp7yVVaIKv0vcVPice4R
-        F7rZVqwScwj0HiLoyTwVZamRaIRoDfJk27QtbY01M2JTkwT5Kx/KHdcxTqZBNHr+BHsm9oHPGpNE
-        YwFu1u/yFg1KPU4cZpws02jUnehyMM0TUbQ+hJirFRapRNt62r0UKa6rdI0ZODYzSaebefmO51Ni
-        nG7DaDAKYJivEtQHXNskaerQXdf3qHHN/wxDlJl1Fdf4oo34K7SpZTHqZLuNFPWZR80bEgbPUTCC
-        vW33qsdUx/ZMkuYSvdNhbeJ2DNIAHrIyxlKkSo+ZxCZm9L6OutPhHnN9g3p+ugYfJ9FH/Y0iT0+z
-        ZO3ya0LbdszQ4iY2rsc484zT6D6YjOEei+zrgYzV2GCha0hcomZ4ma5J2q5Jkv0bOdqmPuG3XS8/
-        AVBLBwiQoUUVMgIAACERAABQSwECFAAUAAgICACNusZakKFFFTICAAAhEQAAJAAAAAAAAAAAAAAA
-        AAAAAAAAMzAwMEctMTAwOF8xNzQ5MjQ0ODI3MDU2X2RlX2ZsYXQuY3N2UEsFBgAAAAABAAEAUgAA
-        AIQCAAAAAA==
-    headers:
-      Connection:
-      - Keep-Alive
-      Content-Disposition:
-      - attachment; filename=3000G-1008_1749244827056_de_flat.zip
-      Content-Length:
-      - '748'
-      Content-Type:
-      - application/zip
-      Date:
-      - Fri, 06 Jun 2025 21:20:24 GMT
-      Keep-Alive:
-      - timeout=10, max=500
-      Referrer-Policy:
-      - same-origin
-      Server:
-      - Apache
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains
-      Vary:
-      - User-Agent
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-XSS-Protection:
-      - 1; mode=block
-    status:
-      code: 200
-      message: OK
-- request:
-    body: area=all&compress=false&endyear=&format=ffcsv&language=de&name=3000G-1008&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '146'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      User-Agent:
-      - python-requests/2.32.3
-    method: POST
-    uri: https://ergebnisse.zensus2022.de/api/rest/2020/metadata/table
-  response:
-    body:
-      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"3000G-1008\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"3000G-1008\",\"Content\":\"Geb\xE4ude:
-        Energietr\xE4ger der Heizung\",\"Time\":{\"From\":\"15.05.2022\",\"To\":\"15.05.2022\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"3000G\",\"Content\":\"Geb\xE4ude
-        (Gebietsstand 15.05.2022)\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},\"Columns\":[{\"Code\":\"GEODL1\",\"Content\":\"Deutschland\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"GEB001\",\"Content\":\"Geb\xE4ude
-        mit Wohnraum\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":\"ID0004
-        ,PO0004\",\"Structure\":null,\"Updated\":\"see parent\"}],\"Updated\":\"see
-        parent\"}],\"Rows\":[{\"Code\":\"GEBEN1\",\"Content\":\"Energietr\xE4ger der
-        Heizung\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Subtitel\":{\"Code\":\"STAG\",\"Content\":\"Stichtag\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},\"Subheading\":null},\"Updated\":\"18.05.2024 14:12:58h\"},\"Copyright\":\"\xA9
-        Statistische \xC4mter des Bundes und der L\xE4nder, Deutschland, 2025. Lizenziert
-        unter der Datenlizenz Deutschland - Namensnennung - Version 2.0\"}"
-    headers:
-      Connection:
-      - Keep-Alive
-      Content-Length:
-      - '1433'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Fri, 06 Jun 2025 21:20:29 GMT
-      Keep-Alive:
-      - timeout=10, max=500
-      Referrer-Policy:
-      - same-origin
-      Server:
-      - Apache
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains
-      Vary:
-      - User-Agent
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-XSS-Protection:
-      - 1; mode=block
-    status:
-      code: 200
-      message: OK
-- request:
-    body: area=all&compress=false&endyear=&format=ffcsv&language=en&name=3000G-1008&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '146'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      User-Agent:
-      - python-requests/2.32.3
-    method: POST
-    uri: https://ergebnisse.zensus2022.de/api/rest/2020/data/tablefile
-  response:
-    body:
-      string: !!binary |
-        UEsDBBQACAgIAL26xloAAAAAAAAAAAAAAAAkAAAAMzAwMEctMTAwOF8xNzQ5MjQ0OTE5OTEyX2Vu
-        X2ZsYXQuY3N21ZjLjtowFIb3fQpvKoHEpLbJBXRWUNJQlSEVILWaDTLBA5ZMjGxnpjxbF32kvkJN
-        gA7DdDRiV28i+9ziX1/i4+T3z1/GMiuMFYWZF2rJ4Wwu2YJLsGLDD6569GQEMn9gWrCFPPrP5oeo
-        MwOzVotFZV+GPnkOSfSiKr2sSl+t+k/PIemByYofrvOqFPY4fH6rC1ud+a6NMc6gXwm5FOXKoIbl
-        Wgur9A6pEpEI3bIdopjSJkxnvQwm/J5rXhYcLZl1a3KeGxzdkAiyNB+MCGRcb1i5g0H2d5il/XRM
-        IC25Xu2QUZV26ZXhS3SvNFpzh6RcQTpOJ9lN1ptCxgxE7aAL7/epGJOz9T0Ku0aaG7HkpRVMIrNl
-        Bf9vZRCcRFGCYyirzYJrb/X0P+fQF2rDjFsL/1HwrUWPSi2bLbQQauWU4oB4zOttfSQK49B3jMN8
-        dPcVvjlhrVoe2nIpuXWvm9dv26uyCEkiHFLfsU3zUW/iSsFUSaY/rLiy630ZiXid3qrj0bbabA2E
-        AfUY5VVSO2HSIdh3ul/y4SiFj4pJt4m2PWZ3JiSOOwnxHcx3GKvjY3eKbJTqFNR0tHzeNN9SRzo0
-        Id4fXIZ3eTqC4cGGlHAH7DBIPMb2UlDYpW0cd/0lBTNl3Z5BMA6wl2ROArrdKKFxx18Sxx48m+S3
-        kEpeuK/MQthdfSSWwVnrbUI7CL1kdYXEOKERTXyn+SmdjGEgzF6oPflQY/8fQFXmeQfYiw5ij7le
-        KZa0SQdHVze5P1BLBwh8jO5OOwIAAFkSAABQSwECFAAUAAgICAC9usZafIzuTjsCAABZEgAAJAAA
-        AAAAAAAAAAAAAAAAAAAAMzAwMEctMTAwOF8xNzQ5MjQ0OTE5OTEyX2VuX2ZsYXQuY3N2UEsFBgAA
-        AAABAAEAUgAAAI0CAAAAAA==
-    headers:
-      Connection:
-      - Keep-Alive
-      Content-Disposition:
-      - attachment; filename=3000G-1008_1749244919912_en_flat.zip
-      Content-Length:
-      - '757'
-      Content-Type:
-      - application/zip
-      Date:
-      - Fri, 06 Jun 2025 21:21:57 GMT
-      Keep-Alive:
-      - timeout=10, max=500
-      Referrer-Policy:
-      - same-origin
-      Server:
-      - Apache
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains
-      Vary:
-      - User-Agent
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-XSS-Protection:
-      - 1; mode=block
-    status:
-      code: 200
-      message: OK
-- request:
-    body: area=all&compress=false&endyear=&format=ffcsv&language=en&name=3000G-1008&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '146'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      User-Agent:
-      - python-requests/2.32.3
-    method: POST
-    uri: https://ergebnisse.zensus2022.de/api/rest/2020/metadata/table
-  response:
-    body:
-      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"successfull\",\"Type\":\"information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"3000G-1008\",\"area\":\"all\",\"language\":\"en\"},\"Object\":{\"Code\":\"3000G-1008\",\"Content\":\"Buildings:
-        Energy source used for heating\",\"Time\":{\"From\":\"2022-05-15\",\"To\":\"2022-05-15\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"3000G\",\"Content\":\"Buildings
-        (territory on 15 May 2022)\",\"Type\":\"statistic\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},\"Columns\":[{\"Code\":\"GEODL1\",\"Content\":\"Germany\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"GEB001\",\"Content\":\"Buildings
-        with residential space\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":\"ID0004
-        ,PO0004\",\"Structure\":null,\"Updated\":\"see parent\"}],\"Updated\":\"see
-        parent\"}],\"Rows\":[{\"Code\":\"GEBEN1\",\"Content\":\"Energy source used
-        for heating\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"}],\"Subtitel\":{\"Code\":\"STAG\",\"Content\":\"Reference date\",\"Type\":\"variable\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-        parent\"},\"Subheading\":null},\"Updated\":\"2024-05-18 14:12:58h\"},\"Copyright\":\"\xA9
-        Statistical Offices of the Federation and the L\xE4nder, Germany, 2025. Licensed
-        under Data licence Germany - attribution - Version 2.0\"}"
-    headers:
-      Connection:
-      - Keep-Alive
-      Content-Length:
-      - '1452'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Fri, 06 Jun 2025 21:22:02 GMT
-      Keep-Alive:
-      - timeout=10, max=500
-      Referrer-Policy:
-      - same-origin
-      Server:
-      - Apache
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains
-      Vary:
-      - User-Agent
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-XSS-Protection:
-      - 1; mode=block
-    status:
-      code: 200
-      message: OK
+  - request:
+      body: area=all&compress=false&endyear=&format=ffcsv&language=de&name=3000G-1008&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=&job=false
+      headers:
+        Accept:
+          - "*/*"
+        Accept-Encoding:
+          - gzip, deflate
+        Connection:
+          - keep-alive
+        Content-Length:
+          - "146"
+        Content-Type:
+          - application/x-www-form-urlencoded
+        User-Agent:
+          - python-requests/2.32.3
+      method: POST
+      uri: https://ergebnisse.zensus2022.de/api/rest/2020/data/tablefile
+    response:
+      body:
+        string: !!binary |
+          UEsDBBQACAgIAI26xloAAAAAAAAAAAAAAAAkAAAAMzAwMEctMTAwOF8xNzQ5MjQ0ODI3MDU2X2Rl
+          X2ZsYXQuY3N21VbLjtowFN33K7KpBFKY2iZOgu4KRCaMoKSCkaaaDTJwFazmgRKHSnzPfMNsuuiC
+          D+ov1DwqAu2odFcvEtn3lXPuUez749v3UgklSyUX5WyRLxFq+0TMMQElUzy6DquzEehsIwop5snJ
+          X9sfo2oGoVQh55X6PfTsOSaxq6rsuip7s+ofPcekjUgqPL5nVSbVaXn5qSvbIfNdmxASQojz3Uu1
+          RKuhVxJVqfuULS3K7wi/Y4SxJkwfuyFMdedWSsSwt7UIb1EOYRD1RxT6WKlysUp0HvTDi20Y9IIx
+          hSDDItbFi91LjIW11M8A5bbKYgjGwSRshd0phKIE3rY78H6fRgg9Y0ulsp7yVVaIKv0vcVPice4R
+          F7rZVqwScwj0HiLoyTwVZamRaIRoDfJk27QtbY01M2JTkwT5Kx/KHdcxTqZBNHr+BHsm9oHPGpNE
+          YwFu1u/yFg1KPU4cZpws02jUnehyMM0TUbQ+hJirFRapRNt62r0UKa6rdI0ZODYzSaebefmO51Ni
+          nG7DaDAKYJivEtQHXNskaerQXdf3qHHN/wxDlJl1Fdf4oo34K7SpZTHqZLuNFPWZR80bEgbPUTCC
+          vW33qsdUx/ZMkuYSvdNhbeJ2DNIAHrIyxlKkSo+ZxCZm9L6OutPhHnN9g3p+ugYfJ9FH/Y0iT0+z
+          ZO3ya0LbdszQ4iY2rsc484zT6D6YjOEei+zrgYzV2GCha0hcomZ4ma5J2q5Jkv0bOdqmPuG3XS8/
+          AVBLBwiQoUUVMgIAACERAABQSwECFAAUAAgICACNusZakKFFFTICAAAhEQAAJAAAAAAAAAAAAAAA
+          AAAAAAAAMzAwMEctMTAwOF8xNzQ5MjQ0ODI3MDU2X2RlX2ZsYXQuY3N2UEsFBgAAAAABAAEAUgAA
+          AIQCAAAAAA==
+      headers:
+        Connection:
+          - Keep-Alive
+        Content-Disposition:
+          - attachment; filename=3000G-1008_1749244827056_de_flat.zip
+        Content-Length:
+          - "748"
+        Content-Type:
+          - application/zip
+        Date:
+          - Fri, 06 Jun 2025 21:20:24 GMT
+        Keep-Alive:
+          - timeout=10, max=500
+        Referrer-Policy:
+          - same-origin
+        Server:
+          - Apache
+        Strict-Transport-Security:
+          - max-age=31536000; includeSubDomains
+        Vary:
+          - User-Agent
+        X-Content-Type-Options:
+          - nosniff
+        X-Frame-Options:
+          - SAMEORIGIN
+        X-XSS-Protection:
+          - 1; mode=block
+      status:
+        code: 200
+        message: OK
+  - request:
+      body: area=all&compress=false&endyear=&format=ffcsv&language=de&name=3000G-1008&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=&job=false
+      headers:
+        Accept:
+          - "*/*"
+        Accept-Encoding:
+          - gzip, deflate
+        Connection:
+          - keep-alive
+        Content-Length:
+          - "146"
+        Content-Type:
+          - application/x-www-form-urlencoded
+        User-Agent:
+          - python-requests/2.32.3
+      method: POST
+      uri: https://ergebnisse.zensus2022.de/api/rest/2020/metadata/table
+    response:
+      body:
+        string:
+          "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"3000G-1008\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"3000G-1008\",\"Content\":\"Geb\xE4ude:
+          Energietr\xE4ger der Heizung\",\"Time\":{\"From\":\"15.05.2022\",\"To\":\"15.05.2022\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"3000G\",\"Content\":\"Geb\xE4ude
+          (Gebietsstand 15.05.2022)\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"},\"Columns\":[{\"Code\":\"GEODL1\",\"Content\":\"Deutschland\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"GEB001\",\"Content\":\"Geb\xE4ude
+          mit Wohnraum\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":\"ID0004
+          ,PO0004\",\"Structure\":null,\"Updated\":\"see parent\"}],\"Updated\":\"see
+          parent\"}],\"Rows\":[{\"Code\":\"GEBEN1\",\"Content\":\"Energietr\xE4ger der
+          Heizung\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"}],\"Subtitel\":{\"Code\":\"STAG\",\"Content\":\"Stichtag\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"},\"Subheading\":null},\"Updated\":\"18.05.2024 14:12:58h\"},\"Copyright\":\"\xA9
+          Statistische \xC4mter des Bundes und der L\xE4nder, Deutschland, 2025. Lizenziert
+          unter der Datenlizenz Deutschland - Namensnennung - Version 2.0\"}"
+      headers:
+        Connection:
+          - Keep-Alive
+        Content-Length:
+          - "1433"
+        Content-Type:
+          - application/json;charset=UTF-8
+        Date:
+          - Fri, 06 Jun 2025 21:20:29 GMT
+        Keep-Alive:
+          - timeout=10, max=500
+        Referrer-Policy:
+          - same-origin
+        Server:
+          - Apache
+        Strict-Transport-Security:
+          - max-age=31536000; includeSubDomains
+        Vary:
+          - User-Agent
+        X-Content-Type-Options:
+          - nosniff
+        X-Frame-Options:
+          - SAMEORIGIN
+        X-XSS-Protection:
+          - 1; mode=block
+      status:
+        code: 200
+        message: OK
+  - request:
+      body: area=all&compress=false&endyear=&format=ffcsv&language=en&name=3000G-1008&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=&job=false
+      headers:
+        Accept:
+          - "*/*"
+        Accept-Encoding:
+          - gzip, deflate
+        Connection:
+          - keep-alive
+        Content-Length:
+          - "146"
+        Content-Type:
+          - application/x-www-form-urlencoded
+        User-Agent:
+          - python-requests/2.32.3
+      method: POST
+      uri: https://ergebnisse.zensus2022.de/api/rest/2020/data/tablefile
+    response:
+      body:
+        string: !!binary |
+          UEsDBBQACAgIAL26xloAAAAAAAAAAAAAAAAkAAAAMzAwMEctMTAwOF8xNzQ5MjQ0OTE5OTEyX2Vu
+          X2ZsYXQuY3N21ZjLjtowFIb3fQpvKoHEpLbJBXRWUNJQlSEVILWaDTLBA5ZMjGxnpjxbF32kvkJN
+          gA7DdDRiV28i+9ziX1/i4+T3z1/GMiuMFYWZF2rJ4Wwu2YJLsGLDD6569GQEMn9gWrCFPPrP5oeo
+          MwOzVotFZV+GPnkOSfSiKr2sSl+t+k/PIemByYofrvOqFPY4fH6rC1ud+a6NMc6gXwm5FOXKoIbl
+          Wgur9A6pEpEI3bIdopjSJkxnvQwm/J5rXhYcLZl1a3KeGxzdkAiyNB+MCGRcb1i5g0H2d5il/XRM
+          IC25Xu2QUZV26ZXhS3SvNFpzh6RcQTpOJ9lN1ptCxgxE7aAL7/epGJOz9T0Ku0aaG7HkpRVMIrNl
+          Bf9vZRCcRFGCYyirzYJrb/X0P+fQF2rDjFsL/1HwrUWPSi2bLbQQauWU4oB4zOttfSQK49B3jMN8
+          dPcVvjlhrVoe2nIpuXWvm9dv26uyCEkiHFLfsU3zUW/iSsFUSaY/rLiy630ZiXid3qrj0bbabA2E
+          AfUY5VVSO2HSIdh3ul/y4SiFj4pJt4m2PWZ3JiSOOwnxHcx3GKvjY3eKbJTqFNR0tHzeNN9SRzo0
+          Id4fXIZ3eTqC4cGGlHAH7DBIPMb2UlDYpW0cd/0lBTNl3Z5BMA6wl2ROArrdKKFxx18Sxx48m+S3
+          kEpeuK/MQthdfSSWwVnrbUI7CL1kdYXEOKERTXyn+SmdjGEgzF6oPflQY/8fQFXmeQfYiw5ij7le
+          KZa0SQdHVze5P1BLBwh8jO5OOwIAAFkSAABQSwECFAAUAAgICAC9usZafIzuTjsCAABZEgAAJAAA
+          AAAAAAAAAAAAAAAAAAAAMzAwMEctMTAwOF8xNzQ5MjQ0OTE5OTEyX2VuX2ZsYXQuY3N2UEsFBgAA
+          AAABAAEAUgAAAI0CAAAAAA==
+      headers:
+        Connection:
+          - Keep-Alive
+        Content-Disposition:
+          - attachment; filename=3000G-1008_1749244919912_en_flat.zip
+        Content-Length:
+          - "757"
+        Content-Type:
+          - application/zip
+        Date:
+          - Fri, 06 Jun 2025 21:21:57 GMT
+        Keep-Alive:
+          - timeout=10, max=500
+        Referrer-Policy:
+          - same-origin
+        Server:
+          - Apache
+        Strict-Transport-Security:
+          - max-age=31536000; includeSubDomains
+        Vary:
+          - User-Agent
+        X-Content-Type-Options:
+          - nosniff
+        X-Frame-Options:
+          - SAMEORIGIN
+        X-XSS-Protection:
+          - 1; mode=block
+      status:
+        code: 200
+        message: OK
+  - request:
+      body: area=all&compress=false&endyear=&format=ffcsv&language=en&name=3000G-1008&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=&job=false
+      headers:
+        Accept:
+          - "*/*"
+        Accept-Encoding:
+          - gzip, deflate
+        Connection:
+          - keep-alive
+        Content-Length:
+          - "146"
+        Content-Type:
+          - application/x-www-form-urlencoded
+        User-Agent:
+          - python-requests/2.32.3
+      method: POST
+      uri: https://ergebnisse.zensus2022.de/api/rest/2020/metadata/table
+    response:
+      body:
+        string:
+          "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"successfull\",\"Type\":\"information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"3000G-1008\",\"area\":\"all\",\"language\":\"en\"},\"Object\":{\"Code\":\"3000G-1008\",\"Content\":\"Buildings:
+          Energy source used for heating\",\"Time\":{\"From\":\"2022-05-15\",\"To\":\"2022-05-15\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"3000G\",\"Content\":\"Buildings
+          (territory on 15 May 2022)\",\"Type\":\"statistic\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"},\"Columns\":[{\"Code\":\"GEODL1\",\"Content\":\"Germany\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"GEB001\",\"Content\":\"Buildings
+          with residential space\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":\"ID0004
+          ,PO0004\",\"Structure\":null,\"Updated\":\"see parent\"}],\"Updated\":\"see
+          parent\"}],\"Rows\":[{\"Code\":\"GEBEN1\",\"Content\":\"Energy source used
+          for heating\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"}],\"Subtitel\":{\"Code\":\"STAG\",\"Content\":\"Reference date\",\"Type\":\"variable\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+          parent\"},\"Subheading\":null},\"Updated\":\"2024-05-18 14:12:58h\"},\"Copyright\":\"\xA9
+          Statistical Offices of the Federation and the L\xE4nder, Germany, 2025. Licensed
+          under Data licence Germany - attribution - Version 2.0\"}"
+      headers:
+        Connection:
+          - Keep-Alive
+        Content-Length:
+          - "1452"
+        Content-Type:
+          - application/json;charset=UTF-8
+        Date:
+          - Fri, 06 Jun 2025 21:22:02 GMT
+        Keep-Alive:
+          - timeout=10, max=500
+        Referrer-Policy:
+          - same-origin
+        Server:
+          - Apache
+        Strict-Transport-Security:
+          - max-age=31536000; includeSubDomains
+        Vary:
+          - User-Agent
+        X-Content-Type-Options:
+          - nosniff
+        X-Frame-Options:
+          - SAMEORIGIN
+        X-XSS-Protection:
+          - 1; mode=block
+      status:
+        code: 200
+        message: OK
 version: 1

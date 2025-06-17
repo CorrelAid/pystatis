@@ -1,0 +1,182 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "ab52102c",
+   "metadata": {},
+   "source": [
+    "# Setup `pystatis`\n",
+    "\n",
+    "You don't need to do much to use `pystatis`. Basically, the first time you import the package, it will create a `config.ini` file under `~/.pystatis`. This file is used for storing settings, for example your credentials fpr the supported databases.\n",
+    "\n",
+    "To set up your credentials, we need to ask you for your username and password. This is done by the `setup_credentials()` function. It will ask you interactivly for the credentials, or you can set the following environmental variables:\n",
+    "\n",
+    "- `PYSTATIS_GENESIS_API_USERNAME`\n",
+    "- `PYSTATIS_GENESIS_API_PASSWORD`\n",
+    "- `PYSTATIS_ZENSUS_API_USERNAME`\n",
+    "- `PYSTATIS_ZENSUS_API_PASSWORD`\n",
+    "- `PYSTATIS_REGIO_API_USERNAME`\n",
+    "- `PYSTATIS_REGIO_API_PASSWORD`\n",
+    "\n",
+    "**Note**: Zensus 2022 supports a new authentication method using an API token. This token will be set as your username and the password remains blank so you can use the new token authentication method right away, just use the token as username and leave the password empty.\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "bd45ca01",
+   "metadata": {},
+   "source": [
+    "`dotenv` is uses here to load a local `.env` file that contains the above mentioned environmental variables so we don't have to input them.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "888706f5-3a9e-4e0a-9ca6-fa430280bc03",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "pystatis version:  0.5.0\n"
+     ]
+    },
+    {
+     "data": {
+      "text/plain": [
+       "True"
+      ]
+     },
+     "execution_count": 1,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "from pathlib import Path\n",
+    "\n",
+    "from dotenv import load_dotenv\n",
+    "\n",
+    "import pystatis\n",
+    "\n",
+    "print(\"pystatis version: \", pystatis.__version__)\n",
+    "load_dotenv()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "ee7969b6",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# only execute if you want to delete your config file for test purposes\n",
+    "# pystatis.config.delete_config()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3928f347",
+   "metadata": {},
+   "source": [
+    "`init_config` is called when loading pystatis, so a config with empty credentials will be created in your user home directory by default.\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "18c2633f",
+   "metadata": {},
+   "source": [
+    "The only thing you have to do is to set up your user credentials.\n",
+    "\n",
+    "You can do so either by:\n",
+    "\n",
+    "1. specifying the 6 environment variables `PYSTATIS_GENESIS_API_USERNAME|PASSWORD`, `PYSTATIS_ZENSUS_API_USERNAME|PASSWORD`, and\n",
+    "   `PYSTATIS_REGIO_API_USERNAME|PASSWORD`\n",
+    "2. calling the function `setup_credentials()` which will guide you through the process\n",
+    "\n",
+    "Even if you do 1. please call `setup_credentials()` once as it will read out the environment variables and write the credentials to the `config.ini` in your config dir.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "6c301da5",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "pystatis.setup_credentials()  # also part of config module"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d7d92f0d",
+   "metadata": {},
+   "source": [
+    "Once you have set up your credentials, they are stored in the `config.ini` and in the `config` object of the `config.py` module. You don't have to know this as regular user, this is more internal knowledge.\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "7fb27b941602401d91542211134fc71a",
+   "metadata": {},
+   "source": [
+    "**Warning**: The following code will print out the content of your `config.ini` file **with** the credentials set, so please do not share or push this notebook with outputs enabled.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "7ce103d9",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "with open(Path.home() / \".pystatis\" / \"config.ini\") as f:\n",
+    "    print(f.read())"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "26b7c286",
+   "metadata": {},
+   "source": [
+    "The `profile` module allows you to change your password (`change_password`).\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "d80712ce",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# change your password\n",
+    "pystatis.profile.change_password(\n",
+    "    db_name=\"genesis\", new_password=\"DoNotUseThisAccidentally\"\n",
+    ")"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": ".venv",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.13.2"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

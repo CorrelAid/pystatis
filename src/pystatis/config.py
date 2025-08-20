@@ -151,12 +151,25 @@ def config_exists() -> bool:
     return config_file.exists()
 
 
-def setup_credentials() -> None:
-    """Setup credentials for all supported databases."""
-    for db_name in get_supported_db():
+def setup_credentials(db_names: list[str] | None = None, *, validate: bool = True) -> None:
+    """Setup credentials for one or more supported databases."""
+    supported = get_supported_db()
+    targets = supported if db_names is None else db_names
+
+    unknown = [name for name in targets if name not in supported]
+    if unknown:
+        raise PystatisConfigError(
+            f"Unknown database(s): {', '.join(unknown)}. Supported: {', '.join(supported)}"
+        )
+
+    for db_name in targets:
+        if not config.has_section(db_name):
+            config.add_section(db_name)
+
         config.set(db_name, "username", _get_user_input(db_name, "username"))
         config.set(db_name, "password", _get_user_input(db_name, "password"))
-        if not db.check_credentials_are_valid(db_name):
+
+        if validate and not db.check_credentials_are_valid(db_name):
             raise PystatisConfigError(
                 f"Provided credentials for database '{db_name}' are not valid! Please provide the correct credentials."
             )
@@ -164,7 +177,8 @@ def setup_credentials() -> None:
     write_config()
 
     logger.info(
-        "Config was updated with latest credentials. Path: %s.",
+        "Config was updated with latest credentials for: %s. Path: %s.",
+        ", ".join(targets),
         _build_config_file_path(),
     )
 

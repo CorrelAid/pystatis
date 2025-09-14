@@ -42,6 +42,16 @@ class Table:
         stand: str = "",
         language: str = "de",
         quality: str = "off",
+        classifyingvariable1: str = "",
+        classifyingkey1: str = "",
+        classifyingvariable2: str = "",
+        classifyingkey2: str = "",
+        classifyingvariable3: str = "",
+        classifyingkey3: str = "",
+        classifyingvariable4: str = "",
+        classifyingkey4: str = "",
+        classifyingvariable5: str = "",
+        classifyingkey5: str = "",
     ) -> None:
         """Downloads raw data and metadata from GENESIS-Online.
 
@@ -130,6 +140,36 @@ class Table:
                 The explanation of the quality labels can be found online after retrieving the table values,
                 table -> explanation of symbols or at e.g.
                 https://www-genesis.destatis.de/genesis/online?operation=ergebnistabelleQualitaet&language=en&levelindex=3&levelid=1719342760835#abreadcrumb.
+            classifyingvariable1 (str, optional): Code of the first subject classification
+                (Sachklassifikation, SK-Merkmal) to which the selection using classifyingkey1 is applied."
+                Accepts 1-6 characters.
+            classifyingkey1 (str, optional): Key of the first classification variable.
+                Multiple values can be passed as a comma-separated list.
+                Accepts 1-15 characters. "*" can be used as wildcard.
+            classifyingvariable2 (str, optional): Code of the second subject classification
+                (Sachklassifikation, SK-Merkmal) to which the selection using classifyingkey2 is applied."
+                Accepts 1-6 characters.
+            classifyingkey2 (str, optional): Key of the second classification variable.
+                Multiple values can be passed as a comma-separated list.
+                Accepts 1-15 characters. "*" can be used as wildcard.
+            classifyingvariable3 (str, optional): Code of the third subject classification
+                (Sachklassifikation, SK-Merkmal) to which the selection using classifyingkey3 is applied."
+                Accepts 1-6 characters.
+            classifyingkey3 (str, optional): Key of the third classification variable.
+                Multiple values can be passed as a comma-separated list.
+                Accepts 1-15 characters. "*" can be used as wildcard.
+            classifyingvariable4 (str, optional): Code of the fourth subject classification
+                (Sachklassifikation, SK-Merkmal) to which the selection using classifyingkey4 is applied."
+                Accepts 1-6 characters.
+            classifyingkey4 (str, optional): Key of the fourth classification variable.
+                Multiple values can be passed as a comma-separated list.
+                Accepts 1-15 characters. "*" can be used as wildcard.
+            classifyingvariable5 (str, optional): Code of the fifth subject classification
+                (Sachklassifikation, SK-Merkmal) to which the selection using classifyingkey5 is applied."
+                Accepts 1-6 characters.
+            classifyingkey5 (str, optional): Key of the fifth classification variable.
+                Multiple values can be passed as a comma-separated list.
+                Accepts 1-15 characters. "*" can be used as wildcard.
         """
         params = {
             "area": area,
@@ -144,6 +184,16 @@ class Table:
             "stand": stand,
             "startyear": startyear,
             "timeslices": timeslices,
+            "classifyingvariable1": classifyingvariable1,
+            "classifyingkey1": classifyingkey1,
+            "classifyingvariable2": classifyingvariable2,
+            "classifyingkey2": classifyingkey2,
+            "classifyingvariable3": classifyingvariable3,
+            "classifyingkey3": classifyingkey3,
+            "classifyingvariable4": classifyingvariable4,
+            "classifyingkey4": classifyingkey4,
+            "classifyingvariable5": classifyingvariable5,
+            "classifyingkey5": classifyingkey5,
             "job": "false",
         }
 

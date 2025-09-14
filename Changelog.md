@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.5.4
+
+- Change handling of backend jobs: Switch from catalogue/jobs to catalogue/results.
+- Reactivate tests for Regionalstatistik.
+
+## 0.5.3
+
+- Support for a new parameter in `Table.get_data(..., compress: bool = True)` that can be `True` or `False`. When set to `True`, it will suppress empty rows and columns in the table before downloading it, thus reducing the table size.
+- Support for authentification with user token. A calid token can be used instead of a user name and with an empty password.
+- Added a small sleep time between creating a job and asking for the status of the job to avoid running into the error `pystatis.exception.DestatisStatusError: Es gibt keine Objekte zum angegebenen Selektionskriterium`
+- Update dependencies and GitHub Actions
+
 ## 0.5.0
 
 - migrate from `poetry` to `uv`

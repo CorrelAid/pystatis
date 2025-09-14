@@ -20,7 +20,7 @@ def whoami(db_name: str) -> str:
     url = f"{db.get_host(db_name)}" + "helloworld/whoami"
 
     try:
-        response = requests.get(url, timeout=(1, 15))
+        response = requests.get(url, timeout=(30, 15))
     except requests.exceptions.Timeout:
         raise TimeoutError("Login request timed out after 15 minutes")
 
@@ -56,7 +56,7 @@ def logincheck(db_name: str) -> str:
         "language": "de",
     }
 
-    response = requests.post(url, headers=headers, data=params, timeout=(1, 15))
+    response = requests.post(url, headers=headers, data=params, timeout=(30, 15))
 
     # NOTE: Cannot use get_data_from_endpoint due to colliding
     # and misleading usage of "Status" key in API response

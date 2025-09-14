@@ -1,3 +1,6 @@
+import logging
+import time
+
 import pandas as pd
 import pytest
 from pandas.api.types import is_datetime64_any_dtype as is_datetime
@@ -20,7 +23,7 @@ pystatis.clear_cache()
         ("32421-0012", (2240, 21), "de"),
         ("46181-0001", (16, 21), "de"),
         ("51000-0010", (1572, 21), "de"),
-        # ("61111-0021", (960, 17), "de"),
+        ("61111-0021", (960, 17), "de"),
         ("63121-0001", (210, 21), "de"),
         ("71311-0001", (600, 25), "de"),
         ("91111-0001", (4719, 17), "de"),
@@ -29,7 +32,7 @@ pystatis.clear_cache()
         ("21311-01-01-4-B", (44010, 25), "de"),
         ("32121-01-02-4", (3850, 17), "de"),
         ("41312-01-01-4", (6050, 17), "de"),
-        # ("52411-02-01-4", (538, 15), "de"),
+        # ("52411-02-01-4", (538, 15), "de"), # currently broken, returns 500
         ("61511-01-03-4", (4400, 17), "de"),
         ("73111-01-01-4", (1650, 13), "de"),
         ("86121-Z-01", (8208, 17), "de"),
@@ -47,7 +50,7 @@ pystatis.clear_cache()
         ("32421-0012", (2240, 21), "en"),
         ("46181-0001", (16, 21), "en"),
         ("51000-0010", (1572, 21), "en"),
-        # ("61111-0021", (960, 17), "en"),
+        ("61111-0021", (960, 17), "en"),
         ("63121-0001", (210, 21), "en"),
         ("71311-0001", (600, 25), "en"),
         ("91111-0001", (4719, 17), "en"),
@@ -57,12 +60,10 @@ pystatis.clear_cache()
         ("4000W-2041", (180, 21), "en"),
     ],
 )
-def test_get_data(
-    mocker, table_name: str, expected_shape: tuple[int, int], language: str
-):
-    mocker.patch.object(pystatis.db, "check_credentials", return_value=True)
+def test_get_data(mocker, table_name: str, expected_shape: tuple[int, int], language: str):
+    mocker.patch.object(pystatis.db, "check_credentials_are_set", return_value=True)
     table = pystatis.Table(name=table_name)
-    table.get_data(prettify=False, language=language)
+    table.get_data(prettify=False, language=language, compress=False)
 
     assert isinstance(table.data, pd.DataFrame)
     assert not table.data.empty
@@ -78,20 +79,36 @@ def test_get_data(
     [
         ("52111-0001", (68, 22)),
         ("12211-Z-11", (2200, 18)),
-        # ("1000A-2022", (1360, 22)), # metadata request broken
+        ("1000A-2022", (1360, 22)),
     ],
 )
 def test_get_data_with_quality_on_and_prettify_false(
     mocker, table_name: str, expected_shape: tuple[int, int]
 ):
-    mocker.patch.object(pystatis.db, "check_credentials", return_value=True)
+    mocker.patch.object(pystatis.db, "check_credentials_are_set", return_value=True)
     table = pystatis.Table(name=table_name)
-    table.get_data(prettify=False, quality="on")
+    table.get_data(prettify=False, quality="on", compress=False)
 
     assert table.data.shape == expected_shape
 
     # check that at least one raw column ends with "_q" for zensus + quality
     assert any(column.endswith("value_q") for column in table.data.columns)
+
+
+@pytest.mark.vcr()
+@pytest.mark.parametrize(
+    "table_name, expected_shape",
+    [
+        ("1000A-2022", (1003, 6)),
+    ],
+)
+def test_get_data_with_compress_on(mocker, table_name: str, expected_shape: tuple):
+    mocker.patch.object(pystatis.db, "check_credentials_are_set", return_value=True)
+    table = pystatis.Table(name=table_name)
+    table.get_data()
+
+    assert table.data.shape == expected_shape
+    assert table.data["Personen__Anzahl"].isna().sum() == 0
 
 
 @pytest.mark.vcr()
@@ -121,19 +138,19 @@ def test_get_data_with_quality_on_and_prettify_false(
                 "Lebensformen__1000__q",
             ),
         ),
-        # (
-        #     "1000A-2022",
-        #     (1360, 7),
-        #     (
-        #         "Stichtag",
-        #         "Amtlicher Regionalschlüssel (ARS)",
-        #         "Bundesländer",
-        #         "Alter (10er-Jahresgruppen)",
-        #         "Einwanderungsgeschichte (ausführlich)",
-        #         "Personen__Anzahl",
-        #         "Personen__Anzahl__q",
-        #     ),
-        # ),
+        (
+            "1000A-2022",
+            (1360, 7),
+            (
+                "Stichtag",
+                "Amtlicher Regionalschlüssel (ARS)__Code",
+                "Amtlicher Regionalschlüssel (ARS)",
+                "Alter (10er-Jahresgruppen)",
+                "Einwanderungsgeschichte (ausführlich)",
+                "Personen__Anzahl",
+                "Personen__Anzahl__q",
+            ),
+        ),
     ],
 )
 def test_get_data_with_quality_on_and_prettify_true(
@@ -142,9 +159,9 @@ def test_get_data_with_quality_on_and_prettify_true(
     expected_shape: tuple[int, int],
     expected_columns: tuple[str],
 ):
-    mocker.patch.object(pystatis.db, "check_credentials", return_value=True)
+    mocker.patch.object(pystatis.db, "check_credentials_are_set", return_value=True)
     table = pystatis.Table(name=table_name)
-    table.get_data(prettify=True, quality="on")
+    table.get_data(prettify=True, quality="on", compress=False)
 
     assert table.data.shape == expected_shape
     assert tuple(table.data.columns) == expected_columns
@@ -267,19 +284,18 @@ def test_get_data_with_quality_on_and_prettify_true(
             ),
             "de",
         ),
-        # (
-        #     "61111-0021",
-        #     (960, 5),
-        #     (
-        #         "Jahr",
-        #         "Monate",
-        #         "Amtlicher Gemeindeschlüssel (AGS)__Code",
-        #         "Amtlicher Gemeindeschlüssel (AGS)",
-        #         "Bundesländer",
-        #         "Index der Nettokaltmieten__2020=100",
-        #     ),
-        #     "de",
-        # ),
+        (
+            "61111-0021",
+            (960, 5),
+            (
+                "Jahr",
+                "Amtlicher Gemeindeschlüssel (AGS)__Code",
+                "Amtlicher Gemeindeschlüssel (AGS)",
+                "Monate",
+                "Index der Nettokaltmieten__2020=100",
+            ),
+            "de",
+        ),
         (
             "63121-0001",
             (180, 6),
@@ -364,19 +380,19 @@ def test_get_data_with_quality_on_and_prettify_true(
             ),
             "de",
         ),
-        # (
-        #     "52411-02-01-4",
-        #     (538, 6),
-        #     (
-        #         "Jahr",
-        #         "Amtlicher Gemeindeschlüssel (AGS)__Code",
-        #         "Amtlicher Gemeindeschlüssel (AGS)",
-        #         "Insolvenzverfahren (Unternehmen)__MeasureUnitNotFound!",
-        #         "Arbeitnehmer__Anzahl",
-        #         "voraussichtliche Forderungen (Unternehmen)__Tsd._EUR",
-        #     ),
-        #     "de",
-        # ),
+        # # (
+        # #     "52411-02-01-4",
+        # #     (538, 6),
+        # #     (
+        # #         "Jahr",
+        # #         "Amtlicher Gemeindeschlüssel (AGS)__Code",
+        # #         "Amtlicher Gemeindeschlüssel (AGS)",
+        # #         "Insolvenzverfahren (Unternehmen)__MeasureUnitNotFound!",
+        # #         "Arbeitnehmer__Anzahl",
+        # #         "voraussichtliche Forderungen (Unternehmen)__Tsd._EUR",
+        # #     ),
+        # #     "de",
+        # # ),
         (
             "61511-01-03-4",
             (1100, 8),
@@ -604,18 +620,18 @@ def test_get_data_with_quality_on_and_prettify_true(
             ),
             "en",
         ),
-        # (
-        #     "61111-0021",
-        #     (960, 5),
-        #     (
-        #         "Year",
-        #         "Months",
-        #         "Official municipality key (AGS)__Code",
-        #         "Official municipality key (AGS)",
-        #         "Index of net rents exclusive of heating expenses__2020=100",
-        #     ),
-        #     "en",
-        # ),
+        (
+            "61111-0021",
+            (960, 5),
+            (
+                "Year",
+                "Official municipality key (AGS)__Code",
+                "Official municipality key (AGS)",
+                "Months",
+                "Index of net rents exclusive of heating expenses__2020=100",
+            ),
+            "en",
+        ),
         (
             "63121-0001",
             (180, 6),
@@ -705,9 +721,9 @@ def test_prettify(
     expected_columns: tuple[str],
     language: str,
 ):
-    mocker.patch.object(pystatis.db, "check_credentials", return_value=True)
+    mocker.patch.object(pystatis.db, "check_credentials_are_set", return_value=True)
     table = pystatis.Table(name=table_name)
-    table.get_data(prettify=True, language=language)
+    table.get_data(prettify=True, language=language, compress=False)
 
     assert isinstance(table.data, pd.DataFrame)
     assert not table.data.empty
@@ -733,8 +749,30 @@ def test_prettify(
     ],
 )
 def test_dtype_time_column(mocker, table_name: str, time_col: str, language: str):
-    mocker.patch.object(pystatis.db, "check_credentials", return_value=True)
+    mocker.patch.object(pystatis.db, "check_credentials_are_set", return_value=True)
     table = pystatis.Table(name=table_name)
-    table.get_data(prettify=True, language=language)
+    table.get_data(prettify=True, language=language, compress=False)
 
     assert is_datetime(table.data[time_col].values)
+
+
+@pytest.mark.vcr()
+@pytest.mark.parametrize(
+    "table_name",
+    [
+        ("12531-0043"),
+    ],
+)
+def test_get_data_with_job(mocker, caplog, table_name):
+    mocker.patch.object(pystatis.db, "check_credentials_are_set", return_value=True)
+    mocker.patch.object(time, "sleep", return_value=0)
+    caplog.set_level(logging.DEBUG)
+
+    table = pystatis.Table(name=table_name)
+    table.get_data()
+
+    assert "Die Tabelle ist zu groß, um direkt abgerufen zu werden" in caplog.text
+    assert "Verarbeitung im Hintergrund erfolgreich gestartet" in caplog.text
+    assert "Verarbeitung im Hintergrund abgeschlossen" in caplog.text
+
+    assert not table.data.empty

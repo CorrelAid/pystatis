@@ -32,6 +32,7 @@ class Table:
         self,
         *,
         prettify: bool = True,
+        compress: bool = True,
         area: str = "all",
         startyear: str = "",
         endyear: str = "",
@@ -58,6 +59,8 @@ class Table:
 
         Args:
             prettify (bool, optional): Reformats the table into a readable format. Defaults to True.
+            compress (bool, optional): Suppresses empty rows and columns.
+                Will reduce table size and thus can help avoid creating jobs. Defaults to True.
             area (str, optional): Area to search for the object in GENESIS-Online. Defaults to "all".
             startyear (str, optional): Data beginning with that year will be returned.
                 Parameter is cumulative to `timeslices`. Supports 4 digits (jjjj) or 4+2 digits (jjjj/jj).
@@ -169,17 +172,18 @@ class Table:
                 Accepts 1-15 characters. "*" can be used as wildcard.
         """
         params = {
-            "name": self.name,
             "area": area,
-            "startyear": startyear,
+            "compress": "true" if compress else "false",
             "endyear": endyear,
-            "timeslices": timeslices,
-            "regionalvariable": regionalvariable,
-            "regionalkey": regionalkey,
-            "stand": stand,
-            "language": language,
-            "quality": quality,
             "format": "ffcsv",
+            "language": language,
+            "name": self.name,
+            "quality": quality,
+            "regionalkey": regionalkey,
+            "regionalvariable": regionalvariable,
+            "stand": stand,
+            "startyear": startyear,
+            "timeslices": timeslices,
             "classifyingvariable1": classifyingvariable1,
             "classifyingkey1": classifyingkey1,
             "classifyingvariable2": classifyingvariable2,
@@ -190,6 +194,7 @@ class Table:
             "classifyingkey4": classifyingkey4,
             "classifyingvariable5": classifyingvariable5,
             "classifyingkey5": classifyingkey5,
+            "job": "false",
         }
 
         db_matches = db.identify_db_matches(self.name)
@@ -230,9 +235,7 @@ class Table:
         metadata = load_data(endpoint="metadata", method="table", params=params)
         metadata = json.loads(metadata)
         if not isinstance(metadata, dict):
-            raise TypeError(
-                f"Expected dict for metadata, got {type(metadata).__name__}"
-            )
+            raise TypeError(f"Expected dict for metadata, got {type(metadata).__name__}")
 
         self.metadata = metadata
 
@@ -293,8 +296,8 @@ class Table:
         time_df = Table._extract_time_info(data, pivot_table, time_label_col, time_col)
 
         # Extract regional code information - checks all variable columns for AGS codes
-        regional_code_df, is_single_region, regional_code_prefix = (
-            Table._extract_regional_codes(pivot_table, regional_code_label)
+        regional_code_df, is_single_region, regional_code_prefix = Table._extract_regional_codes(
+            pivot_table, regional_code_label
         )
 
         # Extract attribute information
@@ -337,9 +340,7 @@ class Table:
             # With quality = 'on' we have an additional column value_q
             # To still use pivot table we have to combine value and value_q
             # so we can later split them again
-            data[value_col] = [
-                [v, q] for v, q in zip(data[value_col], data[value_q_col])
-            ]
+            data[value_col] = [[v, q] for v, q in zip(data[value_col], data[value_q_col])]
             data = data.drop(columns=[value_q_col])
 
         return data
@@ -360,11 +361,7 @@ class Table:
         """
         # Create pivot table with all non-value columns as index
         pivot_table = data.pivot(
-            index=[
-                col
-                for col in data.columns
-                if col not in data.filter(regex=r"^value").columns
-            ],
+            index=[col for col in data.columns if col not in data.filter(regex=r"^value").columns],
             columns=value_variable_label_col,
             values=value_col,
         )
@@ -475,16 +472,12 @@ class Table:
             DataFrame containing attribute columns
         """
         # Get all attribute columns
-        all_attribute_cols = pivot_table.filter(
-            regex=r"\d+_" + variable_attribute_label_col
-        )
+        all_attribute_cols = pivot_table.filter(regex=r"\d+_" + variable_attribute_label_col)
 
         # If a regional code was found, exclude that specific column
         if regional_code_prefix:
             regional_col = f"{regional_code_prefix}_{variable_attribute_label_col}"
-            attributes = all_attribute_cols.loc[
-                :, all_attribute_cols.columns != regional_col
-            ]
+            attributes = all_attribute_cols.loc[:, all_attribute_cols.columns != regional_col]
         else:
             attributes = all_attribute_cols
 

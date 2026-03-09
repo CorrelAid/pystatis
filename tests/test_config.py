@@ -83,6 +83,25 @@ def test_setup_credentials(mocker, config_):
         assert config_[db_name]["password"] == "test123!"
 
 
+def test_setup_credentials_with_db_names_subset(mocker, config_):
+    mocker.patch.object(db, "check_credentials_are_valid", return_value=True)
+
+    os.environ["PYSTATIS_GENESIS_API_USERNAME"] = "test"
+    os.environ["PYSTATIS_GENESIS_API_PASSWORD"] = "test123!"
+
+    config.setup_credentials(db_names=["genesis"])
+
+    # Only the specified DB should be set
+    assert config_["genesis"]["username"] == "test"
+    assert config_["genesis"]["password"] == "test123!"
+
+
+def test_setup_credentials_invalid_credentials_raises(mocker, config_):
+    mocker.patch.object(db, "check_credentials_are_valid", return_value=False)
+
+    with pytest.raises(KeyError) as _exc_info:
+        config.setup_credentials(db_names=["regio_s"])
+
 @pytest.mark.parametrize(
     "mock_return, check_result",
     [

@@ -152,7 +152,12 @@ def config_exists() -> bool:
 
 
 def setup_credentials(db_names: list[str] | None = None) -> None:
-    """Setup credentials for all supported databases."""
+    """
+    Setup credentials for all supported databases.
+
+    Args:
+        db_names (list[str]): Names of the databases to setup
+    """
     if db_names is None:
         db_names = get_supported_db()
 

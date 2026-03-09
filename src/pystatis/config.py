@@ -163,12 +163,14 @@ def setup_credentials(db_names: list[str] | None = None) -> None:
 
     for db_name in db_names:
         # despite this check, we should consider using literals as the type hint for
-        # db_names
+        # db_names.
         if db_name not in get_supported_db():
             raise KeyError(
                 f"Provided db_name '{db_name}' no regnized. "
                 f"Valid options are {get_supported_db()}"
             )
+
+    for db_name in db_names:
         config.set(db_name, "username", _get_user_input(db_name, "username"))
         config.set(db_name, "password", _get_user_input(db_name, "password"))
         if not db.check_credentials_are_valid(db_name):

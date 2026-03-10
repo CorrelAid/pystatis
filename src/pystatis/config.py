@@ -172,9 +172,15 @@ def setup_credentials(*db_names: SupportedDb) -> None:
         selected = list(db_names)
 
     for db_name in selected:
-        config.set(db_name, "username", _get_user_input(db_name, "username"))
-        config.set(db_name, "password", _get_user_input(db_name, "password"))
+        username = _get_user_input(db_name, "username")
+        password = _get_user_input(db_name, "password")
+        prev_username = config.get(db_name, "username")
+        prev_password = config.get(db_name, "password")
+        config.set(db_name, "username", username)
+        config.set(db_name, "password", password)
         if db.check_credentials_are_set(db_name) and not db.check_credentials_are_valid(db_name):
+            config.set(db_name, "username", prev_username)
+            config.set(db_name, "password", prev_password)
             raise PystatisConfigError(
                 f"Provided credentials for database '{db_name}' are not valid! Please provide the correct credentials."
             )

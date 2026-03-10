@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.5.5
+
+- Add `db_names` parameter to `setup_credentials` for non-interactive use
+- Make `setup_credentials` interactive per database; fix empty credential check
+- Add Python 3.14 support (CI matrix and classifiers)
+- Replace mypy with `ty` for type checking
+- Update dependencies: tabulate, pytest v9, pylint v4, pytest-cov v7, types-requests
+- Update GitHub Actions: actions/checkout v6, setup-uv v7, upload-artifact v7, codecov-action v5
+- Fix type errors: raise `TimeoutError` on job timeout, add `types-requests` stubs
+- Update all tests and re-record cassettes
+
 ## 0.5.4
 
 - Change handling of backend jobs: Switch from catalogue/jobs to catalogue/results.

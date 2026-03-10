@@ -32,7 +32,7 @@ repos:
         pass_filenames: false
       - id: ty
         name: ty
-        entry: uv run ty check src
+        entry: just typecheck
         language: system
         pass_filenames: false
       - id: pytest

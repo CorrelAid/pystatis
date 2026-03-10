@@ -23,6 +23,10 @@ jobs:
       matrix:
         python-version: ["3.11", "3.12", "3.13", "3.14"]
         os: [ubuntu-latest, macOS-latest, windows-latest]
+        exclude:
+          # numpy has no stable Windows wheel for Python 3.14 yet
+          - python-version: "3.14"
+            os: windows-latest
 
     steps:
       - uses: actions/checkout@v6

@@ -35,3 +35,11 @@ lint-fix:
 # Type check
 typecheck:
     uv run ty check src/
+
+# Install pre-commit hooks
+install-hooks:
+    uv run pre-commit install
+
+# Run all pre-commit hooks on all files
+run-hooks:
+    uv run pre-commit run --all-files

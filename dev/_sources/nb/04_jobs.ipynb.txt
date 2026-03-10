@@ -1,0 +1,431 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "pycharm": {
+     "name": "#%% md\n"
+    }
+   },
+   "source": [
+    "# Jobs: Loading Large Tables\n",
+    "\n",
+    "Some tables from the database are quite large and the API provides them in a different way:\n",
+    "\n",
+    "1. The standard request is rejected with code 98\n",
+    "2. However, setting the query parameter `job=true` starts a background task.\n",
+    "3. The final table is then available under `data/resultfile` instead of `data/tablefile`.\n",
+    "\n",
+    "_`pystatis` is handling all these details and the whole process for you!. Thus, you will only notice a larger runtime when requesting larger tables (currently about 1 minute of extra timeout)._\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {
+    "pycharm": {
+     "name": "#%%\n"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "import logging\n",
+    "\n",
+    "from pystatis import Table\n",
+    "\n",
+    "logging.basicConfig(level=logging.INFO)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Let's assume we want to download the table \"AI001-2-5\".\n",
+    "If the table is not cached yet, a warning message tells us that a background job has been started.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "WARNING:pystatis.http_helper:Die Tabelle ist zu groß, um direkt abgerufen zu werden. Es wird eine Verarbeitung im Hintergrund gestartet.\n",
+      "INFO:pystatis.http_helper:Database selected: regio\n",
+      "INFO:pystatis.http_helper:Code 99: Der Bearbeitungsauftrag wurde erstellt. Die Tabelle kann in Kürze als Ergebnis mit folgendem Namen abgerufen werden: AI001-2-5_411043199\n",
+      "WARNING:pystatis.http_helper:Verarbeitung im Hintergrund erfolgreich gestartet. Job-ID: AI001-2-5_411043199.\n",
+      "INFO:pystatis.http_helper:Code 0: erfolgreich\n",
+      "INFO:pystatis.http_helper:Code 0: erfolgreich\n",
+      "INFO:pystatis.http_helper:Code 0: erfolgreich\n",
+      "INFO:pystatis.http_helper:Code 0: erfolgreich\n",
+      "INFO:pystatis.http_helper:Code 0: erfolgreich\n",
+      "INFO:pystatis.http_helper:Code 0: erfolgreich\n",
+      "INFO:pystatis.http_helper:Verarbeitung im Hintergrund abgeschlossen. Ergebnis kann jetzt abgerufen werden über /data/resultfile und Job-ID: AI001-2-5_411043199.\n",
+      "INFO:pystatis.cache:Data was successfully cached under /Users/miay/.pystatis/data/AI001-2-5/d973b28b323fa878b812/20250412.zip.\n",
+      "INFO:pystatis.http_helper:Database selected: regio\n",
+      "INFO:pystatis.http_helper:Code 0: erfolgreich\n"
+     ]
+    }
+   ],
+   "source": [
+    "t = Table(name=\"AI001-2-5\")\n",
+    "t.get_data()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Requesting the same table again will provide the table instantly from the cache.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "hit\n"
+     ]
+    },
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "INFO:pystatis.http_helper:Database selected: regio\n",
+      "INFO:pystatis.http_helper:Code 0: erfolgreich\n"
+     ]
+    }
+   ],
+   "source": [
+    "t = Table(name=\"AI001-2-5\")\n",
+    "t.get_data()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {
+    "pycharm": {
+     "name": "#%%\n"
+    }
+   },
+   "outputs": [
+    {
+     "data": {
+      "application/vnd.microsoft.datawrangler.viewer.v0+json": {
+       "columns": [
+        {
+         "name": "index",
+         "rawType": "int64",
+         "type": "integer"
+        },
+        {
+         "name": "Jahr",
+         "rawType": "object",
+         "type": "string"
+        },
+        {
+         "name": "Amtlicher Gemeindeschlüssel (AGS)__Code",
+         "rawType": "object",
+         "type": "string"
+        },
+        {
+         "name": "Amtlicher Gemeindeschlüssel (AGS)",
+         "rawType": "object",
+         "type": "string"
+        },
+        {
+         "name": "Anteil Siedlungs- und Verkehrsfläche an Gesamtfläche__Prozent",
+         "rawType": "float64",
+         "type": "float"
+        },
+        {
+         "name": "Anteil Sport-, Freizeit-, Erholungsfläche an Gesamtfläche__Prozent",
+         "rawType": "float64",
+         "type": "float"
+        },
+        {
+         "name": "Anteil der Fläche für Landwirtschaft an Gesamtfläche__Prozent",
+         "rawType": "float64",
+         "type": "float"
+        },
+        {
+         "name": "Anteil der Fläche für Siedlung an Gesamtfläche__Prozent",
+         "rawType": "float64",
+         "type": "float"
+        },
+        {
+         "name": "Anteil der Fläche für Verkehr an Gesamtfläche__Prozent",
+         "rawType": "float64",
+         "type": "float"
+        },
+        {
+         "name": "Anteil der Fläche für Wald an Gesamtfläche__Prozent",
+         "rawType": "float64",
+         "type": "float"
+        },
+        {
+         "name": "Freiraumfläche je EW__qm",
+         "rawType": "float64",
+         "type": "float"
+        },
+        {
+         "name": "Siedlungs- und Verkehrsfläche je EW__qm",
+         "rawType": "float64",
+         "type": "float"
+        }
+       ],
+       "conversionMethod": "pd.DataFrame",
+       "ref": "b51bfc60-b24d-4b0f-84f7-5ccc5067d3de",
+       "rows": [
+        [
+         "0",
+         "2022",
+         "01001000",
+         "Flensburg, kreisfreie Stadt",
+         "53.5",
+         "4.4",
+         "22.1",
+         "39.8",
+         "13.8",
+         "6.6",
+         "284.1",
+         "327.9"
+        ],
+        [
+         "1",
+         "2022",
+         "01002000",
+         "Kiel, kreisfreie Stadt, Landeshauptstadt",
+         "58.8",
+         "10.3",
+         "23.4",
+         "44.9",
+         "13.9",
+         "5.6",
+         "197.4",
+         "281.5"
+        ],
+        [
+         "2",
+         "2022",
+         "01003000",
+         "Lübeck, kreisfreie Stadt, Hansestadt",
+         "37.9",
+         "6.2",
+         "30.2",
+         "28.9",
+         "9.2",
+         "14.7",
+         "607.5",
+         "371.9"
+        ],
+        [
+         "3",
+         "2022",
+         "01004000",
+         "Neumünster, kreisfreie Stadt",
+         "51.8",
+         "5.5",
+         "37.7",
+         "41.7",
+         "10.1",
+         "4.3",
+         "434.2",
+         "467.1"
+        ],
+        [
+         "4",
+         "2022",
+         "01051001",
+         "Albersdorf",
+         "19.7",
+         "1.4",
+         "62.7",
+         "14.0",
+         "5.7",
+         "14.7",
+         "3640.3",
+         "894.6"
+        ]
+       ],
+       "shape": {
+        "columns": 11,
+        "rows": 5
+       }
+      },
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>Jahr</th>\n",
+       "      <th>Amtlicher Gemeindeschlüssel (AGS)__Code</th>\n",
+       "      <th>Amtlicher Gemeindeschlüssel (AGS)</th>\n",
+       "      <th>Anteil Siedlungs- und Verkehrsfläche an Gesamtfläche__Prozent</th>\n",
+       "      <th>Anteil Sport-, Freizeit-, Erholungsfläche an Gesamtfläche__Prozent</th>\n",
+       "      <th>Anteil der Fläche für Landwirtschaft an Gesamtfläche__Prozent</th>\n",
+       "      <th>Anteil der Fläche für Siedlung an Gesamtfläche__Prozent</th>\n",
+       "      <th>Anteil der Fläche für Verkehr an Gesamtfläche__Prozent</th>\n",
+       "      <th>Anteil der Fläche für Wald an Gesamtfläche__Prozent</th>\n",
+       "      <th>Freiraumfläche je EW__qm</th>\n",
+       "      <th>Siedlungs- und Verkehrsfläche je EW__qm</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>2022</td>\n",
+       "      <td>01001000</td>\n",
+       "      <td>Flensburg, kreisfreie Stadt</td>\n",
+       "      <td>53.5</td>\n",
+       "      <td>4.4</td>\n",
+       "      <td>22.1</td>\n",
+       "      <td>39.8</td>\n",
+       "      <td>13.8</td>\n",
+       "      <td>6.6</td>\n",
+       "      <td>284.1</td>\n",
+       "      <td>327.9</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>2022</td>\n",
+       "      <td>01002000</td>\n",
+       "      <td>Kiel, kreisfreie Stadt, Landeshauptstadt</td>\n",
+       "      <td>58.8</td>\n",
+       "      <td>10.3</td>\n",
+       "      <td>23.4</td>\n",
+       "      <td>44.9</td>\n",
+       "      <td>13.9</td>\n",
+       "      <td>5.6</td>\n",
+       "      <td>197.4</td>\n",
+       "      <td>281.5</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>2022</td>\n",
+       "      <td>01003000</td>\n",
+       "      <td>Lübeck, kreisfreie Stadt, Hansestadt</td>\n",
+       "      <td>37.9</td>\n",
+       "      <td>6.2</td>\n",
+       "      <td>30.2</td>\n",
+       "      <td>28.9</td>\n",
+       "      <td>9.2</td>\n",
+       "      <td>14.7</td>\n",
+       "      <td>607.5</td>\n",
+       "      <td>371.9</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>2022</td>\n",
+       "      <td>01004000</td>\n",
+       "      <td>Neumünster, kreisfreie Stadt</td>\n",
+       "      <td>51.8</td>\n",
+       "      <td>5.5</td>\n",
+       "      <td>37.7</td>\n",
+       "      <td>41.7</td>\n",
+       "      <td>10.1</td>\n",
+       "      <td>4.3</td>\n",
+       "      <td>434.2</td>\n",
+       "      <td>467.1</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>2022</td>\n",
+       "      <td>01051001</td>\n",
+       "      <td>Albersdorf</td>\n",
+       "      <td>19.7</td>\n",
+       "      <td>1.4</td>\n",
+       "      <td>62.7</td>\n",
+       "      <td>14.0</td>\n",
+       "      <td>5.7</td>\n",
+       "      <td>14.7</td>\n",
+       "      <td>3640.3</td>\n",
+       "      <td>894.6</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "   Jahr Amtlicher Gemeindeschlüssel (AGS)__Code         Amtlicher Gemeindeschlüssel (AGS)  Anteil Siedlungs- und Verkehrsfläche an Gesamtfläche__Prozent  Anteil Sport-, Freizeit-, Erholungsfläche an Gesamtfläche__Prozent  Anteil der Fläche für Landwirtschaft an Gesamtfläche__Prozent  Anteil der Fläche für Siedlung an Gesamtfläche__Prozent  Anteil der Fläche für Verkehr an Gesamtfläche__Prozent  Anteil der Fläche für Wald an Gesamtfläche__Prozent  Freiraumfläche je EW__qm  Siedlungs- und Verkehrsfläche je EW__qm\n",
+       "0  2022                                01001000               Flensburg, kreisfreie Stadt                                                           53.5                                                                 4.4                                                           22.1                                                     39.8                                                    13.8                                                  6.6                     284.1                                    327.9\n",
+       "1  2022                                01002000  Kiel, kreisfreie Stadt, Landeshauptstadt                                                           58.8                                                                10.3                                                           23.4                                                     44.9                                                    13.9                                                  5.6                     197.4                                    281.5\n",
+       "2  2022                                01003000      Lübeck, kreisfreie Stadt, Hansestadt                                                           37.9                                                                 6.2                                                           30.2                                                     28.9                                                     9.2                                                 14.7                     607.5                                    371.9\n",
+       "3  2022                                01004000              Neumünster, kreisfreie Stadt                                                           51.8                                                                 5.5                                                           37.7                                                     41.7                                                    10.1                                                  4.3                     434.2                                    467.1\n",
+       "4  2022                                01051001                                Albersdorf                                                           19.7                                                                 1.4                                                           62.7                                                     14.0                                                     5.7                                                 14.7                    3640.3                                    894.6"
+      ]
+     },
+     "execution_count": 4,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "t.data.head()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "(13564, 11)"
+      ]
+     },
+     "execution_count": 7,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "t.data.shape"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": ".venv",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.13.2"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 1
+}

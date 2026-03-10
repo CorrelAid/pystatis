@@ -19,10 +19,7 @@ def config_() -> ConfigParser:
 
 
 def test_config_path():
-    assert (
-        config._build_config_file_path()
-        == Path(config.DEFAULT_CONFIG_DIR) / "config.ini"
-    )
+    assert config._build_config_file_path() == Path(config.DEFAULT_CONFIG_DIR) / "config.ini"
     assert config.get_cache_dir() == str(Path(config.DEFAULT_CONFIG_DIR) / "data")
 
 
@@ -133,6 +130,21 @@ def test_check_credentials_are_valid(mocker, mock_return: bytes, check_result: b
     mocker.patch.object(http_helper, "load_data", return_value=mock_return)
     # Db name not important since we mock the request result anyway.
     assert check_credentials_are_valid("genesis") == check_result
+
+
+def test_setup_credentials_explicit_db_names_skips_prompt(mocker, config_):
+    mock_input = mocker.patch("builtins.input")
+    mocker.patch.object(db, "check_credentials_are_valid", return_value=True)
+    os.environ["PYSTATIS_GENESIS_API_USERNAME"] = "test"
+    os.environ["PYSTATIS_GENESIS_API_PASSWORD"] = "test123!"
+
+    config.setup_credentials("genesis")
+
+    mock_input.assert_not_called()
+    assert config_["genesis"]["username"] == "test"
+    assert config_["genesis"]["password"] == "test123!"
+    assert config_["zensus"]["username"] == ""
+    assert config_["regio"]["username"] == ""
 
 
 def test_supported_db():

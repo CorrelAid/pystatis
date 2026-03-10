@@ -6,9 +6,11 @@ import requests
 
 from pystatis.exception import DestatisStatusError
 from pystatis.http_helper import (
+    JOB_TIMEOUT,
     _check_invalid_destatis_status_code,
     _check_invalid_status_code,
     get_data_from_endpoint,
+    get_data_from_resultfile,
     get_job_id_from_response,
 )
 
@@ -59,15 +61,15 @@ def test_get_response_from_endpoint(mocker):
     Test once with generic API response, more detailed tests
     of subfunctions and specific cases below.
     """
-    mocker.patch(
-        "pystatis.http_helper.requests", return_value=_generic_request_status()
-    )
+    mocker.patch("pystatis.http_helper.requests.post", return_value=_generic_request_status())
     mocker.patch("pystatis.db.get_settings", return_value=("host", "user", "pw"))
     mocker.patch("pystatis.db.check_credentials_are_set", return_value=True)
 
-    get_data_from_endpoint(
+    response = get_data_from_endpoint(
         endpoint="endpoint", method="method", params={"name": "21111-0001"}
     )
+    assert isinstance(response, requests.Response)
+    assert response.status_code == 200
 
 
 def test_check_invalid_status_code_with_error():
@@ -117,10 +119,7 @@ def test_check_invalid_destatis_status_code_with_error():
 
     with pytest.raises(DestatisStatusError) as e:
         _check_invalid_destatis_status_code(generic_error_status)
-    assert (
-        str(e.value)
-        == "Error: There is a system error. Please check your query parameters."
-    )
+    assert str(e.value) == "Error: There is a system error. Please check your query parameters."
 
 
 def test_check_invalid_destatis_status_code_with_warning(caplog):
@@ -172,7 +171,9 @@ def test_get_job_id_from_response():
 
 def test_get_job_id_from_response_with_no_id():
     response = requests.Response()
-    response._content = """{"Status": {"Content": "Der Bearbeitungsauftrag wurde erstellt."}}""".encode()
+    response._content = (
+        """{"Status": {"Content": "Der Bearbeitungsauftrag wurde erstellt."}}""".encode()
+    )
     job_id = get_job_id_from_response(response)
     assert job_id == ""
 
@@ -182,3 +183,28 @@ def test_get_job_id_from_response_with_no_json():
     response._content = "Der Bearbeitungsauftrag wurde erstellt. Die Tabelle kann in Kürze als Ergebnis mit folgendem Namen abgerufen werden: 42153-0001_001597503 (Mindestens ein Parameter enthält ungültige Werte. Er wurde angepasst, um den Service starten zu können.: stand".encode()
     job_id = get_job_id_from_response(response)
     assert job_id == ""
+
+
+def test_get_data_from_resultfile_raises_timeout(mocker):
+    """TimeoutError is raised when JOB_TIMEOUT is exceeded without the job completing."""
+    # First perf_counter call sets the baseline; second call simulates timeout exceeded.
+    mocker.patch(
+        "pystatis.http_helper.time.perf_counter",
+        side_effect=[0, JOB_TIMEOUT + 1],
+    )
+    mocker.patch("pystatis.http_helper.time.sleep")
+    mocker.patch("pystatis.db.get_settings", return_value=("host", "user", "pw"))
+    mocker.patch("pystatis.db.check_credentials_are_set", return_value=True)
+
+    in_progress_response = requests.Response()
+    in_progress_response.status_code = 200
+    in_progress_response._content = json.dumps(
+        {
+            "Status": {"Code": 0, "Type": "Information", "Content": "OK"},
+            "List": [],
+        }
+    ).encode("UTF-8")
+    mocker.patch("pystatis.http_helper.requests.post", return_value=in_progress_response)
+
+    with pytest.raises(TimeoutError):
+        get_data_from_resultfile("42153-0001_001597503", {"name": "21111-0001"}, db_name="genesis")

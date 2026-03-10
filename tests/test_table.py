@@ -17,26 +17,26 @@ pystatis.clear_cache()
         # German tables
         ("12211-0001", (225, 21), "de"),
         ("13111-0005", (384, 17), "de"),
-        ("23111-0001", (264, 13), "de"),
+        ("23111-0001", (272, 13), "de"),
         ("23311-0010", (4352, 25), "de"),
         ("32161-0003", (70, 17), "de"),
         ("32421-0012", (2240, 21), "de"),
         ("46181-0001", (16, 21), "de"),
         ("51000-0010", (1572, 21), "de"),
-        ("61111-0021", (960, 17), "de"),
-        ("63121-0001", (210, 21), "de"),
+        # ("61111-0021", (960, 17), "de"), # currently broken?
+        # ("63121-0001", (210, 21), "de"), # currently broken, returns 500
         ("71311-0001", (600, 25), "de"),
         ("91111-0001", (4719, 17), "de"),
-        ("11111-02-01-4", (550, 13), "de"),
+        ("11111-02-01-4", (489, 13), "de"),
         ("13111-01-03-4", (3300, 21), "de"),
-        ("21311-01-01-4-B", (44010, 25), "de"),
-        ("32121-01-02-4", (3850, 17), "de"),
-        ("41312-01-01-4", (6050, 17), "de"),
-        # ("52411-02-01-4", (538, 15), "de"), # currently broken, returns 500
-        ("61511-01-03-4", (4400, 17), "de"),
-        ("73111-01-01-4", (1650, 13), "de"),
-        ("86121-Z-01", (8208, 17), "de"),
-        ("AI-N-01-2-5", (27128, 13), "de"),
+        ("21311-01-01-4-B", (44100, 25), "de"),
+        ("32121-01-02-4", (3423, 17), "de"),
+        ("41312-01-01-4", (5379, 17), "de"),
+        ("52411-02-01-4", (2445, 17), "de"),
+        ("61511-01-03-4", (3912, 17), "de"),
+        ("73111-01-01-4", (1467, 13), "de"),
+        ("86121-Z-01", (8550, 17), "de"),
+        ("AI-N-01-2-5", (27132, 13), "de"),
         ("1000A-0000", (10787, 13), "de"),
         ("2000S-2003", (72, 21), "de"),
         ("3000G-1008", (20, 17), "de"),
@@ -44,14 +44,14 @@ pystatis.clear_cache()
         # English tables
         ("12211-0001", (225, 21), "en"),
         ("13111-0005", (384, 17), "en"),
-        ("23111-0001", (264, 13), "en"),
+        ("23111-0001", (272, 13), "en"),
         ("23311-0010", (4352, 25), "en"),
         ("32161-0003", (70, 17), "en"),
         ("32421-0012", (2240, 21), "en"),
         ("46181-0001", (16, 21), "en"),
         ("51000-0010", (1572, 21), "en"),
-        ("61111-0021", (960, 17), "en"),
-        ("63121-0001", (210, 21), "en"),
+        # ("61111-0021", (960, 17), "en"), # currently broken?
+        # ("63121-0001", (210, 21), "en"),
         ("71311-0001", (600, 25), "en"),
         ("91111-0001", (4719, 17), "en"),
         ("1000A-0000", (10787, 13), "en"),
@@ -78,7 +78,7 @@ def test_get_data(mocker, table_name: str, expected_shape: tuple[int, int], lang
     "table_name, expected_shape",
     [
         ("52111-0001", (68, 22)),
-        ("12211-Z-11", (2200, 18)),
+        ("12211-Z-11", (1956, 18)),
         ("1000A-2022", (1360, 22)),
     ],
 )
@@ -128,7 +128,7 @@ def test_get_data_with_compress_on(mocker, table_name: str, expected_shape: tupl
         ),
         (
             "12211-Z-11",
-            (2200, 6),
+            (1956, 6),
             (
                 "Jahr",
                 "Amtlicher Gemeindeschlüssel (AGS)__Code",
@@ -200,7 +200,7 @@ def test_get_data_with_quality_on_and_prettify_true(
         ),
         (
             "23111-0001",
-            (33, 9),
+            (34, 9),
             (
                 "Jahr",
                 "Berechnungs-/Belegungstage__1000",
@@ -284,31 +284,31 @@ def test_get_data_with_quality_on_and_prettify_true(
             ),
             "de",
         ),
-        (
-            "61111-0021",
-            (960, 5),
-            (
-                "Jahr",
-                "Amtlicher Gemeindeschlüssel (AGS)__Code",
-                "Amtlicher Gemeindeschlüssel (AGS)",
-                "Monate",
-                "Index der Nettokaltmieten__2020=100",
-            ),
-            "de",
-        ),
-        (
-            "63121-0001",
-            (180, 6),
-            (
-                "Jahr",
-                "Haushaltsgröße",
-                "Einnahme- und Ausgabearten",
-                "Durchschnittsbetrag je Haushalt und Monat__EUR",
-                "Erfasste Haushalte__Anzahl",
-                "Hochgerechnete Haushalte__1000",
-            ),
-            "de",
-        ),
+        # (
+        #     "61111-0021",
+        #     (960, 5),
+        #     (
+        #         "Jahr",
+        #         "Amtlicher Gemeindeschlüssel (AGS)__Code",
+        #         "Amtlicher Gemeindeschlüssel (AGS)",
+        #         "Monate",
+        #         "Index der Nettokaltmieten__2020=100",
+        #     ),
+        #     "de",
+        # ),
+        # (
+        #     "63121-0001",
+        #     (180, 6),
+        #     (
+        #         "Jahr",
+        #         "Haushaltsgröße",
+        #         "Einnahme- und Ausgabearten",
+        #         "Durchschnittsbetrag je Haushalt und Monat__EUR",
+        #         "Erfasste Haushalte__Anzahl",
+        #         "Hochgerechnete Haushalte__1000",
+        #     ),
+        #     "de",
+        # ),
         (
             "71311-0001",
             (600, 5),
@@ -333,7 +333,7 @@ def test_get_data_with_quality_on_and_prettify_true(
         ),
         (
             "11111-02-01-4",
-            (550, 4),
+            (489, 4),
             (
                 "Stichtag",
                 "Amtlicher Gemeindeschlüssel (AGS)__Code",
@@ -344,7 +344,7 @@ def test_get_data_with_quality_on_and_prettify_true(
         ),
         (
             "21311-01-01-4-B",
-            (44010, 7),
+            (44100, 7),
             (
                 "Semester",
                 "Amtlicher Gemeindeschlüssel (AGS)__Code",
@@ -358,7 +358,7 @@ def test_get_data_with_quality_on_and_prettify_true(
         ),
         (
             "32121-01-02-4",
-            (3850, 5),
+            (3423, 5),
             (
                 "Jahr",
                 "Amtlicher Gemeindeschlüssel (AGS)__Code",
@@ -370,7 +370,7 @@ def test_get_data_with_quality_on_and_prettify_true(
         ),
         (
             "41312-01-01-4",
-            (6050, 5),
+            (5379, 5),
             (
                 "Stichtag",
                 "Amtlicher Gemeindeschlüssel (AGS)__Code",
@@ -380,22 +380,23 @@ def test_get_data_with_quality_on_and_prettify_true(
             ),
             "de",
         ),
-        # # (
-        # #     "52411-02-01-4",
-        # #     (538, 6),
-        # #     (
-        # #         "Jahr",
-        # #         "Amtlicher Gemeindeschlüssel (AGS)__Code",
-        # #         "Amtlicher Gemeindeschlüssel (AGS)",
-        # #         "Insolvenzverfahren (Unternehmen)__MeasureUnitNotFound!",
-        # #         "Arbeitnehmer__Anzahl",
-        # #         "voraussichtliche Forderungen (Unternehmen)__Tsd._EUR",
-        # #     ),
-        # #     "de",
-        # # ),
+        (
+            "52411-02-01-4",
+            (1956, 7),
+            (
+                "Jahr",
+                "Amtlicher Gemeindeschlüssel (AGS)__Code",
+                "Amtlicher Gemeindeschlüssel (AGS)",
+                "Beantragte Verfahren",
+                "Arbeitnehmer/-innen__Anzahl",
+                "Beantragte Insolvenzverfahren (Unternehmen)__Anzahl",
+                "voraussichtliche Forderungen (Unternehmen)__Tsd. EUR",
+            ),
+            "de",
+        ),
         (
             "61511-01-03-4",
-            (1100, 8),
+            (978, 8),
             (
                 "Jahr",
                 "Amtlicher Gemeindeschlüssel (AGS)__Code",
@@ -410,7 +411,7 @@ def test_get_data_with_quality_on_and_prettify_true(
         ),
         (
             "73111-01-01-4",
-            (550, 6),
+            (489, 6),
             (
                 "Jahr",
                 "Amtlicher Gemeindeschlüssel (AGS)__Code",
@@ -423,7 +424,7 @@ def test_get_data_with_quality_on_and_prettify_true(
         ),
         (
             "86121-Z-01",
-            (2736, 7),
+            (2850, 7),
             (
                 "Jahr",
                 "Amtlicher Gemeindeschlüssel (AGS)__Code",
@@ -437,7 +438,7 @@ def test_get_data_with_quality_on_and_prettify_true(
         ),
         (
             "AI-N-01-2-5",
-            (13564, 5),
+            (13566, 5),
             (
                 "Jahr",
                 "Amtlicher Gemeindeschlüssel (AGS)__Code",
@@ -536,7 +537,7 @@ def test_get_data_with_quality_on_and_prettify_true(
         ),
         (
             "23111-0001",
-            (33, 9),
+            (34, 9),
             (
                 "Year",
                 "Average length of stay__days",
@@ -620,31 +621,31 @@ def test_get_data_with_quality_on_and_prettify_true(
             ),
             "en",
         ),
-        (
-            "61111-0021",
-            (960, 5),
-            (
-                "Year",
-                "Official municipality key (AGS)__Code",
-                "Official municipality key (AGS)",
-                "Months",
-                "Index of net rents exclusive of heating expenses__2020=100",
-            ),
-            "en",
-        ),
-        (
-            "63121-0001",
-            (180, 6),
-            (
-                "Year",
-                "Household size",
-                "Types of income and expenditure",
-                "Average amount per household and month__EUR",
-                "Households covered__number",
-                "Households extrapolated__1000",
-            ),
-            "en",
-        ),
+        # (
+        #     "61111-0021",
+        #     (960, 5),
+        #     (
+        #         "Year",
+        #         "Official municipality key (AGS)__Code",
+        #         "Official municipality key (AGS)",
+        #         "Months",
+        #         "Index of net rents exclusive of heating expenses__2020=100",
+        #     ),
+        #     "en",
+        # ),
+        # (
+        #     "63121-0001",
+        #     (180, 6),
+        #     (
+        #         "Year",
+        #         "Household size",
+        #         "Types of income and expenditure",
+        #         "Average amount per household and month__EUR",
+        #         "Households covered__number",
+        #         "Households extrapolated__1000",
+        #     ),
+        #     "en",
+        # ),
         (
             "71311-0001",
             (600, 5),

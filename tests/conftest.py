@@ -4,7 +4,7 @@ import pytest
 @pytest.fixture(scope="module")
 def vcr_config():
     return {
-        "filter_headers": ["authorization", "username", "password"],
+        "filter_headers": ["authorization", "username", "password", "Date", "Content-Disposition"],
         "filter_query_parameters": ["username", "password"],
         # see https://vcrpy.readthedocs.io/en/latest/configuration.html,
         # need to add body here as Genesis v5 uses POST requests

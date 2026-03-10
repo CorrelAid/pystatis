@@ -1,4 +1,3 @@
-import os
 from configparser import ConfigParser
 from pathlib import Path
 
@@ -6,6 +5,7 @@ import pytest
 
 from pystatis import config, db, http_helper
 from pystatis.db import check_credentials_are_valid
+from pystatis.exception import PystatisConfigError
 
 
 @pytest.fixture()
@@ -18,10 +18,7 @@ def config_() -> ConfigParser:
 
 
 def test_config_path():
-    assert (
-        config._build_config_file_path()
-        == Path(config.DEFAULT_CONFIG_DIR) / "config.ini"
-    )
+    assert config._build_config_file_path() == Path(config.DEFAULT_CONFIG_DIR) / "config.ini"
     assert config.get_cache_dir() == str(Path(config.DEFAULT_CONFIG_DIR) / "data")
 
 
@@ -65,22 +62,60 @@ def test_missing_file(config_, caplog):
         assert record.levelname == "CRITICAL"
 
 
-def test_setup_credentials(mocker, config_):
+def test_setup_credentials(monkeypatch, mocker, config_):
+    mocker.patch("builtins.input", return_value="y")
     mocker.patch.object(db, "check_credentials_are_valid", return_value=True)
     for db_name in config.get_supported_db():
-        for field in ["username", "password"]:
-            if field == "username":
-                os.environ[f"PYSTATIS_{db_name.upper()}_API_{field.upper()}"] = "test"
-            else:
-                os.environ[f"PYSTATIS_{db_name.upper()}_API_{field.upper()}"] = (
-                    "test123!"
-                )
+        monkeypatch.setenv(f"PYSTATIS_{db_name.upper()}_API_USERNAME", "test")
+        monkeypatch.setenv(f"PYSTATIS_{db_name.upper()}_API_PASSWORD", "test123!")
 
     config.setup_credentials()
 
     for db_name in config.get_supported_db():
         assert config_[db_name]["username"] == "test"
         assert config_[db_name]["password"] == "test123!"
+
+
+def test_setup_credentials_skip_db(monkeypatch, mocker, config_):
+    # Answer "y" only for genesis, "n" for the rest
+    supported = config.get_supported_db()
+    answers = ["y" if db_name == "genesis" else "n" for db_name in supported]
+    mocker.patch("builtins.input", side_effect=answers)
+    mocker.patch.object(db, "check_credentials_are_valid", return_value=True)
+    monkeypatch.setenv("PYSTATIS_GENESIS_API_USERNAME", "test")
+    monkeypatch.setenv("PYSTATIS_GENESIS_API_PASSWORD", "test123!")
+
+    config.setup_credentials()
+
+    assert config_["genesis"]["username"] == "test"
+    assert config_["genesis"]["password"] == "test123!"
+    for db_name in supported:
+        if db_name != "genesis":
+            assert config_[db_name]["username"] == ""
+            assert config_[db_name]["password"] == ""
+
+
+def test_setup_credentials_empty_credentials_skips_validity_check(monkeypatch, mocker, config_):
+    mocker.patch("builtins.input", return_value="y")
+    mock_check = mocker.patch.object(db, "check_credentials_are_valid", return_value=False)
+    # Provide empty credentials via env vars
+    for db_name in config.get_supported_db():
+        monkeypatch.setenv(f"PYSTATIS_{db_name.upper()}_API_USERNAME", "")
+        monkeypatch.setenv(f"PYSTATIS_{db_name.upper()}_API_PASSWORD", "")
+
+    config.setup_credentials()  # must not raise
+
+    mock_check.assert_not_called()
+
+
+def test_setup_credentials_invalid_credentials_raises(monkeypatch, mocker, config_):
+    mocker.patch("builtins.input", return_value="y")
+    mocker.patch.object(db, "check_credentials_are_valid", return_value=False)
+    monkeypatch.setenv("PYSTATIS_GENESIS_API_USERNAME", "wrong")
+    monkeypatch.setenv("PYSTATIS_GENESIS_API_PASSWORD", "wrong")
+
+    with pytest.raises(PystatisConfigError):
+        config.setup_credentials()
 
 
 @pytest.mark.parametrize(
@@ -94,6 +129,21 @@ def test_check_credentials_are_valid(mocker, mock_return: bytes, check_result: b
     mocker.patch.object(http_helper, "load_data", return_value=mock_return)
     # Db name not important since we mock the request result anyway.
     assert check_credentials_are_valid("genesis") == check_result
+
+
+def test_setup_credentials_explicit_db_names_skips_prompt(monkeypatch, mocker, config_):
+    mock_input = mocker.patch("builtins.input")
+    mocker.patch.object(db, "check_credentials_are_valid", return_value=True)
+    monkeypatch.setenv("PYSTATIS_GENESIS_API_USERNAME", "test")
+    monkeypatch.setenv("PYSTATIS_GENESIS_API_PASSWORD", "test123!")
+
+    config.setup_credentials("genesis")
+
+    mock_input.assert_not_called()
+    assert config_["genesis"]["username"] == "test"
+    assert config_["genesis"]["password"] == "test123!"
+    assert config_["zensus"]["username"] == ""
+    assert config_["regio"]["username"] == ""
 
 
 def test_supported_db():

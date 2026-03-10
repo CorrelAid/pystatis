@@ -24,13 +24,15 @@ import os
 import re
 from configparser import ConfigParser
 from pathlib import Path
+from typing import Literal, get_args
 
 from pystatis import db
 from pystatis.exception import PystatisConfigError
 
 PKG_NAME = __name__.split(".", maxsplit=1)[0]
 DEFAULT_CONFIG_DIR = str(Path().home() / f".{PKG_NAME}")
-SUPPORTED_DB = ["genesis", "zensus", "regio"]
+SupportedDb = Literal["genesis", "zensus", "regio"]
+SUPPORTED_DB: list[str] = list(get_args(SupportedDb))
 REGEX_DB = {
     "genesis": re.compile(r"^((\d{5}-\d{4})|([0-9A-Z]{10}))$"),
     "zensus": re.compile(r"^\d{4}[A-Z]-\d{4}$"),
@@ -151,15 +153,51 @@ def config_exists() -> bool:
     return config_file.exists()
 
 
-def setup_credentials() -> None:
-    """Setup credentials for all supported databases."""
-    for db_name in get_supported_db():
-        config.set(db_name, "username", _get_user_input(db_name, "username"))
-        config.set(db_name, "password", _get_user_input(db_name, "password"))
-        if not db.check_credentials_are_valid(db_name):
+def setup_credentials(*db_names: SupportedDb) -> None:
+    """Setup credentials for supported databases.
+
+    Args:
+        *db_names: Database names to configure (e.g. "genesis", "regio"). If omitted,
+            prompts interactively for each supported database. Pass an explicit list to
+            skip the per-database confirmation prompt — useful in non-interactive
+            environments where credentials are already provided via environment variables.
+    """
+    if not db_names:
+        selected = [
+            db_name
+            for db_name in get_supported_db()
+            if input(f"Set up credentials for '{db_name}'? [y/N] ").strip().lower() == "y"
+        ]
+    else:
+        selected = list(db_names)
+        invalid = [name for name in selected if name not in SUPPORTED_DB]
+        if invalid:
             raise PystatisConfigError(
-                f"Provided credentials for database '{db_name}' are not valid! Please provide the correct credentials."
+                f"Unsupported database name(s): {invalid}. Must be one of {SUPPORTED_DB}."
             )
+
+    previous_values = {
+        db_name: (config.get(db_name, "username"), config.get(db_name, "password"))
+        for db_name in selected
+    }
+
+    try:
+        for db_name in selected:
+            username = _get_user_input(db_name, "username")
+            password = _get_user_input(db_name, "password")
+            config.set(db_name, "username", username)
+            config.set(db_name, "password", password)
+            if db.check_credentials_are_set(db_name) and not db.check_credentials_are_valid(
+                db_name
+            ):
+                raise PystatisConfigError(
+                    f"Provided credentials for database '{db_name}' are not valid! Please provide the correct credentials."
+                )
+    except Exception:
+        for db_name, (prev_username, prev_password) in previous_values.items():
+            config.set(db_name, "username", prev_username)
+            config.set(db_name, "password", prev_password)
+        raise
 
     write_config()
 

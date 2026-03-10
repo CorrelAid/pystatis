@@ -1,7 +1,7 @@
 exclude: "(doc|dist)"
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.5.0 # Use the ref you want to point at
+    rev: v5.0.0
     hooks:
       - id: check-yaml
       - id: check-toml
@@ -18,18 +18,27 @@ repos:
         files: ^\.github/workflows/
         types: [yaml]
         args: ["--schemafile", "https://json.schemastore.org/github-workflow"]
-  - repo: https://github.com/astral-sh/ruff-pre-commit
-    # Ruff version.
-    rev: v0.8.1
+  - repo: local
     hooks:
-      # Run the linter.
-      - id: ruff
-        args: [--fix]
-      # Run the formatter.
       - id: ruff-format
-  - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.13.0 # Use the sha / tag you want to point at
-    hooks:
-      - id: mypy
-        args: [--strict, --ignore-missing-imports]
-        files: ^src/
+        name: ruff-format
+        entry: just fmt
+        language: system
+        pass_filenames: false
+      - id: ruff-lint
+        name: ruff-lint
+        entry: just lint-fix
+        language: system
+        pass_filenames: false
+      - id: ty
+        name: ty
+        entry: just typecheck
+        language: system
+        pass_filenames: false
+      - id: pytest
+        name: pytest
+        entry: just test
+        language: system
+        pass_filenames: false
+        always_run: true
+        stages: [pre-push]

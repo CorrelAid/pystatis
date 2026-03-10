@@ -21,13 +21,17 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.11", "3.12", "3.13"]
+        python-version: ["3.11", "3.12", "3.13", "3.14"]
         os: [ubuntu-latest, macOS-latest, windows-latest]
+        exclude:
+          # numpy has no stable Windows wheel for Python 3.14 yet
+          - python-version: "3.14"
+            os: windows-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Set up Python and uv
-        uses: astral-sh/setup-uv@v6
+        uses: astral-sh/setup-uv@v7
         with:
           python-version: ${{ matrix.python-version }}
           enable-cache: true
@@ -47,9 +51,9 @@ jobs:
         python-version: ["3.13"]
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Set up Python and uv
-        uses: astral-sh/setup-uv@v6
+        uses: astral-sh/setup-uv@v7
         with:
           python-version: ${{ matrix.python-version }}
           enable-cache: true
@@ -66,30 +70,30 @@ jobs:
         with:
           api-key: ${{ secrets.SAFETY_API_KEY }}
           args: "--short-report --policy-file=.safety-policy.yml"
-      - name: Run mypy
-        run: uv run mypy src
+      - name: Run ty
+        run: uv run ty check src
 
   sphinx-documentation-and-coverage:
     runs-on: ubuntu-latest
     name: Sphinx Documentation and Test Coverage
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Set up Python and uv
-        uses: astral-sh/setup-uv@v6
+        uses: astral-sh/setup-uv@v7
         with:
           python-version: "3.13"
           enable-cache: true
       - name: Install dependencies
         run: |
-          uv sync --group dev
+          uv sync --group dev --group notebooks
       - name: Build documentation
         run: |
           cd docs
           uv run make clean
           uv run make html
       - name: Upload documentation as artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: docs
           path: docs/build/html/*
@@ -98,7 +102,7 @@ jobs:
         run: |
           uv run pytest --cov=src/pystatis --cov-report=xml --vcr-record=none tests
       - name: Upload coverage reports to Codecov with GitHub Action
-        uses: codecov/codecov-action@v5.4.3
+        uses: codecov/codecov-action@v5.5.2
         with:
           verbose: true
         env:

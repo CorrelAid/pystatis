@@ -8,7 +8,8 @@
 - Replace mypy with `ty` for type checking
 - Update dependencies: tabulate, pytest v9, pylint v4, pytest-cov v7, types-requests
 - Update GitHub Actions: actions/checkout v6, setup-uv v7, upload-artifact v7, codecov-action v5
-- Fix type errors: raise `TimeoutError` on job timeout, add `types-requests` stubs
+- Raise `TimeoutError` on background job timeout instead of silently exiting (behavior change)
+- Add `types-requests` stubs for type checking
 - Update all tests and re-record cassettes
 
 ## 0.5.4

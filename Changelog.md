@@ -11,6 +11,7 @@
 - Raise `TimeoutError` on background job timeout instead of silently exiting (behavior change)
 - Add `types-requests` stubs for type checking
 - Update all tests and re-record cassettes
+- Make `setup_credentials` transactional: roll back all in-memory config changes on any error; validate db_names against supported list before use
 
 ## 0.5.4
 

@@ -170,20 +170,34 @@ def setup_credentials(*db_names: SupportedDb) -> None:
         ]
     else:
         selected = list(db_names)
+        invalid = [name for name in selected if name not in SUPPORTED_DB]
+        if invalid:
+            raise PystatisConfigError(
+                f"Unsupported database name(s): {invalid}. Must be one of {SUPPORTED_DB}."
+            )
 
-    for db_name in selected:
-        username = _get_user_input(db_name, "username")
-        password = _get_user_input(db_name, "password")
-        prev_username = config.get(db_name, "username")
-        prev_password = config.get(db_name, "password")
-        config.set(db_name, "username", username)
-        config.set(db_name, "password", password)
-        if db.check_credentials_are_set(db_name) and not db.check_credentials_are_valid(db_name):
+    previous_values = {
+        db_name: (config.get(db_name, "username"), config.get(db_name, "password"))
+        for db_name in selected
+    }
+
+    try:
+        for db_name in selected:
+            username = _get_user_input(db_name, "username")
+            password = _get_user_input(db_name, "password")
+            config.set(db_name, "username", username)
+            config.set(db_name, "password", password)
+            if db.check_credentials_are_set(db_name) and not db.check_credentials_are_valid(
+                db_name
+            ):
+                raise PystatisConfigError(
+                    f"Provided credentials for database '{db_name}' are not valid! Please provide the correct credentials."
+                )
+    except Exception:
+        for db_name, (prev_username, prev_password) in previous_values.items():
             config.set(db_name, "username", prev_username)
             config.set(db_name, "password", prev_password)
-            raise PystatisConfigError(
-                f"Provided credentials for database '{db_name}' are not valid! Please provide the correct credentials."
-            )
+        raise
 
     write_config()
 

@@ -1681,6 +1681,7 @@ notebooks = [
     { name = "jupytext" },
     { name = "nbsphinx" },
     { name = "notebook" },
+    { name = "python-dotenv" },
 ]
 
 [package.metadata]
@@ -1713,6 +1714,7 @@ notebooks = [
     { name = "jupytext", specifier = ">=1.16.1,<2" },
     { name = "nbsphinx", specifier = ">=0.9.5,<0.10" },
     { name = "notebook", specifier = ">=7.4.3,<8" },
+    { name = "python-dotenv", specifier = ">=1.0.0,<2" },
 ]
 
 [[package]]

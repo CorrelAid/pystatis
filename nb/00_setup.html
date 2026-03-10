@@ -15,7 +15,7 @@
     <link rel="shortcut icon" href="../_static/pystatis_logo.ico"/>
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=e1a677a5"></script>
+      <script src="../_static/documentation_options.js?v=45def3bc"></script>
       <script src="../_static/doctools.js?v=9a2dae69"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -98,8 +98,8 @@
              
   <section id="Setup-pystatis">
 <h1>Setup <code class="docutils literal notranslate"><span class="pre">pystatis</span></code><a class="headerlink" href="#Setup-pystatis" title="Link to this heading"></a></h1>
-<p>You don’t need to do much to use <code class="docutils literal notranslate"><span class="pre">pystatis</span></code>. Basically, the first time you import the package, it will create a <code class="docutils literal notranslate"><span class="pre">config.ini</span></code> file under <code class="docutils literal notranslate"><span class="pre">~/.pystatis</span></code>. This file is used for storing settings, for example your credentials fpr the supported databases.</p>
-<p>To set up your credentials, we need to ask you for your username and password. This is done by the <code class="docutils literal notranslate"><span class="pre">setup_credentials()</span></code> function. It will ask you interactivly for the credentials, or you can set the following environmental variables:</p>
+<p>You don’t need to do much to use <code class="docutils literal notranslate"><span class="pre">pystatis</span></code>. Basically, the first time you import the package, it will create a <code class="docutils literal notranslate"><span class="pre">config.ini</span></code> file under <code class="docutils literal notranslate"><span class="pre">~/.pystatis</span></code>. This file is used for storing settings, for example your credentials for the supported databases.</p>
+<p>To set up your credentials, we need to ask you for your username and password. This is done by the <code class="docutils literal notranslate"><span class="pre">setup_credentials()</span></code> function. It will ask you interactively for the credentials, or you can set the following environmental variables:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">PYSTATIS_GENESIS_API_USERNAME</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">PYSTATIS_GENESIS_API_PASSWORD</span></code></p></li>
@@ -155,10 +155,19 @@ True
 <p>The only thing you have to do is to set up your user credentials.</p>
 <p>You can do so either by:</p>
 <ol class="arabic simple">
-<li><p>specifying the 6 environment variables <code class="docutils literal notranslate"><span class="pre">PYSTATIS_GENESIS_API_USERNAME|PASSWORD</span></code>, <code class="docutils literal notranslate"><span class="pre">PYSTATIS_ZENSUS_API_USERNAME|PASSWORD</span></code>, and <code class="docutils literal notranslate"><span class="pre">PYSTATIS_REGIO_API_USERNAME|PASSWORD</span></code></p></li>
-<li><p>calling the function <code class="docutils literal notranslate"><span class="pre">setup_credentials()</span></code> which will guide you through the process</p></li>
+<li><p>Specifying the 6 environment variables <code class="docutils literal notranslate"><span class="pre">PYSTATIS_GENESIS_API_USERNAME|PASSWORD</span></code>, <code class="docutils literal notranslate"><span class="pre">PYSTATIS_ZENSUS_API_USERNAME|PASSWORD</span></code>, and <code class="docutils literal notranslate"><span class="pre">PYSTATIS_REGIO_API_USERNAME|PASSWORD</span></code></p></li>
+<li><p>Calling <code class="docutils literal notranslate"><span class="pre">setup_credentials()</span></code> which will guide you through the process interactively</p></li>
 </ol>
 <p>Even if you do 1. please call <code class="docutils literal notranslate"><span class="pre">setup_credentials()</span></code> once as it will read out the environment variables and write the credentials to the <code class="docutils literal notranslate"><span class="pre">config.ini</span></code> in your config dir.</p>
+<p><strong>Non-interactive use</strong>: You can pass one or more database names directly to skip the per-database confirmation prompt. This is useful in scripted or CI environments where credentials are already set via environment variables:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set up credentials for all three databases without any prompts</span>
+<span class="n">pystatis</span><span class="o">.</span><span class="n">setup_credentials</span><span class="p">(</span><span class="s2">&quot;genesis&quot;</span><span class="p">,</span> <span class="s2">&quot;zensus&quot;</span><span class="p">,</span> <span class="s2">&quot;regio&quot;</span><span class="p">)</span>
+
+<span class="c1"># Or just for a single database</span>
+<span class="n">pystatis</span><span class="o">.</span><span class="n">setup_credentials</span><span class="p">(</span><span class="s2">&quot;genesis&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Without arguments, <code class="docutils literal notranslate"><span class="pre">setup_credentials()</span></code> asks interactively for each database whether you want to configure it.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -184,9 +193,7 @@ True
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># change your password</span>
-<span class="n">pystatis</span><span class="o">.</span><span class="n">profile</span><span class="o">.</span><span class="n">change_password</span><span class="p">(</span>
-    <span class="n">db_name</span><span class="o">=</span><span class="s2">&quot;genesis&quot;</span><span class="p">,</span> <span class="n">new_password</span><span class="o">=</span><span class="s2">&quot;DoNotUseThisAccidentally&quot;</span>
-<span class="p">)</span>
+<span class="n">pystatis</span><span class="o">.</span><span class="n">profile</span><span class="o">.</span><span class="n">change_password</span><span class="p">(</span><span class="n">db_name</span><span class="o">=</span><span class="s2">&quot;genesis&quot;</span><span class="p">,</span> <span class="n">new_password</span><span class="o">=</span><span class="s2">&quot;DoNotUseThisAccidentally&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

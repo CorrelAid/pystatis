@@ -15,7 +15,7 @@
     <link rel="shortcut icon" href="../_static/pystatis_logo.ico"/>
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=e1a677a5"></script>
+      <script src="../_static/documentation_options.js?v=45def3bc"></script>
       <script src="../_static/doctools.js?v=9a2dae69"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -1292,9 +1292,7 @@ INFO:pystatis.http_helper:Code 0: erfolgreich
 <span class="n">t</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="s2">&quot;1000A-0000&quot;</span><span class="p">)</span>
 <span class="n">t</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">prettify</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">t</span><span class="o">.</span><span class="n">data</span><span class="p">[</span>
-    <span class="n">t</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;Amtlicher Regionalschlüssel (ARS)__Code&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span>
-        <span class="p">[</span><span class="s2">&quot;092760130130&quot;</span><span class="p">,</span> <span class="s2">&quot;073355011022&quot;</span><span class="p">,</span> <span class="s2">&quot;DG&quot;</span><span class="p">]</span>
-    <span class="p">)</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;Amtlicher Regionalschlüssel (ARS)__Code&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s2">&quot;092760130130&quot;</span><span class="p">,</span> <span class="s2">&quot;073355011022&quot;</span><span class="p">,</span> <span class="s2">&quot;DG&quot;</span><span class="p">])</span>
 <span class="p">]</span>
 </pre></div>
 </div>
@@ -1587,9 +1585,7 @@ array([&#39;2012-P1Y&#39;, &#39;2013-P1Y&#39;, &#39;2014-P1Y&#39;, &#39;2015-P1Y
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span>
-    <span class="n">endyear</span><span class="o">=</span><span class="s2">&quot;2015&quot;</span><span class="p">,</span> <span class="n">timeslices</span><span class="o">=</span><span class="mi">3</span>
-<span class="p">)</span>  <span class="c1"># gives everything up to 2015 and three more years</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">endyear</span><span class="o">=</span><span class="s2">&quot;2015&quot;</span><span class="p">,</span> <span class="n">timeslices</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># gives everything up to 2015 and three more years</span>
 <span class="n">t</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;Schuljahr&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
 </pre></div>
 </div>

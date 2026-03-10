@@ -1766,9 +1766,7 @@
     "t = Table(\"1000A-0000\")\n",
     "t.get_data(prettify=True)\n",
     "t.data[\n",
-    "    t.data[\"Amtlicher Regionalschlüssel (ARS)__Code\"].isin(\n",
-    "        [\"092760130130\", \"073355011022\", \"DG\"]\n",
-    "    )\n",
+    "    t.data[\"Amtlicher Regionalschlüssel (ARS)__Code\"].isin([\"092760130130\", \"073355011022\", \"DG\"])\n",
     "]"
    ]
   },
@@ -2088,9 +2086,7 @@
     }
    ],
    "source": [
-    "t.get_data(\n",
-    "    endyear=\"2015\", timeslices=3\n",
-    ")  # gives everything up to 2015 and three more years\n",
+    "t.get_data(endyear=\"2015\", timeslices=3)  # gives everything up to 2015 and three more years\n",
     "t.data[\"Schuljahr\"].unique()"
    ]
   },

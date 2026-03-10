@@ -14,7 +14,7 @@
     <link rel="shortcut icon" href="_static/pystatis_logo.ico"/>
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=e1a677a5"></script>
+      <script src="_static/documentation_options.js?v=45def3bc"></script>
       <script src="_static/doctools.js?v=9a2dae69"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -406,11 +406,17 @@ until the user has filled in the credentials.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pystatis.config.setup_credentials">
-<span class="sig-prename descclassname"><span class="pre">pystatis.config.</span></span><span class="sig-name descname"><span class="pre">setup_credentials</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.config.setup_credentials" title="Link to this definition"></a></dt>
-<dd><p>Setup credentials for all supported databases.</p>
+<span class="sig-prename descclassname"><span class="pre">pystatis.config.</span></span><span class="sig-name descname"><span class="pre">setup_credentials</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">db_names</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.config.setup_credentials" title="Link to this definition"></a></dt>
+<dd><p>Setup credentials for supported databases.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>None</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>*db_names</strong> (<em>Literal</em><em>[</em><em>'genesis'</em><em>, </em><em>'zensus'</em><em>, </em><em>'regio'</em><em>]</em>) – Database names to configure (e.g. “genesis”, “regio”). If omitted,
+prompts interactively for each supported database. Pass an explicit list to
+skip the per-database confirmation prompt — useful in non-interactive
+environments where credentials are already provided via environment variables.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1282,11 +1288,17 @@ This method restores the ability to work by cleaning up if the limit has been ex
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pystatis.setup_credentials">
-<span class="sig-prename descclassname"><span class="pre">pystatis.</span></span><span class="sig-name descname"><span class="pre">setup_credentials</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.setup_credentials" title="Link to this definition"></a></dt>
-<dd><p>Setup credentials for all supported databases.</p>
+<span class="sig-prename descclassname"><span class="pre">pystatis.</span></span><span class="sig-name descname"><span class="pre">setup_credentials</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">db_names</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystatis.setup_credentials" title="Link to this definition"></a></dt>
+<dd><p>Setup credentials for supported databases.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>None</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>*db_names</strong> (<em>Literal</em><em>[</em><em>'genesis'</em><em>, </em><em>'zensus'</em><em>, </em><em>'regio'</em><em>]</em>) – Database names to configure (e.g. “genesis”, “regio”). If omitted,
+prompts interactively for each supported database. Pass an explicit list to
+skip the per-database confirmation prompt — useful in non-interactive
+environments where credentials are already provided via environment variables.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
 </dd>
 </dl>
 </dd></dl>

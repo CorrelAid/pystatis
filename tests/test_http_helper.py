@@ -59,15 +59,11 @@ def test_get_response_from_endpoint(mocker):
     Test once with generic API response, more detailed tests
     of subfunctions and specific cases below.
     """
-    mocker.patch(
-        "pystatis.http_helper.requests", return_value=_generic_request_status()
-    )
+    mocker.patch("pystatis.http_helper.requests", return_value=_generic_request_status())
     mocker.patch("pystatis.db.get_settings", return_value=("host", "user", "pw"))
     mocker.patch("pystatis.db.check_credentials_are_set", return_value=True)
 
-    get_data_from_endpoint(
-        endpoint="endpoint", method="method", params={"name": "21111-0001"}
-    )
+    get_data_from_endpoint(endpoint="endpoint", method="method", params={"name": "21111-0001"})
 
 
 def test_check_invalid_status_code_with_error():
@@ -117,10 +113,7 @@ def test_check_invalid_destatis_status_code_with_error():
 
     with pytest.raises(DestatisStatusError) as e:
         _check_invalid_destatis_status_code(generic_error_status)
-    assert (
-        str(e.value)
-        == "Error: There is a system error. Please check your query parameters."
-    )
+    assert str(e.value) == "Error: There is a system error. Please check your query parameters."
 
 
 def test_check_invalid_destatis_status_code_with_warning(caplog):
@@ -172,7 +165,9 @@ def test_get_job_id_from_response():
 
 def test_get_job_id_from_response_with_no_id():
     response = requests.Response()
-    response._content = """{"Status": {"Content": "Der Bearbeitungsauftrag wurde erstellt."}}""".encode()
+    response._content = (
+        """{"Status": {"Content": "Der Bearbeitungsauftrag wurde erstellt."}}""".encode()
+    )
     job_id = get_job_id_from_response(response)
     assert job_id == ""
 

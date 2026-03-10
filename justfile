@@ -20,6 +20,11 @@ test:
 test-cov:
     uv run pytest tests/ --cov=src/pystatis --cov-report=term-missing
 
+# Delete all cassettes and re-record against the live API (requires valid credentials)
+test-rerecord:
+    rm -rf tests/cassettes/
+    uv run pytest tests/ --vcr-record=all -s -v
+
 # Format code
 fmt:
     uv run ruff format src/ tests/

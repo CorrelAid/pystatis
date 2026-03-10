@@ -1,143 +1,143 @@
 interactions:
-  - request:
-      body: area=all&compress=false&endyear=&format=ffcsv&language=de&name=81000-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=&job=false
-      headers:
-        Accept:
-          - "*/*"
-        Accept-Encoding:
-          - gzip, deflate
-        Connection:
-          - keep-alive
-        Content-Length:
-          - "146"
-        Content-Type:
-          - application/x-www-form-urlencoded
-        User-Agent:
-          - python-requests/2.32.3
-      method: POST
-      uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile
-    response:
-      body:
-        string: !!binary |
-          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
-          LmNzdlBLBQYAAAAAAQABAFIAAABiCgAAAAA=
-      headers:
-        Connection:
-          - Keep-Alive
-        Content-Disposition:
-          - attachment; filename=81000-0001_1749245080139_de_flat.zip
-        Content-Length:
-          - "2762"
-        Content-Type:
-          - application/zip
-        Date:
-          - Fri, 06 Jun 2025 21:24:34 GMT
-        Keep-Alive:
-          - timeout=15, max=100
-        Server:
-          - Apache
-      status:
-        code: 200
-        message: "200"
-  - request:
-      body: area=all&compress=false&endyear=&format=ffcsv&language=de&name=81000-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=&job=false
-      headers:
-        Accept:
-          - "*/*"
-        Accept-Encoding:
-          - gzip, deflate
-        Connection:
-          - keep-alive
-        Content-Length:
-          - "146"
-        Content-Type:
-          - application/x-www-form-urlencoded
-        User-Agent:
-          - python-requests/2.32.3
-      method: POST
-      uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table
-    response:
-      body:
-        string:
-          "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"81000-0001\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"81000-0001\",\"Content\":\"VGR
-          des Bundes - Bruttowertsch\xF6pfung, Bruttoinlandsprodukt\\n(nominal/preisbereinigt):
-          Deutschland, Jahre\",\"Time\":{\"From\":\"1991\",\"To\":\"2024\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"81000\",\"Content\":\"Volkswirtschaftliche
-          Gesamtrechnungen des Bundes\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Deutschland
-          insgesamt\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-          parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"JAHR\",\"Content\":\"Jahr\",\"Type\":\"Merkmal\",\"Values\":\"10\",\"Selected\":\"10\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-          parent\"}],\"Rows\":[{\"Code\":\"BWS001\",\"Content\":\"Bruttowertsch\xF6pfung\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-          parent\"},{\"Code\":\"STR006\",\"Content\":\"G\xFCtersteuern abz\xFCgl. G\xFCtersubventionen\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-          parent\"},{\"Code\":\"STR020\",\"Content\":\"G\xFCtersteuern\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-          parent\"},{\"Code\":\"SUB003\",\"Content\":\"G\xFCtersubventionen\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-          parent\"},{\"Code\":\"VGR014\",\"Content\":\"Bruttoinlandsprodukt\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-          parent\"},{\"Code\":\"BIP005\",\"Content\":\"Bruttoinlandsprodukt (Ver\xE4nderung
-          in %)\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-          parent\"},{\"Code\":\"BIP004\",\"Content\":\"Bruttoinlandsprodukt je Einwohner\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-          parent\"}],\"Subtitel\":null,\"Subheading\":{\"Code\":\"VGRPB5\",\"Content\":\"Preisbasis
-          (jeweilige Preise / preisbereinigt)\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-          parent\"}},\"Updated\":\"27.08.2024 17:20:21h\"},\"Copyright\":\"\xA9 Statistisches
-          Bundesamt (Destatis), 2025\"}"
-      headers:
-        Connection:
-          - Keep-Alive
-        Content-Length:
-          - "2390"
-        Content-Type:
-          - application/json;charset=UTF-8
-        Date:
-          - Fri, 06 Jun 2025 21:24:40 GMT
-        Keep-Alive:
-          - timeout=15, max=100
-        Server:
-          - Apache
-      status:
-        code: 200
-        message: "200"
+- request:
+    body: area=all&compress=false&endyear=&format=ffcsv&language=de&name=81000-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=&job=false
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '156'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.32.3
+    method: POST
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile
+  response:
+    body:
+      string: !!binary |
+        UEsDBBQACAgIAAOualwAAAAAAAAAAAAAAAAkAAAAODEwMDAtMDAwMV8xNzczMTc1Njg2MzMzX2Rl
+        X2ZsYXQuY3N25Z3fjtTKEcbv8xS+iQRSQaq7utvdsnKRFYgcEBGCQC7R7K7PMofFi2Y8EJ3nOc+Q
+        mxwpFzxQXiHtWU7YASLZ3ri6uueGPzM7s/v9POvPVa7++t///Ne2X/Xrbb8+274+uzpvmxv/v1yd
+        tpdNv37XXj+1/9eXBxv1+sNqs16dXn5+/sb/r7/qxgOrvt+sT3f9t1/65ZnrF+mv3lV//a76f77r
+        d5+5ftGH1eWuvf7z9a5b95//efitvnps/8rfeYWIzaury7fbj+tNvz17s/qxv1yfvWmrR+129a7f
+        tGdvul130XbVebutTnZd/Kt5/Kc/P28er95sGo0amwc//OXFo+ZBuxve4HLVnVfrbnuxf33z4OCJ
+        5tWj589ObPNs0663p6vtelvd+an92K4v1xdttX+0rf5Qvd8/3cY/u/VFf3f/qlcvm8OHodp1H9rN
+        27bv276toojdu7ZbdRf37zzdnN+vHr58frchCgq09k38Lverpw+Ht0JlmpPNru+v1t3wQ23fb67O
+        d2/78mnci9/q6ue265uTH54h2u9iqO68ajeffonSNlFq/OGr3989BjS/fUJe/PX58LM++vRr3262
+        fbtrN91R6X95gki/6d+dfoifl/VV1x4XhPghQHf4IahWpz9/+vXi8n513Gz2547vn0Krn9rq4br7
+        ePWmazflMyHUFtCYL2j+9gJRfUbzsd1r/vSP9z9Gjf8PGsrx0Hjy9BsaTwYQ3Tr+SH+v7gzH5Y9R
+        zt0mBCCHXO4qT78GndJT5QEJDmqLi5upPOEqCkfkcVF56uNh9xqT2qdAKAGcxyS+KRNGjWxOWYu+
+        btDegDeBzTdF00halUpHs7iR5qJ/UT/NBUIKW82EDau7imaiA8WqFDWX12ormYYhijWqJrYOsGga
+        aTvAwtEs3gHORf+iHeBcIKToAGfChrUDLJoJBW3AmprNa4mFxuNnT5t42v/vF3efv7qrbjqrVtFZ
+        FVv3V5J2Cz6pkwpCQcGDQ1rePSVpJtDE1OwVpdtZoJrSmqQgHhadQ0BM0+SVRIK8JQhUmhHOviyw
+        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
+        hwoAAAAA
+    headers:
+      Connection:
+      - Keep-Alive
+      Content-Disposition:
+      - attachment; filename=81000-0001_1773175686333_de_flat.zip
+      Content-Length:
+      - '2799'
+      Content-Type:
+      - application/zip
+      Date:
+      - Tue, 10 Mar 2026 20:48:00 GMT
+      Keep-Alive:
+      - timeout=15, max=100
+      Server:
+      - Apache
+    status:
+      code: 200
+      message: '200'
+- request:
+    body: area=all&compress=false&endyear=&format=ffcsv&language=de&name=81000-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=&job=false
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '156'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.32.3
+    method: POST
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table
+  response:
+    body:
+      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"81000-0001\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"81000-0001\",\"Content\":\"VGR
+        des Bundes - Bruttowertsch\xF6pfung, Bruttoinlandsprodukt\\n(nominal/preisbereinigt):
+        Deutschland, Jahre\",\"Time\":{\"From\":\"1991\",\"To\":\"2025\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"81000\",\"Content\":\"Volkswirtschaftliche
+        Gesamtrechnungen des Bundes\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Deutschland
+        insgesamt\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"JAHR\",\"Content\":\"Jahr\",\"Type\":\"Merkmal\",\"Values\":\"10\",\"Selected\":\"10\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Rows\":[{\"Code\":\"BWS001\",\"Content\":\"Bruttowertsch\xF6pfung\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"STR006\",\"Content\":\"G\xFCtersteuern abz\xFCgl. G\xFCtersubventionen\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"STR020\",\"Content\":\"G\xFCtersteuern\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"SUB003\",\"Content\":\"G\xFCtersubventionen\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"VGR014\",\"Content\":\"Bruttoinlandsprodukt\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"BIP005\",\"Content\":\"Bruttoinlandsprodukt (Ver\xE4nderung
+        in %)\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"},{\"Code\":\"BIP004\",\"Content\":\"Bruttoinlandsprodukt je Einwohner\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Subtitel\":null,\"Subheading\":{\"Code\":\"VGRPB5\",\"Content\":\"Preisbasis
+        (jeweilige Preise / preisbereinigt)\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}},\"Updated\":\"27.08.2024 17:20:21h\"},\"Copyright\":\"\xA9 Statistisches
+        Bundesamt (Destatis), 2026\"}"
+    headers:
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '2390'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Tue, 10 Mar 2026 20:48:06 GMT
+      Keep-Alive:
+      - timeout=15, max=100
+      Server:
+      - Apache
+    status:
+      code: 200
+      message: '200'
 version: 1

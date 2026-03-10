@@ -1,405 +1,743 @@
 interactions:
-  - request:
-      body: area=all&compress=false&endyear=&format=ffcsv&language=de&name=71311-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=&job=false
-      headers:
-        Accept:
-          - "*/*"
-        Accept-Encoding:
-          - gzip, deflate
-        Connection:
-          - keep-alive
-        Content-Length:
-          - "146"
-        Content-Type:
-          - application/x-www-form-urlencoded
-        User-Agent:
-          - python-requests/2.32.3
-      method: POST
-      uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile
-    response:
-      body:
-        string: !!binary |
-          UEsDBBQACAgIAIC6xloAAAAAAAAAAAAAAAAkAAAANzEzMTEtMDAwMV8xNzQ5MjQ0ODAxNzk0X2Rl
-          X2ZsYXQuY3N27Z3NclzHkYX38xR8Adr1k/UXvaKCCEpBWeMhaXnCGwUotUXMQLADABUTfh4/w2xm
-          MQs90LzCNERJ7qalpqr6Vt6v7m0tFCQa3QSq6mZlnjzn5P/9z//e3V/eX93dX31598WXf/lqu9n7
-          +/Xl6+315v7qm+27l77/0z++uLFffHt5e3X5+vqH1/f+/u679r5weX9/e/X67f0/f+s/Xnn3Jvfe
-          p7r3P9X94qf+7Cvv3uTf+1T//qf6X/zUn33l3ZvkvU+V9z9VfvFTf/aVd2/69vL67fbd/794e3N1
-          /8MfD/+p9772/Tv/JVlv7ebzq+3t/fb6P777+5vb6988evnlm7fXX21vHn31m0ff/fef/7y9ud99
-          9dn27vKb+zeXb+/eXF7f321evnry7PPNy93Gv7m//PrR395+8+jf3l7e3l9e321vHtbWOP/YxMfe
-          bJ5+8tnLZ5un27f3d1++ub68+erR1c3d199/3ubpwQub5y9+/+xF3ly83t48/ADbu59+gt2/s/vK
-          +z/F7vs/+sNnT43dfPR29/aPX3785JXdfPzD69uHL1z8+6sXTzYX/3V/e/nmp6+//PTpk1ey+fFX
-          3f3c25vN5pOffiznvIS4+d3V9e5Xv/jDi4c3GBt/esOj19urbx7dPPzyjw9/wo+2t9vdnxaxtC//
-          9U+fPPn085e75X35l79dXV5/u729e/ju27c3X//zYu+t38+u7+6Lz19cPP3klfGb55d3u1/mP2+3
-          X13dbz+4mpvH3K2Qx6YMesptMCLsU+4fe9t5aZ9d/O7ik892i/ts+8326ubhB//tox//vDvxr7/7
-          +8PPo3ncXQm7ZcXuizy2rv++fPrk4rOnFy92G/Pp9ztwe8oWyOb5r118GyTkzF19ndjf+lQ037g+
-          e8dddECU73LYnS85cJfdqyz7r4g0uy88v3jx2eb59vbmx/dOGXN8KpLI+zBOxP/jxYtXv999xh93
-          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
-          ORkAAAAA
-      headers:
-        Connection:
-          - Keep-Alive
-        Content-Disposition:
-          - attachment; filename=71311-0001_1749244801794_de_flat.zip
-        Content-Length:
-          - "6561"
-        Content-Type:
-          - application/zip
-        Date:
-          - Fri, 06 Jun 2025 21:19:59 GMT
-        Keep-Alive:
-          - timeout=15, max=100
-        Server:
-          - Apache
-      status:
-        code: 200
-        message: "200"
-  - request:
-      body: area=all&compress=false&endyear=&format=ffcsv&language=de&name=71311-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=&job=false
-      headers:
-        Accept:
-          - "*/*"
-        Accept-Encoding:
-          - gzip, deflate
-        Connection:
-          - keep-alive
-        Content-Length:
-          - "146"
-        Content-Type:
-          - application/x-www-form-urlencoded
-        User-Agent:
-          - python-requests/2.32.3
-      method: POST
-      uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table
-    response:
-      body:
-        string:
-          "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"71311-0001\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"71311-0001\",\"Content\":\"Schulden
-          beim nicht-\xF6ffentlichen Bereich: Deutschland,\\nStichtag zum Quartalsende,
-          Ebenen des \xF6ffentlichen\\nGesamthaushalts, Haushalte, Schuldenarten\",\"Time\":{\"From\":\"31.03.2016\",\"To\":\"31.12.2024\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"71311\",\"Content\":\"Viertelj\xE4hrl.
-          Schulden d. \xF6ffentl. Gesamthaushalts\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Deutschland
-          insgesamt\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":[{\"Code\":\"SLD016\",\"Content\":\"Schulden
-          beim nicht-\xF6ffentlichen Bereich\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-          parent\"}],\"Updated\":\"see parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"STAGV\",\"Content\":\"Stichtag
-          zum Quartalsende\",\"Type\":\"Merkmal\",\"Values\":\"10\",\"Selected\":\"10\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-          parent\"}],\"Rows\":[{\"Code\":\"KRPGR8\",\"Content\":\"Ebenen des \xF6ffentlichen
-          Gesamthaushalts\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"HSHAT1\",\"Content\":\"Haushalte\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"SLDAT4\",\"Content\":\"Schuldenarten\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-          parent\"}],\"Updated\":\"see parent\"}],\"Updated\":\"see parent\"}],\"Subtitel\":null,\"Subheading\":null},\"Updated\":\"28.12.2022
-          19:08:33h\"},\"Copyright\":\"\xA9 Statistisches Bundesamt (Destatis), 2025\"}"
-      headers:
-        Connection:
-          - Keep-Alive
-        Content-Length:
-          - "1802"
-        Content-Type:
-          - application/json;charset=UTF-8
-        Date:
-          - Fri, 06 Jun 2025 21:20:02 GMT
-        Keep-Alive:
-          - timeout=15, max=100
-        Server:
-          - Apache
-      status:
-        code: 200
-        message: "200"
-  - request:
-      body: area=all&compress=false&endyear=&format=ffcsv&language=en&name=71311-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=&job=false
-      headers:
-        Accept:
-          - "*/*"
-        Accept-Encoding:
-          - gzip, deflate
-        Connection:
-          - keep-alive
-        Content-Length:
-          - "146"
-        Content-Type:
-          - application/x-www-form-urlencoded
-        User-Agent:
-          - python-requests/2.32.3
-      method: POST
-      uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile
-    response:
-      body:
-        string: !!binary |
-          UEsDBBQACAgIALG6xloAAAAAAAAAAAAAAAAkAAAANzEzMTEtMDAwMV8xNzQ5MjQ0ODk0NDY1X2Vu
-          X2ZsYXQuY3N27Z3LcptJcoX3fgq+gNp1vwRWGovWdLRGHlOascObDkqCehhBkW0Sarvfx2/hhRd+
-          IL+CQYmAejQC/x+FunxVRC86RIEExWT9WZknzzn5f//9P7er89XF7eri7e2Pb6/fLRe/+fjy/M3y
-          crG6+LD8/NKnP335y4X88Zfzm4vzN5f3r//m48+f9Zu/OF+tbi7efFz97ad+eeXzF6mv3lV9/a5q
-          57t+85XPX6S/elf99bvqne/6zVc+f5H56l3N1+9qdr7rN1/5/EW/nF9+XH7+/48fry5W93/862/1
-          1d99+sq/81JLufjnj+c3q+XN5a8n75ZvVifX709Wf1meXP+yvDm/vDz5+eOby4u3J28+vvtpuVq8
-          ev30+Z8XZ8v3y5vl1dvlybvz1fJkefXuyfX7J//++X0WSij9RLgnWiyeff/y1fPF8+XNh/OrXxfP
-          vvzxh7M/Pj8LixfLX5aXtw9/y/Wn/u5PL58JufjH5bv1J6wurq8Wv3/1+6ev5eJ3nz7l9u7D0399
-          ffZ0cfqfq5vz+6+8Xbx68ezpa7N4/evPy0/f5O7nu10sXl+vztfnQmlj3eL0T2cnH67uPlVIt3h2
-          9xkn1/+xfHeyuv70j7q6vnpy/w+6Xb5dXd90E7VX//Rv3z998edX68i9un57cX559wN8vLlY/Xry
-          /uPVu9uvg3gfl28Hbf23P5ydPvv+tdCLF9fnV7cn769vTm5X6x/op/W/4uri6qeTt+e3fzm5Wd5+
-          d/L+5rtN4L5bf9PvFk9IcTZPRKSfTmmFMbTTqZ9omStqz0//cPr9y3Xc/rDOWW8vfj6/vFhdrAPx
-          9yfnt7d3x/Uukp/e5sNffULNU6uiXccS9DswT6TK+Dt48fT05bPTs/Uv4cX//tfV+vgmBtdsgntz
-          /eFvw7E+y8aGQIpj5kyb6ywnXWM6aEWKbe3smueMKh2DJYVR5w3j5KO+/vCH07OXi3+4vllOnLz5
-          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
-          UEsFBgAAAAABAAEAUgAAABAZAAAAAA==
-      headers:
-        Connection:
-          - Keep-Alive
-        Content-Disposition:
-          - attachment; filename=71311-0001_1749244894465_en_flat.zip
-        Content-Length:
-          - "6520"
-        Content-Type:
-          - application/zip
-        Date:
-          - Fri, 06 Jun 2025 21:21:31 GMT
-        Keep-Alive:
-          - timeout=15, max=100
-        Server:
-          - Apache
-      status:
-        code: 200
-        message: "200"
-  - request:
-      body: area=all&compress=false&endyear=&format=ffcsv&language=en&name=71311-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=&job=false
-      headers:
-        Accept:
-          - "*/*"
-        Accept-Encoding:
-          - gzip, deflate
-        Connection:
-          - keep-alive
-        Content-Length:
-          - "146"
-        Content-Type:
-          - application/x-www-form-urlencoded
-        User-Agent:
-          - python-requests/2.32.3
-      method: POST
-      uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table
-    response:
-      body:
-        string:
-          "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"successfull\",\"Type\":\"information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"71311-0001\",\"area\":\"all\",\"language\":\"en\"},\"Object\":{\"Code\":\"71311-0001\",\"Content\":\"Debts
-          owed to the non-public sector: Germany, reference date\\nend-of-quarter, levels
-          of the overall public budget,\\nbudgets, types of debts\",\"Time\":{\"From\":\"2016-03-31\",\"To\":\"2024-12-31\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"71311\",\"Content\":\"Quarterly
-          debt of the overall public budget\",\"Type\":\"statistic\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Germany\",\"Type\":\"variable\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":[{\"Code\":\"SLD016\",\"Content\":\"Debts
-          owed to the non-public sector\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-          parent\"}],\"Updated\":\"see parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"STAGV\",\"Content\":\"Reference
-          date end-of-quarter\",\"Type\":\"variable\",\"Values\":\"10\",\"Selected\":\"10\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-          parent\"}],\"Rows\":[{\"Code\":\"KRPGR8\",\"Content\":\"Levels of the overall
-          public budget\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"HSHAT1\",\"Content\":\"Budgets\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"SLDAT4\",\"Content\":\"Types
-          of debts\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
-          parent\"}],\"Updated\":\"see parent\"}],\"Updated\":\"see parent\"}],\"Subtitel\":null,\"Subheading\":null},\"Updated\":\"2022-12-28
-          19:08:33h\"},\"Copyright\":\"\xA9 Federal Statistical Office, Wiesbaden 2025\"}"
-      headers:
-        Connection:
-          - Keep-Alive
-        Content-Length:
-          - "1766"
-        Content-Type:
-          - application/json;charset=UTF-8
-        Date:
-          - Fri, 06 Jun 2025 21:21:34 GMT
-        Keep-Alive:
-          - timeout=15, max=100
-        Server:
-          - Apache
-      status:
-        code: 200
-        message: "200"
+- request:
+    body: area=all&compress=false&endyear=&format=ffcsv&language=de&name=71311-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=&job=false
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '156'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.32.3
+    method: POST
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile
+  response:
+    body:
+      string: !!binary |
+        UEsDBBQACAgIAICsalwAAAAAAAAAAAAAAAAkAAAANzEzMTEtMDAwMV8xNzczMTc0OTYwOTY5X2Rl
+        X2ZsYXQuY3N27Z3NclzHkYX38xR8Adr1/xO9ooIIikGZ9hC0POGNAhTbImwQduBH4fDz+BlmM4tZ
+        6IHmFeZClOQGLTVY1beyvrq3tVCQaHQTqKqblXnynJP/9z//e31zdnN+fXP+9fVXX//17Xaz8/eL
+        szfbi83N+fvth5e+/9O/vrjRX317dnV+9ubih9d3/v7hu3a+cHZzc3X+5vbm37/1X698eJP56FPN
+        x59qfvFTf/aVD2+yH32q/fhT7S9+6s++8uFN7qNPdR9/qvvFT/3ZVz686duzi9vth/9/dXt5fvPD
+        H+//Ux997ft3/kfUVuvNl+fbq5vtxZ+/++e7q4tfPTr9+t3txdvt5aO3v3r03X//6U/by5vpq8+2
+        12fvb96d3V6/O7u4ud6cvn7y7MvN6bTx727Ovnn0j9v3j/7z9uzq5uzient5t7bK2McqPLZq8/T5
+        y9Nnm6fb25vrr99dnF2+fXR+ef3N95+3eXrvhc2LV7979iptTt5sL+9+gO31Tz/B9O9MX/n4p5i+
+        /7Pfv3yq9Oaz2+ntn59+/uS13nz+w+vbuy+c/NfrV082J3+/uTp799PXT794+uS12/z4q04/9/Zy
+        s3n+049ljHU+bH5zfjH96ie/f3X3BqXDT2949GZ7/v7R5d0v//j+T/jZ9mo7/WkRS3v62z8+f/LF
+        l6fT8p7+9R/nZxffbq+u77776vbym39f7J31+9n1nb744tXJ0+evld28OLuefpm/XG3fnt9sH1zN
+        zWPuVrjHKg96yrVXzoFPuXuszWOrGy/tF09OXj49eTWt7hff/XP6l68OOdlu8+JTz7T2zqfEXX2Z
+        GPPs5Dcnz19Oi/9s+357fnn3g//60Y9/nuLNm+/3ZMbIbpM13EUHRJMmh93YnDx32b3Isouf9RxN
+        5i66FVn0Twjv0xdenLx6uXmxvbr88b1zBnobs4vkfRjnmv3DyavXv5s+4w/TUvzt7G/Tilz/8C0b
+        Z1XO4GxGZplnCu3FGbo1Vq07mdlZ3OKF3w3aTkeXLXcpff+yvk2K4qwBn2DAsn/6PblbZAYdVNTc
+        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
+    headers:
+      Connection:
+      - Keep-Alive
+      Content-Disposition:
+      - attachment; filename=71311-0001_1773174960969_de_flat.zip
+      Content-Length:
+      - '6550'
+      Content-Type:
+      - application/zip
+      Date:
+      - Tue, 10 Mar 2026 20:35:58 GMT
+      Keep-Alive:
+      - timeout=15, max=100
+      Server:
+      - Apache
+    status:
+      code: 200
+      message: '200'
+- request:
+    body: area=all&compress=false&endyear=&format=ffcsv&language=de&name=71311-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=&job=false
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '156'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.32.3
+    method: POST
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table
+  response:
+    body:
+      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"71311-0001\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"71311-0001\",\"Content\":\"Schulden
+        beim nicht-\xF6ffentlichen Bereich: Deutschland,\\nStichtag zum Quartalsende,
+        Ebenen des \xF6ffentlichen\\nGesamthaushalts, Haushalte, Schuldenarten\",\"Time\":{\"From\":\"31.03.2016\",\"To\":\"30.09.2025\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"71311\",\"Content\":\"Viertelj\xE4hrl.
+        Schulden d. \xF6ffentl. Gesamthaushalts\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Deutschland
+        insgesamt\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":[{\"Code\":\"SLD016\",\"Content\":\"Schulden
+        beim nicht-\xF6ffentlichen Bereich\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Updated\":\"see parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"STAGV\",\"Content\":\"Stichtag
+        zum Quartalsende\",\"Type\":\"Merkmal\",\"Values\":\"10\",\"Selected\":\"10\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Rows\":[{\"Code\":\"KRPGR8\",\"Content\":\"Ebenen des \xF6ffentlichen
+        Gesamthaushalts\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"HSHAT1\",\"Content\":\"Haushalte\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"SLDAT4\",\"Content\":\"Schuldenarten\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Updated\":\"see parent\"}],\"Updated\":\"see parent\"}],\"Subtitel\":null,\"Subheading\":null},\"Updated\":\"28.12.2022
+        19:08:33h\"},\"Copyright\":\"\xA9 Statistisches Bundesamt (Destatis), 2026\"}"
+    headers:
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '1802'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Tue, 10 Mar 2026 20:36:01 GMT
+      Keep-Alive:
+      - timeout=15, max=100
+      Server:
+      - Apache
+    status:
+      code: 200
+      message: '200'
+- request:
+    body: area=all&compress=false&endyear=&format=ffcsv&language=en&name=71311-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=&job=false
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '156'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.32.3
+    method: POST
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile
+  response:
+    body:
+      string: !!binary |
+        UEsDBBQACAgIACCtalwAAAAAAAAAAAAAAAAkAAAANzEzMTEtMDAwMV8xNzczMTc1MjYxMTU0X2Vu
+        X2ZsYXQuY3N27Z1NchxJcoX3OgUuwFb8/1itOCLEaWsONQI5I5k2bSBZ7IEZCLSAYkt9H91CCy10
+        IF1BCQJV6OEwkVlZ8fNFAL1oI1hAEXBEerg/f+/5//33/1xvTjdn15uz99c/vr/8sF795uPz03fr
+        89Xm7NP69qUvf7r/y5X88ZfTq7PTd+d3r//m49vP+s1fnG42V2fvPm/+9lPvX7n9IvXVu6qv31WN
+        vus3X7n9Iv3Vu+qv31WPvus3X7n9IvPVu5qv39WMvus3X7n9ol9Ozz+vb///4+eLs83dH//6n/rq
+        77585d95qaVc/fPn06vN+ur816MP63ebo8uPR5u/rI8uf1lfnZ6fH/38+d352fujd58//LTerN68
+        ff7yz6uT9cf11fri/frow+lmfbS++PDs8uOzf799n5USSj8T7pkWqxffv37zcvVyffXp9OLX1Yv7
+        P/5w8seXJ2H1av3L+vz64X9y+NTf/en1CyFX/7j+MHzC5uzyYvX7N79//laufvflU65vPjz+17cn
+        z1fH/7m5Or37yuvVm1cvnr81q7e//rz+8o/c/HzXq9Xby83pcC6UNtatjv90cvTp4uZThXSrFzef
+        cXT5H+sPR5vLL9/UxeXFs7tv6Hr9fnN51UzU3vzTv33//NWf3wyRe3P5/uz0/OYH+Hx1tvn16OPn
+        iw/XXwfxLi7fDtrwtz+cHL/4/q3Qq1eXpxfXRx8vr46uN8MP9NPwXVycXfx09P70+i9HV+vr744+
+        Xn23Ddx3wz/63eoZKc7mmYj00ymtMAZ1Os0zqZ5pmSpqr54fv35xfDIE7tX//tfFELqFx9Fsj+PV
+        5ae/DccQR2NDIMUx8VP+8vgPx9+/HsL4hyH3vz/7+fT8bHM2hOrvj06vr28e+5sT+eVtPv3VJyRJ
+        oTpoRYpt6Sc7zRlVOgZLCqNNG8aqRzR6FUmx1WljO5lGhw9/OD55vfqHy6v1RMjmJ1Xto/GsqLIu
+        p385Pnn7x5vC67biujntN6+tjBYxoq71xJFLlTIXVZlaadHtXX8XuH3Cuc2BRnoTNSkwtnCDmOii
+        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
+        AAABAAEAUgAAAAoZAAAAAA==
+    headers:
+      Connection:
+      - Keep-Alive
+      Content-Disposition:
+      - attachment; filename=71311-0001_1773175261154_en_flat.zip
+      Content-Length:
+      - '6514'
+      Content-Type:
+      - application/zip
+      Date:
+      - Tue, 10 Mar 2026 20:40:58 GMT
+      Keep-Alive:
+      - timeout=15, max=100
+      Server:
+      - Apache
+    status:
+      code: 200
+      message: '200'
+- request:
+    body: area=all&compress=false&endyear=&format=ffcsv&language=en&name=71311-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=&job=false
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '156'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.32.3
+    method: POST
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table
+  response:
+    body:
+      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"successfull\",\"Type\":\"information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"71311-0001\",\"area\":\"all\",\"language\":\"en\"},\"Object\":{\"Code\":\"71311-0001\",\"Content\":\"Debts
+        owed to the non-public sector: Germany, reference date\\nend-of-quarter, levels
+        of the overall public budget,\\nbudgets, types of debts\",\"Time\":{\"From\":\"2016-03-31\",\"To\":\"2025-09-30\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"71311\",\"Content\":\"Quarterly
+        debt of the overall public budget\",\"Type\":\"statistic\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Germany\",\"Type\":\"variable\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":[{\"Code\":\"SLD016\",\"Content\":\"Debts
+        owed to the non-public sector\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Updated\":\"see parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"STAGV\",\"Content\":\"Reference
+        date end-of-quarter\",\"Type\":\"variable\",\"Values\":\"10\",\"Selected\":\"10\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Rows\":[{\"Code\":\"KRPGR8\",\"Content\":\"Levels of the overall
+        public budget\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"HSHAT1\",\"Content\":\"Budgets\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"SLDAT4\",\"Content\":\"Types
+        of debts\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Updated\":\"see parent\"}],\"Updated\":\"see parent\"}],\"Subtitel\":null,\"Subheading\":null},\"Updated\":\"2022-12-28
+        19:08:33h\"},\"Copyright\":\"\xA9 Federal Statistical Office, Wiesbaden 2026\"}"
+    headers:
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '1766'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Tue, 10 Mar 2026 20:41:01 GMT
+      Keep-Alive:
+      - timeout=15, max=100
+      Server:
+      - Apache
+    status:
+      code: 200
+      message: '200'
+- request:
+    body: area=all&compress=false&endyear=&format=ffcsv&language=de&name=71311-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=&job=false
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '156'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.32.3
+    method: POST
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile
+  response:
+    body:
+      string: !!binary |
+        UEsDBBQACAgIAJWtalwAAAAAAAAAAAAAAAAkAAAANzEzMTEtMDAwMV8xNzczMTc1NDgyMTQ3X2Rl
+        X2ZsYXQuY3N27Z3NclzHkYX38xR8Adr1/xO9ooIIikGZ9hC0POGNAhTbImwQduBH4fDz+BlmM4tZ
+        6IHmFeZClOQGLTVY1beyvrq3tVCQaHQTqKqblXnynJP/9z//e31zdnN+fXP+9fVXX//17Xaz8/eL
+        szfbi83N+fvth5e+/9O/vrjRX317dnV+9ubih9d3/v7hu3a+cHZzc3X+5vbm37/1X698eJP56FPN
+        x59qfvFTf/aVD2+yH32q/fhT7S9+6s++8uFN7qNPdR9/qvvFT/3ZVz686duzi9vth/9/dXt5fvPD
+        H+//Ux997ft3/kfUVuvNl+fbq5vtxZ+/++e7q4tfPTr9+t3txdvt5aO3v3r03X//6U/by5vpq8+2
+        12fvb96d3V6/O7u4ud6cvn7y7MvN6bTx727Ovnn0j9v3j/7z9uzq5uzient5t7bK2McqPLZq8/T5
+        y9Nnm6fb25vrr99dnF2+fXR+ef3N95+3eXrvhc2LV7979iptTt5sL+9+gO31Tz/B9O9MX/n4p5i+
+        /7Pfv3yq9Oaz2+ntn59+/uS13nz+w+vbuy+c/NfrV082J3+/uTp799PXT794+uS12/z4q04/9/Zy
+        s3n+049ljHU+bH5zfjH96ie/f3X3BqXDT2949GZ7/v7R5d0v//j+T/jZ9mo7/WkRS3v62z8+f/LF
+        l6fT8p7+9R/nZxffbq+u77776vbym39f7J31+9n1nb744tXJ0+evld28OLuefpm/XG3fnt9sH1zN
+        zWPuVrjHKg96yrVXzoFPuXuszWOrGy/tF09OXj49eTWt7hff/XP6l68OOdlu8+JTz7T2zqfEXX2Z
+        GPPs5Dcnz19Oi/9s+357fnn3g//60Y9/nuLNm+/3ZMbIbpM13EUHRJMmh93YnDx32b3Isouf9RxN
+        5i66FVn0Twjv0xdenLx6uXmxvbr88b1zBnobs4vkfRjnmv3DyavXv5s+4w/TUvzt7G/Tilz/8C0b
+        Z1XO4GxGZplnCu3FGbo1Vq07mdlZ3OKF3w3aTkeXLXcpff+yvk2K4qwBn2DAsn/6PblbZAYdVNTc
+        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
+    headers:
+      Connection:
+      - Keep-Alive
+      Content-Disposition:
+      - attachment; filename=71311-0001_1773175482147_de_flat.zip
+      Content-Length:
+      - '6550'
+      Content-Type:
+      - application/zip
+      Date:
+      - Tue, 10 Mar 2026 20:44:39 GMT
+      Keep-Alive:
+      - timeout=15, max=100
+      Server:
+      - Apache
+    status:
+      code: 200
+      message: '200'
+- request:
+    body: area=all&compress=false&endyear=&format=ffcsv&language=de&name=71311-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=&job=false
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '156'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.32.3
+    method: POST
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table
+  response:
+    body:
+      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"71311-0001\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"71311-0001\",\"Content\":\"Schulden
+        beim nicht-\xF6ffentlichen Bereich: Deutschland,\\nStichtag zum Quartalsende,
+        Ebenen des \xF6ffentlichen\\nGesamthaushalts, Haushalte, Schuldenarten\",\"Time\":{\"From\":\"31.03.2016\",\"To\":\"30.09.2025\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"71311\",\"Content\":\"Viertelj\xE4hrl.
+        Schulden d. \xF6ffentl. Gesamthaushalts\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Deutschland
+        insgesamt\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":[{\"Code\":\"SLD016\",\"Content\":\"Schulden
+        beim nicht-\xF6ffentlichen Bereich\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Updated\":\"see parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"STAGV\",\"Content\":\"Stichtag
+        zum Quartalsende\",\"Type\":\"Merkmal\",\"Values\":\"10\",\"Selected\":\"10\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Rows\":[{\"Code\":\"KRPGR8\",\"Content\":\"Ebenen des \xF6ffentlichen
+        Gesamthaushalts\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"HSHAT1\",\"Content\":\"Haushalte\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"SLDAT4\",\"Content\":\"Schuldenarten\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Updated\":\"see parent\"}],\"Updated\":\"see parent\"}],\"Subtitel\":null,\"Subheading\":null},\"Updated\":\"28.12.2022
+        19:08:33h\"},\"Copyright\":\"\xA9 Statistisches Bundesamt (Destatis), 2026\"}"
+    headers:
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '1802'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Tue, 10 Mar 2026 20:44:42 GMT
+      Keep-Alive:
+      - timeout=15, max=100
+      Server:
+      - Apache
+    status:
+      code: 200
+      message: '200'
+- request:
+    body: area=all&compress=false&endyear=&format=ffcsv&language=en&name=71311-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=&job=false
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '156'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.32.3
+    method: POST
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table
+  response:
+    body:
+      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"successfull\",\"Type\":\"information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"71311-0001\",\"area\":\"all\",\"language\":\"en\"},\"Object\":{\"Code\":\"71311-0001\",\"Content\":\"Debts
+        owed to the non-public sector: Germany, reference date\\nend-of-quarter, levels
+        of the overall public budget,\\nbudgets, types of debts\",\"Time\":{\"From\":\"2016-03-31\",\"To\":\"2025-09-30\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"71311\",\"Content\":\"Quarterly
+        debt of the overall public budget\",\"Type\":\"statistic\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Germany\",\"Type\":\"variable\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":[{\"Code\":\"SLD016\",\"Content\":\"Debts
+        owed to the non-public sector\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Updated\":\"see parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"STAGV\",\"Content\":\"Reference
+        date end-of-quarter\",\"Type\":\"variable\",\"Values\":\"10\",\"Selected\":\"10\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Rows\":[{\"Code\":\"KRPGR8\",\"Content\":\"Levels of the overall
+        public budget\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"HSHAT1\",\"Content\":\"Budgets\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"SLDAT4\",\"Content\":\"Types
+        of debts\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Updated\":\"see parent\"}],\"Updated\":\"see parent\"}],\"Subtitel\":null,\"Subheading\":null},\"Updated\":\"2022-12-28
+        19:08:33h\"},\"Copyright\":\"\xA9 Federal Statistical Office, Wiesbaden 2026\"}"
+    headers:
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '1766'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Tue, 10 Mar 2026 20:48:21 GMT
+      Keep-Alive:
+      - timeout=15, max=100
+      Server:
+      - Apache
+    status:
+      code: 200
+      message: '200'
+- request:
+    body: area=all&compress=false&endyear=&format=ffcsv&language=de&name=71311-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=&job=false
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '156'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.32.3
+    method: POST
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table
+  response:
+    body:
+      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"erfolgreich\",\"Type\":\"Information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"71311-0001\",\"area\":\"Alle\",\"language\":\"de\"},\"Object\":{\"Code\":\"71311-0001\",\"Content\":\"Schulden
+        beim nicht-\xF6ffentlichen Bereich: Deutschland,\\nStichtag zum Quartalsende,
+        Ebenen des \xF6ffentlichen\\nGesamthaushalts, Haushalte, Schuldenarten\",\"Time\":{\"From\":\"31.03.2016\",\"To\":\"30.09.2025\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"71311\",\"Content\":\"Viertelj\xE4hrl.
+        Schulden d. \xF6ffentl. Gesamthaushalts\",\"Type\":\"Statistik\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Deutschland
+        insgesamt\",\"Type\":\"Merkmal\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":[{\"Code\":\"SLD016\",\"Content\":\"Schulden
+        beim nicht-\xF6ffentlichen Bereich\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Updated\":\"see parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"STAGV\",\"Content\":\"Stichtag
+        zum Quartalsende\",\"Type\":\"Merkmal\",\"Values\":\"10\",\"Selected\":\"10\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Rows\":[{\"Code\":\"KRPGR8\",\"Content\":\"Ebenen des \xF6ffentlichen
+        Gesamthaushalts\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"HSHAT1\",\"Content\":\"Haushalte\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"SLDAT4\",\"Content\":\"Schuldenarten\",\"Type\":\"Merkmal\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Updated\":\"see parent\"}],\"Updated\":\"see parent\"}],\"Subtitel\":null,\"Subheading\":null},\"Updated\":\"28.12.2022
+        19:08:33h\"},\"Copyright\":\"\xA9 Statistisches Bundesamt (Destatis), 2026\"}"
+    headers:
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '1802'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Tue, 10 Mar 2026 20:49:55 GMT
+      Keep-Alive:
+      - timeout=15, max=100
+      Server:
+      - Apache
+    status:
+      code: 200
+      message: '200'
+- request:
+    body: area=all&compress=false&endyear=&format=ffcsv&language=en&name=71311-0001&quality=off&regionalkey=&regionalvariable=&stand=&startyear=&timeslices=&job=false
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '156'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.32.3
+    method: POST
+    uri: https://www-genesis.destatis.de/genesisWS/rest/2020/metadata/table
+  response:
+    body:
+      string: "{\"Ident\":{\"Service\":\"metadata\",\"Method\":\"table\"},\"Status\":{\"Code\":0,\"Content\":\"successfull\",\"Type\":\"information\"},\"Parameter\":{\"username\":\"********************\",\"password\":\"********************\",\"name\":\"71311-0001\",\"area\":\"all\",\"language\":\"en\"},\"Object\":{\"Code\":\"71311-0001\",\"Content\":\"Debts
+        owed to the non-public sector: Germany, reference date\\nend-of-quarter, levels
+        of the overall public budget,\\nbudgets, types of debts\",\"Time\":{\"From\":\"2016-03-31\",\"To\":\"2025-09-30\"},\"Valid\":\"false\",\"Structure\":{\"Head\":{\"Code\":\"71311\",\"Content\":\"Quarterly
+        debt of the overall public budget\",\"Type\":\"statistic\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"DINSG\",\"Content\":\"Germany\",\"Type\":\"variable\",\"Values\":\"1\",\"Selected\":\"1\",\"Functions\":null,\"Structure\":[{\"Code\":\"SLD016\",\"Content\":\"Debts
+        owed to the non-public sector\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Updated\":\"see parent\"}],\"Updated\":\"see parent\"},\"Columns\":[{\"Code\":\"STAGV\",\"Content\":\"Reference
+        date end-of-quarter\",\"Type\":\"variable\",\"Values\":\"10\",\"Selected\":\"10\",\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Rows\":[{\"Code\":\"KRPGR8\",\"Content\":\"Levels of the overall
+        public budget\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"HSHAT1\",\"Content\":\"Budgets\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":[{\"Code\":\"SLDAT4\",\"Content\":\"Types
+        of debts\",\"Type\":\"variable\",\"Values\":null,\"Selected\":null,\"Functions\":null,\"Structure\":null,\"Updated\":\"see
+        parent\"}],\"Updated\":\"see parent\"}],\"Updated\":\"see parent\"}],\"Subtitel\":null,\"Subheading\":null},\"Updated\":\"2022-12-28
+        19:08:33h\"},\"Copyright\":\"\xA9 Federal Statistical Office, Wiesbaden 2026\"}"
+    headers:
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '1766'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Tue, 10 Mar 2026 20:49:56 GMT
+      Keep-Alive:
+      - timeout=15, max=100
+      Server:
+      - Apache
+    status:
+      code: 200
+      message: '200'
 version: 1

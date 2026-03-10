@@ -44,6 +44,7 @@ typecheck:
 # Install pre-commit hooks
 install-hooks:
     uv run pre-commit install
+    uv run pre-commit install --hook-type pre-push
 
 # Run all pre-commit hooks on all files
 run-hooks:

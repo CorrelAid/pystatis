@@ -59,11 +59,15 @@ def test_get_response_from_endpoint(mocker):
     Test once with generic API response, more detailed tests
     of subfunctions and specific cases below.
     """
-    mocker.patch("pystatis.http_helper.requests", return_value=_generic_request_status())
+    mocker.patch("pystatis.http_helper.requests.post", return_value=_generic_request_status())
     mocker.patch("pystatis.db.get_settings", return_value=("host", "user", "pw"))
     mocker.patch("pystatis.db.check_credentials_are_set", return_value=True)
 
-    get_data_from_endpoint(endpoint="endpoint", method="method", params={"name": "21111-0001"})
+    response = get_data_from_endpoint(
+        endpoint="endpoint", method="method", params={"name": "21111-0001"}
+    )
+    assert isinstance(response, requests.Response)
+    assert response.status_code == 200
 
 
 def test_check_invalid_status_code_with_error():

@@ -82,7 +82,7 @@ jobs:
           enable-cache: true
       - name: Install dependencies
         run: |
-          uv sync --group dev
+          uv sync --group dev --group notebooks
       - name: Build documentation
         run: |
           cd docs

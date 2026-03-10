@@ -1661,11 +1661,7 @@ dependencies = [
 [package.dev-dependencies]
 dev = [
     { name = "bandit" },
-    { name = "jupyter" },
-    { name = "jupytext" },
     { name = "myst-parser" },
-    { name = "nbsphinx" },
-    { name = "notebook" },
     { name = "pre-commit" },
     { name = "pylint" },
     { name = "pytest" },
@@ -1680,6 +1676,12 @@ dev = [
     { name = "ty" },
     { name = "types-requests" },
 ]
+notebooks = [
+    { name = "jupyter" },
+    { name = "jupytext" },
+    { name = "nbsphinx" },
+    { name = "notebook" },
+]
 
 [package.metadata]
 requires-dist = [
@@ -1691,11 +1693,7 @@ requires-dist = [
 [package.metadata.requires-dev]
 dev = [
     { name = "bandit", specifier = ">=1.7.4,<2" },
-    { name = "jupyter", specifier = ">=1.0.0,<2" },
-    { name = "jupytext", specifier = ">=1.16.1,<2" },
     { name = "myst-parser", specifier = ">=4.0.0,<5" },
-    { name = "nbsphinx", specifier = ">=0.9.5,<0.10" },
-    { name = "notebook", specifier = ">=7.4.3,<8" },
     { name = "pre-commit", specifier = ">=4.0.1,<5" },
     { name = "pylint", specifier = "~=4.0" },
     { name = "pytest", specifier = ">=9.0.2,<10" },
@@ -1709,6 +1707,12 @@ dev = [
     { name = "sphinx-rtd-theme", specifier = ">=3.0.0,<4" },
     { name = "ty", specifier = ">=0.0.21" },
     { name = "types-requests", specifier = ">=2.32.4.20260107" },
+]
+notebooks = [
+    { name = "jupyter", specifier = ">=1.0.0,<2" },
+    { name = "jupytext", specifier = ">=1.16.1,<2" },
+    { name = "nbsphinx", specifier = ">=0.9.5,<0.10" },
+    { name = "notebook", specifier = ">=7.4.3,<8" },
 ]
 
 [[package]]

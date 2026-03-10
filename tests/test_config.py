@@ -6,6 +6,7 @@ import pytest
 
 from pystatis import config, db, http_helper
 from pystatis.db import check_credentials_are_valid
+from pystatis.exception import PystatisConfigError
 
 
 @pytest.fixture()
@@ -66,21 +67,59 @@ def test_missing_file(config_, caplog):
 
 
 def test_setup_credentials(mocker, config_):
+    mocker.patch("builtins.input", return_value="y")
     mocker.patch.object(db, "check_credentials_are_valid", return_value=True)
     for db_name in config.get_supported_db():
-        for field in ["username", "password"]:
-            if field == "username":
-                os.environ[f"PYSTATIS_{db_name.upper()}_API_{field.upper()}"] = "test"
-            else:
-                os.environ[f"PYSTATIS_{db_name.upper()}_API_{field.upper()}"] = (
-                    "test123!"
-                )
+        os.environ[f"PYSTATIS_{db_name.upper()}_API_USERNAME"] = "test"
+        os.environ[f"PYSTATIS_{db_name.upper()}_API_PASSWORD"] = "test123!"
 
     config.setup_credentials()
 
     for db_name in config.get_supported_db():
         assert config_[db_name]["username"] == "test"
         assert config_[db_name]["password"] == "test123!"
+
+
+def test_setup_credentials_skip_db(mocker, config_):
+    # Answer "y" only for genesis, "n" for the rest
+    supported = config.get_supported_db()
+    answers = ["y" if db_name == "genesis" else "n" for db_name in supported]
+    mocker.patch("builtins.input", side_effect=answers)
+    mocker.patch.object(db, "check_credentials_are_valid", return_value=True)
+    os.environ["PYSTATIS_GENESIS_API_USERNAME"] = "test"
+    os.environ["PYSTATIS_GENESIS_API_PASSWORD"] = "test123!"
+
+    config.setup_credentials()
+
+    assert config_["genesis"]["username"] == "test"
+    assert config_["genesis"]["password"] == "test123!"
+    for db_name in supported:
+        if db_name != "genesis":
+            assert config_[db_name]["username"] == ""
+            assert config_[db_name]["password"] == ""
+
+
+def test_setup_credentials_empty_credentials_skips_validity_check(mocker, config_):
+    mocker.patch("builtins.input", return_value="y")
+    mock_check = mocker.patch.object(db, "check_credentials_are_valid", return_value=False)
+    # Provide empty credentials via env vars
+    for db_name in config.get_supported_db():
+        os.environ[f"PYSTATIS_{db_name.upper()}_API_USERNAME"] = ""
+        os.environ[f"PYSTATIS_{db_name.upper()}_API_PASSWORD"] = ""
+
+    config.setup_credentials()  # must not raise
+
+    mock_check.assert_not_called()
+
+
+def test_setup_credentials_invalid_credentials_raises(mocker, config_):
+    mocker.patch("builtins.input", return_value="y")
+    mocker.patch.object(db, "check_credentials_are_valid", return_value=False)
+    os.environ["PYSTATIS_GENESIS_API_USERNAME"] = "wrong"
+    os.environ["PYSTATIS_GENESIS_API_PASSWORD"] = "wrong"
+
+    with pytest.raises(PystatisConfigError):
+        config.setup_credentials()
 
 
 @pytest.mark.parametrize(

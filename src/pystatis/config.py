@@ -152,11 +152,14 @@ def config_exists() -> bool:
 
 
 def setup_credentials() -> None:
-    """Setup credentials for all supported databases."""
+    """Setup credentials for all supported databases, prompting per database."""
     for db_name in get_supported_db():
+        answer = input(f"Set up credentials for '{db_name}'? [y/N] ")
+        if answer.strip().lower() != "y":
+            continue
         config.set(db_name, "username", _get_user_input(db_name, "username"))
         config.set(db_name, "password", _get_user_input(db_name, "password"))
-        if not db.check_credentials_are_valid(db_name):
+        if db.check_credentials_are_set(db_name) and not db.check_credentials_are_valid(db_name):
             raise PystatisConfigError(
                 f"Provided credentials for database '{db_name}' are not valid! Please provide the correct credentials."
             )

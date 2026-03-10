@@ -31,3 +31,7 @@ lint:
 # Lint and auto-fix
 lint-fix:
     uv run ruff check --fix src/ tests/
+
+# Type check
+typecheck:
+    uv run ty check src/

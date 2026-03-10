@@ -47,7 +47,6 @@ dev = [
     "ruff>=0.11.0,<0.12",
     "jupyter>=1.0.0,<2",
     "jupytext>=1.16.1,<2",
-    "mypy~=1.0",
     "myst-parser>=4.0.0,<5",
     "notebook>=7.4.3,<8",
     "pre-commit>=4.0.1,<5",
@@ -61,6 +60,7 @@ dev = [
     "sphinx-rtd-theme>=3.0.0,<4",
     "pytest-vcr>=1.0.2,<2",
     "nbsphinx>=0.9.5,<0.10",
+    "ty>=0.0.21",
 ]
 
 [build-system]

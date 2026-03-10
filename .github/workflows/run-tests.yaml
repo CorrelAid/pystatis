@@ -66,8 +66,8 @@ jobs:
         with:
           api-key: ${{ secrets.SAFETY_API_KEY }}
           args: "--short-report --policy-file=.safety-policy.yml"
-      - name: Run mypy
-        run: uv run mypy src
+      - name: Run ty
+        run: uv run ty check src
 
   sphinx-documentation-and-coverage:
     runs-on: ubuntu-latest

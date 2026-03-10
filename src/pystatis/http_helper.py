@@ -241,7 +241,10 @@ def get_data_from_resultfile(
             "Verarbeitungsfenster von %s Minuten überschritten. Job-Datei konnte nicht heruntergeladen werden.",
             JOB_TIMEOUT // 60,
         )
-        return bytes()
+        raise TimeoutError(
+            f"Verarbeitungsfenster von {JOB_TIMEOUT // 60} Minuten überschritten. "
+            "Job-Datei konnte nicht heruntergeladen werden."
+        )
 
     params = params.copy()
     params["name"] = job_id
@@ -298,7 +301,7 @@ def _check_invalid_destatis_status_code(response: requests.Response) -> None:
         _check_destatis_status(response_dict.get("Status", {}))
 
 
-def _check_destatis_status(destatis_status: dict) -> None:  # type: ignore
+def _check_destatis_status(destatis_status: dict) -> None:
     """
     Helper method which checks the status message from Destatis.
     If the status message is erroneous an error will be raised.

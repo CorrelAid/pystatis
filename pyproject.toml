@@ -61,6 +61,7 @@ dev = [
     "pytest-vcr>=1.0.2,<2",
     "nbsphinx>=0.9.5,<0.10",
     "ty>=0.0.21",
+    "types-requests>=2.32.4.20260107",
 ]
 
 [build-system]
